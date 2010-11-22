@@ -1,6 +1,6 @@
 /*
  *  author:azhai
- *  date :2010-11-20
+ *  date :2010-11-20 22:00
  *  descrption: public javascript DOM
  */
 
@@ -14,8 +14,9 @@ var Comm = function(json) {
 		Comm.prototype.getJson = function() {
 			return this.json;
 		};
-		Comm.prototype.getDiv = function() {
+		Comm.prototype.getDOM = function() {
 			var data = this.json;
+	       
 			var id = data['id'];
 			var attr = data['attr'];
 			var type = data['type'];
@@ -39,7 +40,7 @@ var Comm = function(json) {
 			};
 
 			var head = getHardpoint();
-
+           
 			switch (type) {
 			case 'div': {
 				if (attr != null && attr != "") {
@@ -63,7 +64,7 @@ var Comm = function(json) {
 					script.src = js[i];
 					script.type = "text/javascript";
 					script.async = true;
-					head.appendChild(script); 
+					head.appendChild(script);
 
 				}
 
@@ -71,33 +72,34 @@ var Comm = function(json) {
 				;
 				break;
 			case "css": {
+				
 				for ( var j = 0; j < css.length; j++) {
 					var d = document.createElement('link');
 					d.href = css[j];
 					d.rel = "stylesheet";
 					d.type = "text/css";
 					d.media = "all";
-				/*	
-			           // d.onerror = d.onload = alert("error");
-			            d.onreadystatechange = function() {
-			                if (this.readyState == "complete" || this.readyState == "loaded") alert("ok");
-			            };
-			     */   
+					/*
+					 * // d.onerror = d.onload = alert("error");
+					 * d.onreadystatechange = function() { if (this.readyState ==
+					 * "complete" || this.readyState == "loaded") alert("ok"); };
+					 */
 					head.appendChild(d);
 				}
 			}
 				;
 				break;
+			
+				
 			default: {
-				if (typeof(content) == "string"){
-				var obj = document.getElementById(id);
-				obj.innerHTML = content;
-				}
-				else 
-				{
-					for (var r in content){
-						var rid= document.getElementById(r);
-						rid.innerHTML= content[r];
+				
+				if (typeof (content) == "string") {
+					var obj = document.getElementById(id);
+					obj.innerHTML =content;
+				} else {
+					for ( var r in content) {
+						var rid = document.getElementById(r);
+						rid.innerHTML = content[r];
 					}
 				}
 			}
@@ -110,8 +112,11 @@ var Comm = function(json) {
 }
 
 var Azhai = {
+	onMsg:function(msg){
+	  alert(msg);	
+	},	
 	onPages : function(myjson) {
 		var v = new Comm(myjson);
-		return v.getDiv();
+		return v.getDOM();
 	}
 }
