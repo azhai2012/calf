@@ -3,7 +3,7 @@
 return array
 (
     'version' => '1.0.0.1',
-	'moudles' => array
+	'modules' => array
      (
 
 		'basic' => array(

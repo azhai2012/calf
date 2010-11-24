@@ -14,18 +14,43 @@ class Controller_Home extends Controller {
 	public function action_index()
 	{	
 		parent::before();
+		$sk = array_key_exists('sk',$_GET)?$_GET['sk']:'';
 	    $u = new Calf_Menus();
 		$result = Calfpub::getmenus($u);
 		$head=''; 
 	    foreach ($result as $key => $value){
 	    	$head.= $key.":".$value->name;
 	    } 
+	    $this->template->contentcol='';
 	    $this->template->head=$head;
-		$this->template->rfloat=array(array('name'=>'首页','url'=>'/'),array('name'=>'管理','url'=>'/?sk=admin'));	
-	    $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_sub_menus().'\'});</script>';
-	    $this->template->css='<script>Azhai.onPages({"type":"css","css":["/media/css/apps.css?'.time().'"]});</script>';
-	
+		$this->template->rfloat=array(array('name'=>'管理','url'=>'/?sk=admin'),array('name'=>'首页','url'=>'/'));	
+		if (substr($sk,0,2)==='ad')
+		{
+		   $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_admin_menus().'\'});</script>';
+				
+	       switch ($sk){
+			  case 'adr':{
+		       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adr","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+			  }break;
+			  case 'adrnew':{
+		 	   
+			  	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adrnew","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+			  	
+			  }
+			  
+			}
+			
+			
+		}
+	 	else
+	 	{
+	    	$this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_menus().'\'});</script>';
+	    
+		}
 		
+		$this->template->css='<script>Azhai.onPages({"type":"css","css":["/media/css/apps.css?'.time().'"]});</script>';
+	    
+	    
 	}
 	
 	public function after(){

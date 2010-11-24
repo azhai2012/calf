@@ -2,12 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> 
 <head>
  <script type="text/javascript" src="/media/js/comm.js"></script>
+ <script type="text/javascript" src="/media/js/apps.js"></script>
+ <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
+ 
+ <link href="/media/css/apps.css" rel="stylesheet" type="text/css" media="all">
+ 
 </head>
 <body class="home">
 <div id="blueBar"></div>
  <div id="allContainer" > <!-- begin allcontainer  -->
+  <h1 id="pageLogo"><a href="/" title="首页"></a></h1>
+
  <div id="content"> <!-- begin content -->
+     
     <div id="pageheader" class="clearfix">
+     
      <div class="clearfix" id="headnav" >
         <div class="lfloat">
         </div>
@@ -22,13 +31,19 @@
  
     <div id="mainContainer">
      <div id="leftcol">
+        <div class="clearfix" style="margin-bottom:20px;">
+        <div class="">
+            <a href="/home?id=100001653757270">欢迎您： Bob Azhai</a>
+        </div>
+        </div>
+    
        <ul class="navside" id="navside">
-        
+         
        </ul>
      
      </div>
      <div id="contentcol">
-      <div> </div>
+       
     </div>
   </div> <!-- end content -->
   <div id="pagefoot"  >
@@ -40,5 +55,6 @@
 </body>
 
  <?php echo $menus;?>
-<?php echo $css; ?>
+ <?php echo $contentcol;?>
+ <?php echo $css; ?>
 </html>

@@ -48,7 +48,7 @@ class Model_Menus {
 	function get_menus(){
 		$result='';
 		
-		$modules= Kohana::config('settings')->moudles;
+		$modules= Kohana::config('settings')->modules;
 		$_get= (empty($_GET['sk']))?'sz':$_GET['sk'];
 		foreach($modules as $key => $value){
 			$modid = ($value['sk']==$_get)?'selectItem':'';
@@ -56,14 +56,14 @@ class Model_Menus {
 			$result.= '<a class=\"item '.$modid.'\" href=\"/?sk='.$value['sk'].'\" >';
 			$result.= '<span class=\"leftimg\"><i class=\"img calfimage menu'.$value['sk'].'\"></i></span>';
 			$result.= '<span>'.$this->utf8Escape($value['name']).'</span></a>';
-			$result.= '<span class=\"loadingindicator\"></span>';
+			$result.= '<span class=\"loadingIndicator\"></span>';
 			$this->mods = $key;
 			if ($value['sk']==$_get){
 			  $result.= '<ul>';
 			  foreach ($value['ct'] as $subkey => $subvalue){
 			  	$result.= '<li class=\"key-'.$subvalue.' \"><a class=\"subitem\" href=\"/home?sk='.$subvalue;
 				$result.= '\"><span>'.$this->utf8Escape($subkey).'</span></a> ';
-				$result.= '<span class=\"loadingindicator\"></span>';
+				$result.= '<span class=\"loadingIndicator\"></span>';
                 $result.= '</li>';				
 			  }
 			  $result.= '</ul>';
@@ -76,7 +76,7 @@ class Model_Menus {
 	
 	 function getmods($m){
 	 	
-	 	$modules= Kohana::config('settings')->moudles;
+	 	$modules= Kohana::config('settings')->modules;
 	 	$result = '';
 	 	foreach($modules as $key => $value){
 	 		
@@ -93,15 +93,15 @@ class Model_Menus {
 	
      function get_sub_menus(){
 		$result='';
-		$modules= Kohana::config('settings')->moudles;
+		$modules= Kohana::config('settings')->modules;
 		$_get= (empty($_GET['sk']))?'sz':$_GET['sk'];
-		
-		foreach($modules as $key => $value){
+		// @todo ajax
+ 		foreach($modules as $key => $value){
 			$result.= '<li >';
 			$result.= '<a class=\"item \" href=\"/?sk='.$value['sk'].'\" >';
 			$result.= '<span class=\"leftimg\"><i class=\"img calfimage menu'.$value['sk'].'\"></i></span>';
 			$result.= '<span>'.$this->utf8Escape($value['name']).'</span></a>';
-			$result.= '<span class=\"loadingindicator\"></span>';
+			$result.= '<span class=\"loadingIndicator\"></span>';
 		    $d = $this->getmods($_get);
 			if ($value['sk'] === $modules[$d]['sk']){
 			  $result.= '<ul>';
@@ -109,7 +109,7 @@ class Model_Menus {
 			  	$modid = ($subvalue === $_get)?'selectItem':'';
 			  	$result.= '<li class=\"key-'.$subvalue.' '.$modid.'\"><a class=\"subitem\" href=\"/home?sk='.$subvalue;
 				$result.= '\"><span>'.$this->utf8Escape($subkey).'</span></a> ';
-				$result.= '<span class=\"loadingindicator\"></span>';
+				$result.= '<span class=\"loadingIndicator\"></span>';
                 $result.= '</li>';	
               }
 					
@@ -126,15 +126,15 @@ class Model_Menus {
 		$_get= (empty($_GET['sk']))?'sz':$_GET['sk'];
 		
 		foreach($modules as $key => $value){
-			$selectitem= ($value['sk']===$_get)?'selectItem':'';
-			$result.= '<li >';
-			$result.= '<a class=\"item '.$selectitem.'\" href=\"/?sk='.$value['sk'].'\" >';
+			$selectitem= ($value['sk']===substr($_get,0,3))?'selectItem loading':'';
+			$result.= '<li class=\"item '.$selectitem.'\">';
+			$result.= '<a  href=\"/?sk='.$value['sk'].'\" >';
 			$result.= '<span class=\"leftimg\"><i class=\"img calfimage menu'.$value['sk'].'\"></i></span>';
 			$result.= '<span>'.$this->utf8Escape($value['name']).'</span></a>';
-			$result.= '<span class=\"loadingindicator\"></span>';
-		    $result.= '</ul>';
-		  }
-		   $result.= '</li>';
+			$result.= '<span class=\"loadingIndicator\"></span>';
+	        $result.= '</li>';
+		}
+	
 		
 		return $result; 
 	}
