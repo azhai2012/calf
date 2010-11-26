@@ -15,6 +15,7 @@ class Controller_Home extends Controller {
 	{	
 		parent::before();
 		$sk = array_key_exists('sk',$_GET)?$_GET['sk']:'';
+		$fl = array_key_exists('fl',$_GET)?$_GET['fl']:'';
 	    $u = new Calf_Menus();
 		$result = Calfpub::getmenus($u);
 		$head=''; 
@@ -33,10 +34,11 @@ class Controller_Home extends Controller {
 		       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adr","id":"contentcol","loadingid":"loadingIndicator"});</script>';
 			  }break;
 			  case 'adrnew':{
-		 	   
-			  	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adrnew","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-			  	
-			  }
+		 	  	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adrnew","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+			  }break;
+			  case 'adredit':{
+			  	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adrview&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+			  }break;
 			  
 			}
 			

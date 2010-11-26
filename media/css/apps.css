@@ -7,6 +7,9 @@ h3 {font-size: 16px;padding: 2px 10px 1px 0px;margin: 0 0 20px 0; border-bottom:
 h4 {font-size: 13px;padding: 2px 10px 1px 0px;margin-bottom: 10px; border-bottom: 1px dotted #bbbbbb; color: #444;}
 ul {list-style-type:none;margin:0;padding:0;background-color:#FFF;}
 li {display:list-item}
+input,select {margin-bottom: 1px;margin-top: 1px;vertical-align: middle;}
+
+
 a {color:#385998;cursor:pointer;text-decoration:none;}
 
 .clearfix {display:block;zoom:1;}
@@ -30,7 +33,7 @@ table.list th {background-color: #EEE;padding: 4px;white-space: nowrap;}
 table.list td.buttons a {padding-right: 10px;line-height:16px;height:16px;}
 table.list td.buttons a {padding-top:5px;position:relative;padding:6px 8px 4px 25px;width:100%;}
 
-.delloading {background: url(/media/images/loading.gif) no-repeat 0px 0px;left:-30px;height: 11px;position: absolute;top:5px;width: 16px;}
+.showloading {background: url(/media/images/loading.gif) no-repeat 0px 0px;left:50px;height: 11px;position: absolute;top:5px;width: 16px;}
 
 
 #blueBar {background-color: #3B5998;height: 41px;left: 0px;position: absolute;width: 100%;z-index: -1;}
@@ -73,9 +76,9 @@ table.list td.buttons a {padding-top:5px;position:relative;padding:6px 8px 4px 2
 .item:hover,.item:active, .item:focus,.subitem:hover,.subitem:active,.subitem:focus {background-color: #EFF2F7;text-decoration: none;}
 .navside .subitem {padding-left: 37px;}
 
-.home #leftcol{min-height:500px;}
+.home #leftcol{min-height:600px;}
 
-#contentcol {color:#000;padding-left:25px;border-left:1px solid #B3B3B3;padding-right:15px;margin-left:181px;padding-top:15px;min-height:550px;border-right:1px #B3B3B3 solid;}
+#contentcol {color:#000;padding-left:25px;border-left:1px solid #B3B3B3;padding-right:15px;margin-left:181px;padding-top:15px;min-height:650px;border-right:1px #B3B3B3 solid;}
 #contentcol ul.subitem {padding-left:37px;}
 
 #pagefoot{width:980px;margin:0;padding:0;}
@@ -88,19 +91,40 @@ table.list td.buttons a {padding-top:5px;position:relative;padding:6px 8px 4px 2
 #headnav .rfloat {float:right;padding-right:20px;width:300px;}
 #headnav .rfloat ul li {float:right;color:#FFF;padding-left:20px}
 #headnav .rfloat ul li a {color:#FFF;font-weight:bold;}
-.required {color: #B00;}
+.required {color: #B00;margin:0px 5px;}
+.ss {color: #c1c1c1;margin:0px 5px;font-size:12px;}
+.sf {font-size:14px;}
+
 .uiHeaderTitle {line-height: 20px;min-height: 20px;padding-bottom: 2px;vertical-align: bottom;}
 
+.info{display:none;}
+.showinfo {display:block;}
+
+.hidesubrole ul{display:none;}
+
+.iconerror{background-position:-160px -114px;}
+.iconwarning{background-position:-160px -114px;}
+.iconsuccess{background-position:-141px -114px;}
+
+.error,.success,.warning {margin:10px 0px 12px 0px;padding: 14px 14px 14px 30px;margin-bottom: 12px;font-size: 1.1em; border: 2px solid;}
+.error { background-color: #ffe3e3;border-color: #dd0000; color: #880000;}
+.success {background-position:141px 114px;background-color: #dfffdf;border-color: #9fcf9f; color: #005f00;}
+.warning {background-position:160px 114px;background-color: #FFEBC1;border-color: #FDBF3B;color: #A6750C;text-align: left;}
 
 
-.box {margin-right:10px;line-height: 1.5em;}
-.box {background-color: #F6F6F6;border: 1px solid #E4E4E4;color: #505050;line-height: 1.5em;padding: 6px;}
+.box {background-color: #F6F6F6;border: 1px solid #E4E4E4;color: #505050;padding: 6px;line-height: 1.5em;margin-bottom: 10px;}
+.topbox {background-color: #F6F6F6;border: 1px solid #E4E4E4;color: #505050;line-height: 1.5em;margin-bottom: 3px;padding: 6px;}
+
+.box .boxitem {border-spacing:0;border:0;width:100%}
+.box .boxitem ul li {float:left;padding:0px 5px;}
+.box .boxitem td {border-bottom:1px #ddd solid;}
+.box label {font-weight: normal;margin-left: 0px;text-align: left;}
 .box label.floating {font-weight: normal;margin-left: 0px;text-align: left;width: 270px;}
-.box label {float: left;font-weight: bold;margin-left: -180px;text-align: right;width: 175px;}
 .box legend {border: none;display: block;padding-left: 2px;padding-right: 2px;}
 .box fieldset {border: 2px groove threedface;display: block;margin-bottom:20px;margin-left: 2px;margin-right: 2px;padding: 0.35em 0.75em 0.625em;}
 .box a {padding:0px 5px;}
-.btn {padding:10px 0px;}
+.btn {padding:10px 0px;position:relative;}
+.showloading {top:15px};
 .rolename {margin-bottom:10px;}
 
 
