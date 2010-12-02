@@ -46,6 +46,7 @@ var Comm = function(json) {
 			var attr = data['attr'];
 			var type = data['type'];
 			var css = data['css'];
+			var content = data['content'];
 			var js = data['js'];
 			var content = data['content'];
 			var __ajax = data['ajax'];
@@ -67,6 +68,26 @@ var Comm = function(json) {
 			};
 
 			var head = getHardpoint();
+			
+			var ajaxobj=function(){
+			
+				$.ajax({
+					type : "get",
+					url : __ajax,
+					beforeSend : function(XMLHttpRequest) {
+						$(".selectItem").addClass("loading");
+					},
+					success : function(data, textStatus) {
+						$('.pop_content').html(data);
+					},
+					complete : function(XMLHttpRequest, textStatus) {
+						$(".selectItem").removeClass("loading");
+					},
+					error : function() {
+						// 请求出错处理
+					}
+				});
+	    	} 
 
 			switch (type) {
 			case 'div': {
@@ -116,6 +137,26 @@ var Comm = function(json) {
 			}
 				;
 				break;
+				// ajax
+			case "dialog": {
+				    var w01 = content['width'];
+				    var h01 = content['height'];
+				    var t01 = content['top'];
+				    var bH  = $(document).height();
+		            var bW  = $(document).width();
+		            
+		            $("#fullbg").css({ width: bW, height: bH, display: "block" });
+		            $("."+id).css("display", "block")
+		            .css("left",(bW/2-(parseInt(w01)/2))+"px")
+		            .css("top",parseInt(t01)+"px")
+		            .css("width",w01)
+		            .css("height",h01);
+		            $('.'+id).show();
+		            ajaxobj();
+			}
+
+				break;	
+				
 			// ajax
 			case "ajax": {
 				$.ajax({

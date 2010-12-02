@@ -5,12 +5,17 @@ class Controller_Welcome extends Controller {
 	private $pub;
 	private  $template='';
 	private $model;
+	private	$session;
+	private $ghsid; 
 
 	public function before(){
 		$this->template= View::factory('welcome');
 		$this->model= new Model_Menus();
-		$this->admin= new Model_Admin();
-		
+		$this->session = Session::instance();
+		$this->session->set('userlogin',array('ghsid'=>'343'));
+		$asession =$this->session->as_array();
+		$this->ghsid= $asession['userlogin']['ghsid'];
+
 	}
 	
 	public function action_index()
@@ -30,16 +35,22 @@ class Controller_Welcome extends Controller {
 		if (substr($sk,0,2)==='ad')
 		{
 	        $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_admin_menus().'\'});</script>';
-			if ($sk==='adr') 
+	        switch ($sk){ 
+	        case 'adr': 
 			{
-		      //$this->template->contentcol ='<script>Azhai.onPages({"type":"","id":"contentcol","content":\''.$this->admin->get_admin_roles().'\'});</script>';
-			   $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adr","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-		 
-			}
+		       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adr","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+		 	}break;
+			
+		    case 'adu': 
+			  {
+		       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adu","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+		 	  }break;
+		    }
 		}
 	 	else
 	 	{
-	    	$this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_menus().'\'});</script>';
+	 	  	
+	    	$this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_menus($this->ghsid).'\'});</script>';
 	    
 		}
 		

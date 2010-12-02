@@ -29,7 +29,7 @@ td{padding:2px;line-height:24px;}
 tbody {border-color: inherit;display: table-row-group;vertical-align: middle;}
 table.list td.buttons {text-align: right;white-space: nowrap;width: 15%;position:relative;}
 .buttons {font-size: 0.9em;position:relative;} 
-table.list th {background-color: #EEE;padding: 4px;white-space: nowrap;}
+table.list th {background-color: #EEE;padding: 8px 5px;white-space: nowrap;}
 table.list td.buttons a {padding-right: 10px;line-height:16px;height:16px;}
 table.list td.buttons a {padding-top:5px;position:relative;padding:6px 8px 4px 25px;width:100%;}
 
@@ -44,7 +44,7 @@ table.list td.buttons a {padding-top:5px;position:relative;padding:6px 8px 4px 2
 #mainContainer {width:100%;display:block;margin-left:-1px;}
 #leftcol {float:left;padding:20px 0px 0px 2px;width:179px;word-wrap:break-word;dispkay:block;}
 #leftcol .navside li {position:relative;zoom:1;}
-.navside .item,.navside .subitem {border-bottom:1px solid white;color:#333;display:block;line-height:13px;padding:3px 8px 4px 28px;position:relative;text-decoration:none;zoom:1;}
+.navside .item,.navside .subitem {border-bottom:1px solid white;color:#333;display:block;line-height:12px;padding:3px 8px 4px 28px;position:relative;text-decoration:none;zoom:1;}
 .navside .item .leftimg {left:5px;position:absolute;text-align:center;top:2px;width:18px;}
 .navside .selectItem {background-color:#D8DFEA;font-weight:bold;}
 
@@ -52,15 +52,37 @@ table.list td.buttons a {padding-top:5px;position:relative;padding:6px 8px 4px 2
 .spritemap_aanaup {background-repeat: no-repeat;display: inline-block;height: 16px;width: 16px;margin-right:5px;}
 .leftimg {left:5px;position:absolute;text-align:center;top:2px;width:18px;}
 .icon-add {background-position:-42px -91px;}
-.icon-del {background-position:-20px -109px;}
+.icon-del {background-position:-20px -110px;}
+.icon-lock {background-position:-162px -92px;margin-top:-12px;margin-left:80px;}
+.icon-unlock {background-position:-4px -110px;border:1px #000 solid}
+.icon-pic {background-position:-50px -73px;}
+.icon-cx {background-position:-118px -73px;}
+
 
 .roles h2 {border-bottom: 1px solid #BBB;color: #444;font-size: 16px;margin: 0px 0px 20px;padding: 2px 10px 1px 0px;}
 .roles .contextual {padding:3px 8px 4px 28px;float: right;padding-right:5px;line-height:20px;min-height:20px;vertical-align:bottom;position:relative;}
 .roles .contextual .leftimg {left:6px;position:absolute;text-align:center;top:3px;width:18px;}
 
+.uiHeaderTopBorder {border-top: 1px solid #AAA;border-top-width: 1px;border-top-style: solid;border-top-color: #AAA;padding-top: 6px;border-color: #EEE;
+margin: 8px 0px 0px 6px;
+padding: 7px 6px 3px 5px;
+padding-top: 6px;
+}
+
 /* menu */
-.menusz {background-position:-126px -95px;}
-.menukc {background-position:-108px -95px;}
+.menuspsz {background-position:-140px -36px;}
+.menukc {background-position:-151px -56px;}
+.menuxs {background-position:1px -56px;}
+
+.menusup {background-position:-101px -56px;}
+
+
+.menusz {background-position:-140px -36px;}
+.menukc {background-position:-151px -56px;}
+
+.menuxs {background-position:1px -56px;}
+.menucus {background-position:-169px -56px;}
+.menubb {background-position:-50px -56px;}
 
 
 .menuadp {background-position:-57px -93px;}
@@ -112,8 +134,11 @@ table.list td.buttons a {padding-top:5px;position:relative;padding:6px 8px 4px 2
 .warning {background-position:160px 114px;background-color: #FFEBC1;border-color: #FDBF3B;color: #A6750C;text-align: left;}
 
 
-.box {background-color: #F6F6F6;border: 1px solid #E4E4E4;color: #505050;padding: 6px;line-height: 1.5em;margin-bottom: 10px;}
-.topbox {background-color: #F6F6F6;border: 1px solid #E4E4E4;color: #505050;line-height: 1.5em;margin-bottom: 3px;padding: 6px;}
+.box {background-color: #F6F6F6;border: 1px solid #E4E4E4;color: #505050;padding: 6px;line-height: 2.5em;margin-bottom: 10px;}
+.topbox {position: relative;background-color: #F6F6F6;border: 1px solid #E4E4E4;color: #505050;line-height: 2.4em;margin-bottom: 3px;padding: 6px;}
+.topbox input{border:0px;}
+.topbox .ipt {border: 1px solid #BDC7D8;margin:5px 0px 0px 2px;padding: 0px 4px 0px 0px;width:150px;float:left;}
+.topbox .spipt {padding-right:0px;background-image: url(/media/images/ps.gif);background-position:0 0;color: #3B5998;background-repeat: no-repeat;}
 
 .box .boxitem {border-spacing:0;border:0;width:100%}
 .box .boxitem ul li {float:left;padding:0px 5px;}
@@ -128,6 +153,46 @@ table.list td.buttons a {padding-top:5px;position:relative;padding:6px 8px 4px 2
 .rolename {margin-bottom:10px;}
 
 
+.datelabel {position: relative;float:left;}
+.datebox {border: 1px solid #BDC7D8;margin:5px 0px 0px 2px;padding: 0px 4px 0px 0px;float:left;width:105px;}
+
+.inputtext {background-image: url(/media/images/date.gif);background-position:100% 50%;color: #3B5998;background-repeat: no-repeat;padding-right: 26px;padding-left: 2px;width: 75px;border: 0px;}
+
+.dragDiv {background-color: #F0FBEB;border: 5px solid #9BDF70;display: none;position: absolute;	z-index: 200;}
+#fullbg {position: absolute;cursor: pointer;background-color: Gray;	display: none;z-index:100;left:0px;top: 0px;filter: Alpha(Opacity = 30);-moz-opacity: 0.4;opacity: 0.4;}
+
+.pop_content {margin:0px;padding:0px;color:#000;}
+
+.pop_content h2.dialog_title {background: #6D84B4;border-bottom: none;border: 1px #3B5998;color: white;font-size: 15px;font-weight: bold;margin: 0px;padding:5px;}
+.uiButton input {}
+.uiButton{
+cursor: pointer;
+display: inline-block;
+font-size: 12px;
+font-weight: bold;
+line-height: normal !important;
+padding: 2px 5px 2px 0px;
+
+text-align: center;
+text-decoration: none;
+vertical-align: top;
+white-space: nowrap;
+}
+
+.pop_content .dialog_content {
+background: white;
+border-top: 1px solid #555;
+border-top-width: 0px;
+min-height:400px;	
+}
+
+.pop_content .dialog_buttons {
+background: #F2F2F2;
+padding: 3px 0px;
+position: relative;
+border:1px #E4E4E4 solid;
+text-align: right;
+}
 
 
 

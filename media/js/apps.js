@@ -151,51 +151,6 @@ function clearrolename(){
 	   }
 }
 
-function EditRoleName(){
-	
-	var ids = getEditRoles();
-	if (ids[0]===-1){
-		$('.info').html('');
-    	$('.info').removeClass("showinfo");
-    	$('.info').addClass("showinfo")
-    	.addClass("error")
-    	.html('<span><i class="calfimage spritemap_aanaup iconerror"></i>'+ids[1]+'</span>');
-    }
-    else
-	if (confirm('您确定要修改该条记录？'))
-	{
-		
-	  $.ajax({
-		type : "get",
-		url : "/ajax?sk=adredit&fl="+ids,
-		data : "",
-		beforeSend : function(XMLHttpRequest) {
-			$('.info').removeClass("showinfo");
-			$('.info').html('');
-    	},
-		success : function(data, textStatus) {
-     
-		      if (data==='1')
-			  {
-		        $('.info').removeClass("warning");   
-			    $('.info').addClass("showinfo")
-				.addClass("success")
-				.html('<span><i class="calfimage spritemap_aanaup iconsuccess"></i>保存完毕</span>');
-				
-			  }
-		      location.href="/?sk=adr"; 
-		},
-		complete : function(XMLHttpRequest, textStatus) {
-			
-		},
-		error : function() {
-			$('.info').addClass("showinfo").addClass("error")
-			.html('<span><i class="calfimage spritemap_aanaup iconerror"></i>保存有错误，请检查！</span>');
-		}
-	 });
-   }
-}
-
 
 function Addrolename(){
 	
@@ -246,6 +201,51 @@ function Addrolename(){
    }
 }
 
+
+function EditRoleName(){
+	
+	var ids = getEditRoles();
+	if (ids[0]===-1){
+		$('.info').html('');
+    	$('.info').removeClass("showinfo");
+    	$('.info').addClass("showinfo")
+    	.addClass("error")
+    	.html('<span><i class="calfimage spritemap_aanaup iconerror"></i>'+ids[1]+'</span>');
+    }
+    else
+	if (confirm('您确定要修改该条记录？'))
+	{
+		
+	  $.ajax({
+		type : "get",
+		url : "/ajax?sk=adredit&fl="+ids,
+		data : "",
+		beforeSend : function(XMLHttpRequest) {
+			$('.info').removeClass("showinfo");
+			$('.info').html('');
+    	},
+		success : function(data, textStatus) {
+     
+		      if (data==='1')
+			  {
+		        $('.info').removeClass("warning");   
+			    $('.info').addClass("showinfo")
+				.addClass("success")
+				.html('<span><i class="calfimage spritemap_aanaup iconsuccess"></i>保存完毕</span>');
+			  }
+		      location.href="/?sk=adr"; 
+		},
+		complete : function(XMLHttpRequest, textStatus) {
+			
+		},
+		error : function() {
+			$('.info').addClass("showinfo").addClass("error")
+			.html('<span><i class="calfimage spritemap_aanaup iconerror"></i>保存有错误，请检查！</span>');
+		}
+	 });
+   }
+}
+
 function deleterolename(id){
 	if (confirm('您确定要删除该条记录？'))
 	{
@@ -268,6 +268,173 @@ function deleterolename(id){
 	 });
    }
 }
+
+
+function clearusername(){
+	$("#psw").val('');
+	$("#apsw").val('');
+	$("#username").val('');
+	$("#email").val('');
+}
+
+
+function getAddUsers(id){
+	 
+	 var _result='';
+	 var psw=$("#psw").val();
+	 var apsw=$("#apsw").val();
+	 var name=$("#username").val();
+	 var email=$("#email").val();
+	 
+	 var emailPat=/^(.+)@(.+)$/;
+	 var matchArray=email.match(emailPat);	 
+	 
+	 if (name==='') 
+		 _result = [-1,'用户名不能为空！'];
+	 else if (email==='') 
+		 _result = [-1,'email不能为空！'];
+	 else if (matchArray=== null){
+		 _result = [-1,'email格式不对，请重新输入！']; 
+	 }
+	 else if (psw === '')
+		 _result = [-1,'密码不能为空！'];
+	 else if (psw === apsw) {
+		 _result = (id==='')?';':id+';';
+		 
+		 $(".topbox input").each(function(a,b,c){
+			 if (a<3)
+			 _result += $(this).val()+';'; 
+		   });
+		   _result += $("#roleid").val();  
+	 }
+	 else
+	 {
+	     _result = [-1,'两次密码不一致，请检查！']; 
+	 }
+
+	 return _result;    
+}
+
+
+function AddUserName(obj){
+   
+   var ids= getAddUsers();
+
+   if (ids[0]===-1){
+	    $('.info').html('');
+     	$('.info').removeClass("showinfo");
+    	$('.info').addClass("showinfo")
+   	     .addClass("error")
+   	     .html('<span><i class="calfimage spritemap_aanaup iconerror"></i>'+ids[1]+'</span>');
+   }
+   else
+   if (confirm('您确定要增加该条记录？'))
+		{
+	      
+		  $.ajax({
+			type : "get",
+			url : "/ajax?sk=aduadd&fl="+ids,
+			data : "",
+			beforeSend : function(XMLHttpRequest) {
+				$('.info').removeClass("showinfo");
+				$('.info').html('');
+	    	},
+			success : function(data, textStatus) {	     
+			  if (data[1] === '1') {	
+				if (obj===false) {
+					  clearusername();
+					  $('.info').addClass("showinfo")
+						.addClass("success")
+						.html('<span><i class="calfimage spritemap_aanaup iconsuccess"></i>保存完毕</span>');
+						
+				}
+					else
+					  location.href="/?sk=adu";
+			  }			  
+			},
+			complete : function(XMLHttpRequest, textStatus) {
+			},
+			error : function() {
+				$('.info').addClass("showinfo").addClass("error")
+				.html('<span><i class="calfimage spritemap_aanaup iconerror"></i>保存有错误，请检查！[用户名重复]</span>');
+			}
+		 });
+	   }   
+	
+}
+
+function EditUserName(id){
+
+	var ids = getAddUsers(id);
+
+	if (ids[0]===-1){
+		$('.info').html('');
+    	$('.info').removeClass("showinfo");
+    	$('.info').addClass("showinfo")
+    	.addClass("error")
+    	.html('<span><i class="calfimage spritemap_aanaup iconerror"></i>'+ids[1]+'</span>');
+    }
+    else
+	if (confirm('您确定要修改该条记录？'))
+	{
+		
+	  $.ajax({
+		type : "get",
+		url : "/ajax?sk=aduedit&fl="+ids,
+		data : "",
+		beforeSend : function(XMLHttpRequest) {
+			$('.info').removeClass("showinfo");
+			$('.info').html('');
+    	},
+		success : function(data, textStatus) {
+     
+		      if (data==='1')
+			  {
+		        $('.info').removeClass("warning");   
+			    $('.info').addClass("showinfo")
+				.addClass("success")
+				.html('<span><i class="calfimage spritemap_aanaup iconsuccess"></i>保存完毕</span>');
+				
+			  }
+		      location.href="/?sk=adu"; 
+		},
+		complete : function(XMLHttpRequest, textStatus) {
+			
+		},
+		error : function() {
+			$('.info').addClass("showinfo").addClass("error")
+			.html('<span><i class="calfimage spritemap_aanaup iconerror"></i>保存有错误，请检查！</span>');
+		}
+	 });
+   }
+}
+
+
+
+function deleteUserName(id){
+	if (confirm('您确定要删除该条记录？'))
+	{
+	  $.ajax({
+		type : "get",
+		url : "/ajax?sk=adudel&fl="+id,
+		beforeSend : function(XMLHttpRequest) {
+			$('#td'+id+' .selectdel').toggleClass("showloading");
+		},
+		success : function(data, textStatus) {
+			if (data === "1")
+			   $('#row'+id).hide();
+		},
+		complete : function(XMLHttpRequest, textStatus) {
+			location.reload(); 
+		},
+		error : function() {
+			// 请求出错处理
+		}
+	 });
+   }
+}
+
+
 
 
 function checkAll(checked) {
@@ -298,7 +465,7 @@ function checkHideRole(obj){
 }
 
 $(document).ready(function(){
- //todo
+ // todo
 })
 
 
