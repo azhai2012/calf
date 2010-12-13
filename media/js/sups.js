@@ -52,6 +52,41 @@ var Sups = {
 		addProcPic:function(a){
 			Sups.showdialogs("/ajax?sk=supmupload&fl="+a,"600");
 		},
+		addProcFav:function(a){
+			Sups.showdialogs("/ajax?sk=supfav&fl="+a,"600");
+		},
+		addProcFavContent:function(a){
+			
+			if (confirm('您确定要增加记录？'))
+			 {   
+				 var meetid = $('#selectmeetid').val();
+				 var content= $('#wysiwyg').val();
+				 var location = $('#selectlocation').val();
+				
+					   $.ajax({
+						  type : "POST",
+						  url : "/ajax?sk=supaddfav&fl="+meetid,
+						  data:"&content="+content+'&location='+location,
+						  beforeSend : function(XMLHttpRequest) {
+							
+					  	  },
+						  success : function(data, textStatus) {
+			                 // alert(data); 
+							 Sups.closedialog();
+	
+						  },
+						  complete : function(XMLHttpRequest, textStatus) {
+					 		
+						  },
+						  error : function() {
+							// 请求出错处理
+						 }
+					 });
+				
+			 }	
+			
+			
+		},
 		setSupProdinfo:function(){
 			 var obj     = $('#supid').val();
 			 var cxnr    = $('#supstextarea').val();

@@ -37,7 +37,8 @@ class Controller_Ajax extends Controller {
 		$picsize = array_key_exists('picsize',$_POST)? $_POST['picsize']:'';
 		$num     = array_key_exists('num',$_POST)?$_POST['num']:'';
 		$price   = array_key_exists('price',$_POST)?$_POST['price']:'';
-
+		$content = array_key_exists('content',$_POST)?$_POST['content']:'';
+        $location = array_key_exists('location',$_POST)?$_POST['location']:''; 
 
 		$this->template = '';
 		switch ($_get) {
@@ -139,12 +140,29 @@ class Controller_Ajax extends Controller {
 				$this->template = $this->sups->ajax_get_mods_sup_list(array('userid'=>$this->userid,'meetid'=>$_setid));
 			}break;
 				
+			case "supfav":{
+				
+	         	$this->template = $this->sups->ajax_get_mods_sup_fav(array('userid'=>$this->userid,'meetid'=>$_setid));
+	         	
+			}break;
+			case "supaddfav":{
+				
+				$this->template = $this->sups->ajax_Set_Model_Supplier(array('userid'=>$this->userid,'meetid'=>$_setid,'content'=>$content,'location'=>$location),"UPDATEFAV");
+	        
+			}break;
+			
 			case "supnew":{
 
 				$this->template = $this->sups->ajax_get_mods_sup_new(array('userid'=>$this->userid));
 
 			}break;
+
+			case "supmview":{
+
+				$this->template = $this->sups->ajax_get_mods_sup_view_list(array('userid'=>$this->userid,'meetid'=>$_setid));
 				
+			}break;
+			
 			case "supdelprod":{
 
 				$this->template = $this->sups->ajax_Set_Model_Supplier($_setid,"DELETE");

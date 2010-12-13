@@ -4,6 +4,7 @@ return array
 (
     'product'=> '会议管理',
     'version' => '1.0.0.1',
+    'picuploadpath'=>'/home/azhai/uploads',
 	'modules' => array
      (
         

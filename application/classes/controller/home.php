@@ -106,11 +106,24 @@ class Controller_Home extends Controller {
                    $this->template->css ='
                              <script>Azhai.onPages({"type":"js","js":["/media/js/ajaxfileupload.js?'.time().'"]});</script>
                              <script>Azhai.onPages({"type":"js","js":["/media/js/meet.js?'.time().'"]});</script>
+                             <script>Azhai.onPages({"type":"css","css":["/media/js/jwysiwyg/jquery.wysiwyg.css?'.time().'"]});</script>
+                             <script>Azhai.onPages({"type":"js","js":["/media/js/jwysiwyg/jquery.wysiwyg.js?'.time().'"]});</script>
                              <script>Azhai.onPages({"type":"js","js":["/media/js/sups.js?'.time().'"]});</script>';
 			    
 			    }break;
 			    
-			    case 'supmnew':{
+			     case 'supmview':{
+
+			       $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
+	    	       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=supmview&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+                   $this->template->css ='
+                             <script>Azhai.onPages({"type":"js","js":["/media/js/ajaxfileupload.js?'.time().'"]});</script>
+                             <script>Azhai.onPages({"type":"js","js":["/media/js/meet.js?'.time().'"]});</script>
+                             <script>Azhai.onPages({"type":"js","js":["/media/js/sups.js?'.time().'"]});</script>';
+			    
+			    }break;
+			    
+                case 'supmnew':{
 			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
 			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=supnew","id":"contentcol","loadingid":"loadingIndicator"});</script>';
                  $this->template->css ='

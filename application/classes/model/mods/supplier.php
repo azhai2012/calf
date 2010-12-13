@@ -3,7 +3,7 @@
 class Model_Mods_Supplier {
 
 	
-	private $picfilepath = '/home/azhai/uploads';//上传图片的路径
+	private $picfilepath = '';//上传图片的路径
 
 	/*
 	 * 数据模块
@@ -86,33 +86,166 @@ class Model_Mods_Supplier {
 				// echo Kohana::debug((string) $result);
 				$result = $result->as_object()->execute(); 
 			}break;
+			
+			case "UPDATEFAV":{
+				$userid = $ary["userid"];
+				$meetid = $ary["meetid"];
+				$content = $ary["content"];
+				$location = $ary["location"];
+				
+				$result= DB::query(Database::SELECT,"SELECT COUNT(1) as ct 
+				              FROM suppliers_favs 
+				              WHERE sup_id=:id and meet_id=:meetid ",TRUE)
+						 ->param(':id',$userid)
+				         ->param(':meetid',$meetid);
+				//echo Kohana::debug((string) $result);         	
+				$result=$result->as_object()->execute();
+				
+				foreach ($result as $key=>$value){
+				   $rs = $value->ct;
+				}
+						
+				if ((int)$rs === 0)
+				{
+				  $result= DB::query(Database::INSERT,"INSERT suppliers_favs (sup_id,meet_id,location,favorables) 
+				          values (:id,:meetid,:location,:favorables)
+				          ",TRUE)
+				         ->param(':id',$userid)
+                         ->param(':meetid',$meetid)	
+                         ->param(':location',$location)	
+                         ->param(':favorables',$content);
+				          
+				 //  echo Kohana::debug((string) $result);
+				  $result = $result->as_object()->execute(); 
+				  	
+				}
+				else
+				{
+				  $result= DB::query(Database::UPDATE,"UPDATE suppliers_favs 
+				         SET favorables=:favorables,location=:location
+				         WHERE sup_id=:id and meet_id=:meetid ",TRUE)
+				         ->param(':id',$userid)
+				         ->param(':favorables',$content)
+				         ->param(':location',$location)
+				         ->param(':meetid',$meetid);	
+				          
+				  // echo Kohana::debug((string) $result);
+				  $result = $result->as_object()->execute(); 
+				}
+			}break;
 				
 		}
 		return json_encode($result);
+	}
+	
+	/*
+	 * 浏览会展
+	 */
+	function ajax_get_mods_sup_view_list($info){
+		
+		$result ='<div class="roles">';
+		$result .='<h3 class="uiHeaderTitle"><a href="/home?sk=supm"><i class="calfimage spritemap_aanaup menusup">';
+		$result .='</i><span>展会管理</span></a> <span class="ss"> >> </span><span class="sf"> 浏览展位 </span></h3>';
+
+		$meetid= array_key_exists('meetid',$info)?$info['meetid']:'';
+		
+		
+		$resultdb= DB::query(Database::SELECT,"SELECT * 
+				              FROM suppliers_favs 
+				              WHERE sup_id=:id and meet_id=:meetid ",TRUE)
+						 ->param(':id',$info['userid'])
+				         ->param(':meetid',$meetid);
+				         	
+	    $resultdb=$resultdb->as_object()->execute();
+	    $location = '';
+	    $fav='';
+	    
+	    foreach ($resultdb as $key=>$value){
+	    	$fav.= $value->favorables;
+	    	$location .= $value->location;
+	    }
+		 
+		$sql= 'SELECT * FROM meets WHERE id='.$meetid.' ';
+	  
+		$modules= DB::query(Database::SELECT,$sql,TRUE)->as_object()->execute();
+
+        $et = '';
+		$selectmeets = '';
+		foreach($modules as $key => $value){
+		   $selectmeets .=$value->meet_name;
+		   $et.= $value->meet_begin_at;
+		}
+
+		$selectmeets .='</select>';
+
+
+		$modules= DB::query(Database::SELECT,"
+		              SELECT suppliers.id,suppliers.product_id,products.product_name, product_spec,product_unit,
+		                     product_origin,limit_number,price,favorable
+                      FROM suppliers
+                      INNER JOIN products ON suppliers.product_id = products.product_id
+                      INNER JOIN meets ON suppliers.meet_id = meets.id 
+                      WHERE sup_id=:sid and meet_id=:mid and active='Y'
+                      ",TRUE)
+		->param(':sid',$info['userid'])
+		->param(':mid',$meetid)
+		->as_object()
+		->execute();
+
+        if (!empty($fav)) {
+          if ($location==='top') 
+             $result .='<div class="fav">'.$fav.'</div>'; 
+        }
+		
+		$result .='<table class="list"><thead>
+		<tr><th colspan=5 style="background:#fff;font-weight:normal">参加展会名称：'.$selectmeets.'</span></th><th colspan=4 style="background:#fff;font-weight:normal">展会结束日期:'.$et.'</th>
+		<tr><th>序号</th><th width="60px;">图片</th><th width="150px">商品名称</th>
+		    <th width="80px">规格</th><th>单位</th><th style="width:170px">生成企业</th>
+		    <th style="width:40px">限购</th><th style="width:60px">单价</th>
+		    <th style="width:60px">预订数量</th></tr></thead>';
+		$result .='<tbody>';
+		$i=1;
+         
+		foreach($modules as $key => $value){
+			$mod = ($i%2)?'odd':'even';
+			$result.= '<tr style="height:70px;border-top:1px #ccc solid" id="row'.$value->id.'" class="" >';
+			$result.= '<td style="width:10px;" align="center" class="'.$mod.'">'.$i.'</td>';
+            $result.= '<td colspan=8 ><div style="margin-bottom:10px;"><ul >';
+            $result.= ' <li style="width:70px;margin-top:4px;" ><img onerror="javascript: this.src=\'/media/images/null.jpg\'" width=60 height=60px src="" /></li>';
+            $result.= ' <li style="width:160px;font-size:14px;"><a href="/home?sk=supmview&fl='.$value->product_id.'">'.$value->product_name.'</a>';
+            $result.= '</li>';
+            $result.= ' <li style="width:100px"><span >'.$value->product_spec.'</span></li>';
+            $result.= ' <li style="width:30px"><span>'.$value->product_unit.'</span></li>';
+            $result.= ' <li style="width:180px"><span>'.$value->product_origin.'</span></li>';
+            $nm = ($value->limit_number==0)?'不限':$value->limit_number;
+            $result.= ' <li style="width:50px"><span>'.$nm.'</span></li>';
+            $result.= ' <li style="width:70px"><span>'.$value->price.'</span></li>';
+            $result.= ' <li style="width:50px"><span>0</span></li>';
+            $result.= '</ul></div>';     
+			  if (!empty($value->favorable))
+			$result.= '<div>促销：'.$value->favorable.'</div>'; 
+            
+            $result.= '</td></tr>';
+			
+			$i++;
+		}
+		$result .='</tbody>';
+		$result .='</table>';
+		
+		if (!empty($fav)){ 
+		  if ($location==='bottom') 
+		    $result .='<div class="fav">'.$fav.'</div>'; 
+		}
+		
+		return $result;
 	}
 
     /*
      * 得到展会的列表 
      */
 	function ajax_get_mods_sup_list($info){
-
-		$result ='<div class="roles">';
-		$result .='<div class="contextual">
-		              <a href="/home?sk=supmnew"><span class="leftimg">
-		              <i class="img calfimage icon-add"></i></span><span>添加商品</span></a>
-		          
-		          </div>
-		          <div class="contextual">
-		              <a href="/home?sk=supmview"><span class="leftimg">
-		              <i class="img calfimage icon-view"></i></span><span>浏览展位</span></a>
-		          </div>
-		      
-		          ';
-		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menusup">';
-		$result .='</i><span>展会管理</span></h3>';
-
+        
 		$meetid= array_key_exists('meetid',$info)?$info['meetid']:'';
-		 
 		$sql= 'SELECT * FROM meets WHERE active="Y"';
 	  
 		$modules= DB::query(Database::SELECT,$sql,TRUE)->as_object()->execute();
@@ -134,6 +267,29 @@ class Model_Mods_Supplier {
 		}
 
 		$selectmeets .='</select>';
+		
+		$result ='<div class="roles">';
+		$result .='<div class="contextual">
+		              <a href="/home?sk=supmnew"><span class="leftimg">
+		              <i class="img calfimage icon-add"></i></span><span>添加商品</span></a>
+		             
+		          </div>
+		            <div class="contextual">
+		              <a href="javascript:Sups.addProcFav('.$meetid.')"><span class="leftimg">
+		              <i class="img calfimage icon-all"></i></span><span>添加整体促销</span></a>
+		               <span style="padding:0px 3px 0px 5px;color:#ccc">|</span>
+		          </div>
+		          <div class="contextual">
+		              <a href="/home?sk=supmview&fl='.$meetid.'"><span class="leftimg">
+		              <i class="img calfimage icon-view"></i></span><span>浏览展位</span></a>
+		               <span style="padding:0px 3px 0px 5px;color:#ccc">|</span>
+		              
+		          </div>
+		      
+		          ';
+		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menusup">';
+		$result .='</i><span>展会管理</span></h3>';
+	
 
 
 		$modules= DB::query(Database::SELECT,"
@@ -315,6 +471,72 @@ class Model_Mods_Supplier {
 		return $result;
 	}
 
+	
+	/*
+	 * 发布整体促销信息
+	 */
+	function ajax_get_mods_sup_fav($info){
+
+		$result ='<h2 class="dialog_title"><span>增加整体促销</span></h2>';
+		$result .='<div class="dialog_content"  >';
+		
+		$resultdb= DB::query(Database::SELECT,"SELECT * FROM suppliers_favs WHERE sup_id=:supid and meet_id=:meetid",TRUE)
+		->param(":supid",$info['userid'])
+		->param(":meetid",$info['meetid'])
+		->as_object()
+		->execute();
+		$favs = '';
+		$location ='';
+		
+		foreach ($resultdb as $key=>$value){
+			$favs .= $value->favorables;	
+			$location =	$value->location;	
+		
+		}
+		
+		$select = '<select id="selectlocation">';		
+		if (!empty($location))
+		{
+		   if ($location == 'top' ){
+			  $select .= '<option selected value="top">展品列表上边</option>';
+			  $select .= '<option value="bottom">展品列表下边</option>';
+			}
+			else{
+			  $select .= '<option value="top">展品列表上边</option>';
+			  $select .= '<option selected value="bottom">展品列表下边</option>';
+			}
+		}
+		else
+		{
+		   $select .= '<option value="top">展品列表上边</option>';
+		   $select .= '<option selected value="bottom">展品列表下边</option>';
+		}	    
+		$select .= '</select>';
+		
+	   $result .='  <div>
+		                <table class="list" id="favlist"><thead>
+		                <tr><th>选择呈现的位置：'.$select.'</th></tr>
+		                <tr><th>整体促销信息</th></tr></thead>';
+		$result .='       <tbody>
+		                   <tr><td> 
+		                         <textarea style="width:575px;" name="wysiwyg" id="wysiwyg" rows="20" cols="69" >'.$favs.'</textarea>
+		                         <script>$("#wysiwyg").wysiwyg();</script>
+		                   </td></tr> 
+		';
+		
+		$result .='       </tbody>
+                        </table>';
+		$result .='  </div>';
+		$result .=' <div class="dialog_buttons ">
+    	             <label class="uiButton" >
+    	               <input type="button" name="save" onclick="Sups.addProcFavContent()" value="确定">
+    	             </label>
+    	             <label class="uiButton cancel">
+    	               <input type="button" name="cancel" value="取消" onclick="Sups.closedialog()">
+    	             </label>
+    	            </div>';
+		return $result;
+	}
 
 	/*
 	 * 
@@ -465,6 +687,7 @@ class Model_Mods_Supplier {
 	function ajax_upload_file($obj){
 		$error = "";
 		$msg = "";
+		$this->picfilepath = Kohana::config('settings')->picuploadpath;
 		$fileElementName = 'fileToUpload';
 		if(!empty($_FILES[$fileElementName]['error']))
 		{
