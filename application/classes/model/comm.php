@@ -2,6 +2,28 @@
 
 class Model_Comm {
 
+    /*
+     *  得到memcache的session的值
+     *  $memcachesess：得到的字符串
+     *   
+     */
+	function getMemcacheSessionName($memcachesess,$SessionKeyName){
+		$result='';
+		foreach(explode(';',$memcachesess) as $key => $value)
+		{
+			foreach(explode('|',$value) as $k1 => $v1){
+				if ($v1 === $SessionKeyName){
+					$r = end(explode('|',$value));
+					$result = end(explode(':',$r));
+					break;
+				}
+			}
+		}
+
+		return str_replace("\"","",$result);
+	}
+
+
 	function utf2ucs($str){
 		$n=strlen($str);
 		if ($n=3){

@@ -464,9 +464,5 @@ function checkHideRole(obj){
      		 
 }
 
-$(document).ready(function(){
- // todo
-})
-
 
 

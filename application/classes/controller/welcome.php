@@ -6,16 +6,18 @@ class Controller_Welcome extends Controller {
 	private  $template='';
 	private $model;
 	private	$session;
-	private $ghsid; 
-
+	private $userid; 
+	private $roleid; 
+	
 	public function before(){
 		$this->template= View::factory('welcome');
 		$this->model= new Model_Menus();
 		$this->session = Session::instance();
-		$this->session->set('userlogin',array('ghsid'=>'343'));
+		$this->session->set('userlogin',array('userid'=>'0001','roleid'=>'343'));
 		$asession =$this->session->as_array();
-		$this->ghsid= $asession['userlogin']['ghsid'];
-
+		$this->userid= $asession['userlogin']['userid'];
+		$this->roleid= $asession['userlogin']['roleid'];
+		
 	}
 	
 	public function action_index()
@@ -50,7 +52,7 @@ class Controller_Welcome extends Controller {
 	 	else
 	 	{
 	 	  	
-	    	$this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_menus($this->ghsid).'\'});</script>';
+	    	$this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_menus($this->userid).'\'});</script>';
 	    
 		}
 		

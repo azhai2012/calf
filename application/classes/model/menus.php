@@ -2,19 +2,20 @@
 
 class Model_Menus {
 
-
+     
+	
 	function getUtf8($_str){
 		$modcomm=new Model_Comm();
 		return $modcomm->utf8Escape($_str);
 	}
 
 	function getParentMods($id){
-			
+	   	
 		$modules= Kohana::config('settings')->modules;
 		$modulesdb= DB::query(Database::SELECT,"select users.*,enabled_modules.name
 		          from users inner join 
 		               enabled_modules on users.role_id=enabled_modules.role_id
-		          where users.role_id=:id     
+		          where users.userid=:id     
                   ",TRUE)
 		->param(':id',$id);
 

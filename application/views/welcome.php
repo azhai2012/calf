@@ -4,7 +4,7 @@
 <title>hhyy</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <meta name="robots" content="noindex,nofollow" />
-
+<link rel="shortcut icon" href="/media/images/favicon.ico" >
  <script type="text/javascript" src="/media/js/comm.js"></script>
  <script type="text/javascript" src="/media/js/apps.js"></script>
  <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
@@ -53,6 +53,7 @@
      <div id="fullbg"></div>
      <div class="dragDiv">
         <div class="pop_content">
+        <div class="pop_content_load"></div>
         </div>
     </div> 
   </div> <!-- end content -->

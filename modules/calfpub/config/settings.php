@@ -20,9 +20,9 @@ return array
                       'name'=>'客户管理',
 		              'sk'=>'cus',
                       'ct'=> array(
-                           '参加展会'     => array('name'=>'meetjoin','permissons'=>array('find'=>'查询')),
-			               '会议订单'     => array('name'=>'meetorder','permissons'=>array('find'=>'查询','ex'=>'导出')),
-			               '投诉建议'     => array('name'=>'meetropose','permissons'=>array('find'=>'查询')),
+                           '参加展会'     => array('name'=>'custmt','permissons'=>array('find'=>'查询')),
+			               '展会订单'     => array('name'=>'custorder','permissons'=>array('find'=>'查询','ex'=>'导出')),
+			               '投诉建议'     => array('name'=>'custropose','permissons'=>array('find'=>'查询')),
 			         ),
                ),
                'supplier' => array(
@@ -30,7 +30,7 @@ return array
 		              'sk'=>'sup',
                       'ct'=> array(
                            '展会管理'     => array('name'=>'supm','permissons'=>array('find'=>'查询')),
-			               '会议订单'     => array('name'=>'suporder','permissons'=>array('find'=>'查询','ex'=>'导出')),
+			               '展会订单'     => array('name'=>'suporder','permissons'=>array('find'=>'查询','ex'=>'导出')),
 			               '意见反馈建议'     => array('name'=>'suppropose','permissons'=>array('find'=>'查询')),
 			               '库存查询'     => array('name'=>'supkc','permissons'=>array('find'=>'查询','ex'=>'导出')),
 			               '入库查询'     => array('name'=>'suprk','permissons'=>array('find'=>'查询','ex'=>'导出')),

@@ -75,13 +75,15 @@ var Comm = function(json) {
 					type : "get",
 					url : __ajax,
 					beforeSend : function(XMLHttpRequest) {
-						$(".selectItem").addClass("loading");
+						$(".pop_content_load").css("width","200px").css("height","40px")
+						.html('<div style="margin-top:15px;margin-left:20px;"><h2 style="border:0;">加载中....</h2></div>').show();
 					},
 					success : function(data, textStatus) {
+						$(".pop_content_load").hide();
 						$('.pop_content').html(data);
 					},
 					complete : function(XMLHttpRequest, textStatus) {
-						$(".selectItem").removeClass("loading");
+						
 					},
 					error : function() {
 						// 请求出错处理
@@ -148,9 +150,9 @@ var Comm = function(json) {
 		            $("#fullbg").css({ width: bW, height: bH, display: "block" });
 		            $("."+id).css("display", "block")
 		            .css("left",(bW/2-(parseInt(w01)/2))+"px")
-		            .css("top",parseInt(t01)+"px")
-		            .css("width",w01)
-		            .css("height",h01);
+		            .css("top",t01+"px")
+		            .css("width",w01+"px");
+		           // .css("height",h01+"px");
 		            $('.'+id).show();
 		            ajaxobj();
 			}
