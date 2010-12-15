@@ -183,9 +183,9 @@ class Model_Mods_Supplier {
 		              SELECT suppliers.id,suppliers.product_id,products.product_name, product_spec,product_unit,
 		                     product_origin,limit_number,price,favorable
                       FROM suppliers
-                      INNER JOIN products ON suppliers.product_id = products.product_id
+                      INNER JOIN products ON suppliers.product_id = products.product_id and products.sup_id=suppliers.sup_id
                       INNER JOIN meets ON suppliers.meet_id = meets.id 
-                      WHERE sup_id=:sid and meet_id=:mid and active='Y'
+                      WHERE suppliers.sup_id=:sid and meet_id=:mid and active='Y'
                       ",TRUE)
 		->param(':sid',$info['userid'])
 		->param(':mid',$meetid)
@@ -296,9 +296,9 @@ class Model_Mods_Supplier {
 		              SELECT suppliers.id,products.product_name, product_spec,product_unit,
 		                     product_origin,limit_number,price
                       FROM suppliers
-                      INNER JOIN products ON suppliers.product_id = products.product_id
+                      INNER JOIN products ON suppliers.product_id = products.product_id and suppliers.sup_id=products.sup_id
                       INNER JOIN meets ON suppliers.meet_id = meets.id 
-                      WHERE sup_id=:sid and meet_id=:mid and active='Y'
+                      WHERE suppliers.sup_id=:sid and meet_id=:mid and active='Y'
                       ",TRUE)
 		->param(':sid',$info['userid'])
 		->param(':mid',$meetid)
@@ -357,7 +357,8 @@ class Model_Mods_Supplier {
 		$modules= DB::query(Database::SELECT,"
 		             SELECT * 
                      FROM products 
-                     WHERE product_id not in (select product_id from suppliers where suppliers.meet_id=:meet_id and sup_id=:sup_id) 
+                     WHERE product_id not in (select product_id from suppliers where suppliers.meet_id=:meet_id and sup_id=:sup_id)
+                     and sup_id=:sup_id  
                       ",TRUE)
 		->param(':sup_id',$info['userid'])
 		->param(':meet_id',$info['meetid']);

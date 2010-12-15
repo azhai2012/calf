@@ -25,6 +25,12 @@ class Controller_Home extends Controller {
 		$sk = array_key_exists('sk',$_GET)?$_GET['sk']:'';
 		$fl = array_key_exists('fl',$_GET)?$_GET['fl']:'';
 		
+		$date = explode(',',$fl); 
+		 
+		$bdate = (!empty($date[0]))?$date[0]:date('Y-m-d');
+		$edate = (!empty($date[1]))?$date[1]:date('Y-m-d');
+		
+		
 	    $u = new Calf_Menus();
 		$result = Calfpub::getmenus($u);
 		$head=''; 
@@ -91,10 +97,28 @@ class Controller_Home extends Controller {
 			      	
 			    }break;		
 
-			     case 'custmtcart':{  //参会购物栏
+			    case 'custmtview':{
 			        $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,6).'\'});</script>';
-	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmtcart","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmtview&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>
+	    	    	                              <script>Azhai.onPages({"type":"js","js":["/media/js/customers.js?'.time().'"]});</script>
+	    	    	
+	    	    	';
 			      	
+			    }break;		
+			    
+			    case 'custorder':{
+			    	$this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,9).'\'});</script>';
+	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmtorder&bdate='.$bdate.'&edate='.$edate.'","id":"contentcol","loadingid":"loadingIndicator"});</script>
+	    	    	                              <script>Azhai.onPages({"type":"js","js":["/media/js/customers.js?'.time().'"]});</script>
+	    	    	
+	    	    	';
+			    }break;
+			    
+			    case 'custmtcart':{  //参会购物栏
+			        $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,6).'\'});</script>';
+	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmtgettmpcart","id":"contentcol","loadingid":"loadingIndicator"});</script>
+	    	    	                              <script>Azhai.onPages({"type":"js","js":["/media/js/customers.js?'.time().'"]});</script>
+	    	    	';
 			    }break;			  
 			    
 			    

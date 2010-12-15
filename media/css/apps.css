@@ -13,7 +13,8 @@ input,select {margin-bottom: 1px;margin-top: 1px;vertical-align: middle;}
 a {color:#385998;cursor:pointer;text-decoration:none;}
 
 .clearfix {display:block;zoom:1;}
-.clearfix::after {clear:both;display:block;font-size:0px;height:0px;line-height:0;visibility:hidden;}
+.clearfix:after {content:".";clear:both;display:block;font-size:0px;height:0px;line-height:0;visibility:hidden;}
+* html .clearfix {height: 1%;}
 
 #pageLogo {float: left;margin-left: -6px;}
 #pageLogo a {background-image:url(/media/images/calf.png);background-color: #3B5998;background-position: -12px -222px;background-repeat: no-repeat;display: block;height: 41px;width: 133px;}

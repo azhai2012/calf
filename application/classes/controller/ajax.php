@@ -35,11 +35,16 @@ class Controller_Ajax extends Controller {
 		$cxnr    = array_key_exists('cxnr',$_POST)? $_POST['cxnr']:'';
 		$picname = array_key_exists('picname',$_POST)? $_POST['picname']:'';
 		$picsize = array_key_exists('picsize',$_POST)? $_POST['picsize']:'';
+		$prodid  = array_key_exists('pid',$_POST)?$_POST['pid']:'';
 		$num     = array_key_exists('num',$_POST)?$_POST['num']:'';
 		$price   = array_key_exists('price',$_POST)?$_POST['price']:'';
 		$content = array_key_exists('content',$_POST)?$_POST['content']:'';
         $location = array_key_exists('location',$_POST)?$_POST['location']:''; 
-
+        $sup_id  =  array_key_exists('supid',$_POST)?$_POST['supid']:''; 
+        $bdate   = array_key_exists('bdate',$_GET)?$_GET['bdate']:'';  
+        $edate   = array_key_exists('edate',$_GET)?$_GET['edate']:'';  
+        
+        
 		$this->template = '';
 		switch ($_get) {
 				
@@ -128,9 +133,42 @@ class Controller_Ajax extends Controller {
 				
 			}break;
 			
-			case "custmtcart":{
+			case "custmtview":{
+				$this->template = $this->cust->ajax_get_mods_cus_view_list(array('userid'=>$this->userid,'meetid'=>$_setid));
 				
-				$this->template = $this->cust->ajax_get_mods_customer_meet_cart_list();
+			}break;
+			
+			case "custaddtotmpcart":{
+				$ary = array('userid'=>$this->userid,'supid'=>$sup_id,'meetid'=>$_setid,'pid'=>$prodid,'num'=>$num,'price'=>$price);
+				$this->template = $this->cust->ajax_Set_Model_Customer($ary,"TMPCART");	
+			}break;
+			
+			case "custupdtmpcart":{
+				$ary = array('userid'=>$this->userid,'supid'=>$sup_id,'meetid'=>$_setid,'pid'=>$prodid,'num'=>$num);
+				$this->template = $this->cust->ajax_Set_Model_Customer($ary,"UPTTMPCART");	
+			}break;
+			
+			case "custdeltmpcart":{
+				$ary = array('userid'=>$this->userid,'supid'=>$sup_id,'meetid'=>$_setid,'pid'=>$prodid);
+				$this->template = $this->cust->ajax_Set_Model_Customer($ary,"DELTMPCART");
+					
+			}break;
+			
+		    case "custtmptocart":{
+		    	$ary = array('userid'=>$this->userid);
+				$this->template = $this->cust->ajax_Set_Model_Customer($ary,"INSERTCART");
+		    }break;
+			
+			
+			case "custmtgettmpcart":{
+				$this->template = $this->cust->ajax_get_mods_cus_tmp_cart(array('userid'=>$this->userid));
+					
+			}break;
+			
+
+			case "custmtorder":{
+				
+				$this->template = $this->cust->ajax_get_mods_customer_meet_cart_list($bdate,$edate);
 				
 			}break;
 
