@@ -76,32 +76,40 @@ class Model_Mods_Customer {
         
       }
       
+      function get_order_no(){
+      	   $sql  = 'UPDATE  meetordernuber set 
+                             ordernumber=case when at=:dt then ordernumber+1 else 1 end,
+                             at=:dt';
+            $resultdb = DB::query(Database::UPDATE,$sql,true)
+                         ->param(':dt',date('Ymd'))
+                         ->as_object()
+                         ->execute();	
+           
+            $sql = 'SELECT  at,ordernumber FROM meetordernuber';
+            $resultdb = DB::query(Database::SELECT,$sql,true)
+                         ->as_object()
+                         ->execute();	
+            $no = '';
+            foreach ($resultdb as $key => $value){
+            	$no = $value->at.str_pad($value->ordernumber,4,"0",STR_PAD_LEFT);
+            	//$no = date('Ymd').sprintf('%04d',$value->ordernumber);
+            }  
+            
+            return $no;
+      }
+      
       function set_cookie_to_cart($cusid){
+      	
       	$isexists = array_key_exists('meetcart', $_COOKIE); 
       	 if ($isexists) {
       	 	
             $b = Cookie::get('meetcart');
             $pet =(array)json_decode($b);
-             
-            $sql = '';
+            $no= $this->get_order_no();     
+            $sql  = '';
             foreach ($pet as $k=>$v) {
-              $ary = explode('|',$k);	
-              if ($this->checkcart($cusid,$ary[2],$ary[1],$ary[0]))
-              {
-              	$sql = "UPDATE suporders set num=num+:num 
-              	                  WHERE cus_id=:cusid 
-              	                    and sup_id=:supid
-              	                    and prod_id=:prodid";
-              	
-              	$result = DB::query(Database::UPDATE,$sql,true)
-              	->param(':num',$v)
-              	->param(':cusid',$cusid)
-              	->param(':supid',$ary[2])
-              	->param(':prodid',$ary[1])
-              	->as_object()->execute();
-              }
-              else 
-              {
+               
+            	$ary = explode('|',$k);	            
               	
                $sql= "SELECT price FROM suppliers 
                       WHERE  meet_id=:meetid 
@@ -119,11 +127,13 @@ class Model_Mods_Customer {
                	    $price= $value->price;
                }         
                
-              	
-               $sql ="INSERT INTO suporders (cus_id,sup_id,prod_id,num,meet_id,price,order_at) values 
-                      (:cusid,:supid,:prod_id,:num,:meet_id,:price,:order_at)";
+               	
+               
+               $sql ="INSERT INTO suporders (number,cus_id,sup_id,prod_id,num,meet_id,price,order_at) values 
+                      (:number,:cusid,:supid,:prod_id,:num,:meet_id,:price,:order_at)";
 
                $result = DB::query(Database::INSERT,$sql,true)
+                ->param(':number',$no)
                 ->param(':cusid',$cusid)
                 ->param(':price',$price)
                 ->param(':supid',$ary[2])
@@ -133,10 +143,11 @@ class Model_Mods_Customer {
                 ->param(':order_at',date('Y-m-d H:i'))
                 ->as_object()
                 ->execute();	
-              }
+              
             }
-      	 }      	 
-      	 if ($result==1)
+      	 }
+      	       	 
+      	 if ($result > 0)
       	   Cookie::set('meetcart','');
       	 
       	 $sql = $result;
@@ -203,6 +214,22 @@ class Model_Mods_Customer {
             
         }
         return $arys;
+      }
+      
+      function set_insert_repose($userid,$content){
+
+      	$sql  = 'INSERT INTO roposes (user_id,create_at,content) 
+      	         VALUES (:user_id,:create_at,:content) ';
+      	
+        $resultdb = DB::query(Database::INSERT,$sql,true)
+                         ->param(':create_at',date('Y-m-d H:i'))
+                         ->param(':content',$content)
+                         ->param(':user_id',$userid);
+      	// echo Kohana::debug((string) $resultdb); 
+      	 
+      	 $resultdb = $resultdb->execute();
+
+      	 return $resultdb[1];
       }
     
 	/*
@@ -295,12 +322,14 @@ class Model_Mods_Customer {
 			case "INSERTCART":{
 				$cusid=$ary['userid'];
 				$sql = $this->set_cookie_to_cart($cusid);
-				//$resultdb = DB::query(Database::INSERT,$sql,TRUE);
-				// echo Kohana::debug((string) $resultdb);
-				//$resultdb = $resultdb->as_object()->execute();
-				
 				$result =array('msg'=>$sql);
-			}
+			}break;
+			
+			case "INSTERROPOSE":{
+				$userid = $ary['userid'];
+				$content = $ary['content'];
+				$result = array('msg'=>$this->set_insert_repose($userid,$content));
+			}break;
 			
 				
 		}
@@ -342,7 +371,7 @@ class Model_Mods_Customer {
 			$result .='<td class="'.$mod.'">'.$value->product_name.'</td>';
 			$result .='<td class="'.$mod.'">'.$value->product_spec.'</td>';
 			$result .='<td class="'.$mod.'">'.$value->product_unit.'</td>';
-			$result .='<td class="'.$mod.'">'.$value->product_origin.'</td>';
+			$result .='<td class="'.$mod.'" style="width:190px;">'.$value->product_origin.'</td>';
 			$result .='<td class="'.$mod.'"><input style="width:50px;" name="num'.$value->product_id.'" id="num'.$value->product_id.'" onkeyup="Custs.UpdtmpCart(\''.$value->meet_id.'|'.$value->product_id.'|'.$value->sup_id.'\')" value='.$value->num.'></td>';
 			$result .='<td class="'.$mod.'" name="price'.$value->product_id.'" id="price'.$value->product_id.'">'.number_format($value->price, 2, '.', ',').'</td>';
 			$result .='<td class="'.$mod.' amount" align="right" id="amout'.$value->product_id.'">'.number_format(((float)$value->num*(float)$value->price), 2, '.', ',').'</td>';
@@ -382,9 +411,9 @@ class Model_Mods_Customer {
 				              FROM suppliers_favs 
 				              INNER JOIN users ON suppliers_favs.sup_id = users.userid
 				              WHERE sup_id=:id and meet_id=:meetid ",TRUE)
-						 ->param(':id',$info['userid'])
+						 ->param(':id',$info['supid'])
 				         ->param(':meetid',$meetid);
-		// echo Kohana::debug((string) $resultdb);		         	
+		//echo Kohana::debug((string) $resultdb);		         	
 	    $resultdb=$resultdb->as_object()->execute();
 	    $location = '';
 	    $fav='';
@@ -414,7 +443,7 @@ class Model_Mods_Customer {
                       INNER JOIN meets ON suppliers.meet_id = meets.id 
                       WHERE suppliers.sup_id=:sid and meet_id=:mid and active='Y'
                       ",TRUE)
-		->param(':sid',$info['userid'])
+		->param(':sid',$info['supid'])
 		->param(':mid',$meetid);
 		
 		$modules = $modules->as_object()->execute();
@@ -442,7 +471,7 @@ class Model_Mods_Customer {
             $result.= '</li>';
             $result.= ' <li style="width:100px"><span >'.$value->product_spec.'</span></li>';
             $result.= ' <li style="width:30px"><span>'.$value->product_unit.'</span></li>';
-            $result.= ' <li style="width:180px"><span>'.$value->product_origin.'</span></li>';
+            $result.= ' <li style="width:190px"><span>'.$value->product_origin.'</span></li>';
             $nm = ($value->limit_number==0)?'不限':$value->limit_number;
             $result.= ' <li style="width:50px"><span>'.$nm.'</span></li>';
             $result.= ' <li style="width:60px"><span class="required" id="price'.$value->product_id.'">'.$value->price.'</span></li>';
@@ -475,6 +504,85 @@ class Model_Mods_Customer {
 		
 	}
 	
+	//添加投诉和建议
+	function ajax_get_mods_cus_add_ropose(){
+		
+		$result ='<h2 class="dialog_title"><span>添加投诉和建议</span></h2>';
+		$result .='<div class="dialog_content"  >';
+	    $result .=' <div style="margin:10px;">
+	                   <textarea style="width:99%;font-size:14px;padding:5px;" rows=10 name="roposecontnet" id="roposecontnet"></textarea>
+	                </div>
+	              ';
+		$result .='  </div>';
+		$result .=' <div class="dialog_buttons ">
+    	             <label class="uiButton" >
+    	               <input type="button" name="save" onclick="Custs.SubmitRopose()" value="确定">
+    	             </label>
+    	             <label class="uiButton cancel">
+    	               <input type="button" name="cancel" value="取消" onclick="Custs.closedialog()">
+    	             </label>
+    	            </div>';
+		return $result;
+	}
+	
+	
+	
+	/*
+	 * 投诉建议
+	 */
+	function ajax_get_mods_cus_ropose($info){
+		
+		$result ='<div class="roles">';
+		$result .='<div class="contextual"><a href="javascript:Custs.AddRopose(1);"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>添加投诉和建议</span></a></div>';
+		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
+		$result .='</i><span>投诉和建议</span></h3>';
+
+		$modules= DB::query(Database::SELECT,"
+		              SELECT * FROM roposes
+                      WHERE active='Y' and user_id=:userid
+                      order by update_at desc                      
+                      ",TRUE)
+		              ->param(':userid',$info['userid'])
+		              ->as_object()
+		              ->execute();
+		 
+		$result .='<table class="list">
+		<thead>
+		   <th>序号</th><th>内容</th>
+		</thead>';
+		$result .='<tbody>';
+		$i=1;
+
+		foreach($modules as $key => $value){
+			$mod = ($i%2)?'odd':'even';
+			$result.= '<tr id="row'.$value->id.'" class="" >';
+			$result.= '<td style="width:10px;" align="center" class="'.$mod.'">'.$i.'</td>';
+			$result.= '<td  class="'.$mod.'">
+			             <table style="background:#fff;width:100%" class="divropose">
+			               <tr><td style="background:#F6F7F8" colspan=2>创建日期：'.$value->create_at.'</td></tr>
+			               <tr>
+			                 <td style="width:40px">内容:</td>
+			                 <td><div>'.$value->content.'</div></td>
+			               </tr>';
+			if (!empty($value->reports))
+			 $result.='<tr><td colspan=2 style="padding-left:48px">时间：'.$value->create_at.' <span style="padding-left:20px;">答复:</span></td></tr>
+			           <tr>
+			                 <td></td>
+			                 <td><div style="color:blue">'.$value->reports.'</div></td>
+			           </tr>'; 
+			
+			$result.='</table>
+			         </td>';
+			 
+			$result.= '</tr>';
+			$i++;
+		}
+		
+		$result .='</tbody>';
+		$result .='</table>';
+		return $result;
+	}
+	
     /*
      * 得到展会的列表 
      */
@@ -486,10 +594,13 @@ class Model_Mods_Customer {
 		$result .='</i><span>展会列表</span></h3>';
 
 		$modules= DB::query(Database::SELECT,"
-		              SELECT * FROM 
-		                (SELECT sup_id,meet_id,count(product_id) as pcount
+		              SELECT *,IFNULL(amount,0) as amount
+		              FROM 
+		                (SELECT sup_id,meet_id,count(product_id) as pcount,(select round(sum(num*price),2) as je 
+		                        from suporders b where b.sup_id=suppliers.sup_id) as amount 
 		                 FROM suppliers
 		                 GROUP BY sup_id,meet_id) a
+		                 
                       INNER JOIN users ON a.sup_id = users.userid
                       INNER JOIN meets ON a.meet_id = meets.id
                       WHERE active='Y' and meet_begin_at<'".date('Y-m-d')."'                      
@@ -499,7 +610,7 @@ class Model_Mods_Customer {
 		 
 		$result .='<table class="list">
 		<thead>
-		   <th>序号</th><th>参会商名称</th><th>参展商品数</th><th>预订单金额</th>
+		   <th>序号</th><th>参会商名称</th><th>参展商品数</th><th>已预订单金额</th>
 		</thead>';
 		$result .='<tbody>';
 		$i=1;
@@ -508,9 +619,9 @@ class Model_Mods_Customer {
 			$mod = ($i%2)?'odd':'even';
 			$result.= '<tr id="row'.$value->id.'" class="" >';
 			$result.= '<td style="width:10px;" align="center" class="'.$mod.'">'.$i.'</td>';
-			$result.= '<td  class="'.$mod.'"><span><a href="/home?sk=custmtview&fl='.$value->meet_id.'">'.$value->username.'</a></span></td>';
+			$result.= '<td  class="'.$mod.'"><span><a href="/home?sk=custmtview&fl='.$value->meet_id.','.$value->sup_id.'">'.$value->username.'</a></span></td>';
 			$result.= '<td width="100px;" align="center" class="'.$mod.'"><span>'.$value->pcount.'</span></td>';
-			$result.= '<td width="60px;" align="center" class="'.$mod.'"><span>0</span></td>';
+			$result.= '<td width="60px;" style="padding-right:5px;" align="right" class="'.$mod.'"><span>'.$value->amount.'</span></td>';
 			$result.= '</tr>';
 			$i++;
 		}

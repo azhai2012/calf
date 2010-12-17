@@ -10,19 +10,35 @@ class Controller_Welcome extends Controller {
 	private $roleid; 
 	
 	public function before(){
+		
+		
 		$this->template= View::factory('welcome');
 		$this->model= new Model_Menus();
 		$this->session = Session::instance();
-		$this->session->set('userlogin',array('userid'=>'0001','roleid'=>'343'));
-		$asession =$this->session->as_array();
-		$this->userid= $asession['userlogin']['userid'];
-		$this->roleid= $asession['userlogin']['roleid'];
+	   
 		
 	}
 	
 	public function action_index()
 	{	
 		parent::before();
+		
+		$sess= $this->session->get('userlogin');
+		if (is_array($sess))
+		  $islogin= array_key_exists('userid',$sess)?$sess:'';
+		else
+		  $islogin=''; 
+		  
+		if (empty($islogin) || $islogin==='')
+		{
+			$this->request->redirect('./login');
+	    }
+		//$this->session->set('userlogin',array('userid'=>'0001','roleid'=>'343'));
+		$asession =$this->session->as_array();
+		
+		$this->userid= $asession['userlogin']['userid'];
+		$this->roleid= $asession['userlogin']['roleid'];
+		
         $sk = array_key_exists('sk',$_GET)?$_GET['sk']:'';
 		$u = new Calf_Menus();
 		$result = Calfpub::getmenus($u);
@@ -33,6 +49,7 @@ class Controller_Welcome extends Controller {
 	    $this->template->head=$head;
 	    $this->template->rfloat=array(array('name'=>'管理','url'=>'/?sk=admin'),array('name'=>'首页','url'=>'/'));
 	    $this->template->contentcol=''; 
+	    $this->template->css='';
 	    
 		if (substr($sk,0,2)==='ad')
 		{
@@ -56,8 +73,7 @@ class Controller_Welcome extends Controller {
 	    
 		}
 		
-	    $this->template->css='<script>Azhai.onPages({"type":"css","css":["/media/css/basic.css?'.time().'"]});</script>';
-		
+	 
 		
 		
 		

@@ -13,7 +13,22 @@ class Controller_Home extends Controller {
 		$this->template= View::factory('welcome');
 		$this->model= new Model_Menus();
 		$this->session = Session::instance();
+		$sess= $this->session->get('userlogin');
+		
+		if (is_array($sess))
+		  $islogin= array_key_exists('userid',$sess)?$sess:'';
+		else
+		  $islogin=''; 
+		  
+		if (empty($islogin) || $islogin==='')
+		{
+			$this->request->redirect('./login');
+	    }
+
+	    $asession =$this->session->as_array();
+		
 		$asession =$this->session->as_array();
+		
 		$this->userid= $asession['userlogin']['userid'];
 		$this->roleid= $asession['userlogin']['roleid'];
 		
@@ -106,6 +121,15 @@ class Controller_Home extends Controller {
 			      	
 			    }break;		
 			    
+			    case 'custropose':{
+			        $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,10).'\'});</script>';
+	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custropose","id":"contentcol","loadingid":"loadingIndicator"});</script>
+	    	    	                              <script>Azhai.onPages({"type":"js","js":["/media/js/customers.js?'.time().'"]});</script>
+	    	    	
+	    	    	';
+		   	
+			    }break;
+			    
 			    case 'custorder':{
 			    	$this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,9).'\'});</script>';
 	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmtorder&bdate='.$bdate.'&edate='.$edate.'","id":"contentcol","loadingid":"loadingIndicator"});</script>
@@ -179,7 +203,7 @@ class Controller_Home extends Controller {
 	    	}
 		}
 		
-		$this->template->css .='<script>Azhai.onPages({"type":"css","css":["/media/css/apps.css?'.time().'"]});</script>';
+		//$this->template->css .='<script>Azhai.onPages({"type":"css","css":["/media/css/apps.css?'.time().'"]});</script>';
 	    
 	    
 	}

@@ -19,7 +19,19 @@ class Controller_Ajax extends Controller {
 		$this->cust       = new Model_Mods_Customer();
 		
 		$this->session = Session::instance();
-		$asession =$this->session->as_array();
+		$sess= $this->session->get('userlogin');
+		
+		if (is_array($sess))
+		  $islogin= array_key_exists('userid',$sess)?$sess:'';
+		else
+		  $islogin=''; 
+		  
+		if (empty($islogin) || $islogin==='')
+		{
+			$this->request->redirect('./login');
+	    }
+
+	    $asession =$this->session->as_array();
 		$this->userid= $asession['userlogin']['userid'];
 		$this->roleid = $asession['userlogin']['roleid'];
 		$this->meets = new Model_Setting_Meets();
@@ -134,10 +146,13 @@ class Controller_Ajax extends Controller {
 			}break;
 			
 			case "custmtview":{
-				$this->template = $this->cust->ajax_get_mods_cus_view_list(array('userid'=>$this->userid,'meetid'=>$_setid));
+				$ary1 = explode(',',$_setid);
+				$ary= array('userid'=>$this->userid,'meetid'=>$ary1[0],'supid'=>$ary1[1]);
+				$this->template = $this->cust->ajax_get_mods_cus_view_list($ary);
 				
 			}break;
 			
+	
 			case "custaddtotmpcart":{
 				$ary = array('userid'=>$this->userid,'supid'=>$sup_id,'meetid'=>$_setid,'pid'=>$prodid,'num'=>$num,'price'=>$price);
 				$this->template = $this->cust->ajax_Set_Model_Customer($ary,"TMPCART");	
@@ -159,12 +174,25 @@ class Controller_Ajax extends Controller {
 				$this->template = $this->cust->ajax_Set_Model_Customer($ary,"INSERTCART");
 		    }break;
 			
+		    case "custropose":{
+		    	$this->template = $this->cust->ajax_get_mods_cus_ropose(array('userid'=>$this->userid));
+		    }break;
+		    
+		    case "addropose":{
+				$this->template = $this->cust->ajax_get_mods_cus_add_ropose(array('userid'=>$this->userid));
+			}break;
 			
+		    case "custaddropose":{
+		    	
+		    	$ary = array('userid'=>$this->userid,'content'=>$content);
+		    	$this->template = $this->cust->ajax_Set_Model_Customer($ary,"INSTERROPOSE");
+		    	
+		    }break;
+
 			case "custmtgettmpcart":{
 				$this->template = $this->cust->ajax_get_mods_cus_tmp_cart(array('userid'=>$this->userid));
 					
-			}break;
-			
+			}break;			
 
 			case "custmtorder":{
 				

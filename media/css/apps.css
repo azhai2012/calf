@@ -81,6 +81,10 @@ padding: 7px 6px 3px 5px;
 padding-top: 6px;
 }
 
+.divropose  {border:1px;}
+.divropose  div {width:90%;height:60px;border:1px #ccc solid;padding:5px;}
+
+
 /* menu */
 .menuspsz {background-position:-140px -36px;}
 .menukc {background-position:-151px -56px;}
@@ -148,8 +152,8 @@ padding-top: 6px;
 .box {background-color: #F6F6F6;border: 1px solid #E4E4E4;color: #505050;padding: 6px;line-height: 2.5em;margin-bottom: 10px;}
 .topbox {position: relative;background-color: #F6F6F6;border: 1px solid #E4E4E4;color: #505050;line-height: 2.4em;margin-bottom: 3px;padding: 6px;}
 .topbox input{border:0px;}
-.topbox .ipt {border: 1px solid #BDC7D8;margin:5px 0px 0px 2px;padding: 0px 4px 0px 0px;width:150px;float:left;}
-.topbox .spipt {padding-right:0px;background-image: url(/media/images/ps.gif);background-position:0 0;color: #3B5998;background-repeat: no-repeat;}
+.topbox .ipt{border: 1px solid #BDC7D8;margin:5px 0px 0px 2px;padding: 0px 4px 0px 0px;width:150px;float:left;}
+.topbox .spipt  {padding-right:0px;background-image: url(/media/images/ps.gif);background-position:0 0;color: #3B5998;background-repeat: no-repeat;}
 
 .box .boxitem {border-spacing:0;border:0;width:100%}
 .box .boxitem ul li {float:left;padding:0px 5px;}
@@ -163,7 +167,22 @@ padding-top: 6px;
 .showloading {top:15px};
 .rolename {margin-bottom:10px;}
 
+.loginbg {background:url(/media/images/loginbg1.jpg) transparent repeat-x bottom left;margin:0px;padding-top: 36px;}
+#logincontent {width:981px;margin-left:auto;margin-right:auto;}
+#login-top {height:100px;}
+#login-top .bgdiv{background:url(/media/images/loginbd3.png) no-repeat;width:200px;height:60px;margin:30px 0 0 95px;}
+#login-left { width:530px;min-height:500px;float:left;}
+#login-left .bgdiv {background:url(/media/images/loginpng.png) 50% 50% no-repeat;height:280px;width:380px;margin-left:100px;margin-top:8px; }
+#login-right {z-index:999;position: relative;float:left;min-height:300px;width:340px;padding-top:20px;padding-left:5px}
+#login-right {font-size:14px;}
+#login-right .field {padding-top: 5px;}
+#login-right .field label {font-size:16px;;margin:8px 0px 0px 2px;display: inline-block;padding-right: 10px;text-align: right;width: 66px;float:left}
+.login-text {border:0px;background:#fff;width:200px;font-size:16px;padding:6px}
+#login-right .field #ptandard {background:#fff;border: 1px solid #BDC7D8;margin:0px 0px 0px 2px;padding: 0px 13px 0px 0px;width:200px;float:left}
+#login-right .submit {padding:30px;}
+#login-right .submitbtn {background: #609B2A url(/media/images/login00ee51.png) no-repeat 0px -32px;border: none;color: white;cursor: pointer;display: block;height: 26px;line-height: 26px;margin: 0px;padding: 0px 0px 3px;text-align: center;width: 71px;}
 
+.captcha {backgroud:#fff}
 .datelabel {position: relative;float:left;}
 .datebox {border: 1px solid #BDC7D8;margin:5px 0px 0px 2px;padding: 0px 4px 0px 0px;float:left;width:105px;}
 
