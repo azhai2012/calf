@@ -37,7 +37,8 @@
      <div id="leftcol">
         <div class="clearfix" style="margin-bottom:20px;">
         <div class="">
-            <a href="/home?id=100001653757270">欢迎您： Bob Azhai</a>
+            <a style="padding-right:35px" href="/home?id=<?php echo $info['id']; ?>">欢迎您：<?php echo $info['id']; ?> </a>
+            <a href="/logout">注销</a>
         </div>
         </div>
     
@@ -58,8 +59,19 @@
     </div> 
   </div> <!-- end content -->
   <div id="pagefoot"  >
-      <div id="contentcourve"></div>
-      <div class="clearfix" id="footcontainer" >         
+      
+      <div id="contentcourve">    </div>
+      <div class="clearfix" id="footcontainer" >   
+         <div class="lfloat">徐州淮海药业有限公司 &copy 2010</div>    
+         <div class="rfloat">
+         <ul>
+           <li><a href="#">关于</a>.</li>
+           <li><a href="/">首页</a>.</li>
+           <li><a href="#">帮助中心</a>.</li>
+           
+         </ul>
+         </div>
+      </div> 
       </div>
   </div>
  </div> <!-- end allcontainer  -->

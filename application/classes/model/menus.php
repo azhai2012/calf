@@ -56,9 +56,10 @@ class Model_Menus {
 
 		$pmods = $this->getParentMods($id);
 
-		$_get= (empty($_GET['sk']))?'sz':$_GET['sk'];
+		$_get= (empty($_GET['sk']))?'nt':$_GET['sk'];
 		$modules= Kohana::config('settings')->modules;
-			
+		$nt=($_get=='nt')?'selectItem':'';
+		$result.= '<li><a class=\"item '.$nt.'\" href=\"/?sk=nt\"><span class=\"leftimg\"><i class=\"img calfimage menunt \"></i></span><span>最新公告信息</span></a> </li>';	
 		foreach($pmods[0] as $key => $value){
 
 			$modid = ($value == $_get)?'selectItem':'';
@@ -70,7 +71,9 @@ class Model_Menus {
 
 			if ($value==$_get){
 				$result.= '<ul>';
-				foreach ($modules as $modkey => $modvalue){
+			
+				
+			    foreach ($modules as $modkey => $modvalue){
 					if ($key===$modvalue['name'])
 					{
 						foreach ($modvalue['ct'] as $subkey => $subvalue){
@@ -121,7 +124,11 @@ class Model_Menus {
 		$modules= Kohana::config('settings')->modules;
 		$pmods = $this->getParentMods($id);
 	
-		$_get= (empty($_GET['sk']))?'sz':$_GET['sk'];
+		$_get= (empty($_GET['sk']))?'nt':$_GET['sk'];
+		
+		$nt=($_get=='nt')?'selectItem':'';
+		$result.= '<li><a class=\"item '.$nt.'\" href=\"/?sk=nt\"><span class=\"leftimg\"><i class=\"img calfimage menunt \"></i></span><span>最新公告信息</span></a> </li>';	
+		
 
 		foreach($pmods[0] as $key => $value){
 			$result.= '<li >';

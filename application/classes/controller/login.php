@@ -40,7 +40,7 @@ class Controller_Login extends Controller {
                  
                 if (md5($psw)=== $password){
 
-                	$this->session->set('userlogin',array('userid'=>$userid,'username'=>$username,'roleid'=>$roleid));
+                	$this->session->set('userlogin',$result->as_array());                	
                     $this->request->redirect('/');            	
                 }
                 else 

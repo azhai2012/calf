@@ -21,7 +21,7 @@ return array
                       'name'=>'客户管理',
 		              'sk'=>'cus',
                       'ct'=> array(
-                           '参加展会'     => array('name'=>'custmt','permissons'=>array('find'=>'查询')),
+                           '展会浏览'     => array('name'=>'custmt','permissons'=>array('find'=>'查询')),
 			               '展会订单'     => array('name'=>'custorder','permissons'=>array('find'=>'查询','ex'=>'导出')),
 			               '投诉建议'     => array('name'=>'custropose','permissons'=>array('find'=>'查询')),
 			         ),
@@ -35,7 +35,7 @@ return array
 			               '意见反馈建议'     => array('name'=>'suppropose','permissons'=>array('find'=>'查询')),
 			               '库存查询'     => array('name'=>'supkc','permissons'=>array('find'=>'查询','ex'=>'导出')),
 			               '入库查询'     => array('name'=>'suprk','permissons'=>array('find'=>'查询','ex'=>'导出')),
-			               '退库查询'     => array('name'=>'supotk','permissons'=>array('find'=>'查询','ex'=>'导出')),
+			               '退库查询'     => array('name'=>'suptk','permissons'=>array('find'=>'查询','ex'=>'导出')),
 			               '销售流向查询'     => array('name'=>'supxs','permissons'=>array('find'=>'查询','ex'=>'导出')),
 			         
                       ),

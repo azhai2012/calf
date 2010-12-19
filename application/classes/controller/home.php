@@ -7,16 +7,16 @@ class Controller_Home extends Controller {
 	private $model;
 	private $userid;
 	private $roleid;
-	
+	private $isadmin=0;
+	private $username='';
 
 	public function before(){
 		$this->template= View::factory('welcome');
 		$this->model= new Model_Menus();
 		$this->session = Session::instance();
-		$sess= $this->session->get('userlogin');
-		
+        $sess= $this->session->get('userlogin');
 		if (is_array($sess))
-		  $islogin= array_key_exists('userid',$sess)?$sess:'';
+		  $islogin= $sess[0]->userid;
 		else
 		  $islogin=''; 
 		  
@@ -24,14 +24,12 @@ class Controller_Home extends Controller {
 		{
 			$this->request->redirect('./login');
 	    }
-
-	    $asession =$this->session->as_array();
 		
-		$asession =$this->session->as_array();
-		
-		$this->userid= $asession['userlogin']['userid'];
-		$this->roleid= $asession['userlogin']['roleid'];
-		
+	    $this->userid  = $sess[0]->userid;
+	    $this->username  = $sess[0]->username;
+	    
+		$this->roleid  = $sess[0]->role_id;
+		$this->isadmin = $sess[0]->isadmin;
 	}
 	
 	public function action_index()
@@ -52,11 +50,16 @@ class Controller_Home extends Controller {
 	    foreach ($result as $key => $value){
 	    	$head.= $key.":".$value->name;
 	    } 
+	    
+	     $this->template->info= array('id'=>$this->userid);
 	    $this->template->contentcol='';
 	    $this->template->head=$head;
 	    $this->template->css='';
-		$this->template->rfloat=array(array('name'=>'管理','url'=>'/?sk=admin'),array('name'=>'首页','url'=>'/'));	
-		if (substr($sk,0,2)==='ad')
+		if ($this->isadmin===1)
+	    $this->template->rfloat=array(array('name'=>'管理','url'=>'/?sk=admin'),array('name'=>'首页','url'=>'/'));
+	    else 
+	    $this->template->rfloat=array(array('name'=>'首页','url'=>'/'));
+	  	if (substr($sk,0,2)==='ad' && $this->isadmin==1)
 		{
 		   $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_admin_menus().'\'});</script>';
 				
@@ -88,8 +91,13 @@ class Controller_Home extends Controller {
 	 	else
 	 	{
 	 		
+	 		$this->template->css='';
+	 			$this->template->contentcol='';
+	 			$this->template->menus='';
+	 			
 	 		switch ($sk){
-	    		//会展设置
+	 			
+	 			//会展设置
 	    		case 'meet':{
                     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,strlen($sk)).'\'});</script>';
 	    			$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=meet","id":"contentcol","loadingid":"loadingIndicator"});</script>';
@@ -104,14 +112,22 @@ class Controller_Home extends Controller {
    	                $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
 	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=meetview&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
 			    }break;
-
+			    
+			  
                 //客户管理
 			    case 'custmt':{
 			        $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,6).'\'});</script>';
 	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmeetjoin","id":"contentcol","loadingid":"loadingIndicator"});</script>';
 			      	
 			    }break;		
-
+			    
+                 case 'custmtprodview':{
+                    $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,6).'\'});</script>';
+	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmtprodview&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>
+	    	    	                              <script>Azhai.onPages({"type":"js","js":["/media/js/customers.js?'.time().'"]});</script>';
+	    	    
+                 }break;
+                  
 			    case 'custmtview':{
 			        $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,6).'\'});</script>';
 	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmtview&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>
@@ -191,8 +207,65 @@ class Controller_Home extends Controller {
 			     
 			    }break;
 			    
+			    case 'suppropose':{
+			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,10).'\'});</script>';
+			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=suppropose","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+                 $this->template->css ='';
+			     
+			    }break;
 			    
+			    case 'supkc':{
+			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,5).'\'});</script>';
+			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=supkc","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+                 $this->template->css ='';
+			    	
+			    }break;
+			    
+	 		   case 'suprk':{
+			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,5).'\'});</script>';
+			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=suprk","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+                 $this->template->css ='';
+			    	
+			    }break;
+			    
+			    case 'suptk':{
+			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,5).'\'});</script>';
+			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=suptk","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+                 $this->template->css ='';
+			    	
+			    }break;
+			    
+			     case 'supxs':{
+			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,5).'\'});</script>';
+			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=supxs","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+                 $this->template->css ='';
+			    	
+			    }break;
+			    
+			     case 'spsz':{
+			     	
+			      $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
+			      $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=spsz","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+                  $this->template->css ='';
+			    	
+			     }break;
+			     
+			     case 'ddbb':{
+			      $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
+			      $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=ddbb","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+                  $this->template->css ='';
+			     	
+			     }break;
+			     
+                 case 'xsbb':{
+			       $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
+			       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=ddbb","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+                   $this->template->css ='';
+			     }break;
+			  
+			     
 			    default : {
+			 
 			    	$this->template->contentcol='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=build","id":"contentcol","loadingid":"loadingIndicator"});</script>';
 			    }
 			    

@@ -10,6 +10,8 @@ class Controller_Ajax extends Controller {
 	private $roleid;
 	private $cust;
 	private $sups;
+	private $pubs;
+	private $username;
 	
 
 	public function before(){
@@ -17,12 +19,12 @@ class Controller_Ajax extends Controller {
 		$this->adminUsers = new Model_Admin_Users();
 		$this->sups       = new Model_Mods_Supplier();
 		$this->cust       = new Model_Mods_Customer();
+		$this->pubs       = new Model_Mods_Public();
 		
 		$this->session = Session::instance();
 		$sess= $this->session->get('userlogin');
-		
 		if (is_array($sess))
-		  $islogin= array_key_exists('userid',$sess)?$sess:'';
+		  $islogin= $sess[0]->userid;
 		else
 		  $islogin=''; 
 		  
@@ -30,10 +32,10 @@ class Controller_Ajax extends Controller {
 		{
 			$this->request->redirect('./login');
 	    }
-
-	    $asession =$this->session->as_array();
-		$this->userid= $asession['userlogin']['userid'];
-		$this->roleid = $asession['userlogin']['roleid'];
+		
+	    $this->userid= $sess[0]->userid;
+		$this->roleid= $sess[0]->role_id;
+		$this->username= $sess[0]->username;
 		$this->meets = new Model_Setting_Meets();
 	}
 
@@ -59,6 +61,10 @@ class Controller_Ajax extends Controller {
         
 		$this->template = '';
 		switch ($_get) {
+			
+			case "nt":{
+				$this->template = $this->pubs->ajax_get_public_list();
+			}break;
 				
 			//角色和权限
 			case "adr":{
@@ -139,15 +145,28 @@ class Controller_Ajax extends Controller {
 			}break;
 			
 			//客户管理
+			
+			case "cus":{
+				$this->template = $this->cust->ajax_get_mods_cus_main();
+				
+			}break;
+			
 			case "custmeetjoin":{
 				
 				$this->template = $this->cust->ajax_get_mods_cus_list();
 				
 			}break;
 			
+			case "custmtprodview":{
+				$ary1 = explode(',',$_setid);
+				$ary= array('userid'=>$this->userid,'username'=>$this->username,'meetid'=>$ary1[0],'supid'=>$ary1[1],'prodid'=>$ary1[2]);
+				$this->template = $this->cust->ajax_get_mods_cus_prod_view_list($ary);
+				
+			}break;
+			
 			case "custmtview":{
 				$ary1 = explode(',',$_setid);
-				$ary= array('userid'=>$this->userid,'meetid'=>$ary1[0],'supid'=>$ary1[1]);
+				$ary= array('userid'=>$this->userid,'meetid'=>$ary1[0],'supid'=>$ary1[1],'username'=>$this->username);
 				$this->template = $this->cust->ajax_get_mods_cus_view_list($ary);
 				
 			}break;
@@ -196,7 +215,7 @@ class Controller_Ajax extends Controller {
 
 			case "custmtorder":{
 				
-				$this->template = $this->cust->ajax_get_mods_customer_meet_cart_list($bdate,$edate);
+				$this->template = $this->cust->ajax_get_mods_customer_meet_cart_list($this->userid,$bdate,$edate);
 				
 			}break;
 

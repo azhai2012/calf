@@ -336,6 +336,38 @@ class Model_Mods_Customer {
 		return json_encode($result);
 	}
 
+      function ajax_get_mods_cus_main(){
+		$result  ='';	
+		
+		$modules= DB::query(Database::SELECT,"
+		              SELECT count(sup_id) as ct,sum(pcount) as pzs,sum(amount) as je
+		              FROM 
+		                (SELECT sup_id,meet_id,count(product_id) as pcount,(select round(sum(num*price),2) as je 
+		                        from suporders b where b.sup_id=suppliers.sup_id) as amount 
+		                 FROM suppliers 
+		                 WHERE suppliers.price>0
+		                 GROUP BY sup_id,meet_id) a
+		                 
+                      INNER JOIN users ON a.sup_id = users.userid
+                      INNER JOIN meets ON a.meet_id = meets.id
+                      WHERE active='Y' and meet_begin_at<'".date('Y-m-d')."'                      
+                      ",TRUE)
+		              ->as_object()
+		              ->execute();
+		$modules = $modules->as_array();
+		
+		$result ='<div class="roles">';
+		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
+		$result .='</i><span>客户管理</span></h3>';
+		$result .='<div class="cusmain clearfix">
+		            <h4 style="width:300px;margin-left:20px;">展会相关统计：</h4>
+		             <div>目前展会参展商共有：<span style="color:red">'.$modules[0]->ct.'</span> 家</div>
+		             <div>目前展会参展商品共有：<span style="color:red">'.$modules[0]->pzs.'</span> 个品种</div>
+		             <div>目前展会预定的订单总金额为：￥: <span style="color:red">'.$modules[0]->je.'</span> 元</div>
+                   </div>
+		';
+		return $result;	
+	}
 	
 	function ajax_get_mods_cus_tmp_cart($info){
 		
@@ -402,14 +434,81 @@ class Model_Mods_Customer {
 		
 		
 	}
+	
+	function ajax_get_mods_cus_prod_view_list($info){
+		
+		$userid=$info['userid'];
+		$supid =$info['supid'];
+	    $meetid =$info['meetid'];
+	    
+    
+	    $modules= DB::query(Database::SELECT,"
+		              SELECT suppliers.id,suppliers.product_id,products.product_name, product_spec,product_unit,
+		                     product_origin,limit_number,price,favorable,picname
+                      FROM suppliers
+                      INNER JOIN products ON suppliers.product_id = products.product_id
+                      INNER JOIN meets ON suppliers.meet_id = meets.id 
+                      WHERE suppliers.product_id=:prodid and suppliers.sup_id=:sid and meet_id=:mid and active='Y' and price>0
+                      ",TRUE)
+	    ->param(':prodid',$info['prodid'])
+		->param(':sid',$supid)
+		->param(':mid',$meetid);
+		
+		$modules = $modules->as_object()->execute();
+		$ary= $modules->as_array();
+
+		$result ='<div class="roles">';
+	    $result .='<div class="contextual"><a href="/home?sk=custmtcart"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>查询购物车</span></a></div>';
+	
+		$result .='<h3 class="uiHeaderTitle"><a href="/home?sk=custmt"><i class="calfimage spritemap_aanaup menucus">';
+		$result .='</i><span>展会浏览</span></a> <span class="ss"> >> </span><span class="sf">
+		           <input type="hidden" name="supid" id="supid" value="'.$supid.'"> 正在浏览品种 </span></h3>';
+	    
+		
+		
+		$result.='<div class="prodview clearfix">
+		            <div style="margin:20px 20px;font-size:14px;border:1px #d94141 solid;padding:20px;"><label>该商品的促销：</label></div>
+		            <div style="height:280px" class="clearfix">
+		            <div class="lfloat">
+		              <img onerror="javascript: this.src=\'/media/images/null.jpg\'" width=200px height=200px src="/media/images/meets/'.$ary[0]->picname.'" /> 
+		            </div>
+		            <div class="rfloat">
+		             
+		             <ul>
+		               <li style="font-size:16px"><label >商品名称:</label> <span>'.$ary[0]->product_name.'</span></li>
+		               <li><label>规格:</label> <span>'.$ary[0]->product_spec.'</span></li>
+		               <li><label>单位:</label> <span>&nbsp;'.$ary[0]->product_unit.'</span></li>
+		               <li><label>生产企业:</label> <span>'.$ary[0]->product_origin.'</span></li>
+		               <li><label>单价:</label> <span id="price'.$ary[0]->product_id.'">'.$ary[0]->price.'</span></li>
+		               <li><label>订购数量:</label> <span><input name="num'.$ary[0]->product_id.'" id="num'.$ary[0]->product_id.'" value="1" /></span></li>
+		               <li style="padding-top:10px"><label>&nbsp;</label> <span>
+		               <input type="button" name="submit" id="submit" value="预定" onclick="Custs.AddToTmpCart(\''.$meetid.','.$ary[0]->product_id.'\')" /></span>
+		               <span id="msg'.$ary[0]->product_id.'"></span>
+		               
+		               </li>
+                       <li style="padding-top:10px"><label>&nbsp;</label> <span><a href="javascript:history.go(-1);">返回上一页</a></span></li>
+		               </ul>
+		           
+		            </div>
+                    </div>     		
+            		<div class="otherpord"><h4>其他同类商品</h4></div>  
+		            
+		   ';
+		  
+		$result.='</div>
+
+		';
+		
+		return $result;		
+	}
    
 	function ajax_get_mods_cus_view_list($info){
 	
 		$meetid= array_key_exists('meetid',$info)?$info['meetid']:'';
 		
 		$resultdb= DB::query(Database::SELECT,"SELECT * 
-				              FROM suppliers_favs 
-				              INNER JOIN users ON suppliers_favs.sup_id = users.userid
+				              FROM users 
+				              LEFT OUTER JOIN suppliers_favs ON suppliers_favs.sup_id = users.userid
 				              WHERE sup_id=:id and meet_id=:meetid ",TRUE)
 						 ->param(':id',$info['supid'])
 				         ->param(':meetid',$meetid);
@@ -418,30 +517,30 @@ class Model_Mods_Customer {
 	    $location = '';
 	    $fav='';
 	    $username='';
-	    $supid='';
+	    $supid=$info['supid'];
 	    foreach ($resultdb as $key=>$value){
 	    	$fav.= $value->favorables;
 	    	$location .= $value->location;
 	    	$username .= $value->username;
-	    	$supid .=$value->sup_id;
+	    	//$supid .=$value->sup_id;
 	    }
 		
 
 		$result ='<div class="roles">';
 	    $result .='<div class="contextual"><a href="/home?sk=custmtcart"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>查询购物车</span></a></div>';
 	
-		$result .='<h3 class="uiHeaderTitle"><a href="/home?sk=supm"><i class="calfimage spritemap_aanaup menusup">';
-		$result .='</i><span>展会管理</span></a> <span class="ss"> >> </span><span class="sf">
+		$result .='<h3 class="uiHeaderTitle"><a href="/home?sk=custmt"><i class="calfimage spritemap_aanaup menucus">';
+		$result .='</i><span>展会浏览</span></a> <span class="ss"> >> </span><span class="sf">
 		           <input type="hidden" name="supid" id="supid" value="'.$supid.'"> 正在浏览 '.$username.' 展位 </span></h3>';
 	    
 	    
 	    $modules= DB::query(Database::SELECT,"
 		              SELECT suppliers.id,suppliers.product_id,products.product_name, product_spec,product_unit,
-		                     product_origin,limit_number,price,favorable
+		                     product_origin,limit_number,price,favorable,picname
                       FROM suppliers
                       INNER JOIN products ON suppliers.product_id = products.product_id
                       INNER JOIN meets ON suppliers.meet_id = meets.id 
-                      WHERE suppliers.sup_id=:sid and meet_id=:mid and active='Y'
+                      WHERE suppliers.sup_id=:sid and meet_id=:mid and active='Y' and price>0
                       ",TRUE)
 		->param(':sid',$info['supid'])
 		->param(':mid',$meetid);
@@ -466,8 +565,8 @@ class Model_Mods_Customer {
 			$result.= '<tr style="height:70px;border-top:1px #ccc solid" id="row'.$value->id.'" class="" >';
 			$result.= '<td style="width:10px;" align="center" class="'.$mod.'">'.$i.'</td>';
             $result.= '<td colspan=8 ><div style="margin-bottom:10px;"><ul >';
-            $result.= ' <li style="width:70px;margin-top:4px;" ><img onerror="javascript: this.src=\'/media/images/null.jpg\'" width=60 height=60px src="" /></li>';
-            $result.= ' <li style="width:160px;font-size:14px;"><a href="/home?sk=supmview&fl='.$value->product_id.'">'.$value->product_name.'</a>';
+            $result.= ' <li style="width:70px;margin-top:4px;" ><img onerror="javascript: this.src=\'/media/images/null.jpg\'" width=60px height=60px src="/media/images/meets/'.$value->picname.'" /></li>';
+            $result.= ' <li style="width:160px;font-size:14px;"><a href="/home?sk=custmtprodview&fl='.$meetid.','.$supid.','.$value->product_id.'">'.$value->product_name.'</a>';
             $result.= '</li>';
             $result.= ' <li style="width:100px"><span >'.$value->product_spec.'</span></li>';
             $result.= ' <li style="width:30px"><span>'.$value->product_unit.'</span></li>';
@@ -479,7 +578,7 @@ class Model_Mods_Customer {
                          <span>
                            <input type="hidden" name="pid" id="pid" value="'.$value->product_id.'">
                            <input style="width:50px" name="num'.$value->product_id.'" id="num'.$value->product_id.'" value="1" />
-                           <input style="width:55px" type="button" name="submit" id="submit" onclick="Custs.AddToTmpCart(\''.$meetid.','.$value->product_id.'\')" value="提交" />
+                           <input style="width:55px" type="button" name="submit" id="submit" onclick="Custs.AddToTmpCart(\''.$meetid.','.$value->product_id.'\')" value="预定" />
                            <span style="color:#385998" id="msg'.$value->product_id.'"></span>
                          </span></li>';
             $result.= '</ul>
@@ -579,7 +678,7 @@ class Model_Mods_Customer {
 		}
 		
 		$result .='</tbody>';
-		$result .='</table>';
+		$result .='</table></div>';
 		return $result;
 	}
 	
@@ -598,7 +697,8 @@ class Model_Mods_Customer {
 		              FROM 
 		                (SELECT sup_id,meet_id,count(product_id) as pcount,(select round(sum(num*price),2) as je 
 		                        from suporders b where b.sup_id=suppliers.sup_id) as amount 
-		                 FROM suppliers
+		                 FROM suppliers 
+		                 WHERE suppliers.price>0
 		                 GROUP BY sup_id,meet_id) a
 		                 
                       INNER JOIN users ON a.sup_id = users.userid
@@ -627,13 +727,13 @@ class Model_Mods_Customer {
 		}
 		
 		$result .='</tbody>';
-		$result .='</table>';
+		$result .='</table></div>';
 		return $result;
 	}
 	
 	
 	
-	function ajax_get_mods_customer_meet_cart_list($bdate,$edate){
+	function ajax_get_mods_customer_meet_cart_list($userid,$bdate,$edate){
 		$result ='<div class="roles">';
 		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
 		$result .='</i><span>展会订单</span></h3>';
@@ -651,9 +751,10 @@ class Model_Mods_Customer {
                              
                       FROM suporders a INNER JOIN 
                            products b ON a.prod_id = b.product_id
-                      WHERE left(order_at,10) between :bdate and :edate  
+                      WHERE left(order_at,10) between :bdate and :edate and a.cus_id=:cus_id  
                       order by  left(order_at,10)  
                       ",TRUE)
+		              ->param(':cus_id',$userid)   
 		              ->param(':bdate',$bdate)
 		              ->param(':edate',$edate);
 		             // 	 echo Kohana::debug((string) $modules);	
@@ -707,7 +808,7 @@ class Model_Mods_Customer {
 		}
 		$result .= '<tr><td style="background:#eee"></td><td style="background:#eee" colspan=2>合计：</td><td align="right" style="background:#eee" colspan=5 >￥：'.$amount.'元</td><td style="background:#eee"></td></tr>';
 		$result .='</tbody>';
-		$result .='</table>';
+		$result .='</table></div>';
 		return $result;
 	}
  
