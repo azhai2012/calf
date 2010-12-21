@@ -183,7 +183,7 @@ class Controller_Ajax extends Controller {
 				  $this->template = $this->cust->ajax_Set_Model_Customer($ary,"TMPDBCART");	
 				}
 				else {
-				  $this->template = $this->cust->ajax_Set_Model_Customer($ary,"TMPCART");	
+				  $this->template = $this->cust->ajax_Set_Model_Customer($ary,"TMPDBCART");	
 				}
 			}break;
 			
@@ -201,7 +201,7 @@ class Controller_Ajax extends Controller {
 				if ($this->isie()) {
 				  $this->template = $this->cust->ajax_Set_Model_Customer($ary,"DELTMPDBCART");				  	
 				}else {
-			      $this->template = $this->cust->ajax_Set_Model_Customer($ary,"DELTMPCART");	
+			      $this->template = $this->cust->ajax_Set_Model_Customer($ary,"DELTMPDBCART");	
 			    }
 					
 			}break;
@@ -213,7 +213,7 @@ class Controller_Ajax extends Controller {
 		    	}
 		    	else 
 		    	{
-		    	    $this->template = $this->cust->ajax_Set_Model_Customer($ary,"INSERTCART");
+		    	    $this->template = $this->cust->ajax_Set_Model_Customer($ary,"INSERTDBCART");
 		    	}
 		    	
 		    }break;

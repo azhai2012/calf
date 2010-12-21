@@ -7,18 +7,28 @@ class Model_Mods_Customer {
 	 */
 	function set_tmp_db($userid,$supid,$meetid,$productid,$num) {
 		
-		$result = DB::query(Database::SELECT,"SELECT count(1) as ct FROM tmpcart",TRUE)->as_object()->execute();
+		$result = DB::query(Database::SELECT,"SELECT count(1) as ct FROM tmpcart 
+		              WHERE user_id=:userid and prod_id=:pid and meet_id=:meetid and sup_id=:sup_id",TRUE)
+		->param(':userid',$userid)
+		->param(':pid',$productid)
+		->param(':meetid',$meetid)
+		->param(':sup_id',$supid);
+		  echo Kohana::debug((string)$result); 
+		  $result=$result->as_object()
+		  ->execute();
+
 		$result = $result->as_array(); 
 		$ct = $result[0]->ct;
 		if ($ct>0){
 		 $result= DB::query(Database::UPDATE,"
-		  UPDATE tmpcart SET num=num+:num WHERE userid=:userid and prod_id=:pid and meet_id=:mid and sup_id=:sid",TRUE)
+		  UPDATE tmpcart SET num=num+:num WHERE user_id=:userid and prod_id=:pid and meet_id=:mid and sup_id=:sid",TRUE)
 		  ->param(":userid",$userid)
 		  ->param(":pid",$productid)
 		  ->param(":mid",$meetid)
 		  ->param(":sid",$supid)
-		  ->param(":num",$num)
-		  ->as_object()
+		  ->param(":num",$num);
+		   echo Kohana::debug((string)$result); 
+		  $result=$result->as_object()
 		  ->execute();
 		}  	
 		else
@@ -29,8 +39,9 @@ class Model_Mods_Customer {
 		  ->param(":pid",$productid)
 		  ->param(":mid",$meetid)
 		  ->param(":sid",$supid)
-		  ->param(":num",$num)
-		  ->as_object()
+		  ->param(":num",$num);
+		   echo Kohana::debug((string)$result); 
+		  $result=$result->as_object()
 		  ->execute();	
 		}
 		
@@ -64,50 +75,21 @@ class Model_Mods_Customer {
 		return  $result;
     }
     
-    function set_tmp_db_to_cart($userid,$supid,$meetid,$productid,$num){
+    function set_tmp_db_to_cart($userid){
 
     	$no= $this->get_order_no();    
-    	 
-    	$result= DB::query(Database::SELECT,"SELECT * FROM tmpcart  WHERE user_id=:userid",TRUE)
-		  ->param(":userid",$userid)
-		  ->as_object()
-		  ->execute();
-		  
-        foreach ($result as $k=>$v) {
-        	              	
-               $sql= "SELECT price FROM suppliers 
-                      WHERE  meet_id=:meetid 
-                         and sup_id=:supid 
-                         and product_id=:prod_id";
-               	
-               $resultdb = DB::query(Database::SELECT,$sql,true)
-                         ->param(':supid',$v->sup_id)
-                         ->param(':prod_id',$v->prod_id)
-                         ->param(':meetid',$v->meet_id)
-                         ->as_object()
-                         ->execute();	
-               $price=0;
-               foreach ($resultdb as $key=>$value){
-               	    $price= $value->price;
-               }    	
-               
-               $sql ="INSERT INTO suporders (number,cus_id,sup_id,prod_id,num,meet_id,price,order_at) values 
-                      (:number,:cusid,:supid,:prod_id,:num,:meet_id,:price,:order_at)";
+       
+        $sql ="INSERT INTO suporders (number,cus_id,sup_id,prod_id,num,meet_id,price,order_at) 
+                     SELECT '".$no."' as n,tmpcart.user_id,tmpcart.sup_id,tmpcart.prod_id,tmpcart.num,tmpcart.meet_id,price,'".date('Y-m-d H:i')."' as d 
+                      FROM tmpcart inner join suppliers on suppliers.meet_id=tmpcart.meet_id
+                           and tmpcart.sup_id=suppliers.sup_id and suppliers.product_id=tmpcart.prod_id";
+            
+       $result = DB::query(Database::INSERT,$sql,true);
+      // echo Kohana::debug((string)$result); 
+          $result=$result->as_object()
+                ->execute();
 
-               $result = DB::query(Database::INSERT,$sql,true)
-                ->param(':number',$no)
-                ->param(':cusid',$v->user_id)
-                ->param(':price',$price)
-                ->param(':supid',$v->sup_id)
-                ->param(':prod_id',$v->prod_id)
-                ->param(':num',$v->num)
-                ->param(':meet_id',$v->meet_id)
-                ->param(':order_at',date('Y-m-d H:i'))
-                ->as_object()
-                ->execute();	
-              
-         }  
-         if ($result===1)
+       if ($result[1]>0)
          $result= DB::query(Database::DELETE,"DELETE FROM tmpcart WHERE user_id=:userid",TRUE)
 		  ->param(":userid",$userid)
 		  ->as_object()
@@ -296,46 +278,28 @@ class Model_Mods_Customer {
       }
       
       function get_tmp_db($userid,$meetid){
-
-    	$arys=array();
-    	$db = DB::query(Database::SELECT,"SELECT * from tmpcart
-            	                 WHERE user_id=:userid ",TRUE)
-            	     ->param(':userid',$userid);            	    
-            	
-            	     $db=$db->as_object()->execute();
-            	     
-    	$tt = $db->as_array();
-    	
-        $isexists = (isset($tt[0]))?count($tt[0]):0;
+           $arys=array();
         
-    	if ($isexists>0) {
-            $ii=0;
-            foreach ($db as $key => $value){
-                $mid = $value->meet_id;
-            	$prodid = $value->prod_id;
-            
-            	$num = $value->num;
-            	$id  = $value->id;
-            	$db = DB::query(Database::SELECT,"SELECT suppliers.sup_id as sid,suppliers.meet_id,suppliers.price,suppliers.favorable,suppliers.picname
-            	                 ,products.*,".$num." as num,".$id." as id
-            	                 FROM suppliers INNER JOIN 
-            	                 products ON suppliers.product_id = products.product_id
-            	                 WHERE suppliers.product_id=:pid and meet_id=:meetid",TRUE)
-            	     ->param(':pid',$prodid)
-            	     ->param(':meetid',$mid);
+      	   $db = DB::query(Database::SELECT,"SELECT suppliers.sup_id AS sid, suppliers.meet_id, suppliers.price,
+      	                         suppliers.favorable, suppliers.picname, products. * , 
+      	                         tmpcart.id, tmpcart.num
+      	                         
+                                FROM tmpcart
+                                INNER JOIN suppliers ON suppliers.product_id = tmpcart.prod_id
+                                INNER JOIN products ON suppliers.product_id = products.product_id
+                                WHERE tmpcart.user_id =:userid
+                                      AND tmpcart.meet_id = :meetid ",TRUE)
+            	     ->param(':userid',$userid)
+            	     ->param(':meetid',$meetid);
             	    
-            	   echo Kohana::debug((string) $db); 
+            	//   echo Kohana::debug((string) $db); 
             	    
             	 $db=$db->as_object()->execute();
-            	 
-            	 $arys[$ii]= $db->as_array();
-            	 $ii=$ii+1;    
-            
-               
-            }
-            
-        }
-        return $arys;
+           
+            	 $arys= $db->as_array();
+            	// print_r($arys);
+          
+          return $arys;
             	     
       	
       }
@@ -568,10 +532,13 @@ class Model_Mods_Customer {
 		$modules = $modules->as_array();
 		
 		$result ='<div class="roles">';
+    	
 		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
 		$result .='</i><span>客户管理</span></h3>';
 		$result .='<div class="cusmain clearfix">
-		            <h4 style="width:300px;margin-left:20px;">展会相关统计：</h4>
+                  <p style="padding-left:20px;font-size:18px;">目前，仅开放了展会管理功能，其他功能将陆续推出，敬请关注！</p>
+	
+		          <h4 style="width:300px;margin-left:20px;">展会相关统计：</h4>
 		             <div>目前展会参展商共有：<span style="color:red">'.$modules[0]->ct.'</span> 家</div>
 		             <div>目前展会参展商品共有：<span style="color:red">'.$modules[0]->pzs.'</span> 个品种</div>
 		             <div>目前展会预定的订单总金额为：￥: <span style="color:red">'.$modules[0]->je.'</span> 元</div>
@@ -590,9 +557,9 @@ class Model_Mods_Customer {
 		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menusup">';
 		$result .='</i><span>展会购物车</span></h3>';
 		$result .='<div class="info"></div>';
-        
-		$modules= (strpos($_SERVER['HTTP_USER_AGENT'], "MSIE"))? $this->get_tmp_db($info['userid'],$info['meetid']): $this->get_tmp_cookie();
-		//$modules= $this->get_tmp_db($info['userid'],$info['meetid']);
+         $isie=strpos($_SERVER['HTTP_USER_AGENT'], "MSIE");
+		//$modules= (strpos($_SERVER['HTTP_USER_AGENT'], "MSIE"))? $this->get_tmp_db($info['userid'],$info['meetid']): $this->get_tmp_cookie();
+		$modules= $this->get_tmp_db($info['userid'],$info['meetid']);
 		
 		//print_r($modules);
 		//echo Kohana::debug((string) $modules);
@@ -605,13 +572,15 @@ class Model_Mods_Customer {
 		$result .='<tbody>';
 		$i=0;
 		$amount = 0;
-		
+	
 		foreach($modules as $key => $value){
+           // echo $value[0]; 
 			$mod = ($i%2)?'odd':'even';
-			$value=$value[0];
+			//$value = $value[$key];
+			
 			$amount = $amount + ((float)$value->num*(float)$value->price);
 			$i=$i+1;
-			$result .='<tr id="t'.$value->product_id.'" >';
+			$result .='<tr style="border-top:1px #ccc solid" id="t'.$value->product_id.'" >';
 			$result .='<td class="'.$mod.'"><input type="hidden" id="cartid'.$value->product_id.'" name="cartid'.$value->product_id.'" value="'.$value->id.'" />'.$i.'</td>';
 			$result .='<td class="'.$mod.'">'.$value->product_name.'</td>';
 			$result .='<td class="'.$mod.'">'.$value->product_spec.'</td>';
@@ -671,7 +640,7 @@ class Model_Mods_Customer {
 		$ary= $modules->as_array();
 
 		$result ='<div class="roles">';
-	    $result .='<div class="contextual"><a href="/home?sk=custmtcart"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>查询购物车</span></a></div>';
+	    $result .='<div class="contextual"><a href="/home?sk=custmtcart&fl='.$meetid.'"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>查询购物车</span></a></div>';
 	
 		$result .='<h3 class="uiHeaderTitle"><a href="/home?sk=custmt"><i class="calfimage spritemap_aanaup menucus">';
 		$result .='</i><span>展会浏览</span></a> <span class="ss"> >> </span><span class="sf">
@@ -680,7 +649,8 @@ class Model_Mods_Customer {
 		
 		
 		$result.='<div class="prodview clearfix">
-		            <div style="margin:20px 20px;font-size:14px;border:1px #d94141 solid;padding:20px;"><label>该商品的促销：</label></div>
+		            <div style="padding-left:20px"><a href="javascript:history.go(-1);">返回上一页</a></div>
+		            <div style="margin:20px 20px;font-size:14px;border:1px #d94141 solid;padding:20px;"><label>该商品的促销：</label><p>'.$ary[0]->favorable.'</p></div>
 		            <div style="height:280px" class="clearfix">
 		            <div class="lfloat">
 		              <img onerror="javascript: this.src=\'/media/images/null.jpg\'" width=200px height=200px src="/media/images/meets/'.$ary[0]->picname.'" /> 
@@ -695,7 +665,7 @@ class Model_Mods_Customer {
 		               <li><label>单价:</label> <span id="price'.$ary[0]->product_id.'">'.$ary[0]->price.'</span></li>
 		               <li><label>订购数量:</label> <span><input name="num'.$ary[0]->product_id.'" id="num'.$ary[0]->product_id.'" value="1" /></span></li>
 		               <li style="padding-top:10px"><label>&nbsp;</label> <span>
-		               <input type="button" name="submit" id="submit" value="预定" onclick="Custs.AddToTmpCart(\''.$meetid.','.$ary[0]->product_id.'\')" /></span>
+		               <input type="button" name="submit" id="submit" value="放入购物车" onclick="Custs.AddToTmpCart(\''.$meetid.','.$ary[0]->product_id.'\')" /></span>
 		               <span id="msg'.$ary[0]->product_id.'"></span>
 		               
 		               </li>
@@ -740,7 +710,7 @@ class Model_Mods_Customer {
 		
 
 		$result ='<div class="roles">';
-	    $result .='<div class="contextual"><a href="/home?sk=custmtcart"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>查询购物车</span></a></div>';
+	    $result .='<div class="contextual"><a href="/home?sk=custmtcart&fl='.$meetid.'"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>查询购物车</span></a></div>';
 	
 		$result .='<h3 class="uiHeaderTitle"><a href="/home?sk=custmt"><i class="calfimage spritemap_aanaup menucus">';
 		$result .='</i><span>展会浏览</span></a> <span class="ss"> >> </span><span class="sf">
@@ -788,11 +758,11 @@ class Model_Mods_Customer {
            // $result.= ' <li style="width:50px"><span>'.$nm.'</span></li>';
           //  $result.= ' <li style="width:40px;float:left;padding-right:5px;"><span class="required" id="price'.$value->product_id.'">'.$value->price.'</span></li>';
             $result.= ' <li style="width:130px;float:right;padding-right:5px;" >
-                         <div style="float:left;width:60px" class="required" id="price'.$value->product_id.'">'.$value->price.'</div>
-                         <div style="float:left;width:60px">
+                         <div style="float:left;width:50px" class="required" id="price'.$value->product_id.'">'.$value->price.'</div>
+                         <div style="float:left;width:70px">
                            <input type="hidden" name="pid" id="pid" value="'.$value->product_id.'">
-                           <input style="width:50px" name="num'.$value->product_id.'" id="num'.$value->product_id.'" value="1" />
-                           <input style="width:55px" type="button" name="submit" id="submit" onclick="Custs.AddToTmpCart(\''.$meetid.','.$value->product_id.'\')" value="预定" />
+                           <input style="width:70px" name="num'.$value->product_id.'" id="num'.$value->product_id.'" value="1" />
+                           <input style="width:75px" type="button" name="submit" id="submit" onclick="Custs.AddToTmpCart(\''.$meetid.','.$value->product_id.'\')" value="放入购物车" />
                            <span style="color:#385998" id="msg'.$value->product_id.'"></span>
                          </div></li>';
             $result.= '</ul>
@@ -901,11 +871,6 @@ class Model_Mods_Customer {
      */
 	function ajax_get_mods_cus_list(){
 
-		$result ='<div class="roles">';
-		$result .='<div class="contextual"><a href="/home?sk=custmtcart"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>参会购物车</span></a></div>';
-		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
-		$result .='</i><span>展会列表</span></h3>';
-
 		$modules= DB::query(Database::SELECT,"
 		              SELECT *,IFNULL(amount,0) as amount
 		              FROM 
@@ -921,7 +886,15 @@ class Model_Mods_Customer {
                       ",TRUE)
 		              ->as_object()
 		              ->execute();
-		 
+		$tt= $modules->as_array();
+		$meetid= $tt[0]->meet_id;
+		
+		$result ='<div class="roles">';
+		$result .='<div class="contextual"><a href="/home?sk=custmtcart&fl='.$meetid.'"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>参会购物车</span></a></div>';
+		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
+		$result .='</i><span>展会列表</span></h3>';
+
+		
 		$result .='<table class="list">
 		<thead>
 		   <th>序号</th><th>参会商名称</th><th>参展商品数</th><th>已预订单金额</th>
