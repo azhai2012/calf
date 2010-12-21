@@ -6,9 +6,9 @@ jQuery.extend({
 	{
 			//create frame
             var frameId = 'jUploadFrame' + id;
-            
+            var io;
             if(window.ActiveXObject) {
-                var io = document.createElement('<iframe id="' + frameId + '" name="' + frameId + '" />');
+                io = document.createElement('<iframe id="' + frameId + '" name="' + frameId + '" />');
                 if(typeof uri== 'boolean'){
                     io.src = 'javascript:false';
                 }
@@ -17,7 +17,7 @@ jQuery.extend({
                 }
             }
             else {
-                var io = document.createElement('iframe');
+                io = document.createElement('iframe');
                 io.id = frameId;
                 io.name = frameId;
             }
@@ -27,7 +27,7 @@ jQuery.extend({
 
             document.body.appendChild(io);
 
-            return io			
+            return io;			
     },
     createUploadForm: function(id, fileElementId)
 	{
@@ -51,7 +51,7 @@ jQuery.extend({
     ajaxFileUpload: function(s) {
         // TODO introduce global settings, allowing the client to modify them for all requests, not only timeout		
         s = jQuery.extend({}, jQuery.ajaxSettings, s);
-        var id = new Date().getTime()        
+        var id = new Date().getTime();        
 		var form = jQuery.createUploadForm(id, s.fileElementId);
 		var io = jQuery.createUploadIframe(id, s.secureuri);
 		var frameId = 'jUploadFrame' + id;
@@ -63,9 +63,9 @@ jQuery.extend({
 		}            
         var requestDone = false;
         // Create the request object
-        var xml = {}   
+        var xml = {};   
         if ( s.global )
-            jQuery.event.trigger("ajaxSend", [xml, s]);
+        { jQuery.event.trigger("ajaxSend", [xml, s]);}
         // Wait for a response to come back
         var uploadCallback = function(isTimeout)
 		{			
@@ -99,32 +99,32 @@ jQuery.extend({
                         var data = jQuery.uploadHttpData( xml, s.dataType );    
                         // If a local callback was specified, fire it and pass it the data
                         if ( s.success )
-                            s.success( data, status );
+                        { s.success( data, status );}
     
                         // Fire the global callback
                         if( s.global )
                             jQuery.event.trigger( "ajaxSuccess", [xml, s] );
                     } else
-                        jQuery.handleError(s, xml, status);
-                } catch(e) 
+                        {jQuery.handleError(s, xml, status);}
+                } catch(ex) 
 				{
                     status = "error";
-                    jQuery.handleError(s, xml, status, e);
+                    jQuery.handleError(s, xml, status, ex);
                 }
 
                 // The request was completed
                 if( s.global )
-                    jQuery.event.trigger( "ajaxComplete", [xml, s] );
+                { jQuery.event.trigger( "ajaxComplete", [xml, s] );}
 
                 // Handle the global AJAX counter
                 if ( s.global && ! --jQuery.active )
-                    jQuery.event.trigger( "ajaxStop" );
+                { jQuery.event.trigger( "ajaxStop" );}
 
                 // Process result
                 if ( s.complete )
-                    s.complete(xml, status);
+                { s.complete(xml, status);}
 
-                jQuery(io).unbind()
+                jQuery(io).unbind();
 
                 setTimeout(function()
 									{	try 
@@ -137,9 +137,9 @@ jQuery.extend({
 											jQuery.handleError(s, xml, null, e);
 										}									
 
-									}, 100)
+									}, 100);
 
-                xml = null
+                xml = null;
 
             }
         }
@@ -148,13 +148,13 @@ jQuery.extend({
 		{
             setTimeout(function(){
                 // Check to see if the request is still happening
-                if( !requestDone ) uploadCallback( "timeout" );
+                if( !requestDone ) {uploadCallback( "timeout" );}
             }, s.timeout);
         }
         try 
 		{
            // var io = $('#' + frameId);
-			var form = $('#' + formId);
+			form = $('#' + formId);
 			$(form).attr('action', s.url);
 			$(form).attr('method', 'POST');
 			$(form).attr('target', frameId);
@@ -178,7 +178,7 @@ jQuery.extend({
         else{
             document.getElementById(frameId).addEventListener('load', uploadCallback, false);
         } 		
-        return {abort: function () {}};	
+        return {abort: function(){}};	
 
     },
 
@@ -187,13 +187,13 @@ jQuery.extend({
         data = type == "xml" || data ? r.responseXML : r.responseText;
         // If the type is "script", eval it in global context
         if ( type == "script" )
-            jQuery.globalEval( data );
+            {jQuery.globalEval( data );}
         // Get the JavaScript object, if JSON is used.
         if ( type == "json" )
-            eval( "data = " + data );
+        { eval( "data = " + data );}
         // evaluate scripts within html
         if ( type == "html" )
-            jQuery("<div>").html(data).evalScripts();
+        { jQuery("<div>").html(data).evalScripts();}
 			//alert($('param', data).each(function(){alert($(this).attr('value'));}));
         return data;
     }

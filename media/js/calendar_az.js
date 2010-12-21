@@ -1,1 +1,362 @@
-eval(function(p,a,c,k,e,r){e=function(c){return(c<62?'':e(parseInt(c/62)))+((c=c%62)>35?String.fromCharCode(c+29):c.toString(36))};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'([689af-hj-lo-qt-xA-CE-Z]|[1-3]\\w)'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('l g(){}g.prototype={_VersionInfo:"",1K:22,C:"",insertId:"",1b:Z,1c:Z,1d:Z,IsOpen:1L,1M:0,1N:0,Q:l(){a(1m.w){x 1m.w.S}o{x 1m.S}},I:A K().1e(),t:A K().1f()+1,M:A 2l(39),2m:A 2l(31,28,31,30,31,30,31,31,30,31,30,31),2n:l(){8 p;a(P.1n>0){p==P[0]}o{p=6.1b}a(p!=Z){8 y=p.2o;2p(p=p.2q)y+=p.2o;x y}o{x 0}},2r:l(){8 p;a(P.1n>0){p==P[0]}o{p=6.1b}a(p!=Z){8 y=p.2s;2p(p=p.2q)y+=p.2s;x y}o{x 0}},2t:l(){8 f="";f+="<J E=\\"g\\">\\r\\n";f+="<1o E=\\"1y\\" 9=\\"z-T: 1z;1g: 1h;R: 3; F: 19;N: U\\"></1o>\\r\\n";f+="<1o E=\\"1A\\" 9=\\"z-T: 1z;1g: 1h;R: 3; F: 78;N: U\\"></1o>\\r\\n";f+="<J E=\\"g-O-u\\"><J E=\\"g-1O\\" 14=\\"w."+6.C+".1O()\\" 1B=\\"上一月\\"><b>&lt;</b></J><J E=\\"g-O\\" 23=\\"\\" 24=\\"9.backgroundColor=\'\'\\" 14=\\"w."+6.C+".2v(\'"+6.I+"\')\\"></J><J E=\\"g-u\\" 23=\\"\\" 24=\\"\\" 14=\\"w."+6.C+".2w(\'"+6.t+"\')\\"></J><J E=\\"g-1P\\" 14=\\"w."+6.C+".1P()\\" 1B=\\"下一月\\"><b>&gt;</b></J></J>\\r\\n";f+="<J E=\\"g-1C\\"><ul onmouseup=\\"2x()\\"><B>日</B><B>一</B> <B>二</B><B>三</B><B>四</B><B>五</B><B>六</B></ul></J>\\r\\n";f+="<J E=\\"g-L\\">\\r\\n";f+="<ul>\\r\\n";15(8 i=0;i<6.M.1n;i++){f+="<B E=\\"g-2y"+i+"\\" 9=\\"6.9.16=\'#1i\'\\" 23=\\"6.9.16=\'#25\'\\" 24=\\"6.9.16=\'white\'\\"></B>\\r\\n"}f+="</ul>\\r\\n";f+="<1o E=\\"g-1D\\" 14=\\"w."+6.C+".2z()\\"><b>今天</b></1o>\\r\\n";f+="</J>\\r\\n";f+="</J>\\r\\n";f+="<2A 2B=\\"1q/javascript\\">\\r\\n";f+="8 1M,1N;";f+="8 1K="+6.1K+";\\r\\n";f+="8 1Q=1L;\\r\\n";f+="j.onmousemove=l(e)\\r\\n";f+="{\\r\\n";f+="8 k=w.j.q(\\"S\\");\\r\\n";f+="    e = 1m.27 || e;\\r\\n";f+="8 2C=k.9.posLeft || 2D(k.9.F.2E(\\"px\\",\\"\\"));\\r\\n";f+="8 2F=k.9.posTop || 2D(k.9.R.2E(\\"px\\",\\"\\"));\\r\\n";f+="a(1Q){k.9.F=(2C+e.2G-1M)+\\"px\\";k.9.R=(2F+e.2H-1N)+\\"px\\"}\\r\\n";f+=";\\r\\n";f+="}\\r\\n";f+="j.q(\\"g-1C\\").onmousedown=l(e){\\r\\n";f+="a(1K){1Q=22;}\\r\\n";f+="    e = 1m.27 || e;\\r\\n";f+=" 1M = e.2G;\\r\\n";f+=" 1N = e.2H;\\r\\n";f+="    }\\r\\n";f+="l 2x(){\\r\\n";f+="1Q=1L;\\r\\n";f+="    }\\r\\n";f+="</2A>\\r\\n";8 v="";v+="<9 2B=\\"1q/css\\">";v+="29{16:#1i;2a-2b:2c;1E:17;1s:17;1q-1R:F}\\r\\n";v+="#g{border:1S solid #25;V:2I;1s:1S;G:2d;z-T:18;1q-1R:2e}\\r\\n";v+="#g-O-u{G:1t;1F-G:1t;z-T:18;16-1G:#6D84B7;1G:#1i;}\\r\\n";v+="#g-O{1F-G:1t;V:60px;1H:F;z-T:18;1g: 1h;R: 3; F: 19;1j:2J}\\r\\n";v+="#g-u{1F-G:1t;V:48px;1H:F;z-T:18;1g: 1h;R: 3; F: 78;1j:2J}\\r\\n";v+="#g-1O{1g: 1h;R: 3; F: 5;1j:1T}"v+="#g-1P{1g: 1h;R: 3; F: 145;1j:1T}"v+="#g-1C{G:1t;1F-G:1t;z-T:18;}\\r\\n";v+="#g-L{G:136px;z-T:18;}\\r\\n";v+="#g-1C ul{1j:move;2K-9:U;1E:17;1s:17;}\\r\\n";v+="#g-1C B{V:1u;G:1u;1H:F;1s:17;1q-1R:2e;}\\r\\n";v+="#g-L ul{2K-9:U;1E:17;1s:17;}\\r\\n";v+="#g-L B{1j:1T;V:1u;G:1u;1E:1S;1H:F;1s:17;}\\r\\n";v+="#g-control{G:25px;z-T:18;}\\r\\n";v+="#g-1D{1j:1T;1H:F;V:63px;G:1u;1F-G:1u;1E:1S;1q-1R:2e;16:red}"v+="</9>";8 W="<2L>\\r\\n";W+="<2M>\\r\\n";W+="<1B></1B>\\r\\n";W+=v;W+="</2M>\\r\\n";W+="<29>\\r\\n";W+=f;W+="</29>\\r\\n";W+="</2L>\\r\\n";6.Q().j.2N(W);6.Q().j.close()},2f:l(E,f){8 S=6.Q();a(S){S.j.q(E).1k=f}},2O:l(H,h){6.2f("g-O",H+"年");6.2f("g-u",h+"月")},2P:l(O){a(0==O%4&&((O%100!=0)||(O%400==0)))x 22;o x 1L},1I:l(O,u){8 c=6.2m[u-1];a((u==2)&&6.2P(O))c++;x c},GetDOW:l(L,u,O){8 dt=A K(O,u-1,L).2R()/7;x dt},GetText:l(p){a(p.2S){x p.2S}o{x p.textContent}},1O:l(){a(6.t>1){6.t--}o{6.I--;6.t=12}6.1v(6.I,6.t)},1P:l(){a(6.t==12){6.I++;6.t=1}o{6.t++}6.1v(6.I,6.t)},2z:l(){8 1D;6.I=A K().1e();6.t=A K().1f()+1;1D=A K().1U();a(6.1c){6.1c.11=6.I+"-"+6.t+"-"+1D}6.1J()},1v:l(H,h){6.2O(H,h);6.I=H;6.t=h;15(8 i=0;i<39;i++){6.M[i]=""};8 1V=1,2g=1,1l=A K(H,h-1,1).2R();15(i=0;i<1l;i++)6.M[i]=6.1I(h==1?H-1:H,h==1?12:h-1)-1l+i+1 15(i=1l;1V<6.1I(H,h)+1;i++){6.M[i]=1V;1V++}15(i=1l+6.1I(H,h);i<39;i++){6.M[i]=2g;2g++}15(i=0;i<39;i++){8 X=6.Q().j.q("g-2y"+i+"");8 u,L;a(6.M[i]!=""){a(i<1l){X.1k="<b 9=\\"1G:#1i\\">"+6.M[i]+"</b>";u=(h==1?12:h-1);L=6.M[i]}o a(i>=1l+6.1I(H,h)){X.1k="<b 9=\\"1G:#1i\\">"+6.M[i]+"</b>";u=(h==1?h+1:h+1);L=6.M[i]}o{X.1k="<b 9=\\"1G:#000\\">"+6.M[i]+"</b>";X.1k=6.M[i];u=(h==1?h:h);L=6.M[i];a(j.2T){X.14=Function("w."+6.C+".2h("+u+","+L+")")}o{X.setAttribute("14","w."+6.C+".2h("+u+","+L+")")}}X.1B=u+"月"+L+"日";X.9.16=(H==A K().1e()&&u==A K().1f()+1&&L==A K().1U())?"#1i":"#1i";a(6.1d!=Z){a(H==6.1d.1e()&&u==6.1d.1f()+1&&L==6.1d.1U()){X.9.16="#25"}}}}},2v:l(1W){a(1W.2i(/\\D/)!=Z){1w("日期格式不正确");x}8 m=(1W)?1W:A K().1e();a(m<1X||m>1z){1w("1X-1z");x}8 n=m-10;a(n<1X)n=1X;a(n+26>1z)n=9974;8 s="<1Y 2j=\\"1Z\\" E=\\"1Z\\" 9=\'2a-2b: 2c\' "s+="2U=\'j.q(\\"1y\\").9.N=\\"U\\"\' "s+="2V=\'j.q(\\"1y\\").9.N=\\"U\\";"s+="w."+6.C+".I = 6.11; w."+6.C+".1v(w."+6.C+".I,w."+6.C+".t)\'>\\r\\n";8 Y=s;15(8 i=n;i<n+26;i++){a(i==m){Y+="<1a 11=\'"+i+"\' 2W>"+i+"月</1a>\\r\\n"}o{Y+="<1a 11=\'"+i+"\'>"+i+"月</1a>\\r\\n"}}Y+="</1Y>";8 k=6.Q();k.j.q("1y").9.N="";k.j.q("1y").1k=Y;k.j.q("1Z").2X()},2w:l(20){a(20.2i(/\\D/)!=Z){1w("日期格式不正确");x}8 m=(20)?20:A K().1f()+1;8 s="<1Y 2j=\\"1Z\\" E=\\"2Y\\" 9=\'2a-2b: 2c\' "s+="2U=\'j.q(\\"1A\\").9.N=\\"U\\"\' "s+="2V=\'j.q(\\"1A\\").9.N=\\"U\\";"s+="w."+6.C+".t = 6.11; w."+6.C+".1v(w."+6.C+".I,w."+6.C+".t)\'>\\r\\n";8 Y=s;15(8 i=1;i<13;i++){a(i==m){Y+="<1a 11=\'"+i+"\' 2W>"+i+"月</1a>\\r\\n"}o{Y+="<1a 11=\'"+i+"\'>"+i+"月</1a>\\r\\n"}}Y+="</1Y>";8 k=6.Q();k.j.q("1A").9.N="";k.j.q("1A").1k=Y;k.j.q("2Y").2X()},2h:l(h,dd){8 H=6.I;a(h<1){H--;h=12+h}o a(h>12){H++;h=h-12}a(h<10){h="0"+h}a(6.1b){a(!dd){x}a(dd<10){dd="0"+dd}6.1c.11=H+"-"+h+"-"+dd;6.1J()}o{6.1J();1w("日期格式不正确")}},SetDate:l(){a(P.1n<1){1w("日期格式不正确");x}o a(P.1n>2){1w("日期格式不正确");x}6.1c=(P.1n==1)?P[0]:P[1];6.1b=P[0];8 2Z=/^(\\d+)-(\\d{1,2})-(\\d{1,2})$/;8 r=6.1c.11.2i(2Z);a(r!=Z){r[2]=r[2]-1;8 d=A K(r[1],r[2],r[3]);a(d.1e()==r[1]&&d.1f()==r[2]&&d.1U()==r[3]){6.1d=d}o 6.1d="";6.I=r[1];6.t=r[2]+1}o{6.I=A K().1e();6.t=A K().1f()+1}6.2t();8 R=6.2n();8 F=6.2r();8 k=j.q("S");k.9.R=R+6.1b.clientHeight+5+"px";k.9.F=F+"px";k.9.N="32";a(j.2T){6.Q().j.q("g").9.V="33";6.Q().j.q("g").9.G="2d"}o{6.Q().j.q("g").9.V="154px";6.Q().j.q("g").9.G="2d"k.9.V="2I";k.9.G="250px"}6.1v(6.I,6.t)},1J:l(){try{8 k=j.q("S");a((k.9.N==""||k.9.N=="32")&&P[0]!=6.1b&&P[0]!=6.1c){k.9.N="U"}}catch(e){}}}j.2N(\'<34 E="S" 2j="S" frameborder="0" 9="1g:1h;V:33; G:200px;z-T:18;N:U;"></34>\');8 21=A g();21.C="21";j.14=l(e){e=1m.27||e;8 2k=e.2k||e.target;21.1J(2k)}',[],191,'||||||this||var|style|if|||||htmlstr|L_calendar|mm||document|DateLayer|function|||else|obj|getElementById|||L_TheMonth|month|stylestr|parent|return|||new|li|NewName||id|left|height|yy|L_TheYear|div|Date|day|L_WDay|display|year|arguments|GetDateLayer|top|L_DateLayer|index|none|width|TempLateContent|da|selectInnerHTML|null||value|||onclick|for|background|0px|9998||option|ClickObject|InputObject|InputDate|getFullYear|getMonth|position|absolute|fff|cursor|innerHTML|firstday|window|length|span||text||padding|23px|20px|SetDay|alert||SelectYearLayer|9999|SelectMonthLayer|title|week|today|margin|line|color|float|GetMonthCount|CloseLayer|Moveable|false|MouseX|MouseY|PrevM|NextM|MoveaStart|align|1px|pointer|getDate|day1|strYear|1000|select|L_SelectYear|strMonth|MyCalendar|true|onmouseover|onmouseout|ccc||event||body|font|size|12px|180px|center|InsertHTML|day2|DayClick|match|name|srcElement|Array|MonHead|GetY|offsetTop|while|offsetParent|GetX|offsetLeft|CreateHTML||SelectYearInnerHTML|SelectMonthInnerHTML|StopMove|day_|Today|script|type|DateLayerLeft|parseInt|replace|DateLayerTop|clientX|clientY|158px|default|list|html|head|writeln|WriteHead|IsPinYear||getDay|innerText|all|onblur|onchange|selected|focus|L_SelectMonth|reg|||block|160px|iframe'.split('|'),0,{}))
+/*
+=========================================================
+ 
+ eg. 
+   <input type="text" name="time1" id="time1" onclick="MyCalendar.SetDate(this)" value="2006-8-1"/>
+   <input type="text" name="time2" id="time2" value="2006-8-1"/><input name="" type="button" onclick="MyCalendar.SetDate(this,document.getElementById('time2'))" value="ѡ��"/>
+
+=========================================================
+*/
+  
+
+function L_calendar(){}
+L_calendar.prototype={
+    _VersionInfo:"",
+    Moveable:true,
+    NewName:"",
+    insertId:"",
+    ClickObject:null,
+    InputObject:null,
+    InputDate:null,
+    IsOpen:false,
+    MouseX:0,
+    MouseY:0,
+    GetDateLayer:function(){
+        if(window.parent){
+            return window.parent.L_DateLayer;
+            }
+        else{return window.L_DateLayer;}
+        },
+    L_TheYear:new Date().getFullYear(), 
+    L_TheMonth:new Date().getMonth()+1,
+    L_WDay:new Array(39),
+    MonHead:new Array(31,28,31,30,31,30,31,31,30,31,30,31),
+    GetY:function(){
+        var obj;
+        if (arguments.length > 0){
+            obj==arguments[0];
+            }
+        else{
+            obj=this.ClickObject;
+            }
+        if(obj!=null){
+            var y = obj.offsetTop;
+            while (obj = obj.offsetParent) y += obj.offsetTop;
+            return y;}
+        else{return 0;}
+        },
+    GetX:function(){
+        var obj;
+        if (arguments.length > 0){
+            obj==arguments[0];
+           
+            }
+        else{
+            obj=this.ClickObject;
+            }
+        if(obj!=null){
+            var y = obj.offsetLeft;
+            while (obj = obj.offsetParent) y += obj.offsetLeft;
+            return y;}
+        else{return 0;}
+        },
+    CreateHTML:function(){
+        var htmlstr="";
+        htmlstr+="<div id=\"L_calendar\">\r\n";
+        htmlstr+="<span id=\"SelectYearLayer\" style=\"z-index: 9999;position: absolute;top: 3; left: 19;display: none\"></span>\r\n";
+        htmlstr+="<span id=\"SelectMonthLayer\" style=\"z-index: 9999;position: absolute;top: 3; left: 78;display: none\"></span>\r\n";
+        htmlstr+="<div id=\"L_calendar-year-month\"><div id=\"L_calendar-PrevM\" onclick=\"parent."+this.NewName+".PrevM()\" title=\"上一月\"><b>&lt;</b></div><div id=\"L_calendar-year\" onmouseover=\"\" onmouseout=\"style.backgroundColor=''\" onclick=\"parent."+this.NewName+".SelectYearInnerHTML('"+this.L_TheYear+"')\"></div><div id=\"L_calendar-month\" onmouseover=\"\" onmouseout=\"\" onclick=\"parent."+this.NewName+".SelectMonthInnerHTML('"+this.L_TheMonth+"')\"></div><div id=\"L_calendar-NextM\" onclick=\"parent."+this.NewName+".NextM()\" title=\"下一月\"><b>&gt;</b></div></div>\r\n";
+        htmlstr+="<div id=\"L_calendar-week\"><ul onmouseup=\"StopMove()\"><li>日</li><li>一</li> <li>二</li><li>三</li><li>四</li><li>五</li><li>六</li></ul></div>\r\n";
+        htmlstr+="<div id=\"L_calendar-day\">\r\n";
+        htmlstr+="<ul>\r\n";
+        for(var i=0;i<this.L_WDay.length;i++){
+            htmlstr+="<li id=\"L_calendar-day_"+i+"\" style=\"this.style.background='#fff'\" onmouseover=\"this.style.background='#ccc'\" onmouseout=\"this.style.background='white'\"></li>\r\n";
+            }
+        htmlstr+="</ul>\r\n";
+        htmlstr+="<span id=\"L_calendar-today\" onclick=\"parent."+this.NewName+".Today()\"><b>今天</b></span>\r\n";
+        htmlstr+="</div>\r\n";
+        //htmlstr+="<div id=\"L_calendar-control\"></div>\r\n";
+        htmlstr+="</div>\r\n";
+        htmlstr+="<script type=\"text/javascript\">\r\n";
+        htmlstr+="var MouseX,MouseY;";
+        htmlstr+="var Moveable="+this.Moveable+";\r\n";
+        htmlstr+="var MoveaStart=false;\r\n";
+        htmlstr+="document.onmousemove=function(e)\r\n";
+        htmlstr+="{\r\n";
+        htmlstr+="var DateLayer=parent.document.getElementById(\"L_DateLayer\");\r\n";
+        htmlstr+="    e = window.event || e;\r\n";
+        htmlstr+="var DateLayerLeft=DateLayer.style.posLeft || parseInt(DateLayer.style.left.replace(\"px\",\"\"));\r\n";
+        htmlstr+="var DateLayerTop=DateLayer.style.posTop || parseInt(DateLayer.style.top.replace(\"px\",\"\"));\r\n";
+        htmlstr+="if(MoveaStart){DateLayer.style.left=(DateLayerLeft+e.clientX-MouseX)+\"px\";DateLayer.style.top=(DateLayerTop+e.clientY-MouseY)+\"px\"}\r\n";
+        htmlstr+=";\r\n";
+        htmlstr+="}\r\n";
+       
+        htmlstr+="document.getElementById(\"L_calendar-week\").onmousedown=function(e){\r\n";
+        htmlstr+="if(Moveable){MoveaStart=true;}\r\n";
+        htmlstr+="    e = window.event || e;\r\n";
+        htmlstr+=" MouseX = e.clientX;\r\n";
+        htmlstr+=" MouseY = e.clientY;\r\n";
+        htmlstr+="    }\r\n";
+       
+        htmlstr+="function StopMove(){\r\n";
+        htmlstr+="MoveaStart=false;\r\n";
+        htmlstr+="    }\r\n";
+        htmlstr+="</scr"+"ipt>\r\n";
+        var stylestr="";
+        stylestr+="<style type=\"text/css\">";
+        stylestr+="body{background:#fff;font-size:12px;margin:0px;padding:0px;text-align:left}\r\n";
+        stylestr+="#L_calendar{border:1px solid #ccc;width:158px;padding:1px;height:180px;z-index:9998;text-align:center}\r\n";
+        stylestr+="#L_calendar-year-month{height:23px;line-height:23px;z-index:9998;background-color:#6D84B7;color:#fff;}\r\n";
+        stylestr+="#L_calendar-year{line-height:23px;width:60px;float:left;z-index:9998;position: absolute;top: 3; left: 19;cursor:default}\r\n";
+        stylestr+="#L_calendar-month{line-height:23px;width:48px;float:left;z-index:9998;position: absolute;top: 3; left: 78;cursor:default}\r\n";
+        stylestr+="#L_calendar-PrevM{position: absolute;top: 3; left: 5;cursor:pointer}"
+        stylestr+="#L_calendar-NextM{position: absolute;top: 3; left: 145;cursor:pointer}"
+        stylestr+="#L_calendar-week{height:23px;line-height:23px;z-index:9998;}\r\n";
+        stylestr+="#L_calendar-day{height:136px;z-index:9998;}\r\n";
+        stylestr+="#L_calendar-week ul{cursor:move;list-style:none;margin:0px;padding:0px;}\r\n";
+        stylestr+="#L_calendar-week li{width:20px;height:20px;float:left;padding:0px;text-align:center;}\r\n";
+        stylestr+="#L_calendar-day ul{list-style:none;margin:0px;padding:0px;}\r\n";
+        stylestr+="#L_calendar-day li{cursor:pointer;width:20px;height:20px;margin:1px;float:left;padding:0px;}\r\n";
+        stylestr+="#L_calendar-control{height:25px;z-index:9998;}\r\n";
+        stylestr+="#L_calendar-today{cursor:pointer;float:left;width:63px;height:20px;line-height:20px;margin:1px;text-align:center;background:red}"
+        stylestr+="</style>";
+        var TempLateContent="<html>\r\n";
+        TempLateContent+="<head>\r\n";
+        TempLateContent+="<title></title>\r\n";
+        TempLateContent+=stylestr;
+        TempLateContent+="</head>\r\n";
+        TempLateContent+="<body>\r\n";
+        TempLateContent+=htmlstr;
+        TempLateContent+="</body>\r\n";
+        TempLateContent+="</html>\r\n";
+        this.GetDateLayer().document.writeln(TempLateContent);
+        this.GetDateLayer().document.close();
+        },
+    InsertHTML:function(id,htmlstr){
+        var L_DateLayer=this.GetDateLayer();
+        if(L_DateLayer){L_DateLayer.document.getElementById(id).innerHTML=htmlstr;}
+        },
+    WriteHead:function (yy,mm) //
+    {
+        this.InsertHTML("L_calendar-year",yy + "年");
+        this.InsertHTML("L_calendar-month",mm + "月");
+    },
+    IsPinYear:function(year)          
+    {
+        if (0==year%4&&((year%100!=0)||(year%400==0))) return true;else return false;
+    },
+    GetMonthCount:function(year,month) 
+    {
+        var c=this.MonHead[month-1];if((month==2)&&this.IsPinYear(year)) c++;return c;
+    },
+    GetDOW:function(day,month,year)  
+    {
+        var dt=new Date(year,month-1,day).getDay()/7; return dt;
+    },
+    GetText:function(obj){
+        if(obj.innerText){return obj.innerText}
+        else{return obj.textContent}
+        },
+    PrevM:function()
+    {
+        if(this.L_TheMonth>1){this.L_TheMonth--}else{this.L_TheYear--;this.L_TheMonth=12;}
+        this.SetDay(this.L_TheYear,this.L_TheMonth);
+    },
+    NextM:function() 
+    {
+        if(this.L_TheMonth==12){this.L_TheYear++;this.L_TheMonth=1}else{this.L_TheMonth++}
+        this.SetDay(this.L_TheYear,this.L_TheMonth);
+    },
+    Today:function() //Today Button
+    {
+        var today;
+        this.L_TheYear = new Date().getFullYear();
+        this.L_TheMonth = new Date().getMonth()+1;
+        today=new Date().getDate();
+        if(this.InputObject){
+        this.InputObject.value=this.L_TheYear + "-" + this.L_TheMonth + "-" + today;
+        }
+        this.CloseLayer();
+    },
+    SetDay:function (yy,mm)   
+    {
+        this.WriteHead(yy,mm);
+    
+        this.L_TheYear=yy;
+        this.L_TheMonth=mm;
+		
+        for (var i = 0; i < 39; i++){this.L_WDay[i]=""}; 
+        var day1 = 1,day2=1,firstday = new Date(yy,mm-1,1).getDay();
+        for (i=0;i<firstday;i++)this.L_WDay[i]=this.GetMonthCount(mm==1?yy-1:yy,mm==1?12:mm-1)-firstday+i+1  
+
+        for (i = firstday; day1 < this.GetMonthCount(yy,mm)+1; i++){this.L_WDay[i]=day1;day1++;}
+ 
+        for (i=firstday+this.GetMonthCount(yy,mm);i<39;i++){this.L_WDay[i]=day2;day2++}
+        for (i = 0; i < 39; i++)
+        {
+            var da=this.GetDateLayer().document.getElementById("L_calendar-day_"+i+"");
+            var month,day;
+            if (this.L_WDay[i]!="")
+            {
+                if(i<firstday){
+                    da.innerHTML="<b style=\"color:#fff\">" + this.L_WDay[i] + "</b>";
+                    month=(mm==1?12:mm-1);
+				
+                    day=this.L_WDay[i];
+					
+				
+                }
+                else if(i>=firstday+this.GetMonthCount(yy,mm)){
+                    da.innerHTML="<b style=\"color:#fff\">" + this.L_WDay[i] + "</b>";
+					//alert(mm);
+                    month=(mm==1?mm+1:mm+1);
+                    day=this.L_WDay[i];
+					
+				
+                }
+                else{
+                    da.innerHTML="<b style=\"color:#000\">" + this.L_WDay[i] + "</b>";
+                	da.innerHTML=this.L_WDay[i];
+                    month=(mm==1?mm:mm);
+                    day=this.L_WDay[i];
+                    if(document.all){
+                        da.onclick=Function("parent."+this.NewName+".DayClick("+month+","+day+")");
+                    }
+                    else{
+                        da.setAttribute("onclick","parent."+this.NewName+".DayClick("+month+","+day+")");
+                    }
+                }
+                da.title=month+"月"+day+"日";
+			
+                da.style.background=(yy == new Date().getFullYear()&&month==new Date().getMonth()+1&&day==new Date().getDate())? "#fff":"#fff";
+            
+                if(this.InputDate!=null){
+                    if(yy==this.InputDate.getFullYear() && month== this.InputDate.getMonth() + 1 && day==this.InputDate.getDate()){
+                        da.style.background="#ccc";
+                        }
+                    }
+              }
+        }
+    },
+    SelectYearInnerHTML:function (strYear) //��ݵ�������
+    {
+          if (strYear.match(/\D/)!=null){alert("日期格式不正确");return;}
+          var m = (strYear) ? strYear : new Date().getFullYear();
+        if (m < 1000 || m > 9999) {alert("1000-9999");return;}
+        var n = m - 10;
+        if (n < 1000) n = 1000;
+        if (n + 26 > 9999) n = 9974;
+        var s = "<select name=\"L_SelectYear\" id=\"L_SelectYear\" style='font-size: 12px' "
+             s += "onblur='document.getElementById(\"SelectYearLayer\").style.display=\"none\"' "
+             s += "onchange='document.getElementById(\"SelectYearLayer\").style.display=\"none\";"
+             s += "parent."+this.NewName+".L_TheYear = this.value; parent."+this.NewName+".SetDay(parent."+this.NewName+".L_TheYear,parent."+this.NewName+".L_TheMonth)'>\r\n";
+        var selectInnerHTML = s;
+        for (var i = n; i < n + 26; i++)
+        {
+            if (i == m)
+               {selectInnerHTML += "<option value='" + i + "' selected>" + i + "月" + "</option>\r\n";}
+            else {selectInnerHTML += "<option value='" + i + "'>" + i + "月" + "</option>\r\n";}
+         }
+        selectInnerHTML += "</select>";
+        var DateLayer=this.GetDateLayer();
+        DateLayer.document.getElementById("SelectYearLayer").style.display="";
+        DateLayer.document.getElementById("SelectYearLayer").innerHTML = selectInnerHTML;
+        DateLayer.document.getElementById("L_SelectYear").focus();
+        },
+    SelectMonthInnerHTML:function (strMonth) //�·ݵ�������
+    {
+        if (strMonth.match(/\D/)!=null){alert("日期格式不正确");return;}
+        var m = (strMonth) ? strMonth : new Date().getMonth() + 1;
+         var s = "<select name=\"L_SelectYear\" id=\"L_SelectMonth\" style='font-size: 12px' "
+             s += "onblur='document.getElementById(\"SelectMonthLayer\").style.display=\"none\"' "
+             s += "onchange='document.getElementById(\"SelectMonthLayer\").style.display=\"none\";"
+             s += "parent."+this.NewName+".L_TheMonth = this.value; parent."+this.NewName+".SetDay(parent."+this.NewName+".L_TheYear,parent."+this.NewName+".L_TheMonth)'>\r\n";
+        var selectInnerHTML = s;
+        for (var i = 1; i < 13; i++)
+        {
+            if (i == m)
+               {selectInnerHTML += "<option value='"+i+"' selected>"+i+"月"+"</option>\r\n";}
+            else {selectInnerHTML += "<option value='"+i+"'>"+i+"月"+"</option>\r\n";}
+        }
+        selectInnerHTML += "</select>";
+        var DateLayer=this.GetDateLayer();
+        DateLayer.document.getElementById("SelectMonthLayer").style.display="";
+        DateLayer.document.getElementById("SelectMonthLayer").innerHTML = selectInnerHTML;
+        DateLayer.document.getElementById("L_SelectMonth").focus();
+    },
+    DayClick:function(mm,dd) 
+    {
+        var yy=this.L_TheYear;
+     
+        if(mm<1){yy--;mm=12+mm;}
+        else if(mm>12){yy++;mm=mm-12;}
+        if (mm < 10){mm = "0" + mm;}
+        if (this.ClickObject)
+        {if (!dd) {return;}
+        if ( dd < 10){dd = "0" + dd;}
+        this.InputObject.value= yy + "-" + mm + "-" + dd ;
+        this.CloseLayer();
+         }
+        else {this.CloseLayer(); alert("日期格式不正确");}
+    },
+    SetDate:function(){
+        if (arguments.length < 1){alert("日期格式不正确");return;}
+        else if (arguments.length > 2){alert("日期格式不正确");return;}
+        this.InputObject=(arguments.length==1) ? arguments[0] : arguments[1];
+        this.ClickObject=arguments[0];
+        var reg = /^(\d+)-(\d{1,2})-(\d{1,2})$/;
+        var r = this.InputObject.value.match(reg);
+        if(r!=null){
+            r[2]=r[2]-1;
+            var d= new Date(r[1], r[2],r[3]);
+            if(d.getFullYear()==r[1] && d.getMonth()==r[2] && d.getDate()==r[3]){
+                this.InputDate=d;        //�����ⲿ���������
+            }
+            else this.InputDate="";
+            this.L_TheYear=r[1];
+            this.L_TheMonth=r[2]+1;
+            }
+        else{
+            this.L_TheYear=new Date().getFullYear();
+            this.L_TheMonth=new Date().getMonth() + 1
+            }
+        this.CreateHTML();
+        var top=this.GetY();
+        var left=this.GetX();
+        var DateLayer=document.getElementById("L_DateLayer");
+        DateLayer.style.top=top+this.ClickObject.clientHeight+5+"px";
+        DateLayer.style.left=left+"px";
+        DateLayer.style.display="block";
+        if(document.all){
+            this.GetDateLayer().document.getElementById("L_calendar").style.width="160px";
+            this.GetDateLayer().document.getElementById("L_calendar").style.height="180px"
+            }
+        else{
+            this.GetDateLayer().document.getElementById("L_calendar").style.width="154px";
+            this.GetDateLayer().document.getElementById("L_calendar").style.height="180px"
+            DateLayer.style.width="158px";
+            DateLayer.style.height="250px";
+            }
+        //alert(DateLayer.style.display)
+        this.SetDay(this.L_TheYear,this.L_TheMonth);
+        },
+    CloseLayer:function(){
+        try{
+            var DateLayer=document.getElementById("L_DateLayer");
+            if((DateLayer.style.display=="" || DateLayer.style.display=="block") && arguments[0]!=this.ClickObject && arguments[0]!=this.InputObject){
+                DateLayer.style.display="none";
+            }
+        }
+        catch(e){}
+        }
+    }
+   
+document.writeln('<iframe id="L_DateLayer" name="L_DateLayer" frameborder="0" style="position:absolute;width:160px; height:200px;z-index:9998;display:none;"></iframe>');
+var MyCalendar=new L_calendar();
+MyCalendar.NewName="MyCalendar";
+document.onclick=function(e)
+{
+    e = window.event || e;
+    var srcElement = e.srcElement || e.target;
+    MyCalendar.CloseLayer(srcElement);
+}

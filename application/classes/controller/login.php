@@ -15,6 +15,11 @@ class Controller_Login extends Controller {
 		parent::before();
 		$this->template->info = '';
 		
+		if(strpos($_SERVER['HTTP_USER_AGENT'], "MSIE 6.0"))
+		{
+		  	$this->template->info='<div class="showinfo warning">您目前使用的ie6版本，为您的信息安全请升级为ie7以上版本！</div>'; 
+		}	
+		else
 		if ($_POST)
 		{
 		  if (Captcha::valid(Arr::get($_POST,'lcaptcha'))){
@@ -30,18 +35,43 @@ class Controller_Login extends Controller {
                 $userid='';
                 $roleid='';
                 $username='';
+                $ip='';
                 foreach ($result as $key=>$value){
                 	$password = $value->password;
              	    $userid= $value->userid;
              	    $roleid= $value->role_id;
              	    $username= $value->username;
-             	
+             	    $adr = $value->localadr;
+             	    $istype = $value->istype;
                  }  
                  
                 if (md5($psw)=== $password){
-
-                	$this->session->set('userlogin',$result->as_array());                	
-                    $this->request->redirect('/');            	
+                	$ip = $_SERVER['REMOTE_ADDR'];
+                 
+                  	if ($istype==='终端')
+                  	{
+		        	    $resultdb = DB::query(Database::SELECT,"SELECT left(adr,5) as adr FROM ip_js WHERE ip1<:ip and ip2>:ip ",TRUE)
+		  	                  ->param(":ip",ip2long($ip));
+		  	                  
+		  	            echo Kohana::debug((string) $resultdb);		
+		  	                     	      
+		  	            $resultdb =$resultdb->as_object()->execute();
+		  	            $result1 =$resultdb->as_array(); 
+		  	            print_r($result1);      
+		  	            $checkip= $result1[0]->adr;
+		  	            if ($checkip===$adr){
+		  	               $this->session->set('userlogin',$result->as_array());                	
+                           $this->request->redirect('/');       
+		  	            }
+		  	            else
+		  	              $this->template->info='<div class="showinfo warning">请在本辖区（'.$adr.'）内使用，谢谢配合！</div>'; 
+		  	                 
+                  	}
+                  	else 
+                  	{          
+                	   $this->session->set('userlogin',$result->as_array());                	
+                       $this->request->redirect('/');       
+                  	}     	
                 }
                 else 
                  $this->template->info='<div class="showinfo error">密码错误！</div>'; 

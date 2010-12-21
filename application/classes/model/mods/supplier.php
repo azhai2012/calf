@@ -296,7 +296,7 @@ class Model_Mods_Supplier {
 		              SELECT suppliers.id,products.product_name, product_spec,product_unit,
 		                     product_origin,limit_number,price
                       FROM suppliers
-                      INNER JOIN products ON suppliers.product_id = products.product_id and suppliers.sup_id=products.sup_id
+                      INNER JOIN products ON suppliers.product_id = products.product_id 
                       INNER JOIN meets ON suppliers.meet_id = meets.id 
                       WHERE suppliers.sup_id=:sid and meet_id=:mid and active='Y'
                       ",TRUE)
@@ -347,28 +347,98 @@ class Model_Mods_Supplier {
 		return $result;
 	}
  
+	function ajax_get_select_proc_dialog_other($info){
+	
+		$result  ='';
+		$sql =  ' SELECT * 
+                     FROM products 
+                     WHERE product_id not in 
+                     (select product_id 
+                      from suppliers 
+                      where suppliers.meet_id=:meet_id and sup_id=:sup_id
+                     )
+                     and sup_id=:sup_id';
+		
+		$spmc = array_key_exists('spmc',$info)?$info['spmc']:'';
+		
+		if (!empty($spmc))
+		$sql.= ' and (products.product_name like :spmc or product_code like :spmc)';
+		 
+		$modules= DB::query(Database::SELECT,$sql,TRUE)
+		->param(':sup_id',$info['userid'])
+		->param(':meet_id',$info['meetid']);
+		if (!empty($spmc))
+		 $modules->param(':spmc','%'.$spmc.'%');
+		
+			
+		//echo Kohana::debug((string) $modules);
+			
+		$modules=$modules->as_object()->execute();
+
+		if (count($modules)>0)
+		{
+			foreach ($modules as $key=>$value){
+				$result .='<tr id="w'.$value->product_id.'">
+    		            <td align="center"><input type="checkbox" name="'.$key.' id="'.$key.' value="" /></td>
+                        <td>'.$value->product_id.'</td> 
+    		            <td>'.$value->product_name.'</td> 
+    		            <td>'.$value->product_spec.'</td>
+    		            <td>'.$value->product_unit.'</td>
+    		            <td>'.$value->product_origin.'</td>
+    		            <td>'.$value->product_group.'</td>
+    		            <td></td>
+    		            <td style="display:none"><a href="javascript:Sups.delSelectProc(\'w'.$value->product_id.'\')">删除</a></td>
+    		          </tr>';
+			}
+		}
+		else
+		$result .='<tr><td colspan=9  align="center"><h4 style="border:0">没有商品可供选择！商品可能已全部参展。</h4></td></tr>';
+
+    	return $result;
+		
+	}
+	
 	/*
 	 * 选择参会的商品
 	 */
 	function ajax_get_select_proc_dialog($info){
 		$result  ='';
 		$result .='<h2 class="dialog_title"><span>选择商品</span></h2>';
+		
 		$result .='<div class="dialog_content" style="min-height:400px;" >';
-		$modules= DB::query(Database::SELECT,"
-		             SELECT * 
+		$sql =  ' SELECT * 
                      FROM products 
-                     WHERE product_id not in (select product_id from suppliers where suppliers.meet_id=:meet_id and sup_id=:sup_id)
-                     and sup_id=:sup_id  
-                      ",TRUE)
+                     WHERE product_id not in 
+                     (select product_id 
+                      from suppliers 
+                      where suppliers.meet_id=:meet_id and sup_id=:sup_id
+                     )
+                     and sup_id=:sup_id';
+		
+		$spmc = array_key_exists('spmc',$info)?$info['spmc']:'';
+		
+		if (!empty($spmc))
+		$sql.= ' and (products.product_name like :spmc or product_code like :spmc)';
+
+		$sql.= 'limit 20';
+		
+		$modules= DB::query(Database::SELECT,$sql,TRUE)
 		->param(':sup_id',$info['userid'])
 		->param(':meet_id',$info['meetid']);
+		if (!empty($spmc))
+		 $modules->param(':spmc','%'.$spmc.'%');
+		
 			
 		//echo Kohana::debug((string) $modules);
 			
 		$modules=$modules->as_object()->execute();
 
 		$result .='<table class="list" id="selectlist">
-    	           <thead><th style="width:10px;"><input type="checkbox" id="allchecked" name="allchecked" onclick="javascript:Sups.Allchecked()" /></th><th>编号</th><th>商品名称</th><th>规格</th><th>单位</th><th>生产企业</th><th>包装</th></thead>
+    	           <thead>
+    	           <tr ><th colspan=8><input name="findspmc" id="findspmc" value="'.$spmc.'" /><input type="button" name="findbtn" id="findbtn" value="查询" onclick="Sups.findprod()" ></th></tr>
+    	           <tr><th style="width:10px;"><input type="checkbox" id="allchecked" name="allchecked" onclick="javascript:Sups.Allchecked()" /></th><th>编号</th><th>商品名称</th><th>规格</th><th>单位</th><th>生产企业</th><th>包装</th></tr>
+    	           
+    	           </thead>
     	           <tbody>';
 		if (count($modules)>0)
 		{

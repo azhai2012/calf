@@ -39,6 +39,11 @@ class Controller_Ajax extends Controller {
 		$this->meets = new Model_Setting_Meets();
 	}
 
+	public function isie(){
+		return (strpos($_SERVER['HTTP_USER_AGENT'], "MSIE"));
+	}
+	
+	
 	public function action_index()
 	{
 		parent::before();
@@ -57,7 +62,7 @@ class Controller_Ajax extends Controller {
         $sup_id  =  array_key_exists('supid',$_POST)?$_POST['supid']:''; 
         $bdate   = array_key_exists('bdate',$_GET)?$_GET['bdate']:'';  
         $edate   = array_key_exists('edate',$_GET)?$_GET['edate']:'';  
-        
+        $id      = array_key_exists('id',$_POST)?$_POST['id']:'';
         
 		$this->template = '';
 		switch ($_get) {
@@ -174,23 +179,43 @@ class Controller_Ajax extends Controller {
 	
 			case "custaddtotmpcart":{
 				$ary = array('userid'=>$this->userid,'supid'=>$sup_id,'meetid'=>$_setid,'pid'=>$prodid,'num'=>$num,'price'=>$price);
-				$this->template = $this->cust->ajax_Set_Model_Customer($ary,"TMPCART");	
+				if ($this->isie()) {
+				  $this->template = $this->cust->ajax_Set_Model_Customer($ary,"TMPDBCART");	
+				}
+				else {
+				  $this->template = $this->cust->ajax_Set_Model_Customer($ary,"TMPCART");	
+				}
 			}break;
 			
 			case "custupdtmpcart":{
-				$ary = array('userid'=>$this->userid,'supid'=>$sup_id,'meetid'=>$_setid,'pid'=>$prodid,'num'=>$num);
-				$this->template = $this->cust->ajax_Set_Model_Customer($ary,"UPTTMPCART");	
+				$ary = array('userid'=>$this->userid,'supid'=>$sup_id,'meetid'=>$_setid,'pid'=>$prodid,'num'=>$num,'id'=>$id);
+				if ($this->isie()) {
+				  $this->template = $this->cust->ajax_Set_Model_Customer($ary,"UPTTMPDBCART");	
+				}else {
+				  $this->template = $this->cust->ajax_Set_Model_Customer($ary,"UPTTMPDBCART");	
+				}
 			}break;
 			
 			case "custdeltmpcart":{
-				$ary = array('userid'=>$this->userid,'supid'=>$sup_id,'meetid'=>$_setid,'pid'=>$prodid);
-				$this->template = $this->cust->ajax_Set_Model_Customer($ary,"DELTMPCART");
+			    $ary = array('userid'=>$this->userid,'supid'=>$sup_id,'meetid'=>$_setid,'pid'=>$prodid,'num'=>$num);
+				if ($this->isie()) {
+				  $this->template = $this->cust->ajax_Set_Model_Customer($ary,"DELTMPDBCART");				  	
+				}else {
+			      $this->template = $this->cust->ajax_Set_Model_Customer($ary,"DELTMPCART");	
+			    }
 					
 			}break;
 			
 		    case "custtmptocart":{
-		    	$ary = array('userid'=>$this->userid);
-				$this->template = $this->cust->ajax_Set_Model_Customer($ary,"INSERTCART");
+		        $ary = array('userid'=>$this->userid);	
+		    	if ($this->isie()) {
+ 	                $this->template = $this->cust->ajax_Set_Model_Customer($ary,"INSERTDBCART");
+		    	}
+		    	else 
+		    	{
+		    	    $this->template = $this->cust->ajax_Set_Model_Customer($ary,"INSERTCART");
+		    	}
+		    	
 		    }break;
 			
 		    case "custropose":{
@@ -209,7 +234,8 @@ class Controller_Ajax extends Controller {
 		    }break;
 
 			case "custmtgettmpcart":{
-				$this->template = $this->cust->ajax_get_mods_cus_tmp_cart(array('userid'=>$this->userid));
+				
+				$this->template = $this->cust->ajax_get_mods_cus_tmp_cart(array('userid'=>$this->userid,'meetid'=>$_setid));
 					
 			}break;			
 
@@ -254,10 +280,15 @@ class Controller_Ajax extends Controller {
 
 			}break;
 				
+			case "supselectprocother":{
+			  $fls=explode(',',$_setid);	
+			  $this->template = $this->sups->ajax_get_select_proc_dialog_other(array('userid'=>$this->userid,'meetid'=>$fls[0],'spmc'=>$fls[1]));	
+			  
+			}break;
 				
 			case "supselectproc":{
-
-				$this->template = $this->sups->ajax_get_select_proc_dialog(array('userid'=>$this->userid,'meetid'=>$_setid));
+                $fls=explode(',',$_setid);
+        		$this->template = $this->sups->ajax_get_select_proc_dialog(array('userid'=>$this->userid,'meetid'=>$fls[0],'spmc'=>$fls[1]));
 
 			}break;
 

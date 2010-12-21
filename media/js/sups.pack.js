@@ -26,7 +26,7 @@ var Sups = {
 				 
 				 $('#meetlist tr').each(function(k,v){
 					var a = $(this).children("td:first").html();
-					 if (a != null){
+					 if (a !== null){
 					
 					   $.ajax({
 						  type : "get",
@@ -99,7 +99,7 @@ var Sups = {
 			 if (isNaN(num)) {alert('限购数量输入格式不正确！请重新输入');return}
 			 if (isNaN(price)) {alert('单价输入格式不正确！请重新输入');return}
 			 
-			 if (picname==='') alert('还没有选择图片，请先上传图片。'); 
+			 if (picname==='') {alert('还没有选择图片，请先上传图片。');} 
 			 if (confirm('您确定要保存该条记录？'))	{
 				 $.ajax({
 					type : "POST",
@@ -150,8 +150,8 @@ var Sups = {
 				success : function(data, textStatus) {
 					$('#row'+obj).remove();
 					$('.list tbody tr').each(function(k,v){
-						if ((k%2)===0) $(this).children("td").addClass("odd");
-						else $(this).children("td").addClass("even");
+						if ((k%2)===0) {$(this).children("td").addClass("odd");}
+						else {$(this).children("td").addClass("even");}
 							
 						$(this).children("td:first").html(k+1);
 					})
@@ -189,7 +189,7 @@ var Sups = {
         },
 		delSelectProc:function(a){
 			if (confirm('您确定要删除该条记录？'))	
-		        $("#"+a).remove();	
+			{ $("#"+a).remove();}	
 		},
         closedialog:function (){
             $("#fullbg").hide();
@@ -239,7 +239,7 @@ var Sups = {
 				}
 		   }
 		   else
-			  alert('没有选择商品！');  
+		   { alert('没有选择商品！');}  
 		    
 		},
 		getAjax : function(_ajax){
@@ -287,9 +287,9 @@ var Sups = {
 					success: function (data, status)
 					{
 						
-						if(typeof(data.error) != 'undefined')
+						if(typeof(data.error) !== 'undefined')
 						{
-							if(data.error != '')
+							if(data.error !== '')
 							{
 								alert(data.error);
 							}else

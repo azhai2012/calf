@@ -5,9 +5,9 @@ function getMeetInfo(id){
 	var dec=$('#description').val();
 	var bt= $('#start_time_intl_field').val();
 	var et= $('#stop_time_intl_field').val();	
-	if (mtname=='') result=[-1,"展会名称不能为空！"];
+	if (mtname=='') {result=[-1,"展会名称不能为空！"];}
 	else
-	  result= _id+';'+mtname+';'+dec+';'+bt+';'+et;
+	  {result= _id+';'+mtname+';'+dec+';'+bt+';'+et;}
 	
 	return result;
 }
@@ -23,7 +23,7 @@ function deleteMeetName(id){
 		},
 		success : function(data, textStatus) {
 			if (data === "1")
-			   $('#row'+id).hide();
+			{ $('#row'+id).hide();}
 		},
 		complete : function(XMLHttpRequest, textStatus) {
 			location.reload(); 

@@ -3,7 +3,7 @@ var Custs = {
 			alert(msg);
 		},
         FormatNumber:function (srcStr,nAfterDot){
-                  var srcStr,nAfterDot;
+               
                   var resultStr,nTen;
                   srcStr = ""+srcStr+"";
                   strLen = srcStr.length;
@@ -77,7 +77,7 @@ var Custs = {
 		    }); 
 
 			if (amount===0)
-			  $("#cartlist tbody").append('<tr><td align="center" style="font-size:14px;" colspan=8 >暂时没有记录！</td><td></td></tr>');
+			  {$("#cartlist tbody").append('<tr><td align="center" style="font-size:14px;" colspan=8 >暂时没有记录！</td><td></td></tr>');}
 			
 			 $('.total').html('￥：'+Custs.FormatNumber(amount,2));
 		},
@@ -121,7 +121,7 @@ var Custs = {
 		   var vv = Math.pow(10,2);
 		   
 		   $('#amout'+pid).html(Math.round(amount*vv)/vv);	
-		   var amount=0;
+		    amount=0;
 	
 		   $("#cartlist tbody tr").each(function(i){
 			   amount =amount+ parseFloat($(this).children('.amount').html());
