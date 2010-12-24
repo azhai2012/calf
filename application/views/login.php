@@ -29,7 +29,7 @@
            <div class="bgdiv">
            </div>
            <div  style="text-align:center;margin-left:auto;margin-right:auto;font-size:24px" >
-              海内存知己，天涯若比邻！
+              <?php echo $descripts; ?> 
            </div>
          </div>
          <div id="login-right" style="border:1px #fff solid">

@@ -14,9 +14,19 @@ class Controller_Login extends Controller {
 	{	
 		parent::before();
 		$this->template->info = '';
+		$this->template->descripts= '海内存知己，天涯若比邻！';
 		
 		if(strpos($_SERVER['HTTP_USER_AGENT'], "MSIE 6.0"))
 		{
+			$this->template->descripts='<div style="padding-left:100px;text-align:left;font-size:14px;">
+			               <p>目前您使用的是IE6，请升级到IE 7 以上的版本。否则无法登录！</p>
+                           <p>推荐浏览器下载地址如下：</p>
+			               <ol>
+			                 <li><a href="http://www.microsoft.com/china/windows/downloads/ie/getitnow.mspx">下载 IE 7 浏览器</a></li>
+			                 <li><a href="http://www.mozillaonline.com/">下载 FireFox（火狐狸）浏览器 </a></li>
+			                 <li><a href="http://www.google.com.hk/chrome?hl=zh-CN&brand=CHMI/">下载 chrome（谷歌）浏览器 </a></li> 
+			               </ol>
+			 </div>'; 
 		  	$this->template->info='<div class="showinfo warning">您目前使用的ie6版本，为您的信息安全请升级为ie7以上版本！</div>'; 
 		}	
 		else

@@ -626,7 +626,7 @@ class Model_Mods_Customer {
     
 	    $modules= DB::query(Database::SELECT,"
 		              SELECT suppliers.id,suppliers.product_id,products.product_name, product_spec,product_unit,
-		                     product_origin,limit_number,price,favorable,picname
+		                     product_origin,limit_number,price,favorable,picname,product_pzwh,product_group
                       FROM suppliers
                       INNER JOIN products ON suppliers.product_id = products.product_id
                       INNER JOIN meets ON suppliers.meet_id = meets.id 
@@ -650,18 +650,20 @@ class Model_Mods_Customer {
 		
 		$result.='<div class="prodview clearfix">
 		            <div style="padding-left:20px"><a href="javascript:history.go(-1);">返回上一页</a></div>
-		            <div style="margin:20px 20px;font-size:14px;border:1px #d94141 solid;padding:20px;"><label>该商品的促销：</label><p>'.$ary[0]->favorable.'</p></div>
-		            <div style="height:280px" class="clearfix">
+		            <div class="clearfix" style="min-height:60px;height:auto !importion;height:60px;margin:20px 20px;font-size:14px;border:1px #d94141 solid;padding:20px;"><label>该商品的促销：</label><p>'.$ary[0]->favorable.'</p></div>
+		            <div style="height:300px" class="clearfix">
 		            <div class="lfloat">
-		              <img onerror="javascript: this.src=\'/media/images/null.jpg\'" width=200px height=200px src="/media/images/meets/'.$ary[0]->picname.'" /> 
+		              <img onerror="javascript: this.src=\'/media/images/null.jpg\'" width=180px height=180px src="/media/images/meets/'.$ary[0]->picname.'" /> 
 		            </div>
 		            <div class="rfloat">
 		             
 		             <ul>
-		               <li style="font-size:16px"><label >商品名称:</label> <span>'.$ary[0]->product_name.'</span></li>
+		               <li style="font-size:14px;width:530px;"><label >商品名称:</label> <span>'.$ary[0]->product_name.'</span></li>
 		               <li><label>规格:</label> <span>'.$ary[0]->product_spec.'</span></li>
 		               <li><label>单位:</label> <span>&nbsp;'.$ary[0]->product_unit.'</span></li>
 		               <li><label>生产企业:</label> <span>'.$ary[0]->product_origin.'</span></li>
+		               <li><label>包装:</label> <span>'.$ary[0]->product_group.'</span></li>
+		               <li><label>批准文号:</label> <span>'.$ary[0]->product_pzwh.'</span></li>
 		               <li><label>单价:</label> <span id="price'.$ary[0]->product_id.'">'.$ary[0]->price.'</span></li>
 		               <li><label>订购数量:</label> <span><input name="num'.$ary[0]->product_id.'" id="num'.$ary[0]->product_id.'" value="1" /></span></li>
 		               <li style="padding-top:10px"><label>&nbsp;</label> <span>
@@ -673,8 +675,9 @@ class Model_Mods_Customer {
 		               </ul>
 		           
 		            </div>
-                    </div>     		
-            		<div class="otherpord"><h4>其他同类商品</h4></div>  
+                  
+		            </div>     		
+            		  <div class="otherpord clearfix"><h4>其他同类商品</h4></div>  
 		            
 		   ';
 		  
@@ -719,7 +722,7 @@ class Model_Mods_Customer {
 	    
 	    $modules= DB::query(Database::SELECT,"
 		              SELECT suppliers.id,suppliers.product_id,products.product_name, product_spec,product_unit,
-		                     product_origin,limit_number,price,favorable,picname
+		                     product_origin,limit_number,price,favorable,picname,product_pzwh,product_group
                       FROM suppliers
                       INNER JOIN products ON suppliers.product_id = products.product_id
                       INNER JOIN meets ON suppliers.meet_id = meets.id 
@@ -749,11 +752,15 @@ class Model_Mods_Customer {
 			$result.= '<td style="width:10px;" align="center" class="'.$mod.'">'.$i.'</td>';
             $result.= '<td colspan=8 ><div style="margin-bottom:10px;"><ul >';
             $result.= ' <li style="width:70px;margin-top:4px;" ><img onerror="javascript: this.src=\'/media/images/null.jpg\'" width=60px height=60px src="/media/images/meets/'.$value->picname.'" /></li>';
-            $result.= ' <li style="width:220px;font-size:14px;"><a href="/home?sk=custmtprodview&fl='.$meetid.','.$supid.','.$value->product_id.'">'.$value->product_name.'</a>';
+            $result.= ' <li style="width:220px;font-size:14px;padding-top:2px;">
+                        <a href="/home?sk=custmtprodview&fl='.$meetid.','.$supid.','.$value->product_id.'">'.$value->product_name.'</a>
+                        <div style="font-size:12px;"><span>批准文号:</span><span>'.$value->product_pzwh.'</span></div>';
             $result.= '</li>';
             $result.= ' <li style="width:100px"><span >'.$value->product_spec.'</span></li>';
             $result.= ' <li style="width:30px"><span>'.$value->product_unit.'</span></li>';
-            $result.= ' <li style="width:160px"><span>'.$value->product_origin.'</span></li>';
+            $result.= ' <li style="width:160px"><span>'.$value->product_origin.'</span>
+                         <div style="font-size:12px;"><span>包装:</span><span>'.$value->product_group.'</span></div>
+                      </li>';
            // $nm = ($value->limit_number==0)?'不限':$value->limit_number;
            // $result.= ' <li style="width:50px"><span>'.$nm.'</span></li>';
           //  $result.= ' <li style="width:40px;float:left;padding-right:5px;"><span class="required" id="price'.$value->product_id.'">'.$value->price.'</span></li>';
@@ -768,8 +775,8 @@ class Model_Mods_Customer {
             $result.= '</ul>
                        </div>';     
 			  if (!empty($value->favorable))
-			$result.= '<div style="clear:both;width:100%;">
-			             <div style="width:400px;">促销：'.$value->favorable.'</div> 
+			$result.= '<div style="clear:both;width:100%;padding:10px 0px;">
+			             <div style="padding-left:70px;width:600px;color:black;font-size:14px;"><span style="font-weight:bold;">促销：</span>'.$value->favorable.'</div> 
 			           </div>  ';
             $result.= '</td></tr>';
 			
@@ -882,7 +889,8 @@ class Model_Mods_Customer {
 		                 
                       INNER JOIN users ON a.sup_id = users.userid
                       INNER JOIN meets ON a.meet_id = meets.id
-                      WHERE active='Y' and meet_begin_at<'".date('Y-m-d')."'                      
+                      WHERE active='Y' and meet_begin_at<'".date('Y-m-d')."'
+                      ORDER BY users.id                       
                       ",TRUE)
 		              ->as_object()
 		              ->execute();

@@ -170,8 +170,7 @@ class Controller_Home extends Controller {
                    $this->template->css ='
                              <script>Azhai.onPages({"type":"js","js":["/media/js/ajaxfileupload.js?'.time().'"]});</script>
                              <script>Azhai.onPages({"type":"js","js":["/media/js/meet.js?'.time().'"]});</script>
-                             <script>Azhai.onPages({"type":"css","css":["/media/js/jwysiwyg/jquery.wysiwyg.css?'.time().'"]});</script>
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/jwysiwyg/jquery.wysiwyg.js?'.time().'"]});</script>
+                             <script>Azhai.onPages({"type":"js","js":["/media/js/nicedit/nicEdit.js?'.time().'"]});</script>
                              <script>Azhai.onPages({"type":"js","js":["/media/js/sups.js?'.time().'"]});</script>';
 			    
 			    }break;

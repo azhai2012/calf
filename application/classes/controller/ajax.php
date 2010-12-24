@@ -282,7 +282,7 @@ class Controller_Ajax extends Controller {
 				
 			case "supselectprocother":{
 			  $fls=explode(',',$_setid);	
-			  $this->template = $this->sups->ajax_get_select_proc_dialog_other(array('userid'=>$this->userid,'meetid'=>$fls[0],'spmc'=>$fls[1]));	
+			  $this->template = $this->sups->ajax_get_select_proc_dialog_other(array('userid'=>$this->userid,'meetid'=>$fls[0],'spmc'=>$fls[1],'cdmc'=>$fls[2]));	
 			  
 			}break;
 				

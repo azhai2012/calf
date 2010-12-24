@@ -32,14 +32,14 @@ var Sups = {
 						  type : "get",
 						  url : "/ajax?sk=supaddprod&fl=;"+meetid+";"+a,
 						  beforeSend : function(XMLHttpRequest) {
-							
+							//
 					  	  },
 						  success : function(data, textStatus) {
 							  location.href='/home?sk=supm&fl='+meetid;
 							// v.html(data);
 						  },
 						  complete : function(XMLHttpRequest, textStatus) {
-					 		
+					 		//
 						  },
 						  error : function() {
 							// 请求出错处理
@@ -68,7 +68,7 @@ var Sups = {
 						  url : "/ajax?sk=supaddfav&fl="+meetid,
 						  data:"&content="+content+'&location='+location,
 						  beforeSend : function(XMLHttpRequest) {
-							
+							//
 					  	  },
 						  success : function(data, textStatus) {
 			                 // alert(data); 
@@ -76,7 +76,7 @@ var Sups = {
 	
 						  },
 						  complete : function(XMLHttpRequest, textStatus) {
-					 		
+					 		//
 						  },
 						  error : function() {
 							// 请求出错处理
@@ -96,8 +96,8 @@ var Sups = {
 			 var num     = $('#limit_num').val();
 			 var price   = $('#price').val();
 			 
-			 if (isNaN(num)) {alert('限购数量输入格式不正确！请重新输入');return}
-			 if (isNaN(price)) {alert('单价输入格式不正确！请重新输入');return}
+			 if (isNaN(num)) {alert('限购数量输入格式不正确！请重新输入');return false;}
+			 if (isNaN(price)) {alert('单价输入格式不正确！请重新输入');return false;}
 			 
 			 if (picname==='') {alert('还没有选择图片，请先上传图片。');} 
 			 if (confirm('您确定要保存该条记录？'))	{
@@ -131,9 +131,32 @@ var Sups = {
 		
 			location.href="/home?sk=suporder&fl="+obj.value; 
 		},
+		findprod:function(){
+			var meetid=  $('#selectmeet').val();
+			var prodid=  $('#findspmc').val();
+
+			$.ajax({
+					type : "get",
+					url : "/ajax?sk=supselectprocother&fl="+meetid+','+prodid,
+					beforeSend : function(XMLHttpRequest) {
+						$('#selectlist tbody').html('<tr>正在查询...</tr>');
+					},
+					success : function(data, textStatus) {
+					
+						$('#selectlist tbody').html(data);
+					},
+					complete : function(XMLHttpRequest, textStatus) {
+						
+					},
+					error : function() {
+						// 请求出错处理
+					}
+				});
+		},
 		addprod:function(a){
 			var meetid=  $('#selectmeet').val();
-			Sups.showdialogs("/ajax?sk=supselectproc&fl="+meetid,"600");
+			var prodid=  $('#product').val();
+			Sups.showdialogs("/ajax?sk=supselectproc&fl="+meetid+','+prodid,"600");
 		},
 		addprodkey:function(a){
 			Sups.keyshowdialogs("/ajax?sk=supselectproc");

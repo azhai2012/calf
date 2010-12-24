@@ -6,12 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <meta name="robots" content="noindex,nofollow" />
 <link rel="shortcut icon" href="/media/images/favicon.ico" >
- <script type="text/javascript" src="/media/js/comm.js"></script>
+  <script type="text/javascript" src="/media/js/comm.js"></script>
  <script type="text/javascript" src="/media/js/apps.js"></script>
  <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
  <script type="text/javascript" src="/media/js/calendar_az.js"></script>
 
  <link href="/media/css/apps.css" rel="stylesheet" type="text/css" media="all">
+
+
 </head>
 <body class="home">
 <div id="blueBar"></div>

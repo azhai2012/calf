@@ -350,7 +350,7 @@ class Model_Mods_Supplier {
 	function ajax_get_select_proc_dialog_other($info){
 	
 		$result  ='';
-		$sql =  ' SELECT * 
+		/*$sql =  ' SELECT * 
                      FROM products 
                      WHERE product_id not in 
                      (select product_id 
@@ -358,17 +358,36 @@ class Model_Mods_Supplier {
                       where suppliers.meet_id=:meet_id and sup_id=:sup_id
                      )
                      and sup_id=:sup_id';
+		*/
+		$sql =  ' SELECT * 
+                     FROM products 
+                     WHERE product_id not in 
+                     (select product_id 
+                      from suppliers 
+                      where suppliers.meet_id=:meet_id 
+                     )
+                     ';
+		
 		
 		$spmc = array_key_exists('spmc',$info)?$info['spmc']:'';
+		$cdmc = array_key_exists('cdmc',$info)?$info['cdmc']:'';
 		
 		if (!empty($spmc))
 		$sql.= ' and (products.product_name like :spmc or product_code like :spmc)';
+		
+		if (!empty($cdmc))
+		$sql.= ' and (products.product_origin like :cdmc or product_origin_code like :cdmc)';
 		 
+		$sql.= 'limit 20';
+		
 		$modules= DB::query(Database::SELECT,$sql,TRUE)
 		->param(':sup_id',$info['userid'])
 		->param(':meet_id',$info['meetid']);
 		if (!empty($spmc))
 		 $modules->param(':spmc','%'.$spmc.'%');
+	    if (!empty($cdmc))
+		 $modules->param(':cdmc','%'.$cdmc.'%');
+			 
 		
 			
 		//echo Kohana::debug((string) $modules);
@@ -406,7 +425,7 @@ class Model_Mods_Supplier {
 		$result .='<h2 class="dialog_title"><span>选择商品</span></h2>';
 		
 		$result .='<div class="dialog_content" style="min-height:400px;" >';
-		$sql =  ' SELECT * 
+		/*$sql =  ' SELECT * 
                      FROM products 
                      WHERE product_id not in 
                      (select product_id 
@@ -414,12 +433,24 @@ class Model_Mods_Supplier {
                       where suppliers.meet_id=:meet_id and sup_id=:sup_id
                      )
                      and sup_id=:sup_id';
+        */             
+		$sql =  ' SELECT * 
+                     FROM products 
+                     WHERE product_id not in 
+                     (select product_id 
+                      from suppliers 
+                      where suppliers.meet_id=:meet_id 
+                     )
+                   ';
 		
 		$spmc = array_key_exists('spmc',$info)?$info['spmc']:'';
+		$cdmc = array_key_exists('cdmc',$info)?$info['cdmc']:'';
 		
 		if (!empty($spmc))
 		$sql.= ' and (products.product_name like :spmc or product_code like :spmc)';
-
+	    if (!empty($cdmc))
+		$sql.= ' and (products.product_origin like :cdmc or product_origin_code like :cdmc)';
+		
 		$sql.= 'limit 20';
 		
 		$modules= DB::query(Database::SELECT,$sql,TRUE)
@@ -428,6 +459,11 @@ class Model_Mods_Supplier {
 		if (!empty($spmc))
 		 $modules->param(':spmc','%'.$spmc.'%');
 		
+		if (!empty($cdmc))
+		 $modules->param(':cdmc','%'.$cdmc.'%');
+		 
+		 
+		
 			
 		//echo Kohana::debug((string) $modules);
 			
@@ -435,7 +471,10 @@ class Model_Mods_Supplier {
 
 		$result .='<table class="list" id="selectlist">
     	           <thead>
-    	           <tr ><th colspan=8><input name="findspmc" id="findspmc" value="'.$spmc.'" /><input type="button" name="findbtn" id="findbtn" value="查询" onclick="Sups.findprod()" ></th></tr>
+    	           <tr ><th colspan=8>商品名称：<input name="findspmc" id="findspmc" value="'.$spmc.'" />
+    	               生产企业：<input name="findcdmc" id="findcdmc" value="" >
+    	               <input type="button" name="findbtn" id="findbtn" value="查询" onclick="Sups.findprod()" >
+    	               </th></tr>
     	           <tr><th style="width:10px;"><input type="checkbox" id="allchecked" name="allchecked" onclick="javascript:Sups.Allchecked()" /></th><th>编号</th><th>商品名称</th><th>规格</th><th>单位</th><th>生产企业</th><th>包装</th></tr>
     	           
     	           </thead>
@@ -590,8 +629,8 @@ class Model_Mods_Supplier {
 		                <tr><th>整体促销信息</th></tr></thead>';
 		$result .='       <tbody>
 		                   <tr><td> 
-		                         <textarea style="width:575px;" name="wysiwyg" id="wysiwyg" rows="20" cols="69" >'.$favs.'</textarea>
-		                         <script>$("#wysiwyg").wysiwyg();</script>
+		                    <script type="text/javascript"> Sups.addArea();</script>
+		                    <textarea style="width:588px;" name="myeditor" id="myeditor" rows="20" cols="69" >'.$favs.'</textarea>
 		                   </td></tr> 
 		';
 		

@@ -39,11 +39,8 @@ var Sups = {
 							// v.html(data);
 						  },
 						  complete : function(XMLHttpRequest, textStatus) {
-					 		//
+							 // $('#hh').html();
 						  },
-						  error : function() {
-							// 请求出错处理
-						 }
 					 });
 				   }
 				 });
@@ -55,15 +52,17 @@ var Sups = {
 		addProcFav:function(a){
 			Sups.showdialogs("/ajax?sk=supfav&fl="+a,"600");
 		},
+		addArea:function(a){
+		  area2 = new nicEditor({buttonList : ['fontSize','bold','italic','underline','left','center','right','justify','ol','ul','strikeThrough','subscript','superscript','xhtml','image','link','unlink','forecolor','bgcolor','fontSize','fontFamily']}).panelInstance('myeditor');
+		},
 		addProcFavContent:function(a){
 			
 			if (confirm('您确定要增加记录？'))
 			 {   
 				 var meetid = $('#selectmeetid').val();
-				 var content= $('#wysiwyg').val();
-				 var location = $('#selectlocation').val();
-				
-					   $.ajax({
+				 var content= $('.nicEdit-main').html();
+				 var location = $('#selectlocation').val(); 
+  				 $.ajax({
 						  type : "POST",
 						  url : "/ajax?sk=supaddfav&fl="+meetid,
 						  data:"&content="+content+'&location='+location,
@@ -134,10 +133,11 @@ var Sups = {
 		findprod:function(){
 			var meetid=  $('#selectmeet').val();
 			var prodid=  $('#findspmc').val();
-
+			var cdid=  $('#findcdmc').val();
+			
 			$.ajax({
 					type : "get",
-					url : "/ajax?sk=supselectprocother&fl="+meetid+','+prodid,
+					url : "/ajax?sk=supselectprocother&fl="+meetid+','+prodid+','+cdid,
 					beforeSend : function(XMLHttpRequest) {
 						$('#selectlist tbody').html('<tr>正在查询...</tr>');
 					},
@@ -155,11 +155,13 @@ var Sups = {
 		},
 		addprod:function(a){
 			var meetid=  $('#selectmeet').val();
-			var prodid=  $('#product').val();
-			Sups.showdialogs("/ajax?sk=supselectproc&fl="+meetid+','+prodid,"600");
+			var prodid=  $('#product').val();		
+
+			Sups.showdialogs("/ajax?sk=supselectproc&fl="+meetid+','+prodid+'&'+new Date().getTime(),"600");
 		},
 		addprodkey:function(a){
-			Sups.keyshowdialogs("/ajax?sk=supselectproc");
+			
+			Sups.keyshowdialogs("/ajax?sk=supselectproc"+'&'+new Date().getTime());
 		},
 		deleteMeetProdName:function(obj){
 			if (confirm('您确定要删除该条记录？'))	{
@@ -177,7 +179,7 @@ var Sups = {
 						else {$(this).children("td").addClass("even");}
 							
 						$(this).children("td:first").html(k+1);
-					})
+					});
 				},
 				complete : function(XMLHttpRequest, textStatus) {
 					
@@ -297,9 +299,7 @@ var Sups = {
 			$('#uploadinfo').html('');
 	        var pid=$('#pid').val(); 
 	
-			$.ajaxFileUpload
-			(
-				{
+			$.ajaxFileUpload({
 					url:'/ajax?sk=supuploadpic&fl='+pid,
 					secureuri:false,
 					fileElementId:'fileToUpload',
@@ -328,14 +328,13 @@ var Sups = {
 					{
 						alert(e);
 					}
-				}
-			)
+				});
 			
 			return false;
 
 		}
 		
-}
+};
 
 
  
