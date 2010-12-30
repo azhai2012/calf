@@ -13,6 +13,8 @@ class Controller_Login extends Controller {
 	public function action_index()
 	{	
 		parent::before();
+		
+	
 		$this->template->info = '';
 		$this->template->descripts= '海内存知己，天涯若比邻！';
 		
@@ -63,7 +65,7 @@ class Controller_Login extends Controller {
 		        	    $resultdb = DB::query(Database::SELECT,"SELECT left(adr,5) as adr FROM ip_js WHERE ip1<:ip and ip2>:ip ",TRUE)
 		  	                  ->param(":ip",ip2long($ip));
 		  	                  
-		  	            echo Kohana::debug((string) $resultdb);		
+		  	            //echo Kohana::debug((string) $resultdb);		
 		  	                     	      
 		  	            $resultdb =$resultdb->as_object()->execute();
 		  	            $result1 =$resultdb->as_array(); 
@@ -71,7 +73,9 @@ class Controller_Login extends Controller {
 		  	            $checkip= $result1[0]->adr;
 		  	            if ($checkip===$adr){
 		  	               $this->session->set('userlogin',$result->as_array());                	
-                           $this->request->redirect('/');       
+                           // $this->request->redirect('/');       
+                           $this->request->redirect('http://192.168.30.90:8080');
+                           
 		  	            }
 		  	            else
 		  	              $this->template->info='<div class="showinfo warning">请在本辖区（'.$adr.'）内使用，谢谢配合！</div>'; 

@@ -11,6 +11,7 @@ class Model_Admin_Users {
 	 * 获取用户列表
 	 */
 	
+	
     function ajax_set_admin_users($array,$type="DELETE"){
 		$result='';
 		$array = explode(';',$array);
@@ -76,15 +77,52 @@ class Model_Admin_Users {
 		return json_encode($result);
 	}
 	
-	function ajax_get_admin_users_list(){
+	function ajax_get_admin_users_list($page){
 		$result ='<div class="roles">';
 		$result .='<div class="contextual"><a href="/home?sk=adunew"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>新建用户</span></a></div>';
 		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menuadu">';
 		$result .='</i><span>用户</span></h3>';
 	  
-		$modules= DB::query(Database::SELECT,"select users.*,roles.name from users inner join roles on users.role_id=roles.id ",TRUE)->as_object()->execute();
+		$modules= DB::query(Database::SELECT,"select count(1) as ct 
+		                              from users inner join 
+		                                   roles on users.role_id=roles.id ",TRUE)
+		          ->as_object()
+		          ->execute();
+		$modules = $modules-> as_array();          
+		$totalcount = $modules[0]->ct;
+		        
+		$per_page=10;
+        //$page_num = array_key_exists('page',$_GET)? $_GET['page']:1;
+        $page_num = (!empty($page))?$page:1;
 
-		$result .='<table class="list"><thead><tr><th>用户名称</th><th>邮件地址</th><th>角色分配</th><th>创建于</th><th>最后登录</th><th></th></tr></thead>';
+        $offset = ($page_num - 1) * $per_page;
+
+        $pages =  Pagination::factory(array
+                (
+                'style' => 'floating',
+                'items_per_page' => $per_page,
+                'custom' => '/',
+                'view' =>'pagination/floating',
+                'query_string' => 'page',
+                'total_items' => $totalcount,
+                ))->render();
+          
+        
+		$modules= DB::query(Database::SELECT,"select users.*,roles.name 
+		          from users inner join roles on users.role_id=roles.id 
+		          limit :offset,:page
+		          ",TRUE)
+		          ->param(':page',$per_page)
+		          ->param(':offset',$offset);
+		 
+		 //echo kohana::debug((string)$modules);          
+		          
+		 $modules= $modules->as_object()->execute();
+
+		$result .='
+		<table class="list"><thead>
+		
+		<tr><th>用户名称</th><th>邮件地址</th><th>角色分配</th><th>创建于</th><th>最后登录</th><th></th></tr></thead>';
 		$result .='<tbody>';
 		$i=0;
 		foreach($modules as $key => $value){
@@ -98,7 +136,7 @@ class Model_Admin_Users {
 			$result.= '<td id="td'.$value->id.'" class="'.$mod.' buttons" >
 			              <a href="javascript:LockUserName('.$value->id.');">
 			                <span style="top:4px;"  class="leftimg">
-			                   <i class="img calfimage icon-lock"></i>
+			                 
 			                  </span>
 			                  <span>锁定</span>
 			              </a>
@@ -113,7 +151,9 @@ class Model_Admin_Users {
 			$i++;
 		}
 		$result .='</tbody>';
-		$result .='</table>';
+		$result .='</table>
+		<div class="clearfix">'.$pages.'</div>
+		';
 		return $result;
 	}
 

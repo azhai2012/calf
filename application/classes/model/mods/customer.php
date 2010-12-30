@@ -878,6 +878,9 @@ class Model_Mods_Customer {
      */
 	function ajax_get_mods_cus_list(){
 
+		$meetid ='';
+		
+	
 		$modules= DB::query(Database::SELECT,"
 		              SELECT *,IFNULL(amount,0) as amount
 		              FROM 
@@ -889,19 +892,24 @@ class Model_Mods_Customer {
 		                 
                       INNER JOIN users ON a.sup_id = users.userid
                       INNER JOIN meets ON a.meet_id = meets.id
-                      WHERE active='Y' and meet_begin_at<'".date('Y-m-d')."'
+                      WHERE active='Y' and meet_begin_at<='".date('Y-m-d')."'
                       ORDER BY users.id                       
                       ",TRUE)
 		              ->as_object()
 		              ->execute();
 		$tt= $modules->as_array();
-		$meetid= $tt[0]->meet_id;
 		
-		$result ='<div class="roles">';
+		
+		if (count($tt)>0)
+		{
+	    $result ='<div class="roles">';
 		$result .='<div class="contextual"><a href="/home?sk=custmtcart&fl='.$meetid.'"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>参会购物车</span></a></div>';
 		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
 		$result .='</i><span>展会列表</span></h3>';
-
+			
+			
+		$meetid= $tt[0]->meet_id;
+		
 		
 		$result .='<table class="list">
 		<thead>
@@ -923,6 +931,15 @@ class Model_Mods_Customer {
 		
 		$result .='</tbody>';
 		$result .='</table></div>';
+		}
+		else{
+		 $result ='<div class="roles">';
+		// $result .='<div class="contextual"><a href="/home?sk=custmtcart&fl='.$meetid.'"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>参会购物车</span></a></div>';
+		 $result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
+		 $result .='</i><span>展会列表</span></h3>';
+		 $result .= '<div style="width:100%;text-align:center;font-size:16px;">目前还没有展会！</div> </div>';
+		
+		}
 		return $result;
 	}
 	

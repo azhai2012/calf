@@ -13,23 +13,51 @@ class Controller_Home extends Controller {
 	public function before(){
 		$this->template= View::factory('welcome');
 		$this->model= new Model_Menus();
-		$this->session = Session::instance();
-        $sess= $this->session->get('userlogin');
-		if (is_array($sess))
-		  $islogin= $sess[0]->userid;
+		$memche = Kohana::config('settings')->memcache;
+		
+		$memcached = $memche['memcached'];
+		$this->sessionname = $memche['sessionname'];
+		$this->links= $memche['links'];
+		
+		if (!$memcached)
+		{ 
+			$this->session = Session::instance();
+		}
+		else
+		{
+          if (isset($_SERVER['HTTP_COOKIE']))
+            $a = explode('session=',$_SERVER['HTTP_COOKIE']);
+          else
+            $this->request->redirect($this->links);
+		
+		  $id= substr($a[1],0,26);
+          $memcache_obj = new memcache;
+          $memcache_obj->connect($memche['tcpip'],$memche['ports']);
+          $m_obj = $memcache_obj->get("$id");
+          $m = explode('|',$m_obj);
+          if (!is_array($m) or empty($m[0]))
+             $this->request->redirect($this->links);   
+          else
+          $this->session = array($this->sessionname=>unserialize($m[4])); 
+		}
+		
+		$sess= $this->session[$this->sessionname][0];
+		
+		if (is_array($this->session))
+		  $islogin= $sess->userid;
 		else
 		  $islogin=''; 
 		  
 		if (empty($islogin) || $islogin==='')
 		{
-			$this->request->redirect('./login');
+			$this->request->redirect($this->links);
 	    }
 		
-	    $this->userid  = $sess[0]->userid;
-	    $this->username  = $sess[0]->username;
+	    $this->userid  = $sess->userid;
+	   // $this->username  = $sess->username;
 	    
-		$this->roleid  = $sess[0]->role_id;
-		$this->isadmin = $sess[0]->isadmin;
+		$this->roleid  = $sess->role_id;
+		$this->isadmin = $sess->isadmin;
 	}
 	
 	public function action_index()

@@ -12,6 +12,9 @@ class Controller_Ajax extends Controller {
 	private $sups;
 	private $pubs;
 	private $username;
+	private $sessionname;
+	private $links;
+	
 	
 
 	public function before(){
@@ -21,21 +24,49 @@ class Controller_Ajax extends Controller {
 		$this->cust       = new Model_Mods_Customer();
 		$this->pubs       = new Model_Mods_Public();
 		
-		$this->session = Session::instance();
-		$sess= $this->session->get('userlogin');
-		if (is_array($sess))
-		  $islogin= $sess[0]->userid;
+		$memche = Kohana::config('settings')->memcache;
+		
+		$memcached = $memche['memcached'];
+		$this->sessionname = $memche['sessionname'];
+		$this->links= $memche['links'];
+		
+		if (!$memcached)
+		{ 
+			$this->session = Session::instance();
+		}
+		else
+		{
+          if (isset($_SERVER['HTTP_COOKIE']))
+            $a = explode('session=',$_SERVER['HTTP_COOKIE']);
+          else
+            $this->request->redirect($this->links);
+		
+		  $id= substr($a[1],0,26);
+          $memcache_obj = new memcache;
+          $memcache_obj->connect($memche['tcpip'],$memche['ports']);
+          $m_obj = $memcache_obj->get("$id");
+          $m = explode('|',$m_obj);
+         if (!is_array($m) or empty($m[0]))
+             $this->request->redirect($this->links);   
+          else
+          $this->session = array($this->sessionname=>unserialize($m[4])); 
+		}
+		
+		$sess= $this->session[$this->sessionname][0];
+		
+		if (is_array($this->session))
+		  $islogin= $sess->userid;
 		else
 		  $islogin=''; 
 		  
 		if (empty($islogin) || $islogin==='')
 		{
-			$this->request->redirect('./login');
+			$this->request->redirect($this->links);
 	    }
 		
-	    $this->userid= $sess[0]->userid;
-		$this->roleid= $sess[0]->role_id;
-		$this->username= $sess[0]->username;
+	    $this->userid= $sess->userid;
+		$this->roleid= $sess->role_id;
+		//$this->username= $sess->username;
 		$this->meets = new Model_Setting_Meets();
 	}
 
@@ -95,7 +126,8 @@ class Controller_Ajax extends Controller {
 				
 			//用户管理
 			case "adu":{
-				$this->template = $this->adminUsers->ajax_get_admin_users_list();
+				$page = array_key_exists('page',$_GET)? $_GET['page']:'1'; 
+				$this->template = $this->adminUsers->ajax_get_admin_users_list($page);
 			}break;
 				
 			case "adunew":{

@@ -8,36 +8,64 @@ class Controller_Welcome extends Controller {
 	private	$session;
 	private $userid;
 	private $roleid;
+	private $sess;
+	private $sessionname;
+	private $links;
+
 
 	public function before(){
 
 
 		$this->template= View::factory('welcome');
 		$this->model= new Model_Menus();
-		$this->session = Session::instance();
-
-
+		
+	    $memche = Kohana::config('settings')->memcache;
+		
+		$memcached = $memche['memcached'];
+		$this->sessionname = $memche['sessionname'];
+		$this->links= $memche['links'];
+		if (!$memcached)
+		{ 
+			$this->session = Session::instance();
+		}
+		else
+		{
+          if (isset($_SERVER['HTTP_COOKIE']))
+            $a = explode('session=',$_SERVER['HTTP_COOKIE']);
+          else
+            $this->request->redirect($this->links);
+		
+		  $id= substr($a[1],0,26);
+          $memcache_obj = new memcache;
+          $memcache_obj->connect($memche['tcpip'],$memche['ports']);
+          $m_obj = $memcache_obj->get("$id");
+          $m = explode('|',$m_obj);
+          if (!is_array($m) or empty($m[0]))
+             $this->request->redirect($this->links);   
+          else
+          $this->session = array($this->sessionname => unserialize($m[4])); 
+		}
 	}
 
 	public function action_index()
 	{
 		parent::before();
-
-		$sess= $this->session->get('userlogin');
-
-		if (is_array($sess))
-		$islogin= $sess[0]->userid;
+		
+		$sess= $this->session[$this->sessionname][0];
+		
+        if (is_array($this->session))
+		$islogin= $sess->userid;
 		else
 		$islogin='';
 
 		if (empty($islogin) || $islogin==='')
 		{
-			$this->request->redirect('./login');
+			$this->request->redirect($this->links);
 		}
 
-		$this->userid= $sess[0]->userid;
-		$this->roleid= $sess[0]->role_id;
-		$isadmin= $sess[0]->isadmin;
+		$this->userid= $sess->userid;
+		$this->roleid= $sess->role_id;
+		$isadmin= $sess->isadmin;
 
 		$sk = array_key_exists('sk',$_GET)?$_GET['sk']:'nt';
 		$u = new Calf_Menus();
@@ -69,7 +97,9 @@ class Controller_Welcome extends Controller {
 						
 				case 'adu':
 			  {
-			  	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adu","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+			  	$page =  array_key_exists('page',$_GET)? '&page='.$_GET['page']:'';
+
+			  	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adu'.$page.'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
 			  }break;
 			}
 		}
@@ -88,7 +118,7 @@ class Controller_Welcome extends Controller {
 			
 		}
 
-
+     
 
 
 

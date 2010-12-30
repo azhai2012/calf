@@ -41,7 +41,7 @@
         <div class="clearfix" style="margin-bottom:20px;">
         <div class="">
             <a style="padding-right:35px" href="/home?id=<?php echo $info['id']; ?>">欢迎您：<?php echo $info['id']; ?> </a>
-            <a href="/logout">注销</a>
+            <a href="https://new.hhey.cn/logout">注销</a>
         </div>
         </div>
     

@@ -4,9 +4,17 @@ return array
 (
     'product'=> '会议管理',
     'version' => '1.0.0.1',
-    'picuploadpath'=>'/home/azhai/uploads',
+    'picuploadpath'=>'/home/azhai/uploads',     
+    'memcache' => array
+              (
+               'memcached'=>TRUE,
+               'sessionname'=>'userlogin',
+               'links'=>'https://new.hhey.cn/login',
+               'tcpip'=>'192.168.100.123',
+               'ports'=>11211, 
+              ),
 	'modules' => array
-     (
+      (
         
                'basic' => array(
                'name'=>'基本设置',
