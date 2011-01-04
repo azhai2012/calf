@@ -35,15 +35,19 @@ class Controller_Welcome extends Controller {
           else
             $this->request->redirect($this->links);
 		
-		  $id= substr($a[1],0,26);
+          if (isset($a[1]))  
+		     $id= substr($a[1],0,26);
+		  else
+		     $this->request->redirect($this->links);
+		
           $memcache_obj = new memcache;
           $memcache_obj->connect($memche['tcpip'],$memche['ports']);
           $m_obj = $memcache_obj->get("$id");
-          $m = explode('|',$m_obj);
-          if (!is_array($m) or empty($m[0]))
+          $m = explode($this->sessionname.'|',$m_obj);
+          if (!is_array($m) or empty($m[1]))
              $this->request->redirect($this->links);   
           else
-          $this->session = array($this->sessionname => unserialize($m[4])); 
+          $this->session = array($this->sessionname => unserialize($m[1])); 
 		}
 	}
 
