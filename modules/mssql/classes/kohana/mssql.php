@@ -15,6 +15,9 @@ class Kohana_Mssql
 	protected $link;
 	private   $_result;
 	private   $sql;
+	public    $last_query; 
+	private   $_instance='azhai';
+	
 
 	/**
 	 * Database configuration
@@ -102,14 +105,74 @@ class Kohana_Mssql
 		return FALSE;
 	}
 
-	public function query($sql)
-	{
-		$this->sql = $sql;
-		
-		$this->_result = mssql_query($sql, $this->link);
-		
-		return $this;
-	}
+	public function query($type, $sql, $as_object) {
+        // Make sure the database is connected
+        //$this->_connection or $this->connect();
+
+        if ( ! empty($this->db_config['profiling'])) {
+            // Benchmark this query for the current instance
+            $benchmark = Profiler::start("Database ({$this->_instance})", $sql);
+        }
+
+        if($type === Database::INSERT) {
+            $sql .= "; SELECT @@IDENTITY as insertId;";
+        }
+
+        // Execute the query
+     
+        if (($result = mssql_query($sql, $this->link)) === FALSE) {
+    
+            if (isset($benchmark)) {
+                // This benchmark is worthless
+                Profiler::delete($benchmark);
+            }
+
+            throw new Database_Exception(':error',
+            array(':error' => mssql_get_last_message().' SQL: '.$sql));
+        }
+
+        if (isset($benchmark)) {
+            Profiler::stop($benchmark);
+        }
+
+        $this->_result = $result;
+        // Set the last query
+        $this->last_query = $sql;
+        
+        $select_result=array();
+        
+        if ($type === Database::SELECT) {
+            // Return an iterator of results
+           
+            if ($as_object) {
+            	
+                while ($row = mssql_fetch_object($result)) {
+                    array_push($select_result,$row);
+                }
+            }
+            else {
+
+                while ($row = mssql_fetch_assoc($result)) {
+                    array_push($select_result,$row);
+                }
+            }
+            return  $select_result;
+        }
+        elseif ($type === Database::INSERT) {
+
+        	list($insert_id) = mssql_fetch_row($result);
+            // Return a list of insert id and rows created
+            return array(
+                    (int)$insert_id,
+                    mssql_rows_affected($this->link),
+            );
+        }
+        else {
+            // Return the number of rows affected
+            return mssql_rows_affected($this->link);
+        }
+    }
+	
 	
 	public function totalcount(){
 		
