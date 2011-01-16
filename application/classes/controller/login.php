@@ -10,6 +10,24 @@ class Controller_Login extends Controller {
 		$this->session = Session::instance();
 	}
 
+	function GetIP() { //获取IP
+		if ($_SERVER["HTTP_X_FORWARDED_FOR"])
+		$ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
+		else if ($_SERVER["HTTP_CLIENT_IP"]) //开源代码OSPhP.COm.CN
+		$ip = $_SERVER["HTTP_CLIENT_IP"];
+		else if ($_SERVER["REMOTE_ADDR"])
+		$ip = $_SERVER["REMOTE_ADDR"];
+		else if (getenv("HTTP_X_FORWARDED_FOR")) //OSPHP.com.CN
+		$ip = getenv("HTTP_X_FORWARDED_FOR");
+		else if (getenv("HTTP_CLIENT_IP"))
+		$ip = getenv("HTTP_CLIENT_IP");
+		else if (getenv("REMOTE_ADDR")) //OsPHP.COM.CN
+		$ip = getenv("REMOTE_ADDR");
+		else
+		$ip = "Unknown";
+		return $ip;
+	}
+
 	public function action_index()
 	{
 		parent::before();
@@ -38,7 +56,7 @@ class Controller_Login extends Controller {
 
 			$cp =  Captcha::valid(Arr::get($_POST,'lcaptcha'));
 			if ($cp){
-				 
+					
 				$user =Arr::get($_POST,'lusername');
 				$psw = Arr::get($_POST,'lpassword');
 				$result = DB::query(Database::SELECT,"SELECT * FROM users WHERE userid=:userid ",TRUE)
@@ -59,17 +77,18 @@ class Controller_Login extends Controller {
 						$adr = $value->localadr;
 						$istype = $value->istype;
 					}
-					 
+
 					if (md5($psw)=== $password){
-						$ip = $_SERVER['REMOTE_ADDR'];
-						 
+						
+						$ip = $this->GetIP();
+							
 						if ($istype==='终端')
 						{
 							$resultdb = DB::query(Database::SELECT,"SELECT left(adr,5) as adr FROM ip_js WHERE ip1<:ip and ip2>:ip ",TRUE)
 							->param(":ip",ip2long($ip));
-							 
+
 							//echo Kohana::debug((string) $resultdb);
-							 
+
 							$resultdb =$resultdb->as_object()->execute();
 							$result1 =$resultdb->as_array();
 							print_r($result1);
@@ -93,7 +112,7 @@ class Controller_Login extends Controller {
 				}
 				else
 				$this->template->info='<div class="showinfo error">用户名不存在！</div>';
-				 
+					
 			}
 			else
 			$this->template->info='<div class="showinfo error">验证码有误！</div>';
