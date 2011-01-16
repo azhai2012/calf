@@ -87,7 +87,7 @@ class Kohana_Mssql
         
 		// Windows uses a comma instead of a colon
 		$ports = (isset($ports) AND is_string($ports)) ? (KOHANA_IS_WIN ? ',' : ':').$ports : '';
-		
+	
 		// Make the connection and select the database
 		if (($this->link = @$connect($host.$ports, $username, $password,TRUE)) AND mssql_select_db($databasename, $this->link))
 		{
@@ -189,6 +189,7 @@ class Kohana_Mssql
             $sql .= "; SELECT @@IDENTITY as insertId;";
         }
 
+  
         // Execute the query
      
         if (($result = mssql_query($sql, $this->link)) === FALSE) {

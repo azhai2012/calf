@@ -5,19 +5,21 @@
 <meta http-equiv="pragma"   content="no-cache" />   
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <meta name="robots" content="noindex,nofollow" />
-<link rel="shortcut icon" href="/media/images/favicon.ico" >
+<link rel="shortcut icon" href="/media/images/favicon.ico" />
   <script type="text/javascript" src="/media/js/comm.js"></script>
  <script type="text/javascript" src="/media/js/apps.js"></script>
  <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
  <script type="text/javascript" src="/media/js/calendar_az.js"></script>
 
- <link href="/media/css/apps.css" rel="stylesheet" type="text/css" media="all">
+ <link href="/media/css/apps.css" rel="stylesheet" type="text/css" media="all" />
 
 
 </head>
 <body class="home">
 <div id="blueBar"></div>
- <div id="allContainer" > <!-- begin allcontainer  -->
+ <div id="allContainer" > 
+     <!-- begin allcontainer-->
+
   <h1 id="pageLogo"><a href="/" title="首页"></a></h1>
 
  <div id="content"> <!-- begin content -->
@@ -41,7 +43,7 @@
         <div class="clearfix" style="margin-bottom:20px;">
         <div class="">
             <a style="padding-right:35px" href="/home?id=<?php echo $info['id']; ?>">欢迎您：<?php echo $info['id']; ?> </a>
-            <a href="https://new.hhey.cn/logout">注销</a>
+            <a href="/logout">注销</a>
         </div>
         </div>
     
@@ -76,6 +78,7 @@
          </div>
       </div> 
       </div>
+    </div>
   </div>
  </div> <!-- end allcontainer  -->
 </body>

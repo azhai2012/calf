@@ -3,6 +3,61 @@
 class Model_Menus {
 
      
+
+     function checklogin(){
+
+		$memche = Kohana::config('settings')->memcache;
+
+		$memcached = $memche['memcached'];
+		$sessionname = $memche['sessionname'];
+		$links= $memche['links'];
+        
+		if (!$memcached)
+		{
+			$session = Session::instance();
+			$tt= $session->get($sessionname);
+
+			if (isset($tt[0]))
+			{
+				$sess = array('islogin'=>TRUE,'links'=>$links,'result'=>$tt[0]);
+			}
+			else
+			{
+				$sess = array('islogin'=>FALSE,'links'=>$links,'result'=>array()); 
+			}
+			 
+		}
+		else
+		{
+			if (isset($_SERVER['HTTP_COOKIE']))
+			  $a = explode('session=',$_SERVER['HTTP_COOKIE']);
+			else
+			  $sess = array('islogin'=>FALSE,'links'=>$links,'result'=>array()); 
+
+			if (isset($a[1]))
+			  $id= substr($a[1],0,26);
+			else
+			  $sess = array('islogin'=>FALSE,'links'=>$links,'result'=>array());  
+
+			$memcache_obj = new memcache;
+			$memcache_obj->connect($memche['tcpip'],$memche['ports']);
+			$m_obj = $memcache_obj->get("$id");
+			$m = explode($this->sessionname.'|',$m_obj);
+			
+			if (!is_array($m) or empty($m[1]))
+			  $sess = array('islogin'=>FALSE,'links'=>$links,'result'=>array()); 
+			else
+			{
+			  $this->session = array($sessionname => unserialize($m[1]));
+			  $sess= array('islogin'=>FALSE,'links'=>$links,'result'=>$this->session[$sessionname][0]);
+			}
+		}
+		
+		return $sess;
+		
+     }
+		
+	
 	
 	function getUtf8($_str){
 		$modcomm=new Model_Comm();

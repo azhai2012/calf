@@ -19,57 +19,30 @@ class Controller_Welcome extends Controller {
 		$this->template= View::factory('welcome');
 		$this->model= new Model_Menus();
 		
-	    $memche = Kohana::config('settings')->memcache;
+		$islogin = $this->model->checklogin();
 		
-		$memcached = $memche['memcached'];
-		$this->sessionname = $memche['sessionname'];
-		$this->links= $memche['links'];
-		if (!$memcached)
-		{ 
-			$this->session = Session::instance();
-		}
-		else
+		if (isset($islogin))
 		{
-          if (isset($_SERVER['HTTP_COOKIE']))
-            $a = explode('session=',$_SERVER['HTTP_COOKIE']);
-          else
-            $this->request->redirect($this->links);
-		
-          if (isset($a[1]))  
-		     $id= substr($a[1],0,26);
-		  else
-		     $this->request->redirect($this->links);
-		
-          $memcache_obj = new memcache;
-          $memcache_obj->connect($memche['tcpip'],$memche['ports']);
-          $m_obj = $memcache_obj->get("$id");
-          $m = explode($this->sessionname.'|',$m_obj);
-          if (!is_array($m) or empty($m[1]))
-             $this->request->redirect($this->links);   
-          else
-          $this->session = array($this->sessionname => unserialize($m[1])); 
-		}
+		  if ($islogin['islogin'])
+		  {	
+	         $this->sess  = (object)$islogin['result'];
+		  }
+	      else
+	        $this->request->redirect($islogin['links']);
+  	    } 
+        else
+           $this->request->redirect($islogin['links']);
+  	    
+        
 	}
 
 	public function action_index()
 	{
 		parent::before();
-		
-		$sess= $this->session[$this->sessionname][0];
-		
-        if (is_array($this->session))
-		$islogin= $sess->userid;
-		else
-		$islogin='';
 
-		if (empty($islogin) || $islogin==='')
-		{
-			$this->request->redirect($this->links);
-		}
-
-		$this->userid= $sess->userid;
-		$this->roleid= $sess->role_id;
-		$isadmin= $sess->isadmin;
+		$this->userid= $this->sess->userid;
+		$this->roleid= $this->sess->role_id;
+		$isadmin= $this->sess->isadmin;
 
 		$sk = array_key_exists('sk',$_GET)?$_GET['sk']:'nt';
 		$u = new Calf_Menus();
@@ -78,7 +51,7 @@ class Controller_Welcome extends Controller {
 		foreach ($result as $key => $value){
 			$head.= $key.":".$value->name;
 		}
-	
+
 		$this->template->isadmin= $isadmin;
 		$this->template->info= array('id'=>$this->userid);
 		$this->template->head=$head;
@@ -86,10 +59,10 @@ class Controller_Welcome extends Controller {
 		$this->template->rfloat=array(array('name'=>'管理','url'=>'/?sk=admin'),array('name'=>'首页','url'=>'/'));
 		else
 		$this->template->rfloat=array(array('name'=>'首页','url'=>'/'));
-	  
+		 
 		$this->template->contentcol='';
 		$this->template->css='';
-	  
+		 
 		if (substr($sk,0,2)==='ad' && (int)$isadmin===1)
 		{
 			$this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_admin_menus().'\'});</script>';
@@ -98,7 +71,7 @@ class Controller_Welcome extends Controller {
 					{
 						$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adr","id":"contentcol","loadingid":"loadingIndicator"});</script>';
 					}break;
-						
+
 				case 'adu':
 			  {
 			  	$page =  array_key_exists('page',$_GET)? '&page='.$_GET['page']:'';
@@ -119,10 +92,10 @@ class Controller_Welcome extends Controller {
 				}break;
 				default:{}
 			}
-			
+				
 		}
 
-     
+		 
 
 
 

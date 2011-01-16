@@ -420,8 +420,9 @@ abstract class Captcha
 	{
 		// Output html element
 		if ($html)
-			return '<img id="captcha" src="'.url::site('captcha/'.Captcha::$config['group']).'" width="'.Captcha::$config['width'].'" height="'.Captcha::$config['height'].'" alt="Captcha" class="captcha" />';
+		//	return '<img id="captcha" src="'.url::site('captcha/'.Captcha::$config['group']).'" width="'.Captcha::$config['width'].'" height="'.Captcha::$config['height'].'" alt="Captcha" class="captcha" />';
 
+			return '<img id="captcha" src="'.url::site('captcha/').'" width="'.Captcha::$config['width'].'" height="'.Captcha::$config['height'].'" alt="Captcha" class="captcha" />';
 		// Send the correct HTTP header
 		//$this->request->headers['Cache-Control'] = 'no-cache, must-revalidate';
 		//$this->request->headers['Expires'] = 'Sun, 30 Jul 1989 19:30:00 GMT';

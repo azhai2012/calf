@@ -13,55 +13,24 @@ class Controller_Home extends Controller {
 	public function before(){
 		$this->template= View::factory('welcome');
 		$this->model= new Model_Menus();
-		$memche = Kohana::config('settings')->memcache;
 		
-		$memcached = $memche['memcached'];
-		$this->sessionname = $memche['sessionname'];
-		$this->links= $memche['links'];
+		$islogin = $this->model->checklogin();
 		
-		if (!$memcached)
-		{ 
-			$this->session = Session::instance();
-		}
-		else
+		if (isset($islogin))
 		{
-          if (isset($_SERVER['HTTP_COOKIE']))
-            $a = explode('session=',$_SERVER['HTTP_COOKIE']);
-          else
-            $this->request->redirect($this->links);
+		  if ($islogin['islogin'])
+		  {	
+	         $this->sess  = (object)$islogin['result'];
+		  }
+	      else
+	        $this->request->redirect($islogin['links']);
+  	    } 
+        else
+            $this->request->redirect($islogin['links']);
 		
-		   if (isset($a[1]))  
-		     $id= substr($a[1],0,26);
-		  else
-		     $this->request->redirect($this->links);
-		
-          $memcache_obj = new memcache;
-          $memcache_obj->connect($memche['tcpip'],$memche['ports']);
-          $m_obj = $memcache_obj->get("$id");
-          $m = explode($this->sessionname.'|',$m_obj);
-          if (!is_array($m) or empty($m[1]))
-             $this->request->redirect($this->links);   
-          else
-          $this->session = array($this->sessionname=>unserialize($m[1])); 
-		}
-		
-		$sess= $this->session[$this->sessionname][0];
-		
-		if (is_array($this->session))
-		  $islogin= $sess->userid;
-		else
-		  $islogin=''; 
-		  
-		if (empty($islogin) || $islogin==='')
-		{
-			$this->request->redirect($this->links);
-	    }
-		
-	    $this->userid  = $sess->userid;
-	   // $this->username  = $sess->username;
-	    
-		$this->roleid  = $sess->role_id;
-		$this->isadmin = $sess->isadmin;
+	    $this->userid  = $this->sess->userid;
+	 	$this->roleid  = $this->sess->role_id;
+		$this->isadmin = $this->sess->isadmin;
 	}
 	
 	public function action_index()
@@ -277,23 +246,33 @@ class Controller_Home extends Controller {
 			     	
 			      $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
 			      $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=spsz","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                  $this->template->css ='';
+                              $this->template->css ='';
 			    	
 			     }break;
 			     
 			     case 'ddbb':{
 			      $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
 			      $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=ddbb","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                  $this->template->css ='';
+                              $this->template->css ='';
 			     	
 			     }break;
 			     
-                 case 'xsbb':{
-			       $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
+                             case 'xsbb':{
+		    	       $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
 			       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=ddbb","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                   $this->template->css ='';
+                                $this->template->css ='';
 			     }break;
-			  
+
+
+                             case 'hsp':{
+                	       $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,3).'\'});</script>';
+			       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=hissp&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+                                $this->template->css ='
+                                 <script>Azhai.onPages({"type":"js","js":["/media/js/his.js?'.time().'"]});</script>';
+		               
+                             }break;
+
+
 			     
 			    default : {
 			 

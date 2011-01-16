@@ -7,9 +7,9 @@ return array
     'picuploadpath'=>'/home/azhai/uploads',     
     'memcache' => array
               (
-               'memcached'=>TRUE,
+               'memcached'=>FALSE,
                'sessionname'=>'userlogin',
-               'links'=>'https://new.hhey.cn/login',
+               'links'=>'/login',
                'tcpip'=>'192.168.100.123',
                'ports'=>11211, 
               ),
@@ -56,7 +56,16 @@ return array
 			               '销售统计'     => array('name'=>'xsbb','permissons'=>array('find'=>'查询','ex'=>'导出')),
 			         ),
                ),
-         
+
+              'hisptial' => array(
+                      'name'=>'医院部',
+		              'sk'=>'his',
+                      'ct'=> array(
+	                       '品种查询'     => array('name'=>'hsp','permissons'=>array('find'=>'查询','ex'=>'导出')),
+			       '销售统计'     => array('name'=>'hxs','permissons'=>array('find'=>'查询','ex'=>'导出')),
+	               ),
+               ),
+
         /*  
 		'basic' => array(
                'name'=>'基本设置',

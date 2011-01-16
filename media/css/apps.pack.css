@@ -68,6 +68,8 @@ tfoot td {background:#eee}
 .icon-view {background-position:-101px -54px;}
 .icon-all {background-position:-16px -54px;}
 
+
+
 .fav {border:1px #ccc solid;width:716px;padding:20px;margin:5px 0;}
 
 
@@ -108,6 +110,8 @@ padding-top: 6px;
 .menuadr {background-position:-107px -93px;}
 .menuadc {background-position:-144px -93px;}
 .menuads {background-position:-126px -93px;}
+.menuhis {background-position:-156px -56px;}
+
 
 .navside .item ul {background-color:#FFF;margin:0;padding:0;list-style-type: none;padding-top:5px;}
 .loadingIndicator {background: url(/media/images/loading.gif) no-repeat 0px 0px;height: 11px;display:none;position: absolute;right: 5px;top: 5px;width: 16px;}
