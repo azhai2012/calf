@@ -12,26 +12,11 @@ class Controller_Test extends Controller {
 	public function action_index()
 	{	
 		parent::before();
-
-                $info = array('yp'=>'lhm','cd'=>'ah');
-
-                $resultdb= Mssql::query(Database::SELECT,"
-                   exec sql2k5_pages
-                   @tblname='az_kcbs',
-                   @fldname='ypbh',
-                   @pagesize=20,
-                   @pageindex=0,
-                   @strwhere=' (ypmc like :yp or ypdm like :yp) and (cdmc like :cd or cddm like :cd)'
-                 ")
-                 ->param(':yp',"''%".$info['yp']."%''")
-		 ->param(':cd',"''%".$info['cd']."%''");
-                
-                 echo Kohana::debug((string)$result);
-
-	        $resultdb=$resultdb->as_object()->execute();
-
-                print_r($resultdb);
-
+		$a= '<script>Azhai.onPages({"type":"","id":"navside","content":":m"});</script>';
+        $a1=array(':m'=>111);
+        $b= strtr($a,$a1);
+        
+        print_r($b);
 		$this->template->test='';
 	}
 	

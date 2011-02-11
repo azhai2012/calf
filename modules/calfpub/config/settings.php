@@ -12,6 +12,7 @@ return array
                'links'=>'/login',
                'tcpip'=>'192.168.100.123',
                'ports'=>11211, 
+               'ajaxfunc',
               ),
 	'modules' => array
       (

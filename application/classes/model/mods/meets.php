@@ -1,10 +1,47 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
 
-class Model_Setting_Meets {
+class Model_Mods_Meets {
 
 	/*
 	 * 获取供货商列表
 	 */
+	
+	
+	function get_meets($name,$_setid){
+		
+		$mods = '';
+		switch ($name) {
+			
+		    case "meet":{
+				$mods = $this->ajax_get_setting_meet_list();
+			}break;
+
+			case "meetnew":{
+				$mods = $this->ajax_get_setting_meet_new();
+			}break;
+
+			case "meetview":{
+				$mods = $this->ajax_get_setting_meet_view($_setid);
+			}break;
+
+			case "meetadd":{
+				$mods = $this->ajax_set_setting_meet($_setid,"INSERT");
+			}break;
+
+			case "meetdel":{
+				$mods = $this->ajax_set_setting_meet($_setid,"DELETE");
+			}break;
+
+			case "meetedit":{
+				$mods = $this->ajax_set_setting_meet($_setid,"UPDATE");
+			}break;
+			
+		}
+		
+		return $mods;
+		
+	}
+	
 	
     function ajax_set_setting_meet($array,$type="DELETE"){
 		$result='';

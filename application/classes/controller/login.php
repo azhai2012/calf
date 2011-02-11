@@ -11,11 +11,11 @@ class Controller_Login extends Controller {
 	}
 
 	function GetIP() { //获取IP
-		if ($_SERVER["HTTP_X_FORWARDED_FOR"])
+		if (isset($_SERVER["HTTP_X_FORWARDED_FOR"]))
 		$ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
-		else if ($_SERVER["HTTP_CLIENT_IP"]) //开源代码OSPhP.COm.CN
+		else if (isset($_SERVER["HTTP_CLIENT_IP"])) //开源代码OSPhP.COm.CN
 		$ip = $_SERVER["HTTP_CLIENT_IP"];
-		else if ($_SERVER["REMOTE_ADDR"])
+		else if (isset($_SERVER["REMOTE_ADDR"]))
 		$ip = $_SERVER["REMOTE_ADDR"];
 		else if (getenv("HTTP_X_FORWARDED_FOR")) //OSPHP.com.CN
 		$ip = getenv("HTTP_X_FORWARDED_FOR");

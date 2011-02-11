@@ -77,6 +77,8 @@ class Controller_Welcome extends Controller {
 			  	$page =  array_key_exists('page',$_GET)? '&page='.$_GET['page']:'';
 
 			  	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adu'.$page.'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+                $this->template->css = '<script>Azhai.onPages({"type":"js","js":["/media/js/admin.js?'.time().'"]});</script>';
+			  
 			  }break;
 			}
 		}
@@ -103,7 +105,7 @@ class Controller_Welcome extends Controller {
 	}
 
 	public function after(){
-		$this->request->response = $this->template;
+		$this->response->body($this->template);
 	}
 
 

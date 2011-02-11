@@ -18,6 +18,7 @@ class Kohana_Pagination {
 		'view'              => 'pagination/basic',
 		'auto_hide'         => TRUE,
 		'first_page_in_url' => FALSE,
+	    'ajaxfunc' => '',
 	);
 
 	// Current page number

@@ -60,239 +60,117 @@ class Controller_Home extends Controller {
 	    $this->template->rfloat=array(array('name'=>'管理','url'=>'/?sk=admin'),array('name'=>'首页','url'=>'/'));
 	    else 
 	    $this->template->rfloat=array(array('name'=>'首页','url'=>'/'));
+	    //管理类的功能
 	  	if (substr($sk,0,2)==='ad' && $this->isadmin==1)
 		{
+		 
 		   $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_admin_menus().'\'});</script>';
-				
-	       switch ($sk){
-			  case 'adr':{
-		       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adr","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-			  }break;
-			  case 'adrnew':{
-		 	  	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adrnew","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-			  }break;
-			  case 'adredit':{
-			  	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adrview&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-			  }break;
-			  
-			  case 'adu':{
-		       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adu","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-			  }break;
-			  case 'adunew':{
-			   $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adunew","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-			  }break;
-			  case 'aduedit':{
-			   $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=aduview&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-			  }break;
-			  
-			}
-			
+
+		   $this->template->contentcol ='';
+		   $contentcol = Kohana::config('works')->contentcol;
+		   $css        = Kohana::config('works')->css;
+		   foreach($contentcol as $key=>$value)
+		   {
+		   	  if ($key===$sk)
+		   	  {
+		   	  	
+		   	  	if (isset($value['params']['param'])) 
+		   	  	{
+		   	       $p=array();		
+		   	  	   $p1= ':p';	
+		   	  	   $p[$p1] = $fl;
+		   	  	   $this->template->contentcol = strtr($value['values'],$p);		  
+		   	  	}
+		   	  	else
+		   	  	  $this->template->contentcol = $value['values'];	
+		   	  	  	   	  	
+		   	    break;
+		   	  }
+		   }
+		   
+		   foreach($css as $key=>$value)
+		   {
+		   	  if ($key===$sk)
+		   	  {		   	    
+		   	  	$this->template->css = $value['values'];	   	  	
+		   	    break;
+		   	  }
+		   }
+		   
 			
 		}
-	 	else
+	 	else  //模块功能
 	 	{
 	 		
-	 		$this->template->css='';
+	 	  	    $this->template->css='';
 	 			$this->template->contentcol='';
 	 			$this->template->menus='';
 	 			
-	 		switch ($sk){
-	 			
-	 			//会展设置
-	    		case 'meet':{
-                    $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,strlen($sk)).'\'});</script>';
-	    			$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=meet&'.time().'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-			    }break;
-			    
-	    	    case 'meetnew':{
-	    	    	$this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
-	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=meetnew&'.time().'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-			    }break;		  
-      
-			    case 'meetedit':{
-   	                $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
-	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=meetview&fl='.$fl.'&'.time().'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-			    }break;
-			    
-			  
-                //客户管理
-			    case 'custmt':{
-			        $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,6).'\'});</script>';
-	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmeetjoin&'.time().'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-			      	
-			    }break;		
-			    
-                 case 'custmtprodview':{
-                    $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,6).'\'});</script>';
-	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmtprodview&fl='.$fl.'&'.time().'","id":"contentcol","loadingid":"loadingIndicator"});</script>
-	    	    	                              <script>Azhai.onPages({"type":"js","js":["/media/js/customers.js?'.time().'"]});</script>';
-	    	    
-                 }break;
-                  
-			    case 'custmtview':{
-			        $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,6).'\'});</script>';
-	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmtview&fl='.$fl.'&'.time().'","id":"contentcol","loadingid":"loadingIndicator"});</script>
-	    	    	                              <script>Azhai.onPages({"type":"js","js":["/media/js/customers.js?'.time().'"]});</script>
-	    	    	
-	    	    	';
-			      	
-			    }break;		
-			    
-			    case 'custropose':{
-			        $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,10).'\'});</script>';
-	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custropose&'.time().'","id":"contentcol","loadingid":"loadingIndicator"});</script>
-	    	    	                              <script>Azhai.onPages({"type":"js","js":["/media/js/customers.js?'.time().'"]});</script>
-	    	    	
-	    	    	';
-		   	
-			    }break;
-			    
-			    case 'custorder':{
-			    	$this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,9).'\'});</script>';
-	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmtorder&bdate='.$bdate.'&edate='.$edate.'&'.time().'","id":"contentcol","loadingid":"loadingIndicator"});</script>
-	    	    	                              <script>Azhai.onPages({"type":"js","js":["/media/js/customers.js?'.time().'"]});</script>
-	    	    	
-	    	    	';
-			    }break;
-			    
-			    case 'custmtcart':{  //参会购物栏
-			        $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,6).'\'});</script>';
-	    	    	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=custmtgettmpcart&fl='.$fl.'&'.time().'","id":"contentcol","loadingid":"loadingIndicator"});</script>
-	    	    	                              <script>Azhai.onPages({"type":"js","js":["/media/js/customers.js?'.time().'"]});</script>
-	    	    	';
-			    }break;			  
-			    
-			    
-			    //供货商管理
-			    case 'supm':{
+	 	   $contentcol = Kohana::config('works')->contentcol;
+		   $css        = Kohana::config('works')->css;
+		   $menus      = Kohana::config('works')->menus;
+		   
+           
+		   foreach($contentcol as $key=>$value)
+		   {
+		   	  if ($key===$sk)
+		   	  {
 
-			       $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
-	    	       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=supmt&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                   $this->template->css ='
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/ajaxfileupload.js?'.time().'"]});</script>
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/meet.js?'.time().'"]});</script>
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/nicedit/nicEdit.js?'.time().'"]});</script>
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/sups.js?'.time().'"]});</script>';
-			    
-			    }break;
-			    
-			     case 'supmview':{
+		   	  	if (isset($value['params']['param'])) 
+		   	  	{
+                   
+		   	  	   if (count($value['params']['param'])>1)  
+                   {
+		   	  		 $p=array();
+		   	  	     $p[':p1'] = $bdate;
+		   	  	     $p[':p2'] = $edate;
+		   	  	     $this->template->contentcol = strtr($value['values'],$p);	
+                   }
+                   else
+                   {
+                     $p=array();
+		   	  	     $p[':p'] = $fl;
+		   	  	     $this->template->contentcol = strtr($value['values'],$p);	
+                   
+                   }
+		   	  	}
+		   	  	else
+		   	  	   $this->template->contentcol = $value['values'];		   	  	   
+		   	      	  	
+		   	    break;
+		   	  }
+		   }
+		   
+		   foreach($css as $key=>$value)
+		   {
+		   	  if ($key===$sk)
+		   	  {		   	    
+		   	  	$this->template->css = $value['values'];	   	  	
+		   	    break;
+		   	  }
+		   } 
 
-			       $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
-	    	       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=supmview&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                   $this->template->css ='
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/ajaxfileupload.js?'.time().'"]});</script>
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/meet.js?'.time().'"]});</script>
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/sups.js?'.time().'"]});</script>';
-			    
-			    }break;
-			    
-                case 'supmnew':{
-			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
-			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=supnew","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                 $this->template->css ='
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/ajaxfileupload.js?'.time().'"]});</script>
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/meet.js?'.time().'"]});</script>
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/sups.js?'.time().'"]});</script>';
-			     
-			    }break;
-			    
-			     case 'suporder':{
-			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,8).'\'});</script>';
-			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=suporder&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                 $this->template->css ='
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/ajaxfileupload.js?'.time().'"]});</script>
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/meet.js?'.time().'"]});</script>
-                             <script>Azhai.onPages({"type":"js","js":["/media/js/sups.js?'.time().'"]});</script>';
-			     
-			    }break;
-			    
-			    case 'suppropose':{
-			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,10).'\'});</script>';
-			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=suppropose","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                 $this->template->css ='';
-			     
-			    }break;
-			    
-			    case 'supkc':{
-			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,5).'\'});</script>';
-			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=supkc","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                 $this->template->css ='';
-			    	
-			    }break;
-			    
-	 		   case 'suprk':{
-			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,5).'\'});</script>';
-			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=suprk","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                 $this->template->css ='';
-			    	
-			    }break;
-			    
-			    case 'suptk':{
-			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,5).'\'});</script>';
-			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=suptk","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                 $this->template->css ='';
-			    	
-			    }break;
-			    
-			     case 'supxs':{
-			     $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,5).'\'});</script>';
-			     $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=supxs","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                 $this->template->css ='';
-			    	
-			    }break;
-			    
-			     case 'spsz':{
-			     	
-			      $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
-			      $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=spsz","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                              $this->template->css ='';
-			    	
-			     }break;
-			     
-			     case 'ddbb':{
-			      $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
-			      $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=ddbb","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                              $this->template->css ='';
-			     	
-			     }break;
-			     
-                             case 'xsbb':{
-		    	       $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,4).'\'});</script>';
-			       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=ddbb","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                                $this->template->css ='';
-			     }break;
-
-
-                             case 'hsp':{
-                	       $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_sub_menus($this->userid,3).'\'});</script>';
-			       $this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=hissp&fl='.$fl.'","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-                                $this->template->css ='
-                                 <script>Azhai.onPages({"type":"js","js":["/media/js/his.js?'.time().'"]});</script>';
-		               
-                             }break;
-
-
-			     
-			    default : {
-			 
-			    	$this->template->contentcol='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=build","id":"contentcol","loadingid":"loadingIndicator"});</script>';
-			    }
-			    
-			    
-			    
-			    
-			    
-	    	}
+		   foreach($menus as $key=>$value)
+		   {
+              if ($key===$sk)
+		   	  {	
+		        $len       = $value['params']['len']; 
+		   	    $param     = $value['params']['param'];
+		   	    $m = $param['content'];
+	          
+		   	    $p[$m] = $this->model->get_id_sub_menus($this->userid,$len);
+		   	    $ms=  strtr($value['values'],$p);
+		   	    $this->template->menus = $ms;	  	
+		   	    break;
+		   	  }
+		   } 	
+ 
 		}
-		
-		//$this->template->css .='<script>Azhai.onPages({"type":"css","css":["/media/css/apps.css?'.time().'"]});</script>';
-	    
 	    
 	}
 	
 	public function after(){
-		$this->request->response = $this->template;
+		$this->response->body($this->template);
 	}
 	
 	

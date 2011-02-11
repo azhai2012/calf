@@ -27,6 +27,7 @@ class Controller_Ajax extends Controller {
 		$this->pubs       = new Model_Mods_Public();
 		$this->his        = new Model_Mods_Hisptial();
 		$this->model      = new Model_Menus();
+		$this->meets      = new Model_Mods_Meets();
 
 		$islogin = $this->model->checklogin();
 		
@@ -46,7 +47,8 @@ class Controller_Ajax extends Controller {
 		$this->roleid= $this->sess->role_id;
 		$this->isadmin = $this->sess->isadmin;
 		//$this->username= $sess->username;
-		$this->meets = new Model_Setting_Meets();
+	
+
 	}
 
 	public function isie(){
@@ -70,12 +72,45 @@ class Controller_Ajax extends Controller {
 		$content = array_key_exists('content',$_POST)?$_POST['content']:'';
 		$location = array_key_exists('location',$_POST)?$_POST['location']:'';
 		$sup_id  =  array_key_exists('supid',$_POST)?$_POST['supid']:'';
-		$bdate   = array_key_exists('bdate',$_GET)?$_GET['bdate']:'';
-		$edate   = array_key_exists('edate',$_GET)?$_GET['edate']:'';
+		$bdate   = array_key_exists('bdate',$_GET)?$_GET['bdate']:date('Y-m-d');
+		$edate   = array_key_exists('edate',$_GET)?$_GET['edate']:date('Y-m-d');
 		$id      = array_key_exists('id',$_POST)?$_POST['id']:'';
 
 		$this->template = '';
-		switch ($_get) {
+		$Prams = array('users'=>array('userid'=>$this->userid,'roleid'=>$this->roleid,'isadmin'=>$this->isadmin),
+		               'param'=>array('id'=>$id,'content'=>$content,
+		                              'bdate'=>$bdate,'edate'=>$edate,
+		                              'meetid'=>$_setid,'supid'=>$supid,
+		                              'prodid'=>$prodid,'num'=>$num,'price'=>$price)
+		);	
+
+	
+		
+		$mt  = $this->meets->get_meets($_get,$Prams);
+		
+		$sp  = $this->sups->get_supplier($_get,$Prams);
+
+		$cus = $this->cust->get_costomers($_get,$Prams);
+
+		
+		if ($mt<>'') //会展
+		{
+		   $this->template = $mt;
+		} 
+		else 
+		if ($sp<>'') //供货商
+		{ 
+		   $this->template = $sp;
+		}
+		else
+		if ($cus<>'')  //销售客户
+		{ 
+		   $this->template = $cus;
+		}
+		else
+		{
+		
+	    	switch ($_get) {
 				
 			case "nt":{
 				$this->template = $this->pubs->ajax_get_public_list();
@@ -108,6 +143,11 @@ class Controller_Ajax extends Controller {
 				$page = array_key_exists('page',$_GET)? $_GET['page']:'1';
 				$this->template = $this->adminUsers->ajax_get_admin_users_list($page);
 			}break;
+			
+		    case "adulist":{
+				$page = array_key_exists('page',$_GET)? $_GET['page']:'1';
+				$this->template = $this->adminUsers->ajax_get_admin_users_list_page($page);
+			}break;
 
 			case "adunew":{
 				$this->template = $this->adminUsers->ajax_get_admin_users_new();
@@ -134,207 +174,11 @@ class Controller_Ajax extends Controller {
 					
 			}break;
 
-			//会展设置
-
-			case "meet":{
-				$this->template = $this->meets->ajax_get_setting_meet_list();
-			}break;
-
-			case "meetnew":{
-				$this->template = $this->meets->ajax_get_setting_meet_new();
-			}break;
-
-			case "meetview":{
-				$this->template = $this->meets->ajax_get_setting_meet_view($_setid);
-			}break;
-
-			case "meetadd":{
-				$this->template = $this->meets->ajax_set_setting_meet($_setid,"INSERT");
-			}break;
-
-			case "meetdel":{
-				$this->template = $this->meets->ajax_set_setting_meet($_setid,"DELETE");
-			}break;
-
-			case "meetedit":{
-				$this->template = $this->meets->ajax_set_setting_meet($_setid,"UPDATE");
-			}break;
-				
+			//会展设置			
+		
 			//客户管理
-				
-			case "cus":{
-				$this->template = $this->cust->ajax_get_mods_cus_main();
-
-			}break;
-				
-			case "custmeetjoin":{
-
-				$this->template = $this->cust->ajax_get_mods_cus_list();
-
-			}break;
-				
-			case "custmtprodview":{
-				$ary1 = explode(',',$_setid);
-				$ary= array('userid'=>$this->userid,'username'=>$this->username,'meetid'=>$ary1[0],'supid'=>$ary1[1],'prodid'=>$ary1[2]);
-				$this->template = $this->cust->ajax_get_mods_cus_prod_view_list($ary);
-
-			}break;
-				
-			case "custmtview":{
-				$ary1 = explode(',',$_setid);
-				$ary= array('userid'=>$this->userid,'meetid'=>$ary1[0],'supid'=>$ary1[1],'username'=>$this->username);
-				$this->template = $this->cust->ajax_get_mods_cus_view_list($ary);
-
-			}break;
-				
-
-			case "custaddtotmpcart":{
-				$ary = array('userid'=>$this->userid,'supid'=>$sup_id,'meetid'=>$_setid,'pid'=>$prodid,'num'=>$num,'price'=>$price);
-				if ($this->isie()) {
-					$this->template = $this->cust->ajax_Set_Model_Customer($ary,"TMPDBCART");
-				}
-				else {
-					$this->template = $this->cust->ajax_Set_Model_Customer($ary,"TMPDBCART");
-				}
-			}break;
-				
-			case "custupdtmpcart":{
-				$ary = array('userid'=>$this->userid,'supid'=>$sup_id,'meetid'=>$_setid,'pid'=>$prodid,'num'=>$num,'id'=>$id);
-				if ($this->isie()) {
-					$this->template = $this->cust->ajax_Set_Model_Customer($ary,"UPTTMPDBCART");
-				}else {
-					$this->template = $this->cust->ajax_Set_Model_Customer($ary,"UPTTMPDBCART");
-				}
-			}break;
-				
-			case "custdeltmpcart":{
-				$ary = array('userid'=>$this->userid,'supid'=>$sup_id,'meetid'=>$_setid,'pid'=>$prodid,'num'=>$num);
-				if ($this->isie()) {
-					$this->template = $this->cust->ajax_Set_Model_Customer($ary,"DELTMPDBCART");
-				}else {
-					$this->template = $this->cust->ajax_Set_Model_Customer($ary,"DELTMPDBCART");
-				}
-					
-			}break;
-				
-			case "custtmptocart":{
-				$ary = array('userid'=>$this->userid);
-				if ($this->isie()) {
-					$this->template = $this->cust->ajax_Set_Model_Customer($ary,"INSERTDBCART");
-				}
-				else
-				{
-					$this->template = $this->cust->ajax_Set_Model_Customer($ary,"INSERTDBCART");
-				}
-				 
-			}break;
-				
-			case "custropose":{
-				$this->template = $this->cust->ajax_get_mods_cus_ropose(array('userid'=>$this->userid));
-			}break;
-
-			case "addropose":{
-				$this->template = $this->cust->ajax_get_mods_cus_add_ropose(array('userid'=>$this->userid));
-			}break;
-				
-			case "custaddropose":{
-				 
-				$ary = array('userid'=>$this->userid,'content'=>$content);
-				$this->template = $this->cust->ajax_Set_Model_Customer($ary,"INSTERROPOSE");
-				 
-			}break;
-
-			case "custmtgettmpcart":{
-
-				$this->template = $this->cust->ajax_get_mods_cus_tmp_cart(array('userid'=>$this->userid,'meetid'=>$_setid));
-					
-			}break;
-
-			case "custmtorder":{
-
-				$this->template = $this->cust->ajax_get_mods_customer_meet_cart_list($this->userid,$bdate,$edate);
-
-			}break;
-
-			//供货商管理
-
-			case "supmt":{
-				$this->template = $this->sups->ajax_get_mods_sup_list(array('userid'=>$this->userid,'meetid'=>$_setid));
-			}break;
-
-			case "supfav":{
-
-				$this->template = $this->sups->ajax_get_mods_sup_fav(array('userid'=>$this->userid,'meetid'=>$_setid));
-				 
-			}break;
-			case "supaddfav":{
-
-				$this->template = $this->sups->ajax_Set_Model_Supplier(array('userid'=>$this->userid,'meetid'=>$_setid,'content'=>$content,'location'=>$location),"UPDATEFAV");
-	    
-			}break;
-				
-			case "supnew":{
-
-				$this->template = $this->sups->ajax_get_mods_sup_new(array('userid'=>$this->userid));
-
-			}break;
-
-			case "supmview":{
-
-				$this->template = $this->sups->ajax_get_mods_sup_view_list(array('userid'=>$this->userid,'meetid'=>$_setid));
-
-			}break;
-				
-			case "supdelprod":{
-
-				$this->template = $this->sups->ajax_Set_Model_Supplier($_setid,"DELETE");
-
-			}break;
-
-			case "supselectprocother":{
-				$fls=explode(',',$_setid);
-				$this->template = $this->sups->ajax_get_select_proc_dialog_other(array('userid'=>$this->userid,'meetid'=>$fls[0],'spmc'=>$fls[1],'cdmc'=>$fls[2]));
-					
-			}break;
-
-			case "supselectproc":{
-				$fls=explode(',',$_setid);
-				$this->template = $this->sups->ajax_get_select_proc_dialog(array('userid'=>$this->userid,'meetid'=>$fls[0],'spmc'=>$fls[1]));
-
-			}break;
-
-			case "suporder":{
-
-				$this->template = $this->sups->ajax_get_setting_suporder_list(array('userid'=>$this->userid,'meetid'=>$_setid));
-					
-			}break;
-
-			case "suppropose":{
-				$this->template = $this->sups->ajax_get_setting_suppropose_list();
-			}break;
-
-			case "supaddprod":{
-
-				$_setid = $_setid.';'.$this->userid;
-				$this->template = $this->sups->ajax_Set_Model_Supplier($_setid,"INSERT");
-					
-			}break;
-
-			case "supsetprodinfo":{
-				$ary = array('id'=>$supid,'cxnr'=>$cxnr,'picname'=>$picname,'picsize'=>$picsize,'num'=>$num,'price'=>$price);
-				$this->template = $this->sups->ajax_Set_Model_Supplier($ary,"UPDATEINFO");
-
-			}break;
-			case "supuploadpic":{
-
-				$this->template = $this->sups->ajax_upload_file($_setid);
-					
-			}break;
-			case "supmupload":{
-
-				$this->template = $this->sups->ajax_get_select_upload_product_picture_dialog(array("id"=>$_setid));
-
-			}break;
+			
+			//供货商管理			
 				
 			//医院部
 			case "hissp":{
@@ -374,12 +218,13 @@ class Controller_Ajax extends Controller {
 				$this->template = "正在建设中...";
 				break;
 		}
+	  }
 
 	}
 
 
 	public function after(){
-		$this->request->response = $this->template;
+		$this->response->body($this->template);
 	}
 
 

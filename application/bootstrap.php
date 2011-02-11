@@ -1,6 +1,20 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-//-- Environment setup --------------------------------------------------------
+// -- Environment setup --------------------------------------------------------
+
+// Load the core Kohana class
+require SYSPATH.'classes/kohana/core'.EXT;
+
+if (is_file(APPPATH.'classes/kohana'.EXT))
+{
+	// Application extends the core
+	require APPPATH.'classes/kohana'.EXT;
+}
+else
+{
+	// Load empty core extension
+	require SYSPATH.'classes/kohana'.EXT;
+}
 
 /**
  * Set the default time zone.
@@ -34,14 +48,22 @@ spl_autoload_register(array('Kohana', 'auto_load'));
  */
 ini_set('unserialize_callback_func', 'spl_autoload_call');
 
-//-- Configuration and initialization -----------------------------------------
+// -- Configuration and initialization -----------------------------------------
+
+/**
+ * Set the default language
+ */
+I18n::lang('en-us');
 
 /**
  * Set Kohana::$environment if a 'KOHANA_ENV' environment variable has been supplied.
+ *
+ * Note: If you supply an invalid environment name, a PHP warning will be thrown
+ * saying "Couldn't find constant Kohana::<INVALID_ENV_NAME>"
  */
 if (getenv('KOHANA_ENV') !== FALSE)
 {
-	Kohana::$environment = getenv('KOHANA_ENV');
+	Kohana::$environment = constant('Kohana::'.strtoupper(getenv('KOHANA_ENV')));
 }
 
 /**
@@ -59,18 +81,18 @@ if (getenv('KOHANA_ENV') !== FALSE)
  */
 Kohana::init(array(
 	'base_url'   => '/',
-        'index_file'  => '',
 ));
 
 /**
  * Attach the file write to logging. Multiple writers are supported.
  */
-Kohana::$log->attach(new Kohana_Log_File(APPPATH.'logs'));
+Kohana::$log->attach(new Log_File(APPPATH.'logs'));
 
 /**
  * Attach a file reader to config. Multiple readers are supported.
  */
-Kohana::$config->attach(new Kohana_Config_File);
+Kohana::$config->attach(new Config_File);
+
 
 /**
  * Enable modules. Modules are referenced by a relative or absolute path.
@@ -87,10 +109,43 @@ Kohana::modules(array(
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 	 'mssql'      => MODPATH.'mssql',
-         'captcha'    => MODPATH.'captcha',
-         'calfpub'    => MODPATH.'calfpub',
-     ));
+     'captcha'    => MODPATH.'captcha',
+     'calfpub'    => MODPATH.'calfpub',
+   ));
 
+/*
+ * 根据配置文件，增加模块 
+ */   
+$modules= Kohana::config('settings')->modules;
+foreach ($modules as $key => $value){
+  foreach($value as $name => $mod)	
+  { 	
+    if ($name='sk') 
+    { 
+      $modname= $value[$name]; 	
+      Kohana::modules(Kohana::modules()+array($modname=> MODPATH.$modname)); 
+    } 
+  }
+}
+
+// @todo 各种模块的设计
+/*
+ * 加载模块的功能说明：
+ * 
+ * 原则: 根据系统需要生成各种模块的加载。
+ * 优点：便于分发程序设计，将各个单独的模块分开，实现任务的下发。
+ * 缺点：需要调整主模块的动态加载功能，设计较复杂。
+ * 
+ * 关键点：
+ * 1、根据各个模块的需要，需要注意在主模块中加载的css文件 和js文件的。
+ *    方案：在加载该子模块时，扫描该目录下的配置文件，实现动态的加入。
+ *    
+ * 2、菜单的调用要考虑各子模块的功能。   
+ * 
+ * 
+ */
+
+   
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
@@ -100,15 +155,3 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'welcome',
 		'action'     => 'index',
 	));
-
-if ( ! defined('SUPPRESS_REQUEST'))
-{
-	/**
-	 * Execute the main request. A source of the URI can be passed, eg: $_SERVER['PATH_INFO'].
-	 * If no source is specified, the URI will be automatically detected.
-	 */
-	echo Request::instance()
-		->execute()
-		->send_headers()
-		->response;
-}

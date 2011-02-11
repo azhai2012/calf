@@ -82,16 +82,26 @@ class Model_Admin_Users {
 		$result .='<div class="contextual"><a href="/home?sk=adunew"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>新建用户</span></a></div>';
 		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menuadu">';
 		$result .='</i><span>用户</span></h3>';
-	  
+	    $result .='<table class="list"><thead>
+		<tr colspan=6>用户查询<input id="finduname" name="finduname" value="" /><input type="button" id="findbtn" name="findbtn" value="查询" onclick="Admins.Userlists('.$page.')" /></tr>
+		<tr><th style="width:250px;">用户名称</th><th>邮件地址</th><th>角色分配</th><th>创建于</th><th>最后登录</th><th></th></tr></thead>
+		<tbody></tbody>';
+		$result .='</table>';
+		return $result;
+	}
+	
+	function ajax_get_admin_users_list_page($page){
+		
 		$modules= DB::query(Database::SELECT,"select count(1) as ct 
 		                              from users inner join 
-		                                   roles on users.role_id=roles.id ",TRUE)
-		          ->as_object()
+		                                   roles on users.role_id=roles.id ",TRUE);
+		//echo kohana::debug((string)$modules); 
+		 $modules=$modules->as_object()
 		          ->execute();
 		$modules = $modules-> as_array();          
 		$totalcount = $modules[0]->ct;
-		        
-		$per_page=10;
+		
+		$per_page=15;
         //$page_num = array_key_exists('page',$_GET)? $_GET['page']:1;
         $page_num = (!empty($page))?$page:1;
 
@@ -102,9 +112,10 @@ class Model_Admin_Users {
                 'style' => 'floating',
                 'items_per_page' => $per_page,
                 'custom' => '/',
-                'view' =>'pagination/floating',
+                'view' =>'pagination/cusfloating',
                 'query_string' => 'page',
                 'total_items' => $totalcount,
+                'ajaxfunc'=>'Admins.Userlists',
                 ))->render();
           
         
@@ -119,11 +130,7 @@ class Model_Admin_Users {
 		          
 		 $modules= $modules->as_object()->execute();
 
-		$result .='
-		<table class="list"><thead>
-		
-		<tr><th>用户名称</th><th>邮件地址</th><th>角色分配</th><th>创建于</th><th>最后登录</th><th></th></tr></thead>';
-		$result .='<tbody>';
+		$result ='';
 		$i=0;
 		foreach($modules as $key => $value){
 			$mod = ($i%2)?'odd':'even';
@@ -150,11 +157,9 @@ class Model_Admin_Users {
 			$result.= '</tr>';
 			$i++;
 		}
-		$result .='</tbody>';
-		$result .='</table>
-		<div class="clearfix">'.$pages.'</div>
-		';
+		$result.='<tr><td colspan=6><div class="clearfix">'.$pages.'</div></td></tr>';
 		return $result;
+		
 	}
 
 

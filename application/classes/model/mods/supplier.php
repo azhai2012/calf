@@ -5,6 +5,105 @@ class Model_Mods_Supplier {
 	
 	private $picfilepath = '';//上传图片的路径
 
+	function get_supplier($name,$params =array()){
+		
+		$mods='';
+		$user= $params['users'];
+		$param = $params['param'];
+	 
+		switch ($name){
+		
+		    case "supmt":{
+				$mods = $this->ajax_get_mods_sup_list(array('userid'=>$user['userid'],'meetid'=>$param['meetid']));
+			}break;
+
+			case "supfav":{
+
+				$mods = $this->ajax_get_mods_sup_fav(array('userid'=>$user['userid'],'meetid'=>$param['meetid']));
+				 
+			}break;
+			case "supaddfav":{
+
+				$mods = $this->ajax_Set_Model_Supplier(array('userid'=>$user['userid'],'meetid'=>$param['meetid'],
+				                  'content'=>$param['content'],
+				                  'location'=>$param['location']),"UPDATEFAV");
+	    
+			}break;
+				
+			case "supnew":{
+
+				$mods = $this->ajax_get_mods_sup_new(array('userid'=>$user['userid']));
+
+			}break;
+
+			case "supmview":{
+
+				$mods = $this->ajax_get_mods_sup_view_list(array('userid'=>$user['userid'],'meetid'=>$param['meetid']));
+
+			}break;
+				
+			case "supdelprod":{
+
+				$mods = $this->ajax_Set_Model_Supplier($param['id'],"DELETE");
+
+			}break;
+
+			case "supselectprocother":{
+				$fls=explode(',',$param['meetid']);
+				$mods = $this->ajax_get_select_proc_dialog_other(array('userid'=>$user['userid'],'meetid'=>$fls[0],'spmc'=>$fls[1],'cdmc'=>$fls[2]));
+					
+			}break;
+
+			case "supselectproc":{
+				$fls=explode(',',$param['meetid']);
+				$mods = $this->ajax_get_select_proc_dialog(array('userid'=>$user['userid'],'meetid'=>$fls[0],'spmc'=>$fls[1]));
+
+			}break;
+
+			case "suporder":{
+
+				$mods = $this->ajax_get_setting_suporder_list(array('userid'=>$user['userid'],'meetid'=>$param['meetid']));
+					
+			}break;
+
+			case "suppropose":{
+				$mods = $this->ajax_get_setting_suppropose_list();
+			}break;
+
+			case "supaddprod":{
+
+				$_setid = $param['param'].';'.$user['userid'];
+				$mods = $this->ajax_Set_Model_Supplier($param['param'],"INSERT");
+					
+			}break;
+
+			case "supsetprodinfo":{
+				$ary = array('id'=>$param['supid'],
+				             'cxnr'=>$param['cxnr'],
+				             'picname'=>$param['picname'],
+				             'picsize'=>$param['picsize'],
+				             'num'=>$param['num'],
+				             'price'=>$param['price']);
+				$mods = $this->ajax_Set_Model_Supplier($ary,"UPDATEINFO");
+
+			}break;
+			case "supuploadpic":{
+
+				$mods = $this->ajax_upload_file($param['param']);
+					
+			}break;
+			case "supmupload":{
+
+				$mods = $this->ajax_get_select_upload_product_picture_dialog(array("id"=>$param['id']));
+
+			}break;
+		}
+			
+			return $mods;
+		
+	}
+	
+	
 	/*
 	 * 数据模块
 	 */
