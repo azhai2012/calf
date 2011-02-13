@@ -33,7 +33,7 @@ class Controller_Login extends Controller {
 		parent::before();
 
 		// @todo 修改功能
-
+           
 		$this->template->info = '';
 		$this->template->descripts= '海内存知己，天涯若比邻！';
 
@@ -122,7 +122,7 @@ class Controller_Login extends Controller {
 	}
 
 	public function after(){
-		$this->request->response = $this->template;
+		$this->response->body($this->template);
 	}
 
 
