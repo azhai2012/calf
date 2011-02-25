@@ -1091,7 +1091,8 @@ class Model_Mods_Customer {
 		<thead>
 		   <tr><td style="backgound-color:#fff" colspan=9 >
 		   <div style="margin-bottom:5px;height:32px;line-height:32px;" class="clearfix">
-		      <div style="float:left;font-size:14px">查询日期：</div>
+              
+		   <div style="float:left;font-size:14px">查询日期：</div>
 		      <div class="datebox"><input type="text" class="inputtext" value="'.$bdate.'" id="start_time_intl_field" name="start_time_intl_field" size="10" autocomplete="off" onclick="MyCalendar.SetDate(this)"></div>
 		      <span style="float:left">--</span>
 		      <div class="datebox"><input type="text" class="inputtext" value="'.$edate.'" id="end_time_intl_field" name="end_time_intl_field" size="10" autocomplete="off" onclick="MyCalendar.SetDate(this)"></div>

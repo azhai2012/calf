@@ -80,6 +80,12 @@ class Controller_Welcome extends Controller {
                 $this->template->css = '<script>Azhai.onPages({"type":"js","js":["/media/js/admin.js?'.time().'"]});</script>';
 			  
 			  }break;
+			  case 'adc':
+			  {
+			   	$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=adc","id":"contentcol","loadingid":"loadingIndicator"});</script>';
+                $this->template->css = '<script>Azhai.onPages({"type":"js","js":["/media/js/admin.js?'.time().'"]});</script>';
+			  
+			  }break;
 			}
 		}
 		else

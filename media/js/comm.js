@@ -1,1 +1,200 @@
-eval(function(p,a,c,k,e,r){e=function(c){return(c<62?'':e(parseInt(c/62)))+((c=c%62)>35?String.fromCharCode(c+29):c.toString(36))};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'([13-9ae-hk-qs-uw-zA-Z]|1\\w)'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('1 a=3(e){f.e=e;g(N(a.O)=="undefined"||e===n){a.C.serName=3(P){f.e=P};a.C.getJson=3(){D f.e};a.C.Q=3(){1 4=f.e;1 8=4[\'8\'];1 k=4[\'k\'];1 h=4[\'h\'];1 5=4[\'5\'];1 6=4[\'6\'];1 o=4[\'o\'];1 6=4[\'6\'];1 E=4[\'u\'];1 _loadingid=4[\'loadingid\'];1 F=\'\';1 l=\'\';1 w=n;1 R=3(){g(!f.w){1 c,b=7.getElementsByTagName(\'x\');g(b.G){c=b[0]}S{c=7.body}f.w=c}D f.w};1 x=R();1 T=3(){$.u({h:"U",V:E,W:3(y){$(".X").5("p","200px").5("z","40px").H(\'<q 9="Y-I:15px;Y-Z:20px;"><h2 9="border:0;">加载中....</h2></q>\').11()},12:3(4,A){$(".X").hide();$(\'.pop_content\').H(4)},13:3(y,A){},14:3(){}})};switch(h){s\'q\':{g(k!=n&&k!=""){1 9=k["9"];1 B=k["15"];g(9!=""&&9!=n)l=l+\'9="\'+9+\'"\';g(B!=""&&B!=n)l=l+\'15="\'+B+\'"\'}F=\'<q 8="\'+8+\'" \'+l+\'>\'+6+\'</q>\';7.write(F)};t;s"o":{J(1 i=0;i<o.G;i++){1 m=7.16(\'m\');m.src=o[i];m.h="17/javascript";m.async=18;x.19(m)}};t;s"5":{J(1 j=0;j<5.G;j++){1 d=7.16(\'link\');d.href=5[j];d.rel="stylesheet";d.h="17/5";d.media="all";x.19(d)}};t;s"dialog":{1 K=6[\'p\'];1 h01=6[\'z\'];1 1a=6[\'I\'];1 bH=$(7).z();1 L=$(7).p();$("#fullbg").5({p:L,z:bH,1c:"1d"});$("."+8).5("1c","1d").5("Z",(L/2-(parseInt(K)/2))+"M").5("I",1a+"M").5("p",K+"M");$(\'.\'+8).11();T()}t;s"u":{$.u({h:"U",V:E,W:3(y){$(".1e").addClass("1f")},12:3(4,A){$(\'#\'+8).H(4)},13:3(y,A){$(".1e").removeClass("1f")},14:3(){}})}t;default:{g(N(6)=="string"){1 1g=7.1h(8);1g.1i=6}S{J(1 r in 6){1 1j=7.1h(r);1j.1i=6[r]}}}}}};a.O=18};1 Azhai={onMsg:3(1k){alert(1k)},onPages:3(1l){1 v=new a(1l);D v.Q()}}',[],84,'|var||function|data|css|content|document|id|style|Comm||||json|this|if|type|||attr|_attr|script|null|js|width|div||case|break|ajax||_hardpoint|head|XMLHttpRequest|height|textStatus|_classname|prototype|return|__ajax|result|length|html|top|for|w01|bW|px|typeof|_init|jsons|getDOM|getHardpoint|else|ajaxobj|get|url|beforeSend|pop_content_load|margin|left||show|success|complete|error|class|createElement|text|true|appendChild|t01||display|block|selectItem|loading|obj|getElementById|innerHTML|rid|msg|myjson'.split('|'),0,{}))
+/*
+ *  author:azhai
+ *  date :2010-11-20 22:00
+ *  descrption: public javascript DOM
+ */
+
+var Comm = function(json) {
+    this.json = json;
+
+    if (typeof(Comm._init) == "undefined" || json === null) {
+        Comm.prototype.serName = function(jsons) {
+            this.json = jsons;
+        };
+        Comm.prototype.getJson = function() {
+            return this.json;
+        };
+        Comm.prototype.getDOM = function() {
+            var data = this.json;
+
+            var id = data['id'];
+            var attr = data['attr'];
+            var type = data['type'];
+            var css = data['css'];
+            var content = data['content'];
+            var js = data['js'];
+            var content = data['content'];
+            var __ajax = data['ajax'];
+            var _loadingid = data['loadingid'];
+            var result = '';
+            var _attr = '';
+            var _hardpoint = null;
+
+            var getHardpoint = function() {
+                if (!this._hardpoint) {
+                    var c, b = document.getElementsByTagName('head');
+                    if (b.length) {
+                        c = b[0];
+                    } else {c = document.body;}
+                    this._hardpoint = c;
+                }
+                return this._hardpoint;
+            };
+
+            var head = getHardpoint();
+
+            var ajaxobj = function() {
+
+                $.ajax({
+                    type: "get",
+                    url: __ajax,
+                    beforeSend: function(XMLHttpRequest) {
+                        $(".pop_content_load").css("width", "200px").css("height", "40px").html('<div style="margin-top:15px;margin-left:20px;"><h2 style="border:0;">加载中....</h2></div>').show();
+                    },
+                    success: function(data, textStatus) {
+                        $(".pop_content_load").hide();
+                        $('.pop_content').html(data);
+                    },
+                    complete: function(XMLHttpRequest, textStatus) {
+
+},
+                    error: function() {
+                        // 请求出错处理
+                    }
+                });
+            };
+
+            switch (type) {
+            case 'div':
+                {
+                    if (attr != null && attr != "") {
+                        var style = attr["style"];
+                        var _classname = attr["class"];
+                        if (style != "" && style != null) _attr = _attr + 'style="' + style + '"';
+                        if (_classname != "" && _classname != null) _attr = _attr + 'class="' + _classname + '"';
+                    }
+                    result = '<div id="' + id + '" ' + _attr + '>' + content + '</div>';
+                    document.write(result);
+
+                };
+                break;
+            case "js":
+                {
+                	var b = true; 
+                    for (var i = 0; i < js.length; i++) {
+                        var script = document.createElement('script');
+                        script.src = js[i];
+                        script.type = "text/javascript";
+                        script.async = true;
+                        
+                        if (b === true)  
+                        head.appendChild(script);
+                       
+                        script.onload = script.onreadystatechange = function() {  
+                        if (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete') {
+                            b = true;  
+                        }
+                        else
+                           b =false;
+                    
+                        } 
+                        
+                    }
+
+                };
+                break;
+            case "css":
+                {
+
+                    for (var j = 0; j < css.length; j++) {
+                        var d = document.createElement('link');
+                        d.href = css[j];
+                        d.rel = "stylesheet";
+                        d.type = "text/css";
+                        d.media = "all";
+                        /*
+					 * // d.onerror = d.onload = alert("error");
+					 * d.onreadystatechange = function() { if (this.readyState ==
+					 * "complete" || this.readyState == "loaded") alert("ok"); };
+					 */
+                        head.appendChild(d);
+                    }
+                };
+                break;
+                // ajax
+            case "dialog":
+                {
+                    var w01 = content['width'];
+                    var h01 = content['height'];
+                    var t01 = content['top'];
+                    var bH = $(document).height();
+                    var bW = $(document).width();
+
+                    $("#fullbg").css({
+                        width: bW,
+                        height: bH,
+                        display: "block"
+                    });
+                    $("." + id).css("display", "block").css("left", (bW / 2 - (parseInt(w01) / 2)) + "px").css("top", t01 + "px").css("width", w01 + "px");
+                    // .css("height",h01+"px");
+                    $('.' + id).show();
+                    ajaxobj();
+                }
+
+                break;
+
+                // ajax
+            case "ajax":
+                {
+                    $.ajax({
+                        type:
+                        "get",
+                        url: __ajax,
+                        beforeSend: function(XMLHttpRequest) {
+                            $(".selectItem").addClass("loading");
+                        },
+                        success: function(data, textStatus) {
+                            $('#' + id).html(data);
+                        },
+                        complete: function(XMLHttpRequest, textStatus) {
+                            $(".selectItem").removeClass("loading");
+                        },
+                        error: function() {
+                            // 请求出错处理
+                        }
+                    });
+
+                }
+
+                break;
+
+            default:
+                {
+
+                    if (typeof(content) == "string") {
+                        var obj = document.getElementById(id);
+                        obj.innerHTML = content;
+
+                    } else {
+                        for (var r in content) {
+                            var rid = document.getElementById(r);
+                            rid.innerHTML = content[r];
+                        }
+                    }
+                };
+            };
+        };
+    };
+
+    Comm._init = true;
+};
+
+var Azhai = {
+    onMsg: function(msg) {
+        alert(msg);
+    },
+    onPages: function(myjson) {
+        var v = new Comm(myjson);
+        return v.getDOM();
+    }
+}

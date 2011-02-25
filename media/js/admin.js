@@ -24,6 +24,26 @@ var Admins = {
 				});
 
 		},
+		EditCms:function(){
+			var titlename=  $('#title').val();
+			
+			$.ajax({
+				type : "get",
+				url : "/ajax?sk=adcedit&fl="+titlename,
+				beforeSend : function(XMLHttpRequest) {
+				},
+				success : function(data, textStatus) {
+	                 alert(data);   
+				},
+				complete : function(XMLHttpRequest, textStatus) {
+					
+				},
+				error : function() {
+					// 请求出错处理
+				}
+			});
+			
+		},
 		
 };
 

@@ -24,17 +24,49 @@ return array
 	                 '商品设置'     => array('name'=>'spsz','permissons'=>array('add'=>'新增','del'=>'删除','find'=>'查询','ex'=>'导出')),
 			         '展会设置'   => array('name'=>'meet','permissons'=>array('add'=>'新增','del'=>'删除','find'=>'查询','ex'=>'导出')),
 			         ),
-               ),
-     
+               ),               
                'customer' => array(
-                      'name'=>'客户管理',
+                      'name'=>'订单管理',
 		              'sk'=>'cus',
                       'ct'=> array(
-                           '展会浏览'     => array('name'=>'custmt','permissons'=>array('find'=>'查询')),
-			               '展会订单'     => array('name'=>'custorder','permissons'=>array('find'=>'查询','ex'=>'导出')),
-			               '投诉建议'     => array('name'=>'custropose','permissons'=>array('find'=>'查询')),
-			         ),
+                           '商品订货'     => array('name'=>'custolist','permissons'=>array('find'=>'查询')),
+			               '商品购物车'   => array('name'=>'custcart','permissons'=>array('find'=>'查询','ex'=>'导出')),
+			               '订单查询'     => array('name'=>'custoview','permissons'=>array('find'=>'查询')),
+			               '配送单查询'   => array('name'=>'custdelivery','permissons'=>array('find'=>'查询')),
+                           '单据下载'   => array('name'=>'custdown','permissons'=>array('find'=>'查询')),
+                     ),
                ),
+               'meet' => array(
+                     'name' => '展会区',
+                      'sk'=> 'mt',
+                      'ct'=>array(
+                           '参加展会'     => array('name'=>'custmt','permissons'=>array('find'=>'查询')),
+			               '展会订单'     => array('name'=>'custorder','permissons'=>array('find'=>'查询','ex'=>'导出')),
+			               '展会信息'     => array('name'=>'custmtinfo','permissons'=>array('find'=>'查询')),
+			               '投诉建议'     => array('name'=>'custropose','permissons'=>array('find'=>'查询')),
+			 
+                     ), 
+               ),
+               'discount' => array(
+                      'name'=>'促销区',
+                      'sk'=>'dis',
+                      'ct'=>array(
+                           '新品上架'     => array('name'=>'disnew','permissons'=>array('find'=>'查询')),
+                           '促销推荐商品'  => array('name'=>'disrec','permissons'=>array('find'=>'查询')),
+                           '参与团购'     => array('name'=>'distuan','permissons'=>array('find'=>'查询')),
+                           '秒杀专区'     => array('name'=>'dismiao','permissons'=>array('find'=>'查询')),
+                     ),   
+               ),
+               
+               'member' => array(
+                      'name'=>'会员专区',
+                      'sk'=>'mb',
+                      'ct'=>array(
+                           '会员活动'     => array('name'=>'mbactivity','permissons'=>array('find'=>'查询')),
+                           '会员积分兑换'  => array('name'=>'mbconvert','permissons'=>array('find'=>'查询')),
+                           '会员社区'     => array('name'=>'mbcm','permissons'=>array('find'=>'查询')),
+                     ),   
+               ), 
                'supplier' => array(
                       'name'=>'供货商管理',
 		              'sk'=>'sup',
@@ -114,12 +146,21 @@ return array
                       '销售分析'=>array('name'=>'fxbb','permissons'=>array('find'=>'查询','print'=>"导出")),
                       ),  
              ),    
-         */           
+         */   
+               'admin'=>array(
+                      'name'=>'系统管理',
+                      'sk'=>'sys',
+                      'ct'=> array(
+                           '角色' => array('name'=>'sysrole','permissons'=>array()),
+                           '用户' => array('name'=>'sysuser','permissons'=>array()),
+                           '设置' => array('name'=>'syssetup','permissons'=>array()),
+                    ), 
+              ),        
       ),
       
      'admins' => array
      (
-         'project'=>array('name'=>"项目",'sk'=>'adp'),
+         'project'=>array('name'=>"控制台",'sk'=>'adp'),
          'user'=>array('name'=>"用户",'sk'=>'adu'),
          'group'=>array('name'=>"组",'sk'=>'adg'),
          'role'=>array('name'=>"角色和权限",'sk'=>'adr'),

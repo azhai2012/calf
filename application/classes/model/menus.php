@@ -214,12 +214,12 @@ class Model_Menus {
 					}
 				}
 			}
-			$result.=' <div class="uiHeaderTopBorder"><div class="clearfix uiHeaderTop"></div></div>';
+			$result.=' <div class=\"uiHeaderTopBorder\"><div class=\"clearfix uiHeaderTop\"></div></div>';
 
 			$result.= '</ul>';
 		  }
 		}
-		$result.=' <div class="uiHeaderTopBorder"><div class="clearfix uiHeaderTop"></div></div>';
+		$result.=' <div class=\"uiHeaderTopBorder\"><div class=\"clearfix uiHeaderTop\"></div></div>';
 		return $result;
 	}
 	

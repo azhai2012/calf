@@ -6,12 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <meta name="robots" content="noindex,nofollow" />
 <link rel="shortcut icon" href="/media/images/favicon.ico" />
+ <link href="/media/css/apps.css" rel="stylesheet" type="text/css" media="all" />
   <script type="text/javascript" src="/media/js/comm.js"></script>
  <script type="text/javascript" src="/media/js/apps.js"></script>
  <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
+ <script type="text/javascript" src="/media/js/jquery.checktree.js"></script>
  <script type="text/javascript" src="/media/js/calendar_az.js"></script>
-
- <link href="/media/css/apps.css" rel="stylesheet" type="text/css" media="all" />
 
 
 </head>
@@ -65,7 +65,8 @@
   </div> <!-- end content -->
   <div id="pagefoot"  >
       
-      <div id="contentcourve">    </div>
+      <div id="contentcourve"> </div>
+     
       <div class="clearfix" id="footcontainer" >   
          <div class="lfloat">徐州淮海药业有限公司 &copy 2010</div>    
          <div class="rfloat">
@@ -81,6 +82,7 @@
     </div>
   </div>
  </div> <!-- end allcontainer  -->
+ 
 </body>
 
  <?php echo $menus;?>

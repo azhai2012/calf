@@ -67,8 +67,8 @@ class Controller_Home extends Controller {
 		   $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_admin_menus().'\'});</script>';
 
 		   $this->template->contentcol ='';
-		   $contentcol = Kohana::config('works')->contentcol;
-		   $css        = Kohana::config('works')->css;
+		   $contentcol = Kohana::config('work/contentcol')->contentcol;
+		   $css        = Kohana::config('work/css')->css;
 		   foreach($contentcol as $key=>$value)
 		   {
 		   	  if ($key===$sk)
@@ -106,17 +106,18 @@ class Controller_Home extends Controller {
 	 			$this->template->contentcol='';
 	 			$this->template->menus='';
 	 			
-	 	   $contentcol = Kohana::config('works')->contentcol;
-		   $css        = Kohana::config('works')->css;
-		   $menus      = Kohana::config('works')->menus;
+	 	   $contentcol = Kohana::config('work/contentcol')->contentcol;
+		   $css        = Kohana::config('work/css')->css;
+		   $menus      = Kohana::config('work/menu')->menus;
 		   
            
 		   foreach($contentcol as $key=>$value)
 		   {
+		   	  
 		   	  if ($key===$sk)
 		   	  {
-
-		   	  	if (isset($value['params']['param'])) 
+		   	  	
+                if (isset($value['params']['param'])) 
 		   	  	{
                    
 		   	  	   if (count($value['params']['param'])>1)  
@@ -130,6 +131,7 @@ class Controller_Home extends Controller {
                    {
                      $p=array();
 		   	  	     $p[':p'] = $fl;
+		   	  	    
 		   	  	     $this->template->contentcol = strtr($value['values'],$p);	
                    
                    }
@@ -150,7 +152,7 @@ class Controller_Home extends Controller {
 		   	  }
 		   } 
 
-		   foreach($menus as $key=>$value)
+		    foreach($menus as $key=>$value)
 		   {
               if ($key===$sk)
 		   	  {	
@@ -163,7 +165,11 @@ class Controller_Home extends Controller {
 		   	    $this->template->menus = $ms;	  	
 		   	    break;
 		   	  }
-		   } 	
+		   } 
+
+		   if (empty($this->template->menus)){
+		   	  $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":"'.$this->model->get_id_sub_menus($this->userid,30).'"});</script>';
+		   }
  
 		}
 	    

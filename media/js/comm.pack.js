@@ -85,9 +85,13 @@ var Comm = function(json) {
                         script.src = js[i];
                         script.type = "text/javascript";
                         script.async = true;
-                        head.appendChild(script);
-
-                    }
+                        script.onload = script.onreadystatechange = function() {   
+                            if (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete') {
+                            	 head.appendChild(script);
+                              }
+                            }   
+                        }
+                       
 
                 };
                 break;

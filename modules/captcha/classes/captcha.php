@@ -197,8 +197,7 @@ abstract class Captcha
 				Captcha::instance()->invalid_count(Session::instance()->get('captcha_invalid_count') + 1);
 			}
 		}
-        echo $this->response;
-        echo $result; 
+		
 		return $result;
 	}
 

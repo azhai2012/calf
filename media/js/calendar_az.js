@@ -352,11 +352,14 @@ L_calendar.prototype={
     }
    
 document.writeln('<iframe id="L_DateLayer" name="L_DateLayer" frameborder="0" style="position:absolute;width:160px; height:200px;z-index:9998;display:none;"></iframe>');
+
+
 var MyCalendar=new L_calendar();
 MyCalendar.NewName="MyCalendar";
 document.onclick=function(e)
 {
-    e = window.event || e;
+	
+	e = window.event || e;
     var srcElement = e.srcElement || e.target;
     MyCalendar.CloseLayer(srcElement);
 }
