@@ -127,7 +127,15 @@ return array(
              'sysuser'=>array(
                   'params'=>array(), 
                   'values'=>'<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=sysuser","id":"contentcol","loadingid":"loadingIndicator"});</script>',),
-      
+
+             'sysusernew' =>array(
+                   'params'=>array(), 
+                   'values'=>'<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=sysusernew","id":"contentcol","loadingid":"loadingIndicator"});</script>',),
+
+             'sysusermodify' =>array(
+                   'params'=>array('param'=>array('fl'=>':p')), 
+                   'values'=>'<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=sysusermodify&fl=:p","id":"contentcol","loadingid":"loadingIndicator"});</script>',),
+                
 
              'default'=>array(
                   'params'=>array(), 

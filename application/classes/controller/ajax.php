@@ -82,6 +82,7 @@ class Controller_Ajax extends Controller {
 		$id       = array_key_exists('id',$_POST)?$_POST['id']:'';		
 		$res      = array_key_exists('res',$_POST)?$_POST['res']:'';
 		$users    = array_key_exists('user',$_POST)?$_POST['user']:'';
+		$data     = array_key_exists('data',$_POST)?$_POST['data']:'';
 
 		$this->template = '';
 		$Prams = array('users'=>array('userid'=>$this->userid,'roleid'=>$this->roleid,'isadmin'=>$this->isadmin),
@@ -99,7 +100,7 @@ class Controller_Ajax extends Controller {
 
 		$cus = $this->cust->get_costomers($_get,$Prams);
 		
-		$Prams = array('param'=>array('res'=>$res,'id'=>$id,'fl'=>$_fl,'users'=>$users));
+		$Prams = array('param'=>array('res'=>$res,'id'=>$id,'fl'=>$_fl,'users'=>$users,'data'=>$data));
 		
 		$sys = $this->sys->get_system($_get,$Prams);
 

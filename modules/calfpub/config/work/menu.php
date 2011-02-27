@@ -115,6 +115,20 @@ return array(
                    'values'=>'<script>Azhai.onPages({"type":"","id":"navside","content":\':m\'});</script>',  
                  ),
                  
+                 'sysroleview'=>array(
+                   'params'=>array('param'=>array('content'=>':m'),'len'=>7),
+                   'values'=>'<script>Azhai.onPages({"type":"","id":"navside","content":\':m\'});</script>',  
+                 ),                 
+                 
+                 'sysusernew'=>array(
+                   'params'=>array('param'=>array('content'=>':m'),'len'=>7),
+                   'values'=>'<script>Azhai.onPages({"type":"","id":"navside","content":\':m\'});</script>',  
+                 ),
+                 
+                 'sysusermodify'=>array(
+                   'params'=>array('param'=>array('content'=>':m'),'len'=>7),
+                   'values'=>'<script>Azhai.onPages({"type":"","id":"navside","content":\':m\'});</script>',  
+                 ),
                  
                  'sysrolenew'=>array(
                    'params'=>array('param'=>array('content'=>':m'),'len'=>7),

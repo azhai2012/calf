@@ -55,7 +55,7 @@ tfoot td {background:#eee}
 .navside .item .leftimg {left:5px;position:absolute;text-align:center;top:2px;width:16px;}
 .navside .selectItem {background-color:#D8DFEA;font-weight:bold;}
 
-.calfimage {background-image:url(/media/images/calf.png);background-repeat:no-repeat;display:inline-block;height:18px;width:16px;}
+.calfimage  {background-image:url(/media/images/calf.png);background-repeat:no-repeat;display:inline-block;height:18px;width:16px;}
 .spritemap_aanaup {background-repeat: no-repeat;display: inline-block;height: 18px;width: 16px;margin-right:5px;}
 .leftimg {left:5px;position:absolute;text-align:center;top:2px;width:18px;}
 .icon-add {background-position:-42px -89px;}
@@ -155,10 +155,10 @@ padding-top: 6px;
 .iconwarning{background-position:-160px -114px;}
 .iconsuccess{background-position:-141px -114px;}
 
-.error,.success,.warning {margin:10px 0px 12px 0px;padding: 14px 14px 14px 30px;margin-bottom: 12px;font-size: 1.1em; border: 2px solid;}
-.error { background-color: #ffe3e3;border-color: #dd0000; color: #880000;}
-.success {background-position:141px 114px;background-color: #dfffdf;border-color: #9fcf9f; color: #005f00;}
-.warning {background-position:160px 114px;background-color: #FFEBC1;border-color: #FDBF3B;color: #A6750C;text-align: left;}
+.error,.success,.warning {margin:10px 0px 12px 0px;padding: 14px 14px 14px 35px;margin-bottom: 12px;font-size: 1.1em; border: 2px solid;}
+.error {background: url(/media/images/warning.gif) no-repeat 12px 13px; background-color: #ffe3e3;border-color: #dd0000; color: #880000;}
+.success {background:url(/media/images/success.gif) no-repeat 12px 13px; background-color: #dfffdf;border-color: #9fcf9f; color: #005f00;}
+.warning {background: url(/media/images/warning.gif) no-repeat 12px 13px;background-color: #FFEBC1;border-color: #FDBF3B;color: #A6750C;text-align: left;}
 
 
 .box {background-color: #F6F6F6;border: 1px solid #E4E4E4;color: #505050;padding: 6px;line-height: 2.5em;margin-bottom: 10px;}

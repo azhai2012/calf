@@ -10,15 +10,98 @@ var Sys = {
         	 $('.roletree').show();
             		
         },
+        modifyUser:function(id){
+        	
+        	if (confirm('您确定要修改该用户的信息？'))
+             {
+        		var user=$('#username').val();
+            	var email= $('#email').val();
+            	var psw= $('#psw').val();
+            	var active= $("#active").find("option:selected").val();
+            	var pid= $("input[name='roles']:checked").val();
+            	var data= $('#username').val()+';'+$('#email').val()+';'+$('#psw').val()+';'+$('#active').val()+';'+pid;
+        
+            	$.ajax({
+    				  type : "post",
+    				  url : "/ajax?sk=sysuserupd",
+    				  data : "&data="+data+"&id="+id,
+    				  beforeSend : function(XMLHttpRequest) {
+    					//
+    			  	  },
+    				  success : function(data, textStatus) {
+    			  	
+    			  		 $('#status').html('成功保存');
+    				  },
+    				  complete : function(XMLHttpRequest, textStatus) {
+    					  $('#status').removeClass('warning').removeClass('error').addClass('success');
+    				  },
+    				  error: function(XMLHttpRequest, textStatus){
+    					  $('#status').html('保存有误！').removeClass('success').addClass('error');   
+    				  }
+    			 });
+               }	
+        },
+        delUser:function(id){
+         
+         if (confirm('您确定要删除该条用户记录？'))
+         {
+        	$.ajax({
+				  type : "post",
+				  url : "/ajax?sk=sysuserdel",
+				  data : "&id="+id,
+				  beforeSend : function(XMLHttpRequest) {
+					//
+			  	  },
+				  success : function(data, textStatus) {
+			  		location.href="/home?sk=sysuser";
+			  		// $('#status').html('成功保存').removeClass('warning').addClass('success');
+				  },
+				  complete : function(XMLHttpRequest, textStatus) {
+					  //$('#status').removeClass('warning').addClass('success');
+				  },
+				  error: function(XMLHttpRequest, textStatus){
+					 // $('#status').html('保存有误！').removeClass('success').addClass('error');   
+				  }
+			 });
+           }
+        },
+        AddUser:function(){
+        	var user=$('#username').val();
+        	var email= $('#email').val();
+        	var psw= $('#psw').val();
+        	var active= $("#active").find("option:selected").val();
+        	var id= $("input[name='roles']:checked").val();
+        	var data= $('#username').val()+';'+$('#email').val()+';'+$('#psw').val()+';'+$('#active').val();
+      
+        	$.ajax({
+				  type : "post",
+				  url : "/ajax?sk=sysuseradd",
+				  data : "&data="+data+"&id="+id,
+				  beforeSend : function(XMLHttpRequest) {
+					//
+			  	  },
+				  success : function(data, textStatus) {
+		
+			  		 $('#status').html('成功保存').removeClass('warning').addClass('success');
+				  },
+				  complete : function(XMLHttpRequest, textStatus) {
+					  //$('#status').removeClass('warning').addClass('success');
+				  },
+				  error: function(XMLHttpRequest, textStatus){
+					  $('#status').html('保存有误！').removeClass('success').addClass('error');   
+				  }
+			 });	
+			 
+        },
         getTree:function(){
         	 var id= $('.rid').val(); 
         	
-        	 $.ajax({
+        	   $.ajax({
 				  type : "post",
 				  url : "/ajax?sk=editsysrole",
 				  data : "&id="+id,
 				  beforeSend : function(XMLHttpRequest) {
-					//
+        		      $('#status').html('正在保存...').addClass('warning');
 			  	  },
 				  success : function(data, textStatus) {
 			  		 
@@ -35,9 +118,10 @@ var Sys = {
 					 // $('#hh').html();
 				  },
 				  error: function(XMLHttpRequest, textStatus){
-					  
+					
 				  }
-			 });
+			   });
+        	
         },
         objClick:function (){
         	 var v01='';  
@@ -90,7 +174,7 @@ var Sys = {
 						 $('#status').removeClass('warning').addClass('success');
 					  },
 					  error: function(XMLHttpRequest, textStatus){
-						 $('#status').html('保存有误！').removeClass('warning').removeClass('success').addClass('error');; 
+						 $('#status').html('保存有误！').removeClass('warning').removeClass('success').addClass('error'); 
 					  }
 				 });
         	  }

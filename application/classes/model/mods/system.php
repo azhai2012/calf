@@ -42,7 +42,34 @@ class Model_Mods_System {
                 $mods = $this->ajax_get_mods_user_list();	
                 			
 			}break;
-
+			
+			case "sysusernew":{
+				
+				$mods= $this->ajax_get_mods_add_user();
+				
+			}break;
+			
+			case "sysuseradd":{			
+				$mods= $this->ajax_Set_Model_User($param,'INSERT');
+				
+			}break;
+			
+			case "sysuserdel":{
+				$mods= $this->ajax_Set_Model_User($param);
+			}break;
+			
+			case "sysusermodify":{
+				
+				$mods= $this->ajax_get_mods_modify_user($params['param']['fl']);
+				
+			}break;
+			
+			case "sysuserupd":{
+				
+				$mods= $this->ajax_Set_Model_User($param,'UPDATE');
+				
+			}break;
+			
 			case "sysrolenew":{
 				$ary1 = explode(',',$param['params']);
 				$ary  = array('userid'=>$users['userid'],'username'=>$users['username'],
@@ -55,6 +82,91 @@ class Model_Mods_System {
 		return $mods;
 	}
 
+	function ajax_Set_Model_User($array,$type="DELETE"){
+	    $result='';
+		if (is_array($array)){
+			$ary=$array;
+		}
+		else
+		$array = explode(';',$array);	
+		
+		switch ($type)
+		{
+			case "DELETE":{
+				$id=$ary['id'];
+			
+				$result= DB::query(Database::DELETE,"DELETE FROM admin_user WHERE user_id=:id",TRUE)->param(':id',$id)
+				         ->as_object()->execute();
+				$result= DB::query(Database::DELETE,"DELETE FROM admin_role WHERE user_id=:id",TRUE)->param(':id',$id)
+				         ->as_object()->execute();
+				         
+				
+			}break;
+			
+			case "INSERT":{
+				
+		      $a= explode(';',$ary['data']);
+		      $id= $ary['id'];
+		    	
+			  $result= DB::query(Database::INSERT,"INSERT INTO admin_user (username,email,password,created,is_active)
+			                VALUES (:username,:email,:password,:created,:is_active)",TRUE)
+			    ->param(':username',$a[0])
+				->param(':email',$a[1])
+				->param(':password',md5($a[2]))
+				->param(':created',date('Y-m-d H:i:s'))
+				->param(':is_active',$a[3]);
+				
+			  $result=$result->as_object()->execute();	
+            
+			  $result = DB::query(Database::SELECT,"SELECT user_id FROM admin_user WHERE username=:username ",TRUE)
+			  ->param(':username',$a[0])->as_object()->execute();
+			  
+              $users = $result->as_array();
+              
+              $result= DB::query(Database::DELETE,"INSERT INTO admin_role (parent_id,user_id,role_type,role_name)
+			                VALUES (:parent_id,:user_id,'U',:role_name)",TRUE)
+			          ->param(':parent_id',$id)
+			          ->param(':user_id',$users[0]->user_id)
+			          ->param(':role_name',$a[0])->as_object()->execute();
+		     
+				
+			}break;
+			
+			case "UPDATE":{
+				
+			   $a= explode(';',$ary['data']);
+		       $id= $ary['id'];
+		    	
+			   $result= DB::query(Database::INSERT,"UPDATE admin_user SET 
+			                email=:email,
+			                password=:password,
+			                created=:created,
+			                is_active=:is_active
+			                WHERE user_id=:id
+			                ",TRUE)
+				->param(':email',$a[1])
+				->param(':password',md5($a[2]))
+				->param(':created',date('Y-m-d H:i:s'))
+				->param(':is_active',$a[3])
+				->param(':id',$id);
+				
+			  $result=$result->as_object()->execute();	
+            
+			  $result = DB::query(Database::UPDATE,"UPDATE admin_role SET parent_id=:pid WHERE user_id=:userid ",TRUE)
+			  ->param(':pid',$a[4])
+              ->param(':userid',$id)
+			  ->as_object()->execute();
+			 	
+			}break;
+			
+			
+			
+		}
+		return json_encode($result);	
+		
+		
+	}
+	
 
 	/*
 	 * 数据模块
@@ -169,6 +281,175 @@ class Model_Mods_System {
 		
 	}
 	
+    /*
+	 * 新增用户 
+	 */
+	function ajax_get_mods_add_user(){
+	    
+			$result ='<div class="roles">';
+			$result .='<div class="contextual"></div>';
+			$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
+			$result .='</i><span>用户管理 -- 新增</span></h3>';
+            $result .='<div id="status"></div>';
+			$result .='<table class="list" >
+		               <thead>
+		                 <th colspan=2>-- 用户信息</th>
+		               </thead>';
+			$result .='<tbody>';
+			$result .=' <tr><td style="text-align:right;width:70px">用户名称：</td><td><input name="username" id="username" value="" /></td></tr>
+			            <tr><td style="text-align:right">Email：</td><td><input name="email" id="email" value="" /></td></tr>
+			            <tr><td style="text-align:right">密码：</td><td><input name="psw" id="psw" value="" /></td></tr>
+			            <tr><td style="text-align:right">激活状态：</td><td>
+			                <select name="active" id="active" > 
+			                 <option value="1" selected>激活</option>
+			                 <option value="0">锁定</option>';
+			
+			
+			$result .='</select>
+			           </td></tr>
+		               <tr><table class="list rolelist" >
+			            <thead>
+			              <tr><th colspan=2>-- 用户角色</th>
+                          </tr>
+			              <tr>
+                          <th>指定</th>
+                          <th>角色名称</th></tr>
+                        </thead>
+                       <tbody>          
+			           ';
+			 
+            $modules= DB::query(Database::SELECT,"
+		              SELECT * 
+		              FROM admin_role 
+		              WHERE parent_id=0
+	                  ",TRUE);
+		    $modules=$modules->as_object()->execute();
+		    $i=0;
+	        foreach($modules as $key=>$value)
+	        {
+	           $mod = ($i%2)?'odd':'even';
+		       $result .= '<tr>
+		                    <td class="'.$mod.'" style="width:70px">
+		                    <input type="radio" name="roles" value="'.$value->role_id.'"  /> </td>
+		                    <td class="'.$mod.'">'.$value->role_name.'</td>
+		                   </tr>';
+		       $i=$i+1;
+		    }
+	        
+			$result .='</tbody>';
+			$result .='</table></div>';
+			
+
+		 $result .=' <div style="padding-top:20px;" class="dialog_buttons ">
+    	             <label class="uiButton" >
+    	               <input type="button" name="save" onclick="Sys.AddUser();" value="保存">
+    	             </label>
+    	             <label class="uiButton cancel">
+    	               <input type="button" name="cancel" value="取消" onclick="">
+    	             </label>
+    	            </div>';
+		return $result;
+	}
+	
+	/*
+	 * 修改用户 
+	 */
+	function ajax_get_mods_modify_user($id){
+		
+		    $modules= DB::query(Database::SELECT,"
+		              SELECT * FROM admin_user WHERE user_id=:id
+	                  ",TRUE)->param(':id',$id);
+		    $modules=$modules->as_object()->execute();
+		    $tt= $modules->as_array();
+		    $active =($tt[0]->is_active)?'selected':''; 		    
+			$result ='<div class="roles">';
+			$result .='<div class="contextual"></div>';
+			$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
+			$result .='</i><span>用户管理 -- 修改</span></h3>';
+            $result .='<div id="status"></div>';
+			$result .='<table class="list">
+		               <thead>
+		                 <th colspan=2>-- 用户信息</th>
+		               </thead>';
+			$result .='<tbody>';
+			$result .=' <tr><td style="text-align:right;width:70px">用户名称：</td><td><input name="username" id="username" value="'.$tt[0]->username.'" /></td></tr>
+			            <tr><td style="text-align:right" >Email：</td><td><input name="email" id="email" value="'.$tt[0]->email.'" /></td></tr>
+			            <tr><td style="text-align:right">密码：</td><td><input name="psw" id="psw" value="" /></td></tr>
+			            <tr><td>激活状态：</td><td>
+			                <select name="active" id="active" > ';
+			if ($active=='selected'){
+			$result .= '
+			            <option value="1" selected>激活</option>
+			            <option value="0">锁定</option>';
+			}         
+			else
+			{
+			 $result .= '
+			            <option value="1">激活</option>
+			            <option value="0" selected>锁定</option>';
+			}       
+			
+			$result .='</select>
+			           </td></tr>
+		               <tr><table class="list rolelist" >
+			            <thead>
+			              <tr><th colspan=2>-- 用户角色</th>
+                          </tr>
+			              <tr>
+                          <th>指定</th>
+                          <th>角色名称</th></tr>
+                        </thead>
+                       <tbody>          
+			           ';
+			 
+            $modules= DB::query(Database::SELECT,"
+		              SELECT * 
+		              FROM admin_role
+		              WHERE parent_id=0     
+	                  ",TRUE);
+		    $modules=$modules->as_object()->execute();
+		    $i=0; 
+	        foreach($modules as $key=>$value)
+	        {
+	           $mod = ($i%2)?'odd':'even';
+	           $rs = DB::query(Database::SELECT,"
+		              SELECT * 
+		              FROM admin_role
+		              WHERE parent_id=:id and user_id=:uid     
+	                  ",TRUE)
+                      ->param(':id',$value->role_id)  
+                      ->param(':uid',$id)  
+   	                  ->as_object()
+	                  ->execute();
+	           $rs= $rs->as_array();
+	         
+	           $checked = (count($rs)>0)?'checked':''; 
+		       $result .= '<tr>
+		                    <td class="'.$mod.'"  style="width:70px"><input type="radio" name="roles" value="'.$value->role_id.'" '.$checked.' /> </td>
+		                    <td class="'.$mod.'">'.$value->role_name.'</td>
+		                   </tr>';
+		       $i=$i+1;
+		    }
+	        
+			$result .='</tbody>';
+			$result .='</table></div>';
+			
+
+		 $result .=' <div style="padding-top:20px;" class="dialog_buttons ">
+                     <label class="uiButton" >
+    	               <input type="button" name="del" onclick="Sys.delUser('.$tt[0]->user_id.');" value="删除">
+    	             </label>
+    	            
+		             <label class="uiButton" >
+    	               <input type="button" name="save" onclick="Sys.modifyUser('.$tt[0]->user_id.');" value="保存">
+    	             </label>
+    	             <label class="uiButton cancel">
+    	               <input type="button" name="cancel" value="取消" onclick="">
+    	             </label>
+    	            </div>';
+		return $result;
+	}
+	
 	
     /*
 	 * 得到用户列表 
@@ -186,7 +467,7 @@ class Model_Mods_System {
 		if (count($tt[0])>0)
 		{
 			$result ='<div class="roles">';
-			$result .='<div class="contextual"><a href="/home?sk=sysrolenew"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>新增角色</span></a></div>';
+			$result .='<div class="contextual"><a href="/home?sk=sysusernew"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>新增用户</span></a></div>';
 			$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
 			$result .='</i><span>用户列表</span></h3>';
            
@@ -196,13 +477,14 @@ class Model_Mods_System {
 		               </thead>';
 			$result .='<tbody>';
 			$i=1;
-             
+            
 			foreach($modules as $key => $value){
+
 				$mod = ($i%2)?'odd':'even';
-				$active = ($value->is_active === 1)?'激活':'锁定';
+				$active = ($value->is_active)?'激活':'锁定';
 				$result.= '<tr id="row_'.$value->user_id.'" class="" >';
 				$result.= '<td style="width:10px;" align="center" class="'.$mod.'">'.$i.'</td>';
-				$result.= '<td  class="'.$mod.'"><span><a href="/home?sk=sysuseredit&fl='.$value->user_id.'">'.$value->username.'</a></span></td>';
+				$result.= '<td  class="'.$mod.'"><span><a href="/home?sk=sysusermodify&fl='.$value->user_id.'">'.$value->username.'</a></span></td>';
 				$result.= '<td  class="'.$mod.'"><span>'.$value->email.'</span></td>';
 				$result.= '<td style="width:30px;" class="'.$mod.'"><span>'.$active.'</span></td>';
 				$result.= '</tr>';
@@ -305,18 +587,24 @@ class Model_Mods_System {
 		
 	   if (count($tt)>0)
 		{
-	         $result .='<table class="list">
+			
+	         $result .='
+	  
+		        <div id="status"></div>
+		    
+	         <table class="list">
 		      <thead>
 		        <tr>
-		         <th colspan=2 ><div id="status"></div></th></tr>
+		         <th colspan=2 >--- 角色信息</th>
 		        <tr> 
-		       
-		        <th style="width:60px;">角色名称</th><th>
-		           <input type="hidden" class="rid" id="rid" name="rid" value="'.$tt[0]->role_id.'" >'.$tt[0]->role_name .'</th></tr>
+		        <td style="width:60px;">角色名称:</td><td>
+		           <input type="hidden" class="rid" id="rid" name="rid" value="'.$tt[0]->role_id.'" >'.$tt[0]->role_name .'</td></tr>
 		       <tr>
-			      <td colspan=2 >--- 角色资源</td>
+			      <th colspan=2 >--- 角色资源</th>
 			    </tr>
-               <tr><th>角色资源</th><th><select id="all"  name="all" onchange="Sys.showRes(this)" > ';
+                </thead>
+		        <tbody >
+			    <tr><td>角色资源:</td><td><select id="all"  name="all" onchange="Sys.showRes(this)" > ';
                  if ($tt[0]->resource_id === 'all')
                  {
 		          $result .='  <option value="all" selected >所有</option>
@@ -326,9 +614,8 @@ class Model_Mods_System {
 		            $result .=' <option value="all"  >所有</option>
 		                        <option value="custom" selected>定制</option>';
 		          }
-		        $result .=' </select></th></tr>
-		       </thead>
-		        <tbody >
+		        $result .=' </select></td></tr>
+		      
 		       
 		        ';
 			    
@@ -370,7 +657,7 @@ class Model_Mods_System {
 			$result .='</ul></td></tr>
 			
 			 <tr>
-			   <td colspan=2 >--- 角色用户</td>
+			   <th colspan=2 >--- 角色用户</th>
 			 </tr>
 			 <tr>
 			   <table  class="list userlist" >

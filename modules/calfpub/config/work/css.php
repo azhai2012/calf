@@ -37,7 +37,21 @@ return array(
                                                           
                  ', 
 ),  
-               'custorder'=>array(
+   'sysusermodify'=>array(
+                 'values'=> ' 
+                   <script>Azhai.onPages({"type":"js","js":["/media/js/sys.js?'.time().'"]});</script>
+                                                          
+                 ', 
+),  
+
+              'sysusernew'=>array(
+                 'values'=> ' 
+                   <script>Azhai.onPages({"type":"js","js":["/media/js/sys.js?'.time().'"]});</script>
+                                                          
+                 ', 
+),  
+
+'custorder'=>array(
                   'values'=>'<script>Azhai.onPages({"type":"js","js":["/media/js/customers.js?'.time().'"]});</script>',),
 
               'hsp'=>array(
