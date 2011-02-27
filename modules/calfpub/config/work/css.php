@@ -37,6 +37,12 @@ return array(
                                                           
                  ', 
 ),  
+   'sysrolenew'=>array(
+                 'values'=> ' 
+                   <script>Azhai.onPages({"type":"js","js":["/media/js/sys.js?'.time().'"]});</script>
+                                                          
+                 ', 
+),  
    'sysusermodify'=>array(
                  'values'=> ' 
                    <script>Azhai.onPages({"type":"js","js":["/media/js/sys.js?'.time().'"]});</script>

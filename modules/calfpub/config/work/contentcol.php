@@ -123,6 +123,11 @@ return array(
              'sysroleview'=>array(
                   'params'=>array('param'=>array('fl'=>':p')),
                   'values'=>'<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=sysroleview&fl=:p","id":"contentcol","loadingid":"loadingIndicator"});</script>',),
+              
+            
+              'sysrolenew'=>array(
+                  'params'=>array(),
+                  'values'=>'<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=sysrolenew","id":"contentcol","loadingid":"loadingIndicator"});</script>',),
  
              'sysuser'=>array(
                   'params'=>array(), 
@@ -132,7 +137,7 @@ return array(
                    'params'=>array(), 
                    'values'=>'<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=sysusernew","id":"contentcol","loadingid":"loadingIndicator"});</script>',),
 
-             'sysusermodify' =>array(
+              'sysusermodify' =>array(
                    'params'=>array('param'=>array('fl'=>':p')), 
                    'values'=>'<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=sysusermodify&fl=:p","id":"contentcol","loadingid":"loadingIndicator"});</script>',),
                 

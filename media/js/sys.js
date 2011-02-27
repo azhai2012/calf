@@ -98,10 +98,10 @@ var Sys = {
         	
         	   $.ajax({
 				  type : "post",
-				  url : "/ajax?sk=editsysrole",
+				  url : "/ajax?sk=sysroletree",
 				  data : "&id="+id,
 				  beforeSend : function(XMLHttpRequest) {
-        		      $('#status').html('正在保存...').addClass('warning');
+        		    
 			  	  },
 				  success : function(data, textStatus) {
 			  		 
@@ -122,6 +122,61 @@ var Sys = {
 				  }
 			   });
         	
+        },        
+        addRoleName:function(){
+        	
+        	if (confirm('您确定要增加该角色信息？'))
+            {
+        		var rolename= $('#rolename').val();
+        		var v01='';  
+              	 var v02='';
+              	 var sel =  $("#all").find("option:selected").val();
+              	
+        		 $(".roletree div.checkbox").each(function(a,b){
+             		
+              	   var obj= $(this).parent().find('input');
+              	   obj=obj.val();
+              	  
+                               
+              	   if ($(this).attr("class") === 'checkbox checked' || $(this).attr("class") === 'checkbox half_checked' )
+                     {
+                  	   v01=	obj+';allow|';
+                  	   
+              	   }
+              	   else
+              	   {
+              		   v01=	obj+';deny|';  
+              	   }   
+              	   v02=v02 + v01;
+                   });
+              	  
+              	  if (sel==='all')
+              	  {
+              		 v02= 'all;allow;'; 
+              	  }
+              	  
+              	  if (v02!='')
+              	  {
+              	    $.ajax({
+      					  type : "post",
+      					  url : "/ajax?sk=sysroleadd",
+      					  data : "&data="+rolename+"&res="+v02.substr(0,v02.length-1),
+      					  
+      					  beforeSend : function(XMLHttpRequest) {
+              	    	     $('#status').html('正在保存...').addClass('warning');
+      				  	  },
+      					  success : function(data, textStatus) {
+      				  		 $('#status').html('成功保存');
+      					  },
+      					  complete : function(XMLHttpRequest, textStatus) {
+      						 $('#status').removeClass('warning').addClass('success');
+      					  },
+      					  error: function(XMLHttpRequest, textStatus){
+      						 $('#status').html('保存有误！').removeClass('warning').removeClass('success').addClass('error'); 
+      					  }
+      				 });
+              	  }
+            }
         },
         objClick:function (){
         	 var v01='';  
@@ -138,7 +193,7 @@ var Sys = {
         	 
         	 $(".roletree div.checkbox").each(function(a,b){
         		
-        	   obj= $(this).parent().find('input');
+        	   var obj= $(this).parent().find('input');
         	   obj=obj.val();
                          
         	   if ($(this).attr("class") === 'checkbox checked' || $(this).attr("class") === 'checkbox half_checked' )
@@ -162,7 +217,7 @@ var Sys = {
         	  {
         	    $.ajax({
 					  type : "post",
-					  url : "/ajax?sk=addsysrole",
+					  url : "/ajax?sk=sysrolemodify",
 					  data : "&res="+v02.substr(0,v02.length-1)+'&id='+id+'&user='+users,
 					  beforeSend : function(XMLHttpRequest) {
         	    	     $('#status').html('正在保存...').addClass('warning');

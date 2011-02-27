@@ -14,6 +14,10 @@ class Model_Mods_System {
 				$mods = $this->ajax_get_mods_cus_main();
 
 			}break;
+			
+			/*
+			 * 角色
+			 */
 
 			case "sysrole":{
 
@@ -21,22 +25,35 @@ class Model_Mods_System {
 
 			}break;
 			
-			case "addsysrole":{
+			case "sysrolemodify":{
 				
 				$mods = $this->ajax_Set_Model_Role($param,'UPDATE');
 				
 			}break;
 			
-			case "editsysrole":{
+			case "sysroleadd":{
+				
+				$mods = $this->ajax_Set_Model_Role($param,'INSERT');
+				
+			}break;
+			
+			case "sysroletree":{
 				$mods = $this->ajax_get_tree_json_list($params['param']['id']);
 			}break;
 
+			case "sysrolenew":{
+				$mods = $this->ajax_get_add_new_role();
+			}break;
+			
 			case "sysroleview":{
 				
 			    $mods = $this->ajax_get_mods_role_view_list($params['param']['fl']);
 
 			}break;
-			
+	
+			/*
+			 * 用户
+			 */
 			case "sysuser":{
 				
                 $mods = $this->ajax_get_mods_user_list();	
@@ -70,13 +87,7 @@ class Model_Mods_System {
 				
 			}break;
 			
-			case "sysrolenew":{
-				$ary1 = explode(',',$param['params']);
-				$ary  = array('userid'=>$users['userid'],'username'=>$users['username'],
-				            'meetid'=>$ary1[0],'supid'=>$ary1[1],'prodid'=>$ary1[2]);
-				$mods = $this->ajax_get_mods_cus_prod_view_list($ary);
-
-			}break;
+			
 
 		}
 		return $mods;
@@ -194,18 +205,32 @@ class Model_Mods_System {
 
 			case "INSERT":{
 				
-             	$id=$ary['fl'];
-		        $f1=explode('|',$ary['res']);
-                $ps = '';
+             	$rolename = $ary['data'];
+             	
+		        $ps = 'INSERT INTO admin_role (role_name) values (:rolename)';
+                $result= DB::query(Database::INSERT,$ps,TRUE)
+                    ->param(':rolename',$rolename) 
+	   			    ->as_object()
+				    ->execute();
+
+                $result= DB::query(Database::SELECT,"SELECT role_id FROM admin_role WHERE role_name=:rolename",TRUE)
+                    ->param(':rolename',$rolename) 
+	   			    ->as_object()
+				    ->execute();
+				    
+				$result=$result->as_array();
+				$id= $result[0]-> role_id;  
+				    
+                $f1=explode('|',$ary['res']);
+                $ps = 'INSERT INTO admin_rule (role_id,resource_id,role_type,permission) values ';
                 foreach ($f1 as $key=>$value){
                     $f2=explode(';',$value);
-                    $ps='("'.$id.'","'.$f2[0].'","G","'.$f2[1].'"),';  	
-                
-				
-				  $result= DB::query(Database::INSERT,substr($ps,0,-1),TRUE)
-	   			   ->as_object()
-				   ->execute();
+                    $ps .='(\''.$id.'\',\''.$f2[0].'\',\'G\',\''.$f2[1].'\'),'; 
                 }
+                $db = Database::instance();
+                $result =$db->query(Database::INSERT,substr($ps,0,-1),TRUE);
+				    
+               
 			}break;
 
 			case "UPDATE":{
@@ -279,6 +304,90 @@ class Model_Mods_System {
 
 	    return  json_encode($results->as_array());       
 		
+	}
+	
+	/*
+	 * 新增角色
+	 */
+	
+	function ajax_get_add_new_role(){
+
+		$result ='<div class="roles">';
+		$result .='<div class="contextual"></div>';
+		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
+		$result .='</i><span>角色列表-- 新增</span></h3>';
+	    $result .='<div id="status"></div>
+		       <table class="list">
+		       <thead>
+		        <tr>
+		         <th colspan=2 >--- 角色信息</th>
+		        <tr> 
+		        <td style="width:60px;">角色名称:</td><td>
+		           <input class="rid" id="rolename" name="rolename" style="width:400px" value="" >
+		           </td></tr>
+		       <tr>
+			      <th colspan=2 >--- 角色资源</th>
+			    </tr>
+                </thead>
+		        <tbody >
+			    <tr><td>角色资源:</td><td><select id="all"  name="all" onchange="Sys.showRes(this)" > 
+                    <option value="all" >所有</option>
+		           <option value="custom" selected>定制</option> ';
+		        $result .=' </select></td></tr>';
+			    
+           	    $modules =kohana::config('settings')->modules;
+           	    
+           	    $result.= '<tr class="roletree" style="display:" ><td style="width:60px;"></td>';
+			    $result.= '<td><ul class="tree clearfix" style="clear:both; margin-left:15px;">';
+                    
+			    foreach($modules as $key => $value){
+			    	 $k= $value['sk']; 
+			         $result.='<li>
+			                     <input type="checkbox" id="'.$value['sk'].'" value="'.$value['sk'].'"  />
+			                     <label>'.$value['name'].'</label> ';
+			                 
+			         $result.='<ul>';
+                     foreach($value['ct'] as $subkey =>$subvalue){
+                       $k1 = $k.'/'.$subvalue['name'];
+				       $result.= '<li>
+				                    <input type="checkbox" value= "'.$k1.'" />				                    
+				                    <label>'.$subkey.'</label>
+				                  ';
+                        $result.='<ul>';
+				        foreach($subvalue['permissons'] as $psubkey =>$psubvalue){
+				          $k2 = $k1.'/'.$psubkey; 	 
+				          $result.= '<li>
+				                        <input type="checkbox" id="rolecheck" name="'.$k2.'" value="'.$k2.'" />
+				                        <label>'.$psubvalue.'</label>
+				                     </li>';
+				        }
+				        $result.='</ul>
+				        </li>';
+				     }
+                     $result.= '</ul></li>';
+			    }
+		
+			$result .='</ul></td></tr>
+			
+			
+			</tbody>';
+		 
+		 $result .='</table></div>
+		 <script>
+		   $(".list ul.tree").checkTree({
+		   });
+		 </script>
+		 ';
+	   $result .=' <div style="padding-top:20px;" class="dialog_buttons ">
+    	             <label class="uiButton" >
+    	               <input type="button" name="save" onclick="Sys.addRoleName();" value="保存">
+    	             </label>
+    	             <label class="uiButton cancel">
+    	               <input type="button" name="cancel" value="取消" onclick="">
+    	             </label>
+    	            </div>';
+
+		return $result;
 	}
 	
     /*
@@ -582,7 +691,7 @@ class Model_Mods_System {
 		$result ='<div class="roles">';
 		$result .='<div class="contextual"><a href="/home?sk=sysrolenew"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>新增角色</span></a></div>';
 		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
-		$result .='</i><span>角色列表-- 修改角色</span></h3>';
+		$result .='</i><span>角色列表-- 修改</span></h3>';
 		
 		
 	   if (count($tt)>0)
@@ -673,17 +782,21 @@ class Model_Mods_System {
                                   FROM admin_user",TRUE)
                         ->as_object()->execute();
              $rs= $resultdb->as_array();
+   
              if (count($rs)>0)
              {
                 foreach($rs as $key => $value){
-                  $active = ($value->is_active===1)?'激活':'锁定';  
+                  $active = ($value->is_active)?'激活':'锁定';  
                   
-                  $rs= DB::query(Database::SELECT,"SELECT * FROM admin_role WHERE role_type='U' and user_id=:id",TRUE)
-                        ->param(':id',$value->user_id)
+                  $rs= DB::query(Database::SELECT,"SELECT * 
+                         FROM admin_role where parent_id=:id and user_id=:uid",TRUE)
+                        ->param(':id',$tt[0]->role_id)
+                        ->param(':uid',$value->user_id)
                         ->as_object()->execute();
                         
                   $checked ='';
-                  if (count($rs->as_array())>0)
+                  $t = $rs->as_array();
+                  if (count($t)>0)
                   $checked = 'checked';
                          
                   $result .= '<tr><td style="width:50px;text-align:center;"><input '.$checked.' type="checkbox" id="u_'.$value->user_id.'" name="u_'.$value->user_id.'" value="'.$value->user_id.','.$value->username.'" /></td>'; 	
