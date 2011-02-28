@@ -29,14 +29,14 @@ var Sys = {
     					//
     			  	  },
     				  success : function(data, textStatus) {
-    			  	
+    			  	     
     			  		 $('#status').html('成功保存');
     				  },
     				  complete : function(XMLHttpRequest, textStatus) {
     					  $('#status').removeClass('warning').removeClass('error').addClass('success');
     				  },
     				  error: function(XMLHttpRequest, textStatus){
-    					  $('#status').html('保存有误！').removeClass('success').addClass('error');   
+    					  $('#status').html('保存有误！').removeClass('warning').removeClass('success').addClass('error');   
     				  }
     			 });
                }	
@@ -122,7 +122,29 @@ var Sys = {
 				  }
 			   });
         	
-        },        
+        },
+        delRole:function(id){
+        	if (confirm('您确定要增加该角色信息？'))
+            {
+        		$.ajax({
+  				  type : "post",
+  				  url : "/ajax?sk=sysroledel",
+  				  data : "&id="+id,
+  				  beforeSend : function(XMLHttpRequest) {
+        			
+  			  	  },
+  				  success : function(data, textStatus) {
+  			  		  location.href="/home?sk=sysrole";
+  			  		 
+  				  },
+  				  complete : function(XMLHttpRequest, textStatus) {
+  					
+  				  },
+  				  error: function(XMLHttpRequest, textStatus){
+  				  }
+  			   });
+            }
+        },
         addRoleName:function(){
         	
         	if (confirm('您确定要增加该角色信息？'))

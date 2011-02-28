@@ -37,6 +37,12 @@ class Model_Mods_System {
 				
 			}break;
 			
+			case "sysroledel":{
+				
+				$mod = $this->ajax_Set_Model_Role($param,'DELETE');
+				
+			}break;
+			
 			case "sysroletree":{
 				$mods = $this->ajax_get_tree_json_list($params['param']['id']);
 			}break;
@@ -129,17 +135,24 @@ class Model_Mods_System {
 				
 			  $result=$result->as_object()->execute();	
             
-			  $result = DB::query(Database::SELECT,"SELECT user_id FROM admin_user WHERE username=:username ",TRUE)
-			  ->param(':username',$a[0])->as_object()->execute();
+			  if (!empty($id))
+			  {
+			    $result = DB::query(Database::SELECT,"SELECT user_id FROM admin_user WHERE username=:username ",TRUE)
+			    ->param(':username',$a[0])->as_object()->execute();
 			  
-              $users = $result->as_array();
+                $users = $result->as_array();
               
-              $result= DB::query(Database::DELETE,"INSERT INTO admin_role (parent_id,user_id,role_type,role_name)
+                $result= DB::query(Database::DELETE,"DELETE FROM admin_role WHERE user_id=:id",TRUE)
+                       ->param(":id",$users[0]->user_id)
+                       ->execute();
+			  
+              
+                $result= DB::query(Database::INSERT,"INSERT INTO admin_role (parent_id,user_id,role_type,role_name)
 			                VALUES (:parent_id,:user_id,'U',:role_name)",TRUE)
 			          ->param(':parent_id',$id)
 			          ->param(':user_id',$users[0]->user_id)
 			          ->param(':role_name',$a[0])->as_object()->execute();
-		     
+			  }
 				
 			}break;
 			
@@ -161,12 +174,33 @@ class Model_Mods_System {
 				->param(':is_active',$a[3])
 				->param(':id',$id);
 				
-			  $result=$result->as_object()->execute();	
-            
-			  $result = DB::query(Database::UPDATE,"UPDATE admin_role SET parent_id=:pid WHERE user_id=:userid ",TRUE)
-			  ->param(':pid',$a[4])
-              ->param(':userid',$id)
-			  ->as_object()->execute();
+			  $result=$result->as_object()->execute();
+
+			  
+			  $result= DB::query(Database::SELECT,"SELECT * FROM admin_role WHERE user_id=:id",TRUE)
+                       ->param(":id",$id)
+                       ->as_object()
+                       ->execute();
+                       
+               $result = $result->as_array();      
+           
+			   if (count($result)>0)
+			   {
+			     $result = DB::query(Database::UPDATE,"UPDATE admin_role SET parent_id=:pid WHERE user_id=:userid ",TRUE)
+			      ->param(':pid',$a[4])
+                  ->param(':userid',$id)
+			      ->as_object()->execute();
+			   }
+			   else
+			   {
+			  	  $result= DB::query(Database::INSERT,"INSERT INTO admin_role (parent_id,user_id,role_type,role_name)
+			                VALUES (:parent_id,:user_id,'U',:role_name)",TRUE)
+			          ->param(':parent_id',$a[4])
+			          ->param(':user_id',$id)
+			          ->param(':role_name',$a[0])->as_object()->execute();
+			   }
+			 
+			  
 			 	
 			}break;
 			
@@ -194,25 +228,31 @@ class Model_Mods_System {
 		{
 			case "DELETE":{
 
-				$id = $array[0];
-				$result= DB::query(Database::DELETE,"DELETE FROM suppliers WHERE id=:id",TRUE)
+				$id = $ary['id'];
+				
+				$result= DB::query(Database::DELETE,"DELETE FROM admin_role WHERE role_id=:id",TRUE)
 				->param(':id',$id);
-
-				//echo Kohana::debug((string) $result);
-
 				$result=$result->as_object()->execute();
+				
+				$result= DB::query(Database::DELETE,"DELETE FROM admin_role WHERE parent_id=:id",TRUE)
+				->param(':id',$id);
+				$result=$result->as_object()->execute();
+				
+				$result= DB::query(Database::DELETE,"DELETE FROM admin_rule WHERE role_id=:id",TRUE)
+				->param(':id',$id);
+				$result=$result->as_object()->execute();		
+				
 			}break;
 
 			case "INSERT":{
 				
              	$rolename = $ary['data'];
              	
-		        $ps = 'INSERT INTO admin_role (role_name) values (:rolename)';
-                $result= DB::query(Database::INSERT,$ps,TRUE)
+             	$result= DB::query(Database::INSERT,"INSERT INTO admin_role (role_name) values (:rolename)",TRUE)
                     ->param(':rolename',$rolename) 
 	   			    ->as_object()
 				    ->execute();
-
+				
                 $result= DB::query(Database::SELECT,"SELECT role_id FROM admin_role WHERE role_name=:rolename",TRUE)
                     ->param(':rolename',$rolename) 
 	   			    ->as_object()
@@ -250,16 +290,19 @@ class Model_Mods_System {
 				          ->execute();
 				          
 				 
-				  $t='';  
+				  $t01 = $t02 ='';  
 				  $sql = 'INSERT INTO admin_role (user_id,parent_id,role_type,role_name) values ';
 				  $user = explode(';',substr($user,0,-1));
+				  $t01 = '';
 				  foreach($user as $key => $value)
 				  {
-				  	$value = explode(',',$value);		
-				    $t .= "('".$value[0]."','".$id."','U','".$value[1]."'),";
+				  	$value = explode(',',$value);
+				  	$t01 .=  "'".$value[0]."',"; 		
+				    $t02 .= "('".$value[0]."','".$id."','U','".$value[1]."'),";
 				  }
-				  
-				  $sql .= $t;
+				  $t01 = 'DELETE FROM admin_role WHERE user_id IN ('.substr($t01,0,-1).')';
+				  $result =$db->query(Database::INSERT,$t01,TRUE);
+				  $sql .= $t02;
 			      $result =$db->query(Database::INSERT,substr($sql,0,-1),TRUE);
 			      
 				}
@@ -834,6 +877,9 @@ class Model_Mods_System {
 		
 	   $result .=' <div style="padding-top:20px;" class="dialog_buttons ">
     	             <label class="uiButton" >
+    	               <input type="button" name="save" onclick="Sys.delRole('.$id.');" value="删除">
+    	             </label>
+	                 <label class="uiButton" >
     	               <input type="button" name="save" onclick="Sys.objClick();" value="保存">
     	             </label>
     	             <label class="uiButton cancel">
