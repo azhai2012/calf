@@ -124,7 +124,7 @@ var Sys = {
         	
         },
         delRole:function(id){
-        	if (confirm('您确定要增加该角色信息？'))
+        	if (confirm('您确定要删除该角色信息？'))
             {
         		$.ajax({
   				  type : "post",
