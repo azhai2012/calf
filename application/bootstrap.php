@@ -112,22 +112,23 @@ Kohana::modules(array(
 	 'mssql'      => MODPATH.'mssql',
      'captcha'    => MODPATH.'captcha',
      'calfpub'    => MODPATH.'calfpub',
+     //'calfmeet'   => MODPATH.'calfmeet', // add to ajax.php if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
+     //'calfcustomer'   => MODPATH.'calfcustomer', //add to ajax.php if ($mods === '')  $mods  = CalfSupplier::factory($_get,$Prams)->get_menus();
+     //'calfsupplier'   => MODPATH.'calfsupplier', //add to ajax.php if ($mods === '')  $mods  = CalfCustomer::factory($_get,$Prams)->get_menus(); 
+
+
    ));
+
 
 /*
  * 根据配置文件，增加模块 
- */   
-$modules= Kohana::config('settings')->modules;
+  
+$modules= Kohana::config('settings')->openmods;
+
 foreach ($modules as $key => $value){
-  foreach($value as $name => $mod)	
-  { 	
-    if ($name='sk') 
-    { 
-      $modname= $value[$name]; 	
-      Kohana::modules(Kohana::modules()+array($modname=> MODPATH.$modname)); 
-    } 
-  }
+      Kohana::modules(Kohana::modules()+array($value=> MODPATH.$value)); 
 }
+
 
 // @todo 各种模块的设计
 /*

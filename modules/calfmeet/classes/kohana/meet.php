@@ -1,16 +1,51 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
 
-class Model_Mods_Meets {
+/*
+ *  展会模块
+ *  2011-03-06 
+ * 
+ */
 
+class Kohana_Meet  {
+	
+	public $_name;
+	public $_data=array();
+	
+    public static function factory($name,array $data = NULL)
+	{
+		return new Kohana_Meet($name,$data);
+	}
+	
+	public function __construct($name,array $data = NULL)
+	{
+       $this->_name = $name;
+       $this->_data = $data; 
+	}
+
+	public function __toString()
+	{
+
+	}
+
+	public function __get($key)
+	{
+	  return isset($this->$key) ? $this->$key : NULL;
+	}
+
+	public function __set($key, $value)
+	{
+	   $this->key = $value;
+	}
+	
+	
 	/*
 	 * 获取供货商列表
 	 */
 	
-	
-	function get_meets($name,$_setid){
+	public function get_menus($data){
 		
 		$mods = '';
-		switch ($name) {
+		switch ($this->_name) {
 			
 		    case "meet":{
 				$mods = $this->ajax_get_setting_meet_list();
@@ -21,19 +56,19 @@ class Model_Mods_Meets {
 			}break;
 
 			case "meetview":{
-				$mods = $this->ajax_get_setting_meet_view($_setid);
+				$mods = $this->ajax_get_setting_meet_view($data);
 			}break;
 
 			case "meetadd":{
-				$mods = $this->ajax_set_setting_meet($_setid,"INSERT");
+				$mods = $this->ajax_set_setting_meet($data,"INSERT");
 			}break;
 
 			case "meetdel":{
-				$mods = $this->ajax_set_setting_meet($_setid,"DELETE");
+				$mods = $this->ajax_set_setting_meet($data,"DELETE");
 			}break;
 
 			case "meetedit":{
-				$mods = $this->ajax_set_setting_meet($_setid,"UPDATE");
+				$mods = $this->ajax_set_setting_meet($data,"UPDATE");
 			}break;
 			
 		}
@@ -43,7 +78,7 @@ class Model_Mods_Meets {
 	}
 	
 	
-    function ajax_set_setting_meet($array,$type="DELETE"){
+    public function ajax_set_setting_meet($array,$type="DELETE"){
 		$result='';
 		$array = explode(';',$array);
 		switch ($type)
@@ -103,7 +138,7 @@ class Model_Mods_Meets {
 		return json_encode($result);
 	}
 	
-	function ajax_get_setting_meet_list(){
+	public function ajax_get_setting_meet_list(){
 		$result ='<div class="roles">';
 		$result .='<div class="contextual"><a href="/home?sk=meetnew"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>新建展会</span></a></div>';
 		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menusz">';
@@ -145,7 +180,7 @@ class Model_Mods_Meets {
 	}
 
 
-	function ajax_get_setting_meet_new(){
+	public function ajax_get_setting_meet_new(){
 		$result ='<form action="/?sk=meet"  method="post" ><div class="roles">';
 		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menuadr">';
 		$result .='</i><span><a href="/?sk=meet">展会设置</a> <span class="ss"> >></span><span class="sf"> 新建展会 </span> </span></h3>
@@ -182,7 +217,7 @@ class Model_Mods_Meets {
 	}
 	
 	
-     function ajax_get_setting_meet_view($id){
+     public function ajax_get_setting_meet_view($id){
 
 		$result  ='<div class="roles">';
 		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menuadr">';

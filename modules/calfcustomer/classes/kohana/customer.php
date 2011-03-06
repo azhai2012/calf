@@ -1,15 +1,50 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
 
-class Model_Mods_Customer {
+/*
+ *  销售模块
+ *  2011-03-06 
+ * 
+ */
 
+class Kohana_Customer  {
+	
+	public $_name;
+	public $_data=array();
+	
+    public static function factory($name,array $data = NULL)
+	{
+		return new Kohana_Customer($name,$data);
+	}
+	
+	public function __construct($name,array $data = NULL)
+	{
+       $this->_name = $name;
+       $this->_data = $data; 
+	}
 
-	function get_costomers($modname,$params = array()){
+	public function __toString()
+	{
+
+	}
+
+	public function __get($key)
+	{
+	  return isset($this->$key) ? $this->$key : NULL;
+	}
+
+	public function __set($key, $value)
+	{
+	   $this->key = $value;
+	}
+	
+	public function get_menus(){
 		 
 		$mods= '';
-		$users = $params['users'];
-		$param = $params['param'];
 		
-		switch ($modname){
+		$users = $this->_data['users'];
+		$param = $this->_data['param'];
+		
+		switch ($this->_name){
 
 			case "cus":{
 				$mods = $this->ajax_get_mods_cus_main();
@@ -1139,7 +1174,7 @@ class Model_Mods_Customer {
 		$result .='</table></div>';
 		return $result;
 	}
-
-
+	
+	 
 
 }

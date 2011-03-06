@@ -1,17 +1,56 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
 
-class Model_Mods_Supplier {
+/*
+ *  供货商模块
+ *  2011-03-06 
+ * 
+ */
 
+class Kohana_Supplier  {
+	
+	public $_name;
 	
 	private $picfilepath = '';//上传图片的路径
+	
+	public $_data=array();
+	
+	
+    public static function factory($name,array $data = NULL)
+	{
+		return new Kohana_Supplier($name,$data);
+	}
+	
+	public function __construct($name,array $data = NULL)
+	{
+       $this->_name = $name;
+       $this->_data = $data; 
+	}
 
-	function get_supplier($name,$params =array()){
+	public function __toString()
+	{
+
+	}
+
+	public function __get($key)
+	{
+	  return isset($this->$key) ? $this->$key : NULL;
+	}
+
+	public function __set($key, $value)
+	{
+	   $this->key = $value;
+	}
+
+	
+
+	public function get_menus(){
 		
 		$mods='';
-		$user= $params['users'];
-		$param = $params['param'];
+		
+		$user= $this->_data['users'];
+		$param = $this->_data['param'];
 	 
-		switch ($name){
+		switch ($this->_name){
 		
 		    case "supmt":{
 				$mods = $this->ajax_get_mods_sup_list(array('userid'=>$user['userid'],'meetid'=>$param['meetid']));
@@ -107,7 +146,7 @@ class Model_Mods_Supplier {
 	/*
 	 * 数据模块
 	 */
-	function ajax_Set_Model_Supplier($array,$type="DELETE"){
+	public function ajax_Set_Model_Supplier($array,$type="DELETE"){
 		$result='';
 		if (is_array($array)){
 		   $ary=$array;
@@ -240,7 +279,7 @@ class Model_Mods_Supplier {
 	/*
 	 * 浏览会展
 	 */
-	function ajax_get_mods_sup_view_list($info){
+	public function ajax_get_mods_sup_view_list($info){
 		
 		$result ='<div class="roles">';
 		$result .='<h3 class="uiHeaderTitle"><a href="/home?sk=supm"><i class="calfimage spritemap_aanaup menusup">';
@@ -342,7 +381,7 @@ class Model_Mods_Supplier {
     /*
      * 得到展会的列表 
      */
-	function ajax_get_mods_sup_list($info){
+	public function ajax_get_mods_sup_list($info){
         
 		$meetid= array_key_exists('meetid',$info)?$info['meetid']:'';
 		$sql= 'SELECT * FROM meets WHERE active="Y"';
@@ -446,7 +485,7 @@ class Model_Mods_Supplier {
 		return $result;
 	}
  
-	function ajax_get_select_proc_dialog_other($info){
+	public function ajax_get_select_proc_dialog_other($info){
 	
 		$result  ='';
 		/*$sql =  ' SELECT * 
@@ -519,7 +558,7 @@ class Model_Mods_Supplier {
 	/*
 	 * 选择参会的商品
 	 */
-	function ajax_get_select_proc_dialog($info){
+	public function ajax_get_select_proc_dialog($info){
 		$result  ='';
 		$result .='<h2 class="dialog_title"><span>选择商品</span></h2>';
 		
@@ -615,7 +654,7 @@ class Model_Mods_Supplier {
 	/*
 	 * 上传促销和图片信息
 	 */
-	function ajax_get_select_upload_product_picture_dialog($info){
+	public function ajax_get_select_upload_product_picture_dialog($info){
 		$result  ='';
 		$modules= DB::query(Database::SELECT,"
 		              SELECT suppliers.id,suppliers.product_id,products.product_name, product_spec,product_unit,
@@ -684,7 +723,7 @@ class Model_Mods_Supplier {
 	/*
 	 * 发布整体促销信息
 	 */
-	function ajax_get_mods_sup_fav($info){
+	public function ajax_get_mods_sup_fav($info){
 
 		$result ='<h2 class="dialog_title"><span>增加整体促销</span></h2>';
 		$result .='<div class="dialog_content"  >';
@@ -750,7 +789,7 @@ class Model_Mods_Supplier {
 	/*
 	 * 
 	 */
-	function ajax_get_mods_sup_new(){
+	public function ajax_get_mods_sup_new(){
 		$result  ='';
 
 		$resultdb= DB::query(Database::SELECT,"SELECT * FROM meets WHERE active='Y'",TRUE)
@@ -793,7 +832,7 @@ class Model_Mods_Supplier {
 	}
 	
 	
-	function ajax_get_setting_suporder_list($info){
+	public function ajax_get_setting_suporder_list($info){
 
 	    $result  ='';
 
@@ -893,7 +932,7 @@ class Model_Mods_Supplier {
 	/*
 	 * 上传图片
 	 */
-	function ajax_upload_file($obj){
+	public function ajax_upload_file($obj){
 		$error = "";
 		$msg = "";
 		$this->picfilepath = Kohana::config('settings')->picuploadpath;
@@ -951,7 +990,7 @@ class Model_Mods_Supplier {
 		}
 		return '{"error":"'.$error.'","msg":{'.$msg.'}}';
 	}
-
-
+	
+	 
 
 }
