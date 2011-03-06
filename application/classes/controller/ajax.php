@@ -15,6 +15,7 @@ class Controller_Ajax extends Controller {
 	private $sessionname;
 	private $links;
 	private $his;
+	private $isadmin;
 
 
 
@@ -47,9 +48,10 @@ class Controller_Ajax extends Controller {
         else
             $this->request->redirect($islogin['links']);
 		
-		$this->userid= $this->sess->userid;
-		$this->roleid= $this->sess->role_id;
-		$this->isadmin = $this->sess->isadmin;
+		$this->userid= $this->sess->user_id;
+
+		$this->roleid= '1';
+		$this->isadmin= ($this->sess->extra==='N;') ?1:0;
 		//$this->username= $sess->username;
 	
 

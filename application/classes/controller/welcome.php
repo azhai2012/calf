@@ -40,9 +40,9 @@ class Controller_Welcome extends Controller {
 	{
 		parent::before();
 
-		$this->userid= $this->sess->userid;
-		$this->roleid= $this->sess->role_id;
-		$isadmin= $this->sess->isadmin;
+		$this->userid= $this->sess->user_id;
+		$this->roleid= '1';
+		$isadmin= ($this->sess->extra==='N;') ?1:0;
 
 		$sk = array_key_exists('sk',$_GET)?$_GET['sk']:'nt';
 		$u = new Calf_Menus();

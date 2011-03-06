@@ -59,7 +59,7 @@ class Controller_Login extends Controller {
 					
 				$user =Arr::get($_POST,'lusername');
 				$psw = Arr::get($_POST,'lpassword');
-				$result = DB::query(Database::SELECT,"SELECT * FROM users WHERE userid=:userid ",TRUE)
+				$result = DB::query(Database::SELECT,"SELECT * FROM admin_user WHERE is_active=1 and username=:userid  ",TRUE)
 				->param(":userid",$user)
 				->as_object()
 				->execute();
@@ -71,11 +71,10 @@ class Controller_Login extends Controller {
 					$ip='';
 					foreach ($result as $key=>$value){
 						$password = $value->password;
-						$userid= $value->userid;
-						$roleid= $value->role_id;
+						$userid= $value->user_id;
 						$username= $value->username;
-						$adr = $value->localadr;
-						$istype = $value->istype;
+						//$adr = $value->localadr;
+						$istype = $value->is_active;
 					}
 
 					if (md5($psw)=== $password){

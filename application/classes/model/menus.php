@@ -64,16 +64,25 @@ class Model_Menus {
 		return $modcomm->utf8Escape($_str);
 	}
 
-	function getParentMods($id){
+    function getParentMods($id){
 	   	
 		$modules= Kohana::config('settings')->modules;
-		$modulesdb= DB::query(Database::SELECT,"select users.*,enabled_modules.name
+		/*$modulesdb= DB::query(Database::SELECT,"select users.*,enabled_modules.name
 		          from users inner join 
 		               enabled_modules on users.role_id=enabled_modules.role_id
 		          where users.userid=:id     
                   ",TRUE)
 		->param(':id',$id);
+        */
 
+		$modulesdb= DB::query(Database::SELECT,"select *
+		          FROM admin_role
+                  INNER JOIN admin_rule ON admin_role.parent_id = admin_rule.role_id
+		          where admin_role.user_id=:id     
+                  ",TRUE)
+		          ->param(':id',$id);
+        
+		
 		//echo Kohana::debug((string) $modulesdb);
 
 		$modulesdb = $modulesdb->as_object()->execute();
@@ -84,12 +93,30 @@ class Model_Menus {
 		$result3 = array();
 		$result4 = array();
 		foreach($modulesdb as $dbkey => $dbvalue){
-		
-			foreach ($modules as $key=>$value){
-				
+		  
+		  if ($dbvalue-> resource_id === 'all')
+		  {
+		    foreach ($modules as $key=>$value){
+		    	
 				foreach ($value['ct'] as $subkey => $subvalue)
 				{
-					if ($subvalue['name'] === $dbvalue->name){
+						$result1[] .= $value['sk'];
+						$result3[] .= $value['name'];
+						$result2[] .= $subvalue['name'];
+				}
+			}
+		  	
+		  }	
+		  else
+		  if ($dbvalue->permission === 'allow')
+		  {	
+			
+			foreach ($modules as $key=>$value){
+
+				foreach ($value['ct'] as $subkey => $subvalue)
+				{
+					if (($subvalue['name'] === $dbvalue->resource_id)
+					    or ($value['sk'].'/'.$subvalue['name'] === $dbvalue->resource_id)){
 						$result1[] .= $value['sk'];
 						$result3[] .= $value['name'];
 						$result2[] .= $subvalue['name'];
@@ -97,6 +124,7 @@ class Model_Menus {
 					}
 				}
 			}
+		  }
 		
 			
 		}
@@ -104,7 +132,6 @@ class Model_Menus {
 		$result= array(array_unique($result4),$result2);
 		return $result;
 	}
-
 
 	function get_id_menus($id){
 		$result='';

@@ -28,9 +28,9 @@ class Controller_Home extends Controller {
         else
             $this->request->redirect($islogin['links']);
 		
-	    $this->userid  = $this->sess->userid;
-	 	$this->roleid  = $this->sess->role_id;
-		$this->isadmin = $this->sess->isadmin;
+	    $this->userid= $this->sess->user_id;
+		$this->roleid= '1';;
+		$isadmin= ($this->sess->extra==='N;') ?1:0;
 	}
 	
 	public function action_index()
