@@ -45,16 +45,16 @@ class Controller_Welcome extends Controller {
 		$isadmin= ($this->sess->extra==='N;') ?1:0;
 
 		$sk = array_key_exists('sk',$_GET)?$_GET['sk']:'nt';
-		$u = new Calf_Menus();
-		$result = Calfpub::getmenus($u);
-		$head='';
-		foreach ($result as $key => $value){
-			$head.= $key.":".$value->name;
-		}
+		//$u = new Calf_Menus();
+		//$result = Calfpub::getmenus($u);
+		//$head='';
+		//foreach ($result as $key => $value){
+		//	$head.= $key.":".$value->name;
+		//}
 
 		$this->template->isadmin= $isadmin;
 		$this->template->info= array('id'=>$this->userid);
-		$this->template->head=$head;
+		$this->template->head='';//$head;
 		if ((int)$isadmin===1)
 		$this->template->rfloat=array(array('name'=>'管理','url'=>'/?sk=admin'),array('name'=>'首页','url'=>'/'));
 		else

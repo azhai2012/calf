@@ -85,7 +85,7 @@ class Controller_Ajax extends Controller {
 		$users    = array_key_exists('user',$_POST)?$_POST['user']:'';
 		$data     = array_key_exists('data',$_POST)?$_POST['data']:'';
 
-		$this->template = '';
+
 		$Prams = array('users'=>array('userid'=>$this->userid,'roleid'=>$this->roleid,'isadmin'=>$this->isadmin),
 		               'param'=>array('fl'=>$_fl,'id'=>$id,'content'=>$content,
 		                              'bdate'=>$bdate,'edate'=>$edate,

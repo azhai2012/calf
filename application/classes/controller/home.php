@@ -44,17 +44,17 @@ class Controller_Home extends Controller {
 		$bdate = (!empty($date[0]))?$date[0]:date('Y-m-d');
 		$edate = (!empty($date[1]))?$date[1]:date('Y-m-d');
 		
-		
+		/*
 	    $u = new Calf_Menus();
 		$result = Calfpub::getmenus($u);
 		$head=''; 
 	    foreach ($result as $key => $value){
 	    	$head.= $key.":".$value->name;
 	    } 
-	    
+	    */
 	     $this->template->info= array('id'=>$this->userid);
 	    $this->template->contentcol='';
-	    $this->template->head=$head;
+	    $this->template->head='';//$head;
 	    $this->template->css='';
 		if ($this->isadmin===1)
 	    $this->template->rfloat=array(array('name'=>'管理','url'=>'/?sk=admin'),array('name'=>'首页','url'=>'/'));
