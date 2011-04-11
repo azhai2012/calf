@@ -9,6 +9,12 @@ class Model_Mods_System {
 		$param = $params['param'];
 		
 		switch ($modname){
+			
+			
+			case "nt":{
+				$mods = $this->ajax_get_mods_nt_main();
+
+			}break;
 
 			case "sys":{
 				$mods = $this->ajax_get_mods_cus_main();
@@ -66,6 +72,12 @@ class Model_Mods_System {
                 			
 			}break;
 			
+			case "syssetup":{
+				
+                $mods = $this->ajax_get_mods_setup_list();	
+                			
+			}break;
+			
 			case "sysusernew":{
 				
 				$mods= $this->ajax_get_mods_add_user();
@@ -97,6 +109,24 @@ class Model_Mods_System {
 
 		}
 		return $mods;
+	}
+	
+	function ajax_get_mods_nt_main(){
+		
+		$result ='<div class="roles">';
+		$result .='<div class="contextual"></div>';
+		$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menusz">';
+		$result .='</i><span>最新公告</span></h3>';
+		$result .='<table class="list"><thead><tr>--公告信息</tr></thead>';
+		$result .='<tbody>';
+		$dbresult= DB::query(Database::SELECT,"SELECT contents FROM notes order by update_at DESC Limit 1  ",TRUE)
+				         ->as_object()->execute();
+				         
+		$dbresult=$dbresult->as_array();         
+		
+		$result .='<tr><td style="padding:20px;"><div>'.$dbresult[0]->contents.'</div></td></tr></tbody></table>';
+	    return $result;
+		
 	}
 
 	function ajax_Set_Model_User($array,$type="DELETE"){
@@ -600,6 +630,60 @@ class Model_Mods_System {
     	             </label>
     	            </div>';
 		return $result;
+	}
+	
+	function ajax_get_mods_setup_list(){
+		
+		$modules= DB::query(Database::SELECT,"
+		              SELECT * FROM admin_user 
+	                  ",TRUE);
+		//echo Kohana::debug((string) $modules);
+		$modules=$modules->as_object()
+		->execute();
+		$tt= $modules->as_array();
+		
+		if (count($tt[0])>0)
+		{
+			$result ='<div class="roles">';
+			$result .='<div class="contextual"></div>';
+			$result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
+			$result .='</i><span>设置</span></h3>';
+           
+			$result .='<table class="list">
+		               <thead>
+		                  <th>序号</th><th>用户名</th><th>电子邮件</th><th>状态</th>
+		               </thead>';
+			$result .='<tbody>';
+			$i=1;
+            
+			foreach($modules as $key => $value){
+
+				$mod = ($i%2)?'odd':'even';
+				$active = ($value->is_active)?'激活':'锁定';
+				$result.= '<tr id="row_'.$value->user_id.'" class="" >';
+				$result.= '<td style="width:10px;" align="center" class="'.$mod.'">'.$i.'</td>';
+				$result.= '<td  class="'.$mod.'"><span><a href="/home?sk=sysusermodify&fl='.$value->user_id.'">'.$value->username.'</a></span></td>';
+				$result.= '<td  class="'.$mod.'"><span>'.$value->email.'</span></td>';
+				$result.= '<td style="width:30px;" class="'.$mod.'"><span>'.$active.'</span></td>';
+				$result.= '</tr>';
+				$i++;
+			}
+
+			$result .='</tbody>';
+			$result .='</table></div>';
+
+		}
+		else{
+		 $result ='<div class="roles">';
+		 // $result .='<div class="contextual"><a href="/home?sk=custmtcart&fl='.$meetid.'"><span class="leftimg"><i class="img calfimage icon-add"></i></span><span>参会购物车</span></a></div>';
+		 $result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menucus">';
+		 $result .='</i><span>用户列表</span></h3>';
+		 $result .= '<div style="width:100%;text-align:center;font-size:16px;">暂时没有内容</div> </div>';
+
+		}
+
+		return $result;
+		
 	}
 	
 	

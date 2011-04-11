@@ -8,14 +8,19 @@ class Controller_Test extends Controller {
 		$this->template= View::factory('test');
 
 	}
-
+	
+    function getUtf8($_str){
+		$modcomm=new Model_Comm();
+		return $modcomm->utf8Escape($_str);
+	}
 	
 	public function action_index()
 	{	
 		parent::before();
 		
-        $modules= Kohana::modules();
-        print_r($modules);
+       // $modules= Kohana::modules();
+       // print_r($modules);
+	    echo $this->getUtf8('大小');
 		
 		$this->template->test='';
 	}

@@ -90,7 +90,16 @@ class Controller_Welcome extends Controller {
 		}
 		else
 		{
-			$this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_menus($this->userid).'\'});</script>';
+	       $this->template->menus='<script>Azhai.onPages({"type":"","id":"navside","content":\''.$this->model->get_id_menus($this->userid).'\'});</script>';
+		   $contentcol = Kohana::config('work/basic')->contentcol;
+		   foreach($contentcol as $key=>$value)
+		   {		   	  
+		   	  if ($key===$sk)
+		   	  {
+		   	  	$this->template->contentcol = $value['values'];	
+		   	  }
+		   }
+			/*
 			switch ($sk){
 				case 'nt':{
 					$this->template->contentcol ='<script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=nt","id":"contentcol","loadingid":"loadingIndicator"});</script>';
@@ -100,6 +109,7 @@ class Controller_Welcome extends Controller {
 				}break;
 				default:{}
 			}
+			*/
 				
 		}
 

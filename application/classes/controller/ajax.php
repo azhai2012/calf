@@ -56,7 +56,7 @@ class Controller_Ajax extends Controller {
 	}
 
 	public function foo($name,$_get,$Prams){
-	  echo $name;  
+	 
 	  echo eval("return $name::factory($_get,$Prams)->get_menus();"); 
 		
 	}
@@ -103,9 +103,10 @@ class Controller_Ajax extends Controller {
 		 * 2、增加模块功能
 		 * 
 		 */
-	
-		//if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
-		//if ($mods === '')  $mods  = CalfSupplier::factory($_get,$Prams)->get_menus();
+	    
+		if ($mods === '')  $mods  = CalfCms::factory($_get,$Prams)->get_menus();
+	    //if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
+		if ($mods === '')  $mods  = CalfSupplier::factory($_get,$Prams)->get_menus();
 	    //if ($mods === '')  $mods  = CalfCustomer::factory($_get,$Prams)->get_menus(); 
 	    
 	    
@@ -120,7 +121,9 @@ class Controller_Ajax extends Controller {
         $this->template = $mods;
 		
 	}
-
+   
+	
+	
 
 	public function after(){
 		$this->response->body($this->template);
