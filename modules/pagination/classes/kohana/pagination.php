@@ -15,14 +15,17 @@ class Kohana_Pagination {
 		'current_page'      => array('source' => 'query_string', 'key' => 'page'),
 		'total_items'       => 0,
 		'items_per_page'    => 10,
-		'view'              => 'pagination/basic',
+	    'ajaxfunc'          => 'Basis.getproc',
+		'view'              => 'pagination/cusfloating',
 		'auto_hide'         => TRUE,
 		'first_page_in_url' => FALSE,
-	    'ajaxfunc' => '',
+	    
 	);
 
 	// Current page number
 	protected $current_page;
+	
+    protected $ajaxfunc;
 
 	// Total item count
 	protected $total_items;
@@ -53,8 +56,8 @@ class Kohana_Pagination {
 
 	// Query offset
 	protected $offset;
+	
 
-        protected $ajaxfunc;
 
 
 	/**
@@ -174,9 +177,9 @@ class Kohana_Pagination {
 			$this->first_page         = ($this->current_page === 1) ? FALSE : 1;
 			$this->last_page          = ($this->current_page >= $this->total_pages) ? FALSE : $this->total_pages;
 			$this->offset             = (int) (($this->current_page - 1) * $this->items_per_page);
-		        $this->ajaxfunc           = $this->config['ajaxfunc'];
+		    $this->ajaxfunc           = $this->config['ajaxfunc'];
 
-                }
+          }
 
 		// Chainable method
 		return $this;

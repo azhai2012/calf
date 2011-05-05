@@ -57,7 +57,8 @@ for ($i = $n7; $i <= $n8; $i++)
 ?>
 <p class="pagination">
 
-	<?php if ($first_page !== FALSE): ?>
+    <?php if ($first_page !== FALSE): ?>
+	  
 		<a href="javascript:<?php echo $ajaxfunc; ?>(<?php echo $first_page ?>)" rel="first"><span style="padding:3px;border:1px #ddd solid;"><?php echo __('首页') ?></span></a>
 	<?php else: ?>
 		<?php echo __('首页') ?>

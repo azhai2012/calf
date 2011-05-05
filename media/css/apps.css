@@ -116,6 +116,7 @@ padding-top: 6px;
 .menumb {background-position:-16px -73px;}
 .menusys {background-position:-125px -93px;}
 .menucms {background-position:-4px -38px;}
+.menubasis {background-position:-33px -57px;}
 
 
 
@@ -217,7 +218,7 @@ padding-top: 6px;
 .uiButton input {width:40px;background-color: #6D84B4;color:#fff;border:0px;cursor: pointer;padding: 1px 0px 2px;white-space: nowrap;display: inline-block;font-weight: bold;margin: 0px;outline: none;}
 .uiButton input:active {border:1px;}
 .uiButton input:hover {border:1px;}
-
+.dialog_buttons {margin-top:10px;}
 .dialog_buttons .cancel {background-color: #ccc;color:#000;border:1px #888 solid;cursor: pointer;}
 .dialog_buttons .cancel input {background-color: #ccc;color:#000;cursor: pointer;}
 

@@ -117,7 +117,7 @@ Kohana::modules(array(
     //'calfmeet'   => MODPATH.'calfmeet', // add to ajax.php if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
      //'calfcustomer'   => MODPATH.'calfcustomer', //add to ajax.php if ($mods === '')  $mods  = CalfSupplier::factory($_get,$Prams)->get_menus();
      'calfsupplier'   => MODPATH.'calfsupplier', //add to ajax.php if ($mods === '')  $mods  = CalfCustomer::factory($_get,$Prams)->get_menus(); 
-
+     'calfbasis'  => MODPATH.'calfbasis', 
 
    ));
 

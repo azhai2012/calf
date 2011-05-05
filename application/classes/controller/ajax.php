@@ -84,13 +84,18 @@ class Controller_Ajax extends Controller {
 		$res      = array_key_exists('res',$_POST)?$_POST['res']:'';
 		$users    = array_key_exists('user',$_POST)?$_POST['user']:'';
 		$data     = array_key_exists('data',$_POST)?$_POST['data']:'';
-
+		$page     = array_key_exists('page',$_GET)?$_GET['page']:'0';
+		$prepage  = array_key_exists('prepage',$_GET)?$_GET['prepage']:'20';
+		$flag     = array_key_exists('flag',$_POST)?$_POST['flag']:'0';
 
 		$Prams = array('users'=>array('userid'=>$this->userid,'roleid'=>$this->roleid,'isadmin'=>$this->isadmin),
 		               'param'=>array('fl'=>$_fl,'id'=>$id,'content'=>$content,
 		                              'bdate'=>$bdate,'edate'=>$edate,
 		                              'meetid'=>$_setid,'supid'=>$supid,
-		                              'prodid'=>$prodid,'num'=>$num,'price'=>$price)
+		                              'prodid'=>$prodid,'num'=>$num,
+		                              'page'=>$page,'prepage'=>$prepage,
+		                              'flag'=>$flag,
+		                              'price'=>$price)
 		);	
 
 	
@@ -108,6 +113,7 @@ class Controller_Ajax extends Controller {
 	    //if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
 		if ($mods === '')  $mods  = CalfSupplier::factory($_get,$Prams)->get_menus();
 	    //if ($mods === '')  $mods  = CalfCustomer::factory($_get,$Prams)->get_menus(); 
+	    if ($mods === '')  $mods  = CalfBasis::factory($_get,$Prams)->get_menus();
 	    
 	    
 	    /******************************
