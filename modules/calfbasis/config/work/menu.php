@@ -14,6 +14,9 @@ return array(
                  'params'=>array('param'=>array('content'=>':m'),'len'=>10),
                  'values'=>'<script>Azhai.onPages({"type":"","id":"navside","content":\':m\'});</script>', 
                 ),
-             
+               'basisprocsmodtify'=>array(
+                 'params'=>array('param'=>array('content'=>':m'),'len'=>10),
+                 'values'=>'<script>Azhai.onPages({"type":"","id":"navside","content":\':m\'});</script>', 
+                ),
       ),
 );

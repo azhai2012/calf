@@ -20,6 +20,12 @@ return array(
                     <script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=basisprocsadd&'.time().'","id":"contentcol","loadingid":"loadingIndicator"});</script>
                     <script>Azhai.onPages({"type":"js","js":["/media/js/basis.js?'.time().'"]});</script>
                   ',),
+            'basisprocsmodtify'=>array(
+                  'params'=>array('param'=>array('id'=>':p')),
+                  'values'=>'
+                    <script>Azhai.onPages({"type":"ajax","ajax":"/ajax?sk=basisprocsmodtify&fl=:p&'.time().'","id":"contentcol","loadingid":"loadingIndicator"});</script>
+                    <script>Azhai.onPages({"type":"js","js":["/media/js/basis.js?'.time().'"]});</script>
+                  ',),
          
             )
  );

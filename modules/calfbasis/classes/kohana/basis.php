@@ -63,6 +63,9 @@ class Kohana_Basis  {
 				$mods = $this->ajax_get_basis_procs_add();
 			}break;
 			
+			case "basisprocsmodtify":{
+				$mods = $this->ajax_get_basis_procs_modtify();
+			}break;
 			
 			
 		}
@@ -89,7 +92,16 @@ class Kohana_Basis  {
 		$arys = $this->_data['param'];
 		
 		$prepage = $arys['prepage'];
-		
+		$fl= $arys['fl'];
+		$sort = '';
+		if (!empty($fl))
+		{
+		  if (($arys['sort']==='0'))
+		     $sort = "  order by $fl ASC ";
+		   else
+		     $sort = "  order by $fl DESC ";
+	     }
+	    echo $sort;
 		$page = ($arys['page']<>0)?$arys['page']*$prepage-$prepage:0;
 	    
 		$findcontent =$arys['content'];
@@ -98,9 +110,7 @@ class Kohana_Basis  {
 		$wherequery = '';
 		if (!empty($findcontent))
 		$wherequery .= " and  (product_name like '%$findcontent%' or product_code like '%$findcontent%') ";		
-		
-
-	     
+	
 		
 		$modules= DB::query(Database::SELECT,$query.$wherequery,TRUE)
         ->as_object()
@@ -120,8 +130,8 @@ class Kohana_Basis  {
 	    $pagination= Pagination::factory($config);
 		$query= "select * from products where 1";
 		$limit= " limit $page,$prepage";
-		$modules= DB::query(Database::SELECT,$query.$wherequery.$limit,TRUE)
-
+		$q=  $query.$wherequery.$sort.$limit;
+		$modules= DB::query(Database::SELECT,$q,TRUE)
 		->as_object()
 		->execute();
 		
@@ -129,19 +139,20 @@ class Kohana_Basis  {
 		foreach($modules as $key => $value){
 		 $result .=	'<tr>
 		             <td>'.$value->product_id.'</td>
-		             <td>'.$value->product_name.'</td>
+		             <td><a href="/home?sk=basisprocsmodtify&fl='.$value->product_id.'" >'.$value->product_name.'</a></td>
 		             <td>'.$value->product_spec.'</td>
 		             <td>'.$value->product_unit.'</td>
 		             <td>'.$value->product_origin.'</td>
+		             <td><a href="/home?sk=basisprocdelete&fl='.$value->product_id.'">删除</a></td>
 		             </tr>';
 		}
 		$result .='
 		<tr>
-		 <td colspan=5>'.$pagination->render().'</td>
+		 <td colspan=6>'.$pagination->render().'</td>
 		</tr>
 		';
 		
-		return $result;
+		return $result.$q;
 	}
 	
 	public function ajax_get_basis_procs_lists(){
@@ -152,21 +163,69 @@ class Kohana_Basis  {
 		$result .='</i><span>商品设置</span></h3>';
 		$result .='<table class="list">';
 		$result .='<thead>
-		             <tr><td colspan=5>商品列表</td></tr>
+		             <tr><td colspan=6>商品列表</td></tr>
 		             <tr>
-		               <td colspan=5>查询商品:<input id="findmc" name="findmc" value="" /><input type="button" id="findbtn" name="findbtn" onclick="javascript:Basis.getproc(-1)" value="查询" /></td>
+		               <td colspan=6>查询商品:<input id="findmc" name="findmc" value="" /><input type="button" id="findbtn" name="findbtn" onclick="javascript:Basis.getproc(-1)" value="查询" /></td>
 		             </tr>
 		            <tr>
-		            <th>编号</th> 
-		            <th>商品名称</th> 
-		            <th>规格</th> 
-		            <th>单位</th> 
-		            <th>生产企业</th>
+		            <input type="hiddle" id="sort" name="sort" value=1 /> 
+		            <input type="hiddle" id="sortname" name="sortname" value="" /> 
+		            <th id="product_id" onmousedown="Basis.sort(this);" >编号<span>&nbsp;</span></th> 
+		            <th id="product_name" onmousedown="Basis.sort(this);">商品名称<span>&nbsp;</span></th> 
+		            <th id="product_spec" onmousedown="Basis.sort(this);">规格<span>&nbsp;</span></th> 
+		            <th id="product_unit" onmousedown="Basis.sort(this);">单位<span>&nbsp;</span></th> 
+		            <th id="product_origin" onmousedown="Basis.sort(this);">生产企业<span>&nbsp;</span></th>
+		            <th  width=20px;></th>
 		            </tr> 
 		           </thead>';
 		$result .= '<tbody>'.$this->ajax_get_basis_page_procs_lists().'</tbody>';
 		$result .= '</table>';
 	    return $result;
+	}
+	
+	public function ajax_get_basis_procs_modtify(){
+		
+		 $query = "select * from products where 1 and product_id=:pid "; 
+		 $id= $this->_data['param']['fl'];
+		 $modules= DB::query(Database::SELECT,$query,TRUE)
+		 ->param(":pid",$id)
+         ->as_object()
+		 ->execute();
+		 
+		 
+		
+		 $result ='<div class="roles">';
+		 $result .='<div class="contextual"></div>';
+		 $result .='<h3 class="uiHeaderTitle"><i class="calfimage spritemap_aanaup menubasis">';
+		 $result .='</i><span>商品设置- 修改</span></h3>';
+		 $result .='<table class="list">';
+		 $result .='<thead>
+		             <th colspan=2 style="margin-bottom:10px;">添加内容</th>
+		           </thead>';
+		 foreach($modules as $key => $value){
+		   $result .= '<tbody>
+                       <tr><td style="width:100px">商品编码：</td><td><input readonly id="productid" name="productid" value="'.$value->product_id.'" /></td></tr>
+                       <tr><td>商品名称：</td><td><input id="productname" name="productname" value="'.$value->product_name.'" /></td></tr>
+                       <tr><td>商品助记码：</td><td><input id="productcode" name="productcode" value="" /></td></tr>
+                       <tr><td>规格：</td><td><input id="productspec" name="productsepc" value="'.$value->product_spec.'" /></td></tr>
+                       <tr><td>单位：</td><td><input id="productunit" name="productunit" value="'.$value->product_unit.'" /></td></tr>
+                       <tr><td>生产企业：</td><td><input id="productorgin" name="productorgin" value="'.$value->product_origin.'" /></td></tr>
+                       <tr><td>生产企业助记码：</td><td><input id="productorgin" name="productorgin" value="" /></td></tr>
+                     </tbody>
+		             </table>   
+		   ';
+		 }
+		 
+		 $result .=' <div class="dialog_buttons ">
+    	             <label class="uiButton" >
+    	               <input type="button" name="save" onclick="Basis.setProdinfo()" value="保存">
+    	             </label>
+    	             <label class="uiButton cancel">
+    	               <input type="button" name="cancel" value="取消" onclick="">
+    	             </label>
+    	            </div>';
+		 return $result;
+		
 	}
 	
 	public function ajax_get_basis_procs_add(){

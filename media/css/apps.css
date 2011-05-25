@@ -23,6 +23,11 @@ a {color:#385998;cursor:pointer;text-decoration:none;}
 table {border-spacing: 2px 2px;border-collapse: separate;position:relative;}
 thead {border-color: inherit;display: table-header-group;vertical-align: middle;}
 table.list {border: 1px solid #E4E4E4;border-collapse: collapse;width: 100%;}
+table.list th {cursor:pointer;}
+
+.asc{width:18px;padding-left:10px;background-image:url(/media/images/asc.jpg);background-repeat:no-repeat;}
+.desc{width:18px;padding-left:10px;background-image:url(/media/images/desc.jpg);background-repeat:no-repeat;}
+
 .odd {background-color: #F6F7F8;}
 tr {border-color: inherit;display: table-row;vertical-align: inherit;}
 td, th {display: table-cell;vertical-align: inherit;}

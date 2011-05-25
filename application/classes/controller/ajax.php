@@ -87,6 +87,8 @@ class Controller_Ajax extends Controller {
 		$page     = array_key_exists('page',$_GET)?$_GET['page']:'0';
 		$prepage  = array_key_exists('prepage',$_GET)?$_GET['prepage']:'20';
 		$flag     = array_key_exists('flag',$_POST)?$_POST['flag']:'0';
+		$sort     = array_key_exists('sort',$_POST)?$_POST['sort']:'0';
+		
 
 		$Prams = array('users'=>array('userid'=>$this->userid,'roleid'=>$this->roleid,'isadmin'=>$this->isadmin),
 		               'param'=>array('fl'=>$_fl,'id'=>$id,'content'=>$content,
@@ -95,6 +97,7 @@ class Controller_Ajax extends Controller {
 		                              'prodid'=>$prodid,'num'=>$num,
 		                              'page'=>$page,'prepage'=>$prepage,
 		                              'flag'=>$flag,
+		                              'sort'=>$sort, 
 		                              'price'=>$price)
 		);	
 
