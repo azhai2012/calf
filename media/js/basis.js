@@ -45,7 +45,7 @@ var Basis = {
 	   var findmc= $("#findmc").val();
 	   var st= $("#sort").val(); 
 	   var stname = $("#sortname").val();
-	   
+	   if (st==='1') st='0'; else st='1';
 	   var page=0;var flag=0;
 	   if (p>0) {page=p;flag=1;}
 	   if (p<0) flag=1; 
@@ -54,19 +54,12 @@ var Basis = {
 			url : "/ajax?sk=basisprocs&page="+page+"&fl="+stname,
 			data : "&content="+findmc+'&flag='+flag+'&sort='+st,
 			beforeSend : function(XMLHttpRequest) {
-		       $('.list tbody').html('loading...');
+		       //$('.list tbody').html('loading...');
 			},
 			success : function(data, textStatus) {
 			   
 			   $('.list tbody').html(data); 
-			   if (st==='1')
-			   {
-			     $('#'+st+' span').removeClass('desc').addClass('asc');
-			   }
-			   else
-			   {
-				 $('#'+st+' span').removeClass('asc').addClass('desc');
-			   }      
+			   
 			   
 			},
 			complete : function(XMLHttpRequest, textStatus) {

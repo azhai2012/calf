@@ -152,7 +152,7 @@ class Kohana_Basis  {
 		</tr>
 		';
 		
-		return $result.$q;
+		return $result;
 	}
 	
 	public function ajax_get_basis_procs_lists(){
@@ -168,8 +168,8 @@ class Kohana_Basis  {
 		               <td colspan=6>查询商品:<input id="findmc" name="findmc" value="" /><input type="button" id="findbtn" name="findbtn" onclick="javascript:Basis.getproc(-1)" value="查询" /></td>
 		             </tr>
 		            <tr>
-		            <input type="hiddle" id="sort" name="sort" value=1 /> 
-		            <input type="hiddle" id="sortname" name="sortname" value="" /> 
+		            <input type="hidden" id="sort" name="sort" value=1 /> 
+		            <input type="hidden" id="sortname" name="sortname" value="" /> 
 		            <th id="product_id" onmousedown="Basis.sort(this);" >编号<span>&nbsp;</span></th> 
 		            <th id="product_name" onmousedown="Basis.sort(this);">商品名称<span>&nbsp;</span></th> 
 		            <th id="product_spec" onmousedown="Basis.sort(this);">规格<span>&nbsp;</span></th> 
