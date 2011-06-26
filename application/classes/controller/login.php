@@ -94,7 +94,7 @@ class Controller_Login extends Controller {
 							$checkip= $result1[0]->adr;
 							if ($checkip===$adr){
 								$this->session->set('userlogin',$result->as_array());
-								$this->request->redirect('/');
+								$this->request->redirect('/admin');
 							}
 							else
 							$this->template->info='<div class="showinfo warning">请在本辖区（'.$adr.'）内使用，谢谢配合！</div>'; 
@@ -103,7 +103,7 @@ class Controller_Login extends Controller {
 						else
 						{
 							$this->session->set('userlogin',$result->as_array());
-							$this->request->redirect('/');
+							$this->request->redirect('/admin');
 						}
 					}
 					else

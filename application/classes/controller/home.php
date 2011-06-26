@@ -11,7 +11,7 @@ class Controller_Home extends Controller {
 	private $username='';
 
 	public function before(){
-		$this->template= View::factory('welcome');
+		$this->template= View::factory('admin');
 		$this->model= new Model_Menus();
 		
 		$islogin = $this->model->checklogin();
@@ -49,9 +49,9 @@ class Controller_Home extends Controller {
 	    $this->template->head='';//$head;
 	    $this->template->css='';
 		if ($this->isadmin===1)
-	    $this->template->rfloat=array(array('name'=>'管理','url'=>'/?sk=admin'),array('name'=>'首页','url'=>'/'));
+	    $this->template->rfloat=array(array('name'=>'管理','url'=>'/admin?sk=admin'),array('name'=>'首页','url'=>'/admin'));
 	    else 
-	    $this->template->rfloat=array(array('name'=>'首页','url'=>'/'));
+	    $this->template->rfloat=array(array('name'=>'首页','url'=>'/admin'));
 	    //管理类的功能
 	  	if (substr($sk,0,2)==='ad' && $this->isadmin==1)
 		{

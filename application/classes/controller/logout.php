@@ -14,7 +14,7 @@ class Controller_Logout extends Controller {
 	{	
 		parent::before();
 		$this->session->set('userlogin','');
-		$this->request->redirect('/');            	
+		$this->request->redirect('/admin');            	
 	}
 	
 	public function after(){

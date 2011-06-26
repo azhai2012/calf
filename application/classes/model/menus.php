@@ -141,12 +141,12 @@ class Model_Menus {
 		$_get= (empty($_GET['sk']))?'nt':$_GET['sk'];
 		$modules= Kohana::config('settings')->modules;
 		$nt=($_get=='nt')?'selectItem':'';
-		$result.= '<li><a class=\"item '.$nt.'\" href=\"/?sk=nt\"><span class=\"leftimg\"><i class=\"img calfimage menunt \"></i></span><span>最新公告信息</span></a> </li>';	
+		$result.= '<li><a class=\"item '.$nt.'\" href=\"/admin?sk=nt\"><span class=\"leftimg\"><i class=\"img calfimage menunt \"></i></span><span>最新公告信息</span></a> </li>';	
 		foreach($pmods[0] as $key => $value){
 
 			$modid = ($value == $_get)?'selectItem':'';
 			$result.= '<li >';
-			$result.= '<a class=\"item '.$modid.'\" href=\"/?sk='.$value.'\" >';
+			$result.= '<a class=\"item '.$modid.'\" href=\"/admin?sk='.$value.'\" >';
 			$result.= '<span class=\"leftimg\"><i class=\"img calfimage menu'.$value.'\"></i></span>';
 			$result.= '<span>'.$this->getUtf8($key).'</span></a>';
 			$result.= '<span class=\"loadingIndicator\"></span>';
@@ -214,7 +214,7 @@ class Model_Menus {
 
 		foreach($pmods[0] as $key => $value){
 			$result.= '<li >';
-			$result.= '<a class=\"item \" href=\"/?sk='.$value.'\" >';
+			$result.= '<a class=\"item \" href=\"/admin?sk='.$value.'\" >';
 			$result.= '<span class=\"leftimg\"><i class=\"img calfimage menu'.$value.'\"></i></span>';
 			$result.= '<span>'.$this->getUtf8($key).'</span></a>';
 			$result.= '<span class=\"loadingIndicator\"></span>';
@@ -258,7 +258,7 @@ class Model_Menus {
 		foreach($modules as $key => $value){
 			$selectitem= ($value['sk']===substr($_get,0,3))?'selectItem loading':'';
 			$result.= '<li class=\"item '.$selectitem.'\">';
-			$result.= '<a  href=\"/?sk='.$value['sk'].'\" >';
+			$result.= '<a  href=\"/admin?sk='.$value['sk'].'\" >';
 			$result.= '<span class=\"leftimg\"><i class=\"img calfimage menu'.$value['sk'].'\"></i></span>';
 			$result.= '<span>'.$this->getUtf8($value['name']).'</span></a>';
 			$result.= '<span class=\"loadingIndicator\"></span>';
