@@ -17,7 +17,8 @@ class Controller_Main extends Controller {
 		parent::before();
 		$this->template->menus='';
 	    $this->template->css='';
-		$this->template->contentcol='This is main ';
+		$this->template->callmethod='<script>Azhai.callMethod1("/callmethod","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>'; 
+    
 	}
 	
 	public function after(){

@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <meta name="robots" content="noindex,nofollow" />
 <link rel="shortcut icon" href="/media/images/favicon.ico" />
-<link href="/media/css/apps.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/media/css/style.css" rel="stylesheet" type="text/css" media="all" />
   <script type="text/javascript" src="/media/js/comm.js"></script>
  <script type="text/javascript" src="/media/js/apps.js"></script>
  <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
@@ -14,29 +14,33 @@
 </head>
 <body class="home">
 
-  <div id="maincontent" > <!-- end content -->
+ <!-- begin main header -->
+ <div id="mainheader" >
+    <div id="headertop" class="headertop"> </div>
+    <div id="headcontent" class="clearfix"></div>
+  </div> 
+ <!-- end main header -->
+ 
+ <!-- begin menus -->
+ <div id="menus" class="clearfix" ></div>
+ <!-- end menus -->
+ 
+ <!-- begin main content -->
+  <div id="maincontent" class="clearfix" > 
     <div id="maincontentcol"></div>
-  </div> <!-- end content -->
-  <div id="mainpagefoot"  >
-      <div id="maincontentcourve"><a href="/admin">link</a> </div>
-      
+    <span class="clr"></span>
+  </div>
+ <!-- end content -->
+ 
+ <!-- begin main pagefoot -->  
+ 
+ <div id="mainpagefoot" class="clearfix"  ></div>
+ <!-- end main pagefoot --> 
      
-     
-      <div class="clearfix" id="mainfootcontainer" >   
-         <div class="lfloat">徐州淮海药业有限公司 &copy 2010</div>    
-         <div class="rfloat">
-         <ul>
-           <li><a href="#">关于</a>.</li>
-           <li><a href="/">首页</a>.</li>
-           <li><a href="#">帮助中心</a>.</li>
-           
-         </ul>
-         </div>
-      </div> 
-      </div>
 </body>
 
  <?php echo $menus;?>
- <?php echo $contentcol;?>
  <?php echo $css; ?>
+ <?php echo $callmethod;?>
+ 
 </html>

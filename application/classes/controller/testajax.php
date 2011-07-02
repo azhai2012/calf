@@ -1,32 +1,20 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Test extends Controller {
+class Controller_Testajax extends Controller {
 
 
 	private  $template='';
 	
     public function before(){
-		$this->template= View::factory('test');
-
+		//$this->template= View::factory('test');
 	}
 	
-    function getUtf8($_str){
-		$modcomm=new Model_Comm();
-		return $modcomm->utf8Escape($_str);
-	}
-	
-    function getTable( $uid ){
-        //$ext =  substr(md5($uid),0,2);
-        //return "user_".$ext;
-        return "user_" . sprintf( "%04d", ($uid >> 20) );
-    }
-	
-
+    
+    
 	public function action_index()
 	{	
 		parent::before();
-		
-       // $modules= Kohana::modules();
+	   // $modules= Kohana::modules();
        // print_r($modules);
 	   // echo $this->getUtf8('大小');
 	   /*echo $this->getTable('a').'<br>';
@@ -39,8 +27,17 @@ class Controller_Test extends Controller {
 		echo $i.'   '.$this->getTable($i).'<br>';
 	   }
 	   */
-		//print_r($_POST);
-		//$this->template='';
+		
+		$k= $_POST['json'];
+		$k = preg_replace("/'([a-zA-Z0-9_]+?)':/" , "\"$1\":", $k);
+		//$log = Log::instance();
+		$o= json_decode($k);
+		$d= $o->pageIndex;
+		$e= $o->pageSize;
+		$k= array('d'=>$d,'e'=>$e);
+		//$log->add(7,$e);
+      
+	    $this->template= json_encode($k);
 	}
 	
 	public function after(){
