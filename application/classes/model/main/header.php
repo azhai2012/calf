@@ -13,7 +13,15 @@ class Model_Main_Header {
 	}
 	
 	function get_headtop(){
-	   $result='<div>this is headtop</div>';
+	   $result='<div id="myinfo" class="clearfix">
+	             <div id="userinfo">您好，欢迎光临。<a href="/login">请登录</a></div> 
+	             <ul>
+	               <li><a href="#">我的订单</a></li>
+	               <li><a href="#">我的信息</a></li>
+	               <li><a href="#">会员积分</a></li>
+	               <li><a href="#">礼品卡</a></li>
+	             </ul> 
+	           </div>';
 	   return $result;
 	}
 	
@@ -21,11 +29,8 @@ class Model_Main_Header {
 	   $result='<div id="hcontent" class="clearfix">
 	   <h1 class="logo" ><a href="#" >商城</a></h1>
 	   <div id="find">
-	      <ul>
-	        <li class="on"><span class="first">商品</span></li>
-	        <li><span>店铺</span></li>
-	      </ul>
-	      <form id="headersearchform" action="http://search.eachnet.com/Search" method="post" target="_blank">
+	     	     
+	       <form id="headersearchform" action="http://search.eachnet.com/Search" method="post" target="_blank">
             <ol>
               <li>
                 <input type="text" class="keyword_txt" id="headerkeywords" name="keyword" value="" _defval="看看正在流行什么..." _allowempty="no" style="">
@@ -53,6 +58,8 @@ class Model_Main_Header {
 	                <li><a href="#">首页</a></li>
 	                <li><a href="#">店铺</a></li>
 	                <li><a href="#">热卖区</a></li>
+	                 <li><a href="#">团购</a></li>
+	                  <li><a href="#">社区</a></li>
 	              </ul> 
 	      </div>'.$this->get_carts();
 
@@ -64,7 +71,7 @@ class Model_Main_Header {
 	}
 
     function get_carts(){
-	    $result= '<div id="carts">购物车 </div>';	
+	    $result= '<div id="carts"><a href="/cart">购物车里有 <span>0</span> 个商品, 总金额：<b>0.00</b>元 </a></div>';	
 	    return $result;
 	}
 	

@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Callmethod extends Controller {
+class Controller_Pcallmethod extends Controller {
 
 
 	private $template='';
@@ -20,13 +20,13 @@ class Controller_Callmethod extends Controller {
 	{
 		parent::before();
         $sk = array_key_exists('sk',$_POST)?$_POST['sk']:'';
-           
+        $id = array_key_exists('id',$_GET)?$_GET['id']:'';   
 		$mods='';
 		switch ($sk) {
 		  case "headertop":  $mods  = $this->header ->getmods("top"); break;
 		  case "headcontent": $mods = $this->header ->getmods("content");break;
 		  case "menus":     $mods = $this->header ->get_menu();break;  
-		  case "maincontentcol":  $mods  = $this->content->get_main_content();break;
+		  case "maincontentcol":  $mods  = $this->content->get_procduct_content($id);break;
 		  case "mainpagefoot":   $mods   = $this->footer ->get_footer(); break;
 		  default:'';
 		}
