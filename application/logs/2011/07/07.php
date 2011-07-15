@@ -142,3 +142,6 @@
 2011-07-07 18:56:40 --- ERROR: ErrorException [ 1 ]: Class 'Model_Procduct_Content' not found ~ APPPATH/classes/model/procduct.php [ 3 ]
 2011-07-07 18:56:41 --- ERROR: ErrorException [ 1 ]: Class 'Model_Procduct_Content' not found ~ APPPATH/classes/model/procduct.php [ 3 ]
 2011-07-07 18:56:43 --- ERROR: ErrorException [ 1 ]: Class 'Model_Procduct_Content' not found ~ APPPATH/classes/model/procduct.php [ 3 ]
+2011-07-07 23:36:52 --- ERROR: ErrorException [ 2 ]: Missing argument 1 for Model_Main_Content::get_main_content(), called in /home/azhai/calf/application/classes/controller/callmethod.php on line 29 and defined ~ APPPATH/classes/model/main/content.php [ 5 ]
+2011-07-07 23:37:59 --- ERROR: Http_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/T1WcyfXfxeXXXXXXXX-120-120.jpg ~ SYSPATH/classes/kohana/request.php [ 695 ]
+2011-07-07 23:40:41 --- ERROR: Http_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/T1WcyfXfxeXXXXXXXX-120-120.jpg ~ SYSPATH/classes/kohana/request.php [ 695 ]

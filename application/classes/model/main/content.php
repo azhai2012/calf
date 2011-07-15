@@ -2,7 +2,7 @@
 
 class Model_Main_Content {
 	
-	function get_main_content($sl){
+	function get_main_content(){
 		
            $result='<div id="desktop" class="clearfix">'.$this->get_content_left().$this->get_content_right().'</div>';
 	       $result.='<div id="hotprocduct" class="clearfix">'.$this->get_content_hot_products().'</div>';
@@ -93,7 +93,7 @@ class Model_Main_Content {
                       <h1>2011-07-01</h1>
 		              <ul>
 		              <li>
-		               <a href="#"><img src="/media/images/T1tpmeXetqXXXXXXXX-120-120.jpg" alt=""></a>
+		               <a href="/procducts?id=223333223"><img src="/media/images/T1tpmeXetqXXXXXXXX-120-120.jpg" alt=""></a>
 		               <span class="productName">碧生源常润茶</span>
 		               <span class="productPrice"><ins>52.00</ins>/<del>59.80</del></span>
 		               <span class="productInfo">作用：美体瘦身</span>

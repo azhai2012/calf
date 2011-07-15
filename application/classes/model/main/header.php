@@ -12,6 +12,7 @@ class Model_Main_Header {
 		return $mods;
 	}
 	
+	
 	function get_headtop(){
 	   $result='<div id="myinfo" class="clearfix">
 	             <div id="userinfo">您好，欢迎光临。<a href="/login">请登录</a></div> 
@@ -55,7 +56,7 @@ class Model_Main_Header {
 	     case "home":{
 	      $result= '<div id="menu">
 	              <ul>
-	                <li><a href="#">首页</a></li>
+	                <li><a href="/">首页</a></li>
 	                <li><a href="#">店铺</a></li>
 	                <li><a href="#">热卖区</a></li>
 	                 <li><a href="#">团购</a></li>

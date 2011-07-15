@@ -219,6 +219,24 @@ tfoot td {background:#eee}
 
 .clr {clear: both;display: block;font-size: 0px;height: 0px;line-height: 0;overflow: hidden;}
 
+/* proc style */
+#proc_context {padding-top:20px;}
+#proc_context .left {float:left;width:200px;border:1px #ccc solid;height:500px;margin-right:10px;}
+
+#proc_context .left .side_title h2 {font-size:10px;height:20px}
+#proc_context .right {float:left;width:760px;}
+#proc_context .bottom {float:left;width:760px;}
+.h1_title {background: url(/media/images/dashed2.gif) repeat-x 0% 100%;margin-bottom: 18px;padding-bottom: 10px;}
+.h1_title .icon {float: left;padding: 3px 0px 10px;}
+.h1_title h1 {background: none;line-height: normal;margin-bottom: 0px;color: black;font-size: 16px;font-weight: bold;line-height: 20px;margin-bottom: 8px;overflow: hidden;padding: 4px 15px 0px 0px;word-break: break-all;}
+.h1_title h1 span {display: block;font-size: 12px;font-weight: normal;margin: 6px 0px 0px;}
+.property {float: left;width: 100%;}
+.property .wrap {margin: 0px 0px 0px 330px;}
+.thumb li {float:left;padding:10px 10px;border:1px #ddd solid;margin-left:5px;}
+.gallery {float: left;margin-left: -100%;width: 310px;margin-bottom:20px;}
+.shopkeeper {display: none;float: left;margin-left: -200px;width: 200px;}
+
+
 /* footer */
 #mainpagefoot {width:100%;magin-top:40px;padding-top:20px;border-top:1px #CCC solid;}
 
