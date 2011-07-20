@@ -61,24 +61,19 @@ class Model_Main_Procduct {
       	 	              </div>   <!-- end property -->  
                           <div class="gallery">  <!-- begin gallery -->
                            <!--itemPics-->
-	                         <div class="booth pic s310">
-	                            <a href="#" target="_blank">
-	                              <img id="J_ImgBooth" src="http://img01.taobaocdn.com/imgextra/i1/T1syadXdhkXXcjwWMU_013608.jpg_310x310.jpg" data-haszoom="700">
-	                              </a>
-	                             <div class="zoom-icon" id="J_zoomIcon"></div>
-	                         </div>
-	                         <ul id="J_UlThumb" class="thumb clearfix">
-							   <li>
-					            <div class="pic s40">
-						          <a href="#"><img src="http://img01.taobaocdn.com/imgextra/i1/T1syadXdhkXXcjwWMU_013608.jpg_40x40.jpg" haszoom="1"></a>
-					            </div>
-				               </li>
-							   <li class="selected">
-					             <div class="pic s40">
-						           <a href="#"><img src="http://img02.taobaocdn.com/imgextra/i2/469190021/T2_sJqXg8MXXXXXXXX_!!469190021.jpg_40x40.jpg" haszoom="1"></a>
-					             </div>
-				               </li>
-						     </ul>
+	                       <div class="clearfix" style="position:relative;"> 
+					            <a href="http://www.mind-projects.it/projects/jqzoom/imgProd/triumph_big1.jpg"  rel="gal1" id="jprocimg"  title="" > 
+ 					            <img src="http://www.mind-projects.it/projects/jqzoom/imgProd/triumph_small1.jpg" 
+ 					             title="triumph"  style="border: 1px solid #666;"> 
+					        </a> 
+					    </div> 
+						<br/> 
+						  <br>
+						  <ul id="thumblist" class="clearfix">
+							<li><a class="zoomThumbActive" href="javascript:void(0);" rel="{gallery: \'gal1\', smallimage: \'http://www.mind-projects.it/projects/jqzoom/imgProd/triumph_small1.jpg\',largeimage: \'http://www.mind-projects.it/projects/jqzoom/imgProd/triumph_big1.jpg\'}"><img src="http://www.mind-projects.it/projects/jqzoom/imgProd/thumbs/triumph_thumb1.jpg"></a></li>
+							<li><a href="javascript:void(0);" rel="{gallery: \'gal1\', smallimage: \'http://www.mind-projects.it/projects/jqzoom/imgProd/triumph_small2.jpg\',largeimage: \'http://www.mind-projects.it/projects/jqzoom/imgProd/triumph_big2.jpg\'}" class=""><img src="http://www.mind-projects.it/projects/jqzoom/imgProd/thumbs/triumph_thumb2.jpg"></a></li>
+						  </ul>
+				          <script type="text/javascript"> $(\'a#jprocimg\').jqzoom({title:false});</script>
                            <!--end of itemPics-->				        
 	                       </div>
 	                       <div class="shopkeeper"></div>

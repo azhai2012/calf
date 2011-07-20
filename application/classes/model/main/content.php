@@ -19,6 +19,13 @@ class Model_Main_Content {
 		
 	}
 	
+    function get_cart_content($id){
+		
+		$result= Model_Cart::factory($id)->get_cart_content();
+		return $result;
+		
+	}
+	
 	function get_content_left(){
 		
 		$result=' <div id="dleft" class="w720">

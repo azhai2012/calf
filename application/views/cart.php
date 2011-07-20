@@ -7,24 +7,10 @@
 <meta name="robots" content="noindex,nofollow" />
 <link rel="shortcut icon" href="/media/images/favicon.ico" />
 <link href="/media/css/style.css" rel="stylesheet" type="text/css" media="all" />
-  <script type="text/javascript" src="/media/js/comm.js"></script>
+ <script type="text/javascript" src="/media/js/comm.js"></script>
  <script type="text/javascript" src="/media/js/apps.js"></script>
  <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
- <script type="text/javascript" src="/media/js/jquery.bxSlider.min.js"></script>
- <script type="text/javascript" src="/media/js/jquery.idTabs.min.js"></script>
   
- <script type="text/javascript">
-    $(document).ready(function(){        
-        $('#slider').bxSlider({
-            mode: 'fade',
-            captions: true,
-            auto: true,
-            controls: false,
-            randomStart: true,
-            pager: true  
-        });
-    });
-</script>
 </head>
 <body class="home">
  <!-- begin main header -->

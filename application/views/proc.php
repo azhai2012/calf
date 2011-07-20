@@ -10,7 +10,9 @@
  <script type="text/javascript" src="/media/js/comm.js"></script>
  <script type="text/javascript" src="/media/js/apps.js"></script>
  <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
-
+ 
+  <script type="text/javascript" src="/media/js/jquery.jqzoom.js"></script>
+  
 </head>
 <body class="home">
  <!-- begin main header -->
