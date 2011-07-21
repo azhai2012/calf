@@ -12,16 +12,16 @@ class Model_Main_Content {
  	}
 	
 	
-	function get_procduct_content($id){
+	function get_product_content($id){
 		
-		$result= Model_Procduct::factory($id)->get_procduct_content();
+		$result= Product::factory($id)->get_product_content();
 		return $result;
 		
 	}
 	
     function get_cart_content($id){
 		
-		$result= Model_Cart::factory($id)->get_cart_content();
+		$result= Cart::factory($id)->get_cart_content();
 		return $result;
 		
 	}
@@ -100,7 +100,7 @@ class Model_Main_Content {
                       <h1>2011-07-01</h1>
 		              <ul>
 		              <li>
-		               <a href="/procducts?id=223333223"><img src="/media/images/T1tpmeXetqXXXXXXXX-120-120.jpg" alt=""></a>
+		               <a href="/product?id=223333223"><img src="/media/images/T1tpmeXetqXXXXXXXX-120-120.jpg" alt=""></a>
 		               <span class="productName">碧生源常润茶</span>
 		               <span class="productPrice"><ins>52.00</ins>/<del>59.80</del></span>
 		               <span class="productInfo">作用：美体瘦身</span>

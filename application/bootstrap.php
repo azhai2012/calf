@@ -118,6 +118,10 @@ Kohana::modules(array(
      //'calfcustomer'   => MODPATH.'calfcustomer', //add to ajax.php if ($mods === '')  $mods  = CalfSupplier::factory($_get,$Prams)->get_menus();
      'calfsupplier'   => MODPATH.'calfsupplier', //add to ajax.php if ($mods === '')  $mods  = CalfCustomer::factory($_get,$Prams)->get_menus(); 
      'calfbasis'  => MODPATH.'calfbasis', 
+     'calfphrase' => MODPATH.'calfphrase', 
+     'calfcart' => MODPATH.'calfcart', 
+     'calfproduct' => MODPATH.'calfproduct', 
+
 
    ));
 
@@ -154,8 +158,10 @@ foreach ($modules as $key => $value){
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
-Route::set('default', '(<controller>(/<action>(/<id>)))')
+/*Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
 		'controller' => 'main',
 		'action'     => 'index',
 	));
+	
+*/	
