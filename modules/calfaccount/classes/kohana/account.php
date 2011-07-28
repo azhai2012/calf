@@ -17,42 +17,104 @@ class Kohana_Account {
       
 	}
 	
+	
 	public function get_account_content(){
-		$result='<div id="account_list">
-		           <div id="anav">您现在的位置：商品信息</div>
+		
+		    $active =$this->_data['mod'];
+		    $func='';
+		    switch ($active) {
+		    	case 'order':{
+		    	 $navtitle="我的订单";
+		    	 $func= $this->get_account_order_list();
+		    	} break;
+		    	case 'paymenthistory':$navtitle="支付历史";break;
+		    	case 'mycoupons':$navtitle="礼券/礼品卡";break;
+		    	case 'pointslist':$navtitle="我的积分";break;
+		    	case 'profileleft':$navtitle="账户信息";break;
+		    	case 'mypassword':$navtitle="修改密码";break;
+		    	case 'mysms':$navtitle="站内消息";break;
+		    	case 'myquestion':$navtitle="投诉建议";break;
+		    	default : $navtitle='';	 
+		    } 
+		    
+		    $result='<div id="account_list">
+		           <div id="anav">您现在的位置：'.$navtitle.'</div>
 		           <div id="account_context"> <!-- begin account_context -->
 		              <div class="left"> <!-- begin left -->
 		              
 		                <div class="side_content">
-                        <div class="sidel_title"> 
-                              <h3>功能列表</h3>
-                              <a id="DocPersonal_set" name="setting" href="javascript:showDocSetPage()">设置</a> 
-                          </div>
+                       
                            <div class="sidel_title"><h3>订单管理</h3> </div>
-                           	<ul class="content"> 
-				               <li><a class="current" href="#">我的订单</a></li>
-                               <li><a name="paymenthistory" href="#" target="_parent">支付历史</a></li>
-				            </ul>
+                           	<ul class="content"> ';
+		    
+		    $current = ($active == 'order')?'current':'';
+		    $result.= ' <li><a class="'.$current.'" href="/account/order">我的订单</a></li>';
+
+		    $current = ($active == 'paymenthistory')?'current':'';
+            $result.=' <li><a class="'.$current.'" name="paymenthistory" href="/account/paymenthistory" target="_parent">支付历史</a></li> ';
+        
+            $result.='</ul>
 	                       <div class="sidel_title"><h3>账户管理</h3> </div>
-           	               <ul class="content"> 
-				              <li><a class="" name="mycoupons" href="#" target="_parent">礼券/礼品卡</a></li>
-                              <li><a class="" name="points_index_list" href="" target="_parent">我的积分</a></li>
-                              <li><a class="" name="profileleft" href="#" target="_parent">账户信息</a></li>
-                              <li><a class="" name="mypassword" href="#" target="_parent">修改密码</a></li>
-                              <li><a class="" name="mysms" href="#" target="_parent">站内消息</a></li>
-                              <li class=""><a name="myquestion" href="#" target="_parent">投诉建议</a></li>
-				           </ul>
-	                     
+           	               <ul class="content"> ';
+
+            $current = ($active == 'mycoupons')?'current':'';
+            $result.='<li><a class="'.$current.'" name="mycoupons" href="/account/mycoupons" target="_parent">礼券/礼品卡</a></li> ';
+
+            $current = ($active == 'pointslist')?'current':'';
+            $result.='<li><a class="'.$current.'" name="points_index_list" href="/account/pointslist" target="_parent">我的积分</a></li>';
+            
+            $current = ($active == 'profileleft')?'current':'';
+            $result.='<li><a class="'.$current.'" name="profileleft" href="/account/profileleft" target="_parent">账户信息</a></li> ';
+
+            $current = ($active == 'mypassword')?'current':'';
+            $result.='<li><a class="'.$current.'" name="mypassword" href="/account/mypassword" target="_parent">修改密码</a></li>';
+            
+            $current = ($active == 'mysms')?'current':'';
+            $result.='<li><a class="'.$current.'" name="mysms" href="/account/mysms" target="_parent">站内消息</a></li>';
+            
+            $current = ($active == 'myquestion')?'current':'';
+            $result.='<li class="'.$current.'"><a name="myquestion" href="/account/myquestion" target="_parent">投诉建议</a></li>';
+
+            $result.=' </ul>	                     
 		                </div> 
 		              </div>  <!-- end left -->
-		              <div class="right"> <!-- begin right --> 
-		                
-	                   </div> <!-- end right -->
-		             
+		              <div class="right"> <!-- begin right --> ';
+            $result.=$func; 
+		    $result.='</div> <!-- end right -->
 		           </div> <!-- end account_context -->
-		</div>';
+		    </div>';
+	        
 		return $result;
 		
+	}
+	
+    function get_account_order_list(){
+		
+		$result='<ul class="order_list">   
+		             <li class="order_title">
+		                <span class="list_input"></span>
+		                <span class="list_order">订单号</span>
+		                <span class="list_name">收货人</span>
+		                <span class="list_way">付款方式</span>
+		                <span class="list_total">订单总金额</span>
+		                <span class="list_status">订单状态</span>
+		                <span class="list_time"><a href="#" class="arrow_up">下单时间</a></span>
+		                <span class="list_operation">操作</span>
+		             </li>
+		             <li id="orderlist_normal" onmouseout="this.style.background=\'none\'" onmouseover="this.style.background=\'#f4f4f4\'" 
+		               style="background-image: none; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; background-position: initial initial; background-repeat: initial initial; ">
+		               <a href="#" class="list_control" title="展开" name="unfold">折叠</a> 
+		               <a href="#" class="list_order" target="_blank" name="orderid">8642662094</a>
+		               <span class="list_name" title="">XXX</span>
+		               <span class="list_way" title="货到付款">货到付款</span>
+		               <span class="list_total" id="list_total">￥98.00</span>
+		               <span class="list_status">取消</span>
+		               <span class="list_time">2011-07-23</span>
+		               <span class="list_operation" id="list_operation">----</span> 
+		              </li>
+		            </ul>';
+       return $result;		
+	
 	}
 	
 	

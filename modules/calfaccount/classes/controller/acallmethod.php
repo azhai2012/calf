@@ -21,12 +21,13 @@ class Controller_acallmethod extends Controller {
 		parent::before();
         $sk = array_key_exists('sk',$_POST)?$_POST['sk']:'';
         $id = array_key_exists('id',$_GET)?$_GET['id']:'';   
-		$mods='';
+    	$mod = array_key_exists('mod',$_GET)?$_GET['mod']:'';
+    	$modary = array("mod"=>$mod);
 		switch ($sk) {
 		  case "headertop":  $mods  = $this->header ->getmods("top"); break;
 		  case "headcontent": $mods = $this->header ->getmods("content");break;
 		  case "menus":     $mods = $this->header ->get_menu();break;  
-		  case "maincontentcol":  $mods  = $this->content->get_account_content($id);break;
+		  case "maincontentcol":  $mods  = $this->content->get_account_content($id,$modary);break;
 		  case "mainpagefoot":   $mods   = $this->footer ->get_footer(); break;
 		  default:'';
 		}

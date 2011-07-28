@@ -19,9 +19,9 @@ class Model_Main_Content {
 		
 	}
 	
-	function get_account_content($id){
+	function get_account_content($id,$mod){
 	   
-		$result= Account::factory($id)->get_account_content();
+		$result= Account::factory($id,$mod)->get_account_content();
 		return $result;	
 	}
 	
