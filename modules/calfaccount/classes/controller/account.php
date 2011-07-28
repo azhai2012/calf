@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Main extends Controller {
+class Controller_Account extends Controller {
 
 
 	private  $template='';
@@ -17,12 +17,10 @@ class Controller_Main extends Controller {
 		parent::before();
 		$this->template->menus='';
 	    $this->template->css='';
+	    $id = array_key_exists('id',$_GET)?$_GET['id']:'';
 		$this->template->callmethod='
-		  <script>Azhai.callMethod1("/callmethod","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");
-		  </script>
-		  <script>Azhai.onPages({"type":"js","js":["/media/js/jquery.bxSlider.min.js?'.time().'"]});</script>
-		  <script>Azhai.onPages({"type":"js","js":["/media/js/main.js?'.time().'"]});</script>
-		  
+		   <script>Azhai.callMethod1("/Acallmethod?id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		    <script>Azhai.onPages({"type":"css","css":["/media/css/account.css"]});</script> 
 		  '; 
     
 	}

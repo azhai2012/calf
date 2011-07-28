@@ -19,6 +19,12 @@ class Model_Main_Content {
 		
 	}
 	
+	function get_account_content($id){
+	   
+		$result= Account::factory($id)->get_account_content();
+		return $result;	
+	}
+	
     function get_cart_content($id){
 		
 		$result= Cart::factory($id)->get_cart_content();
@@ -29,9 +35,9 @@ class Model_Main_Content {
 	function get_content_left(){
 		
 		$result=' <div id="dleft" class="w720">
-                   <ul id="slider" class="images">
-				     <li style="list-style-type: none; list-style-position: initial; list-style-image: initial; position: absolute; top: 0px; left: 0px; z-index: 98; opacity: 1; "><img src="/media/images/banner4.jpg" width="720" height="290" title=""></li>
-				     <li style="list-style-type: none; list-style-position: initial; list-style-image: initial; position: absolute; top: 0px; left: 0px; z-index: 98; opacity: 1; "><img src="/media/images/banner5.jpg" width="720" height="290" title=""></li>
+                   <ul id="slider" class="images clearfix">
+				     <li><img src="/media/images/banner4.jpg" width="720" height="290" title=""></li>
+				     <li><img src="/media/images/banner5.jpg" width="720" height="290" title=""></li>
 	               </ul>
 		        </div>';
 	   return $result;

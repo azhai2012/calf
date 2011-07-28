@@ -6,7 +6,7 @@ class Controller_Cart extends Controller {
 	private  $template='';
 	
     public function before(){
-		$this->template= View::factory('cart');
+		$this->template= View::factory('public');
 
 	}
 	
@@ -19,6 +19,8 @@ class Controller_Cart extends Controller {
 	    $this->template->css='';
 		$this->template->callmethod='<script>Azhai.callMethod1("/cartcallmethod","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		 <script>Azhai.onPages({"type":"js","js":["/media/js/cart.js?'.time().'"]});</script>
+		 <script>Azhai.onPages({"type":"css","css":["/media/css/cart.css"]});</script>
+		 
 		
 		'; 
     
@@ -30,8 +32,8 @@ class Controller_Cart extends Controller {
 	    $this->template->menus='';
 	    $this->template->css='';
 		$this->template->callmethod='<script>Azhai.callMethod1("/cartcallmethod?id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		 <script>Azhai.onPages({"type":"js","js":["/media/js/cart.js?'.time().'"]});</script>'; 
-		
+		 <script>Azhai.onPages({"type":"js","js":["/media/js/cart.js?'.time().'"]});</script> 
+		<script>Azhai.onPages({"type":"css","css":["/media/css/cart.css"]});</script>';
 	}
 	
 	

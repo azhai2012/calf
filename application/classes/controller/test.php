@@ -25,7 +25,7 @@ class Controller_Test extends Controller {
 	public function action_index()
 	{	
 		parent::before();
-		
+		phpinfo();
        // $modules= Kohana::modules();
        // print_r($modules);
 	   // echo $this->getUtf8('大小');

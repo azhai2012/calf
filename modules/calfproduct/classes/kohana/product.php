@@ -19,7 +19,9 @@ class Kohana_Product {
 	
 	public function get_product_content(){
 		$result='<div id="proclist">
+		 <script src="/media/js/jquery.jqzoom.js?1311674536" type="text/javascript" async=""></script>
 		           <div id="pnav">您现在的位置：商品信息</div>
+		         
 		           <div id="proc_context"> <!-- begin proc_context -->
 		              <div class="left"> <!-- begin left -->
 		                <div class="side_title"><h2><span>购买本商品的顾客还买过</span></h2>	</div>  
@@ -88,6 +90,7 @@ class Kohana_Product {
 	                   </div> <!-- end right -->
 		             
 		           </div> <!-- end proc_context -->
+		           
 		</div>';
 		return $result;
 		

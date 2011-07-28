@@ -252,7 +252,7 @@ class Kohana_Cart {
 		                        <p class="p_charge1">
 		                           商品金额总计：<span>￥<span id="sp_bargin_total">98.00</span></span>
 		                          </p>
-		                        <p class="p_charge1">账户余额冲抵： <span id="sp_cust_cash_used">-￥0.00</span></p>
+		                    
 		                        <p class="p_charge1" id="p_coupon_amount">
 		                        <span id="sp_coupon_amount_tips">礼券冲抵：</span>
 		                        <span id="sp_coupon_amount" class="p_charge4_span">
@@ -264,7 +264,7 @@ class Kohana_Cart {
 		                    
 		                </div>
 		                 <div class="clearfix"></div>
-		                <div class="order_submit"><a href="javascript:for_99click();" id="submit" name="submit">提交订单</a></div>
+		                <div class="order_submit"><a href="/cart/step/3" id="submit" name="submit">提交订单</a></div>
 		         </li>  
 		              
 		      
@@ -281,11 +281,33 @@ class Kohana_Cart {
     public function get_cart_content_step_three(){
 		$result='
 		    <div class="cart_three">
-		      <ul>
-		        <li></li>
-		        <li></li>
-		        
-		      </ul>
+		    <div class="cart_wrapper">
+    <!--货到付款 开始-->
+  <div class="success_frame money_notice">
+    <p class="price">订单8642662094已提交。
+    	
+    预计1天内发货。
+    
+    <a href="http://order.dangdang.com/orderdetails.aspx?modify=true&amp;orderid=8642662094" target="_blank">查看订单状态&gt;&gt;</a></p>
+    <div class="information3">
+    
+      <p>您需要在收货时向送货员支付<span>￥98.00</span></p>
+      
+    </div>
+    
+    <p class="information_goon">
+    
+    </p>
+    
+    <p class="success_footer">
+      <span>* 您可以在“<a href="http://order.dangdang.com/myallorders.aspx?modify=true" target="_blank">我的订单</a>”中查看或取消您的订单，由于系统需进行订单预处理，您可能不会立刻查询到刚提交的订单</span>
+    </p>
+  </div>
+  <!--货到付款 结束-->
+  
+
+  
+</div>
 		      
 		    </div>
 		 

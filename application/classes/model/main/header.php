@@ -17,7 +17,7 @@ class Model_Main_Header {
 	   $result='<div id="myinfo" class="clearfix">
 	             <div id="userinfo">您好，欢迎光临。<a href="/login">请登录</a></div> 
 	             <ul>
-	               <li><a href="#">我的订单</a></li>
+	               <li><a href="/account">我的订单</a></li>
 	               <li><a href="#">我的信息</a></li>
 	               <li><a href="#">会员积分</a></li>
 	               <li><a href="#">礼品卡</a></li>

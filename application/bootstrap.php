@@ -121,7 +121,7 @@ Kohana::modules(array(
      'calfphrase' => MODPATH.'calfphrase', 
      'calfcart' => MODPATH.'calfcart', 
      'calfproduct' => MODPATH.'calfproduct', 
-
+     'calfaccount' => MODPATH.'calfaccount', 
 
    ));
 

@@ -6,7 +6,7 @@ class Controller_Product extends Controller {
 	private  $template='';
 	
     public function before(){
-		$this->template= View::factory('product');
+		$this->template= View::factory('public');
 
 	}
 	
@@ -18,7 +18,10 @@ class Controller_Product extends Controller {
 		$this->template->menus='';
 	    $this->template->css='';
 	    $id = array_key_exists('id',$_GET)?$_GET['id']:'';
-		$this->template->callmethod='<script>Azhai.callMethod1("/pcallmethod?id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>'; 
+		$this->template->callmethod='
+		 <script>Azhai.callMethod1("/pcallmethod?id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		   <script>Azhai.onPages({"type":"css","css":["/media/css/product.css"]});</script>
+		 '; 
     
 	}
 	

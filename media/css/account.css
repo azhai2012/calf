@@ -1,0 +1,8 @@
+/**** Account style ****/
+.side_content {width:170px;float:left;border: 1px solid #d2d2fb;margin-top:15px;}
+.side_content .sidel_title {position: relative;border-top: 1px solid #d2d2fb;}
+.side_content li {padding-left: 13px;}
+.side_content .sidel_title h3 {font-weight: bold;height: 26px;line-height: 26px;padding: 1px 0px 0px 12px;font-size:12px;padding: 1px 0px 0px 12px;margin-bottom:0;}
+.side_content .sidel_title a {position: absolute;right: 11px;top: 8px;}
+.side_content .content {line-height: 26px;width: 168px;}
+.side_content dt {border:1px #e6e6e6 solid;padding:5px;}
