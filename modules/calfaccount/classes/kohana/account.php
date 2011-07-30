@@ -34,27 +34,27 @@ class Kohana_Account {
 		    	case 'coupons':{
 		    		$navtitle="礼品卡";
 		    	    $func= $this->get_coupons_list();
-		    	}break;
+		    	} break;
 		    	case 'pointslist':{
 		    	    $navtitle="我的积分";
 		    	    $func= $this->get_pointslist_list();
-		    	}break;
+		    	} break;
 		    	case 'profileleft':{
 		    		$navtitle="账户信息";
 		    		$func=  $this->get_profileleft_list();
-		    	}break;
+		    	} break;
 		    	case 'mypassword':{
 		    		$navtitle="修改密码";
 		    	    $func=  $this->get_mypassword_list();
-		    	}break;
+		    	} break;
 		    	case 'mysms':{
 		    		$navtitle="站内消息";
 		    	    $func = $this->get_mysms_list();
-		    	}break;
+		    	} break;
 		    	case 'myquestion':{
 		    		$navtitle="投诉建议";
 		    	    $func = $this->get_myquestion_list();
-		    	}break;
+		    	} break;
 		    	default : $navtitle='';	 
 		    } 
 		    
@@ -79,7 +79,7 @@ class Kohana_Account {
            	               <ul class="content"> ';
 
             $current = ($active == 'coupons')?'current':'';
-            $result.='<li><a class="'.$current.'" name="mycoupons" href="/account/coupons" target="_parent">礼券/礼品卡</a></li> ';
+            $result.='<li><a class="'.$current.'" name="mycoupons" href="/account/coupons" target="_parent">礼品卡</a></li> ';
 
             $current = ($active == 'pointslist')?'current':'';
             $result.='<li><a class="'.$current.'" name="points_index_list" href="/account/pointslist" target="_parent">我的积分</a></li>';
@@ -137,7 +137,15 @@ class Kohana_Account {
        return $result;		
 	
 	}
+
+	/*** 支付历史 ***/
+	function get_paymenthistory_list(){
+		$result = ' ';
+		   
+		return $result;
+	}
 	
+	/*** 礼品卡 ***/
 	function get_coupons_list(){
 		$result='
 		   <div class="coupons clearfix">
@@ -156,20 +164,48 @@ class Kohana_Account {
 		return $result;
 	}
 	
+
 	
-	function get_paymenthistory_list(){
-		$result = '';
+	/*** 我的积分 ***/
+	function get_pointslist_list(){
+			
+		$result='
+	  	   <div class="pointslist clearfix">
+	  	      <h2>我的积分</h2>
+	          <div><span>您当前的积分：<b>0</b></span><span><a href="#">查看积分兑换活动</a></span> </div>	
+	          <div class="plist" >
+	             <ul>
+	              <li class="p_title">
+		                <span class="list_date">日期</span>
+		                <span class="list_gain">获得积分</span>
+		                <span class="list_useed">使用积分</span>
+		                <span class="list_directions">详细说明</span>
+		             </li>
+		             <li id="p_normal" onmouseout="this.style.background=\'none\'" onmouseover="this.style.background=\'#f4f4f4\'" 
+		               style="background-image: none; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; background-position: initial initial; background-repeat: initial initial; ">
+		               <span class="list_date" title="">2010-07-18</span>
+		               <span class="list_gain" title="有赠品">1000</span>
+		               <span class="list_useed" id="list_total">100</span>
+		               <span class="list_directions"></span>
+		              </li>
+	             </ul>
+	          </div>   
+	       </div>
+		';
 		return $result;
+		
 	}
 	
-	function get_pointslist_list(){}
-	
+	/*** 账户信息 ***/
 	function get_profileleft_list(){}
 	
+	/*** 修改密码 ***/
 	function get_mypassword_list(){}
 	
+	/*** 站内信息 ***/
     function get_mysms_list(){}
 
+    /*** 我的反馈 ***/
     function get_myquestion_list(){}
 	
 	
