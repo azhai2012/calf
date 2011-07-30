@@ -29,17 +29,32 @@ class Kohana_Account {
 		    	} break;
 		    	case 'paymenthistory':{
 		    	 $navtitle="支付历史";
-		    	 //$func= $this->get_paymenthistory_list();
+		    	 $func= $this->get_paymenthistory_list();
 		    	} break;
 		    	case 'coupons':{
 		    		$navtitle="礼品卡";
 		    	    $func= $this->get_coupons_list();
 		    	}break;
-		    	case 'pointslist':$navtitle="我的积分";break;
-		    	case 'profileleft':$navtitle="账户信息";break;
-		    	case 'mypassword':$navtitle="修改密码";break;
-		    	case 'mysms':$navtitle="站内消息";break;
-		    	case 'myquestion':$navtitle="投诉建议";break;
+		    	case 'pointslist':{
+		    	    $navtitle="我的积分";
+		    	    $func= $this->get_pointslist_list();
+		    	}break;
+		    	case 'profileleft':{
+		    		$navtitle="账户信息";
+		    		$func=  $this->get_profileleft_list();
+		    	}break;
+		    	case 'mypassword':{
+		    		$navtitle="修改密码";
+		    	    $func=  $this->get_mypassword_list();
+		    	}break;
+		    	case 'mysms':{
+		    		$navtitle="站内消息";
+		    	    $func = $this->get_mysms_list();
+		    	}break;
+		    	case 'myquestion':{
+		    		$navtitle="投诉建议";
+		    	    $func = $this->get_myquestion_list();
+		    	}break;
 		    	default : $navtitle='';	 
 		    } 
 		    
@@ -140,6 +155,22 @@ class Kohana_Account {
 		';
 		return $result;
 	}
+	
+	
+	function get_paymenthistory_list(){
+		$result = '';
+		return $result;
+	}
+	
+	function get_pointslist_list(){}
+	
+	function get_profileleft_list(){}
+	
+	function get_mypassword_list(){}
+	
+    function get_mysms_list(){}
+
+    function get_myquestion_list(){}
 	
 	
 	
