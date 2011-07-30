@@ -172,13 +172,13 @@ class Kohana_Account {
 		$result='
 	  	   <div class="pointslist clearfix">
 	  	      <h2>我的积分</h2>
-	          <div><span>您当前的积分：<b>0</b></span><span><a href="#">查看积分兑换活动</a></span> </div>	
-	          <div class="plist" >
+	          <div class="p_total"><span>您当前的积分：<b>0</b></span><span class="action"><a href="#">查看积分兑换活动</a></span> </div>	
+	          <div class="p_list" >
 	             <ul>
 	              <li class="p_title">
 		                <span class="list_date">日期</span>
 		                <span class="list_gain">获得积分</span>
-		                <span class="list_useed">使用积分</span>
+		                <span class="list_useed">已使用积分</span>
 		                <span class="list_directions">详细说明</span>
 		             </li>
 		             <li id="p_normal" onmouseout="this.style.background=\'none\'" onmouseover="this.style.background=\'#f4f4f4\'" 
