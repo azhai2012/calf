@@ -27,8 +27,14 @@ class Kohana_Account {
 		    	 $navtitle="我的订单";
 		    	 $func= $this->get_account_order_list();
 		    	} break;
-		    	case 'paymenthistory':$navtitle="支付历史";break;
-		    	case 'mycoupons':$navtitle="礼券/礼品卡";break;
+		    	case 'paymenthistory':{
+		    	 $navtitle="支付历史";
+		    	 //$func= $this->get_paymenthistory_list();
+		    	} break;
+		    	case 'coupons':{
+		    		$navtitle="礼品卡";
+		    	    $func= $this->get_coupons_list();
+		    	}break;
 		    	case 'pointslist':$navtitle="我的积分";break;
 		    	case 'profileleft':$navtitle="账户信息";break;
 		    	case 'mypassword':$navtitle="修改密码";break;
@@ -57,8 +63,8 @@ class Kohana_Account {
 	                       <div class="sidel_title"><h3>账户管理</h3> </div>
            	               <ul class="content"> ';
 
-            $current = ($active == 'mycoupons')?'current':'';
-            $result.='<li><a class="'.$current.'" name="mycoupons" href="/account/mycoupons" target="_parent">礼券/礼品卡</a></li> ';
+            $current = ($active == 'coupons')?'current':'';
+            $result.='<li><a class="'.$current.'" name="mycoupons" href="/account/coupons" target="_parent">礼券/礼品卡</a></li> ';
 
             $current = ($active == 'pointslist')?'current':'';
             $result.='<li><a class="'.$current.'" name="points_index_list" href="/account/pointslist" target="_parent">我的积分</a></li>';
@@ -94,8 +100,8 @@ class Kohana_Account {
 		             <li class="order_title">
 		                <span class="list_input"></span>
 		                <span class="list_order">订单号</span>
-		                <span class="list_name">收货人</span>
-		                <span class="list_way">付款方式</span>
+		                <span class="list_name">品种数</span>
+		                <span class="list_way">有无赠品</span>
 		                <span class="list_total">订单总金额</span>
 		                <span class="list_status">订单状态</span>
 		                <span class="list_time"><a href="#" class="arrow_up">下单时间</a></span>
@@ -105,8 +111,8 @@ class Kohana_Account {
 		               style="background-image: none; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; background-position: initial initial; background-repeat: initial initial; ">
 		               <a href="#" class="list_control" title="展开" name="unfold">折叠</a> 
 		               <a href="#" class="list_order" target="_blank" name="orderid">8642662094</a>
-		               <span class="list_name" title="">XXX</span>
-		               <span class="list_way" title="货到付款">货到付款</span>
+		               <span class="list_name" title="">10</span>
+		               <span class="list_way" title="有赠品">有</span>
 		               <span class="list_total" id="list_total">￥98.00</span>
 		               <span class="list_status">取消</span>
 		               <span class="list_time">2011-07-23</span>
@@ -115,6 +121,24 @@ class Kohana_Account {
 		            </ul>';
        return $result;		
 	
+	}
+	
+	function get_coupons_list(){
+		$result='
+		   <div class="coupons clearfix">
+		      <div class="giftcards_hint">
+                   您当前共有 
+                   <a href="#"><b>0</b></a> 张可用礼券，礼品卡帐户可用金额为
+                   <span class="hot">￥0.00</span>
+                   <a href="#">[查看明细]</a>，
+                   未激活金额为
+                   <span class="hot">￥0.00</span>
+                   <a href="#">[查看明细]</a>。
+              </div>
+                                    
+           </div>                         
+		';
+		return $result;
 	}
 	
 	

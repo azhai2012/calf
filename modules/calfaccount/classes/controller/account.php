@@ -51,7 +51,7 @@ class Controller_Account extends Controller {
 		  '; 
 	}
 	
-     public function action_mycoupons(){
+     public function action_coupons(){
 		
 		parent::before();
 		$action = $this->request->action();

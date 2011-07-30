@@ -1,51 +1,25 @@
 /**** Account style ****/
-.side_content {width:170px;float:left;border: 1px solid #d2d2fb;margin-top:15px;}
+.side_content {width:170px;float:left;border: 1px solid #d2d2fb;margin-top:10px;}
 .side_content .sidel_title {position: relative;border-top: 1px solid #d2d2fb;}
 .side_content li {padding-left: 13px;}
-.side_content .sidel_title h3 {font-weight: bold;height: 26px;line-height: 26px;padding: 1px 0px 0px 12px;font-size:12px;padding: 1px 0px 0px 12px;margin-bottom:0;}
+.side_content .sidel_title h3 {font-weight: bold;height: 26px;line-height: 26px;padding: 1px 0px 0px 12px;font-size:14px;padding: 1px 0px 0px 12px;margin-bottom:0;}
 .side_content .sidel_title a {position: absolute;right: 11px;top: 8px;}
 .side_content .content {line-height: 26px;width: 168px;}
 .side_content dt {border:1px #e6e6e6 solid;padding:5px;}
 .side_content .current {font-weight: bold;}
 
-.order_list .order_title {
-border-bottom: 1px solid #A4D7CA;
-color: #5AA18F;
-padding: 8px 0px 5px;
-}
+.order_list .order_title {border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 8px 0px 5px;}
 
 .order_list {float:left;margin:20px 0 0 10px;width:790px}
 .order_list .order_title .list_order {text-align: center;width: 125px;}
 .order_list .order_title {border-top: 1px solid #A4D7CA;border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 8px 0px 5px;}
 
-.order_list li {
-background: none;
-border-bottom: 1px solid #DDD;
-display: inline;
-float: left;
-line-height: 14px;
-overflow: hidden;
-padding: 10px 0px 7px;
-width: 780px;
-}
-.order_list .order_title span {
-background: url(/media/images/bg_myddorder.gif) no-repeat 100% -120px;
-display: inline-block;
-text-align: center;
-}
+.order_list li {background: none;border-bottom: 1px solid #DDD;display: inline;float: left;line-height: 14px;overflow: hidden;padding: 10px 0px 7px;width: 780px;}
+.order_list .order_title span {background: url(/media/images/bg_myddorder.gif) no-repeat 100% -120px;display: inline-block;text-align: center;}
 
 .order_list a,.order_list span {display: inline-block;text-align: center;}
 
-.order_list li .list_control {
-background: url(/media/images/pic_myddorder.gif) no-repeat 7px -280px;
-display: inline;
-float: left;
-height: 14px;
-line-height: 42px;
-overflow: hidden;
-vertical-align: top;
-width: 27px;
-}
+.order_list li .list_control {background: url(/media/images/pic_myddorder.gif) no-repeat 7px -280px;display: inline;float: left;height: 14px;line-height: 42px;overflow: hidden;vertical-align: top;width: 27px;}
 
 .order_list li .list_order {font-family: Arial;text-align: left;width: 98px;}
 .order_list li .list_name {width: 98px;}
@@ -56,7 +30,9 @@ width: 27px;
 .order_list li .list_operation {width: 125px;}
 
 
-
+.giftcards_hint {float:left;margin-left:10px;margin-top:10px;}
+.giftcards_hint {background: #FFF8E5;border-bottom: 1px solid lightGrey;border-top: 1px solid lightGrey;height: 38px;line-height: 38px;margin-top: 13px;padding-left: 10px;width: 769px;}
+.giftcards_hint a {display: inline-block;padding: 0px 2px;}
 
 
 
