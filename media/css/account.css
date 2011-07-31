@@ -1,25 +1,39 @@
 /**** Account style ****/
 .side_content {width:170px;float:left;border: 1px solid #d2d2fb;margin-top:10px;}
 .side_content .sidel_title {position: relative;border-top: 1px solid #d2d2fb;}
-.side_content li {padding-left: 13px;}
+.side_content li {padding-left: 0px;}
 .side_content .sidel_title h3 {font-weight: bold;height: 26px;line-height: 26px;padding: 1px 0px 0px 12px;font-size:14px;padding: 1px 0px 0px 12px;margin-bottom:0;}
 .side_content .sidel_title a {position: absolute;right: 11px;top: 8px;}
-.side_content .content {line-height: 26px;width: 168px;}
+.side_content .content {line-height: 26px;width: 168px;padding-left:20px;}
 .side_content dt {border:1px #e6e6e6 solid;padding:5px;}
 .side_content .current {font-weight: bold;}
 
-.order_list .order_title {border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 8px 0px 5px;}
+.order_list {width:790px;margin-top:15px;}
+.order_list .order_title {border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 10px 0px 5px;}
 
-.order_list {float:left;margin:20px 0 0 10px;width:790px}
+.account,.coupons,.pointslist,.profileleft 
+,.repassword,.mysms,.paymenthistory,.myquestion
+{float:left;margin:10px 0 0 10px;width:790px;}
+.account h2,.mysms h2,.paymenthistory h2,.myquestion h2,.coupons h2,.pointslist h2,.profileleft h2,.order_list h2 
+,.repassword h2
+{font-size:14px;padding-bottom:10px;margin-bottom:5px;}
+
 .order_list .order_title .list_order {text-align: center;width: 125px;}
-.order_list .order_title {border-top: 1px solid #A4D7CA;border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 8px 0px 5px;}
+.info_list .info_title,.order_list .order_title {border-top: 1px solid #A4D7CA;border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 8px 0px 5px;}
 
-.order_list li {background: none;border-bottom: 1px solid #DDD;display: inline;float: left;line-height: 14px;overflow: hidden;padding: 10px 0px 7px;width: 780px;}
-.order_list .order_title span {background: url(/media/images/bg_myddorder.gif) no-repeat 100% -120px;display: inline-block;text-align: center;}
+.info_list {margin-top:20px;}
+.info_list li,.order_list li {background: none;border-bottom: 1px solid #DDD;display: inline;float: left;line-height: 14px;overflow: hidden;padding: 10px 0px 7px;width: 780px;}
+.order_list .order_title span {display: inline-block;text-align: center;}
 
-.order_list a,.order_list span {display: inline-block;text-align: center;}
+.info_list li span,.info_list li a,.order_list a,.order_list span {display: inline-block;text-align: center;}
 
-.order_list li .list_control {background: url(/media/images/pic_myddorder.gif) no-repeat 7px -280px;display: inline;float: left;height: 14px;line-height: 42px;overflow: hidden;vertical-align: top;width: 27px;}
+.order_list li .list_control {display: inline;float: left;height: 14px;line-height: 42px;overflow: hidden;vertical-align: top;width: 27px;}
+
+
+.info_list li .info_type {font-family: Arial;text-align: left;width: 98px;}
+.info_list li .info_name {font-family: Arial;text-align: left;width: 468px;}
+.info_list li .info_date {width:98px;}
+.info_list li .info_operation{width:98px;}
 
 .order_list li .list_order {font-family: Arial;text-align: left;width: 98px;}
 .order_list li .list_name {width: 98px;}
@@ -30,12 +44,10 @@
 .order_list li .list_operation {width: 125px;}
 
 
-.giftcards_hint {float:left;margin-left:10px;margin-top:10px;}
-.giftcards_hint {background: #FFF8E5;border-bottom: 1px solid lightGrey;border-top: 1px solid lightGrey;height: 38px;line-height: 38px;margin-top: 13px;padding-left: 10px;width: 769px;}
+.giftcards_hint {float:left;margin-left:0px;margin-top:-1px;}
+.giftcards_hint {background: #FFF8E5;border-bottom: 1px solid lightGrey;height: 38px;line-height: 38px;margin-top: -5px;padding-left: 10px;width: 780px;}
 .giftcards_hint a {display: inline-block;padding: 0px 2px;}
 
-
-.pointslist {float:left;margin:10px 0 0 10px;width:790px}
 .pointslist .p_list{margin-top:20px;}
 .pointslist .p_title .p_list {text-align: center;width: 125px;}
 .pointslist .p_title {border-top: 1px solid #A4D7CA;border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 8px 0px 5px;}
@@ -43,7 +55,6 @@
 .pointslist .p_title span {background: url(/media/images/bg_myddorder.gif) no-repeat 100% -120px;display: inline-block;text-align: center;}
 .pointslist .p_list span {display: inline-block;text-align: center;}
 
-.pointslist h2 {font-size:14px;padding-bottom:10px;margin-bottom:5px;}
 .pointslist .p_total {padding:10px 5px;}
 .pointslist .p_total .action {float:right;}
 
@@ -53,8 +64,8 @@
 .pointslist .list_useed {width:138px;}
 .pointslist .list_directions {width:320px;}
 
-
-
+.repassword li {line-height:35px;}
+.repassword span.label {width:80px;display:inline-block;}
 
 
 

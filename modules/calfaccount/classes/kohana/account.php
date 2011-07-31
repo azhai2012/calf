@@ -43,9 +43,9 @@ class Kohana_Account {
 		    		$navtitle="账户信息";
 		    		$func=  $this->get_profileleft_list();
 		    	} break;
-		    	case 'mypassword':{
+		    	case 'repassword':{
 		    		$navtitle="修改密码";
-		    	    $func=  $this->get_mypassword_list();
+		    	    $func=  $this->get_repassword_list();
 		    	} break;
 		    	case 'mysms':{
 		    		$navtitle="站内消息";
@@ -87,14 +87,14 @@ class Kohana_Account {
             $current = ($active == 'profileleft')?'current':'';
             $result.='<li><a class="'.$current.'" name="profileleft" href="/account/profileleft" target="_parent">账户信息</a></li> ';
 
-            $current = ($active == 'mypassword')?'current':'';
-            $result.='<li><a class="'.$current.'" name="mypassword" href="/account/mypassword" target="_parent">修改密码</a></li>';
+            $current = ($active == 'repassword')?'current':'';
+            $result.='<li><a class="'.$current.'" name="mypassword" href="/account/repassword" target="_parent">修改密码</a></li>';
             
             $current = ($active == 'mysms')?'current':'';
             $result.='<li><a class="'.$current.'" name="mysms" href="/account/mysms" target="_parent">站内消息</a></li>';
             
             $current = ($active == 'myquestion')?'current':'';
-            $result.='<li class="'.$current.'"><a name="myquestion" href="/account/myquestion" target="_parent">投诉建议</a></li>';
+            $result.='<li class="'.$current.'"><a name="myquestion" href="/account/myquestion" target="_parent">我的反馈</a></li>';
 
             $result.=' </ul>	                     
 		                </div> 
@@ -111,7 +111,10 @@ class Kohana_Account {
 	
     function get_account_order_list(){
 		
-		$result='<ul class="order_list">   
+		$result='
+		         <div class="account clearfix">
+		         <h2>我的订单</h2>
+		         <ul class="order_list">   
 		             <li class="order_title">
 		                <span class="list_input"></span>
 		                <span class="list_order">订单号</span>
@@ -133,14 +136,20 @@ class Kohana_Account {
 		               <span class="list_time">2011-07-23</span>
 		               <span class="list_operation" id="list_operation">----</span> 
 		              </li>
-		            </ul>';
+		            </ul>
+		        </div> 
+		 ';
        return $result;		
 	
 	}
 
 	/*** 支付历史 ***/
 	function get_paymenthistory_list(){
-		$result = ' ';
+		$result = ' 
+		   <div class="paymenthistory clearfix">
+		      <h2>支付历史</h2>
+		  </div>
+		';
 		   
 		return $result;
 	}
@@ -149,6 +158,7 @@ class Kohana_Account {
 	function get_coupons_list(){
 		$result='
 		   <div class="coupons clearfix">
+		      <h2>我的礼品卡</h2>
 		      <div class="giftcards_hint">
                    您当前共有 
                    <a href="#"><b>0</b></a> 张可用礼券，礼品卡帐户可用金额为
@@ -197,16 +207,96 @@ class Kohana_Account {
 	}
 	
 	/*** 账户信息 ***/
-	function get_profileleft_list(){}
+	function get_profileleft_list(){
+		$result= '
+		  <div class="profileleft clearfix">
+		     <h2>我的信息</h2>
+	      </div>
+		';
+		return $result;
+		
+	}
 	
 	/*** 修改密码 ***/
-	function get_mypassword_list(){}
+	function get_repassword_list(){
+		$result= '
+				  <div class="repassword clearfix">
+				     <h2>修改密码</h2>
+				     <ul>
+                      <li class="item fore">
+                        <span class="label"><em>*</em>旧密码：</span>
+                        <span>
+                        <input name="txtOldPwd" type="password" maxlength="16" id="txtOldPwd" class="text"
+                             onblur="return validate.RegExpOne({ \'regexpress\': \'notempty\', \'id\': \'txtOldPwd\', \'message\': \'请输入旧密码!\'})">
+                         </span>    
+                         <span class="msg-error-01" id="txtOldPwdTip" style="display: none"></span>
+                      </li>   
+                      <li class="item">
+                         <span class="label"><em>*</em>新密码：</span>
+                         <span><input name="txtNewPwd" type="password" maxlength="16" id="txtNewPwd" class="text" 
+                          onblur="validate.RegExpOne({ \'regexpress\': \'password\', \'id\': \'txtNewPwd\', \'message\': \'密码为由英文、数字及“_”、“-”组成的6-16位字符!\'})">
+                         </span>
+                         <span class="msg-error-01" id="txtNewPwdTip" style="display: none"></span>
+                           
+                      </li>
+                      <li class="item">
+                         <span class="label"><em>*</em>重复新密码：</span>
+                         <span>
+                           <input name="txtConfimPwd" type="password" maxlength="16" id="txtConfimPwd" class="text" 
+                           onblur="return validate.RegConfirmPW({\'regexpress\': \'confirm\', \'id\': \'txtConfimPwd\', \'message\': \'两次密码输入的不一致!\'})">
+                         </span>  
+                         <span class="msg-error-01" id="txtConfimPwdTip" style="display: none"></span>
+                      </li>
+                      <li class="item">
+                        <span class="label">&nbsp;</span>
+                        <span>
+                            <input type="submit" name="btnSubmit" value="修改密码" onclick="return validate.AllValidate();" id="btnSubmit" class="btn-pass">
+                                <a class="btn btn-11" href="http://jd2008.360buy.com/user_home.aspx"><s></s>取消</a>
+                            </span>
+                    </li>
+				   </ul>  
+			      </div>
+				';
+		return $result;
+	}
 	
 	/*** 站内信息 ***/
-    function get_mysms_list(){}
+    function get_mysms_list(){
+    	$result=' <div class="mysms clearfix">
+				     <h2>站内信息</h2>
+				     <ul class="info_list">   
+		             <li class="info_title">
+		                <span class="info_type">信息类别</span>
+		                <span class="info_name">主题</span>
+		                <span class="info_date">时间</span>
+		                <span class="info_operation">操作</span>
+		             </li>';
+		for ($i=0;$i<10;$i++){             
+		    $result.='<li id="info_normal" onmouseout="this.style.background=\'none\'" onmouseover="this.style.background=\'#f4f4f4\'" 
+		               style="background-image: none; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; background-position: initial initial; background-repeat: initial initial; ">
+		               <span class="info_type" title="">订单</span>
+		               <span class="info_name" title="主题"><a>主题'.$i.'</a></span>
+		               <span class="info_date" title="">2011-08-01</span>
+		               <span class="info_operation" id="info_operation"><a href="#">删除</a></span> 
+		              </li>';
+		}
+		
+		$result.='
+		            </ul>		   
+    	         </div>
+    	';
+    	return $result;
+    }
 
     /*** 我的反馈 ***/
-    function get_myquestion_list(){}
+    function get_myquestion_list(){
+    	$result='
+    	        <div class="mysms clearfix">
+				     <h2>我的反馈</h2>
+    	         </div>
+    	';
+    	return $result;
+    }
 	
 	
 	

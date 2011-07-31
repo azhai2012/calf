@@ -88,7 +88,7 @@ class Controller_Account extends Controller {
 		  '; 
 	}
 	
-     public function action_mypassword(){
+     public function action_repassword(){
 		parent::before();
 		$action = $this->request->action();
 		$this->template->menus='';
