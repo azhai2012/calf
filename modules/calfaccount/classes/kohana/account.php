@@ -75,7 +75,15 @@ class Kohana_Account {
             $result.=' <li><a class="'.$current.'" name="paymenthistory" href="/account/paymenthistory" target="_parent">支付历史</a></li> ';
         
             $result.='</ul>
-	                       <div class="sidel_title"><h3>账户管理</h3> </div>
+                       <div class="sidel_title"><h3>商品管理</h3> </div>
+                     <ul class="content"> ';
+            $current = ($active == 'wishlist')?'current':'';
+            $result.='<li><a class="'.$current.'" name="wishlist" href="/account/wishlist" target="_parent">我的收藏</a></li> ';
+            
+            $current = ($active == 'mytmplate')?'current':'';
+            $result.='<li><a class="'.$current.'" name="mytmplate" href="/account/mytmplate" target="_parent">采购模板</a></li> ';
+            $result.='</ul>';
+	        $result.=' <div class="sidel_title"><h3>账户管理</h3> </div>
            	               <ul class="content"> ';
 
             $current = ($active == 'coupons')?'current':'';
@@ -114,7 +122,10 @@ class Kohana_Account {
 		$result='
 		         <div class="account clearfix">
 		         <h2>我的订单</h2>
-		         <ul class="order_list">   
+		         <ul class="order_list">  
+		             <li> 
+		              
+		             </li> 
 		             <li class="order_title">
 		                <span class="list_input"></span>
 		                <span class="list_order">订单号</span>
@@ -168,7 +179,11 @@ class Kohana_Account {
                    <span class="hot">￥0.00</span>
                    <a href="#">[查看明细]</a>。
               </div>
-                                    
+              <div class="cards">
+                <p><span><label>卡号：</label></span><input name="cardid" id="cardid" value="" />
+                <span><label>密码：</label></span><input type="password" name="cardpsw" id="cardpsw" value="" />
+                <span></span><input type="button" name="cardactive" id="cardactive" value="激活" /></p>
+              </div>                     
            </div>                         
 		';
 		return $result;
@@ -291,8 +306,21 @@ class Kohana_Account {
     /*** 我的反馈 ***/
     function get_myquestion_list(){
     	$result='
-    	        <div class="mysms clearfix">
+    	        <div class="myquestion clearfix">
 				     <h2>我的反馈</h2>
+				     <ul class="question_title">
+				       <li class="lst_title">
+				         <span class="q_date">日期</span>
+				         <span class="q_title">问题内容</span>
+				         <span class="q_operation">操作</span>
+				       </li>
+				      <li id="info_normal" onmouseout="this.style.background=\'none\'" onmouseover="this.style.background=\'#f4f4f4\'" 
+		               style="background-image: none; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; background-position: initial initial; background-repeat: initial initial; ">
+		                 <span class="q_date">2010-08-01</span>
+				         <span class="q_title" style="text-align:left;"><a href="#">问题1</a></span>
+				         <span class="q_operation"><a href="#">删除</a></span>
+				       </li>
+				     </ul>
     	         </div>
     	';
     	return $result;

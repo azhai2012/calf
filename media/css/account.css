@@ -12,11 +12,10 @@
 .order_list .order_title {border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 10px 0px 5px;}
 
 .account,.coupons,.pointslist,.profileleft 
-,.repassword,.mysms,.paymenthistory,.myquestion
-{float:left;margin:10px 0 0 10px;width:790px;}
+,.repassword,.mysms,.paymenthistory,.myquestion {float:left;margin:10px 0 0 10px;width:790px;}
+
 .account h2,.mysms h2,.paymenthistory h2,.myquestion h2,.coupons h2,.pointslist h2,.profileleft h2,.order_list h2 
-,.repassword h2
-{font-size:14px;padding-bottom:10px;margin-bottom:5px;}
+,.repassword h2 {font-size:14px;padding-bottom:10px;margin-bottom:5px;}
 
 .order_list .order_title .list_order {text-align: center;width: 125px;}
 .info_list .info_title,.order_list .order_title {border-top: 1px solid #A4D7CA;border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 8px 0px 5px;}
@@ -51,15 +50,15 @@
 .pointslist .p_list{margin-top:20px;}
 .pointslist .p_title .p_list {text-align: center;width: 125px;}
 .pointslist .p_title {border-top: 1px solid #A4D7CA;border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 8px 0px 5px;}
-.pointslist li {background: none;border-bottom: 1px solid #DDD;display: inline;float: left;line-height: 14px;overflow: hidden;padding: 10px 0px 7px;width: 780px;}
-.pointslist .p_title span {background: url(/media/images/bg_myddorder.gif) no-repeat 100% -120px;display: inline-block;text-align: center;}
-.pointslist .p_list span {display: inline-block;text-align: center;}
+.myquestion li,.pointslist li {background: none;border-bottom: 1px solid #DDD;display: inline;float: left;line-height: 14px;overflow: hidden;padding: 10px 0px 7px;width: 780px;}
+.myquestion li .lst_title,.pointslist .p_title span {background: url(/media/images/bg_myddorder.gif) no-repeat 100% -120px;display: inline-block;text-align: center;}
+.myquestion li span,.pointslist .p_list span {display: inline-block;text-align: center;}
 
 .pointslist .p_total {padding:10px 5px;}
 .pointslist .p_total .action {float:right;}
 
 
-.pointslist .list_date {width:98px;}
+.pointslist .list_date {width:98px;} 
 .pointslist .list_gain {width:138px;}
 .pointslist .list_useed {width:138px;}
 .pointslist .list_directions {width:320px;}
@@ -68,8 +67,12 @@
 .repassword span.label {width:80px;display:inline-block;}
 
 
+.myquestion li .q_date {width:98px;}
+.myquestion li .q_title {width:498px;}
+.myquestion li .q_operation {width:98px;}
 
-
+.cards {margin:50px 0 0 0;padding:20px 0 20px 10px;width:600px;border:1px #ccc solid;}
+.cards label {display: inline-block;width:38px;}
 
 
 
