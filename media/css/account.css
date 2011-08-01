@@ -8,20 +8,30 @@
 .side_content dt {border:1px #e6e6e6 solid;padding:5px;}
 .side_content .current {font-weight: bold;}
 
-.order_list {width:790px;margin-top:15px;}
+.order_list {width:790px;margin-top:5px;}
+.order_list select {font-size:12px;} 
 .order_list .order_title {border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 10px 0px 5px;}
 
+.o_t {margin-top:15px;}
+.o_t b {font-size:16px;margin-right:10px;}
+.order_flow {min-height:200px;margin-top:5px;margin-bottom:0px;border:1px #e6e6e6 solid;padding:5px;}
+.order_flow li {line-height:18px; }
+.gifts_title {margin-top:10px;margin-bottom:5px;}
+.gifts_info  {min-height:100px;border:1px #e6e6e6 solid;padding:5px;}
+.gifts_info li  {line-height:18px;}
+
+
 .account,.coupons,.pointslist,.profileleft 
-,.repassword,.mysms,.paymenthistory,.myquestion {float:left;margin:10px 0 0 10px;width:790px;}
+,.repassword,.mysms,.paymenthistory,.myquestion,.wishlist,.mytmplate {float:left;margin:10px 0 0 10px;width:790px;}
 
 .account h2,.mysms h2,.paymenthistory h2,.myquestion h2,.coupons h2,.pointslist h2,.profileleft h2,.order_list h2 
-,.repassword h2 {font-size:14px;padding-bottom:10px;margin-bottom:5px;}
+,.repassword h2,.wishlist h2,.mytmplate h2 {font-size:14px;padding-bottom:10px;margin-bottom:5px;}
 
 .order_list .order_title .list_order {text-align: center;width: 125px;}
 .info_list .info_title,.order_list .order_title {border-top: 1px solid #A4D7CA;border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 8px 0px 5px;}
 
 .info_list {margin-top:20px;}
-.info_list li,.order_list li {background: none;border-bottom: 1px solid #DDD;display: inline;float: left;line-height: 14px;overflow: hidden;padding: 10px 0px 7px;width: 780px;}
+.info_list li,.order_list li {background: none;border-bottom: 1px solid #DDD;display: inline;float: left;line-height: 14px;overflow: hidden;padding: 10px 0px 7px;width: 790px;}
 .order_list .order_title span {display: inline-block;text-align: center;}
 
 .info_list li span,.info_list li a,.order_list a,.order_list span {display: inline-block;text-align: center;}
@@ -40,8 +50,8 @@
 .order_list li .list_total {font-family: Arial;width: 108px;}
 .order_list li .list_status {width: 96px;}
 .order_list li .list_time {font-family: Arial;width: 102px;}
-.order_list li .list_operation {width: 125px;}
-
+.order_list li .list_operation {width: 130px;}
+.btm {background: url(/media/images/bg_cart.gif) repeat-x 0px -40px;height:10px;margin-bottom: 0px;}
 
 .giftcards_hint {float:left;margin-left:0px;margin-top:-1px;}
 .giftcards_hint {background: #FFF8E5;border-bottom: 1px solid lightGrey;height: 38px;line-height: 38px;margin-top: -5px;padding-left: 10px;width: 780px;}
@@ -73,6 +83,61 @@
 
 .cards {margin:50px 0 0 0;padding:20px 0 20px 10px;width:600px;border:1px #ccc solid;}
 .cards label {display: inline-block;width:38px;}
+
+.favorites ul {margin-top:10px;border-left:1px #e6e6e6 solid;border-right:1px #e6e6e6 solid;border-bottom:1px #e6e6e6 solid;}
+.favorites ul li {line-height:45px;border-top:1px #e6e6e6 solid;}
+
+
+.favorites .favorites_sort {float:right;font-size:12px;margin-top:-35px;}
+.favorites select,.favorites  button {font-size:12px;}
+
+.favorites li.f_title {background: url(/media/images/bg_s_title.gif) repeat-x 0px -31px;
+	line-height:24px;padding:5px 2px;border-top:1px #e6e6e6 solid;}
+
+.totaldelete,.totalbuy {float:right;}
+
+.favorites .product_list .row01 {float: left;margin-top: 41px;text-align: center;width: 26px;}
+.favorites .product_list .row02 {float: left;margin-top: 15px;width: 72px;}
+.favorites .product_list .row03 {color: #666;float: left;line-height: 25px;padding: 10px 0px 0px 8px;width:520px;}
+
+.favorites .product_list .row03 .name,
+.favorites .product_list .row03 .icon,
+.favorites .product_list .row03 .tags,
+.favorites .product_list .row03 .discount_info {display: block;}
+
+.favorites .product_list .row04 {float: left;padding-top: 9px;width: 136px;}
+.favorites .product_list .row04 span {line-height: 22px;}
+.favorites .product_list .row04 .discount {text-align:left;}
+.favorites .product_list .row04 .discount b{color: #C30;font-weight: normal;}
+
+.favorites .product_list .row05 {float: left;padding-top: 4px;width: 154px;}
+.favorites .product_list .row05 a {display: block;height: 23px;line-height: 23px;padding-top: 6px;}
+.favorites .product_list .row05 input {width:100px;}
+.favorites .product_list .row05 img {padding-left:35px;}
+
+.favorites .product_list .row06 {float: left;padding-top: 4px;width: 194px;}
+.favorites .product_list .row06 a {padding-left:35px;}
+
+.favorites .product_list {height: 122px;overflow: hidden;vertical-align: top;width: 788px;}
+
+.o_l_o,.o_l_t {margin-top:15px;}
+.o_list {margin-top:5px;}
+
+
+.order_view_title {border-top: 1px solid #A4D7CA;border-bottom: 1px solid #A4D7CA;color: #5AA18F;padding: 8px 0px 8px;}
+.order_view_list span,.order_view_title span {display:inline-block;text-align:center;}
+.order_view_list .list_name {text-align:left;}
+.order_view_list .list_name,.order_view_title .list_name {width:300px;}
+.order_view_list .list_batch,.order_view_title .list_batch {width:98px;}
+.order_view_list .list_price,.order_view_title .list_price {width:90px;}
+.order_view_list .list_num ,.order_view_title .list_num {width:90px;}
+.order_view_list .list_amount,.order_view_title .list_amount {width:90px;}
+.order_view_list .list_time,.order_view_title .list_time {width:98px;}
+.order_view_list {line-height:25px;border-bottom:1px #e6e6e6 solid;}
+.o_total {float:right;padding:10px 15px 0 0}
+.o_total b {color:#C30;}
+
+
 
 
 

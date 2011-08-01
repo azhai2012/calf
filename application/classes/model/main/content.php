@@ -35,10 +35,13 @@ class Model_Main_Content {
 	function get_content_left(){
 		
 		$result=' <div id="dleft" class="w720">
-                   <ul id="slider" class="images clearfix">
+	               <script src="/media/js/jquery.bxSlider.min.js" type="text/javascript" async=""></script>
+	               <script src="/media/js/main.js" type="text/javascript" async=""></script>		         
+                   <ul id="slider" class="images clearfix" >
 				     <li><img src="/media/images/banner4.jpg" width="720" height="290" title=""></li>
-				     <li><img src="/media/images/banner5.jpg" width="720" height="290" title=""></li>
+				     <li ><img src="/media/images/banner5.jpg" width="720" height="290" title=""></li>
 	               </ul>
+
 		        </div>';
 	   return $result;
 		

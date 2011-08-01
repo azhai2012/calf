@@ -1,4 +1,5 @@
-$(document).ready(function(){        
+$(document).ready(function(){ 
+
         $('#slider').bxSlider({
             mode: 'fade',
             captions: true,
@@ -7,4 +8,5 @@ $(document).ready(function(){
             randomStart: true,
             pager: true  
         });
+
  });

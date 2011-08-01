@@ -21,7 +21,7 @@ class Controller_acallmethod extends Controller {
 		parent::before();
         $sk = array_key_exists('sk',$_POST)?$_POST['sk']:'';
         $id = array_key_exists('id',$_GET)?$_GET['id']:'';   
-    	$mod = array_key_exists('mod',$_GET)?$_GET['mod']:'';
+        $mod = array_key_exists('mod',$_GET)?$_GET['mod']:'';
     	$modary = array("mod"=>$mod);
 		switch ($sk) {
 		  case "headertop":  $mods  = $this->header ->getmods("top"); break;

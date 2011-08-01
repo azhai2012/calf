@@ -20,8 +20,7 @@ class Controller_Main extends Controller {
 		$this->template->callmethod='
 		  <script>Azhai.callMethod1("/callmethod","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");
 		  </script>
-		  <script>Azhai.onPages({"type":"js","js":["/media/js/jquery.bxSlider.min.js?'.time().'"]});</script>
-		  <script>Azhai.onPages({"type":"js","js":["/media/js/main.js?'.time().'"]});</script>
+		 
 		  
 		  '; 
     
