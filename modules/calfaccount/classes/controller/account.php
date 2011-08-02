@@ -3,7 +3,7 @@
 class Controller_Account extends Controller {
 
 
-	private  $template='';
+    private  $template='';
 	
     public function before(){
 		$this->template= View::factory('public');

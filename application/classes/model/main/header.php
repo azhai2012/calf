@@ -58,11 +58,13 @@ class Model_Main_Header {
 	              <ul>
 	                <li><a href="/">首页</a></li>
 	                <li><a href="#">店铺</a></li>
+	                <li><a href="#">团购</a></li>
 	                <li><a href="#">热卖区</a></li>
-	                 <li><a href="#">团购</a></li>
-	                  <li><a href="#">社区</a></li>
-	              </ul> 
-	      </div>'.$this->get_carts();
+	                <li><a href="#">折扣区</a></li>
+	                <li><a href="#">社区</a></li>
+	              </ul>
+	              '.$this->get_carts().'
+	      </div>';
 
 	      
 	     } break;

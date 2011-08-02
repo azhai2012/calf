@@ -81,7 +81,7 @@ tfoot td {background:#eee}
 #hcontent #find ol {background-position: 0px -28px;height: 32px;left: 0px;margin: 0px;overflow: hidden;padding: 4px 5px;position: absolute;top: 15px;z-index:1;}
 #hcontent input.search_btn {background: none;border: none;color: white;font-size: 14px;font-weight: bold;height: 32px;width: 100px;}
 
-#menu,.info,#npt,#hpt,#spt,#npt a,
+.info,#npt,#hpt,#spt,#npt a,
 #hpt a,#spt a,#tuan.tuanbtn,
 .info li a:hover#ic,
 .info li a:hover#login,
@@ -92,16 +92,16 @@ tfoot td {background:#eee}
 .info li a:hover#notice {background-image: url(/media/images/desktop.gif)}
 
 /* menus */
-#menus {position:relative;height:40px;}
-#menu {position: absolute;width:80%;} 
-#menu {background-repeat:no-repeat; background-position:-7px -13px;width:979px;height:36px;background-color:#119b11;margin: 0px auto;}
+#menus {position:relative;height:35px;left:0px;width:100%;margin:0 auto;background-color:#119b11;}
+ 
+#menu {position:relative;background-repeat:no-repeat;background-position:-6px -14px;width:980px;height:35px;background-color:#119b11;margin: 0px auto;}
 #menu ul {line-height:35px;margin: 0px auto;padding-left:1px;}
-#menu ul li {display: inline;float: left;font-size: 14px;height: 30px;font-weight: bold;}
+#menu ul li {display: inline:;float: left;font-size: 14px;height: 30px;font-weight: bold;}
 #menu li a:link, #menu li a:visited {color: white;display: inline;float: left;height: 35px;line-height: 35px;margin-top: 1px;padding: 0px 15px 3px 16px;}
 #menu li a:hover{height:30px;display:block;background:#fff;color:#a10000;}
 
 /* carts */
-#carts {position: absolute;right:3px;line-height:30px;background-color:#fff;margin-top:3px;padding:0 20px;}
+#carts {position: absolute;right:3px;line-height:30px;height:33px;background-color:#fff;margin-top:1px;padding:0px 5px;text-align:center;min-width:237px;}
 
 /* tuan */
 
