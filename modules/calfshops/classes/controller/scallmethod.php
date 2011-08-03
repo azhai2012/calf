@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Cartcallmethod extends Controller {
+class Controller_Scallmethod extends Controller {
 
 
 	private $template='';
@@ -20,14 +20,14 @@ class Controller_Cartcallmethod extends Controller {
 	{
 		parent::before();
         $sk = array_key_exists('sk',$_POST)?$_POST['sk']:'';
-        $id = array_key_exists('id',$_GET)?$_GET['id']:'1';  
+        $id = array_key_exists('id',$_GET)?$_GET['id']:'';   
 		$controller= array_key_exists('controller',$_GET)?$_GET['controller']:'';
 		$mods='';
 		switch ($sk) {
 		  case "headertop":  $mods  = $this->header ->getmods("top"); break;
 		  case "headcontent": $mods = $this->header ->getmods("content");break;
 		  case "menus":     $mods = $this->header ->get_menu($controller);break;  
-		  case "maincontentcol":  $mods  = $this->content->get_cart_content($id);break;
+		  case "maincontentcol":  $mods  = $this->content->get_shops_content($id);break;
 		  case "mainpagefoot":   $mods   = $this->footer ->get_footer(); break;
 		  default:'';
 		}

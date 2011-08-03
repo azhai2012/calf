@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Product extends Controller {
+class Controller_Shops extends Controller {
 
 
 	private  $template='';
@@ -19,8 +19,8 @@ class Controller_Product extends Controller {
 	    $this->template->css='';
 	    $id = array_key_exists('id',$_GET)?$_GET['id']:'';
 		$this->template->callmethod='
-		 <script>Azhai.callMethod1("/pcallmethod?controller=account&id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		   <script>Azhai.onPages({"type":"css","css":["/media/css/product.css"]});</script>
+		 <script>Azhai.callMethod1("/scallmethod?controller=shops&id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		   <script>Azhai.onPages({"type":"css","css":["/media/css/shops.css"]});</script>
 		 '; 
     
 	}

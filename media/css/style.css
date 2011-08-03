@@ -96,13 +96,16 @@ tfoot td {background:#eee}
  
 #menu {position:relative;background-repeat:no-repeat;background-position:-6px -14px;width:980px;height:35px;background-color:#119b11;margin: 0px auto;}
 #menu ul {line-height:35px;margin: 0px auto;padding-left:1px;}
-#menu ul li {display: inline:;float: left;font-size: 14px;height: 30px;font-weight: bold;}
+#menu ul li {display: inline;float: left;font-size: 14px;height: 30px;font-weight: bold;}
 #menu li a:link, #menu li a:visited {color: white;display: inline;float: left;height: 35px;line-height: 35px;margin-top: 1px;padding: 0px 15px 3px 16px;}
 #menu li a:hover{height:30px;display:block;background:#fff;color:#a10000;}
+#menu ul .current {display:inline;margin-top:1px;height:33px;background:#fff;}
+#menu ul .current a:link,#menu ul .current a:visited {color:#a10000};
+
 
 /* carts */
-#carts {position: absolute;right:3px;line-height:30px;height:33px;background-color:#fff;margin-top:1px;padding:0px 5px;text-align:center;min-width:237px;}
-
+#carts  {line-height:30px;height:33px;}
+#carts a {float:right;background-color:#fff;margin-top:1px;padding:0px 5px;text-align:center;min-width:240px;line-height:30px;height:33px;}
 /* tuan */
 
 #tuan {clear:both;height:100px;position:relative;}

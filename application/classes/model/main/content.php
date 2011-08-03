@@ -19,6 +19,13 @@ class Model_Main_Content {
 		
 	}
 	
+	function get_shops_content($id){
+		
+		$result= Shops::factory($id)->get_shops_content();
+		return $result;
+		
+	}
+	
 	function get_account_content($id,$mod){
 	   
 		$result= Account::factory($id,$mod)->get_account_content();

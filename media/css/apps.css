@@ -54,7 +54,7 @@ tfoot td {background:#eee}
 #content {width:auto;}
 #allContainer,#content {min-height: inherit};
 #mainContainer {width:100%;display:block;margin-left:-1px;}
-#leftcol {float:left;padding:20px 0px 0px 2px;width:179px;word-wrap:break-word;dispkay:block;}
+#leftcol {float:left;padding:20px 0px 0px 2px;width:179px;display:block;}
 #leftcol .navside li {position:relative;zoom:1;}
 .navside .item,.navside .subitem {border-bottom:1px solid white;color:#333;display:block;line-height:12px;padding:4px 8px 3px 28px;position:relative;text-decoration:none;zoom:1;}
 .navside .item .leftimg {left:5px;position:absolute;text-align:center;top:2px;width:16px;}
@@ -139,7 +139,7 @@ padding-top: 6px;
 
 #pagefoot{width:980px;margin:0;padding:0;}
 #pagefoot {clear:both;width:auto;margin-left:180px;}
-#contentcourve {margin-left:1px;border:none;border:1px solid #B3B3B3;border-top:none;font-size:2px;height:8px;podition:relative;}
+#contentcourve {margin-left:1px;border:none;border:1px solid #B3B3B3;border-top:none;font-size:2px;height:8px;position:relative;}
 #footcontainer {border-top:1px solid #EEE;margin-bottom:30px;padding:8px;position:relative;}
 
 #pageheader { color: #fff;width:981px;margin:0px auto;padding-top:10px;}
@@ -202,14 +202,14 @@ padding-top: 6px;
 #login-right .submit {padding:30px;}
 #login-right .submitbtn {background: #609B2A url(/media/images/login00ee51.png) no-repeat 0px -32px;border: none;color: white;cursor: pointer;display: block;height: 26px;line-height: 26px;margin: 0px;padding: 0px 0px 3px;text-align: center;width: 71px;}
 
-.captcha {backgroud:#fff}
+.captcha {background:#ffffff;}
 .datelabel {position: relative;float:left;}
 .datebox {border: 1px solid #BDC7D8;margin:5px 0px 0px 2px;padding: 0px 4px 0px 0px;float:left;width:105px;}
 
 .inputtext {background-image: url(/media/images/date.gif);background-position:100% 50%;color: #3B5998;background-repeat: no-repeat;padding-right: 26px;padding-left: 2px;width: 75px;border: 0px;}
 
 .dragDiv {background-color: #FFFFFF;display: none;position: absolute;	z-index: 200;}
-.dragDiv {background: rgba(82, 82, 82, 0.699219);border-bottom-left-radius: 8px 8px;border-bottom-right-radius: 8px 8px;border-top-left-radius: 8px 8px;border-top-right-radius: 8px 8px;padding: 10px;}
+.dragDiv {background: #cccccc;border-bottom-left-radius: 8px 8px;border-bottom-right-radius: 8px 8px;border-top-left-radius: 8px 8px;border-top-right-radius: 8px 8px;padding: 10px;}
 * html .dragDiv {background:#828282;border:3px #828282 solid;padding: 10px;}
 * +html .dragDiv {background:#828282;border:3px #828282 solid;padding: 10px;}
 

@@ -15,10 +15,11 @@ class Controller_Main extends Controller {
 	public function action_index()
 	{	
 		parent::before();
+		
 		$this->template->menus='';
 	    $this->template->css='';
 		$this->template->callmethod='
-		  <script>Azhai.callMethod1("/callmethod","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");
+		  <script>Azhai.callMethod1("/callmethod?controller=main","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");
 		  </script>
 		 
 		  

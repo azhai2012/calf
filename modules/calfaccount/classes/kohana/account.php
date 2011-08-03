@@ -270,6 +270,7 @@ class Kohana_Account {
 	}
 	
 	/*** 我的收藏 ***/
+	// @todo 收藏内容
 	function get_wishlist_list($id){
 		
 		$a0 = ($id=='a0')?'selected':'';

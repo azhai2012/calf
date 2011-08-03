@@ -54,7 +54,7 @@
 .btm {background: url(/media/images/bg_cart.gif) repeat-x 0px -40px;height:10px;margin-bottom: 0px;}
 
 .giftcards_hint {float:left;margin-left:0px;margin-top:-1px;}
-.giftcards_hint {background: #FFF8E5;border-bottom: 1px solid lightGrey;height: 38px;line-height: 38px;margin-top: -5px;padding-left: 10px;width: 780px;}
+.giftcards_hint {background: #FFF8E5;border-bottom: 1px solid #ddd;height: 38px;line-height: 38px;margin-top: -5px;padding-left: 10px;width: 780px;}
 .giftcards_hint a {display: inline-block;padding: 0px 2px;}
 
 .pointslist .p_list{margin-top:20px;}

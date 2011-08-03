@@ -18,9 +18,9 @@ class Controller_Account extends Controller {
 	    $id = $this->request->param('id');
 	    	    	  
 	    $this->template->callmethod='
-		   <script>Azhai.callMethod1("/acallmethod?mod='.$action.'&id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		    <script>Azhai.callMethod1("/acallmethod?controller=account&mod='.$action.'&id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		    <script>Azhai.onPages({"type":"css","css":["/media/css/account.css"]});</script> 
-		      <script>Azhai.onPages({"type":"js","js":["/media/js/account.js"]});</script> 
+		    <script>Azhai.onPages({"type":"js","js":["/media/js/account.js"]});</script> 
 		  ';
 	}
 	
@@ -30,9 +30,9 @@ class Controller_Account extends Controller {
 		$this->template->menus='';
 	    $this->template->css='';
 		$this->template->callmethod='
-		   <script>Azhai.callMethod1("/Acallmethod?mod=order","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		    <script>Azhai.onPages({"type":"css","css":["/media/css/account.css"]});</script> 
-		     <script>Azhai.onPages({"type":"js","js":["/media/js/account.js"]});</script> 
+		   <script>Azhai.callMethod1("/acallmethod?controller=account&mod=order","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		   <script>Azhai.onPages({"type":"css","css":["/media/css/account.css"]});</script> 
+		   <script>Azhai.onPages({"type":"js","js":["/media/js/account.js"]});</script> 
 		  '; 
     }
 
