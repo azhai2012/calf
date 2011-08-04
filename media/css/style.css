@@ -105,7 +105,8 @@ tfoot td {background:#eee}
 
 /* carts */
 #carts  {line-height:30px;height:33px;}
-#carts a {float:right;background-color:#fff;margin-top:1px;padding:0px 5px;text-align:center;min-width:240px;line-height:30px;height:33px;}
+#carts {background:url(/media/images/amt.gif) no-repeat -1px -1px;float:right;margin-top:1px;padding:0px 1px;text-align:center;min-width:248px;line-height:30px;height:33px;}
+#carts a {float: right;width:70px;height:33px;margin-top:1px; font-size:14px;color:#ffffff;font-weight:bold;text-align:left;    }
 /* tuan */
 
 #tuan {clear:both;height:100px;position:relative;}

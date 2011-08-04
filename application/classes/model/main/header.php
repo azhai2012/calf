@@ -56,8 +56,8 @@ class Model_Main_Header {
 	   $a1 = ($current=='main')?'current':'';
 	   $a2 = ($current=='shops')?'current':'';
 	   $a3 = ($current=='tuan')?'current':'';
-	   $a4 = ($current=='hot')?'current':'';
-	   $a5 = ($current=='discount')?'current':'';
+	   $a4 = ($current=='hots')?'current':'';
+	   $a5 = ($current=='discounts')?'current':'';
 	   $a6 = ($current=='community')?'current':'';
 	   
 	   
@@ -66,11 +66,11 @@ class Model_Main_Header {
 	      $result= '<div id="menu">
 	              <ul>
 	                <li class="'.$a1.'"><a href="/">首页</a></li>
-	                <li class="'.$a2.'"><a href="#">店铺</a></li>
-	                <li class="'.$a3.'"><a href="#">团购</a></li>
-	                <li class="'.$a4.'"><a href="#">热卖区</a></li>
-	                <li class="'.$a5.'"><a href="#">折扣区</a></li>
-	                <li class="'.$a6.'"><a href="#">社区</a></li>
+	                <li class="'.$a2.'"><a href="/shops">店铺</a></li>
+	                <li class="'.$a3.'"><a href="/tuan">团购</a></li>
+	                <li class="'.$a4.'"><a href="/hots">热卖区</a></li>
+	                <li class="'.$a5.'"><a href="/discounts">折扣区</a></li>
+	                <li class="'.$a6.'"><a href="/community">社区</a></li>
 	              </ul>
 	             
 	              '.$this->get_carts().'
@@ -86,7 +86,10 @@ class Model_Main_Header {
 
 	// @todo 修改购物车内容
     function get_carts(){
-	    $result= '<div id="carts" class="clearfix"><a href="/cart">购物车里有 <span>0</span> 个商品, 总金额：<b>0.00</b>元 </a></div>';	
+	    $result= '<div id="carts" class="clearfix">
+	                <span>购物车里有<span>100</span>个商品</span> 
+	                <a class="gotocart" href="/cart">去结算</a>
+	             </div>';	
 	    return $result;
 	}
 	

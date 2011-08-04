@@ -26,15 +26,45 @@ class Model_Main_Content {
 		
 	}
 	
+	function get_tuan_content($id,$mod){
+		
+		$result= Tuan::factory($id,$mod)->get_tuan_content();
+		return $result;
+		
+	}
+	
+	function get_hots_content($id,$mod){
+		
+		$result= Hots::factory($id,$mod)->get_hots_content();
+		return $result;
+		
+	}
+	
+	function get_discounts_content($id,$mod){
+		
+		$result= Discounts::factory($id,$mod)->get_discounts_content();
+		return $result;
+		
+	}
+	
+	function get_community_content($id,$mod){
+		
+		$result= Community::factory($id,$mod)->get_community_content();
+		return $result;
+	}
+	
+	
+	
 	function get_account_content($id,$mod){
 	   
 		$result= Account::factory($id,$mod)->get_account_content();
 		return $result;	
 	}
 	
-    function get_cart_content($id){
+	
+    function get_cart_content($id,$mod){
 		
-		$result= Cart::factory($id)->get_cart_content();
+		$result= Cart::factory($id,$mod)->get_cart_content();
 		return $result;
 		
 	}

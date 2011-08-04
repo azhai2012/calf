@@ -12,7 +12,7 @@ class Kohana_Cart {
 	
 	function __construct($id,array $data = NULL)
 	{
-       $this->_id = $id;
+       $this->_id = (!empty($id))?$id:'1';
        $this->_data = $data; 
       
 	}

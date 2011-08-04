@@ -112,18 +112,22 @@ Kohana::modules(array(
 	 'mssql'      => MODPATH.'mssql',
      'captcha'    => MODPATH.'captcha',
      'calfpub'    => MODPATH.'calfpub',
-     'calfcms'   => MODPATH.'calfcms', // add to ajax.php if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
+     'calfcms'    => MODPATH.'calfcms', // add to ajax.php if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
 
     //'calfmeet'   => MODPATH.'calfmeet', // add to ajax.php if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
      //'calfcustomer'   => MODPATH.'calfcustomer', //add to ajax.php if ($mods === '')  $mods  = CalfSupplier::factory($_get,$Prams)->get_menus();
-     'calfsupplier'   => MODPATH.'calfsupplier', //add to ajax.php if ($mods === '')  $mods  = CalfCustomer::factory($_get,$Prams)->get_menus(); 
-     'calfbasis'  => MODPATH.'calfbasis', 
-     'calfphrase' => MODPATH.'calfphrase', 
-     'calfcart' => MODPATH.'calfcart', 
-     'calfproduct' => MODPATH.'calfproduct', 
-     'calfaccount' => MODPATH.'calfaccount', 
-     'calfshops' => MODPATH.'calfshops', 
-
+     'calfsupplier'  => MODPATH.'calfsupplier', //add to ajax.php if ($mods === '')  $mods  = CalfCustomer::factory($_get,$Prams)->get_menus(); 
+     'calfbasis'     => MODPATH.'calfbasis', 
+     'calfphrase'    => MODPATH.'calfphrase', //主页
+     'calfcart'      => MODPATH.'calfcart',     //购物车
+     'calfproduct'   => MODPATH.'calfproduct', //商品中心
+     'calfaccount'   => MODPATH.'calfaccount', //我的订单
+     'calfshops'     => MODPATH.'calfshops',   //店铺
+     'calftuan'      => MODPATH.'calftuan',     //团购
+     'calfhots'      => MODPATH.'calfhots',     //热卖区
+     'calfdiscounts' => MODPATH.'calfdiscounts', //折扣区
+     'calfcommunity' => MODPATH.'calfcommunity', //折扣区
+   
    ));
 
 
