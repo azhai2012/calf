@@ -18,8 +18,8 @@ class Controller_Discounts extends Controller {
 	    $this->template->css='';
 		$this->template->callmethod='
 		   <script>Azhai.callMethod1("/callmethod?controller=discounts","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		   <script>Azhai.onPages({"type":"css","css":["/media/css/hots.css"]});</script> 
-		   <script>Azhai.onPages({"type":"js","js":["/media/js/hots.js"]});</script> 
+		   <script>Azhai.onPages({"type":"css","css":["/media/css/discount.css"]});</script> 
+		   <script>Azhai.onPages({"type":"js","js":["/media/js/discount.js"]});</script> 
 		  '; 
     }
 

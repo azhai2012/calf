@@ -51,6 +51,7 @@ class Model_Main_Header {
 	}
 	
 	public function get_menu($current,$menuname="home"){
+		
 	   $result ='';	
 	   
 	   $a1 = ($current=='main')?'current':'';
@@ -68,8 +69,8 @@ class Model_Main_Header {
 	                <li class="'.$a1.'"><a href="/">首页</a></li>
 	                <li class="'.$a2.'"><a href="/shops">店铺</a></li>
 	                <li class="'.$a3.'"><a href="/tuan">团购</a></li>
-	                <li class="'.$a4.'"><a href="/hots">热卖区</a></li>
-	                <li class="'.$a5.'"><a href="/discounts">折扣区</a></li>
+	                <li class="'.$a4.'"><a href="/hots">展会</a></li>
+	                <li class="'.$a5.'"><a href="/discounts">促销区</a></li>
 	                <li class="'.$a6.'"><a href="/community">社区</a></li>
 	              </ul>
 	             
