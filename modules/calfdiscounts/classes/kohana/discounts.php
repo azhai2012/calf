@@ -59,6 +59,8 @@ class Kohana_Discounts {
 		// @todo  最新促销商品信息 
 	    $result='
 	         <h3>最新促销商品</h3>
+	         <script src="/media/js/jquery-corner.js" type="text/javascript" async=""></script>
+	         <script>$(".dis_new_list li,#discount_context").corner("5px");</script>
 	         <ul class="clearfix">
 	             <li>
 	               <a href="#"><img src="/media/images/p02.jpg" alt=""></a>
