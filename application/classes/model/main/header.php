@@ -56,10 +56,11 @@ class Model_Main_Header {
 	   
 	   $a1 = ($current=='main')?'current':'';
 	   $a2 = ($current=='shops')?'current':'';
-	   $a3 = ($current=='tuan')?'current':'';
-	   $a4 = ($current=='hots')?'current':'';
-	   $a5 = ($current=='discounts')?'current':'';
-	   $a6 = ($current=='community')?'current':'';
+	   $a3 = ($current=='shelf')?'current':'';
+	   $a4 = ($current=='tuan')?'current':'';
+	   $a5 = ($current=='hots')?'current':'';
+	   $a6 = ($current=='discounts')?'current':'';
+	   $a7 = ($current=='community')?'current':'';
 	   
 	   
 	   switch ($menuname){
@@ -68,10 +69,11 @@ class Model_Main_Header {
 	              <ul>
 	                <li class="'.$a1.'"><a href="/">首页</a></li>
 	                <li class="'.$a2.'"><a href="/shops">店铺</a></li>
-	                <li class="'.$a3.'"><a href="/tuan">团购</a></li>
-	                <li class="'.$a4.'"><a href="/hots">展会</a></li>
-	                <li class="'.$a5.'"><a href="/discounts">促销区</a></li>
-	                <li class="'.$a6.'"><a href="/community">社区</a></li>
+	                <li class="'.$a3.'"><a href="/shelf">商品区</a></li>
+	                <li class="'.$a4.'"><a href="/tuan">团购</a></li>
+	                <li class="'.$a5.'"><a href="/hots">展会</a></li>
+	                <li class="'.$a6.'"><a href="/discounts">促销区</a></li>
+	                <li class="'.$a7.'"><a href="/community">社区</a></li>
 	              </ul>
 	             
 	              '.$this->get_carts().'

@@ -14,6 +14,13 @@ class Model_Main_Content {
 		
 	}
 	
+	function get_shelf_content($id,$mod){
+		
+		$result= Shelf::factory($id,$mod)->get_shelf_content();
+		return $result;
+		
+	}
+	
 	function get_shops_content($id,$mod){
 		
 		$result= Shops::factory($id,$mod)->get_shops_content();

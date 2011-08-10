@@ -38,8 +38,9 @@ class Controller_callmethod extends Controller {
 		  	    case 'main': $mods  = $this->content->get_main_content($id,$modary);break;
 		  	    case 'cart': $mods  = $this->content->get_cart_content($id,$modary);break;
 				case 'shops': $mods  = $this->content->get_shops_content($id,$modary);break;
-		  	    case 'product': $mods  = $this->content->get_product_content($id,$modary);break;
-		  	    case 'tuan': $mods  = $this->content->get_tuan_content($id,$modary);break;
+		  	    case 'shelf': $mods  = $this->content->get_shelf_content($id,$modary);break;
+				case 'product': $mods  = $this->content->get_product_content($id,$modary);break;
+				case 'tuan': $mods  = $this->content->get_tuan_content($id,$modary);break;
 			    case 'hots': $mods  = $this->content->get_hots_content($id,$modary);break;
 		  	    case 'account': $mods  = $this->content->get_account_content($id,$modary);break;
 				case 'discounts': $mods  = $this->content->get_discounts_content($id,$modary);break;
