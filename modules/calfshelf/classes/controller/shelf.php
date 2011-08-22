@@ -1,4 +1,10 @@
 <?php defined('SYSPATH') or die('No direct script access.');
+/*
+ * 功能：商品展示区功能
+ * 日期：2011-08-22 
+ * 作者：azhai
+ * 
+ */
 
 class Controller_Shelf extends Controller {
 

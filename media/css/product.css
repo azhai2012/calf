@@ -33,22 +33,20 @@ ul#thumblist li {float: left;list-style: ;margin-right: 8px;border: 1px solid #d
 .pic img {width:80px;height:80px;}
 
 .wrap li {line-height:35px;}
-
-
 .p-img, .p-price {text-align:center;margin-left:auto;margin-right:auto;  }
 
 .side_content li {border-top: 1px solid #EFEFEF;padding: 6px 8px;}
 
 .productsInfo_tab {line-height: 35px;}
-
 .text {width:60px;}
 .bottom {margin-left:20px;}
 .key {background-color: #FFF8E7;border: 1px solid #EED97C;margin-top: 14px;padding: 16px 5px 17px 6px;width: 400px;}
 
-.amount .btn {margin-top:20px;}
-.amount .b_s {background:url(/media/images/desktop.gif) no-repeat -871px -110px;width:120px;height:35px;display:inline-block;color:#FFFFFF;}
-#submit {background:url(/media/images/desktop.gif) no-repeat -710px -111px;border:0;width:120px;height:35px;color:#FFFFFF;font-weight:bold;font-size: 16px;   }
+.toggler-holder .icon,#submit,.amount .b_s {background-image:url(/media/images/desktop.gif)}
 
+.amount .btn {margin-top:20px;}
+.amount .b_s {background-position:-871px -110px;background-repeat:no-repeat;width:120px;height:35px;display:inline-block;color:#FFFFFF;}
+#submit {background-repeat:no-repeat;background-position:-710px -111px;border:0;width:120px;height:35px;color:#FFFFFF;font-weight:bold;font-size: 16px;   }
 #J_StrPrice {color: #C30;font-family: Arial;font-size: 24px;font-weight: bold;line-height: 26px;margin-right: 5px;}
-.toggler-holder .icon {background:url(/media/images/desktop.gif) no-repeat -60px -514px;width:18px;height:16px;display:inline-block;}
+.toggler-holder .icon {background-repeat:no-repeat;background-position:-60px -514px;width:18px;height:16px;display:inline-block;}
 

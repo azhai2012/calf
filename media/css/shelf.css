@@ -1,0 +1,30 @@
+#shelf_context .left {margin-top:60px;width:720px; }
+.s-search {border:1px #ddd solid;height: 42px;margin-top: -45px;overflow: hidden;padding-top: 3px;position: relative;}
+.search-form {float:right; }
+.s-search ul {line-height: 21px;padding: 10px 10px 0px;zoom: 1;}
+.s-search li {float:left;height: 25px;padding-left: 50px;zoom: 1;}
+.s-search li label {float: left;margin-left: -50px;text-align: right;width: 80px;}
+.search-result {color: #666;left: 0px;line-height: 46px;padding: 0px 13px;position: absolute;top: 0px;}
+.s-search input {border: 1px solid #A7A6AA;padding: 2px 0px 1px 3px;}
+.s-search .keyword input {width: 109px;}
+.s-search .price input {width: 40px;}
+
+.s-filter {border: 1px solid #E5E5E5;height: 26px;margin-top:10px;margin-bottom: 10px;overflow: hidden;}
+.s-filter .mode,.s-filter .taxis,.s-filter .dis {float: left;margin: 4px 18px 0px 20px;}
+.button, .box i, .taxis .icon,.mode a {background: url(/media/images/desktop.gif) no-repeat;}
+
+.s-filter .mode a {float: left;height: 16px;margin-right: 5px;overflow: hidden;text-indent: -99px;width: 16px;}
+.s-filter span {float: left;}
+.grid .mode .mode-row {background-position: -1059px -43px;}
+.grid .mode .mode-grid {background-position: -1075px -43px;}
+.row .mode .mode-row {background-position: -1091px -43px;}
+.row .mode .mode-gird {background-position: -1106px -43px;}
+a.button {background-position: -1086px -96px;width:80px;height:30px;display:block;text-align:center;padding-top:3px; margin-top:-3px;    }
+
+.s-filter .taxis a {background-color: #EEE;border:1px solid #CCC;color: #333;float: left;height: 16px;line-height: 16px;margin-left: -1px;padding-left: 5px;width: 40px;}
+.s-filter .taxis a.def .icon {background-position: -1123px -43px;}
+.s-filter .taxis a.fav .icon {background-position: -1138px -43px;}
+.s-filter .taxis a.up .icon {background-position: -1154px -43px;}
+.s-filter .taxis a.down .icon {background-position: -1170px -43px;}
+
+.s-filter .taxis i {display: inline-block;height: 16px;overflow: hidden;vertical-align: top;width: 16px;}
