@@ -3,5 +3,8 @@
 - [Basic usage](using)
 - [Relationships](relationships)
 - [Validation](validation)
+- [Filters](filters)
 - [Examples](examples)
     - [Simple](examples/simple)
+    - [Validation](examples/validation)
+- [Upgrading](upgrading)

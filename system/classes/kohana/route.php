@@ -259,11 +259,6 @@ class Kohana_Route {
 	protected $_uri = '';
 
 	/**
-	 * @var  mixed
-	 */
-	protected $_host;
-
-	/**
 	 * @var  array
 	 */
 	protected $_regex = array();
@@ -289,7 +284,7 @@ class Kohana_Route {
 	 * can be a valid callback or anonymous function (php 5.3+). If you use a
 	 * callback or anonymous function, your method should return an array
 	 * containing the proper keys for the route. If you want the route to be
-	 * "reversable", you need to return a 'uri' key in the standard syntax.
+	 * "reversable", you need pass the route string as the third parameter.
 	 *
 	 *     $route = new Route(function($uri)
 	 *     {
@@ -299,9 +294,9 @@ class Kohana_Route {
 	 *     			'controller' => 'foobar',
 	 *     			'action' => $action,
 	 *     			'id' => $param,
-	 *     			'uri' => 'foo/bar/<id>.html
 	 *     		);
-	 *     	}
+	 *     	},
+	 *     	'foo/bar/<id>'
 	 *     });
 	 *
 	 * @param   mixed    route URI pattern or lambda/callback function
@@ -345,12 +340,19 @@ class Kohana_Route {
 	 *         'controller' => 'welcome',
 	 *         'action'     => 'index'
 	 *     ));
+	 * 
+	 * If no parameter is passed, this method will act as a getter.
 	 *
 	 * @param   array  key values
-	 * @return  $this
+	 * @return  $this or array
 	 */
 	public function defaults(array $defaults = NULL)
 	{
+		if ($defaults === NULL)
+		{
+			return $this->_defaults;
+		}
+
 		$this->_defaults = $defaults;
 
 		return $this;
@@ -413,9 +415,6 @@ class Kohana_Route {
 			}
 		}
 
-		$params['uri'] = $uri;
-		$params['route'] = $this;
-
 		return $params;
 	}
 
@@ -427,7 +426,7 @@ class Kohana_Route {
 	 */
 	public function is_external()
 	{
-		return ! in_array($this->_host, Route::$localhosts);
+		return ! in_array(Arr::get($this->_defaults, 'host', FALSE), Route::$localhosts);
 	}
 
 	/**
@@ -453,7 +452,24 @@ class Kohana_Route {
 		if (strpos($uri, '<') === FALSE AND strpos($uri, '(') === FALSE)
 		{
 			// This is a static route, no need to replace anything
-			return $uri;
+
+			if ( ! $this->is_external())
+				return $uri;
+
+			// If the localhost setting does not have a protocol
+			if (strpos($this->_defaults['host'], '://') === FALSE)
+			{
+				// Use the default defined protocol
+				$params['host'] = Route::$default_protocol.$this->_defaults['host'];
+			}
+			else
+			{
+				// Use the supplied host with protocol
+				$params['host'] = $this->_defaults['host'];
+			}
+
+			// Compile the final uri and return it
+			return rtrim($params['host'], '/').'/'.$uri;
 		}
 
 		while (preg_match('#\([^()]++\)#', $uri, $match))
@@ -467,9 +483,6 @@ class Kohana_Route {
 			while (preg_match('#'.Route::REGEX_KEY.'#', $replace, $match))
 			{
 				list($key, $param) = $match;
-
-				if ($param === 'host')
-					continue;
 
 				if (isset($params[$param]))
 				{
@@ -514,19 +527,22 @@ class Kohana_Route {
 		// Trim all extra slashes from the URI
 		$uri = preg_replace('#//+#', '/', rtrim($uri, '/'));
 
-		// If the localhost setting matches a local route, return the uri as is
-		if ( ! isset($params['host']) OR in_array($params['host'], Route::$localhosts))
-			return $uri;
-
-		// If the localhost setting does not have a protocol
-		if (strpos($params['host'], '://') === FALSE)
+		if ($this->is_external())
 		{
-			// Use the default defined protocol
-			$params['host'] = Route::$default_protocol.$params['host'];
+			// Need to add the host to the URI
+			$host = $this->_defaults['host'];
+
+			if (strpos($host, '://') === FALSE)
+			{
+				// Use the default defined protocol
+				$host = Route::$default_protocol.$host;
+			}
+
+			// Clean up the host and prepend it to the URI
+			$uri = rtrim($host, '/').'/'.$uri;
 		}
 
-		// Compile the final uri and return it
-		return rtrim($params['host'], '/').'/'.$uri;
+		return $uri;
 	}
 
 } // End Route

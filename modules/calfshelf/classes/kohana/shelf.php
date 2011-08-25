@@ -25,11 +25,13 @@ class Kohana_Shelf {
 		           <div id="shelf_context"> <!-- begin shelf_context -->
 		              <div class="left clearfix"> <!-- begin left -->
 		              '.$this->get_shelf_left_content().
-		                $this->get_shelf_left_filter(). 
 		              '
 		              </div>  <!-- end left -->
-		              <div class="right"> <!-- begin right --> ';
-     	    $result.='</div> <!-- end right -->
+		              <div class="right"> <!-- begin right --> 
+		              '.$this->get_shelf_right_content().
+		                $this->get_shelf_right_filter(). 
+		              '
+     	              </div> <!-- end right -->
 		           </div> <!-- end tuan_context -->
 		    </div>';
 	        
@@ -38,6 +40,70 @@ class Kohana_Shelf {
 	}
 	
 	function get_shelf_left_content(){
+		$result='<div class="cate-item">
+			<ul>
+			<li>
+			  <a href="#" onclick=""><b class="icon blueLeft"></b>所有商品分类</a>
+			  <ul>
+			    <li>
+			      <strong class="selected">品牌保健品</strong>
+			      <ul>
+			        <li> <a title="日常营养保健食品(1397)" href="#" onclick="">日常营养保健食品<b>(1397)</b></a></li>
+                    <li> <a title="保健食品精选(432)" href="#" onclick="">保健食品精选<b>(432)</b></a></li>
+                  </ul>
+                 </li>
+			  </ul>
+			    <ul class="j_groupCon" style="height: auto; ">
+					<li>
+						<strong class="selected">功能营养推荐</strong>
+						<ul class="j_groupClose" data-height="231" style="height: 168px; ">
+													<li>
+								<a title="维生素/矿物质(1497)" href="" onclick="">维生素/矿物质<b>(1497)</b></a>
+							</li>
+													<li>
+								<a title="排毒/调理肠胃(1247)" href="" onclick="">排毒/调理肠胃<b>(1247)</b></a>
+							</li>
+													<li>
+								<a title="美容养颜(1234)" href="" onclick="">美容养颜<b>(1234)</b></a>
+							</li>
+													<li>
+								<a title="抗疲劳/提高免疫力(235)" href="" onclick="">抗疲劳/提高免疫力<b>(235)</b></a>
+							</li>
+													<li>
+								<a title="抗衰老(151)" href="" onclick="">抗衰老<b>(151)</b></a>
+							</li>
+													<li>
+								<a title="强健骨骼(31)" href="" onclick="">强健骨骼<b>(31)</b></a>
+							</li>
+													<li>
+								<a title="护眼明目(16)" href="\" onclick="">护眼明目<b>(16)</b></a>
+							</li>
+													<li>
+								<a title="改善睡眠(12)" href="" onclick="">改善睡眠<b>(12)</b></a>
+							</li>
+													<li>
+								<a title="辅助降脂/降糖/降压(7)" href="#" onclick="">辅助降脂/降糖/降压<b>(7)</b></a>
+							</li>
+													<li>
+								<a title="补脑益智(7)" href="#" onclick="">补脑益智<b>(7)</b></a>
+							</li>
+													<li>
+								<a title="体重管理(2)" href="#" onclick="">体重管理<b>(2)</b></a>
+							</li>
+												</ul>
+												<div class="cate-toggler j_groupToggler">
+							<a hidefocus="true" class="j_groupTri close" href="#"><b class="icon grayDown"></b>更多</a>
+						</div>
+											</li>
+				</ul>
+			   </li>
+            </ul>
+        </div>';
+		
+		return $result;
+	}
+	
+	function get_shelf_right_content(){
 		$result='
 		<div class="s-search">
            <div class="search-form">
@@ -65,7 +131,7 @@ class Kohana_Shelf {
 		return $result;
 	}
     
-	function get_shelf_left_filter(){
+	function get_shelf_right_filter(){
 		// TODO 排序的实现
 		$result='
 		<div class="s-filter grid">

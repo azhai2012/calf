@@ -5,3 +5,5 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'main',
 		'action'     => 'index',
 	));
+
+

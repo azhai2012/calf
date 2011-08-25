@@ -22,7 +22,7 @@ else
  * @see  http://kohanaframework.org/guide/using.configuration
  * @see  http://php.net/timezones
  */
-date_default_timezone_set('Asia/Shanghai');
+date_default_timezone_set('America/Chicago');
 
 /**
  * Set the default locale.
@@ -61,9 +61,9 @@ I18n::lang('en-us');
  * Note: If you supply an invalid environment name, a PHP warning will be thrown
  * saying "Couldn't find constant Kohana::<INVALID_ENV_NAME>"
  */
-if (getenv('KOHANA_ENV') !== FALSE)
+if (isset($_SERVER['KOHANA_ENV']))
 {
-	Kohana::$environment = constant('Kohana::'.strtoupper(getenv('KOHANA_ENV')));
+	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
 }
 
 /**
@@ -94,7 +94,6 @@ Kohana::$log->attach(new Log_File(APPPATH.'logs'));
  */
 Kohana::$config->attach(new Config_File);
 
-
 /**
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
@@ -111,14 +110,14 @@ Kohana::modules(array(
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 	 'mssql'      => MODPATH.'mssql',
      'captcha'    => MODPATH.'captcha',
-     'calfpub'    => MODPATH.'calfpub',
-     'calfcms'    => MODPATH.'calfcms', // add to ajax.php if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
+     //'calfpub'    => MODPATH.'calfpub',
+     //'calfcms'    => MODPATH.'calfcms', // add to ajax.php if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
 
     //'calfmeet'   => MODPATH.'calfmeet', // add to ajax.php if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
      //'calfcustomer'   => MODPATH.'calfcustomer', //add to ajax.php if ($mods === '')  $mods  = CalfSupplier::factory($_get,$Prams)->get_menus();
-     'calfsupplier'  => MODPATH.'calfsupplier', //add to ajax.php if ($mods === '')  $mods  = CalfCustomer::factory($_get,$Prams)->get_menus(); 
-     'calfbasis'     => MODPATH.'calfbasis', 
-     'calfphrase'    => MODPATH.'calfphrase', //主页
+     //'calfsupplier'  => MODPATH.'calfsupplier', //add to ajax.php if ($mods === '')  $mods  = CalfCustomer::factory($_get,$Prams)->get_menus(); 
+     //'calfbasis'     => MODPATH.'calfbasis', 
+     'calfmain'      => MODPATH.'calfmain', //主页
      'calfcart'      => MODPATH.'calfcart',     //购物车
      'calfproduct'   => MODPATH.'calfproduct', //商品中心
      'calfaccount'   => MODPATH.'calfaccount', //我的订单
@@ -129,45 +128,15 @@ Kohana::modules(array(
      'calfcommunity' => MODPATH.'calfcommunity', //折扣区
      'calfshelf'     => MODPATH.'calfshelf',
    
-   ));
+	));
 
-
-/*
- * 根据配置文件，增加模块 
-  
-$modules= Kohana::config('settings')->openmods;
-
-foreach ($modules as $key => $value){
-      Kohana::modules(Kohana::modules()+array($value=> MODPATH.$value)); 
-}
-
-
-// @todo 各种模块的设计
-/*
- * 加载模块的功能说明：
- * 
- * 原则: 根据系统需要生成各种模块的加载。
- * 优点：便于分发程序设计，将各个单独的模块分开，实现任务的下发。
- * 缺点：需要调整主模块的动态加载功能，设计较复杂。
- * 
- * 关键点：
- * 1、根据各个模块的需要，需要注意在主模块中加载的css文件 和js文件的。
- *    方案：在加载该子模块时，扫描该目录下的配置文件，实现动态的加入。
- *    
- * 2、菜单的调用要考虑各子模块的功能。   
- * 
- * 
- */
-
-   
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
- */
-/*Route::set('default', '(<controller>(/<action>(/<id>)))')
+ 
+Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
 		'controller' => 'main',
 		'action'     => 'index',
 	));
-	
-*/	
+*/

@@ -1,13 +1,8 @@
-<?php
+<?php defined('SYSPATH') or die('No direct script access.');
+
 /**
- * TestCase for unittesting
- *
- * @package    Kohana/Unittest
- * @author     Kohana Team
- * @author     BRMatt <matthew@sigswitch.com>
- * @author	   Paul Banks
- * @copyright  (c) 2008-2009 Kohana Team
- * @license    http://kohanaphp.com/license
+ * A version of the stock PHPUnit testcase that includes some extra helpers
+ * and default settings
  */
 abstract class Kohana_Unittest_TestCase extends PHPUnit_Framework_TestCase {
 	
@@ -21,7 +16,7 @@ abstract class Kohana_Unittest_TestCase extends PHPUnit_Framework_TestCase {
 	 * Make sure PHPUnit backs up globals
 	 * @var boolean
 	 */
-	protected $backupGlobals = TRUE;
+	protected $backupGlobals = FALSE;
 
 	/**
 	 * A set of unittest helpers that are shared between normal / database
@@ -46,10 +41,15 @@ abstract class Kohana_Unittest_TestCase extends PHPUnit_Framework_TestCase {
 	{
 		if(self::$_assert_type_compatability === NULL)
 		{
+			if( ! class_exists('PHPUnit_Runner_Version'))
+			{
+				require_once 'PHPUnit/Runner/Version.php';
+			}
+
 			self::$_assert_type_compatability = version_compare(PHPUnit_Runner_Version::id(), '3.5.0', '<=');
 		}
 
-		$this->_helpers = new Kohana_Unittest_Helpers;
+		$this->_helpers = new Unittest_Helpers;
 
 		$this->setEnvironment($this->environmentDefault);
 	}
@@ -70,7 +70,7 @@ abstract class Kohana_Unittest_TestCase extends PHPUnit_Framework_TestCase {
 	 */
 	public function cleanCacheDir()
 	{
-		return Kohana_Unittest_Helpers::clean_cache_dir();
+		return Unittest_Helpers::clean_cache_dir();
 	}
 
 	/**
@@ -82,7 +82,7 @@ abstract class Kohana_Unittest_TestCase extends PHPUnit_Framework_TestCase {
 	 */
 	public function dirSeparator($path)
 	{
-		return Kohana_Unittest_Helpers::dir_separator($path);
+		return Unittest_Helpers::dir_separator($path);
 	}
 
 	/**
@@ -108,7 +108,7 @@ abstract class Kohana_Unittest_TestCase extends PHPUnit_Framework_TestCase {
 	 */
 	public function hasInternet()
 	{
-		return Kohana_Unittest_Helpers::has_internet();
+		return Unittest_Helpers::has_internet();
 	}
 
 	/**

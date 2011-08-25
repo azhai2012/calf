@@ -31,6 +31,15 @@ $system = 'system';
 define('EXT', '.php');
 
 /**
+ * Set the path to the document root
+ *
+ * This assumes that this file is stored 2 levels below the DOCROOT, if you move 
+ * this bootstrap file somewhere else then you'll need to modify this value to 
+ * compensate.
+ */
+define('DOCROOT', realpath(dirname(__FILE__).'/../../').DIRECTORY_SEPARATOR);
+
+/**
  * Set the PHP error reporting level. If you set this in php.ini, you remove this.
  * @see  http://php.net/error_reporting
  *
@@ -52,20 +61,23 @@ error_reporting(E_ALL | E_STRICT);
  * @see  http://kohanaframework.org/guide/using.configuration
  */
 
-// Set the full path to the docroot
-define('DOCROOT', realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR);
-
 // Make the application relative to the docroot
 if ( ! is_dir($application) AND is_dir(DOCROOT.$application))
+{
 	$application = DOCROOT.$application;
+}
 
 // Make the modules relative to the docroot
 if ( ! is_dir($modules) AND is_dir(DOCROOT.$modules))
+{
 	$modules = DOCROOT.$modules;
+}
 
 // Make the system relative to the docroot
 if ( ! is_dir($system) AND is_dir(DOCROOT.$system))
+{
 	$system = DOCROOT.$system;
+}
 
 // Define the absolute paths for configured directories
 define('APPPATH', realpath($application).DIRECTORY_SEPARATOR);
@@ -91,25 +103,11 @@ if ( ! defined('KOHANA_START_MEMORY'))
 	define('KOHANA_START_MEMORY', memory_get_usage());
 }
 
-// Load the base, low-level functions
-require SYSPATH.'base'.EXT;
-
-// Load the core Kohana class
-require SYSPATH.'classes/kohana/core'.EXT;
-
-if (is_file(APPPATH.'classes/kohana'.EXT))
-{
-	// Application extends the core
-	require APPPATH.'classes/kohana'.EXT;
-}
-else
-{
-	// Load empty core extension
-	require SYSPATH.'classes/kohana'.EXT;
-}
-
 // Bootstrap the application
 require APPPATH.'bootstrap'.EXT;
+
+// Disable output buffering
+ob_end_flush();
 
 // Enable the unittest module
 Kohana::modules(Kohana::modules() + array('unittest' => MODPATH.'unittest'));

@@ -1,4 +1,5 @@
-#shelf_context .left {margin-top:60px;width:720px; }
+#shelf_context .left {float:left;margin-top:15px;margin-right:10px;width:240px; }
+#shelf_context .right {float:left;margin-top:60px;width:720px; }
 .s-search {border:1px #ddd solid;height: 42px;margin-top: -45px;overflow: hidden;padding-top: 3px;position: relative;}
 .search-form {float:right; }
 .s-search ul {line-height: 21px;padding: 10px 10px 0px;zoom: 1;}
@@ -28,3 +29,12 @@ a.button {background-position: -1086px -96px;width:80px;height:30px;display:bloc
 .s-filter .taxis a.down .icon {background-position: -1170px -43px;}
 
 .s-filter .taxis i {display: inline-block;height: 16px;overflow: hidden;vertical-align: top;width: 16px;}
+
+.cate-item { border: 1px solid #E4E4E4;background-color: white;padding-bottom: 5px;}
+.cate-item ul {overflow: hidden;text-indent: 10px;}
+.cate-item a {display: block;padding: 1px 0;vertical-align: middle;height: 19px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+
+.cate-item ul ul ul {text-indent: 40px;background-color: white;}
+.cate-item ul ul {text-indent: 25px;}
+
+
