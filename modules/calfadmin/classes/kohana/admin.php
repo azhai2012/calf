@@ -22,7 +22,10 @@ class Kohana_Admin {
 		
 		    $active = $this->_data['mod'];
 		    $id = $this->_id;
-		    $menus= array( public function action_config(){
+		    $menus= array();
+	}
+
+   public function action_config(){
     	$this->pub_action_index();
     }
 	
@@ -43,15 +46,15 @@ class Kohana_Admin {
 	 /*
 	  * 积分管理
 	  */
-	 public function action_points"","coupons","tmplate","users","suppers","informations","sms","question"
-);
+	 public function action_points($active){
 			
 		    $func='';
 		    switch ($active) {
+		    	
 		    	case 'config':{
 		    	 $navtitle="基本设置";
 		    	 $func= $this->get_admin_config_list();
-		    	} break;
+		    	 } break;
 		    	case 'product':{
 		    	 $navtitle="商品管理";
 		    	 $func= $this->get_admin_product_list();

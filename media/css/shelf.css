@@ -1,5 +1,5 @@
-#shelf_context .left {float:left;margin-top:15px;margin-right:10px;width:240px; }
-#shelf_context .right {float:left;margin-top:60px;width:720px; }
+#shelf_context .left {float:left;margin-top:0px;margin-right:10px;width:180px; }
+#shelf_context .right {float:left;margin-top:45px;width:785px; }
 .s-search {border:1px #ddd solid;height: 42px;margin-top: -45px;overflow: hidden;padding-top: 3px;position: relative;}
 .search-form {float:right; }
 .s-search ul {line-height: 21px;padding: 10px 10px 0px;zoom: 1;}
@@ -32,9 +32,39 @@ a.button {background-position: -1086px -96px;width:80px;height:30px;display:bloc
 
 .cate-item { border: 1px solid #E4E4E4;background-color: white;padding-bottom: 5px;}
 .cate-item ul {overflow: hidden;text-indent: 10px;}
+.cate-item a.c_t {background:#e6e6e6;border-bottom:1px #ddd solid;padding:5px 0;margin-bottom:5px;}
 .cate-item a {display: block;padding: 1px 0;vertical-align: middle;height: 19px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.cate-item strong {margin:5px 0;}
+.cate-item ul ul ul {text-indent: 25px;background-color: white;}
+.cate-item ul ul {text-indent: 10px;line-height:20px;}
 
-.cate-item ul ul ul {text-indent: 40px;background-color: white;}
-.cate-item ul ul {text-indent: 25px;}
+
+.product-list {padding: 10px 0;overflow: hidden;}
+.product {width: 186px;height: 315px;padding: 0;float: left;height: 384px;z-index: 1;margin: 0 10px 10px 0;}
+.productInfo {width: 160px;height: 300px;border: 0;padding: 15px;}
+.product-img, .item-miniView .product-img a {width: 160px;height: 160px;}
+.product-img {display: block;overflow: hidden;background: white;}
+.product-img a {display: table-cell;vertical-align: middle;text-align: center;background-color: white;}
+.product-price {position: relative;height: 20px;line-height: 20px;overflow: hidden;}
+.price {padding-left: 13px;background-position: -78px -54px; font-size:14px;}
+.product-title {margin: 3px 0;height: 36px;overflow: hidden;word-break: break-all;line-height: 18px;}
+.product-sum {position: relative;z-index: 999;margin: 0 0 3px;overflow: hidden;}
+.product-title a {font-size: 12px;font-weight: 400;color: #666;}
+
+
+.recommend-panel {margin-top: 10px;}
+.hd {margin-bottom:0px;padding: 5px 6px;background-color: #F2F2F2;font-size:12px;}
+.ald {border: 1px solid #E4E4E4;overflow: hidden;}
+.hot-store-title {margin-top:0px;font-size:12px;}
+h4 {display: block;-webkit-margin-before: 1.33em;-webkit-margin-after: 1.33em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;font-weight: bold;}
+
+.hot-store {padding: 10px;border-top: 1px solid #E4E4E4;background-color: #FBFBFB;position: relative;}
+.hot-store .hot-store-title {font-weight: normal;height: 24px;line-height: 24px;position: relative;z-index: 1;overflow: hidden;}
+.hot-store .hot-store-weeksale {color: #999;overflow: visible;margin-left: 11px;}
+
+
+
+
+
 
 
