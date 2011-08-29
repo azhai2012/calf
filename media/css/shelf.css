@@ -48,7 +48,7 @@ a.button {background-position: -1086px -96px;width:80px;height:30px;display:bloc
 .product_hover .productInfo {background-color:#f5f5f5;}
 .product_hover .product-title {height:auto;}
 
-.productInfo {width: 160px;height: 300px;border: 0;padding: 15px;}
+.productInfo {width: 160px;min-height: 300px;border: 0;padding: 15px;}
 
 
 
@@ -63,6 +63,7 @@ a.button {background-position: -1086px -96px;width:80px;height:30px;display:bloc
 .product-sum {position: relative;z-index: 999;margin: 0 0 3px;overflow: hidden;}
 .product-title a {font-size: 12px;font-weight: 400;color: #666;height:36px;}	
 
+#p_sum {width:80px;}
 
 .recommend-panel {margin-top: 10px;}
 .hd {margin-bottom:0px;padding: 5px 6px;background-color: #F2F2F2;font-size:12px;}
@@ -75,12 +76,12 @@ h4 {display: block;-webkit-margin-before: 1.33em;-webkit-margin-after: 1.33em;-w
 .hot-store .hot-store-weeksale {color: #999;overflow: visible;margin-left: 11px;}
 
 
-.compare {width:200px;border:1px #ccc solid;padding-bottom:10px;}
+.compare {background:#FFFFFF;width:200px;border:1px #ccc solid;padding-bottom:10px;}
 .compare .mt {background: #F3F3F3;padding: 3px 5px;height: 18px;line-height: 18px;overflow: hidden;zoom: 1;}
 .compare  h5 {margin:0;padding:0;float:left;font-size: 12px;color:#000}
 .compare .extra {float: right;margin-top: 2px;width: 13px;height: 13px;background-position:-1139px -81px;cursor: pointer;}
 .m, .mt, .mc, .mb {overflow: hidden;zoom: 1;}
-.compare .mc li {border: 1px solid #E5E5E5;padding: 4px 12px 4px 4px;margin-bottom: 2px;}
+.compare .mc li {background:#FFFFFF;border: 1px solid #E5E5E5;padding: 4px 12px 4px 4px;margin-bottom: 2px;}
 
 
 

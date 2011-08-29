@@ -247,7 +247,36 @@ var Azhai = {
 			beforeSend: function(XMLHttpRequest) {
 		    },
 			success:function(data){
-		        $('#'+m).html(data);
+			    $('#'+m).html(data);
+			}
+			,error:function(a){
+			
+				try{
+					if(a.status==401||a.status==302) alert("\u7b49\u5f85\u64cd\u4f5c\u8d85\u65f6\uff0c\u60a8\u9700\u8981\u91cd\u65b0\u767b\u5f55"),window.top.location=top.location.href;
+				}
+				catch(c){
+					alert('error');
+				}
+			}
+		 })
+	   }
+	},
+	callMethod2:function(a,b,c){
+
+    	var f= eval("("+b+")");
+		if(c==void 0||c==null)c=false;
+		for (var i=0;i<f.length;i++){
+		  var m=f[i];	
+		  $.ajax({
+			type:"POST",
+			url:a,
+			async:c,
+			data:"sk="+m,
+			beforeSend: function(XMLHttpRequest) {
+  
+		    },
+			success:function(data){
+			    $('#'+m).html(data);
 			}
 			,error:function(a){
 			

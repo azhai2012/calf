@@ -29,7 +29,7 @@ class Controller_Test extends Controller {
 		$data = Msc::factory();
 		$data->product_compare ='product_compare';
 		$data->product_id='product_id';
-		$data->_data = array('product_compare'=>array('product_id'=>'4542d22222'));
+		$data->_data = array('product_compare'=>array('product_id'=>'4998555922'));
 		
 		$data->write_product_compare();
 		print_r($data->read_product_compare());

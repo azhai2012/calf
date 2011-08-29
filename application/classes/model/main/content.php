@@ -14,6 +14,10 @@ class Model_Main_Content {
 		
 	}
 	
+	function get_compare_content(){
+		return Msc::factory()->get_shelf_product_compare();
+	}
+	
 	function get_shelf_content($id,$mod){
 		
 		$result= Shelf::factory($id,$mod)->get_shelf_content();

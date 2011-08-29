@@ -34,9 +34,7 @@ class Kohana_Shelf {
 		                $this->get_shelf_right_list().
 		              '
      	              </div> <!-- end right -->
-     	              '
-     	              .$this->get_shelf_product_compare().
-     	              '
+     	              <div id="compare"></div>
 		           </div> <!-- end tuan_context -->
 		    </div>';
 	        
@@ -219,6 +217,13 @@ class Kohana_Shelf {
 				          <a href="#" target="_blank" onclick="">【包邮】姿美堂 左旋肉碱 左旋肉减 正品 胶囊 左旋右碱</a>
                         </h3>
 			            <p class="product-sum"><b class="pro-sale">月销量: <strong class="proHigh">13077</strong></b></p>
+			            <p>
+			            数量：<input id="p_sum"  value="10"></p>
+			            <p>
+			            <input type="button" value="订购">
+			            <input type="button" value="收藏">
+			            <input type="button" value="对比">
+			            </p>
 			    </div>
               </li>
          ';     	
@@ -239,9 +244,16 @@ class Kohana_Shelf {
 				<a href="#" target="_blank" onclick="">康恩贝 葡萄籽胶囊 美白祛斑 调节内分泌</a>
     </h3>
 			<p class="product-sum">
-			<b class="pro-sale">月销量: <strong class="proHigh">10065</strong></b>
+			<p class="pro-sale">月销量: <strong class="proHigh">10065</strong></p>
                 <a href="#" target="_blank" onclick="">(3481人评论)</a>
 				</p>
+				 <p>
+			            数量：<input id="p_sum"  value="10"></p>
+			            <p>
+			            <input type="button" value="订购">
+			            <input type="button" value="收藏">
+			            <input type="button" value="对比">
+			            </p>
 			</div>
 </li>
           	                	<li class="product">
@@ -258,9 +270,16 @@ class Kohana_Shelf {
 				<a href="#" target="_blank" onclick="">康恩贝 钙D软胶囊 补充钙质 强健骨骼 营养保健品</a>
     </h3>
 			<p class="product-sum">
-			<b class="pro-sale">月销量: <strong class="proHigh">9716</strong></b>
+			<p class="pro-sale">月销量: <strong class="proHigh">9716</strong></p>
                             <a href="#" target="_blank" onclick="">(1101人评论)</a>
 				</p>
+				 <p>
+			            数量：<input id="p_sum"  value="10"></p>
+			            <p>
+			            <input type="button" value="订购">
+			            <input type="button" value="收藏">
+			            <input type="button" value="对比">
+			            </p>
 			</div>
 </li>
           <li class="product">
@@ -277,9 +296,16 @@ class Kohana_Shelf {
 				<a href="#" target="_blank" onclick="">碧生源减肥茶正品 减 淝茶 2盒送小沱茶 减肥销售排行榜 包邮</a>
     </h3>
 			<p class="product-sum">
-			<b class="pro-sale">月销量: <strong class="proHigh">7416</strong></b>
+			<p class="pro-sale">月销量: <strong class="proHigh">7416</strong></p>
                             <a href="" target="_blank" onclick=");">(9073人评论)</a>
 				</p>
+				 <p>
+			            数量：<input id="p_sum"  value="10"></p>
+			            <p>
+			            <input type="button" value="订购">
+			            <input type="button" value="收藏">
+			            <input type="button" value="对比">
+			            </p>
 			</div>
 </li>
           	                	<li class="product">
@@ -296,9 +322,16 @@ class Kohana_Shelf {
 				<a href="" target="_blank" onclick="">正品 蒂芬妮 100%精纯天然 深海鱼胶原蛋白粉5克*20袋</a>
     </h3>
 			<p class="product-sum">
-			<b class="pro-sale">月销量: <strong class="proHigh">6106</strong></b>
+			<p class="pro-sale">月销量: <strong class="proHigh">6106</strong></p>
                             <a href="" target="_blank" onclick="">(2248人评论)</a>
 				</p>
+				 <p>
+			            数量：<input id="p_sum"  value="10"></p>
+			            <p>
+			            <input type="button" value="订购">
+			            <input type="button" value="收藏">
+			            <input type="button" value="对比">
+			            </p>
 			</div>
 </li>
           	                	<li class="product">
@@ -315,9 +348,16 @@ class Kohana_Shelf {
 				<a href="" target="_blank" onclick="">康恩贝 大豆异黄酮 软胶囊 纯天然的植物雌激素</a>
     </h3>
 			<p class="product-sum">
-			<b class="pro-sale">月销量: <strong class="proHigh">4737</strong></b>
+			<p class="pro-sale">月销量: <strong class="proHigh">4737</strong></p>
                             <a href="" target="_blank" onclick="">(395人评论)</a>
 				</p>
+				 <p>
+			            数量：<input id="p_sum"  value="10"></p>
+			            <p>
+			            <input type="button" value="订购">
+			            <input type="button" value="收藏">
+			            <input type="button" value="对比">
+			            </p>
 			</div>
 </li>
           	                	<li class="product">
@@ -334,9 +374,16 @@ class Kohana_Shelf {
 				<a href="" target="_blank" onclick="">限时3折青青小美/左旋肉碱/左旋肉减/正品/胶囊/左旋右碱/14.9</a>
     </h3>
 			<p class="product-sum">
-			<b class="pro-sale">月销量: <strong class="proHigh">4473</strong></b>
+			<p class="pro-sale">月销量: <strong class="proHigh">4473</strong></p>
                             <a href="" target="_blank" onclick="">(6298人评论)</a>
 				</p>
+				 <p>
+			            数量：<input id="p_sum"  value="10"></p>
+			            <p>
+			            <input type="button" value="订购">
+			            <input type="button" value="收藏">
+			            <input type="button" value="对比">
+			            </p>
 			</div>
 </li>
           	                	<li class="product">
@@ -353,9 +400,16 @@ class Kohana_Shelf {
 				<a href="" target="_blank" onclick="">纤姿华夫正品 钙D软胶囊  青少年增高药 孕妇中老年 液体钙片补钙</a>
     </h3>
 			<p class="product-sum">
-			<b class="pro-sale">月销量: <strong class="proHigh">4215</strong></b>
+			<p class="pro-sale">月销量: <strong class="proHigh">4215</strong></p>
                             <a href="" target="_blank" onclick="">(832人评论)</a>
 				</p>
+				 <p>
+			            数量：<input id="p_sum"  value="10"></p>
+			            <p>
+			            <input type="button" value="订购">
+			            <input type="button" value="收藏">
+			            <input type="button" value="对比">
+			            </p>
 			</div>
 </li>
           	                
@@ -377,27 +431,34 @@ class Kohana_Shelf {
 	 * 
 	 */
     function get_shelf_product_compare(){
+
+    	$result='';
+    	$data = Msc::factory()->read_product_compare();
+        if ($data['count']>0)
+        {    	
     	$result= '
     	<div id="compare" class="compare" style="right: 0px; display: block; top: 220px; position: fixed; ">
     	   <div class="mt"><h5>商品比较</h5>
     	     <div class="extra" onclick="clearCompare()"></div></div>
     	     <div class="comPro">
     	     <ul class="mc" id="comProlist">
-    	       <li id="check_1000403135">
-    	         <a title="删除" class="close" onclick="reduceCompare(1000403135)"></a>CASIO卡西欧 男表 双显运动男士手表AQ-180WD-7B
+    	     ';
+    	
+    	foreach ($data['values'] as $key=>$val){
+    		$result.='<li id="check_'.$val.'">
+    	         <a title="删除" class="close" onclick="reduceCompare('.$val.')"></a>'.$val.'
     	       </li>
-    	       <li id="check_154875">
-    	         <a title="删除" class="close" onclick="reduceCompare(154875)"></a>卡西欧(Casio)ANALOGUE系列男表BEM-302L-7A
-    	       </li>
-    	     </ul>
+             ';
+    	  }
+    	  $result.=' </ul>
     	     <div class="mb">
     	       <input type="button" value="对比所选商品" class="btn" id="compareImg" onclick="openCompare()">
     	     </div>
     	    </div>
     	  </div>
     	';
-    	
-    	return $result;
+        }
+     	return $result;
     }
 	
 	

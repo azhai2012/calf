@@ -26,6 +26,7 @@ class Controller_Shelf extends Controller {
 		   <script>Azhai.callMethod1("/callmethod?controller=shelf","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		   <script>Azhai.onPages({"type":"css","css":["/media/css/shelf.css"]});</script> 
 		   <script>Azhai.onPages({"type":"js","js":["/media/js/shelf.js"]});</script> 
+		   <script>Azhai.callMethod2("/callmethodajax","[\'compare\']");</script>
 		  '; 
     }
 
