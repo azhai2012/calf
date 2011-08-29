@@ -127,6 +127,7 @@ Kohana::modules(array(
      'calfdiscounts' => MODPATH.'calfdiscounts', //折扣区
      'calfcommunity' => MODPATH.'calfcommunity', //折扣区
      'calfshelf'     => MODPATH.'calfshelf',
+     'calfmsc'       => MODPATH.'calfmsc',
    
 	));
 

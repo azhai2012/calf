@@ -25,7 +25,37 @@ class Controller_Test extends Controller {
 	public function action_index()
 	{	
 		parent::before();
-		phpinfo();
+		
+		$data = Msc::factory();
+		$data->product_compare ='product_compare';
+		$data->product_id='product_id';
+		$data->_data = array('product_compare'=>array('product_id'=>'4542d22222'));
+		
+		$data->write_product_compare();
+		print_r($data->read_product_compare());
+		
+	    /*
+		$ary = $data->get('azhai');
+		
+		if (!isset($ary))
+		$ary = array();
+		$b= 'c';
+		
+		if (!in_array($b, $ary))
+		{
+	   	    $ary = array_values($ary);
+			$ary[]=$b; 
+  	   	    $data->set('azhai',$ary);
+		}
+		
+		
+		print_r($ary);
+		//$session= Session::instance()->set('azhai', array('hello azhai','hi','How are you?'));
+		
+		//print_r($session->get('azhai'));
+      //  print_r($data->get_once('azhai'));
+		
+		
        // $modules= Kohana::modules();
        // print_r($modules);
 	   // echo $this->getUtf8('大小');
