@@ -5,5 +5,10 @@ $(function () {
 	     },function(){
 		   $(this).removeClass("product_hover");
 	  })
-	 
 })
+
+var Compare = {
+	getcompare:function(a){
+		Azhai.callMethod2("/callmethodajax?id="+a,"[\'compare\']");
+	},
+}

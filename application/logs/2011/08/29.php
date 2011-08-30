@@ -911,3 +911,1168 @@
 --
 #0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
 #1 {main}
+2011-08-29 19:06:11 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: account/images/promotion_icon/icon_102.png ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 19:06:11 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: account/images/promotion_icon/icon_102.png ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 19:45:02 --- ERROR: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+2011-08-29 19:45:02 --- STRACE: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(70): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 70, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(99): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(24): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 19:45:03 --- ERROR: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+2011-08-29 19:45:03 --- STRACE: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(70): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 70, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(99): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(24): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 19:45:07 --- ERROR: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+2011-08-29 19:45:07 --- STRACE: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(70): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 70, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(99): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(24): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 19:45:11 --- ERROR: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+2011-08-29 19:45:11 --- STRACE: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(70): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 70, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(99): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(24): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 19:45:12 --- ERROR: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+2011-08-29 19:45:12 --- STRACE: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(70): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 70, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(99): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(24): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 19:45:12 --- ERROR: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+2011-08-29 19:45:12 --- STRACE: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(70): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 70, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(99): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(24): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 19:45:13 --- ERROR: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+2011-08-29 19:45:13 --- STRACE: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(70): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 70, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(99): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(24): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 19:45:13 --- ERROR: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+2011-08-29 19:45:13 --- STRACE: ErrorException [ 8 ]: Undefined index: product_compare ~ MODPATH/calfmsc/classes/kohana/msc.php [ 70 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(70): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 70, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(99): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(24): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:29:04 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:29:04 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(102): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:29:07 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:29:07 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(102): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:29:08 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:29:08 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(102): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:29:10 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:29:10 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(102): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:29:12 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:29:12 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(102): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:09 --- ERROR: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+2011-08-29 20:30:09 --- STRACE: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(94): Kohana_Core::error_handler(8, 'Undefined varia...', '/home/azhai2011...', 94, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(68): Kohana_Msc->read_product_compare()
+#2 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#3 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#4 [internal function]: Controller_Callmethodajax->action_index()
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-08-29 20:30:11 --- ERROR: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+2011-08-29 20:30:11 --- STRACE: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(94): Kohana_Core::error_handler(8, 'Undefined varia...', '/home/azhai2011...', 94, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(68): Kohana_Msc->read_product_compare()
+#2 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#3 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#4 [internal function]: Controller_Callmethodajax->action_index()
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-08-29 20:30:12 --- ERROR: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+2011-08-29 20:30:12 --- STRACE: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(94): Kohana_Core::error_handler(8, 'Undefined varia...', '/home/azhai2011...', 94, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(68): Kohana_Msc->read_product_compare()
+#2 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#3 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#4 [internal function]: Controller_Callmethodajax->action_index()
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-08-29 20:30:12 --- ERROR: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+2011-08-29 20:30:12 --- STRACE: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(94): Kohana_Core::error_handler(8, 'Undefined varia...', '/home/azhai2011...', 94, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(68): Kohana_Msc->read_product_compare()
+#2 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#3 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#4 [internal function]: Controller_Callmethodajax->action_index()
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-08-29 20:30:13 --- ERROR: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+2011-08-29 20:30:13 --- STRACE: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(94): Kohana_Core::error_handler(8, 'Undefined varia...', '/home/azhai2011...', 94, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(68): Kohana_Msc->read_product_compare()
+#2 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#3 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#4 [internal function]: Controller_Callmethodajax->action_index()
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-08-29 20:30:13 --- ERROR: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+2011-08-29 20:30:13 --- STRACE: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(94): Kohana_Core::error_handler(8, 'Undefined varia...', '/home/azhai2011...', 94, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(68): Kohana_Msc->read_product_compare()
+#2 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#3 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#4 [internal function]: Controller_Callmethodajax->action_index()
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-08-29 20:30:15 --- ERROR: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+2011-08-29 20:30:15 --- STRACE: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(94): Kohana_Core::error_handler(8, 'Undefined varia...', '/home/azhai2011...', 94, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(68): Kohana_Msc->read_product_compare()
+#2 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#3 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#4 [internal function]: Controller_Callmethodajax->action_index()
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-08-29 20:30:15 --- ERROR: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+2011-08-29 20:30:15 --- STRACE: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(94): Kohana_Core::error_handler(8, 'Undefined varia...', '/home/azhai2011...', 94, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(68): Kohana_Msc->read_product_compare()
+#2 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#3 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#4 [internal function]: Controller_Callmethodajax->action_index()
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-08-29 20:30:15 --- ERROR: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+2011-08-29 20:30:15 --- STRACE: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(94): Kohana_Core::error_handler(8, 'Undefined varia...', '/home/azhai2011...', 94, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(68): Kohana_Msc->read_product_compare()
+#2 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#3 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#4 [internal function]: Controller_Callmethodajax->action_index()
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-08-29 20:30:16 --- ERROR: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+2011-08-29 20:30:16 --- STRACE: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(94): Kohana_Core::error_handler(8, 'Undefined varia...', '/home/azhai2011...', 94, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(68): Kohana_Msc->read_product_compare()
+#2 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#3 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#4 [internal function]: Controller_Callmethodajax->action_index()
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-08-29 20:30:17 --- ERROR: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+2011-08-29 20:30:17 --- STRACE: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(94): Kohana_Core::error_handler(8, 'Undefined varia...', '/home/azhai2011...', 94, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(68): Kohana_Msc->read_product_compare()
+#2 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#3 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#4 [internal function]: Controller_Callmethodajax->action_index()
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-08-29 20:30:17 --- ERROR: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+2011-08-29 20:30:17 --- STRACE: ErrorException [ 8 ]: Undefined variable: array ~ MODPATH/calfmsc/classes/kohana/msc.php [ 94 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(94): Kohana_Core::error_handler(8, 'Undefined varia...', '/home/azhai2011...', 94, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(68): Kohana_Msc->read_product_compare()
+#2 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#3 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#4 [internal function]: Controller_Callmethodajax->action_index()
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-08-29 20:30:39 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:39 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:40 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:40 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:41 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:41 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:42 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:42 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:42 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:42 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:43 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:43 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:43 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:43 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:44 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:44 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:44 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:44 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:46 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:46 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:47 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:47 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:48 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:48 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:48 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:48 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:49 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:49 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:49 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:49 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:49 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:49 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:30:50 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:30:50 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:31:32 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:31:32 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:31:32 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:31:32 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:31:34 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:31:34 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:31:34 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:31:34 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:31:47 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:31:47 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:31:48 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:31:48 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:31:49 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:31:49 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:31:49 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:31:49 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:31:49 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:31:49 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:31:50 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:31:50 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:31:50 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:31:50 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:31:50 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:31:50 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:32:06 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:32:06 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:32:07 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:32:07 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:32:08 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:32:08 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:32:09 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:32:09 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:32:09 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:32:09 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:32:09 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:32:09 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:32:10 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:32:10 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:32:10 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:32:10 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:32:10 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:32:10 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:32:11 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:32:11 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:32:23 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:32:23 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:33:09 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:33:09 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:33:10 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:33:10 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:33:11 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:33:11 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:33:11 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:33:11 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:33:11 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:33:11 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:33:11 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:33:11 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:33:11 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:33:11 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:33:12 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:33:12 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:33:12 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:33:12 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:33:12 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:33:12 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:34:21 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:34:21 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:34:22 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:34:22 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:36:36 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:36:36 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:36:36 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:36:36 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:36:37 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:36:37 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:36:37 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:36:37 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:36:38 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:36:38 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:36:38 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:36:38 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:36:39 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+2011-08-29 20:36:39 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 71 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(71): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 71, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(104): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:36:39 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:36:39 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:37:03 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 72 ]
+2011-08-29 20:37:03 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 72 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(72): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 72, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(105): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:37:03 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:37:03 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:37:45 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:37:45 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:38:01 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:38:01 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:38:14 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:38:14 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:38:16 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 72 ]
+2011-08-29 20:38:16 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 72 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(72): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 72, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(105): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:38:16 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:38:16 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:38:56 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 72 ]
+2011-08-29 20:38:56 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 72 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(72): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 72, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(105): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:38:56 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:38:56 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:38:57 --- ERROR: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 72 ]
+2011-08-29 20:38:57 --- STRACE: ErrorException [ 8 ]: Undefined index: values ~ MODPATH/calfmsc/classes/kohana/msc.php [ 72 ]
+--
+#0 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(72): Kohana_Core::error_handler(8, 'Undefined index...', '/home/azhai2011...', 72, Array)
+#1 /home/azhai2011/git/calf/modules/calfmsc/classes/kohana/msc.php(105): Kohana_Msc->write_product_compare()
+#2 /home/azhai2011/git/calf/application/classes/controller/callmethodajax.php(26): Kohana_Msc->get_shelf_product_compare()
+#3 [internal function]: Controller_Callmethodajax->action_index()
+#4 /home/azhai2011/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Callmethodajax))
+#5 /home/azhai2011/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 /home/azhai2011/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#7 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#8 {main}
+2011-08-29 20:38:57 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:38:57 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:05 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:05 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:08 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:08 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:10 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:10 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:11 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:11 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:12 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:12 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:34 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:34 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:36 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:36 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:39 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:39 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:40 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:40 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:47 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:47 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:49 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:49 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:51 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:51 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:54 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:54 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:55 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:55 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:57 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:57 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-08-29 20:39:59 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-08-29 20:39:59 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}

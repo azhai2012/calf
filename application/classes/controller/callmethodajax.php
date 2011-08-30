@@ -21,7 +21,10 @@ class Controller_Callmethodajax extends Controller {
 			
 		$mods=$sk;
 		switch ($sk) {
-		  case 'compare': $mods  = Msc::factory()->get_shelf_product_compare();break;
+		  case 'compare': {
+		  	$ary= array('product_compare'=>array('product_id'=>$id));
+		  	$mods  = Msc::factory($ary)->get_shelf_product_compare();break;
+		  }
 		  default:'';
 		}
         $this->template = $mods;

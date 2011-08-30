@@ -247,6 +247,7 @@ var Azhai = {
 			beforeSend: function(XMLHttpRequest) {
 		    },
 			success:function(data){
+				
 			    $('#'+m).html(data);
 			}
 			,error:function(a){
@@ -276,7 +277,11 @@ var Azhai = {
   
 		    },
 			success:function(data){
-			    $('#'+m).html(data);
+				alert(data);
+				 alert(data.msg);
+			
+                alert(data.html);
+			    $('#'+m).html(d.html);
 			}
 			,error:function(a){
 			

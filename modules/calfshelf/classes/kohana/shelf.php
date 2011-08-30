@@ -205,6 +205,7 @@ class Kohana_Shelf {
 	          <!-- 商品列表 -->
               <li class="product">
 	             <div class="productInfo">
+	                    <div type="hidden" id="pid" value="8694912583"></div>
 		                <div class="product-img">
 			                <a href="#" target="_blank" onclick=""><img src="/media/images/T1yH09XopFXXXd1Go2_043122.jpg_160x160.jpg"></a>
 		                </div>
@@ -220,9 +221,9 @@ class Kohana_Shelf {
 			            <p>
 			            数量：<input id="p_sum"  value="10"></p>
 			            <p>
-			            <input type="button" value="订购">
-			            <input type="button" value="收藏">
-			            <input type="button" value="对比">
+			            <input type="button" id="btn_buy" value="订购">
+			            <input type="button" id="btn_wishlist" value="收藏">
+			            <input type="button" id="btn_compare" onclick="Compare.getcompare(\'8694912583\');" value="对比">
 			            </p>
 			    </div>
               </li>
@@ -245,14 +246,14 @@ class Kohana_Shelf {
     </h3>
 			<p class="product-sum">
 			<p class="pro-sale">月销量: <strong class="proHigh">10065</strong></p>
-                <a href="#" target="_blank" onclick="">(3481人评论)</a>
+              
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
 			            <p>
 			            <input type="button" value="订购">
 			            <input type="button" value="收藏">
-			            <input type="button" value="对比">
+			            <input type="button" id="btn_compare" onclick="Compare.getcompare(\'12572824269\')" value="对比">
 			            </p>
 			</div>
 </li>
@@ -271,14 +272,14 @@ class Kohana_Shelf {
     </h3>
 			<p class="product-sum">
 			<p class="pro-sale">月销量: <strong class="proHigh">9716</strong></p>
-                            <a href="#" target="_blank" onclick="">(1101人评论)</a>
+                        
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
 			            <p>
 			            <input type="button" value="订购">
 			            <input type="button" value="收藏">
-			            <input type="button" value="对比">
+			            <input type="button" onclick="Compare.getcompare(\'12498199696\')" value="对比">
 			            </p>
 			</div>
 </li>
@@ -297,7 +298,7 @@ class Kohana_Shelf {
     </h3>
 			<p class="product-sum">
 			<p class="pro-sale">月销量: <strong class="proHigh">7416</strong></p>
-                            <a href="" target="_blank" onclick=");">(9073人评论)</a>
+                       
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
@@ -323,7 +324,7 @@ class Kohana_Shelf {
     </h3>
 			<p class="product-sum">
 			<p class="pro-sale">月销量: <strong class="proHigh">6106</strong></p>
-                            <a href="" target="_blank" onclick="">(2248人评论)</a>
+                          
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
@@ -349,7 +350,7 @@ class Kohana_Shelf {
     </h3>
 			<p class="product-sum">
 			<p class="pro-sale">月销量: <strong class="proHigh">4737</strong></p>
-                            <a href="" target="_blank" onclick="">(395人评论)</a>
+                          
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
@@ -375,7 +376,7 @@ class Kohana_Shelf {
     </h3>
 			<p class="product-sum">
 			<p class="pro-sale">月销量: <strong class="proHigh">4473</strong></p>
-                            <a href="" target="_blank" onclick="">(6298人评论)</a>
+                         
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
@@ -401,7 +402,7 @@ class Kohana_Shelf {
     </h3>
 			<p class="product-sum">
 			<p class="pro-sale">月销量: <strong class="proHigh">4215</strong></p>
-                            <a href="" target="_blank" onclick="">(832人评论)</a>
+                          
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
