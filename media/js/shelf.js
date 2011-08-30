@@ -8,7 +8,10 @@ $(function () {
 })
 
 var Compare = {
-	getcompare:function(a){
-		Azhai.callMethod2("/callmethodajax?id="+a,"[\'compare\']");
+	getcompare:function(id){		
+		Azhai.callMethod2("/callmethodajax?id="+id,"[\'compare\']");
+	},
+	clear:function(){
+		Azhai.callMethod2("/callmethodajax?fl=close","[\'compare\']");
 	},
 }

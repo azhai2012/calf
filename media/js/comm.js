@@ -277,11 +277,7 @@ var Azhai = {
   
 		    },
 			success:function(data){
-				alert(data);
-				 alert(data.msg);
-			
-                alert(data.html);
-			    $('#'+m).html(d.html);
+				$('#'+m).html(data);
 			}
 			,error:function(a){
 			

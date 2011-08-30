@@ -66,16 +66,15 @@ class Kohana_Msc {
 	public function write_product_compare(){
 		
 		$array =  $this->read_product_compare(); 
-
-		$array = (isset($array))? $array :array('values'=>array(),'count'=>'0','msg'=>'');
+ 		$array = (isset($array))? $array :array('values'=>array(),'count'=>'0','msg'=>'');
 		$value = $this->_data[$this->product_compare][$this->product_id];
-		if (!in_array($value, $array['values']))
+		if (!in_array($value, $array['values']) || empty($value) )
 		{
 		  //$array = array_values($array);
 	  	  array_push($array['values'],$value);
 	  	  $array['count']= count($array['values']);
 	  	  $array['msg']='';
-  	   
+	  	  if (!empty($value))
 	  	  $this->session->set($this->product_compare, $array);
 	  	 }
 		 else
@@ -92,13 +91,20 @@ class Kohana_Msc {
 	 */
 	public function read_product_compare(){
 		$result= $this->session->get($this->product_compare);
-		$array = $result;
+		$array = (isset($result))? $result :array('values'=>array(),'count'=>'0','msg'=>'');
 		$array['msg']='';
 		$this->session->set($this->product_compare,$array);
+		$r=$this->session->get($this->product_compare);
 		return $result;
 		
 	}
 	
+	public function get_shelf_close_product_compare(){
+		
+		$this->session->set($this->product_compare,array('values'=>array(),'count'=>'0','msg'=>''));
+		return '';
+			
+	} 
 	
 	public function get_shelf_product_compare(){
 		$result='';
@@ -106,17 +112,13 @@ class Kohana_Msc {
 		$data = $this->read_product_compare();
 		if ($data['count']>0)
 		{
-		
-	        if (!empty($data['msg']))
-	   	    $result.="{'msg':'已存在该商品','html':'";
-		
-			$result.= '
-	    	<div id="compare" class="compare" style="right: 0px; display: block; top: 220px; position: fixed; ">
+            if (!empty($data['msg'])) $result.='<script>alert(\'对比列表中已存在该商品！\');</script>';
+	   	    $result.=' <div id="compare" class="compare" style="right: 0px; display: block; top: 220px; position: fixed; ">
 	    	   <div class="mt"><h5>商品比较</h5>
-	    	     <div class="extra" onclick="clearCompare()"></div></div>
+	    	     <div class="extra" onclick="Compare.clear()"></div></div>
 	    	     <div class="comPro">
-	    	     <ul class="mc" id="comProlist">
-	    	     ';
+	    	     <ul class="mc" id="comProlist"> ';
+	   	    
 			foreach ($data['values'] as $key=>$val){
 				$result.='<li id="check_'.$val.'">
 	    	         <a title="删除" class="close" onclick="reduceCompare('.$val.')"></a>'.$val.'
@@ -130,9 +132,9 @@ class Kohana_Msc {
 	    	    </div>
 	    	  </div>
 	    	';
+			
+				
 		}
-		
-		$result.="}";
 		
 		return $result;
 	}
