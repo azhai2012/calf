@@ -220,11 +220,13 @@ class Kohana_Shelf {
 			            <p class="product-sum"><b class="pro-sale">月销量: <strong class="proHigh">13077</strong></b></p>
 			            <p>
 			            数量：<input id="p_sum"  value="10"></p>
-			            <p>
-			            <input type="button" id="btn_buy" value="订购">
-			            <input type="button" id="btn_wishlist" value="收藏">
-			            <input type="button" id="btn_compare" onclick="Compare.getcompare(\'8694912583\');" value="对比">
+			            <p class="aclick">
+			             <a href="javascript:void();" id="btn_buy">订购</a>
+			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
+			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
 			            </p>
+			            
+			            
 			    </div>
               </li>
          ';     	
@@ -250,10 +252,10 @@ class Kohana_Shelf {
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
-			            <p>
-			            <input type="button" value="订购">
-			            <input type="button" value="收藏">
-			            <input type="button" id="btn_compare" onclick="Compare.getcompare(\'12572824269\')" value="对比">
+			           <p class="aclick">
+			             <a href="javascript:void();" id="btn_buy">订购</a>
+			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
+			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -276,10 +278,10 @@ class Kohana_Shelf {
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
-			            <p>
-			            <input type="button" value="订购">
-			            <input type="button" value="收藏">
-			            <input type="button" onclick="Compare.getcompare(\'12498199696\')" value="对比">
+			         <p class="aclick">
+			             <a href="javascript:void();" id="btn_buy">订购</a>
+			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
+			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -302,10 +304,10 @@ class Kohana_Shelf {
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
-			            <p>
-			            <input type="button" value="订购">
-			            <input type="button" value="收藏">
-			            <input type="button" value="对比">
+			               <p class="aclick">
+			             <a href="javascript:void();" id="btn_buy">订购</a>
+			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
+			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -328,10 +330,10 @@ class Kohana_Shelf {
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
-			            <p>
-			            <input type="button" value="订购">
-			            <input type="button" value="收藏">
-			            <input type="button" value="对比">
+			              <p class="aclick">
+			             <a href="javascript:void();" id="btn_buy">订购</a>
+			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
+			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -354,10 +356,10 @@ class Kohana_Shelf {
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
-			            <p>
-			            <input type="button" value="订购">
-			            <input type="button" value="收藏">
-			            <input type="button" value="对比">
+			               <p class="aclick">
+			             <a href="javascript:void();" id="btn_buy">订购</a>
+			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
+			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -380,10 +382,10 @@ class Kohana_Shelf {
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
-			            <p>
-			            <input type="button" value="订购">
-			            <input type="button" value="收藏">
-			            <input type="button" value="对比">
+			              <p class="aclick">
+			             <a href="javascript:void();" id="btn_buy">订购</a>
+			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
+			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -406,10 +408,10 @@ class Kohana_Shelf {
 				</p>
 				 <p>
 			            数量：<input id="p_sum"  value="10"></p>
-			            <p>
-			            <input type="button" value="订购">
-			            <input type="button" value="收藏">
-			            <input type="button" value="对比">
+			              <p class="aclick">
+			             <a href="javascript:void();" id="btn_buy">订购</a>
+			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
+			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
