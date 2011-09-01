@@ -30,6 +30,16 @@ class Controller_Shelf extends Controller {
 		  '; 
     }
 
+    public function action_compare(){
+    	parent::before();
+    	$this->template->menus='';
+    	$this->template->css='';
+    	$this->template->callmethod='
+    			   <script>Azhai.callMethod1("/callmethod?controller=comparelist","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+    			   <script>Azhai.onPages({"type":"css","css":["/media/css/compare.css"]});</script> 
+    			  '; 
+    }
+    
     
 	public function after(){
 		$this->response->body($this->template);

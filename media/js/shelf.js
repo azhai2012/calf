@@ -14,4 +14,7 @@ var Compare = {
 	clear:function(){
 		Azhai.callMethod2("/callmethodajax?fl=close","[\'compare\']");
 	},
+	openCompare:function(){
+		window.location="/shelf/compare";
+	}
 }

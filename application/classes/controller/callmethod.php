@@ -46,6 +46,7 @@ class Controller_callmethod extends Controller {
 				case 'discounts': $mods  = $this->content->get_discounts_content($id,$modary);break;
 				case 'community': $mods  = $this->content->get_community_content($id,$modary);break;
 				case 'compare': $mods  = $this->content->get_compare_content();break;
+				case 'comparelist': $mods = $this->content->get_compare_list_content();break;
 				default:'';
 			}
 		  }break;
