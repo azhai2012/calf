@@ -15,7 +15,7 @@ class Model_Main_Content {
 	}
 	
 	function get_compare_content(){
-		return Msc::factory()->get_shelf_product_compare();
+		return Msc::factory()->get_shelf_product_default_compare();
 	}
 	
 	function get_compare_list_content(){

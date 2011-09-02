@@ -1,62 +1,9 @@
-table#CompareTable tr.toolbar th {
-width: auto;
-background-color: #F3F3F3;
-text-align: center;
-font-weight: normal;
-line-height: 20px;
-border-width: 0;
-border-top: 2px solid #CCC;
-border-bottom: 2px solid #CCC;
-}
+table#CompareTable tr.toolbar th {width: auto;background-color: #F3F3F3;text-align: center;font-weight: normal;line-height: 20px;border-width: 0;border-top: 2px solid #CCC;border-bottom: 2px solid #CCC;}
+table#CompareTable td {background-color: #F9F9F9;padding: 5px;text-align: left;word-break: break-all;width: 165px;border-right: 2px solid #CCC;border-bottom: 1px solid #EEE;}
+table#CompareTable td.seperator {text-align: center;border-top: 1px solid #DDD;border-bottom: 1px solid #DDD;background-color: white;font-size: 0;line-height: 0;padding: 0;height: 3px;border-right-width: 0;border-left-width: 0;}
+table#CompareTable img {vertical-align: middle;width:80px;height:80px;}
+table#CompareTable td.picname {text-align: center;}
+table {border-collapse: collapse;border-spacing: 0;}
 
-table#CompareTable td {
-background-color: #F9F9F9;
-padding: 5px;
-text-align: left;
-word-break: break-all;
-width: 150px;
-border-right: 2px solid #CCC;
-border-bottom: 1px solid #EEE;
-}
-
-table#CompareTable td.seperator {
-text-align: center;
-border-top: 1px solid #DDD;
-border-bottom: 1px solid #DDD;
-background-color: white;
-font-size: 0;
-line-height: 0;
-padding: 0;
-height: 3px;
-border-right-width: 0;
-border-left-width: 0;
-}
-
-table#CompareTable img {
-vertical-align: middle;
-}
-
-table#CompareTable td.picname {
-text-align: center;
-}
-
-
-table {
-border-collapse: collapse;
-border-spacing: 0;
-}
-
-table#CompareTable th {
-width: 90px;
-padding: 5px;
-text-align: right;
-font-weight: normal;
-background-color: #EEE;
-border-left: 2px solid #CCC;
-}
-
-tr {
-display: table-row;
-vertical-align: inherit;
-border-color: inherit;
-}
+table#CompareTable th {width: 90px;padding: 5px;text-align: right;font-weight: normal;background-color: #EEE;border-left: 2px solid #CCC;}
+tr {display: table-row;vertical-align: inherit;border-color: inherit;}

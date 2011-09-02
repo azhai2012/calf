@@ -25,7 +25,11 @@ class Controller_Callmethodajax extends Controller {
 		  case 'compare': {
 		  	$ary= array('product_compare'=>array('product_id'=>$id));
 		  	$mods  = Msc::factory($ary);
-		  	$result = $mods->get_shelf_product_compare();
+		  	if (!empty($id))
+		  	  $result = $mods->get_shelf_product_compare();
+		  	else
+		  	  $result = $mods->get_shelf_product_default_compare();
+		  	 
 		  	if ($fl==='close')
 		  	{
 		  	  $result= $mods->get_shelf_close_product_compare();

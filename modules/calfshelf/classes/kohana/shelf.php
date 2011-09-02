@@ -223,7 +223,7 @@ class Kohana_Shelf {
 			            <p class="aclick">
 			             <a href="javascript:void();" id="btn_buy">订购</a>
 			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
+			             <a href="javascript:Compare.getcompare(\'869491253383\');" id="btn_compare">对比</a>
 			            </p>
 			            
 			            
@@ -255,7 +255,7 @@ class Kohana_Shelf {
 			           <p class="aclick">
 			             <a href="javascript:void();" id="btn_buy">订购</a>
 			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
+			             <a href="javascript:Compare.getcompare(\'869491442583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -281,7 +281,7 @@ class Kohana_Shelf {
 			         <p class="aclick">
 			             <a href="javascript:void();" id="btn_buy">订购</a>
 			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
+			             <a href="javascript:Compare.getcompare(\'8693344912583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -307,7 +307,7 @@ class Kohana_Shelf {
 			               <p class="aclick">
 			             <a href="javascript:void();" id="btn_buy">订购</a>
 			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
+			             <a href="javascript:Compare.getcompare(\'128694912583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -333,7 +333,7 @@ class Kohana_Shelf {
 			              <p class="aclick">
 			             <a href="javascript:void();" id="btn_buy">订购</a>
 			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
+			             <a href="javascript:Compare.getcompare(\'548694912583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -359,7 +359,7 @@ class Kohana_Shelf {
 			               <p class="aclick">
 			             <a href="javascript:void();" id="btn_buy">订购</a>
 			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
+			             <a href="javascript:Compare.getcompare(\'8694532912583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -385,7 +385,7 @@ class Kohana_Shelf {
 			              <p class="aclick">
 			             <a href="javascript:void();" id="btn_buy">订购</a>
 			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
+			             <a href="javascript:Compare.getcompare(\'864394912583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -411,7 +411,7 @@ class Kohana_Shelf {
 			              <p class="aclick">
 			             <a href="javascript:void();" id="btn_buy">订购</a>
 			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'8694912583\');" id="btn_compare">对比</a>
+			             <a href="javascript:Compare.getcompare(\'86949553212583\');" id="btn_compare">对比</a>
 			            </p>
 			</div>
 </li>
@@ -427,42 +427,7 @@ class Kohana_Shelf {
 	}
 	
 	
-	/*
-	 * 功能说明：显示对比商品功能
-	 * 思路：将编号写入 cookie 中，每次刷新时同样显示，删除时将cookie 删除，检查cookie 如没有，写入memcached
-	 * 
-	 * 
-	 */
-    function get_shelf_product_compare(){
-
-    	$result='';
-    	$data = Msc::factory()->read_product_compare();
-        if ($data['count']>0)
-        {    	
-    	$result= '
-    	<div id="compare" class="compare" style="right: 0px; display: block; top: 220px; position: fixed; ">
-    	   <div class="mt"><h5>商品比较</h5>
-    	     <div class="extra" onclick="clearCompare()"></div></div>
-    	     <div class="comPro">
-    	     <ul class="mc" id="comProlist">
-    	     ';
-    	
-    	foreach ($data['values'] as $key=>$val){
-    		$result.='<li id="check_'.$val.'">
-    	         <a title="删除" class="close" onclick="reduceCompare('.$val.')"></a>'.$val.'
-    	       </li>
-             ';
-    	  }
-    	  $result.=' </ul>
-    	     <div class="mb">
-    	       <input type="button" value="对比所选商品" class="btn" id="compareImg" onclick="openCompare()">
-    	     </div>
-    	    </div>
-    	  </div>
-    	';
-        }
-     	return $result;
-    }
+	
 	
 	
 }
