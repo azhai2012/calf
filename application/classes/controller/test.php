@@ -27,12 +27,8 @@ class Controller_Test extends Controller {
 		parent::before();
 		
 		$data = Msc::factory();
-		$data->product_compare ='product_compare';
-		$data->product_id='product_id';
-		$data->_data = array('product_compare'=>array('product_id'=>'4998555922'));
-		
-		$data->write_product_compare();
-		print_r($data->read_product_compare());
+	
+		echo $data->get_shelf_product_compare_list();
 		
 	    /*
 		$ary = $data->get('azhai');
