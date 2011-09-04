@@ -55,10 +55,7 @@
 
 .sbox-content .bulletin {padding: 10px 0 10px 10px;border-left: 1px solid #FFC299;border-right: 1px solid #FFC299;border-bottom: 1px solid #FFC299;font-size: 12px;}
 
-.sbox-content .text {font-size: 12px;height: 70px;padding-top: 10px;padding-left: 15px;padding-right: 10px;line-height: 18px;color: #333;border-left: 1px solid #FFC299;border-right: 1px solid #FFC299;
-border-bottom: 1px solid #FFC299;
-text-indent: 0;
-}
+.sbox-content .text {font-size: 12px;height: 70px;padding-top: 10px;padding-left: 15px;padding-right: 10px;line-height: 18px;color: #333;border-left: 1px solid #FFC299;border-right: 1px solid #FFC299;border-bottom: 1px solid #FFC299;text-indent: 0;}
 
 .sbox-content .tip {padding:0;margin:0; }
 
@@ -68,34 +65,12 @@ text-indent: 0;
 
 .sbox-content .list {color: #626061;zoom: 1;padding: 0 10px;border-bottom: 1px solid #FFC299;border-left: 1px solid #FFC299;border-right: 1px solid #FFC299;width: 208px;overflow: hidden;}
 
-.sbox-content .list li {
-padding: 5px 0;
-line-height: 2;
-}
+.sbox-content .list li {padding: 5px 0;line-height: 2;}
 
 
 
 .deal-consult-option {padding: 5px 10px;border-left: 1px solid #FFC299;border-right: 1px solid #FFC299;}
-.deal-consult-option .deal-consult-option-btn-count {
-float: left;
-width: 95px;
-background: url(/media/images/ask_btn_bg.jpg) repeat-x;
-border: 1px solid #CCC;
-height: 23px;
-line-height: 23px;
-padding: 0px 10px 0px 10px;
-
-}
+.deal-consult-option .deal-consult-option-btn-count {float: left;width: 95px;background: url(/media/images/ask_btn_bg.jpg) repeat-x;border: 1px solid #CCC;height: 23px;line-height: 23px;padding: 0px 10px 0px 10px;}
 .deal-consult-option  a {margin-top:0; }
 
-.deal-consult-option .deal-consult-option-btn-post {
-float: right;
-width: 60px;
-background: url(/media/images/ask_btn_bg.jpg) repeat-x;
-border: 1px solid #CCC;
-height: 23px;
-line-height: 23px;
-padding: 0 10px;
-margin: 0 0 0 5px;
-text-align: center;
-}
+.deal-consult-option .deal-consult-option-btn-post {float: right;width: 60px;background: url(/media/images/ask_btn_bg.jpg) repeat-x;border: 1px solid #CCC;height: 23px;line-height: 23px;padding: 0 10px;margin: 0 0 0 5px;text-align: center;}
