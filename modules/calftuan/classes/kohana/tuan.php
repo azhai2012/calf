@@ -23,14 +23,22 @@ class Kohana_Tuan {
 		              <div class="left"> <!-- begin left -->
 		                 '.$this->get_tuan_left_content().'
 		              </div>  <!-- end left -->
-		              <div class="right"> <!-- begin right --> ';
-        $result.='</div> <!-- end right -->
+		              <div class="right"> <!-- begin right --> '.$this->get_tuan_right_content().
+                     '</div> <!-- end right -->
 		           </div> <!-- end tuan_context -->
 		    </div>';
 
         return $result;
     }
     
+    private function get_tuan_right_content(){
+        $result='';
+        
+        return $result;
+        
+    }
+
+
     private function get_tuan_left_content(){
         $result='
             <div id="deal-intro" class="cf todydeal clearfix">
