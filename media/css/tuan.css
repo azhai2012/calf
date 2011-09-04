@@ -11,7 +11,9 @@
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
 #maincontent {background:#FFF5E5 }
-#tuan_context .left {float: left;width: 710px;_display: inline;margin-right: 20px;padding-left:20px; }
+
+/* left style */
+#tuan_context .left {float: left;width: 710px;_display: inline;margin-right: 10px;padding-left:10px; }
 
 #deal-intro {padding: 25px 10px 15px;margin: 20px 0 20px 0;border:3px solid #FC9;background: white;}
 
@@ -45,3 +47,55 @@
 
 #deal-intro .side .digest {margin-top: 15px;margin-left: 25px;padding-left: 10px;padding-right: 35px;color: #666;}
 #deal-intro .side .digest li {line-height:20px;font-size:14px;  }
+
+
+/* Right style */
+#tuan_context .right {float: left;width: 230px;_display: inline;margin-right: 10px;padding-left:10px; }
+.sbox-content {background: white;overflow: hidden;margin:20px 0 20px 0;}
+
+.sbox-content .bulletin {padding: 10px 0 10px 10px;border-left: 1px solid #FFC299;border-right: 1px solid #FFC299;border-bottom: 1px solid #FFC299;font-size: 12px;}
+
+.sbox-content .text {font-size: 12px;height: 70px;padding-top: 10px;padding-left: 15px;padding-right: 10px;line-height: 18px;color: #333;border-left: 1px solid #FFC299;border-right: 1px solid #FFC299;
+border-bottom: 1px solid #FFC299;
+text-indent: 0;
+}
+
+.sbox-content .tip {padding:0;margin:0; }
+
+.sbox-content h2 {font-size:14px; padding:0;margin:0;background: url(/media/images/rightbg_2011-08-01.gif) no-repeat;height: 39px;line-height: 39px;color: #333;text-indent: 10px;}
+
+.sbox-content a {color: #F60;font-weight: normal;font-size: 12px;display: block;margin-top: 4px;}
+
+.sbox-content .list {color: #626061;zoom: 1;padding: 0 10px;border-bottom: 1px solid #FFC299;border-left: 1px solid #FFC299;border-right: 1px solid #FFC299;width: 208px;overflow: hidden;}
+
+.sbox-content .list li {
+padding: 5px 0;
+line-height: 2;
+}
+
+
+
+.deal-consult-option {padding: 5px 10px;border-left: 1px solid #FFC299;border-right: 1px solid #FFC299;}
+.deal-consult-option .deal-consult-option-btn-count {
+float: left;
+width: 95px;
+background: url(/media/images/ask_btn_bg.jpg) repeat-x;
+border: 1px solid #CCC;
+height: 23px;
+line-height: 23px;
+padding: 0px 10px 0px 10px;
+
+}
+.deal-consult-option  a {margin-top:0; }
+
+.deal-consult-option .deal-consult-option-btn-post {
+float: right;
+width: 60px;
+background: url(/media/images/ask_btn_bg.jpg) repeat-x;
+border: 1px solid #CCC;
+height: 23px;
+line-height: 23px;
+padding: 0 10px;
+margin: 0 0 0 5px;
+text-align: center;
+}

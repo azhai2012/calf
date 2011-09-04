@@ -18,7 +18,7 @@ class Kohana_Tuan {
 
         $result = '<div id="account_list">
                  <script src="/media/js/jquery-corner.js" type="text/javascript" async=""></script>
-	         <script>$("#deal-intro").corner("10px");</script>
+	         <script>$("#deal-intro,").corner("10px");</script>
 		           <div id="tuan_context" class="clearfix"> <!-- begin tuan_context -->
 		              <div class="left"> <!-- begin left -->
 		                 '.$this->get_tuan_left_content().'
@@ -32,10 +32,70 @@ class Kohana_Tuan {
     }
     
     private function get_tuan_right_content(){
-        $result='';
-        
+        $result = $this->get_tuan_right_info_content().$this->get_tuan_right_begin_content().$this->get_tuan_right_help_content();
         return $result;
-        
+    }
+
+    
+    /*
+     * 公告信息 
+     * 
+     */
+    private function get_tuan_right_info_content(){
+        $result='
+            <div class="sbox-content">
+              <div class="tip">
+              <h2>公告板</h2>
+              <ul class="bulletin">
+                 <li><a target="_blank" href="#"><strong>8月27-29日白色iPhone 4抽奖结果</strong></a></li>
+                 <li><a target="_blank" href="#"><strong>8月24-26日五张大闸蟹礼券结果</strong></a></li>
+                 <li><a target="_blank" href="#"><strong>8月20-22日京东礼品卡抽奖结果</strong></a></li>
+               </ul>
+            </div>
+          </div>   ';
+        return $result;
+    }
+
+    /*
+     * 发起团购
+     */
+    private function get_tuan_right_begin_content(){
+        $result='  
+           <div class="sbox-content">
+           <div class="tip">
+            <h2>申请团购</h2>
+            <p class="text">申请发起团购，想团什么都行！<br>
+               <a href="/account/invite.php">我要申请&gt;&gt;</a><br>
+            </p>
+          </div>
+	  </div>';
+        return $result;
+    }
+    
+    /*
+     * 团购答疑
+     */
+    private function get_tuan_right_help_content(){
+        $result='
+             <div class="sbox-content">
+		<div class="deal-consult-tip">
+			<h2>团购答疑</h2>
+                  <div class="deal-consult-option">
+                  <div class="deal-consult-option-btn-count">
+                    <a href="/team/ask.php?id=6019">查看全部(<span>2666</span>)</a>
+                  </div>
+                  <div class="deal-consult-option-btn-post">
+                    <a href="/team/ask.php?id=6019#post">我要提问</a>
+                  </div><div class="clearfix"></div>
+               </div>
+	         <ul class="list">
+		    <li class="liline">我团购的迪士尼书包已经付款了订单里怎么不显示<a href="/team/ask.php?id=6019#ask-entry-29151" target="_blank">查看详细&gt;&gt;</a></li>
+		    <li class="liline">农村  参加团购  怎么发货？  邮寄？<a href="/team/ask.php?id=6019#ask-entry-29148" target="_blank">查看详细&gt;&gt;</a></li>
+		    <li>团购服务电话没人接，客服人员请帮我查下团购订单号793953<a href="/team/ask.php?id=6019#ask-entry-29146" target="_blank">查看详细&gt;&gt;</a></li>
+		</ul>
+	     </div>
+	</div>';
+        return $result;
     }
 
 
@@ -83,7 +143,7 @@ class Kohana_Tuan {
                                                                     </div>
                     <div class="side">
                         <div class="deal-buy-cover-img" id="team_images">
-                          <img src="http://images.tuan.360buyimg.com/static/team/2011/0902/13149637511434.jpg" width="440" height="280">
+                          <img src="/media/images/13149637511434.jpg" width="440" height="280">
                         </div>
                         <div class="digest">
                             <ul>
