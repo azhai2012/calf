@@ -19,7 +19,7 @@
 
 #deal-intro .deal-price {background-image:url(/media/images/tuan.gif);} 
 
-#deal-intro .deal-price {position: absolute;z-index: 2;left: -26px;width: 207px;height: 52px;line-height: 52px;padding: 20px 5px 10px 90px;background-position:0 20px;background-repeat:no-repeat;}
+#deal-intro .deal-price {position: absolute;z-index: 2;left: -26px;width: 307px;height: 82px;line-height: 82px;background-position:0 20px;background-repeat:no-repeat;}
 
 #deal-intro .deal-price span a {display: block;width: 115px;height: 75px;line-height: 53px;margin-top: 19px;outline: 0;}
 .deal-discount {margin-left:5px;width: 217px;margin-top: 77px;border: 1px solid #D9D9D9;background: white;font-weight: bold;}
@@ -39,7 +39,7 @@
 #deal-intro .main {float: left;width: 237px;margin-right: 5px;_margin-right: 5px;_display: inline;font-family: Helvetica,arial,sans-serif;}
 #deal-intro .deal-buy {position: relative;}
 
-#deal-intro .deal-price strong {float: left;font-size: 46px;color: white;font-weight: normal;line-height: 50px;}
+#deal-intro .deal-price strong {float:left;padding:23px 20px 0 45px;font-size: 26px;color: white;font-weight: normal;line-height: 50px;}
 #deal-intro .deal-price span {position: absolute;z-index: 2;top: 0;left: 193px;color: white;}
 #team_images {width: 440px;margin-bottom: 0px;height: 280px;overflow: hidden;}
 

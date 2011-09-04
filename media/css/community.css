@@ -1,0 +1,116 @@
+/* 
+    Document   : community
+    Created on : 2011-9-5, 0:29:37
+    Author     : azhai
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+/* Left style */
+
+#community_context .left {float: left;width: 710px;_display: inline;margin-right: 15px; }
+
+.left-extra {
+width: 720px;
+margin-top:20px; 
+float: left;
+}
+
+.left-extra h2 {margin:0; padding:0; font-size:14px; }
+
+.topic, .rank, .sai-list, .link, .news, .hots, .comment {
+border: 1px solid #FEE0AB;
+}
+.m {
+margin-bottom: 10px;
+}
+
+.m, .mt, .mc, .mb {
+overflow: hidden;
+zoom: 1;
+}
+
+.topic .mt, .rank .mt, .sai-list .mt, .link .mt, .news .mt, .hots .mt, .comment .mt {
+height: 30px;
+padding: 0 10px;
+line-height: 30px;
+color: #FF6804;
+background: url(i/bg_tit.jpg) repeat-x;
+}
+
+.topic .mc, .rank .mc, .sai-list .mc, .link .mc, .news .mc, .hots .mc, .comment .mc {
+padding: 8px;
+}
+
+.topic table {
+table-layout: fixed;
+word-wrap: break-word;
+word-break: break-all;
+}
+.topic th {
+border-bottom: 1px solid #E6E6E6;
+color: #999;
+}
+.topic td {
+height: 25px;
+line-height: 25px;
+border-bottom: 1px dashed #CCC;
+}
+.topic .ta-l div {
+text-align: left;
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+height: 25px;
+}
+
+.hots li {
+float: left;
+width: 128px;
+text-align: center;
+background: url(i/bg_p.jpg) left no-repeat;
+}
+.p-img {
+margin: 5px 0;
+}
+
+
+/* Right style */
+#community_context .right {float: left;width: 220px;_display: inline;margin-right: 10px;padding-left:10px; }
+.right-extra {
+width: 230px;
+float: left;
+margin-top:20px; 
+}
+
+.right-extra h2 {margin:0;padding:0;font-size: 14px;margin-bottom:20px;   }
+.rank .mc {padding-bottom:26px; }
+.rank .mc li {
+height: 25px;
+line-height: 25px;
+overflow: hidden;
+width: 212px;
+
+}
+
+.rank .mc span {
+float: left;
+width: 21px;
+height: 16px;
+
+text-align: center;
+font-weight: bolder;
+margin-right: 8px;
+line-height: 16px;
+margin-top: 4px;
+}
+
+.rank .mc .fore1,.rank .mc .fore2,.rank .mc .fore3 {
+  color:#F60;
+  font-weight:bold;
+}

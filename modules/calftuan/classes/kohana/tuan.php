@@ -114,7 +114,7 @@ class Kohana_Tuan {
                         <div class="deal-buy">
                             <div class="deal-price-tag"></div>
                             <p id="team-price-6102" class="deal-price">
-                              <strong>0</strong>
+                              <strong>94999.00</strong>
                               <span>
                                 <a class="tuan_btn" target="_blank" href="/team-6102.html">
                                  
@@ -125,7 +125,7 @@ class Kohana_Tuan {
                         <table class="deal-discount">
                             <tbody><tr><th>原价</th><th>折扣</th><th>节省</th></tr>
                             <tr>
-                                <td id="team-market_price-6102"><del>¥4999.00</del></td>
+                                <td id="team-market_price-6102"><del>¥94999.00</del></td>
                                 <td id="team-discount-6102">0.00</td>
                                 <td id="team-save-6102">¥4999.00</td>
                             </tr>
