@@ -840,3 +840,1508 @@
 --
 #0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
 #1 {main}
+2011-09-04 10:39:59 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:39:59 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:46:42 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:46:42 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:48:12 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:48:12 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:48:13 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:48:13 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:48:37 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:48:37 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:48:38 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:48:38 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:48:39 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:48:39 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:49:02 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:49:02 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:49:03 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:49:03 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:49:46 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:49:46 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:49:47 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:49:47 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:50:18 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:50:18 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:50:34 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:50:34 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:50:36 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:50:36 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:50:51 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:50:51 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:51:17 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:51:17 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:51:18 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:51:18 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:51:32 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:51:32 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:51:51 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:51:51 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:52:16 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:52:16 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:52:17 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:52:17 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:52:32 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:52:32 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:52:33 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:52:33 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:52:57 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:52:57 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:52:58 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:52:58 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:53:09 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:53:09 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:53:09 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:53:09 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:53:20 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:53:20 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:53:22 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:53:22 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:53:30 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:53:30 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:53:40 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:53:40 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:53:41 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:53:41 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:53:57 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:53:57 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:54:04 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:54:04 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:54:13 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:54:13 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:54:14 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:54:14 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:54:15 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:54:15 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:54:16 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:54:16 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:54:33 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:54:33 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:54:34 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:54:34 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:54:42 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:54:42 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:54:43 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:54:43 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:59:23 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:59:23 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:59:23 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:59:23 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:59:25 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:59:25 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:59:26 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/community.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:59:26 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/community.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:59:26 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:59:26 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 10:59:27 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 10:59:27 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:17:51 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/community.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:17:51 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/community.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:17:51 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:17:51 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:27:15 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/community.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:27:15 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/community.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:27:15 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:27:15 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:27:16 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/community.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:27:16 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/community.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:27:16 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:27:16 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:27:18 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/community.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:27:18 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/community.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:27:18 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:27:18 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:27:50 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/community.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:27:50 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/community.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:27:50 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:27:50 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:34:10 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:34:10 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:34:10 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:34:10 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:34:10 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:34:10 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:35:22 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:35:22 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:35:22 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:35:22 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:35:22 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:35:22 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:36:05 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:36:05 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:36:05 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:36:05 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:36:05 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:36:05 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:36:55 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:36:55 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:36:55 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:36:55 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:36:55 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:36:55 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:37:15 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:37:15 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:37:15 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:37:15 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:37:15 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:37:15 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:37:37 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:37:37 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:37:37 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:37:37 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:37:37 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:37:37 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:40:20 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:40:20 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:40:20 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:40:20 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:40:20 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:40:20 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:41:30 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:41:30 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:41:30 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:41:30 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:41:30 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:41:30 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:42:00 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:42:00 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:42:00 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:42:00 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:42:00 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:42:00 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:43:02 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:43:02 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:43:02 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:43:02 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:43:02 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:43:02 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:43:21 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:43:21 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:43:21 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:43:21 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:43:21 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:43:21 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:43:49 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:43:49 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:43:49 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:43:49 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:43:49 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:43:49 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:44:18 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:44:18 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:44:18 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:44:18 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:44:18 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:44:18 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:51:31 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:51:31 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:51:31 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:51:31 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:51:31 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:51:31 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:52:17 --- ERROR: ErrorException [ 1 ]: Call to undefined method Kohana_Community::get_community_right_news_content() ~ MODPATH/calfcommunity/classes/kohana/community.php [ 274 ]
+2011-09-04 11:52:17 --- STRACE: ErrorException [ 1 ]: Call to undefined method Kohana_Community::get_community_right_news_content() ~ MODPATH/calfcommunity/classes/kohana/community.php [ 274 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-04 11:52:17 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:52:17 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:52:19 --- ERROR: ErrorException [ 1 ]: Call to undefined method Kohana_Community::get_community_right_news_content() ~ MODPATH/calfcommunity/classes/kohana/community.php [ 274 ]
+2011-09-04 11:52:19 --- STRACE: ErrorException [ 1 ]: Call to undefined method Kohana_Community::get_community_right_news_content() ~ MODPATH/calfcommunity/classes/kohana/community.php [ 274 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-04 11:52:19 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:52:19 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:55:31 --- ERROR: ErrorException [ 1 ]: Call to undefined method Kohana_Community::get_community_right_news_content() ~ MODPATH/calfcommunity/classes/kohana/community.php [ 291 ]
+2011-09-04 11:55:31 --- STRACE: ErrorException [ 1 ]: Call to undefined method Kohana_Community::get_community_right_news_content() ~ MODPATH/calfcommunity/classes/kohana/community.php [ 291 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-04 11:55:31 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:55:31 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:55:52 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:55:52 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:55:52 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:55:52 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:55:52 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:55:52 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:57:58 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:57:58 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:57:58 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:57:58 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:57:58 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:57:58 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:59:42 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:59:42 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:59:42 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:59:42 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 11:59:42 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 11:59:42 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:01:20 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:01:20 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:01:20 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:01:20 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:01:20 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:01:20 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:02:12 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:02:12 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:02:12 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:02:12 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:02:12 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:02:12 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:02:23 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:02:23 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:02:23 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:02:23 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:02:23 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:02:23 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:02:44 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:02:44 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:02:44 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:02:44 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:02:44 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:02:44 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:03:33 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:03:33 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:03:33 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:03:33 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:03:33 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:03:33 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:04:08 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:04:08 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:04:08 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:04:08 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:04:08 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:04:08 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:04:38 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:04:38 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:04:38 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:04:38 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:04:38 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:04:38 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:05:39 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:05:39 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:05:39 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:05:39 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:05:39 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:05:39 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:05:55 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:05:55 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:05:56 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:05:56 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:05:56 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:05:56 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:06:27 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:06:27 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:06:27 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:06:27 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:06:27 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:06:27 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:06:49 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:06:49 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:06:49 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:06:49 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:06:49 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:06:49 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:07:15 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:07:15 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:07:15 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:07:15 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:07:15 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:07:15 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:07:47 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:07:47 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:07:47 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:07:47 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:07:47 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:07:47 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:08:05 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:08:05 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:08:05 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:08:05 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:08:05 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:08:05 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:08:22 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:08:22 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:08:22 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:08:22 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:08:22 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:08:22 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:09:48 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:09:48 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:09:48 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:09:48 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:09:48 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:09:48 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:10:03 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:10:03 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:10:03 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:10:03 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:10:03 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:10:03 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:10:12 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:10:12 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:10:12 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:10:12 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:10:12 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:10:12 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:10:20 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:10:20 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:10:20 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:10:20 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:10:20 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:10:20 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:10:29 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:10:29 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:10:29 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:10:29 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:10:29 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:10:29 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:14:22 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:14:22 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:14:22 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:14:22 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:14:22 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:14:22 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:14:32 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:14:32 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:14:32 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:14:32 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:14:32 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:14:32 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:16:02 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:16:02 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:16:55 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:16:55 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:16:55 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:16:55 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:16:55 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:16:55 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:17:31 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:17:31 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:17:32 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:17:32 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:17:37 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:17:37 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:17:37 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:17:37 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:17:37 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:17:37 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:18:15 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:18:15 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:18:15 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:18:15 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:18:15 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:18:15 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:18:28 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:18:28 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:18:28 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:18:28 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:18:28 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:18:28 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:18:40 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:18:40 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:18:40 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:18:40 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:18:40 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:18:40 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:18:55 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:18:55 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:18:55 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:18:55 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:18:55 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:18:55 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:19:06 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:19:06 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:19:06 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:19:06 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:19:06 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:19:06 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:16 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:16 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:16 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:16 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:16 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:16 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:16 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:16 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:45 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:45 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:48 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:48 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:48 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:48 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:49 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:49 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:56 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:56 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:57 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:57 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:57 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:57 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:58 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:58 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:59 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:59 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:59 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:59 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:59 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:59 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:28:59 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:28:59 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:29:00 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:29:00 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:29:01 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:29:01 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:29:01 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:29:01 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:31:03 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:31:03 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:31:04 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:31:04 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:31:04 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:31:04 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:31:04 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:31:04 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:31:04 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:31:04 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:31:38 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:31:38 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:31:38 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:31:38 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:31:38 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:31:38 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:31:38 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:31:38 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:32:50 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:32:50 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:32:50 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:32:50 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:32:50 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:32:50 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:32:50 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:32:50 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:33:05 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:33:05 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:33:05 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:33:05 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:33:05 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:33:05 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:33:05 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:33:05 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:33:29 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:33:29 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:33:29 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:33:29 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:33:29 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:33:29 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:33:29 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:33:29 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:33:53 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:33:53 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:33:53 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:33:53 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:33:53 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:33:53 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:33:53 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:33:53 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:01 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:01 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:02 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:02 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:02 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:02 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:02 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:02 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:12 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:12 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:12 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:12 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:12 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:12 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:12 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:12 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:13 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:13 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:13 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:13 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:13 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:13 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:13 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:13 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:19 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:19 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:19 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:19 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:19 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:19 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:19 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:19 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:31 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:31 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:31 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:31 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:31 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:31 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:34:31 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:34:31 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:35:43 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:35:43 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:35:43 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:35:43 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:35:43 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:35:43 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:35:43 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:35:43 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:35:44 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:35:44 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:35:44 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:35:44 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:35:44 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:35:44 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:35:44 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:35:44 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:00 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:00 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:01 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:01 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:01 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:01 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:02 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:02 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:03 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:03 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:03 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:03 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:03 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:03 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:03 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:03 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:05 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:05 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:07 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:07 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:07 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:07 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:07 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:07 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:07 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:07 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:28 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:28 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:29 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:29 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:36:32 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:36:32 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:37:04 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:37:04 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:37:06 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:37:06 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/hots.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:37:06 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:37:06 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/hots.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:37:07 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:37:07 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/discount.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:37:08 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:37:08 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/images/2199/0293c50f-c8ac-4291-b897-6d1a3363876c.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:37:08 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:37:08 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_tit.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:37:08 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:37:08 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/community.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-04 12:37:08 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-04 12:37:08 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/i/bg_p.jpg ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /home/azhai2011/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}

@@ -26,9 +26,15 @@ class Controller_Test extends Controller {
 	{	
 		parent::before();
 		
-		$data = Msc::factory();
+                $result= 6 % 5;
+                 
+             echo $result;
+                
+		//$data = Msc::factory();
 	
-		echo $data->get_shelf_product_compare_list();
+		//echo $data->get_shelf_product_compare_list();
+                
+                
 		
 	    /*
 		$ary = $data->get('azhai');
