@@ -31,12 +31,25 @@ class Kohana_Hots {
     }
 
     private function get_hots_view_left_content(){
-        $result='abb';
+        
+         $array = array(
+            array('name' => '凯图', 'url' => '#', 'amount' => 203940.00),
+            array('name' => '卡丹路', 'url' => '#', 'amount' => 103940.00),
+            array('name' => '卡尔蒂尼', 'url' => '#', 'amount' => 33940.00),
+            array('name' => '凯欧柯曼', 'url' => '#', 'amount' => 503940.00),
+            array('name' => '卡佛连', 'url' => '#', 'amount' => 43940.00),
+            
+        );
+         
+        $result='
+         aaaacccccccccccccccccccccc
+   
+        ';
         return $result;
     }
     
     private function get_hots_view_right_content(){
-        $result='bbbb';
+        $result='bbbbbccccc';
         return $result;
     }
 
