@@ -1,0 +1,18 @@
+/* 
+    Document   : hotsview
+    Created on : 2011-9-7, 1:35:51
+    Author     : root
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+#hots_view_context .left {float: left;width: 120px;_display: inline;margin-right: 15px; }
+
+.s_info {}
+
+
+#hots_view_context .right {float: left;width: 720px;_display: inline; }

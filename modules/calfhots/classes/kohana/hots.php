@@ -42,8 +42,15 @@ class Kohana_Hots {
         );
          
         $result='
-         B
-   
+           <div class="s_info">
+             <h3>展商信息</h3>
+             <ul>
+                <li><span>参展商名称：</span><span>哈药六厂</span></li>
+                <li><span>参展商名称</span><span>哈尔滨</span></li>
+                <li><span>业务留言：</span><span></span></li>
+                <li><span>服务电话：</span><span>400-222-5555</span></li>
+             </ul>
+            </div>
         ';
         return $result;
     }
