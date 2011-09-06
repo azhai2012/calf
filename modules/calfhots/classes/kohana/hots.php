@@ -42,14 +42,14 @@ class Kohana_Hots {
         );
          
         $result='
-         aaaacccccccccccccccccccccc
+         B
    
         ';
         return $result;
     }
     
     private function get_hots_view_right_content(){
-        $result='bbbbbccccc';
+        $result='A';
         return $result;
     }
 
