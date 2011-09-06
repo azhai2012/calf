@@ -58,7 +58,7 @@ class Model_Main_Header {
 	   $a2 = ($current=='shops')?'current':'';
 	   $a3 = ($current=='shelf')?'current':'';
 	   $a4 = ($current=='tuan')?'current':'';
-	   $a5 = ($current=='hots')?'current':'';
+	   $a5 = ($current=='hots' ||$current=='hotsview')?'current':'';
 	   $a6 = ($current=='discounts')?'current':'';
 	   $a7 = ($current=='community')?'current':'';
 	   

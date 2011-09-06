@@ -49,6 +49,13 @@ class Model_Main_Content {
 		return $result;
 		
 	}
+        
+        function get_hots_view_content($id,$mod){
+		
+		$result= Hots::factory($id,$mod)->get_hots_view_content();
+		return $result;
+		
+	}
 	
 	function get_discounts_content($id,$mod){
 		
