@@ -44,11 +44,7 @@ class Kohana_Hots {
                            array('name'=>'卡尔蒂尼','url'=>'#','amount'=>33940.00),
                            array('name'=>'凯欧柯曼','url'=>'#','amount'=>503940.00),
                            array('name'=>'卡佛连','url'=>'#','amount'=>43940.00),
-                           array('name'=>'康莉','url'=>'#','amount'=>3940.00),
-                           array('name'=>'卡瓦文迪','url'=>'#','amount'=>940.00),
-                           array('name'=>'KLX','url'=>'#','amount'=>240.00),
-                            array('name'=>'KLX1','url'=>'#','amount'=>240.00),
-                            array('name'=>'KLX1','url'=>'#','amount'=>240.00),
+   
                );
             
          
@@ -80,11 +76,7 @@ class Kohana_Hots {
                            array('name'=>'感冒胶囊','url'=>'#','amount'=>33940.00),
                            array('name'=>'板蓝根','url'=>'#','amount'=>503940.00),
                            array('name'=>'达可宁','url'=>'#','amount'=>43940.00),
-                           array('name'=>'快克','url'=>'#','amount'=>3940.00),
-                           array('name'=>'俺氛','url'=>'#','amount'=>940.00),
-                           array('name'=>'顺气胶囊','url'=>'#','amount'=>240.00),
-                            array('name'=>'六味地黄胶囊','url'=>'#','amount'=>240.00),
-                            array('name'=>'阿胶','url'=>'#','amount'=>240.00),
+                         
                );
             $result.='
                 <div class="hots-extra">
@@ -127,12 +119,9 @@ class Kohana_Hots {
                                             array('name'=>'凯乐石','url'=>'#','img'=>'/media/images/593_2.jpg','counts'=>132),
                                             array('name'=>'KLX','url'=>'#','img'=>'/media/images/1549_2.jpg','counts'=>45),
                                             array('name'=>'凯欧柯曼','url'=>'#','img'=>'','counts'=>45),
-                                            array('name'=>'恺王','url'=>'#','img'=>'','counts'=>41),
-                                            array('name'=>'KAJA','url'=>'#','img'=>'','counts'=>42),
-                                            array('name'=>'卡佛连','url'=>'#','img'=>'','counts'=>43),
-                                            array('name'=>'康莉','url'=>'#','img'=>'','counts'=>44),
-                                            array('name'=>'卡瓦文迪','url'=>'#','img'=>'','counts'=>45),
+                                          
                                   
+                                          
                                          ),
                              ),
                         array('name'=>'连云港区会展','date_begin'=>'2011-09-10','date_end'=>'2011-09-17','isactive'=>1,
@@ -181,7 +170,8 @@ class Kohana_Hots {
                    $result.='
                      <div class="title"><p>参展供货商：'.$count.' 家</p>
                      <p>开始日期：'.$value['date_begin'].' -- 结束日期：'.$value['date_end'].'</p>
-                     </div>    
+                     </div>   
+                     <div>
                      <ul class="abc-height150px">
                   ';
                  for($i=0;$i< $count;$i++)
@@ -202,6 +192,12 @@ class Kohana_Hots {
                       
                    }
                  }
+                    $result.='</ul> 
+                      </div>  
+                      <div class="status">*提示：本场目前参加家数：1000 家 , 截至目前共订购：2030056.00元</div>
+   
+                    ';
+                 
                  }
                  else
                  {
@@ -210,8 +206,11 @@ class Kohana_Hots {
                      <ul class="abc-height150px">
                     ';
                     $result.='<li><div style="width:710px;font-size:30px;color:#ddd;height:150px;text-align:center;line-height:150px;">惊喜连连,敬请期待！</div></li>';  
+                    
+                    $result.='</ul> ';
                  }   
-                 $result.='</ul><div class="clearfix"></div></div>'; 
+                     
+                 $result.=' <div class="clearfix"></div></div>'; 
                  
              }
                  

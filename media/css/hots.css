@@ -18,7 +18,7 @@
 
 .active,.notactive {background-image:url(/media/images/hots.gif);}
 .abc-a {border:2px #ccc solid ;position:relative;height: auto;clear: both;margin-top:20px;  border:1px #EEE solid;}
-.abc-a h3 {background-position:0 0; background-repeat:repeat-x; margin:0;padding:0;text-indent:20px; font-family: Arial;font-size: 16px;font-weight: bold;height: 35px;line-height: 35px;border-bottom: 1px dashed #CCC;}
+.abc-a h3 {border-top:1px #000 solid; background-position:0 0; background-repeat:repeat-x; margin:0;padding:0;text-indent:20px; font-family: Arial;font-size: 16px;font-weight: bold;height: 35px;line-height: 35px;border-bottom: 1px dashed #CCC;}
 .abc-a h3 a {color:#F60;float:left;}
 .active {width:127px;height:109px;position:absolute;top:0;right:0; background-position:-156px -98px;background-repeat:no-repeat; }
 .notactive {width:127px;height:111px;position:absolute;top:0;right:0; background-position:-156px -221px;background-repeat:no-repeat; }
@@ -29,6 +29,9 @@
 .abc-a .abc-height150px {width: 100%;clear: both;height: 135px;background: #F8F5F2;margin-bottom: 25px;}
 
 .abc-a .abc-height150px li {width: 140px;text-align: center;float: left;}
+
+.abc-a .status {margin:30px 0 10px 10px;float:left;border-top:1px #DFC9B2 solid;padding:8px 15px;width:650px;  }
+
 .abc-height150px img {width: 115px;height: 75px;border: 1px solid #EEE;margin-top: 20px;}
 
 .brandfontlist {float: left;width: 740px;}
