@@ -31,12 +31,12 @@ class Kohana_Hots {
     }
 
     private function get_hots_view_left_content(){
-        $result='aaaa';
+        $result='';
         return $result;
     }
     
     private function get_hots_view_right_content(){
-        $result='bbbb';
+        $result='';
         return $result;
     }
 
