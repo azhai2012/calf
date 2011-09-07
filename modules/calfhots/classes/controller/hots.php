@@ -22,6 +22,7 @@ class Controller_Hots extends Controller {
     public function action_views(){
         parent::before();
         $id= $this->request->param('id');
+        if (empty($id)) $this->request->redirect('/hots');
         $this->template->menus = '';
         $this->template->css = '';
         $this->template->callmethod = '

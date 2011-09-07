@@ -8,17 +8,24 @@
 
 
  var Hots= {
-     
+      Lihover:function(){
+  	 $('li[class=product]').hover(function(){
+		   $(this).addClass("product_hover");
+	     },function(){
+		   $(this).removeClass("product_hover");
+	  })
+      },
       Sameheight:function(){
         var h=$('.abc-a').eq(0).height() / 2;  
         $('.hots-extra').eq(1).height(h+19);   
       }
-     
+      
  }
 
 $(function(){ 
 
      Hots.Sameheight();
+     Hots.Lihover();
  });
  
 
