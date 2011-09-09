@@ -42,27 +42,44 @@ ul#thumblist li {float: left;margin-right: 8px;border: 1px solid #ddd;}
 .bottom {margin-left:20px;}
 .key {background-color: #FFF8E7;border: 1px solid #EED97C;margin-top: 14px;padding: 16px 5px 17px 6px;width: 400px;}
 
-.toggler-holder .icon,#submit,.posts .tab .t_l,.posts .tab .t_r  {background-image:url(/media/images/desktop.gif);background-repeat:no-repeat; }
+.toggler-holder .icon,.posts .tab .t_r,.p_status,.p_discount h3,.b_detail_title h2 {background-image:url(/media/images/product_bd.gif);  }
 
 .amount .btn {margin-top:20px;}
 .amount .b_s {background-repeat:no-repeat;width:114px;height:32px;display:inline-block;color:#FFFFFF;border:0; }
-#submit {background-repeat:no-repeat;border:0;width:114px;height:32px;color:#FFFFFF;font-weight:bold;font-size: 16px;background-position:-386px -164px;   }
+#submit {background-image:url(/media/images/desktop.gif);background-repeat:no-repeat;border:0;width:114px;height:32px;color:#FFFFFF;font-weight:bold;font-size: 16px;background-position:-386px -164px;   }
 #J_StrPrice {color: #C30;font-family: Arial;font-size: 24px;font-weight: bold;line-height: 26px;margin-right: 5px;}
-.toggler-holder .icon {background-repeat:no-repeat;background-position:-60px -514px;width:18px;height:16px;display:inline-block;}
+.toggler-holder .icon {background-repeat:no-repeat; background-repeat:no-repeat;background-position:-60px -514px;width:18px;height:16px;display:inline-block;}
 
 .posts {margin-top:20px;}
 
-.posts .tab  {border-bottom: 2px solid #F90;margin-bottom: 10px;}
+.posts .tab  {border-bottom: 2px solid #F90;margin-bottom: 10px; }
 
 .posts .tab {overflow: hidden;zoom: 1;}
 .posts .tab span {display:inline-table; height:26px;}
 
-.posts .tab .cur .t_r {color:#FFFFFF;padding:0 10px 0;width:65px;background-position: -1036px -200px;}
-.posts .tab .cur .t_l {background-position:-710px -110px; }
+.posts .tab .cur .t_r {color:#FFFFFF;padding:0 10px 0;width:65px;background-position: 0 -245px;background-repeat:no-repeat;}
 
-.posts .tab  .t_r {padding:0 10px 0;width:65px;background-position: -1036px -171px;}
-.posts .tab  .t_l {background-position:-710px -110px; }
+.posts .tab  .t_r {padding:0 10px 0;width:65px;background-position: 0 -216px;background-repeat:no-repeat;}
+
+.posts .r0 {width: 332px;text-align: left;padding:0;margin:0;}
+.posts .r1,.posts .r2,.posts .r3 {width: 140px;text-align: center;} 
+
+.posts .tab li {position: relative;cursor:pointer;float:left;height: 24px;padding: 3px 0 0;width:68px;overflow: hidden;margin-right: 3px;line-height: 24px;font-size: 14px;font-weight: bold;color: #C30;}
+
+.posts .list li {line-height:25px;border-top:1px #ccc dotted;  }
+.posts .list li span {display:inline-block;margin:0;padding:0;}
+
+.posts .list_title span {font-weight:bold; }
+
+.p_status {padding:10px 0;border-top:1px #F90 solid;margin-top:5px;background-repeat:repeat-x; background-position:0 -3px;   }
+.p_status .ps_left {float:left;}
+.p_status .ps_right {float:right;}
 
 
 
-.posts li {position: relative;cursor:pointer;float:left;height: 24px;padding: 3px 0 0;width:68px;overflow: hidden;margin-right: 3px;line-height: 24px;font-size: 14px;font-weight: bold;color: #C30;}
+.p_discount {margin:0 0 20px 0;}
+.b_detail_title h2,.p_discount h3 {background-repeat:repeat-x; background-position:0 -3px; border-top:1px #F90 solid;margin:0;padding:0;padding:5px 0;  }
+
+
+
+.bottom {margin-top:20px;}

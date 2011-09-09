@@ -49,12 +49,7 @@ class Kohana_Product {
                                     <li id="Strsec" class="detail-sepc"><span>规格：</span>10*10</li>
                                     <li id="Strsec" class="detail-sepc"><span>包装：</span>100</li>
                                     <li id="Strls" class="detail-ls"><span>批准文号：国药准字100203004</span></li>
-                                    <li><p class="toggler-holder">
-                                        <span class="icon"></span>
-                                        <span>促销信息：</span> 买 10 送 1 
-                                        <a id="J_Toggler" class="toggler" title="显示所有信息" href="#"><i>详细信息</i></a>
-                                        </p>
-                                    </li>
+                                 
                                     
                                 </ul>
                             	<div class="key">
@@ -75,6 +70,7 @@ class Kohana_Product {
                                 </div>
       	 	                   </div> <!-- end wrap -->
       	 	              </div>   <!-- end property -->  
+                              
                           <div class="gallery">  <!-- begin gallery -->
                            <!--itemPics-->
 	                       <div class="pics clearfix" style="position:relative;"> 
@@ -92,9 +88,13 @@ class Kohana_Product {
 				          <script type="text/javascript"> $(\'a#jprocimg\').jqzoom({title:false});</script>
                            <!--end of itemPics-->				        
 	                       </div>
-	                       <div class="shopkeeper"></div>
+	                       <div class="shopkeeper">
+                             
+                             </div>
+                               
                           <div class="bottom clearfix">
 		                  <div class="b_detail">
+                                   '.$this->get_product_discount_context().'  
 		                    <div class="b_detail_title"><h2><span> 详细功能 </span></h2></div>
 		                    <div id="tcontent" class="productsInfo_tab" style="display: block; ">
 阿莫西林胶囊(阿莫灵)正品保障并为您提供最全面的阿莫西林胶囊说明书(阿莫灵说明书)。
@@ -125,50 +125,58 @@ class Kohana_Product {
 		return $result;
 	}
 
-        
+        private function get_product_discount_context(){
+            $result='
+              <div class="p_discount">
+                 <h3>优惠活动</h3>
+                 <ul class="pdl">
+                   <li>该商品买1送10分</li>
+                 </ul>
+              </div>
+            ';
+            return $result;
+        }
+
+
+        /*
+         * 讨论贴内容
+         */
         public function get_ajax_return_product_post_one_context(){
             $result='
-                  <table>
-                    <thead>
-                      <th>话题</th>
-                      <th>回复/浏览</th>
-                      <th>作者</th>
-                      <th>发表时间</th>
-                    </thead>
-                    <tbody>
-                      <tr><td>商品不错</td><td>1/34</td><td>XXX药店</td><td>2011-08-02 3:00</td></tr>
-                      <tr><td>商品不错，送货也快！</td><td>1/34</td><td>XXX药店</td><td>2011-02-01 14:34</td></tr>
-                    </tbody> 
-                  </table>
+                  <ul class="list">
+                     <li class="list_title" style="border-top:0;"><span class="r0">话题</span><span class="r1">回复/浏览</span><span class="r2">作者</span><span class="r3">发表时间</span></li>
+                
+                    <li><span class="r0">商品不错</span><span class="r1">1/34</span><span class="r2">XXX药店</span><span class="r3">2011-08-02 3:00</span></li>
+                    <li><span class="r0">商品不错，送货也快！</span><span class="r1">1/34</span><span class="r2">XXX药店</span><span class="r3">2011-02-01 14:34</span></li>
+                  </ul>
                   <div class="p_status">
-                    <div class="ps_left">有问题大家来讨论？[<a href="#">发表话题</a>]</div><div class="ps_right">共有2条记录，<a href="#">浏览全部信息</a></div></div>   
+                     <div class="ps_left">有问题大家来讨论？[<a href="#">发表话题</a>]</div><div class="ps_right">共有2条记录，<a href="#">浏览全部信息</a></div>
+                  </div>   
                     
                    ';
              return $result;
         }
         
+        /*
+         * 问答贴内容
+         */
         public function get_ajax_return_product_post_two_context(){
             $result='
-                 <table>
-                    <thead>
-                      <th>主题</th>
-                      <th>回复/浏览</th>
-                      <th>作者</th>
-                      <th>发表时间</th>
-                    </thead>
-                    <tbody>
-                      <tr><td>货送不急时，新货什么时候上</td><td>1/34</td><td>XXX药店</td><td>2011-08-02 3:00</td></tr>
-                      <tr><td>有缺货！赠品没有收到</td><td>1/34</td><td>XXX药店</td><td>2011-02-01 14:34</td></tr>
-                    </tbody> 
-                  </table>
-                  <div class="p_status">
-                    <div class="ps_left">有什么问题？[<a href="#">发表主题</a>]</div><div class="ps_right">共有2条记录，<a href="#">浏览全部信息</a></div></div>
-                                  
-
+                <ul class="list">
+                   <li class="list_title" style="border-top:0;"><span class="r0">主题</span><span class="r1">回复/浏览</span><span class="r2">作者</span><span class="r3">发表时间</span></li>
+                    <li><span class="r0">货送不急时，新货什么时候上</span><span class="r1">1/34</span><span class="r2">XXX药店</span><span class="r3">2011-08-02 3:00</span></li>
+                    <li><span class="r0">有缺货！赠品没有收到</span><span class="r1">1/34</span><span class="r2">XXX药店</span><span class="r3">2011-02-01 14:34</span></li>
+                </ul>
+                <div class="p_status">
+                  <div class="ps_left">有什么问题？[<a href="#">发表主题</a>]</div><div class="ps_right">共有2条记录，<a href="#">浏览全部信息</a></div>
+                </div>
              ';
             return $result;
         }
-	
+        
+	/*
+         * 发帖显示内容
+         */
         private function get_procduct_posts_context(){
             $result='
               <div class="posts">
