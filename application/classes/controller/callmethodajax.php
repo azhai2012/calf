@@ -35,6 +35,16 @@ class Controller_Callmethodajax extends Controller {
 		  	  $result= $mods->get_shelf_close_product_compare();
 		  	}
 		  }break;
+                  case 'postsone':{
+                      $mods= Product::factory($id);
+                      $result= $mods->get_ajax_return_product_post_one_context();
+                      
+                  }break;
+                  case 'poststwo':{
+                      $mods= Product::factory($id);
+                      $result= $mods->get_ajax_return_product_post_two_context();
+                  }break;
+                  
 		  default:'';
 		}
         $this->template = $result;

@@ -120,13 +120,77 @@ class Kohana_Product {
 			</div>
 		                  </div>
 		                  
-		              </div>';
+		              </div><div class="clearfix"></div>'.$this->get_procduct_posts_context();
 		
 		return $result;
 	}
 
+        
+        public function get_ajax_return_product_post_one_context(){
+            $result='
+                  <table>
+                    <thead>
+                      <th>话题</th>
+                      <th>回复/浏览</th>
+                      <th>作者</th>
+                      <th>发表时间</th>
+                    </thead>
+                    <tbody>
+                      <tr><td>商品不错</td><td>1/34</td><td>XXX药店</td><td>2011-08-02 3:00</td></tr>
+                      <tr><td>商品不错，送货也快！</td><td>1/34</td><td>XXX药店</td><td>2011-02-01 14:34</td></tr>
+                    </tbody> 
+                  </table>
+                  <div class="p_status">
+                    <div class="ps_left">有问题大家来讨论？[<a href="#">发表话题</a>]</div><div class="ps_right">共有2条记录，<a href="#">浏览全部信息</a></div></div>   
+                    
+                   ';
+             return $result;
+        }
+        
+        public function get_ajax_return_product_post_two_context(){
+            $result='
+                 <table>
+                    <thead>
+                      <th>主题</th>
+                      <th>回复/浏览</th>
+                      <th>作者</th>
+                      <th>发表时间</th>
+                    </thead>
+                    <tbody>
+                      <tr><td>货送不急时，新货什么时候上</td><td>1/34</td><td>XXX药店</td><td>2011-08-02 3:00</td></tr>
+                      <tr><td>有缺货！赠品没有收到</td><td>1/34</td><td>XXX药店</td><td>2011-02-01 14:34</td></tr>
+                    </tbody> 
+                  </table>
+                  <div class="p_status">
+                    <div class="ps_left">有什么问题？[<a href="#">发表主题</a>]</div><div class="ps_right">共有2条记录，<a href="#">浏览全部信息</a></div></div>
+                                  
+
+             ';
+            return $result;
+        }
 	
-	function get_product_left_context(){
+        private function get_procduct_posts_context(){
+            $result='
+              <div class="posts">
+                <ul class="tab">
+                  <li class="post1 cur"><span class="t_l"></span><span class="t_r">讨论贴</span></li>
+                  <li class="post2"><span class="t_l"></span><span class="t_r">问答贴</span></li>
+                </ul>
+                <div id="postsone" style="display:block">
+                 正在加载，请等待...
+                </div>
+                <div id="poststwo" style="display:none">
+                 正在加载，请等待...
+                </div>
+              </div>    
+            ';
+            return $result;
+        }
+
+
+
+
+        private function get_product_left_context(){
 		$result= '<div class="side_title"><h2><span>购买本商品的顾客还买过</span></h2>	</div>  
 		                <div class="side_content clearfix">
 		              

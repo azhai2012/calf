@@ -21,6 +21,8 @@ class Controller_Product extends Controller {
 		$this->template->callmethod='
 		 <script>Azhai.callMethod1("/callmethod?controller=product&id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		   <script>Azhai.onPages({"type":"css","css":["/media/css/product.css"]});</script>
+                   <script>Azhai.onPages({"type":"js","js":["/media/js/product.js"]});</script>
+                   
 		 '; 
     
 	}

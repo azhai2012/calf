@@ -15,36 +15,63 @@ class Kohana_Hots {
     }
 
     public function get_hots_view_content() {
-         $result = '<div id="hots_list">
-		           <div id="hnav">您现在的位置：<a href="/hots">展会区</a> --'.$this->_id.'</div>
+        $result = '<div id="hots_list" class="clearfix">
+		           <div id="hnav">您现在的位置：<a href="/hots">展会区</a> --' . $this->_id . '</div>
 		           <div id="hots_view_context"> <!-- begin hots_context -->
 		              <div class="left clearfix"> <!-- begin left -->
-		              ' . $this->get_hots_view_left_content(). '
+		              ' . $this->get_hots_view_left_content() . '
 		              </div>  <!-- end left -->
-		              <div class="right clearfix"> <!-- begin right --> ' 
-                              .$this->get_hots_view_right_top_all_discount_info()
-                              .$this->get_hots_view_right_filter()
-                              .$this->get_hots_view_right_content();
+		              <div class="right clearfix"> <!-- begin right --> '
+                . $this->get_hots_view_right_top_all_discount_info()
+                . $this->get_hots_view_right_filter()
+                . $this->get_hots_view_right_content();
 
         $result.='</div> <!-- end right -->
 		           </div> <!-- end account_context -->
-		    </div>';
+                    </div>' . $this->get_hots_chat();
 
         return $result;
     }
 
-    private function get_hots_view_left_content(){
-        
-         $array = array(
+    private function get_hots_chat() {
+        $result = '
+          <div id="tstart">
+           <div class="tstart-toolbar">
+           <div class="tstart-areas" >
+            <div class="tstart-left-area"></div>
+            <div class="tstart-right-area">
+                  <span class="tstart-normal-trigger">
+                    <a href="tencent://message/?uin=344216309" target="_blank" title="在线咨询">QQ在线咨询</a>
+                  </span>
+                  <span class="tstart-normal-trigger">
+                    <a href="#" target="_blank" title="投诉建议">投诉建议</a>
+                
+                  </span>
+                 <span class="tstart-item tstart-custom-item" id="tstart-plugin-share">
+                 <a href="#" target="_blank">消息</a>
+                 <b class="news-num J_NewsNum" style="display: none; "><s>0</s></b>
+               </span>
+               </span>
+             </div>
+            </div>
+           </div>
+          </div> 
+         </div>
+        ';
+        return $result;
+    }
+
+    private function get_hots_view_left_content() {
+
+        $array = array(
             array('name' => '凯图', 'url' => '#', 'amount' => 203940.00),
             array('name' => '卡丹路', 'url' => '#', 'amount' => 103940.00),
             array('name' => '卡尔蒂尼', 'url' => '#', 'amount' => 33940.00),
             array('name' => '凯欧柯曼', 'url' => '#', 'amount' => 503940.00),
             array('name' => '卡佛连', 'url' => '#', 'amount' => 43940.00),
-            
         );
-         
-        $result='
+
+        $result = '
             <div class="s_info">
              <h3>展商信息</h3>
              <ul>
@@ -55,46 +82,43 @@ class Kohana_Hots {
              </ul>
             </div>
         ';
-        $array =array(
-            array('name' =>'阿莫西林胶囊', 'url' => '#', 'amount' => '203940.00'),
+        $array = array(
+            array('name' => '阿莫西林胶囊', 'url' => '#', 'amount' => '203940.00'),
             array('name' => '优卡单', 'url' => '#', 'amount' => '103940.00'),
             array('name' => '感冒胶囊', 'url' => '#', 'amount' => '33940.00'),
             array('name' => '板蓝根', 'url' => '#', 'amount' => '503940.00'),
             array('name' => '达可宁', 'url' => '#', 'amount' => '43940.00'),
             array('name' => '感冒胶囊', 'url' => '#', 'amount' => '33940.00'),
             array('name' => '达可宁', 'url' => '#', 'amount' => '43940.00'),
-             array('name' => '感冒胶囊', 'url' => '#', 'amount' => '33940.00'),
+            array('name' => '感冒胶囊', 'url' => '#', 'amount' => '33940.00'),
             array('name' => '板蓝根', 'url' => '#', 'amount' => '503940.00'),
             array('name' => '达可宁', 'url' => '#', 'amount' => '43940.00'),
-      
-            
-            );
-        
-         $result.='  
+        );
+
+        $result.='  
             <div class="s_info">
               <h3>会展畅销商品排行</h3>
               <ul>
              ';
-         foreach($array as $key=>$value){
-             $result.='<li><span class="p_no">'.($key+1).'</span><span class="p_url"><a href="'.$value['url'].'">'.$value['name'].'</a></span><span class="p_amount">'.$value['amount'].'</span></li>';
-         }    
-         $result.='</ul>
+        foreach ($array as $key => $value) {
+            $result.='<li><span class="p_no">' . ($key + 1) . '</span><span class="p_url"><a href="' . $value['url'] . '">' . $value['name'] . '</a></span><span class="p_amount">' . $value['amount'] . '</span></li>';
+        }
+        $result.='</ul>
             </div>
         ';
         return $result;
     }
-    
-    private function get_hots_view_right_top_all_discount_info(){
-        $result='<div class="all_discount_info">
+
+    private function get_hots_view_right_top_all_discount_info() {
+        $result = '<div class="all_discount_info">
                全场满1000元送大礼包。
             </div>';
         return $result;
     }
 
-
-    private function get_hots_view_right_filter(){
-		// TODO 排序的实现
-		$result='
+    private function get_hots_view_right_filter() {
+        // TODO 排序的实现
+        $result = '
 		<div class="s-filter grid">
             <div class="mode">
                 <span>显示：</span>
@@ -118,244 +142,72 @@ class Kohana_Hots {
         </div>
 		
 		';
-		return $result; 
-      }
-	
-    
-    private function get_hots_view_right_content(){
-  	$result='
+        return $result;
+    }
+
+    private function get_hots_view_right_content() {
+
+        $array_data = array(
+            array('id' => 8694912583, 'img' => '/media/images/T1yH09XopFXXXd1Go2_043122.jpg_160x160.jpg','url'=>'#','price' => '99.00', 'default_price' => '108.00', 'name' => '姿美堂(左旋肉碱)', 'spec' => '20*10', 'discount' => '买一送10积分'),
+            array('id' => 869491442583, 'img' => '/media/images/T1CB1kXhBBXXXNiio9_104003.jpg_160x160.jpg','url'=>'#', 'price' => '49.00', 'default_price' => '108.00', 'name' => '康恩贝 葡萄籽胶囊', 'spec' => '20*10', 'discount' => '买一送10积分'),
+            array('id' => 88693344912583, 'img' => '/media/images/T12TmkXedqXXcNWAc._112808.jpg_160x160.jpg','url'=>'#', 'price' => '54.00', 'default_price' => '108.00', 'name' => '康恩贝 钙D软胶囊', 'spec' => '20*10', 'discount' => '买一送10积分'),
+            array('id' => 128694912583, 'img' => '/media/images/T16jiaXblwXXbmBDA1_042450.jpg_160x160.jpg','url'=>'#', 'price' => '75.00', 'default_price' => '108.00', 'name' => '碧生源减肥茶正品 减 淝茶', 'spec' => '2合', 'discount' => '买一送10积分'),
+            array('id' => 8694912583, 'img' => '/media/images/T1A0l_XhlCXXb006sV_021243.jpg_160x160.jpg','url'=>'#', 'price' => '69.00', 'default_price' => '138.00', 'name' => '蒂芬妮 100%精纯天然', 'spec' => '20*10', 'discount' => '买一送10积分'),
+            array('id' => 8694532912583, 'img' => '/media/images/T19nCkXcNlXXaxG.A._113650.jpg_160x160.jpg','url'=>'#', 'price' => '49.56', 'default_price' => '118.00', 'name' => '康恩贝 大豆异黄酮 ', 'spec' => '20*10', 'discount' => '买一送10积分'),
+            array('id' => 864394912583, 'img' => '/media/images/T1yxieXXtdXXaKT9nb_124903.jpg_160x160.jpg','url'=>'#', 'price' => '14.90', 'default_price' => '50.00', 'name' => '青青小美/左旋肉碱', 'spec' => '20*10', 'discount' => '买一送10积分'),
+            array('id' => 86949553212583, 'img' => '/media/images/T1ebxZXXRKXXcKpgfb_094114.jpg_160x160.jpg','url'=>'#', 'price' => '14.90', 'default_price' => '50.00', 'name' => '纤姿华夫正品 钙D软胶囊', 'spec' => '20*10', 'discount' => '买一送10积分'),
+        );
+
+
+        $result = '
 		<div class="list-content grid">
 	    
-	     <form action="http://sell.taobao.com/auction/spu_compare.htm" method="post" name="compareForm" target="_blank">
+	     <form action="#" method="post" name="compareForm" target="_blank">
 	      <input type="hidden" id="" name="isPostfree" value=" 0 ">
 	      <input type="hidden" id="" name="supportCod" value=" 0 ">
 	      <input type="hidden" id="" name="loc" value="">
 	      <input type="hidden" id="" name="fromPath" value="malllist">
 	      <ul class="product-list">';
-		  // @todo 循环写入商品列表
-	      $result.=
-	      '
-	          <!-- 商品列表 -->
-              <li class="product">
+        // @todo 循环写入商品列表
+        foreach ($array_data as $key => $value) {
+
+            $result.=
+                    '
+	      <li class="product">
 	             <div class="productInfo">
-	                    <div type="hidden" id="pid" value="8694912583"></div>
+	                    <div type="hidden" id="pid" value="'.$value['id'].'"></div>
 		                <div class="product-img">
-			                <a href="#" target="_blank" onclick=""><img src="/media/images/T1yH09XopFXXXd1Go2_043122.jpg_160x160.jpg"></a>
+			                <a href="'.$value['url'].'" target="_blank" onclick="">
+                                            <img src="'.$value['img'].'"></a>
 		                </div>
 					    <p class="product-price clearfix">
-    			          <strong class="price">99.00</strong>
+    			          <strong class="price">'.$value['price'].'</strong>
     		            </p>
-    		            <p class="default-price"><span></span>108.00</p>
-			            <h3 class="product-title" >
-				          <input type="checkbox" name="listAuctionId" value="a:8694912583_0db1">
-				          <a href="#" target="_blank" onclick="">【包邮】姿美堂 左旋肉碱 左旋肉减 正品 胶囊 左旋右碱</a>
-                        </h3>
-			            <p class="product-sum"><b class="pro-sale">月销量: <strong class="proHigh">13077</strong></b></p>
+    		            <p class="default-price"><span></span>'.$value['default_price'].'</p>
+			       <h3 class="product-title" ><a href="'.$value['url'].'" target="_blank" onclick="">'.$value['name'].'</a>
+                                    </h3>
+			            <p class="product-spec">规格: '.$value['spec'].'</p>
+			            <p class="product-sum"><b class="pro-sale">促销: <strong class="proHigh">'.$value['discount'].'</strong></b></p>
 			            <p>
 			            数量：<input id="p_sum"  value="10"></p>
 			            <p class="aclick">
 			             <a href="javascript:void();" id="btn_buy">订购</a>
 			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'869491253383\');" id="btn_compare">对比</a>
+			             <a href="javascript:Compare.getcompare(\''.$value['id'].'\');" id="btn_compare">对比</a>
 			            </p>
 			            
 			            
 			    </div>
               </li>
-         ';     	
-	     //以下循环时删除。                 	
-         $result.= '                	
-          	                	
-    <li class="product">
-	<div class="productInfo">
-		<div class="product-img">
-			<a href="#" target="_blank" onclick=""><img src="/media/images/T1CB1kXhBBXXXNiio9_104003.jpg_160x160.jpg"></a>
-		</div>
-								<p class="product-price proSales-price">
-    			<strong class="price">49.01</strong>
-    		</p>
-    		<p class="default-price"><span></span>108.00</p>
-						<h3 class="product-title" style="height: auto; ">
-				<input type="checkbox" name="malllistAuctionId" value="a:12572824269_0db1">
-				<a href="#" target="_blank" onclick="">康恩贝 葡萄籽胶囊 美白祛斑 调节内分泌</a>
-    </h3>
-			<p class="product-sum">
-			<p class="pro-sale">月销量: <strong class="proHigh">10065</strong></p>
-              
-				</p>
-				 <p>
-			            数量：<input id="p_sum"  value="10"></p>
-			           <p class="aclick">
-			             <a href="javascript:void();" id="btn_buy">订购</a>
-			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'869491442583\');" id="btn_compare">对比</a>
-			            </p>
-			</div>
-</li>
-          	                	<li class="product">
-	<div class="productInfo">
-		<div class="product-img">
-			<a href="#" target="_blank" onclick=""><img src="/media/images/T12TmkXedqXXcNWAc._112808.jpg_160x160.jpg"></a>
-		</div>
-								<p class="product-price proSales-price">
-    			<strong class="price">54.00</strong>
-    		</p>
-    		<p class="default-price"><span></span>108.00</p>
-						<h3 class="product-title" style="height: auto; ">
-				<input type="checkbox" name="malllistAuctionId" value="a:12498199696_0db1">
-				<a href="#" target="_blank" onclick="">康恩贝 钙D软胶囊 补充钙质 强健骨骼 营养保健品</a>
-    </h3>
-			<p class="product-sum">
-			<p class="pro-sale">月销量: <strong class="proHigh">9716</strong></p>
-                        
-				</p>
-				 <p>
-			            数量：<input id="p_sum"  value="10"></p>
-			         <p class="aclick">
-			             <a href="javascript:void();" id="btn_buy">订购</a>
-			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'8693344912583\');" id="btn_compare">对比</a>
-			            </p>
-			</div>
-</li>
-          <li class="product">
-	<div class="productInfo">
-		<div class="product-img">
-			<a href="#" target="_blank" onclick=""><img src="/media/images/T16jiaXblwXXbmBDA1_042450.jpg_160x160.jpg"></a>
-		</div>
-					<p class="product-price">
-    			<strong class="price">76.00</strong>
-    		</p>
-    		<p class="default-price"></p>
-			<h3 class="product-title" style="height: 36px; overflow-x: hidden; overflow-y: hidden; ">
-				<input type="checkbox" name="malllistAuctionId" value="a:5014015371_0db1">
-				<a href="#" target="_blank" onclick="">碧生源减肥茶正品 减 淝茶 2盒送小沱茶 减肥销售排行榜 包邮</a>
-    </h3>
-			<p class="product-sum">
-			<p class="pro-sale">月销量: <strong class="proHigh">7416</strong></p>
-                       
-				</p>
-				 <p>
-			            数量：<input id="p_sum"  value="10"></p>
-			               <p class="aclick">
-			             <a href="javascript:void();" id="btn_buy">订购</a>
-			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'128694912583\');" id="btn_compare">对比</a>
-			            </p>
-			</div>
-</li>
-          	                	<li class="product">
-	<div class="productInfo">
-		<div class="product-img">
-			<a href="" target="_blank" onclick="atpanelClick("><img src="/media/images/T1A0l_XhlCXXb006sV_021243.jpg_160x160.jpg"></a>
-		</div>
-								<p class="product-price proSales-price">
-    			<strong class="price">69.00</strong>
-    		</p>
-    		<p class="default-price"><span></span>138.00</p>
-						<h3 class="product-title" style="height: 36px; overflow-x: hidden; overflow-y: hidden; ">
-				<input type="checkbox" name="malllistAuctionId" value="a:12293292082_0db1">
-				<a href="" target="_blank" onclick="">正品 蒂芬妮 100%精纯天然 深海鱼胶原蛋白粉5克*20袋</a>
-    </h3>
-			<p class="product-sum">
-			<p class="pro-sale">月销量: <strong class="proHigh">6106</strong></p>
-                          
-				</p>
-				 <p>
-			            数量：<input id="p_sum"  value="10"></p>
-			              <p class="aclick">
-			             <a href="javascript:void();" id="btn_buy">订购</a>
-			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'548694912583\');" id="btn_compare">对比</a>
-			            </p>
-			</div>
-</li>
-          	                	<li class="product">
-	<div class="productInfo">
-		<div class="product-img">
-			<a href="" target="_blank" onclick=""><img src="/media/images/T19nCkXcNlXXaxG.A._113650.jpg_160x160.jpg"></a>
-		</div>
-								<p class="product-price proSales-price">
-    			<strong class="price">49.56</strong>
-    		</p>
-    		<p class="default-price"><span></span>118.00</p>
-						<h3 class="product-title" style="height: auto; ">
-				<input type="checkbox" name="malllistAuctionId" value="a:12663208506_0db1">
-				<a href="" target="_blank" onclick="">康恩贝 大豆异黄酮 软胶囊 纯天然的植物雌激素</a>
-    </h3>
-			<p class="product-sum">
-			<p class="pro-sale">月销量: <strong class="proHigh">4737</strong></p>
-                          
-				</p>
-				 <p>
-			            数量：<input id="p_sum"  value="10"></p>
-			               <p class="aclick">
-			             <a href="javascript:void();" id="btn_buy">订购</a>
-			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'8694532912583\');" id="btn_compare">对比</a>
-			            </p>
-			</div>
-</li>
-          	                	<li class="product">
-	<div class="productInfo">
-		<div class="product-img">
-			<a href="" target="_blank" onclick=""><img src="/media/images/T1yxieXXtdXXaKT9nb_124903.jpg_160x160.jpg"></a>
-		</div>
-								<p class="product-price proSales-price">
-    			<strong class="price">14.90</strong>
-    		</p>
-    		<p class="default-price"><span></span>50.00</p>
-						<h3 class="product-title" style="height: 36px; overflow-x: hidden; overflow-y: hidden; ">
-				<input type="checkbox" name="malllistAuctionId" value="a:9404001355_0db1">
-				<a href="" target="_blank" onclick="">限时3折青青小美/左旋肉碱/左旋肉减/正品/胶囊/左旋右碱/14.9</a>
-    </h3>
-			<p class="product-sum">
-			<p class="pro-sale">月销量: <strong class="proHigh">4473</strong></p>
-                         
-				</p>
-				 <p>
-			            数量：<input id="p_sum"  value="10"></p>
-			              <p class="aclick">
-			             <a href="javascript:void();" id="btn_buy">订购</a>
-			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'864394912583\');" id="btn_compare">对比</a>
-			            </p>
-			</div>
-</li>
-          	                	<li class="product">
-	<div class="productInfo">
-		<div class="product-img">
-			<a href="" target="_blank" onclick=""><img src="/media/images/T1ebxZXXRKXXcKpgfb_094114.jpg_160x160.jpg"></a>
-		</div>
-								<p class="product-price proSales-price">
-    			<strong class="price">46.00</strong>
-    		</p>
-    		<p class="default-price"><span></span>98.00</p>
-						<h3 class="product-title">
-				<input type="checkbox" name="malllistAuctionId" value="a:12367432314_0db1">
-				<a href="" target="_blank" onclick="">纤姿华夫正品 钙D软胶囊  青少年增高药 孕妇中老年 液体钙片补钙</a>
-    </h3>
-			<p class="product-sum">
-			<p class="pro-sale">月销量: <strong class="proHigh">4215</strong></p>
-                          
-				</p>
-				 <p>
-			            数量：<input id="p_sum"  value="10"></p>
-			              <p class="aclick">
-			             <a href="javascript:void();" id="btn_buy">订购</a>
-			             <a href="javascript:void();" id="btn_wishlist">收藏</a>
-			             <a href="javascript:Compare.getcompare(\'86949553212583\');" id="btn_compare">对比</a>
-			            </p>
-			</div>
-</li>
-          	                
-          	                              	
-	</ul>
-	</form>
-</div>
-		';
-	    return $result;  }
+            ';
+        }
 
+        $result.= '</ul>
+	            </form>
+                    </div>
+		 ';
+        return $result;
+    }
 
     public function get_hots_content() {
 
@@ -439,7 +291,7 @@ class Kohana_Hots {
         return $result;
     }
 
-    private function get_hots_left_content(){
+    private function get_hots_left_content() {
 
         $array_data = array(
             array('name' => '徐州片区会展', 'date_begin' => '2011-09-01', 'date_end' => '2011-09-07', 'isactive' => 1,
@@ -506,8 +358,7 @@ class Kohana_Hots {
                            <p>' . $values[$i]['name'] . '( <span class="ff6600">' . $values[$i]['counts'] . '</span>款)</p>
                            </a>
                          </li>';
-                    } 
-                    else { 
+                    } else {
                         if (($i % 5) === 0)
                             $result.='</ul> <ul class="brandfontlist">';
                         $result.='<li><a href="' . $values[$i]['url'] . '">
@@ -515,7 +366,7 @@ class Kohana_Hots {
                                  </a></li>';
                     }
                 }
-                
+
                 $result.='</ul> 
                       </div>  
                       <div class="status">*提示：本场目前参加家数：1000 家 , 截至目前共订购：2030056.00元</div>
