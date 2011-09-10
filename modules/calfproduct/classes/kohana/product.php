@@ -127,12 +127,71 @@ class Kohana_Product {
 
         private function get_product_discount_context(){
             $result='
-              <div class="p_discount">
+              <div class="p_discount clearfix">
                  <h3>优惠活动</h3>
-                 <ul class="pdl">
-                   <li>该商品买1送10分</li>
-                 </ul>
+                  <div class="dd clearfix" id="dd">
+                    <h4><span></span>单品促销</h4>
+                    <div class="ddc">买一送10</div> 
+                  </div>
+                  <div class="tabcon" id="group" style="display: block; ">
+                    <h4><span></span>组合套餐</h4>
+                    <div class="master"> <!-- master -->
+                    <div class="p-img">
+                      <a href="#" target="_blank">
+                         <img src="/media/images/ed4b324b-b12b-46e3-bfca-1b594c22056d.jpg" 
+                           onerror="this.src=\'/media/images/none_150.gif\'" width="100" height="100">
+                      </a>
+                     </div>
+                     <div class="p-name">
+                      <a href="#" target="_blank">GREEN A 绿A天然螺旋藻精片0.5g*12粒*50袋*1桶</a>
+                     </div> 
+                     <div class="icon-add"></div>
+                  </div> <!-- end master -->
+                  <div class="suits"> 
+                    <ul class="list">
+                      <li>
+                        <div class="p-img">
+                          <a href="#" target="_blank">
+                           <img width="100" height="100" onerror="this.src=\'/media/images/none_150.gif\'" 
+                             src="/media/images/8df94bb2-26b9-4c3c-85c8-4ca900d5b196.jpg" alt="养生堂天然维生素E软胶囊160粒">
+                          </a>
+                          </div>
+                          <div class="p-name">
+                            <a href="#" target="_blank">养生堂天然维生素E软胶囊160粒</a>
+                          </div>
+                          <div class="choose">
+                            <input type="checkbox" value="153694" checked="true" onclick="buyGCombineBuy(this)">
+                            <span class="p-price"><strong>￥76.00</strong></span>
+                          </div>
+                       </li>
+                       <li>
+                         <div class="p-img">
+                           <a href="#" target="_blank">
+                             <img width="100" height="100" onerror="this.src=\'/media/images/none_150.gif\'" 
+                                 src="/media/images/8edd4f46-df24-43e9-969b-21b599ab4c1c.jpg" alt="胡世百康茶花花粉125g">
+                           </a>
+                         </div>
+                         <div class="p-name">
+                            <a href="#" target="_blank">胡世百康茶花花粉125g</a>
+                         </div>
+                         <div class="choose">
+                            <input type="checkbox" value="361440" checked="true" onclick="buyGCombineBuy(this)">
+                            <span class="p-price"><strong>￥29.00</strong></span>
+                           </div>
+                          </li>
+                          </ul>
+                       </div>
+                       <div class="infos" onclick="">
+                         <div class="p-name">
+                           <a href="#">购买最佳组合</a>
+                         </div>
+                         <div class="pprice" id="buy-wmeprice" value="520.80">总价：<strong>￥520.80</strong></div>
+                         <div class="p-market" id="buy-wmaprice" value="539.00">总定价：<del>￥539.00</del></div>
+                         <div class="btns"><a id="buy-groupgoods" class="btn-buy" href="#">购买组合</a></div>
+                       </div>
+                    </div>
               </div>
+              <div class="clearfix"></div>
             ';
             return $result;
         }
