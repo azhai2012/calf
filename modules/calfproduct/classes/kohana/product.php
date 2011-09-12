@@ -1,5 +1,26 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
 
+/*
+ * 功能：商品详细信息，到购物车的重要环节。
+ * 
+ * 日期：2011-09-01
+ * 
+ * 数据表结构：
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
 class Kohana_Product {
 
     private $_id;
@@ -14,6 +35,9 @@ class Kohana_Product {
         $this->_data = $data;
     }
 
+    /*
+     * 商品信息内容
+     */
     public function get_product_content() {
         $result = '<div id="proclist">
 		 <script src="/media/js/jquery.jqzoom.js" type="text/javascript" async=""></script>
@@ -32,19 +56,38 @@ class Kohana_Product {
         return $result;
     }
 
+    /*
+     * 右边栏显示商品区
+     */
     function get_product_right_context() {
         // @todo 商品详细信息展示
+       
+        $array_data= array(
+                   'id'=>'10039455',
+                   'name'=>'阿莫西林胶囊',
+                   'uses'=>'功能主治：用于敏感菌（不产β-内酰胺酶菌株）',
+                   'price'=>'10.70',
+                   'sepc'=>'10*10',
+                  'group'=>'100',
+                   'lsno'=>'国药准字100203004',
+                   'bigimg'=>'/media/images/p01_big.jpg',
+                   'triumph'=>'/media/images/p01.jpg',
+                   'smallimg'=>'/media/images/p01.jpg;/media/images/p01_big.jpg;/media/images/p0102.jpg',
+                  
+         );                
+        
+        
+        
         $result = ' <div class="h1_title">
-	                       
-	                         <h1>阿莫西林胶囊<span>功能主治：用于敏感菌（不产β-内酰胺酶菌株）</span></h1>
+	                         <h1>'.$array_data['name'].'<span>功能主治：'.$array_data['uses'].'</span></h1>
                           </div>
                           <div class="property"> <!-- begin property -->
 		                     <div class="wrap"> <!-- begin wrap -->
 		                        <ul class="meta">
-					                <li id="StrPrice" class="detail-price"><span>价格：</span><strong id="J_StrPrice">￥10.70</strong>元</li>
-                                    <li id="Strsec" class="detail-sepc"><span>规格：</span>10*10</li>
-                                    <li id="Strsec" class="detail-sepc"><span>包装：</span>100</li>
-                                    <li id="Strls" class="detail-ls"><span>批准文号：国药准字100203004</span></li>
+					                <li id="StrPrice" class="detail-price"><span>价格：</span><strong id="J_StrPrice">￥'.$array_data['price'].'</strong>元</li>
+                                    <li id="Strsec" class="detail-sepc"><span>规格：</span>'.$array_data['sepc'].'</li>
+                                    <li id="Strsec" class="detail-sepc"><span>包装：</span>'.$array_data['group'].'</li>
+                                    <li id="Strls" class="detail-ls"><span>批准文号：'.$array_data['lsno'].'</span></li>
                                  
                                     
                                 </ul>
@@ -70,8 +113,8 @@ class Kohana_Product {
                           <div class="gallery">  <!-- begin gallery -->
                            <!--itemPics-->
 	                       <div class="pics clearfix" style="position:relative;"> 
-					            <a href="/media/images/p01_big.jpg"  rel="gal1" id="jprocimg"  title="" > 
- 					            <img src="/media/images/p01.jpg" 
+					            <a href="'.$array_data['big_img'].'"  rel="gal1" id="jprocimg"  title="" > 
+ 					            <img src="'.$array_data['triumph'].'" 
  					             title="triumph"  style="border: 1px solid #666;"> 
 					        </a> 
 					    </div> 
