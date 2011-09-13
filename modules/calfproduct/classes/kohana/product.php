@@ -41,7 +41,7 @@ class Kohana_Product {
     public function get_product_content() {
         $result = '<div id="proclist">
 		 <script src="/media/js/jquery.jqzoom.js" type="text/javascript" async=""></script>
-		           <div id="pnav">您现在的位置：商品信息</div>
+		           <div id="pnav">您现在的位置：商品信息 >>  阿莫西林胶囊 </div>
 		         
 		           <div id="proc_context"> <!-- begin proc_context -->
 		              <div class="left"> <!-- begin left -->
@@ -60,23 +60,33 @@ class Kohana_Product {
      * 右边栏显示商品区
      */
     function get_product_right_context() {
+      
         // @todo 商品详细信息展示
-       
-        $array_data= array(
+       $array_data= array(
                    'id'=>'10039455',
                    'name'=>'阿莫西林胶囊',
+                   'pname'=>'太灵',    
                    'uses'=>'功能主治：用于敏感菌（不产β-内酰胺酶菌株）',
                    'price'=>'10.70',
                    'sepc'=>'10*10',
-                  'group'=>'100',
+                   'unit'=>'盒',
+                   'group'=>'100',
                    'lsno'=>'国药准字100203004',
-                   'bigimg'=>'/media/images/p01_big.jpg',
-                   'triumph'=>'/media/images/p01.jpg',
-                   'smallimg'=>'/media/images/p01.jpg;/media/images/p01_big.jpg;/media/images/p0102.jpg',
+                   'big_img'=>'/media/images/big1.jpg,/media/images/big2.jpg,/media/images/big3.jpg,/media/images/big4.jpg',
+                   'small_img'=>'/media/images/small1.jpg,/media/images/small2.jpg,/media/images/small3.jpg,/media/images/small4.jpg',
                   
          );                
         
-        
+          //图片显示
+          $array_images_data = array(
+                          array('big_image'=>'/media/images/big1.jpg','small_image'=>'/media/images/small1.jpg'),
+                          array('big_image'=>'/media/images/big2.jpg','small_image'=>'/media/images/small2.jpg'),
+                          array('big_image'=>'/media/images/big3.jpg','small_image'=>'/media/images/small3.jpg'),
+                          array('big_image'=>'/media/images/big4.jpg','small_image'=>'/media/images/small4.jpg'),
+              
+          );
+         
+   
         
         $result = ' <div class="h1_title">
 	                         <h1>'.$array_data['name'].'<span>功能主治：'.$array_data['uses'].'</span></h1>
@@ -85,8 +95,10 @@ class Kohana_Product {
 		                     <div class="wrap"> <!-- begin wrap -->
 		                        <ul class="meta">
 					                <li id="StrPrice" class="detail-price"><span>价格：</span><strong id="J_StrPrice">￥'.$array_data['price'].'</strong>元</li>
+                                    <li id="Strpname" class="detail-pname"><span>通用名称：</span>'.$array_data['pname'].'</li>
                                     <li id="Strsec" class="detail-sepc"><span>规格：</span>'.$array_data['sepc'].'</li>
-                                    <li id="Strsec" class="detail-sepc"><span>包装：</span>'.$array_data['group'].'</li>
+                                    <li id="Strunit" class="detail-unit"><span>单位：</span>'.$array_data['unit'].'</li>
+                                    <li id="Strgroup" class="detail-group"><span>包装：</span>'.$array_data['group'].'</li>
                                     <li id="Strls" class="detail-ls"><span>批准文号：'.$array_data['lsno'].'</span></li>
                                  
                                     
@@ -101,7 +113,6 @@ class Kohana_Product {
     				    			    <dd class="btn">
     				    				  <a href="#" class="b_s"><input type="button" id="submit"  value="放入购物车" /></a>
     				    				  <input type="button" id="collection"  value="收藏" />
-    				    				  <input type="button" id="collection"  value="比价" />
     				    			    </dd>
     				    			    
     		                         </dl>
@@ -113,17 +124,29 @@ class Kohana_Product {
                           <div class="gallery">  <!-- begin gallery -->
                            <!--itemPics-->
 	                       <div class="pics clearfix" style="position:relative;"> 
-					            <a href="'.$array_data['big_img'].'"  rel="gal1" id="jprocimg"  title="" > 
- 					            <img src="'.$array_data['triumph'].'" 
- 					             title="triumph"  style="border: 1px solid #666;"> 
+					            <a href="'.$array_images_data[0]['big_image'].'"  rel="gal1" id="jprocimg"  title="" > 
+ 					            <img src="'.$array_images_data[0]['big_image'].'" 
+ 					             title="triumph"  style="border: 1px solid #666;width:300px; height:270px;"> 
 					        </a> 
 					    </div> 
 						<br/> 
 						  <br>
 						  <ul id="thumblist" class="clearfix">
-							<li><a class="zoomThumbActive" href="javascript:void(0);" rel="{gallery: \'gal1\', smallimage: \'/media/images/p01.jpg\',largeimage: \'/media/images/p01.jpg\'}"><img src="/media/images/p0101.jpg"></a></li>
-							<li><a href="javascript:void(0);" rel="{gallery: \'gal1\', smallimage: \'/media/images/p01.jpg\',largeimage: \'/media/images/p01_big.jpg\'}" class=""><img src="/media/images/p0102.jpg"></a></li>
-						  </ul>
+                          ';
+        
+                         foreach ($array_images_data as $key => $value) {
+                             
+                          $active = ($key===0)?'class="zoomThumbActive"':'';  
+                          $result.='<li><a '.$active.' href="javascript:void(0);" 
+                                   rel="{gallery: \'gal1\',
+                                    smallimage: \''.$value['big_image'].'\',largeimage: \''.$value['big_image'].'\'}">
+                                    <img src="'.$value['small_image'].'"></a></li>';
+                                    
+                        }
+						
+		
+		
+						$result.='</ul>
 				          <script type="text/javascript"> $(\'a#jprocimg\').jqzoom({title:false});</script>
                            <!--end of itemPics-->				        
 	                       </div>

@@ -23,11 +23,11 @@
 .zoomWrapperImage {display: block;overflow: hidden;position: relative;z-index: 110;}
 .zoomPreload {background-color: white;background-image: url(/media/images/zoomloader.gif);background-position: 43px 30px;background-repeat: no-repeat;border: 1px solid #CCC;color: #333;font-family: Tahoma;font-size: 12px;height: 43px;left: 0px;opacity: 0.8;padding: 8px;position: absolute;text-align: center;text-decoration: none;top: 0px;width: 90px;z-index: 110;}
 
-ul#thumblist {display: block;margin-left:15px;}
+ul#thumblist {display: block;margin-left:30px;  }
 ul#thumblist li a {border: 1px solid #CCC;display: block;}
 ul#thumblist li img {width:60px;height:60px;}
 ul#thumblist li a.zoomThumbActive {border: 1px solid red;}
-ul#thumblist li {float: left;margin-right: 8px;border: 1px solid #ddd;}
+ul#thumblist li {float: left;margin-right: 8px;}
 
 .pics {margin-left:15px;}
 .pic img {width:80px;height:80px;}
