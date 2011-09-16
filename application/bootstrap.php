@@ -53,7 +53,7 @@ ini_set('unserialize_callback_func', 'spl_autoload_call');
 /**
  * Set the default language
  */
-I18n::lang('en-us');
+I18n::lang('en');
 
 /**
  * Set Kohana::$environment if a 'KOHANA_ENV' environment variable has been supplied.
@@ -128,6 +128,8 @@ Kohana::modules(array(
      'calfcommunity' => MODPATH.'calfcommunity', //折扣区
      'calfshelf'     => MODPATH.'calfshelf',
      'calfmsc'       => MODPATH.'calfmsc',
+     'calfdb'        => MODPATH.'calfdb',
+ 
    
 	));
 

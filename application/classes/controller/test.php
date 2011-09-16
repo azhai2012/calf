@@ -26,9 +26,28 @@ class Controller_Test extends Controller {
 	{	
 		parent::before();
 		
-                $result= 6 % 5;
-                 
-             echo $result;
+		$_array_data= Calfdb::factory('1',NULL)->product_views_data_array();
+		$array_data = $_array_data['product_info'];
+	
+		$array_images_data = $_array_data['product_imgs'];
+		
+		$right_template = View::factory('product/right');
+		
+		$right_template->name  = $array_data['name'];
+		$right_template->uses  = $array_data['uses'];
+		$right_template->price = $array_data['price'];
+		$right_template->pname = $array_data['pname'];
+		$right_template->spec  = $array_data['spec'];
+		$right_template->unit  = $array_data['unit'];
+		$right_template->group = $array_data['group'];
+		$right_template->lsno  = $array_data['lsno'];
+		$right_template->big_image = $array_images_data[0]['big_image'];
+		$right_template->array_images_data = $array_images_data;
+		$right_template->get_product_discount_context = '';//$this->get_product_discount_context();
+		$right_template->get_product_info_content ='';// $this->get_product_info_content();
+		$right_template->get_procduct_posts_context = '';//$this->get_procduct_posts_context();
+		$result=$right_template;
+		echo $result;
                 
 		//$data = Msc::factory();
 	
