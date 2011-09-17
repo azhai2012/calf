@@ -4,4 +4,5 @@ return array
 (
 	'Spanish' => 'Español',
 	'Hello, world!' => '¡Hola, mundo!',
+	 '价格' => 'sale price',
 );

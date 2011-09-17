@@ -11,10 +11,10 @@
 <div id="pnav">您现在的位置：商品信息 >>  <?php echo $nav_name; ?> </div>
 <div id="proc_context"> <!-- begin proc_context -->
     <div class="left"> <!-- begin left -->
-     <?php echo $get_product_left_context; ?>
+     <?php echo $get_product_left_content; ?>
     </div>  <!-- end left -->
     <div class="right"> <!-- begin right -->
-      <?php echo $get_product_right_context; ?>
+      <?php echo $get_product_right_content; ?>
     </div> <!-- end right -->
   </div> <!-- end proc_context -->		           
 </div>

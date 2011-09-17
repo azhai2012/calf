@@ -37,12 +37,12 @@ class Controller_Callmethodajax extends Controller {
 		  }break;
                   case 'postsone':{
                       $mods= Product::factory($id);
-                      $result= $mods->get_ajax_return_product_post_one_context();
+                      $result= $mods->get_ajax_return_product_post_one_content();
                       
                   }break;
                   case 'poststwo':{
                       $mods= Product::factory($id);
-                      $result= $mods->get_ajax_return_product_post_two_context();
+                      $result= $mods->get_ajax_return_product_post_two_content();
                   }break;
                   
 		  default:'';

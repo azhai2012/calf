@@ -61,7 +61,7 @@ ul#thumblist li {float: left;margin-right: 8px;}
 
 .posts .tab  .t_r {padding:0 10px 0;width:65px;background-position: 0 -216px;background-repeat:no-repeat;}
 
-.posts .r0 {width: 332px;text-align: left;padding:0;margin:0;}
+.posts .r0 {width: 322px;text-align: left;padding:0;margin:0;}
 .posts .r1,.posts .r2,.posts .r3 {width: 140px;text-align: center;} 
 
 .posts .tab li {position: relative;cursor:pointer;float:left;height: 24px;padding: 3px 0 0;width:68px;overflow: hidden;margin-right: 3px;line-height: 24px;font-size: 14px;font-weight: bold;color: #C30;}

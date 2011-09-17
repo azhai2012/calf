@@ -19,6 +19,38 @@ class Kohana_Calfdb_Product {
 		
 	}
 	
+	public function product_views_new_posts_data_array(){
+		// @todo 商品明细内的新发贴数据，注意这里需要分页的功能
+		$array_data=array(
+		'status'=>array('totalpage'=>4,'url'=>'#','write_url'=>'#'),
+		'lists'=>array(
+		   array('title'=>'商品不错','report'=>'1','view'=>'34','author'=>'XXX药店','create_at'=>'2011-01-01 00:00'),
+		   array('title'=>'商品不错，送货也快！','report'=>'2','view'=>'34','author'=>'XXX药店','create_at'=>'2011-01-01 00:00'),
+		   array('title'=>'商品不错','report'=>'3','view'=>'34','author'=>'XXX药店','create_at'=>'2011-01-01 00:00'),
+		   array('title'=>'商品不错，送货也快！','report'=>'4','view'=>'34','author'=>'XXX药店','create_at'=>'2011-01-01 00:00'),
+		   ),
+		);
+		return $array_data;
+		
+	}
+	
+	public function product_views_ask_posts_data_array(){
+		// @todo 商品明细内的问答贴，注意这里是分页显示的数据
+		$array_data= array(
+		'status'=>array('totalpage'=>4,'url'=>'#','write_url'=>'#'),
+        'lists'=>array(
+		    array('title'=>'货送不急时，新货什么时候上','report'=>'1','view'=>'34','author'=>'XXX药店','create_at'=>'2011-01-01 00:00'),
+		    array('title'=>'有缺货！赠品没有收到','report'=>'2','view'=>'34','author'=>'XXX药店','create_at'=>'2011-01-01 00:00'),
+		    array('title'=>'货送不急时，新货什么时候上','report'=>'3','view'=>'34','author'=>'XXX药店','create_at'=>'2011-01-01 00:00'),
+	 	    array('title'=>'有缺货！赠品没有收到','report'=>'4','view'=>'34','author'=>'XXX药店','create_at'=>'2011-01-01 00:00'),
+		   ),
+		);
+		
+		return $array_data;
+		
+	}
+	
+	
 	/*
 	 * 功能：商品明细的数据，每个商品的详细的展示
 	 * @author zhaibob
