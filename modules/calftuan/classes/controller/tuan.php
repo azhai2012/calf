@@ -17,8 +17,8 @@ class Controller_Tuan extends Controller {
 		$this->template->menus='';
 	    $this->template->css='';
 		$this->template->callmethod='
-		   <script>Azhai.callMethod1("/callmethod?controller=tuan","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		   <script>Azhai.onPages({"type":"css","css":["/media/css/tuan.css"]});</script> 
+		   <script>Azhai.callMethod1("/callmethod?controller=tuan","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		   <script>Azhai.onPages({"type":"js","js":["/media/js/tuan.js"]});</script> 
 		  '; 
     }

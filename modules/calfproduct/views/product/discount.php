@@ -78,6 +78,7 @@
   <?php if ($compose_bool || $single_bool):?>
 			</div>
             <div class="clearfix"></div>
-  <?php endif; ?>    
+  <?php endif; ?>   
+
             
             

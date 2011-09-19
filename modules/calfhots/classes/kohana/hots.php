@@ -18,10 +18,10 @@ class Kohana_Hots {
         $result = '<div id="hots_list" class="clearfix">
 		           <div id="hnav">您现在的位置：<a href="/hots">展会区</a> --' . $this->_id . '</div>
 		           <div id="hots_view_context"> <!-- begin hots_context -->
-		              <div class="left clearfix"> <!-- begin left -->
+		              <div class="left"> <!-- begin left -->
 		              ' . $this->get_hots_view_left_content() . '
 		              </div>  <!-- end left -->
-		              <div class="right clearfix"> <!-- begin right --> '
+		              <div class="right"> <!-- begin right --> '
                 . $this->get_hots_view_right_top_all_discount_info()
                 . $this->get_hots_view_right_filter()
                 . $this->get_hots_view_right_content();
@@ -217,7 +217,7 @@ class Kohana_Hots {
 		              <div class="left clearfix"> <!-- begin left -->
 		              ' . $this->get_hots_left_content() . '
 		              </div>  <!-- end left -->
-		              <div class="right clearfix"> <!-- begin right --> ' . $this->get_host_right_content();
+		              <div class="right"> <!-- begin right --> ' . $this->get_host_right_content();
 
         $result.='</div> <!-- end right -->
 		           </div> <!-- end account_context -->
@@ -302,7 +302,11 @@ class Kohana_Hots {
                     array('name' => '凯乐石', 'url' => '/hots/views/0102', 'img' => '/media/images/593_2.jpg', 'counts' => 132),
                     array('name' => 'KLX', 'url' => '/hots/views/0102', 'img' => '/media/images/1549_2.jpg', 'counts' => 45),
                     array('name' => '凯欧柯曼', 'url' => '/hots/views/0102', 'img' => '', 'counts' => 45),
-                ),
+                    array('name' => '卡尔蒂尼', 'url' => '/hots/views/0102', 'img' => '/media/images/330_2.jpg', 'counts' => 230),
+                    array('name' => '凯乐石', 'url' => '/hots/views/0102', 'img' => '/media/images/593_2.jpg', 'counts' => 132),
+                    array('name' => 'KLX', 'url' => '/hots/views/0102', 'img' => '/media/images/1549_2.jpg', 'counts' => 45),
+                    array('name' => '凯欧柯曼', 'url' => '/hots/views/0102', 'img' => '', 'counts' => 45),
+                     ),
             ),
             array('name' => '连云港区会展', 'date_begin' => '2011-09-10', 'date_end' => '2011-09-17', 'isactive' => 1,
                 'values' => array(
@@ -348,7 +352,7 @@ class Kohana_Hots {
                      <div class="title"><p>参展供货商：' . $count . ' 家</p>
                      <p>开始日期：' . $value['date_begin'] . ' -- 结束日期：' . $value['date_end'] . '</p>
                      </div>   
-                     <div>
+                     <div class="clearfix">
                      <ul class="abc-height150px">
                   ';
                 for ($i = 0; $i < $count; $i++) {
@@ -367,10 +371,12 @@ class Kohana_Hots {
                     }
                 }
 
-                $result.='</ul> 
-                      </div>  
-                      <div class="status">*提示：本场目前参加家数：1000 家 , 截至目前共订购：2030056.00元</div>
-   
+                $result.='
+                        </ul> 
+                      </div>
+                       <div class="status">*提示：本场目前参加家数：1000 家 , 截至目前共订购：2030056.00元</div>
+                      <div class="clearfix"></div>
+                       
                     ';
             }
             else {
@@ -378,7 +384,7 @@ class Kohana_Hots {
                      <div class="title"><p>预计开始日期：' . $value['date_begin'] . ' -- 结束日期：' . $value['date_end'] . '</p></div>                          
                      <ul class="abc-height150px">
                     ';
-                $result.='<li><div style="width:710px;font-size:30px;color:#ddd;height:150px;text-align:center;line-height:150px;">惊喜连连,敬请期待！</div></li>';
+                $result.='<li><div style="width:700px;font-size:30px;color:#ddd;height:150px;text-align:center;line-height:150px;">惊喜连连,敬请期待！</div></li>';
 
                 $result.='</ul> ';
             }

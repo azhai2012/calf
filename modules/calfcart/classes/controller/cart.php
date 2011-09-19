@@ -17,9 +17,10 @@ class Controller_Cart extends Controller {
 		parent::before();
 		$this->template->menus='';
 	    $this->template->css='';
-		$this->template->callmethod='<script>Azhai.callMethod1("/callmethod?controller=cart","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		$this->template->callmethod='<script>Azhai.onPages({"type":"css","css":["/media/css/cart.css"]});</script>
+		 <script>Azhai.callMethod1("/callmethod?controller=cart","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		 <script>Azhai.onPages({"type":"js","js":["/media/js/cart.js?'.time().'"]});</script>
-		 <script>Azhai.onPages({"type":"css","css":["/media/css/cart.css"]});</script>
+		 
 		 
 		
 		'; 
@@ -31,9 +32,11 @@ class Controller_Cart extends Controller {
 		$id = $this->request->param('id');
 	    $this->template->menus='';
 	    $this->template->css='';
-		$this->template->callmethod='<script>Azhai.callMethod1("/callmethod?controller=cart&id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		$this->template->callmethod='
+		 <script>Azhai.onPages({"type":"css","css":["/media/css/cart.css"]});</script>
+		 <script>Azhai.callMethod1("/callmethod?controller=cart&id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		 <script>Azhai.onPages({"type":"js","js":["/media/js/cart.js?'.time().'"]});</script> 
-		<script>Azhai.onPages({"type":"css","css":["/media/css/cart.css"]});</script>';
+		';
 	}
 	
 	

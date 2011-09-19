@@ -25,6 +25,7 @@ class Kohana_Product {
     private $post_template= NULL;
     private $_new_posts_data = NULL;
     private $_ask_posts_data = NULL;
+    private $_relevance_data = NULL;
     
 
 	public static function factory($id, array $data = NULL) {
@@ -38,6 +39,7 @@ class Kohana_Product {
 		$this->_array_data =  $this->calfdb->product_views_data_array();
 		$this->_new_posts_data = $this->calfdb->product_views_new_posts_data_array();
 		$this->_ask_posts_data = $this->calfdb->product_views_ask_posts_data_array();
+		$this->_relevance_data = $this->calfdb->product_views_relevance_data_array();
 		
 		$this->content_template= View::factory('product/content');
 		$this->left_template= View::factory('product/left');
@@ -170,11 +172,7 @@ class Kohana_Product {
 
 	private function get_product_left_content() {
 
-		$array_data = array(
-		array('url' => '#', 'img' => '/media/images/ec7e7412-51b8-4b89-a8df-aa30052e32c6.jpg', 'rate_strong' => '33%', 'rate_content' => 'Centrum善存佳维片新上市家庭装120片', 'price' => '108.00'),
-		array('url' => '#', 'img' => '/media/images/a5882aa4-1faf-4a1e-8045-a67edbe6add8.jpg', 'rate_strong' => '22%', 'rate_content' => 'Centrum善存佳维片1.33g*60片', 'price' => '108.00'),
-		array('url' => '#', 'img' => '/media/images/c4bebaca-2bc8-4d4b-abc9-ebc6981a611c.jpg', 'rate_strong' => '21%', 'rate_content' => '养生堂天然维生素C咀嚼片90粒促销特惠装', 'price' => '108.00'),
-		);
+		$array_data = $this->_relevance_data;
         
 		$this->left_template->array_data = $array_data;
 		

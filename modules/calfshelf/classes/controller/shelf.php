@@ -24,8 +24,8 @@ class Controller_Shelf extends Controller {
 		$this->template->menus='';
 	    $this->template->css='';
 		$this->template->callmethod='
-		   <script>Azhai.callMethod1("/callmethod?controller=shelf","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		   <script>Azhai.onPages({"type":"css","css":["/media/css/shelf.css"]});</script> 
+		   <script>Azhai.callMethod1("/callmethod?controller=shelf","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		   <script>Azhai.onPages({"type":"js","js":["/media/js/shelf.js"]});</script> 
 		   <script>Azhai.callMethod2("/callmethodajax","[\'compare\']");</script>
 		  '; 
@@ -37,8 +37,9 @@ class Controller_Shelf extends Controller {
     	$this->template->menus='';
     	$this->template->css='';
     	$this->template->callmethod='
-    			   <script>Azhai.callMethod1("/callmethod?controller=comparelist","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
     			   <script>Azhai.onPages({"type":"css","css":["/media/css/compare.css"]});</script> 
+    			   <script>Azhai.callMethod1("/callmethod?controller=comparelist","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+    			   
     			  '; 
     }
     

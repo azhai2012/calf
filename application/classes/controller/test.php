@@ -27,8 +27,8 @@ class Controller_Test extends Controller {
 		parent::before();
 		$id='2222';
 		$data=NULL;
-		$calfdb  = Product::factory($id,$data);
-		$_array_data =  $calfdb->get_product_content();
+		$cart  = Cart::factory($id,$data);
+		$_array_data =  $cart->get_cart_content_step_one();
 		
 		$result=$_array_data;
 		echo $result;

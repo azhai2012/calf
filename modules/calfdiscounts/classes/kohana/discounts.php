@@ -56,7 +56,7 @@ class Kohana_Discounts {
 	}
 	
 	function get_new_list(){
-		// @todo  最新促销商品信息 
+		// @todo 最新促销商品信息 
 	    $result='
 	         <h3>最新促销商品</h3>
 	         <script src="/media/js/jquery-corner.js" type="text/javascript" async=""></script>

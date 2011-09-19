@@ -1,10 +1,11 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
 /*
+ * 
  * 功能：公共类库（数据库类 ） 
  * @author zhaibob
  * 
- * 
+ * TODO 完成相关数据的内容
  */
 
 class Kohana_Calfdb_Product {
@@ -19,6 +20,11 @@ class Kohana_Calfdb_Product {
 		
 	}
 	
+	
+	/**
+	 * 功能：得到新贴的数据。
+	 * @todo 关联商品数据库的实现
+	 */
 	public function product_views_new_posts_data_array(){
 		// @todo 商品明细内的新发贴数据，注意这里需要分页的功能
 		$array_data=array(
@@ -34,6 +40,11 @@ class Kohana_Calfdb_Product {
 		
 	}
 	
+	
+	/**
+	 * 功能：得到问答贴的数据。
+	 * Enter description here ...
+	 */
 	public function product_views_ask_posts_data_array(){
 		// @todo 商品明细内的问答贴，注意这里是分页显示的数据
 		$array_data= array(
@@ -48,6 +59,20 @@ class Kohana_Calfdb_Product {
 		
 		return $array_data;
 		
+	}
+	
+	/**
+	 * 商品明细的关联商品的数据
+	 * Enter description here ...
+	 */
+	public function product_views_relevance_data_array(){
+		$result= array(
+		    array('url' => '#', 'img' => '/media/images/ec7e7412-51b8-4b89-a8df-aa30052e32c6.jpg', 'rate_strong' => '33%', 'rate_content' => 'Centrum善存佳维片新上市家庭装120片', 'price' => '108.00'),
+		    array('url' => '#', 'img' => '/media/images/a5882aa4-1faf-4a1e-8045-a67edbe6add8.jpg', 'rate_strong' => '22%', 'rate_content' => 'Centrum善存佳维片1.33g*60片', 'price' => '108.00'),
+		    array('url' => '#', 'img' => '/media/images/c4bebaca-2bc8-4d4b-abc9-ebc6981a611c.jpg', 'rate_strong' => '21%', 'rate_content' => '养生堂天然维生素C咀嚼片90粒促销特惠装', 'price' => '108.00'),
+		);
+		
+	    return $result; 
 	}
 	
 	

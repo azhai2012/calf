@@ -17,6 +17,7 @@ class Model_Main_Header {
 	   $result='<div id="myinfo" class="clearfix">
 	             <div id="userinfo">您好，欢迎光临。<a href="/login">请登录</a></div> 
 	             <ul>
+	               <li>'.$this->get_carts().'</li>
 	               <li><a href="/account">我的订单</a></li>
 	               <li><a href="#">我的信息</a></li>
 	               <li><a href="#">会员积分</a></li>
@@ -74,9 +75,8 @@ class Model_Main_Header {
 	                <li class="'.$a5.'"><a href="/hots">展会</a></li>
 	                <li class="'.$a6.'"><a href="/discounts">促销区</a></li>
 	                <li class="'.$a7.'"><a href="/community">社区</a></li>
-	              </ul>
+	                </ul>
 	             
-	              '.$this->get_carts().'
 	               <div class="clearfix"></div>
 	      </div>';
 
@@ -89,9 +89,10 @@ class Model_Main_Header {
 
 	// @todo 修改购物车内容
     function get_carts(){
-	    $result= '<div id="carts" class="clearfix">
-	                <span>购物车里有<span>100</span>个商品</span> 
-	                <a class="gotocart" href="/cart">去结算</a>
+	    $result= '<div class="carts">
+	                <span class="c_icon"></span>
+	                <span class="c_txt">购物车里有<strong class="cart_num">10000</strong>个商品</span> 
+	                <span><a class="gotocart"  href="/cart">去结算</a></span>
 	             </div>';	
 	    return $result;
 	}

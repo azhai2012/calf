@@ -26,17 +26,17 @@
     });
 </script>
 </head>
-<body class="home">
+<body style="margin:0;padding:0" class="home">
  <!-- begin main header -->
  
- <div id="mainheader" >
+ <div id="mainheader"  >
     <div id="headertop"> </div>
     <div id="headcontent" class="clearfix"></div>
   </div> 
  <!-- end main header -->
  
  <!-- begin menus -->
- <div id="menus" class="clearfix" ></div>
+ <div id="menus" ></div>
  <!-- end menus -->
  
  <!-- begin main content -->

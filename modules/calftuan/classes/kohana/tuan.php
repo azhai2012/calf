@@ -17,9 +17,7 @@ class Kohana_Tuan {
     public function get_tuan_content() {
 
         $result = '<div id="account_list">
-                 <script src="/media/js/jquery-corner.js" type="text/javascript" async=""></script>
-	         <script>$("#deal-intro,").corner("10px");</script>
-		           <div id="tuan_context" class="clearfix"> <!-- begin tuan_context -->
+                       <div id="tuan_context" class="clearfix"> <!-- begin tuan_context -->
 		              <div class="left"> <!-- begin left -->
 		                 '.$this->get_tuan_left_content().'
 		              </div>  <!-- end left -->

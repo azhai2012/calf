@@ -19,8 +19,9 @@ class Controller_Shops extends Controller {
 	    $this->template->css='';
 	    $id = array_key_exists('id',$_GET)?$_GET['id']:'';
 		$this->template->callmethod='
+		 <script>Azhai.onPages({"type":"css","css":["/media/css/shops.css"]});</script>
 		 <script>Azhai.callMethod1("/callmethod?controller=shops&id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		   <script>Azhai.onPages({"type":"css","css":["/media/css/shops.css"]});</script>
+		   
 		 '; 
     
 	}

@@ -17,8 +17,8 @@ class Controller_Community extends Controller {
 		$this->template->menus='';
 	    $this->template->css='';
 		$this->template->callmethod='
-		   <script>Azhai.callMethod1("/callmethod?controller=community","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		   <script>Azhai.onPages({"type":"css","css":["/media/css/community.css"]});</script> 
+		   <script>Azhai.callMethod1("/callmethod?controller=community","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		   <script>Azhai.onPages({"type":"js","js":["/media/js/community.js"]});</script> 
 		  '; 
     }

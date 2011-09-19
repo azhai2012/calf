@@ -4,6 +4,9 @@ class Kohana_Cart {
 	
 	private $_id;
 	private $_data = array();
+	private $_template = NULL;
+	private $_template_one = NULL;
+	
 	
     public static function factory($id,array $data = NULL)
 	{
@@ -13,61 +16,26 @@ class Kohana_Cart {
 	function __construct($id,array $data = NULL)
 	{
        $this->_id = (!empty($id))?$id:'1';
-       $this->_data = $data; 
+       $this->_data = $data;
+       $this->_template = View::factory('cart/content'); 
+       $this->_template_one = View::factory('cart/stepone');
       
 	}
 	
 	public function get_cart_content(){
 		
-		$result='<div id="cartlist"> <div id="nav">您现在的位置：购物车</div>';
+		$this->_template->step_id = $this->_id;
+		$id='';
+		if ($this->_id==1) $id='一';
+		if ($this->_id==2) $id='二';
+		if ($this->_id==3) $id='三';
 		
-		switch ($this->_id) {
-			 case 1 :
-		          $result.='
-		           <div id="cart_context"> <!-- begin cart_context -->
-		              <div class="cart_nav_setp_one  clearfix" id="step_one">
-		                <span class="location"> 1. 我的购物车</span>
-		                <span> 2. 确认购物车信息</span>
-		                <span> 3. 成功提交订单</span>
-		                </div>
-		              <div class="side_content">
-		              '.$this->get_cart_content_step_one().'
-		              </div>  <!-- end side_content -->
-		             </div> <!-- end proc_context -->
-		          </div>';
-		        break;
-		      case 2 :
-		          $result.='
-		           <div id="cart_context"> <!-- begin cart_context -->
-		              <div class="cart_nav_setp_two  clearfix" id="step_two"> 
-		                <span> 1. 我的购物车</span>
-		                <span class="location"> 2. 确认购物车信息</span>
-		                <span> 3. 成功提交订单</span>
-		                </div>
-		              <div class="side_content">
-		               '.$this->get_cart_content_step_two().'
-		              </div>  <!-- end side_content -->
-		             </div> <!-- end proc_context -->
-		          </div>';
-		        break;  
-		       case 3 :
-		          $result.='
-		           <div id="cart_context"> <!-- begin cart_context -->
-		              <div class="cart_nav_setp_three  clearfix" id="step_three"> 
-		                <span> 1. 我的购物车</span>
-		                <span> 2. 确认购物车信息</span>
-		                <span class="location"> 3. 成功提交订单</span>
-		              </div>
-		              <div class="side_content">
-		               '.$this->get_cart_content_step_three().'
-		              </div>  <!-- end side_content -->
-		             </div> <!-- end proc_context -->
-		          </div>';
-		        break;     
-		        
-		    
-			default: $result.='</div>'; 
-		}
+		$this->_template->id = $id;
+		$this->_template->get_cart_content_step_one = $this->get_cart_content_step_one();
+		$this->_template->get_cart_content_step_two = $this->get_cart_content_step_two();
+		$this->_template->get_cart_content_step_three = $this->get_cart_content_step_three();
+		
+		$result=$this->_template;
 		
 		return $result;
 		
@@ -75,60 +43,27 @@ class Kohana_Cart {
 	
 	public function get_cart_content_step_one(){
 		// @todo 增加购物车的功能-读取数据。
-		$result='
-		    <div class="cart_one">
-		      <ul class="cart_subject" id="cart_title">
-                <li class="title_row1">商品名称</li>
-                <li class="title_row2">积分</li>
-                <li class="title_row3">单价</li>
-                <li class="title_row4">优惠</li>
-                <li class="title_row5">数量</li>
-                <li class="title_row6">操作</li>
-              </ul>
-              <div class="cart_one_content">
-                <ul class="cart_rows">
-                  <li class="row0"><a name="productpic" href="#" target="_blank" title="绿A螺旋藻精片 150g（300片） 抗辐射防辐射"><img src="http://img38.dangdang.com/74/10/20178848-1_x.jpg"></a></li>
-		          <li class="row1">
-		            <p><i></i>
-		              <span class="name">
-		              <a name="product" target="_blank" href="#" title="绿A螺旋藻精片 150g（300片） 抗辐射防辐射">绿A螺旋藻精片 150g（300片） 抗辐射防辐射</a>
-		              </span>
-		            </p>
-		          </li>
-		          <li class="row2">100</li>		        
-                  <li class="row3"><span>￥119.00</span></li>
-		          <li class="row4"><span>0</span></li>		        
-		          <li class="row5"><input type="text" name="number" value="1" ></li>
-		          <li class="row6">
-		            <a name="movetofavorite" href="###2" title="此商品将移至“我的收藏”并从购物车中删除"  id="move_20178848">移入收藏</a>
-		            <a name="delete" href="javascript:for_99click();" ">删除</a>
-		          </li>
-		        </ul>
-		        <ul class="cart_rows">
-                  <li class="row0"></li>
-		          <li class="row1"></li>
-		          <li class="row2"></li>		        
-                  <li class="row3"></li>
-		          <li class="row4"></li>		        
-		          <li class="row5"></li>
-		          <li class="row6"></li>
-		      
-		        </ul>
-		      </div>
-		      <div class="clearfix"></div>
-		    </div>
-		    <div class="cart_total" id="div_total" style="display: block; ">
-                <p class="price">商品总数: <span> 10 </span>  个，
-                    商品金额总计：
-                    <span>￥</span>
-                    <span id="total_account">217.00</span>元
-                </p>
-                <p id="balance">
-                    <a name="checkout" id="checkout_btn" href="/cart/step/2" class="clearing" title="结算">去结算</a>
-                    <a href="http://www.dangdang.com/?ref=shopping-0-E" target="_blank" name="goon" class="goon"> << 继续购物</a>
-                </p>
-            </div>
-            <div class="cart_recommend" name="recomzone" style="display: block; ">
+		
+		$array_data= array(
+		    'lists'=>array(
+		       array('id'=>1020203,'name'=>"绿A螺旋藻精片 150g（300片） 抗辐射防辐射",'numtotal'=>100,'num'=>10,'price'=>'119.00','savemoney'=>'0','url'=>'#','img'=>'http://img38.dangdang.com/74/10/20178848-1_x.jpg'),
+		array('id'=>1020203,'name'=>"绿A螺旋藻精片 150g（300片） 抗辐射防辐射",'numtotal'=>100,'num'=>10,'price'=>'119.00','savemoney'=>'0','url'=>'#','img'=>'http://img38.dangdang.com/74/10/20178848-1_x.jpg'),
+		array('id'=>1020203,'name'=>"绿A螺旋藻精片 150g（300片） 抗辐射防辐射",'numtotal'=>100,'num'=>10,'price'=>'119.00','savemoney'=>'0','url'=>'#','img'=>'http://img38.dangdang.com/74/10/20178848-1_x.jpg'),
+		
+	        ),
+	        'status'=>array('rowcount'=>1,'total'=>'200.40','return_url'=>'#'),
+		);
+		
+		$this->_template_one->array_data = $array_data;
+		
+		$result=$this->_template_one;
+		return $result;
+		
+		
+	}
+	
+	public function get_cart_remment_content(){
+		return '<div class="cart_recommend" name="recomzone" style="display: block; ">
                 <h2>
                     <a href="javascript:for_99click();" id="div_AlsoBuyList_up_down" onclick="drawAlsoBuyList();" class="up" name="turnoff" title="up"></a>
                     <span>根据您购物车中的商品，您可能还关住以下商品：</span>
@@ -161,11 +96,7 @@ class Kohana_Cart {
                    </li>
                  </ul>  
             </div>
-		 
-		';
-		return $result;
-		
-		
+		 ';
 	}
 	
     public function get_cart_content_step_two(){

@@ -13,8 +13,8 @@ class Controller_Hots extends Controller {
         $this->template->menus = '';
         $this->template->css = '';
         $this->template->callmethod = '
+		   <script>Azhai.onPages({"type":"css","css":["/media/css/hots.css"]});</script>
 		   <script>Azhai.callMethod1("/callmethod?controller=hots","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		   <script>Azhai.onPages({"type":"css","css":["/media/css/hots.css"]});</script> 
 		   <script>Azhai.onPages({"type":"js","js":["/media/js/hots.js"]});</script> 
 		  ';
     }
@@ -26,8 +26,8 @@ class Controller_Hots extends Controller {
         $this->template->menus = '';
         $this->template->css = '';
         $this->template->callmethod = '
-		   <script>Azhai.callMethod1("/callmethod?controller=hotsview&id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		   <script>Azhai.onPages({"type":"css","css":["/media/css/hotsview.css"]});</script> 
+		   <script>Azhai.callMethod1("/callmethod?controller=hotsview&id='.$id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		   <script>Azhai.onPages({"type":"js","js":["/media/js/hots.js"]});</script> ';
 	   
     }

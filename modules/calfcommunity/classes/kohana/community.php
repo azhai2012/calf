@@ -47,23 +47,55 @@ class Kohana_Community {
                     <table cellspacing="0" cellpadding="0" border="0">
                         <tbody align="center">
                             <tr>
-                                <th width="360px" class="tl">
-                                    主题
+                                <th width="400px" class="tl">
+                                    主题 / 回复
                                 </th>
                                 <th width="100px">
                                     浏览
                                 </th>
                                 <th width="100px">
-                                    回复
-                                </th>
-                                <th width="100px">
+                                                                
                                     作者
                                 </th>
                                 <th width="100px">
                                     商品分类
                                 </th>
                             </tr>
-                            <tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/505129_83a1c90b-63a8-4cf6-9208-22b331a57152_1.html">幸亏看全了，不然SB了</a></div></td><td class="gray">24975</td><td class="gray">96</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/2527484-1.html">白话文</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/670-699-700.html">路由器</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/1000622482_b5740f89-747a-42b3-850f-e719f8f52e84_1.html">爵士钢琴，下辈子我还爱你</a></div></td><td class="gray">7602</td><td class="gray">35</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/16180959-1.html">konghongmin</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/4938-4943-4945.html">音乐会</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/505129_72c09bf5-a94b-4d95-a437-a4eac7d49c2e_1.html">刚花99买了WR700N，太坑爹了！</a></div></td><td class="gray">7119</td><td class="gray">21</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/7442571-1.html">菲利克斯_</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/670-699-700.html">路由器</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/508723_6ee2c86b-a96c-4180-a24c-e264f1c8dac8_1.html">华缩的新一代败家卡终于出来了</a></div></td><td class="gray">5990</td><td class="gray">63</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/168119-1.html">煤气站王德成</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/670-677-679.html">显卡</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/1000734552_deac1b11-4a9a-4630-bbf0-fe87aa9b744c_1.html">京东，如此可以关了团购不丢人了</a></div></td><td class="gray">5592</td><td class="gray">61</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/12763017-1.html">lone178</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/1320-1585-1598.html">白酒/黄酒</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/505129_cf2d04b2-020e-4afb-a885-87d9cb1f111c_1.html">99元对华为的749元，应该有市场的</a></div></td><td class="gray">5294</td><td class="gray">24</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/279979-1.html">SSF__</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/670-699-700.html">路由器</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/505129_798a5914-df88-4f5c-977e-24c63071914f_1.html">【讨论】WR703N 1.0的优点与缺点</a></div></td><td class="gray">4849</td><td class="gray">77</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/3647605-1.html">SOHO_张导</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/670-699-700.html">路由器</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/505129_b28c299c-86d5-42c4-ad3d-0130df45fd72_1.html">大家还是看官网的介绍吧</a></div></td><td class="gray">4587</td><td class="gray">21</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/6160-1.html">蛋蛋的传说</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/670-699-700.html">路由器</a></td></tr>
+                            <tr>
+                               <td class="ta-l"><div><a target="_blank" href="#">幸亏看全了，不然SB了</a></div></td>
+                               <td class="gray">24975 / 96</td>
+                               <td class="gray"><div><a target="_blank" href="#">白话文</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">路由器</a></td>
+                             </tr>
+                             <tr>
+                               <td class="ta-l"><div><a target="_blank" href="#">爵士钢琴，下辈子我还爱你</a></div></td>
+                               <td class="gray">7602 / 35</td>
+                               <td class="gray"><div><a target="_blank" href="#">konghongmin</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">音乐会</a></td>
+                             </tr>
+                             <tr>
+                               <td class="ta-l"><div><a target="_blank" href="#">刚花99买了WR700N，太坑爹了！</a></div></td>
+                               <td class="gray">7119 / 21</td><td class="gray"><div><a target="_blank" href="#">菲利克斯_</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">路由器</a></td>
+                              </tr>
+                              <tr>
+                                <td class="ta-l"><div><a target="_blank" href="#">华缩的新一代败家卡终于出来了</a></div></td>
+                                <td class="gray">5990 / 63</td>
+                                <td class="gray"><div><a target="_blank" href="#">煤气站王德成</a></div></td>
+                                <td class="blue"><a target="_blank" href="#">显卡</a></td>
+                               </tr>
+                               <tr>
+                                 <td class="ta-l"><div><a target="_blank" href="#">京东，如此可以关了团购不丢人了</a></div></td>
+                                 <td class="gray">5592 / 61</td>
+                                 <td class="gray"><div><a target="_blank" href="#">lone178</a></div></td>
+                                 <td class="blue"><a target="_blank" href="#">白酒/黄酒</a></td>
+                               </tr>
+                               <tr>
+                                 <td class="ta-l"><div><a target="_blank" href="#">99元对华为的749元，应该有市场的</a></div></td>
+                                 <td class="gray">5294 / 24</td>
+                                 <td class="gray"><div><a target="_blank" href="#">SSF__</a></div></td>
+                                 <td class="blue"><a target="_blank" href="#">路由器</a></td>
+                               </tr>
                         </tbody>
                     </table>
                 </div>
@@ -109,23 +141,62 @@ class Kohana_Community {
                     <table cellspacing="0" cellpadding="0" border="0">
                         <tbody align="center">
                             <tr>
-                                <th width="360px" class="tl">
+                                <th width="400px" class="tl">
                                     主题
                                 </th>
                                 <th width="100px">
-                                    浏览
+                                    浏览/回复
                                 </th>
                                 <th width="100px">
-                                    回复
-                                </th>
-                                <th width="100px">
+                                    
                                     作者
                                 </th>
                                 <th width="100px">
                                     商品分类
                                 </th>
                             </tr>
-                            <tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/419066_b40f865b-89cf-42af-a7b6-8c9e03be4fb0_1.html">屏幕大，塑料感重，还IP4还是有差距的。</a></div></td><td class="gray">7661</td><td class="gray">27</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/597278-1.html">买东西的阿斗</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/652-653-655.html">手机</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/499012_63ef4889-2d28-47c8-8d7c-1de18dec47f0_1.html">959元入手，刷机，完全去联通内置软件！</a></div></td><td class="gray">7257</td><td class="gray">41</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/12456180-1.html">flong99</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/652-653-655.html">手机</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/498982_23a608e0-d417-4f86-8e1c-58a2ff167878_1.html">比较全的蓝魔W12HD图片~和优缺点介绍，想买的来看看！</a></div></td><td class="gray">5955</td><td class="gray">24</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/17944259-1.html">小猪头的微笑</div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/652-828-843.html">MID</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/383810_86e9b7c2-d9c5-4470-a9c3-20c81f943f29_1.html">4799元，看准时机入手，还送了包包。有图有效果欢迎欣赏</a></div></td><td class="gray">5869</td><td class="gray">32</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/7805927-1.html">jimoyuren12</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/652-654-832.html">单反相机</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/332308_d5d28dc3-7a04-44d5-997e-0b0624a4cd39_1.html">8月8号那天900块买到的朋友进来留个言啊</a></div></td><td class="gray">5552</td><td class="gray">52</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/2035444-1.html">只是微笑</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/652-653-655.html">手机</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/1000681038_953a05b5-a00a-4202-8283-0e93059497d6_1.html">晒一晒我买的乐加套件还是大红色婚床上的</a></div></td><td class="gray">5092</td><td class="gray">22</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/18003611-1.html">rongmengan</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/1620-1621-1626.html">床品件套</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/498982_a206eb5c-e9fc-4fb1-8851-225abe308822_1.html">昨晚下单，上午到手的，感觉很棒，大家也看看</a></div></td><td class="gray">4081</td><td class="gray">23</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/13269434-1.html">aiai呢</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/652-828-843.html">MID</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/501542_44761593-a0d5-474b-a4fd-0eb80427b925_1.html">刚刚到手的纽曼P9 什么都不说了上图 大家围观了哟～～～～</a></div></td><td class="gray">4064</td><td class="gray">23</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/23473495-1.html">小熊维泥</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/652-828-843.html">MID</a></td></tr>
+                            <tr>
+                               <td class="ta-l">
+                                 <div><a target="_blank" href="#">屏幕大，塑料感重，还IP4还是有差距的。</a></div>
+                               </td>
+                               <td class="gray">7661 / 27</td>
+                               <td class="gray"><div><a target="_blank" href="#">买东西的阿斗</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">手机</a></td></tr>
+                            <tr>
+                               <td class="ta-l"><div><a target="_blank" href="#">959元入手，刷机，完全去联通内置软件！</a></div></td>
+                               <td class="gray">7257/41</td>
+                               <td class="gray"><div><a target="_blank" href="#">flong99</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">手机</a></td>
+                             </tr>
+                             <tr><td class="ta-l">
+                              <div><a target="_blank" href="#">比较全的蓝魔W12HD图片~和优缺点介绍，想买的来看看！</a></div></td>
+                              <td class="gray">5955/24</td>
+                              <td class="gray"><div><a target="_blank" href="#">小猪头的微笑</div></td>
+                              <td class="blue"><a target="_blank" href="#">MID</a></td>
+                             </tr>
+                             <tr>
+                               <td class="ta-l"><div><a target="_blank" href="#">4799元，看准时机入手，还送了包包。有图有效果欢迎欣赏</a></div></td>
+                               <td class="gray">5869/32</td><td class="gray"><div><a target="_blank" href="#">jimoyuren12</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">单反相机</a></td>
+                             </tr>
+                             <tr>
+                               <td class="ta-l"><div><a target="_blank" href="#">8月8号那天900块买到的朋友进来留个言啊</a></div></td>
+                               <td class="gray">5552/52</td><td class="gray"><div><a target="_blank" href="#">只是微笑</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">手机</a></td>
+                             </tr>
+                             <tr>
+                               <td class="ta-l"><div><a target="_blank" href="#">晒一晒我买的乐加套件还是大红色婚床上的</a></div></td>
+                               <td class="gray">5092/22</td>
+                               <td class="gray"><div><a target="_blank" href="#">rongmengan</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">床品件套</a></td>
+                             </tr>
+                             <tr>
+                                <td class="ta-l"><div><a target="_blank" href="#">昨晚下单，上午到手的，感觉很棒，大家也看看</a></div></td>
+                                <td class="gray">4081/23</td>
+                                <td class="gray"><div><a target="_blank" href="#">aiai呢</a></div></td>
+                                <td class="blue"><a target="_blank" href="#">MID</a></td>
+                             </tr>
+                           
                         </tbody>
                     </table>
                 </div>
@@ -170,26 +241,62 @@ class Kohana_Community {
                 </div>
                 <div class="mc">
                     <table cellspacing="0" cellpadding="0" border="0">
-                        <tbody align="center">
-                            <tr>
-                                <th width="360px" class="tl">
+                          <tr>
+                                <th width="400px" class="tl">
                                     主题
                                 </th>
                                 <th width="100px">
-                                    浏览
+                                    浏览/回复
                                 </th>
                                 <th width="100px">
-                                    回复
-                                </th>
-                                <th width="100px">
+                                    
                                     作者
                                 </th>
                                 <th width="100px">
                                     商品分类
                                 </th>
                             </tr>
-                            <tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/1000761376_f32be4ce-565d-4070-98ed-4b8a819d2092_1.html">开心麻花是加50就可以多买一张票么？</a></div></td><td class="gray">7885</td><td class="gray">36</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/16183279-1.html">王开辉321</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/4938-4943-4946.html">话剧歌剧</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/1000656472_3b8c1837-9390-4210-8f17-1a3940a1bed9_1.html">袖子问题</a></div></td><td class="gray">2282</td><td class="gray">14</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/6504827-1.html">shuijing0328</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/1315-1342-1351.html">外套</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/502001_b620b931-6344-4c25-a5c0-3b1600a09d1c_1.html">这个3G版的能打电话么？？</a></div></td><td class="gray">1374</td><td class="gray">8</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/12054954-1.html">Z_HITMAN007</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/670-671-2694.html">平板电脑</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/506184_15c8af90-fc36-439c-a401-a7d2215040e0_1.html">到底是550D还是500D？</a></div></td><td class="gray">939</td><td class="gray">6</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/14135641-1.html">Works007</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/652-654-832.html">单反相机</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/1000606203_45960d6e-16a6-4059-a99d-42705e103aa7_1.html">这个能飞多高</a></div></td><td class="gray">837</td><td class="gray">9</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/12658014-1.html">lele88822</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/1319-1529-1572.html">遥控玩具</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/503598_7ad86f03-06e4-45bf-ba5c-58328c97b8a2_1.html">装圆形电池还是电板的？？</a></div></td><td class="gray">689</td><td class="gray">6</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/18280980-1.html">偶遇艾玛</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/652-654-831.html">数码相机</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/431078_89435dca-cf2d-4160-8e1a-319edee2c230_1.html">这款没杜比音效了 ？</a></div></td><td class="gray">672</td><td class="gray">4</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/5618852-1.html">西楚项羽</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/670-671-672.html">笔记本</a></td></tr><tr><td class="ta-l"><div><a target="_blank" href="http://club.360buy.com/bbsDetail/505129_7924ae3d-4b36-491b-bed6-6da2cb61a125_1.html">TP-LINKTL-WR703N与TP-LINKTL-WR700N有何区别？</a></div></td><td class="gray">616</td><td class="gray">6</td><td class="gray"><div><a target="_blank" href="http://club.360buy.com/userdiscuss/533339-1.html">少帅2008</a></div></td><td class="blue"><a target="_blank" href="http://www.360buy.com/products/670-699-700.html">路由器</a></td></tr>
-                        </tbody>
+                            <tr>
+                               <td class="ta-l">
+                                 <div><a target="_blank" href="#">屏幕大，塑料感重，还IP4还是有差距的。</a></div>
+                               </td>
+                               <td class="gray">7661 / 27</td>
+                               <td class="gray"><div><a target="_blank" href="#">买东西的阿斗</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">手机</a></td></tr>
+                            <tr>
+                               <td class="ta-l"><div><a target="_blank" href="#">959元入手，刷机，完全去联通内置软件！</a></div></td>
+                               <td class="gray">7257/41</td>
+                               <td class="gray"><div><a target="_blank" href="#">flong99</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">手机</a></td>
+                             </tr>
+                             <tr><td class="ta-l">
+                              <div><a target="_blank" href="#">比较全的蓝魔W12HD图片~和优缺点介绍，想买的来看看！</a></div></td>
+                              <td class="gray">5955/24</td>
+                              <td class="gray"><div><a target="_blank" href="#">小猪头的微笑</div></td>
+                              <td class="blue"><a target="_blank" href="#">MID</a></td>
+                             </tr>
+                             <tr>
+                               <td class="ta-l"><div><a target="_blank" href="#">4799元，看准时机入手，还送了包包。有图有效果欢迎欣赏</a></div></td>
+                               <td class="gray">5869/32</td><td class="gray"><div><a target="_blank" href="#">jimoyuren12</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">单反相机</a></td>
+                             </tr>
+                             <tr>
+                               <td class="ta-l"><div><a target="_blank" href="#">8月8号那天900块买到的朋友进来留个言啊</a></div></td>
+                               <td class="gray">5552/52</td><td class="gray"><div><a target="_blank" href="#">只是微笑</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">手机</a></td>
+                             </tr>
+                             <tr>
+                               <td class="ta-l"><div><a target="_blank" href="#">晒一晒我买的乐加套件还是大红色婚床上的</a></div></td>
+                               <td class="gray">5092/22</td>
+                               <td class="gray"><div><a target="_blank" href="#">rongmengan</a></div></td>
+                               <td class="blue"><a target="_blank" href="#">床品件套</a></td>
+                             </tr>
+                             <tr>
+                                <td class="ta-l"><div><a target="_blank" href="#">昨晚下单，上午到手的，感觉很棒，大家也看看</a></div></td>
+                                <td class="gray">4081/23</td>
+                                <td class="gray"><div><a target="_blank" href="#">aiai呢</a></div></td>
+                                <td class="blue"><a target="_blank" href="#">MID</a></td>
+                             </tr>                </tbody>
                     </table>
                 </div>
             </div>

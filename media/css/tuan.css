@@ -16,7 +16,7 @@
 #tuan_context .left {float: left;width: 710px;_display: inline;margin-right: 10px;padding-left:10px; }
 
 #deal-intro {padding: 25px 10px 15px;margin: 20px 0 20px 0;border:3px solid #FC9;background: white;}
-
+* html #deal-intro {border:3px solid #FC9;}
 #deal-intro .deal-price {background-image:url(/media/images/tuan.gif);} 
 
 #deal-intro .deal-price {position: absolute;z-index: 2;left: -26px;width: 307px;height: 82px;line-height: 82px;background-position:0 20px;background-repeat:no-repeat;}
@@ -35,7 +35,7 @@
 .deal-buy-tip-top strong {color: #F60;}
 .deal-buy-on {margin-bottom: 5px;font-size: 16px;font-weight: bold;}
 .todydeal {z-index: 900;position: relative;}
-#deal-intro h1.indextitle {padding: 0 50px 20px;font-size: 20px;font-weight: bold;line-height: 1.2;white-space: normal;overflow: auto;word-wrap: break-word;word-break: normal;font-family: '微软雅黑',arial,sans-serif;}
+#deal-intro h1.indextitle {padding: 0 50px 20px;font-size: 20px;font-weight: bold;line-height: 1.2;white-space: normal;overflow: auto;word-wrap: break-word;word-break: normal;font-family: '寰�蒋���',arial,sans-serif;}
 #deal-intro .main {float: left;width: 237px;margin-right: 5px;_margin-right: 5px;_display: inline;font-family: Helvetica,arial,sans-serif;}
 #deal-intro .deal-buy {position: relative;}
 
