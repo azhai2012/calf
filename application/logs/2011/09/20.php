@@ -378,3 +378,41 @@
 --
 #0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
 #1 {main}
+2011-09-20 10:50:23 --- ERROR: ErrorException [ 2048 ]: Creating default object from empty value ~ MODPATH/calfcart/classes/kohana/cart.php [ 132 ]
+2011-09-20 10:50:23 --- STRACE: ErrorException [ 2048 ]: Creating default object from empty value ~ MODPATH/calfcart/classes/kohana/cart.php [ 132 ]
+--
+#0 /Users/zhaibob/git/calf/modules/calfcart/classes/kohana/cart.php(132): Kohana_Core::error_handler(2048, 'Creating defaul...', '/Users/zhaibob/...', 132, Array)
+#1 /Users/zhaibob/git/calf/modules/calfcart/classes/kohana/cart.php(46): Kohana_Cart->get_cart_content_step_three()
+#2 /Users/zhaibob/git/calf/application/classes/model/main/content.php(84): Kohana_Cart->get_cart_content()
+#3 /Users/zhaibob/git/calf/application/classes/controller/callmethod.php(39): Model_Main_Content->get_cart_content('', Array)
+#4 [internal function]: Controller_callmethod->action_index()
+#5 /Users/zhaibob/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_callmethod))
+#6 /Users/zhaibob/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#7 /Users/zhaibob/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#8 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#9 {main}
+2011-09-20 11:19:10 --- ERROR: ErrorException [ 1 ]: Call to undefined method Kohana_Calfdb_Product::get_cart_one_data_array() ~ MODPATH/calfcart/classes/kohana/cart.php [ 67 ]
+2011-09-20 11:19:10 --- STRACE: ErrorException [ 1 ]: Call to undefined method Kohana_Calfdb_Product::get_cart_one_data_array() ~ MODPATH/calfcart/classes/kohana/cart.php [ 67 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-20 11:19:20 --- ERROR: ErrorException [ 1 ]: Call to undefined method Kohana_Calfdb_Product::get_cart_two_data_array() ~ MODPATH/calfcart/classes/kohana/cart.php [ 95 ]
+2011-09-20 11:19:20 --- STRACE: ErrorException [ 1 ]: Call to undefined method Kohana_Calfdb_Product::get_cart_two_data_array() ~ MODPATH/calfcart/classes/kohana/cart.php [ 95 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-20 11:19:20 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-20 11:19:20 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-20 11:20:27 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected $end, expecting T_FUNCTION ~ MODPATH/calfdb/classes/kohana/calfdb/cart.php [ 116 ]
+2011-09-20 11:20:27 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected $end, expecting T_FUNCTION ~ MODPATH/calfdb/classes/kohana/calfdb/cart.php [ 116 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-20 11:20:27 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-20 11:20:27 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
