@@ -1,13 +1,14 @@
-#shopslist .left {width:715px;float:left;background:#F1f1f1;padding:10px 0 0 10px;}
-#shopslist .right {width:236px;float:left;padding:10px 10px 0 8px;background:#F1f1f1;}
+#shopslist .left {width:730px;float:left;background:#F1f1f1;padding:10px 0 0 10px;}
+#shopslist .right {width:226px;float:left;padding:10px 2px 0 2px;background:#F1f1f1;}
 #shopslist h2 {font-size:16px; display: block; border-bottom:0px;margin: 0 0 5px 0;}
 
 #shops_context {background:#F1f1f1;}
 #snav {margin-bottom:10px;background:#FFFFFF;}
 
-.hot_recommend ul {margin-top:14px;padding-bottom:3px;width:760px;}
-.hot_recommend li {float: left;height: 235px;padding: 0px 10px 10px 0px;position: relative;width: 170px;}
-.hot_recommend li img {height: 235px;width: 170px;}
+.hot_recommend ul {margin-top:14px;padding-bottom:3px;width:730px;}
+.hot_recommend li {float: left;height: 235px;padding: 0px 12px 10px 0px;position: relative;width: 170px;}
+.hot_recommend li .name{vertical-align:center;}
+.hot_recommend li img {height: 235px;width: 170px;vertical-align:center;}
 .hot_recommend li span {bottom: 15px;height: 20px;left: 0px;position: absolute;width: 170px;}
 .hot_recommend li .title {background:#119B11; color:white;line-height: 20px;text-align: center;z-index: 3;}
 
@@ -23,7 +24,7 @@
 
 .bd-side li .num {color: #999;display: inline;float: left;font-size: 14px;font-weight: bold;text-align: center;width: 30px;}
 .bd-side li .high{color: #e87e09;}
-.bd-side li .name {border-left: 1px solid #E6E6E6;border-right: 1px solid #E6E6E6;display: inline;float: left;font-size: 12px;font-weight: normal;margin-right: 5px;overflow: hidden;text-indent: 10px;width: 114px;}
+.bd-side li .name {vertical-align:center;border-left: 1px solid #E6E6E6;border-right: 1px solid #E6E6E6;display: inline;float: left;font-size: 12px;font-weight: normal;margin-right: 5px;overflow: hidden;text-indent: 10px;width: 114px;}
 
 .bd-side a:hover {background:url(/media/images/r01.gif) repeat-x 0 0;color:white;cursor:pointer;text-decoration:none;   }
 
@@ -31,17 +32,9 @@
 
 .new_join  {padding:10px 0 0 5px;background:#F1f1f1;width:976px;margin-top:10px;border-top:1px #ddd dotted;}
 
-.ul-new {
-width: 975px;
-}
+.ul-new {width: 975px;}
 
-.ul-new li {
-float: left;
-height: 170px;
-padding-right: 5px;
-text-align: center;
-width: 190px;
-}
+.ul-new li {float: left;height: 170px;padding-right: 5px;text-align: center;width: 190px;}
 
 
 

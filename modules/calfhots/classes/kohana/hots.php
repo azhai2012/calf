@@ -4,14 +4,18 @@ class Kohana_Hots {
 
     private $_id;
     private $_data = array();
+    private $_template = NULL;
 
     public static function factory($id, array $data = NULL) {
         return new Kohana_Hots($id, $data);
+        
     }
 
     function __construct($id, array $data = NULL) {
         $this->_id = $id;
         $this->_data = $data;
+        $this->_template = View::factory('hots/content');
+         
     }
 
     public function get_hots_view_content() {
@@ -211,16 +215,16 @@ class Kohana_Hots {
 
     public function get_hots_content() {
 
-        $result = '<div id="account_list">
+        $result = '<div id="hots_list"> <!-- begin hots_list -->
 		           <div id="hnav">您现在的位置：<a href="/hots">展会区</a></div>
 		           <div id="hots_context"> <!-- begin hots_context -->
-		              <div class="left clearfix"> <!-- begin left -->
+		              <div class="left clearfix" style="width:700px"> <!-- begin left -->
 		              ' . $this->get_hots_left_content() . '
 		              </div>  <!-- end left -->
-		              <div class="right"> <!-- begin right --> ' . $this->get_host_right_content();
+		              <div class="right clearfix"> <!-- begin right --> ' . $this->get_host_right_content();
 
         $result.='</div> <!-- end right -->
-		           </div> <!-- end account_context -->
+		           </div> <!-- end hots_context -->
 		    </div>';
 
         return $result;
@@ -291,7 +295,7 @@ class Kohana_Hots {
         return $result;
     }
 
-    private function get_hots_left_content() {
+     function get_hots_left_content() {
 
         $array_data = array(
             array('name' => '徐州片区会展', 'date_begin' => '2011-09-01', 'date_end' => '2011-09-07', 'isactive' => 1,
@@ -308,7 +312,7 @@ class Kohana_Hots {
                     array('name' => '凯欧柯曼', 'url' => '/hots/views/0102', 'img' => '', 'counts' => 45),
                      ),
             ),
-            array('name' => '连云港区会展', 'date_begin' => '2011-09-10', 'date_end' => '2011-09-17', 'isactive' => 1,
+            array('name' => '连云港区会展', 'date_begin' => '2011-09-10', 'date_end' => '2011-09-17', 'isactive' => 0,
                 'values' => array(
                     array('name' => '凯图', 'url' => '#', 'img' => '/media/images/767_2.jpg', 'counts' => 109),
                     array('name' => '卡丹路', 'url' => '#', 'img' => '/media/images/223_2.jpg', 'counts' => 210),
@@ -336,63 +340,8 @@ class Kohana_Hots {
                 ),
             ),
         );
-
-        $result = '';
-        foreach ($array_data as $key => $value) {
-
-            $count = count($value['values']);
-            $values = $value['values'];
-            $isactive = ($value['isactive'] == 1) ? 'active' : 'notactive';
-            $result.='
-                  <div class="abc-a">
-                     <div class="' . $isactive . '"></div>
-                     <h3><a name="brandK">' . $value['name'] . '</a></h3> ';
-            if ($value['isactive'] == 1) {
-                $result.='
-                     <div class="title"><p>参展供货商：' . $count . ' 家</p>
-                     <p>开始日期：' . $value['date_begin'] . ' -- 结束日期：' . $value['date_end'] . '</p>
-                     </div>   
-                     <div class="clearfix">
-                     <ul class="abc-height150px">
-                  ';
-                for ($i = 0; $i < $count; $i++) {
-                    if ($i < 5) {
-                        $result.='<li><a href="' . $values[$i]['url'] . '">
-                           <img src="' . $values[$i]['img'] . '" alt="' . $values[$i]['name'] . '">
-                           <p>' . $values[$i]['name'] . '( <span class="ff6600">' . $values[$i]['counts'] . '</span>款)</p>
-                           </a>
-                         </li>';
-                    } else {
-                        if (($i % 5) === 0)
-                            $result.='</ul> <ul class="brandfontlist">';
-                        $result.='<li><a href="' . $values[$i]['url'] . '">
-                                    <p>' . $values[$i]['name'] . '( <span class="ff6600">' . $values[$i]['counts'] . '</span>款)</p>
-                                 </a></li>';
-                    }
-                }
-
-                $result.='
-                        </ul> 
-                      </div>
-                       <div class="status">*提示：本场目前参加家数：1000 家 , 截至目前共订购：2030056.00元</div>
-                      <div class="clearfix"></div>
-                       
-                    ';
-            }
-            else {
-                $result.='
-                     <div class="title"><p>预计开始日期：' . $value['date_begin'] . ' -- 结束日期：' . $value['date_end'] . '</p></div>                          
-                     <ul class="abc-height150px">
-                    ';
-                $result.='<li><div style="width:700px;font-size:30px;color:#ddd;height:150px;text-align:center;line-height:150px;">惊喜连连,敬请期待！</div></li>';
-
-                $result.='</ul> ';
-            }
-
-            $result.=' <div class="clearfix"></div></div>';
-        }
-
-
+        $this->_template->array_data = $array_data;
+        $result = $this->_template;
         return $result;
     }
 

@@ -46,9 +46,9 @@ class Kohana_Cart {
 		
 		$array_data= array(
 		    'lists'=>array(
-		       array('id'=>1020203,'name'=>"绿A螺旋藻精片 150g（300片） 抗辐射防辐射",'numtotal'=>100,'num'=>10,'price'=>'119.00','savemoney'=>'0','url'=>'#','img'=>'http://img38.dangdang.com/74/10/20178848-1_x.jpg'),
-		array('id'=>1020203,'name'=>"绿A螺旋藻精片 150g（300片） 抗辐射防辐射",'numtotal'=>100,'num'=>10,'price'=>'119.00','savemoney'=>'0','url'=>'#','img'=>'http://img38.dangdang.com/74/10/20178848-1_x.jpg'),
-		array('id'=>1020203,'name'=>"绿A螺旋藻精片 150g（300片） 抗辐射防辐射",'numtotal'=>100,'num'=>10,'price'=>'119.00','savemoney'=>'0','url'=>'#','img'=>'http://img38.dangdang.com/74/10/20178848-1_x.jpg'),
+		       array('id'=>1020203,'name'=>"绿A螺旋藻精片 150g（300片） 抗辐射防辐射",'numtotal'=>100,'num'=>10,'price'=>'119.00','savemoney'=>'0','url'=>'#','img'=>'/media/images/20178848-1_x.jpg'),
+		array('id'=>1020203,'name'=>"绿A螺旋藻精片 150g（300片） 抗辐射防辐射",'numtotal'=>100,'num'=>10,'price'=>'119.00','savemoney'=>'0','url'=>'#','img'=>'/media/images/20178848-1_x.jpg'),
+		array('id'=>1020203,'name'=>"绿A螺旋藻精片 150g（300片） 抗辐射防辐射",'numtotal'=>100,'num'=>10,'price'=>'119.00','savemoney'=>'0','url'=>'#','img'=>'/media/images/20178848-1_x.jpg'),
 		
 	        ),
 	        'status'=>array('rowcount'=>1,'total'=>'200.40','return_url'=>'#'),

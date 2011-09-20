@@ -12,14 +12,12 @@
 	<div class="cart_one_content"> <!-- begin cart_one_content -->
 		<ul class="cart_rows">
 		<?php foreach ($array_data['lists'] as $key=>$value): ?>
-			<li class="row0"><a name="productpic" href="#" target="_blank"
+			<li class="row0">
+				<a name="productpic" href="#" target="_blank"
 				title="<?php $value['name']; ?>"><img
-					src="<?php echo $value['img']; ?>"> </a></li>
+					src="<?php echo $value['img']; ?>" onerror="this.src='/media/images/none_150.gif'" width="50px" height="50px"> </a></li>
 			<li class="row1">
-				<p>
-					<i></i> <span class="name"> <a name="product" target="_blank"
-						href="#" title="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></a> </span>
-				</p>
+			    <a name="product" target="_blank" href="#" title="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></a>
 			</li>
 			<li class="row2"><?php echo $value['numtotal']; ?></li>
 			<li class="row3"><span>￥<?php echo $value['price']; ?></span></li>

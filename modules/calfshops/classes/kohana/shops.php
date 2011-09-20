@@ -59,9 +59,7 @@ class Kohana_Shops {
 	  $result='
 	    <h2>热门推荐品牌</h2>
 	    <ul>
-	      <li>
-            <a href="#"><img src="/media/images/s3.png" alt=""><span class="bg-title"></span><span class="title">六神旗舰店</span></a>
-           </li>
+	      <li><a href="#"><img src="/media/images/s04.jpg" alt=""><span class="bg-title"></span><span class="title">六神旗舰店</span></a></li>
 	      <li><a href="#"><img src="/media/images/s04.jpg" alt=""><span class="bg-title"></span><span class="title">六神旗舰店</span></a></li>
 	      <li><a href="#"><img src="/media/images/s3.png" alt=""><span class="bg-title"></span><span class="title">六神旗舰店</span></a></li>
 	      <li><a href="#"><img src="/media/images/s4.jpg" alt=""><span class="bg-title"></span><span class="title">六神旗舰店</span></a></li>

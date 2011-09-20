@@ -11,11 +11,9 @@
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
 
-
-s
 /* Left style */
 
-#hots_context .left {float: left;width:710px;_display: inline;margin-right: 5px;border:10px #000 solid; }
+#hots_context .left {float:left;width:700px;margin-right: 5px;}
 .abc-a h3,.hots-extra h3 {background-image:url(/media/images/hotsbd.gif)}
 
 .active,.notactive {background-image:url(/media/images/hots.gif);}
@@ -23,27 +21,27 @@ s
 .abc-a h3 {border-top:1px #000 solid; background-position:0 0; background-repeat:repeat-x; margin:0;padding:0;text-indent:20px; font-family: Arial;font-size: 16px;font-weight: bold;height: 35px;line-height: 35px;border-bottom: 1px dashed #CCC;}
 .abc-a h3 a {color:#F60;float:left;}
 .active {width:127px;height:109px;position:absolute;top:0;right:0; background-position:-156px -98px;background-repeat:no-repeat; }
-* html .active {width:127px;right:39px;}
+* html .active {width:127px;}
 .notactive {width:127px;height:111px;position:absolute;top:0;right:0; background-position:-156px -221px;background-repeat:no-repeat; }
-* html .notactive {width:127px;right:29px;}
+* html .notactive {width:127px;}
 
 .abc-a h3 div {borde:1px #000 solid;float:right;width:200px;height:30px;}
 .abc-a .title {margin-bottom:10px; }
 .abc-a .title p {padding:5px 0 5px 20px;font-weight:bold; }
-.abc-a .abc-height150px {width: 100%;clear: both;height: 135px;background: #F8F5F2;margin-bottom: 25px;}
+.abc-a .hots_lists .abc-height150px {width: 100%;clear: both;height: 135px;background: #F8F5F2;margin-bottom: 25px;}
 
-.abc-a .abc-height150px li {width: 140px;text-align: center;float: left;}
+.abc-a .hots_lists .abc-height150px li {width: 130px;text-align: center;float: left;}
 
 .abc-a .status {margin:30px 0 10px 10px;float:left;border-top:1px #DFC9B2 solid;padding:8px 15px;width:600px;  }
 
 .abc-height150px img {width: 115px;height: 75px;border: 1px solid #EEE;margin-top: 20px;}
 
-.brandfontlist {float: left;width: 730px;}
+.brandfontlist {float: left;width: 680px;}
 
 .brandfontlist li {float: left;width: 133px;padding-left: 15px;height: 22px;line-height: 22px;}
 
 /* Right style */
-#hots_context .right {float: left;width:220px;_display: inline;margin-right: 15px; }
+#hots_context .right {float: right;width:220px;_display: inline;margin-right: 15px; }
 
 .hots-extra {margin-top:20px;border:1px #ccc solid; }
 .hots-extra h3 {margin:0;padding:0;text-indent:10px; font-family: Arial;font-size: 14px;font-weight: bold;height: 35px;line-height: 35px;border-bottom: 1px dashed #CCC; }
