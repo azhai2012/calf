@@ -1,28 +1,21 @@
 
-#discounts_list .left {margin-top:10px;}
-.dis_new_list h3 {display: block;margin:10px 0 10px 20px;}
+#discounts_list .left{margin-top:10px;}
+.dis_new_list h3{display:block;margin:10px 0 10px 20px;}
+#discounts_list #dnav{background:#ffffff;margin-bottom:10px;padding:10px 0;margin-bottom:10px;}
+#discount_context{background:#ddd;padding-top:5px;}
+;.dis_new_list{margin-top:5px;}
+.dis_new_list ul{margin-top:14px;padding-bottom:3px;}
+.dis_new_list li{background:#ffffff;float:left;height:300px;margin:0px 4px 10px 18px;position:relative;width:170px;text-align:center;}
+.dis_new_list li img{height:120px;width:120px;}
+.dis_new_list li .disinfo{height:60px;}
+.dis_new_list li .name{font-weight:bold;}
+.dis_new_list li .price b{font-weight:bold;color:#c30;}
+.dis_new_list li span{padding:5px 0;width:170px;display:inline-block;}
+.dis_new_list li .title{background:#119B11;color:white;line-height:20px;text-align:center;z-index:3;}
+.list_detail{margin-bottom:5px;}
+.list_detail ul li{background:transparent url(/media/images/ico_dot.jpg) no-repeat scroll 0px 0px;height:18px;margin-bottom:8px;padding-left:13px;}
+.list_detail ul li span{padding-right:20px;}
+li.li_first{margin-top:10px;}
+span.first{font-weight:bold;width:75px;display:inline-block;}
+li.li_line{border-bottom:1px #ccc dotted;}
 
-
-#discounts_list #dnav {background:#ffffff;margin-bottom:10px;padding:10px 0;margin-bottom:10px; }
-
-#discount_context {background:#ddd;padding-top:5px;};
-
-.dis_new_list {margin-top:5px; }
-.dis_new_list ul {margin-top:14px;padding-bottom:3px;}
-
-.dis_new_list li {background:#ffffff;float: left;height: 300px;margin: 0px 4px 10px 18px;position: relative;width: 170px;text-align:center; }
-.dis_new_list li img {height: 120px;width: 120px;}
-.dis_new_list li .disinfo {height: 60px;}
-.dis_new_list li .name {font-weight: bold;}
-.dis_new_list li .price b{font-weight: bold;color:#c30;}
-.dis_new_list li span {padding:5px 0;width: 170px;display:inline-block;}
-.dis_new_list li .title {background:#119B11; color:white;line-height: 20px;text-align: center;z-index: 3;}
-
-.list_detail {margin-bottom:5px;}
-.list_detail ul li {background: transparent url(/media/images/ico_dot.jpg) no-repeat scroll 0px 0px;height: 18px;margin-bottom: 8px;padding-left: 13px;}
-.list_detail ul li span {padding-right: 20px;}
-
-li.li_first {margin-top: 10px; }
-
-span.first {font-weight: bold;width:75px;display:inline-block;}
-li.li_line { border-bottom: 1px #ccc dotted;}

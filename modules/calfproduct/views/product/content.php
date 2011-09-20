@@ -1,4 +1,4 @@
-<?php 
+<?php defined('SYSPATH') or die('No direct script access.');
 /* 
  * 商品明细视图
  * @author zhaibob

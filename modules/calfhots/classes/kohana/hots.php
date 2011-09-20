@@ -18,6 +18,7 @@ class Kohana_Hots {
          
     }
 
+   
     public function get_hots_view_content() {
         $result = '<div id="hots_list" class="clearfix">
 		           <div id="hnav">您现在的位置：<a href="/hots">展会区</a> --' . $this->_id . '</div>
@@ -65,6 +66,9 @@ class Kohana_Hots {
         return $result;
     }
 
+/*
+	TODO 得到展商信息
+*/
     private function get_hots_view_left_content() {
 
         $array = array(

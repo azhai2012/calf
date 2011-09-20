@@ -1,4 +1,4 @@
-<?php
+<?php defined('SYSPATH') or die('No direct script access.');
 ?>
 <div class="cart_one"> <!-- begin cart_one -->
 	<ul class="cart_subject" id="cart_title">
@@ -45,3 +45,4 @@
                     <a href="<?php echo $array_data['status']['return_url'] ?>" target="_blank" name="goon" class="goon"> << <?php echo __('继续购物'); ?> </a>
                 </p>
 </div>
+<?php echo $get_cart_recommend_list; ?>

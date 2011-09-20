@@ -1,4 +1,4 @@
-<?php
+<?php defined('SYSPATH') or die('No direct script access.');
 /*
  * 功能：显示购物车的视图
  * @author zhaibob

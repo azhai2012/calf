@@ -1,4 +1,4 @@
-<?php
+<?php defined('SYSPATH') or die('No direct script access.');
 /*
  * 功能模块：calfproduct
 * 路径：/modules/calfproduct/view/product

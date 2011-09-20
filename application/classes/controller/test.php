@@ -27,8 +27,8 @@ class Controller_Test extends Controller {
 		parent::before();
 		$id='2222';
 		$data=NULL;
-		$hots  = Hots::factory($id,$data);
-		$_array_data =  $hots->get_hots_left_content();
+		$hots  = Cart::factory($id,$data);
+		$_array_data =  $hots->get_cart_content_step_two();
 		
 		$result=$_array_data;
 		echo $result;

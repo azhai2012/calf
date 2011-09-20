@@ -1,127 +1,68 @@
 /* 
-    Document   : hotsview
-    Created on : 2011-9-7, 1:35:51
-    Author     : root
-    Description:
-        Purpose of the stylesheet follows.
+Document :hotsview
+Created on :2011-9-7,1:35:51
+Author :root
+Description:Purpose of the stylesheet follows.
 */
-
 /* 
-   TODO customize this sample style
-   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+TODO customize this sample style
+Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
-#hots_view_context .left {float: left;width: 200px;_display: inline;margin-right: 15px; }
-
-.s_info {margin-top:20px;margin-right:10px;border:1px #ccc solid;  }
-.s_info h3 {margin:0;padding:0;padding:5px 10px;border-bottom:1px #ccc solid;  background:#eee;font-size:12px;   }
-.s_info ul {margin:10px 0; }
-.s_info li {line-height:25px;padding-left:5px;  }
-.s_info span {display:inline-block;}
-.s_info .p_no {width:20px;text-align:center; }
-.s_info .p_url {width:95px;}
-.s_info .p_amount {width:60px;text-align:right; }
-
-.s-filter {border: 1px solid #E5E5E5;height: 26px;margin-top:10px;margin-bottom: 10px;overflow: hidden;}
-.s-filter .mode,.s-filter .taxis,.s-filter .dis {float: left;margin: 4px 18px 0px 20px;}
-.button, .box i, .taxis .icon,.mode a,.product .price,.product .default-price span
-,.compare .extra,#btn_buy,#btn_wishlist,#btn_compare
- {background: url(/media/images/desktop.gif) no-repeat;}
-
-.s-filter .mode a {float: left;height: 16px;margin-right: 5px;overflow: hidden;text-indent: -99px;width: 16px;}
-.s-filter span {float: left;}
-.grid .mode .mode-row {background-position: -1059px -43px;}
-.grid .mode .mode-grid {background-position: -1075px -43px;}
-.row .mode .mode-row {background-position: -1091px -43px;}
-.row .mode .mode-gird {background-position: -1106px -43px;}
-a.button {background-position: -1090px -96px;width:75px;height:26px;display:block;text-align:center;padding-top:3px; margin-top:-3px;    }
-
-.s-filter .taxis a {background-color: #EEE;border:1px solid #CCC;color: #333;float: left;height: 16px;line-height: 16px;margin-left: -1px;padding-left: 5px;width: 40px;}
-.s-filter .taxis a.def .icon {background-position: -1123px -43px;}
-.s-filter .taxis a.fav .icon {background-position: -1138px -43px;}
-.s-filter .taxis a.up .icon {background-position: -1154px -43px;}
-.s-filter .taxis a.down .icon {background-position: -1170px -43px;}
-
-.s-filter .taxis i {display: inline-block;height: 16px;overflow: hidden;vertical-align: top;width: 16px;}
-
-.product-list {padding: 10px 0;overflow: hidden;}
-.product {width: 185px;height: 315px;padding: 0;float: left;height: 384px;z-index: 1;margin: 0 5px 5px 0;}
-.product {overflow: hidden;color: #999;}
-
-.product_hover .productInfo {background-color:#f5f5f5;}
-.product_hover .product-title {height:auto;}
-
-.productInfo {width: 175px;min-height: 300px;border: 0;padding: 14px;}
-.productInfo .btns input {border:0;}
-.aclick #btn_buy {text-align:center;line-height:26px;font-size:12px;display:inline-block;background-position:-1036px -96px;width:50px;height:23px;margin-top:5px;}
-.aclick #btn_compare {text-align:center;line-height:26px;font-size:12px;display:inline-block;background-position:-1036px -96px;margin-top:5px;width:50px;height:23px;}
-.aclick #btn_wishlist {text-align:center;line-height:26px;font-size:12px;display:inline-block;background-position:-1036px -96px;margin-top:5px;width:50px;height:23px;}
-
-.aclick a#btn_buy:hover,a#btn_wishlist:hover,a#btn_compare:hover {background-position:-1036px -119px;}
-
-
-.product-img, .item-miniView .product-img a {width: 160px;height: 160px;}
-.product-img {display: block;overflow: hidden;background: white;}
-.product-img a {display: table-cell;vertical-align: middle;text-align: center;background-color: white;}
-.product-price {position: relative;height: 20px;line-height: 20px;overflow: hidden;margin-top:10px;}
-.product .price {margin-top:10px;padding:10px 0 0 13px;background-position: -1172px -69px; font-size:16px;color: #C00;font-weight: bold;}
-.product .default-price {height: 14px;overflow: hidden;font-family: "tahoma";text-decoration: line-through;}
-.product .default-price span {display:inline-block;width:14px;height:14px;background-position:-1157px -77px;}
-.product-title {margin: 3px 0;height: 36px;overflow: hidden;word-break: break-all;line-height: 18px;}
-.product-sum {position: relative;z-index: 999;margin: 0 0 3px;overflow: hidden;}
-.product-title a {font-size: 12px;font-weight: 400;color: #666;height:36px;}	
-
-
-
-#p_sum {width:60px;}
-
-
-.all_discount_info {margin-top:20px;margin-bottom:10px;width:760px;height:50px;border:1px #F90 solid;text-indent: 20px;line-height:50px;font-size:20px;  }
-
-#hots_view_context .right {float: left;width: 760px;_display: inline; }
-
-#tstart {
-position: fixed;
-left: 0;
-bottom: 0;
-z-index: 10000;
-_position: absolute;
-width: 100%;
-height: 28px;
-color: #3E3E3E;
-text-align: left;
-
-}
-
-.tstart-toolbar {
-height: 28px;
-float: right;
-right: 0;
-width:200px;
-}
-
-.tstart-areas {
-position: relative;
-zoom: 1;
-background-color: #E6E6E6;
-background-repeat: repeat-x;
-background-position: 0 0;
-border: solid #595959;
-height: 25px;
-line-height: 25px;
-float: right;
-border-width: 1px 1px 0;
-}
-
-.tstart-left-area {
-float: left;
-}
-
-.tstart-right-area {
-float: left;
-width:200px;
-}
-.tstart-right-area span {display:inline-block; }
-.tstart-right-area .tstart-normal-trigger {margin-left:10px; }
-.tstart-right-area .tstart-custom-item {float:right;margin-right:15px; }
-
-
+#hots_view_context .left{float:left;width:200px;_display:inline;margin-right:15px;}
+.s_info{margin-top:20px;margin-right:10px;border:1px #ccc solid;}
+.s_info h3{margin:0;padding:0;padding:5px 10px;border-bottom:1px #ccc solid;background:#eee;font-size:12px;}
+.s_info ul{margin:10px 0;}
+.s_info li{line-height:25px;padding-left:5px;}
+.s_info span{display:inline-block;}
+.s_info .p_no{width:20px;text-align:center;}
+.s_info .p_url{width:95px;}
+.s_info .p_amount{width:60px;text-align:right;}
+.s-filter{border:1px solid #E5E5E5;height:26px;margin-top:10px;margin-bottom:10px;overflow:hidden;}
+.s-filter .mode,.s-filter .taxis,.s-filter .dis{float:left;margin:4px 18px 0px 20px;}
+.button,.box i,.taxis .icon,.mode a,.product .price,.product .default-price span
+,.compare .extra,#btn_buy,#btn_wishlist,#btn_compare{background:url(/media/images/desktop.gif) no-repeat;}
+.s-filter .mode a{float:left;height:16px;margin-right:5px;overflow:hidden;text-indent:-99px;width:16px;}
+.s-filter span{float:left;}
+.grid .mode .mode-row{background-position:-1059px -43px;}
+.grid .mode .mode-grid{background-position:-1075px -43px;}
+.row .mode .mode-row{background-position:-1091px -43px;}
+.row .mode .mode-gird{background-position:-1106px -43px;}
+a.button{background-position:-1090px -96px;width:75px;height:26px;display:block;text-align:center;padding-top:3px;margin-top:-3px;}
+.s-filter .taxis a{background-color:#EEE;border:1px solid #CCC;color:#333;float:left;height:16px;line-height:16px;margin-left:-1px;padding-left:5px;width:40px;}
+.s-filter .taxis a.def .icon{background-position:-1123px -43px;}
+.s-filter .taxis a.fav .icon{background-position:-1138px -43px;}
+.s-filter .taxis a.up .icon{background-position:-1154px -43px;}
+.s-filter .taxis a.down .icon{background-position:-1170px -43px;}
+.s-filter .taxis i{display:inline-block;height:16px;overflow:hidden;vertical-align:top;width:16px;}
+.product-list{padding:10px 0;overflow:hidden;}
+.product{width:185px;height:315px;padding:0;float:left;height:384px;z-index:1;margin:0 5px 5px 0;}
+.product{overflow:hidden;color:#999;}
+.product_hover .productInfo{background-color:#f5f5f5;}
+.product_hover .product-title{height:auto;}
+.productInfo{width:175px;min-height:300px;border:0;padding:14px;}
+.productInfo .btns input{border:0;}
+.aclick #btn_buy{text-align:center;line-height:26px;font-size:12px;display:inline-block;background-position:-1036px -96px;width:50px;height:23px;margin-top:5px;}
+.aclick #btn_compare{text-align:center;line-height:26px;font-size:12px;display:inline-block;background-position:-1036px -96px;margin-top:5px;width:50px;height:23px;}
+.aclick #btn_wishlist{text-align:center;line-height:26px;font-size:12px;display:inline-block;background-position:-1036px -96px;margin-top:5px;width:50px;height:23px;}
+.aclick a#btn_buy:hover,a#btn_wishlist:hover,a#btn_compare:hover{background-position:-1036px -119px;}
+.product-img,.item-miniView .product-img a{width:160px;height:160px;}
+.product-img{display:block;overflow:hidden;background:white;}
+.product-img a{display:table-cell;vertical-align:middle;text-align:center;background-color:white;}
+.product-price{position:relative;height:20px;line-height:20px;overflow:hidden;margin-top:10px;}
+.product .price{margin-top:10px;padding:10px 0 0 13px;background-position:-1172px -69px;font-size:16px;color:#C00;font-weight:bold;}
+.product .default-price{height:14px;overflow:hidden;font-family:"tahoma";text-decoration:line-through;}
+.product .default-price span{display:inline-block;width:14px;height:14px;background-position:-1157px -77px;}
+.product-title{margin:3px 0;height:36px;overflow:hidden;word-break:break-all;line-height:18px;}
+.product-sum{position:relative;z-index:999;margin:0 0 3px;overflow:hidden;}
+.product-title a{font-size:12px;font-weight:400;color:#666;height:36px;}
+#p_sum{width:60px;}
+.all_discount_info{margin-top:20px;margin-bottom:10px;width:760px;height:50px;border:1px #F90 solid;text-indent:20px;line-height:50px;font-size:20px;}
+#hots_view_context .right{float:left;width:760px;_display:inline;}
+#tstart{position:fixed;left:0;bottom:0;z-index:10000;_position:absolute;width:100%;height:28px;color:#3E3E3E;text-align:left;}
+.tstart-toolbar{height:28px;float:right;right:0;width:200px;}
+.tstart-areas{position:relative;zoom:1;background-color:#E6E6E6;background-repeat:repeat-x;background-position:0 0;border:solid #595959;height:25px;line-height:25px;float:right;border-width:1px 1px 0;}
+.tstart-left-area{float:left;}
+.tstart-right-area{float:left;width:200px;}
+.tstart-right-area span{display:inline-block;}
+.tstart-right-area .tstart-normal-trigger{margin-left:10px;}
+.tstart-right-area .tstart-custom-item{float:right;margin-right:15px;}
