@@ -27,8 +27,8 @@ class Controller_Test extends Controller {
 		parent::before();
 		$id='2222';
 		$data=NULL;
-		$hots  = Shelf::factory($id,$data);
-		$_array_data =  $hots->get_shelf_content();
+		$hots  = Tuan::factory($id,$data);
+		$_array_data =  $hots->get_tuan_content();
 		
 		$result=$_array_data;
 		echo $result;

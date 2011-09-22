@@ -1482,3 +1482,213 @@
 --
 #0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
 #1 {main}
+2011-09-22 10:00:54 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 10:00:54 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 10:05:27 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: team-6102.html ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 10:05:27 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: team-6102.html ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 10:05:27 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 10:05:27 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:05:31 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected '(', expecting ',' or ';' ~ MODPATH/calftuan/classes/kohana/tuan.php [ 7 ]
+2011-09-22 11:05:31 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected '(', expecting ',' or ';' ~ MODPATH/calftuan/classes/kohana/tuan.php [ 7 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:05:31 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:05:31 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:06:15 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected '(', expecting ',' or ';' ~ MODPATH/calftuan/classes/kohana/tuan.php [ 7 ]
+2011-09-22 11:06:15 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected '(', expecting ',' or ';' ~ MODPATH/calftuan/classes/kohana/tuan.php [ 7 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:06:16 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:06:16 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:07:00 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected '=', expecting ')' ~ MODPATH/calftuan/classes/kohana/tuan.php [ 47 ]
+2011-09-22 11:07:00 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected '=', expecting ')' ~ MODPATH/calftuan/classes/kohana/tuan.php [ 47 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:07:00 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:07:00 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:07:40 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected ';', expecting ')' ~ MODPATH/calftuan/classes/kohana/tuan.php [ 51 ]
+2011-09-22 11:07:40 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected ';', expecting ')' ~ MODPATH/calftuan/classes/kohana/tuan.php [ 51 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:07:40 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:07:40 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:08:07 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+2011-09-22 11:08:07 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:08:36 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:08:36 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:08:51 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+2011-09-22 11:08:51 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:09:32 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:09:32 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:09:33 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+2011-09-22 11:09:33 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:09:33 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+2011-09-22 11:09:33 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:09:33 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+2011-09-22 11:09:33 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:09:36 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+2011-09-22 11:09:36 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:09:44 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:09:44 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:12:26 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+2011-09-22 11:12:26 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected ' ~ MODPATH/calftuan/views/tuan/right.php [ 25 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:14:07 --- ERROR: ErrorException [ 8 ]: Undefined index: url ~ MODPATH/calftuan/views/tuan/right.php [ 38 ]
+2011-09-22 11:14:07 --- STRACE: ErrorException [ 8 ]: Undefined index: url ~ MODPATH/calftuan/views/tuan/right.php [ 38 ]
+--
+#0 /Users/zhaibob/git/calf/modules/calftuan/views/tuan/right.php(38): Kohana_Core::error_handler(8, 'Undefined index...', '/Users/zhaibob/...', 38, Array)
+#1 /Users/zhaibob/git/calf/system/classes/kohana/view.php(61): include('/Users/zhaibob/...')
+#2 /Users/zhaibob/git/calf/system/classes/kohana/view.php(343): Kohana_View::capture('/Users/zhaibob/...', Array)
+#3 /Users/zhaibob/git/calf/system/classes/kohana/view.php(228): Kohana_View->render()
+#4 /Users/zhaibob/git/calf/modules/calftuan/views/tuan/content.php(17): Kohana_View->__toString()
+#5 /Users/zhaibob/git/calf/system/classes/kohana/view.php(61): include('/Users/zhaibob/...')
+#6 /Users/zhaibob/git/calf/system/classes/kohana/view.php(343): Kohana_View::capture('/Users/zhaibob/...', Array)
+#7 /Users/zhaibob/git/calf/system/classes/kohana/view.php(228): Kohana_View->render()
+#8 /Users/zhaibob/git/calf/application/classes/controller/test.php(34): Kohana_View->__toString()
+#9 [internal function]: Controller_Test->action_index()
+#10 /Users/zhaibob/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Test))
+#11 /Users/zhaibob/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#12 /Users/zhaibob/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#13 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#14 {main}
+2011-09-22 11:14:07 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:14:07 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:14:41 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:14:41 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:23:27 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected '}' ~ MODPATH/calfdb/classes/kohana/calfdb/tuan.php [ 86 ]
+2011-09-22 11:23:27 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected '}' ~ MODPATH/calfdb/classes/kohana/calfdb/tuan.php [ 86 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:23:27 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:23:27 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:23:31 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected '}' ~ MODPATH/calfdb/classes/kohana/calfdb/tuan.php [ 86 ]
+2011-09-22 11:23:31 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected '}' ~ MODPATH/calfdb/classes/kohana/calfdb/tuan.php [ 86 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-09-22 11:23:31 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:23:31 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:24:25 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:24:25 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:33:01 --- ERROR: ErrorException [ 8 ]: Undefined index: master_img ~ MODPATH/calftuan/views/tuan/left.php [ 52 ]
+2011-09-22 11:33:01 --- STRACE: ErrorException [ 8 ]: Undefined index: master_img ~ MODPATH/calftuan/views/tuan/left.php [ 52 ]
+--
+#0 /Users/zhaibob/git/calf/modules/calftuan/views/tuan/left.php(52): Kohana_Core::error_handler(8, 'Undefined index...', '/Users/zhaibob/...', 52, Array)
+#1 /Users/zhaibob/git/calf/system/classes/kohana/view.php(61): include('/Users/zhaibob/...')
+#2 /Users/zhaibob/git/calf/system/classes/kohana/view.php(343): Kohana_View::capture('/Users/zhaibob/...', Array)
+#3 /Users/zhaibob/git/calf/system/classes/kohana/view.php(228): Kohana_View->render()
+#4 /Users/zhaibob/git/calf/modules/calftuan/views/tuan/content.php(14): Kohana_View->__toString()
+#5 /Users/zhaibob/git/calf/system/classes/kohana/view.php(61): include('/Users/zhaibob/...')
+#6 /Users/zhaibob/git/calf/system/classes/kohana/view.php(343): Kohana_View::capture('/Users/zhaibob/...', Array)
+#7 /Users/zhaibob/git/calf/system/classes/kohana/view.php(228): Kohana_View->render()
+#8 /Users/zhaibob/git/calf/system/classes/kohana/response.php(160): Kohana_View->__toString()
+#9 /Users/zhaibob/git/calf/application/classes/controller/callmethod.php(75): Kohana_Response->body(Object(View))
+#10 [internal function]: Controller_callmethod->after()
+#11 /Users/zhaibob/git/calf/system/classes/kohana/request/client/internal.php(121): ReflectionMethod->invoke(Object(Controller_callmethod))
+#12 /Users/zhaibob/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#13 /Users/zhaibob/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#14 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#15 {main}
+2011-09-22 11:33:01 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:33:01 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:33:04 --- ERROR: ErrorException [ 8 ]: Undefined index: master_img ~ MODPATH/calftuan/views/tuan/left.php [ 52 ]
+2011-09-22 11:33:04 --- STRACE: ErrorException [ 8 ]: Undefined index: master_img ~ MODPATH/calftuan/views/tuan/left.php [ 52 ]
+--
+#0 /Users/zhaibob/git/calf/modules/calftuan/views/tuan/left.php(52): Kohana_Core::error_handler(8, 'Undefined index...', '/Users/zhaibob/...', 52, Array)
+#1 /Users/zhaibob/git/calf/system/classes/kohana/view.php(61): include('/Users/zhaibob/...')
+#2 /Users/zhaibob/git/calf/system/classes/kohana/view.php(343): Kohana_View::capture('/Users/zhaibob/...', Array)
+#3 /Users/zhaibob/git/calf/system/classes/kohana/view.php(228): Kohana_View->render()
+#4 /Users/zhaibob/git/calf/modules/calftuan/views/tuan/content.php(14): Kohana_View->__toString()
+#5 /Users/zhaibob/git/calf/system/classes/kohana/view.php(61): include('/Users/zhaibob/...')
+#6 /Users/zhaibob/git/calf/system/classes/kohana/view.php(343): Kohana_View::capture('/Users/zhaibob/...', Array)
+#7 /Users/zhaibob/git/calf/system/classes/kohana/view.php(228): Kohana_View->render()
+#8 /Users/zhaibob/git/calf/application/classes/controller/test.php(34): Kohana_View->__toString()
+#9 [internal function]: Controller_Test->action_index()
+#10 /Users/zhaibob/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Test))
+#11 /Users/zhaibob/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#12 /Users/zhaibob/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#13 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#14 {main}
+2011-09-22 11:33:04 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:33:04 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-09-22 11:34:03 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-09-22 11:34:03 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/js/tuan.js ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
