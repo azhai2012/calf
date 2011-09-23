@@ -27,8 +27,8 @@ class Controller_Test extends Controller {
 		parent::before();
 		$id='2222';
 		$data=NULL;
-		$hots  = Tuan::factory($id,$data);
-		$_array_data =  $hots->get_tuan_content();
+		$hots  = Hots::factory($id,$data);
+		$_array_data =  $hots->get_hots_view_content();
 		
 		$result=$_array_data;
 		echo $result;

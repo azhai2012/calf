@@ -5,51 +5,16 @@
  * @date 2011-09-19
  */
 ?>
-<?php foreach ($array_data as $key => $value):?>
-<?php $count = (int)count($value['values'])-4;
-      $values = $value['values'];
-      $isactive = ($value['isactive'] == 1) ? 'active' : 'notactive';
-?>
-<div class="abc-a"> <!-- begin abc-a -->
-  <div class="<?php echo $isactive; ?>"></div>
-  <h3><a name="brandK"><?php echo $value['name']; ?></a></h3>
-   <?php if ($value['isactive'] == 1):?>
-     <div class="title"> <!-- begin title -->
-        <p><?php echo __('参展供货商').':'.$count.__('家'); ?></p>
-        <p><?php echo __('开始日期').':'.$value['date_begin'].'--'.__('结束日期').':'.$value['date_end'];?></p>
-     </div>   <!-- end title -->
-        <div class="hots_lists"> <!-- begin hots_lists -->
-	     <ul class="abc-height150px">
-         <?php for ($i = 0; $i < 5; $i++):?>
-	        <li><a href="<?php echo $values[$i]['url']; ?>" >
-                    <img src="<?php echo $values[$i]['img']; ?>" alt="<?php echo $values[$i]['name']; ?>">
-                    <p><?php echo $values[$i]['name']; ?> ( <span class="ff6600"><?php echo $values[$i]['counts']; ?></span>款)</p>
-                 </a>
-             </li> 
-           <?php endfor; ?>         
-           </ul>  
-          <ul class="brandfontlist">	      
-            <?php for ($i = 5; $i < $count; $i++):?>  
-	         <li><a href="<?php echo $values[$i]['url']; ?>">
-                 <p><?php echo $values[$i]['name']; ?>( <span class="ff6600"><?php echo $values[$i]['counts']; ?></span>款)</p>
-                 </a>
-             </li>
-	             <?php endfor; ?> 
-	        </ul> 
-          
-         </div> <!-- end hots_lists -->
-          
-         <div class="status">*提示：本场目前参加家数：1000 家 , 截至目前共订购：2030056.00元</div>
-
-         <?php else: ?>
-            <div class="title"><p>预计开始日期：<?php echo $value['date_begin']; ?> -- 结束日期：<?php echo $value['date_end']; ?></p></div>                          
-            <ul class="abc-height150px">
-               <li><div style="width:680px;font-size:30px;color:#ddd;height:150px;text-align:center;line-height:150px;">惊喜连连,敬请期待！</div><div class="clearfix"></div></li>
-            </ul> 
-      <?php endif; ?> 
-     
-      
-      </div>  <!-- end abc-a  -->
-  <?php endforeach;?>  
+<div id="hots_list"> <!-- begin hots_list -->
+    <div id="hnav"><?php echo __('您现在的位置')?>：<a href="/hots"><?php echo __('展会区'); ?></a></div>
+      <div id="hots_context"> <!-- begin hots_context -->
+        <div class="left clearfix" style="width:720px;float:left;"> <!-- begin left -->
+           <?php  echo $get_hots_left_content; ?>
+         </div>  <!-- end left -->
+         <div class="right" style="float:left"> <!-- begin right -->
+	       <?php echo $get_host_right_content; ?>
+      </div> <!-- end right -->
+   </div> <!-- end hots_context -->
+</div>
 
 

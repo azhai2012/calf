@@ -15,7 +15,7 @@ Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 .s_info li{line-height:25px;padding-left:5px;}
 .s_info span{display:inline-block;}
 .s_info .p_no{width:20px;text-align:center;}
-.s_info .p_url{width:95px;}
+.s_info .p_url{width:90px;}
 .s_info .p_amount{width:60px;text-align:right;}
 .s-filter{border:1px solid #E5E5E5;height:26px;margin-top:10px;margin-bottom:10px;overflow:hidden;}
 .s-filter .mode,.s-filter .taxis,.s-filter .dis{float:left;margin:4px 18px 0px 20px;}

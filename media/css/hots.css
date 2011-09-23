@@ -9,7 +9,7 @@ TODO customize this sample style
 Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
 /* Left style */
-#hots_context .left{float:left;width:700px;margin-right:5px;}
+#hots_context .left{float:left;width:690px;margin-right:5px;border:10px #000 solid;}
 .abc-a h3,.hots-extra h3{background-image:url(/media/images/hotsbd.gif)}
 .active,.notactive{background-image:url(/media/images/hots.gif);}
 .abc-a{float:left;position:relative;height:auto;margin-top:20px;border:5px #FC9 solid;}
@@ -29,7 +29,7 @@ Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 .brandfontlist{float:left;width:680px;}
 .brandfontlist li{float:left;width:133px;padding-left:15px;height:22px;line-height:22px;}
 /* Right style */
-#hots_context .right{float:right;width:220px;_display:inline;margin-right:15px;}
+#hots_context .right{float:left;width:220px;_display:inline;}
 .hots-extra{margin-top:20px;border:1px #ccc solid;}
 .hots-extra h3{margin:0;padding:0;text-indent:10px;font-family:Arial;font-size:14px;font-weight:bold;height:35px;line-height:35px;border-bottom:1px dashed #CCC;}
 .hots-extra span{display:inline-block;}
@@ -38,5 +38,5 @@ Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 .hots-extra span.flag2{font-weight:bold;color:#F60;}
 .hots-extra span.flag3{font-weight:bold;color:#F60;}
 .hots-extra span.h_amount{width:50px;text-align:right;}
-.hots-extra span.h_name{width:120px;}
+.hots-extra span.h_name{width:100px;}
 .hots-extra li{line-height:26px;padding:0 10px;}

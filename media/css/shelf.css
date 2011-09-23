@@ -70,3 +70,8 @@ h4{display:block;-webkit-margin-before:1.33em;-webkit-margin-after:1.33em;-webki
 .compare .extra{float:right;margin-top:2px;width:13px;height:13px;background-position:-1139px -81px;cursor:pointer;}
 .m,.mt,.mc,.mb{overflow:hidden;zoom:1;}
 .compare .mc li{background:#FFFFFF;border:1px solid #E5E5E5;padding:4px 12px 4px 4px;margin-bottom:2px;}
+
+#page a {padding-left:20px;font-size:14px;font-weight:bold;}
+#top {padding:5px; left:50%;padding-left:490px;width:13px;height:80px;} 
+#top span {display: block;border:1px #ccc solid;padding:4px;width:13px;}
+

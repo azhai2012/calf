@@ -9,6 +9,7 @@ class Kohana_Shelf {
 	private $_template_left = NULL;
 	private $_template_left_info = NULL;
 	private $_template_right = NULL;
+	private $_template_right_ajax = NULL;
 	
 	
     public static function factory($id,array $data = NULL)
@@ -24,6 +25,7 @@ class Kohana_Shelf {
        $this->_template_left = View::factory('shelf/left');
        $this->_template_right = View::factory('shelf/right');
        $this->_template_left_info = View::factory('shelf/leftinfo');
+       $this->_template_right_ajax = View::factory('shelf/rightajax');
        $this->sheft_db = Calfdb_Shelf::factory($this->_id,$this->_data);
 	}
 	
@@ -63,12 +65,24 @@ class Kohana_Shelf {
 		
 	}
 	
+	/**
+	 * undocumented function
+	 *
+	 * @return void
+	 * @author zhai bob
+	 **/
+	function ajax_get_shelf_right_content()
+	{
+	 	 $this->_template_right_ajax->array_data = $this->sheft_db->get_shelf_right_list();
+	  	 return  $this->_template_right_ajax;	
+	}
+	
 	/*
 	 * 功能：显示商品内容
 	 */
 	function get_shelf_right_content(){
 				
-		 $this->_template_right->array_data = $this->sheft_db->get_shelf_right_list();
+		$this->_template_right->array_data = $this->sheft_db->get_shelf_right_list();
 		return  $this->_template_right;
 	}
 	

@@ -44,7 +44,10 @@ class Controller_Callmethodajax extends Controller {
 				$mods= Product::factory($id);
 				$result= $mods->get_ajax_return_product_post_two_content();
 			}break;
-
+		    case 'append':{
+					$mods= Shelf::factory($id);
+					$result= $mods->ajax_get_shelf_right_content();
+			}break;
 			default:'';
 		}
 		$this->template = $result;

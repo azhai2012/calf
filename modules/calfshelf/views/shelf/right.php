@@ -59,11 +59,12 @@
 <div class="list-content grid">
     
      <form action="#" method="post" name="compareForm" target="_blank">
-      <input type="hidden" id="" name="isPostfree" value=" 0 ">
+      <input type="hidden" id="" name="isPage" value="1">
+      <input type="hidden" id="" name="maxPage" value="10">
       <input type="hidden" id="" name="supportCod" value=" 0 ">
       <input type="hidden" id="" name="loc" value="">
       <input type="hidden" id="" name="fromPath" value="malllist">
-      <ul class="product-list">';
+      <ul class="product-list">
       <?php foreach ($array_data['lists'] as $key => $value): ?>
        <li class="product">
              <div class="productInfo">
@@ -92,6 +93,12 @@
          </li> 
         <?php endforeach; ?>
       </ul>
+      <div id="page">
+      	<a href="javascript:Compare.Append(2);" >继续浏览</a>
+      </div>
      </form>
+     <div id="top" style="position:fixed;bottom:30px">
+	  	<a href="javascript:Compare.Gotop();" ><span>返回顶部</span></a>
+     </div>
     </div>
 <!-- end grid -->
