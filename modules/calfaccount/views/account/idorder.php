@@ -10,7 +10,7 @@
 ?>
 <div class="account clearfix">
          <h2><?php echo __('我的详细订单'); ?></h2> 
-         <p class="o_t"><b><?php echo __('订单号：').$this->_id ?>'</b>(配送完毕)</p>
+         <p class="o_t"><b><?php echo __('订单号：').$id ?>'</b>(配送完毕)</p>
          <ul class="order_flow">
 	   <?php foreach ($array_data['flows'] as $key => $value): ?> 
               <li><?php echo $value['date'].' '.$value['content']; ?></li>
@@ -47,7 +47,7 @@
             
              <div class="btm"></div>  
             <li><div class="o_total">商品记录总数：<strong><?php echo $array_data['total']['rowcount']; ?></strong>&nbsp条记录，商品金额合计：￥
-	        <b><?php array_data['total']['totalamount'] ?></b>元</div></li> 
+	        <b><?php echo $array_data['total']['totalamount']; ?></b>元</div></li> 
          </ul>
            <div class="clearfix"></div>
            <p class="o_l_o" ><b>附带信息：<?php echo $array_data['total']['infos']; ?></b></p>

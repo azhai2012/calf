@@ -26,9 +26,9 @@ class Controller_Test extends Controller {
 	{	
 		parent::before();
 		$id='2222';
-		$data=NULL;
-		$hots  = Account::factory($id,$data);
-		$_array_data =  $hots->get_account_content();
+		$data=array('mod'=>'order');
+		$hots  = Community::factory($id,$data);
+		$_array_data =  $hots->get_community_content();
 		
 		$result=$_array_data;
 		echo $result;

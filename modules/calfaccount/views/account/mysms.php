@@ -16,7 +16,7 @@
 	                <span class="info_name">主题</span>
 	                <span class="info_date">时间</span>
 	                <span class="info_operation">操作</span>
-	             </li>';
+	             </li>
 	   <?php foreach ($array_data as $key => $value): ?>       
 	             <li id="info_normal" onmouseout="this.style.background=\'none\'" onmouseover="this.style.background=\'#f4f4f4\'" 
 	               style="background-image: none; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; background-position: initial initial; background-repeat: initial initial; ">

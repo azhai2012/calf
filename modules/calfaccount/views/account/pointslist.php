@@ -20,7 +20,7 @@
                 <span class="list_useed">已使用积分</span>
                 <span class="list_directions">详细说明</span>
              </li>
-           <?php foreach ($array_data as $key => $value): ?>
+           <?php foreach ($array_data['lists'] as $key => $value): ?>
              <li id="p_normal" onmouseout="this.style.background=\'none\'" onmouseover="this.style.background=\'#f4f4f4\'" 
                style="background-image: none; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; background-position: initial initial; background-repeat: initial initial; ">
                <span class="list_date" title=""><?php echo $value['date']; ?></span>
@@ -28,6 +28,7 @@
                <span class="list_useed" id="list_total"><?php echo $value['useed'] ?></span>
                <span class="list_directions"><?php echo $value['description']; ?></span>
               </li>
+          <?php endforeach; ?>
      </ul>
   </div>   
 </div>
