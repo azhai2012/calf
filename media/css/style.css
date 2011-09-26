@@ -44,15 +44,15 @@ a{color:#385998;cursor:pointer;text-decoration:none;}
 #hcontent #find ol{background-position:100% 0%;background-repeat:no-repeat;}
 #hcontent #find ol{background-position:0px -28px;height:32px;left:0px;margin:0px;overflow:hidden;padding:4px 5px;position:absolute;top:15px;z-index:1;}
 #hcontent input.search_btn{background:none;border:none;color:white;font-size:14px;font-weight:bold;height:32px;width:100px;}
-.info,#npt,#hpt,#spt,#npt a,
+.notice,#npt,#hpt,#spt,#npt a,
 #hpt a,#spt a,#tuan.tuanbtn,
-.info li a:hover#ic,
-.info li a:hover#login,
+.notice li a:hover#ic,
+.notice li a:hover#login,
 #hpc .ph li.first b,
 #hpc .ph li.secord b,
 #hpc .ph li.third b,
 .cart_nav_setp_one,.cart_nav_setp_two,.cart_nav_setp_three,
-.info li a:hover#notice{background-image:url(/media/images/desktop.gif)}
+.notice li a:hover#notice{background-image:url(/media/images/desktop.gif)}
 /* menus */
 #menus{position:relative;height:35px;left:0px;width:100%;margin:0 auto;background-color:#119b11;overflow:hidden;}
 #menu{overflow:hidden;position:relative;height:35px;background-repeat:no-repeat;background-position:-6px -14px;width:980px;background-color:#119b11;margin:0px auto;}
@@ -69,11 +69,11 @@ a{color:#385998;cursor:pointer;text-decoration:none;}
 * html .carts span.c_icon{float:left;width:20px;height:16px;background:url(/media/images/cart.gif) no-repeat -16px -1px;}
 .carts .cart_num{color:#F60;font-weight:bold;}
 .carts a{width:55px;margin-left:5px;margin-right:5px;font-size:12px;color:#a10000;font-weight:bold;}
-/* tuan */
-#tuan{clear:both;height:100px;position:relative;}
-#tuan img{height:130px;width:150px;}
-#tuan .t{float:left;}
-#tuan .c{float:left;}
+/* info */
+#info{clear:both;height:100px;position:relative;}
+#info img{height:130px;width:150px;}
+#info .t{float:left;}
+#info .c{float:left;}
 /* contents */
 #maincontent{clear:both;margin-top:10px;}
 .w720{float:left;width:720px;}
@@ -81,15 +81,15 @@ a{color:#385998;cursor:pointer;text-decoration:none;}
 #report .rt{line-height:24px;}
 #report h2{display:block;font-size:1.5em;font-weight:bold;}
 #report .rt{height:24px;line-height:24px;padding-bottom:10px;}
-.info{background-repeat:no-repeat;background-position:-7px -310px;height:35px;}
-.info li{float:left;font-size:15px;font-weight:bold;height:20px;line-height:27px;text-align:center;}
-.info li a#ic{height:35px;width:65px;}
-.info li a#login{height:35px;width:80px;}
-.info li a#notice{height:35px;width:90px;}
-.info li a:hover#ic{background-repeat:no-repeat;background-position:-7px -346px;}
-.info li a:hover#login{background-repeat:no-repeat;background-position:-72px -346px;}
-.info li a:hover#notice{background-repeat:no-repeat;background-position:-162px -346px;}
-.info li a{color:#FF7800;display:block;}
+.notice {background-repeat:no-repeat;background-position:-7px -310px;height:35px;}
+.notice li{float:left;font-size:15px;font-weight:bold;height:20px;line-height:27px;text-align:center;}
+.notice li a#ic{height:35px;width:65px;}
+.notice li a#login{height:35px;width:80px;}
+.notice li a#notice{height:35px;width:90px;}
+.notice li a:hover#ic{background-repeat:no-repeat;background-position:-7px -346px;}
+.notice li a:hover#login{background-repeat:no-repeat;background-position:-72px -346px;}
+.notice li a:hover#notice{background-repeat:no-repeat;background-position:-162px -346px;}
+.notice li a{color:#FF7800;display:block;}
 #report .rt .extra{float:right;}
 #report .rc{background-color:#F5F9E7;border:1px solid #CDE2B0;height:254px;overflow:hidden;}
 #report .rc .rclist{background-color:white;list-style:none;margin:3px 0px 0px 5px;padding:0px 0px 10px;}
@@ -158,9 +158,9 @@ a{color:#385998;cursor:pointer;text-decoration:none;}
 #spc .right .rc5{float:left;width:145px;}
 #spc .right ul.pl{line-height:0px;margin-top:30px;}
 #spc .right ul.pl li{border-top:1px #ddd dashed}
-.bx-pager .pager-active,.bx-pager a:hover{background-color:#ccc;color:#fff;}
+.bx-pager .pager-active,.bx-pager a:hover{background-color:#000;color:#fff;}
 /*pager wrapper*/
-.bx-pager{text-align:center;padding-top:7px;font-size:12px;color:#666;position:absolute;right:10px;bottom:21px;z-index:9999;}
+.bx-pager{text-align:center;font-size:12px;position:absolute;right:10px;bottom:25px;z-index:9999;}
 .bx-pager a{margin-right:5px;padding:3px 8px 3px 6px;font-size:12px;zoom:1;border:1px #ccc solid;}
 .clr{clear:both;display:block;font-size:0px;height:0px;line-height:0;overflow:hidden;}
 /* cart */

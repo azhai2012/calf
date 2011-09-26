@@ -2,10 +2,10 @@
 #discounts_list .left{margin-top:10px;}
 .dis_new_list h3{display:block;margin:10px 0 10px 20px;}
 #discounts_list #dnav{background:#ffffff;margin-bottom:10px;padding:10px 0;margin-bottom:10px;}
-#discount_context{background:#ddd;padding-top:5px;}
-;.dis_new_list{margin-top:5px;}
+#discount_context{padding-top:5px;}
+.dis_new_list{margin-top:5px;}
 .dis_new_list ul{margin-top:14px;padding-bottom:3px;}
-.dis_new_list li{background:#ffffff;float:left;height:300px;margin:0px 4px 10px 18px;position:relative;width:170px;text-align:center;}
+.dis_new_list li{background:#ffffff;float:left;height:300px;padding-bottom:20px;margin:0px 4px 10px 18px;position:relative;width:170px;text-align:center;}
 .dis_new_list li img{height:120px;width:120px;}
 .dis_new_list li .disinfo{height:60px;}
 .dis_new_list li .name{font-weight:bold;}
@@ -16,6 +16,7 @@
 .list_detail ul li{background:transparent url(/media/images/ico_dot.jpg) no-repeat scroll 0px 0px;height:18px;margin-bottom:8px;padding-left:13px;}
 .list_detail ul li span{padding-right:20px;}
 li.li_first{margin-top:10px;}
-span.first{font-weight:bold;width:75px;display:inline-block;}
+span.first{font-weight:bold;width:100px;display:inline-block;}
 li.li_line{border-bottom:1px #ccc dotted;}
+.left_area {border:3px #FC9 solid;margin:10px 0 25px 0; background:#eee;}
 

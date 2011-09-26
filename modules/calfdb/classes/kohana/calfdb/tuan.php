@@ -114,3 +114,4 @@ class Kohana_Calfdb_Tuan {
 	}
 
 }
+

@@ -25,10 +25,43 @@ class Controller_Test extends Controller {
 	public function action_index()
 	{	
 		parent::before();
+		
+		
+		$array_data = array(
+			'left' =>array(
+			      'img'=>'/media/images/n01.jpg','info'=>'皮肤过敏 消化不良 感冒流感 止咳祛痰 退烧止痛药 咽喉肿痛',	
+			 ) ,
+			 'right'=>array(
+
+				  array(
+					'date'=>'2011-07-01',
+			                'lists'=>array(
+			                          array('id'=>12323,'img'=>'/media/images/p02.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+			                          array('id'=>12323,'img'=>'/media/images/p03.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+			                          array('id'=>12323,'img'=>'/media/images/p04.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+			                          array('id'=>12323,'img'=>'/media/images/p05.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+			                          array('id'=>12323,'img'=>'/media/images/p06.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+			                  ),
+			              ),
+				  array(
+					'date'=>'2011-07-22',
+			                'lists'=>array(
+			                          array('id'=>12323,'img'=>'/media/images/p07.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+			                          array('id'=>12323,'img'=>'/media/images/p08.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+			                          array('id'=>12323,'img'=>'/media/images/p09.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+			                          array('id'=>12323,'img'=>'/media/images/p10.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+			                          array('id'=>12323,'img'=>'/media/images/p11.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+			                  ),
+			              ),
+			 ), 
+		);
+
+                print_r($array_data); 
+ 
 		$id='2222';
 		$data=array('mod'=>'order');
-		$hots  = Community::factory($id,$data);
-		$_array_data =  $hots->get_community_content();
+		$hots  = Main::factory($id,$data);
+		$_array_data =  $hots->get_content_new_products();
 		
 		$result=$_array_data;
 		echo $result;
