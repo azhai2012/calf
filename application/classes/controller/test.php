@@ -26,42 +26,50 @@ class Controller_Test extends Controller {
 	{	
 		parent::before();
 		
-		
-		$array_data = array(
-			'left' =>array(
-			      'img'=>'/media/images/n01.jpg','info'=>'皮肤过敏 消化不良 感冒流感 止咳祛痰 退烧止痛药 咽喉肿痛',	
-			 ) ,
-			 'right'=>array(
-
-				  array(
-					'date'=>'2011-07-01',
-			                'lists'=>array(
-			                          array('id'=>12323,'img'=>'/media/images/p02.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
-			                          array('id'=>12323,'img'=>'/media/images/p03.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
-			                          array('id'=>12323,'img'=>'/media/images/p04.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
-			                          array('id'=>12323,'img'=>'/media/images/p05.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
-			                          array('id'=>12323,'img'=>'/media/images/p06.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
-			                  ),
-			              ),
-				  array(
-					'date'=>'2011-07-22',
-			                'lists'=>array(
-			                          array('id'=>12323,'img'=>'/media/images/p07.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
-			                          array('id'=>12323,'img'=>'/media/images/p08.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
-			                          array('id'=>12323,'img'=>'/media/images/p09.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
-			                          array('id'=>12323,'img'=>'/media/images/p10.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
-			                          array('id'=>12323,'img'=>'/media/images/p11.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
-			                  ),
-			              ),
-			 ), 
-		);
+		$array_data = array( array(
+		        'title'=>'热销商品',
+			'lists'=>array( 
+			        'left' =>array('img'=>'/media/images/h01.jpg','info'=>'皮肤过敏 消化不良 感冒流感 止咳祛痰 退烧止痛药 咽喉肿痛',),
+		   	        'right' =>array(
+			 	      'rc'=> array(
+					     array('title'=>'化学制剂',
+				                'lists'=>array(
+					                    array('id'=>12323,'img'=>'/media/images/T1tpmeXetqXXXXXXXX-120-120.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+				                            array('id'=>12323,'img'=>'/media/images/T1momdXiNsXXXXXXXX-120-120.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+				                          ),),
+					     array('title'=>'中成药',
+				                'lists'=>array(
+				                          array('id'=>12323,'img'=>'/media/images/T1cG9eXXxjXXXXXXXX-120-120.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+				                          array('id'=>12323,'img'=>'/media/images/T17mKgXjViXXXXXXXX-373-262.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+				                        ), ),
+					  array('title'=>'外用药',
+				                'lists'=>array(
+				                          array('id'=>12323,'img'=>'/media/images/T1a.5dXbJrXXXXXXXX-120-120.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+				                          array('id'=>12323,'img'=>'/media/images/T1VHGeXc0dXXXXXXXX-120-120.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+				                        ), ),
+					  array('title'=>'器械',
+				                'lists'=>array(
+				                          array('id'=>12323,'img'=>'/media/images/T1TE1dXcBrXXXXXXXX-120-120.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+				                          array('id'=>12323,'img'=>'/media/images/T1WoqdXg4sXXXXXXXX-120-120.jpg','name'=>'碧生源常润茶','price'=>'52','def_price'=>'58.00','info'=>'作用：美体瘦身'),	
+				                        ),),),),
+				'ranking'=>array(
+					array('id'=>22133,'name'=>'碧生源常润茶'),
+					array('id'=>22133,'name'=>'碧生源常润茶'),
+					array('id'=>22133,'name'=>'碧生源常润茶'),
+					array('id'=>22133,'name'=>'碧生源常润茶'),
+					array('id'=>22133,'name'=>'碧生源常润茶'),
+					array('id'=>22133,'name'=>'碧生源常润茶'),
+					array('id'=>22133,'name'=>'碧生源常润茶'),
+					array('id'=>22133,'name'=>'碧生源常润茶'),
+					array('id'=>22133,'name'=>'碧生源常润茶'),
+				),),),);
 
                 print_r($array_data); 
  
 		$id='2222';
 		$data=array('mod'=>'order');
 		$hots  = Main::factory($id,$data);
-		$_array_data =  $hots->get_content_new_products();
+		$_array_data =  $hots->get_content_hot_products();
 		
 		$result=$_array_data;
 		echo $result;

@@ -29,7 +29,7 @@
                           <li><a href="/news" id="notice" title="">新闻</a></li>
                         </ul>
 		      </div> <!-- end rt -->
-		      <div class="rc"> <!-- begin rc -->
+		      <div class="rc" style="width:246px;"> <!-- begin rc -->
                          <ul class="rclist">
 	                    <?php foreach ($array_data['notice'] as $key => $value): ?>
 		  	    <li><a href="<?php echo $value['url']; ?>" target="_blank" title="<?php echo $value['title']; ?>"><span><?php echo $value['title']; ?></span></a></li> 

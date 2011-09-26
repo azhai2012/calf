@@ -8,13 +8,13 @@
  *
  */
 ?>
-<h1 id="npt"><a href="#">新品上架</a></h1>
+<h1 id="npt"><a href="#"><?php echo __('新品上架'); ?></a></h1>
   <div id="npc" class="clearfix" > <!-- begin npc -->
      <div class="left"> <!-- begin left -->
          <div id="lt"></div>
          <div id="lc">
             <h1><a href="#"><img src="<?php echo $array_data['left']['img']; ?>" class="nw240"/></a></h1>
-            <div><b>功能主治：</b></div>
+            <div><b><?php echo __('功能主治'); ?>:</b></div>
              <div><?php echo $array_data['left']['info']; ?></div>
          </div>
      </div> <!-- end left -->
@@ -35,6 +35,7 @@
                 </ul>
               </div>
             <?php endforeach; ?>
+          </div>
      </div> <!-- end right -->
     
   </div> <!-- end npc -->
