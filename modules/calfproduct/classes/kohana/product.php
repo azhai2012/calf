@@ -17,15 +17,7 @@ class Kohana_Product {
 	private $_data = array();
 	private $calfdb = NULL;
 	private $_array_data= array();
-	private $conten_template = NULL;
-	private $left_template = NULL;
-	private $right_template = NULL;
-	private $discount_template = NULL;
-    private $posts_template= NULL;
-    private $post_template= NULL;
-    private $_new_posts_data = NULL;
-    private $_ask_posts_data = NULL;
-    private $_relevance_data = NULL;
+	
     
 
 	public static function factory($id, array $data = NULL) {
@@ -41,27 +33,19 @@ class Kohana_Product {
 		$this->_ask_posts_data = $this->calfdb->product_views_ask_posts_data_array();
 		$this->_relevance_data = $this->calfdb->product_views_relevance_data_array();
 		
-		$this->content_template= View::factory('product/content');
-		$this->left_template= View::factory('product/left');
-		$this->right_template = View::factory('product/right');
-		$this->discount_template = View::factory('product/discount');
-		$this->posts_template = View::factory('product/posts');
-		$this->post_template = View::factory('product/post');
-		
-		
-		
 	}
 
 	/*
 	 * 商品信息内容
 	*/
 	public function get_product_content() {
+	       
+	        $content_template= View::factory('product/content');
+		$content_template->nav_name= $this->_array_data['product_info']['name'];
+		$content_template->get_product_left_content =$this->get_product_left_content();
+		$content_template->get_product_right_content = $this->get_product_right_content();
 		 
-		$this->content_template->nav_name= $this->_array_data['product_info']['name'];
-		$this->content_template->get_product_left_content =$this->get_product_left_content();
-		$this->content_template->get_product_right_content = $this->get_product_right_content();
-		 
-		$result= $this->content_template;
+		$result= $content_template;
 		 
 		 
 		return $result;
@@ -75,11 +59,12 @@ class Kohana_Product {
 		$array_data = $this->_array_data['product_info'];
 		//根据商品的id 得到商品的图片，显示
 		$array_images_data = $this->_array_data['product_imgs'];
-		$this->right_template->array_data  = $array_data;
-		$this->right_template->array_images_data = $array_images_data;
-		$this->right_template->get_product_discount_content = $this->get_product_discount_content();
-		$this->right_template->get_product_info_content = $this->get_product_info_content();
-		$this->right_template->get_procduct_posts_content = $this->get_procduct_posts_content();
+		$right_template = View::factory('product/right');
+		$right_template->array_data  = $array_data;
+		$right_template->array_images_data = $array_images_data;
+		$right_template->get_product_discount_content = $this->get_product_discount_content();
+		$right_template->get_product_info_content = $this->get_product_info_content();
+		$right_template->get_procduct_posts_content = $this->get_procduct_posts_content();
 
 		$result = $this->right_template;
 		return $result;
@@ -114,13 +99,13 @@ class Kohana_Product {
 
 		$compose = $array_data['compose'];
 		$compose_bool = (!empty($compose['other']));
-
-		$this->discount_template->single_bool = $single_bool;
-		$this->discount_template->single= $single;
-		$this->discount_template->compose_bool = $compose_bool;
-		$this->discount_template->compose = $compose;
+                $discount_template = View::factory('product/discount');
+		$discount_template->single_bool = $single_bool;
+		$discount_template->single= $single;
+		$discount_template->compose_bool = $compose_bool;
+		$discount_template->compose = $compose;
 	
-		$this->discount_template->array_total_data = $array_total_data;	
+		$discount_template->array_total_data = $array_total_data;	
 		
 		$result= $this->discount_template;
 		return $result;
@@ -134,10 +119,11 @@ class Kohana_Product {
 	public function get_ajax_return_product_post_one_content() {
 
 		$array_data= $this->_new_posts_data;
-		$this->post_template->mod ='new';
-		$this->post_template->array_data = $array_data['lists'];
-		$this->post_template->array_status_data =$array_data['status']; 		
-		$result = $this->post_template;
+		$post_template = View::factory('product/post');
+		$post_template->mod ='new';
+		$post_template->array_data = $array_data['lists'];
+		$post_template->array_status_data =$array_data['status']; 		
+		$result = $post_template;
 		return $result;
 	}
 
@@ -148,10 +134,11 @@ class Kohana_Product {
 	public function get_ajax_return_product_post_two_content() {
 
 		$array_data= $this->_ask_posts_data;
-		$this->post_template->mod ='ask';
-		$this->post_template->array_data = $array_data['lists'];
-		$this->post_template->array_status_data =$array_data['status'];
-		$result = $this->post_template;
+		$post_template = View::factory('product/post');
+		$post_template->mod ='ask';
+		$post_template->array_data = $array_data['lists'];
+		$post_template->array_status_data =$array_data['status'];
+		$result = $post_template;
 		return $result;	
 	}
 
@@ -160,8 +147,8 @@ class Kohana_Product {
 	*/
 
 	private function get_procduct_posts_content() {
-		$result = $this->posts_template;
-		return $result;
+		$posts_template = View::factory('product/posts');
+		return $posts_template ;
 	}
 
 	/*
@@ -173,11 +160,9 @@ class Kohana_Product {
 	private function get_product_left_content() {
 
 		$array_data = $this->_relevance_data;
-        
-		$this->left_template->array_data = $array_data;
-		
-		$result =$this->left_template ;
-		return $result;
+                $left_template= View::factory('product/left');
+		$left_template->array_data = $array_data;
+		return $left_template;
 	}
 
 }
