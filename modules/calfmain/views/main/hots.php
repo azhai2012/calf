@@ -20,7 +20,7 @@
         </div>
      </div>  <!-- end left -->
       <div class="right clearfix">  <!-- begin right -->
-        <div class="rc clearfix" style="width:550px;float:left">  <!-- begin rc -->
+        <div class="rc clearfix" style="width:545px;float:left">  <!-- begin rc -->
              <?php foreach ($value['lists']['right'] as $sub_key => $sub_value): ?>
 	      <div class="rc<?php echo $sub_key+1; ?> clearfix">
     	      <h1><?php echo $sub_value['title']; ?></h1>

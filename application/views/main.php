@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> 
 <head>
 <title>hhyy</title> 
-<meta http-equiv="pragma"   content="no-cache" />   
+<meta http-equiv="Cache-Control"   content="max-age=367200" />   
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <meta name="robots" content="noindex,nofollow" />
 <link rel="shortcut icon" href="/media/images/favicon.ico" />
