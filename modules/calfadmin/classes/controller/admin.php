@@ -22,8 +22,28 @@ class Controller_Admin extends Controller {
 	{	
 		parent::before();
 		$this->template->callmethod='
-		   <script>Azhai.onPages({"type":"css","css":["/media/css/admin.css"]});</script> 
-		   <script>Azhai.callMethod1("/admin/callmethod?controller=admin","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		 
+		   <script>Azhai.callMethod1("/admin/callmethod?controller=index","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		   <script>Azhai.onPages({"type":"js","js":["/media/js/admin.js"]});</script> 
+		  '; 
+        }
+
+	public function action_product()
+	{	
+		parent::before();
+		$this->template->callmethod='
+	
+		   <script>Azhai.callMethod1("/admin/callmethod?controller=product","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		   <script>Azhai.onPages({"type":"js","js":["/media/js/admin.js"]});</script> 
+		  '; 
+        }
+
+	public function action_tuan()
+	{	
+		parent::before();
+		$this->template->callmethod='
+		 
+		   <script>Azhai.callMethod1("/admin/callmethod?controller=tuan","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		   <script>Azhai.onPages({"type":"js","js":["/media/js/admin.js"]});</script> 
 		  '; 
         }
@@ -45,9 +65,9 @@ class Controller_Admin extends Controller {
 
            $mods = $sk;
            switch ($sk) {
-            case "headertop": $mods ='this is headertop!';
+            case "headertop": $mods ='';
                 break;
-            case "headcontent": $mods = 'this is headercontent';
+            case "headcontent": $mods = Admin::factory($controller)->get_header_content();
                 break;
             case "menus": $mods = 'this is menus';
                 break;

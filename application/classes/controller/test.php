@@ -28,62 +28,32 @@ class Controller_Test extends Controller {
 	{	
 		parent::before();
 	        
-		
-		$array_data = array(
-		   'recommend'=>array(
-			 'title'=> '热门推荐品牌',
-			 'lists'=>array(
-			    array('id'=>12334,'img'=>'/media/images/s3.png','name'=>'六神旗舰店',),
-			    array('id'=>12334,'img'=>'/media/images/s04.jpg','name'=>'六神旗舰店',),
-			    array('id'=>12334,'img'=>'/media/images/s4.jpg','name'=>'六神旗舰店',),
-			    array('id'=>12334,'img'=>'/media/images/s04.jpg','name'=>'六神旗舰店',),
-			    array('id'=>12334,'img'=>'/media/images/s3.png','name'=>'六神旗舰店',),
-			    array('id'=>12334,'img'=>'/media/images/s04.jpg','name'=>'六神旗舰店',),
-			    array('id'=>12334,'img'=>'/media/images/s4.jpg','name'=>'六神旗舰店',),
-			    array('id'=>12334,'img'=>'/media/images/s3.png','name'=>'六神旗舰店',),
-			  ),
-			),
-			
-		 'join'=>array(
-			 'title'=> '本月最新入驻品牌',
-			 'lists'=>array(
-			    array('id'=>12334,'img'=>'/media/images/d01.jpg','alt'=>'联合利华','name'=>'六神旗舰店',),
-			    array('id'=>12335,'img'=>'/media/images/d02.jpg','alt'=>'联合利华','name'=>'六神旗舰店',),
-			    array('id'=>12336,'img'=>'/media/images/d04.jpg','alt'=>'联合利华','name'=>'六神旗舰店',),
-			    array('id'=>12337,'img'=>'/media/images/d03.jpg','alt'=>'联合利华','name'=>'六神旗舰店',),
-			    array('id'=>12338,'img'=>'/media/images/d01.jpg','alt'=>'联合利华','name'=>'六神旗舰店',),
-			    array('id'=>12339,'img'=>'/media/images/s04.jpg','alt'=>'联合利华','name'=>'六神旗舰店',),
-			    array('id'=>12330,'img'=>'/media/images/d02.jpg','alt'=>'联合利华','name'=>'六神旗舰店',),
-			    array('id'=>12331,'img'=>'/media/images/d03.jpg','alt'=>'联合利华','name'=>'六神旗舰店',),
-			  ),
-			),
-			
-	 	'ranking'=>array(
-			 'title'=> '月销售排行',
-			 'lists'=>array(
-				    array('id'=>12334,'count'=>'823234','name'=>'韩都衣舍',),
-				    array('id'=>12335,'count'=>'656566','name'=>'城市服务',),
-				    array('id'=>12336,'count'=>'523234','name'=>'真维斯',),
-				    array('id'=>12337,'count'=>'423234','name'=>'GAINREEL',),
-				    array('id'=>12338,'count'=>'323234','name'=>'七匹狼',),
-				    array('id'=>12339,'count'=>'223234','name'=>'李宁',),
-				    array('id'=>12330,'count'=>'123234','name'=>'诺基亚',),
-				    array('id'=>12331,'count'=>'93234','name'=>'相宜本草',),
-				  ),
-			),		
-		 );
-			
-	         print_r($array_data);		
-	
+		  $array_data = array(
+		          'login'=>array('name'='azhai'),
+		          'mod' =>array('name'=>'home'),
+		          'lists'=>array(
+			    array('id' =>'home-link','name'=>'主页','url'=>'admin/home','action'=>'home'), 
+		            array('id' =>'product-link','name'=>'商品区','url'=>'admin/product','action'=>'product'), 
+			    array('id' =>'tuan-link','name'=>'团购','url'=>'admin/tuan','action'=>'tuan'), 
+			    array('id' =>'hots-link','name'=>'展会','url'=>'admin/hots','action'=>'hots'), 
+		 	    array('id' =>'discounts-link','name'=>'促销区','url'=>'admin/discounts','action'=>'discounts'), 
+		 	    array('id' =>'community-link','name'=>'社区','url'=>'admin/community','action'=>'community'), 
+		          ),
+		         );
+
+                  print_r($array_data);
+	           // $template = View::factory('admin/header');
+	           // $template->array_data = $array_data;
+		  //echo $template;
                   
 	
 		$id='2222';
 		$data=array('mod'=>'order');
-		$hots  = Shops::factory($id,$data);
-		$_array_data =  $hots->get_shops_content();
+	//	$hots  = Admin::factory($id,$data);
+	//	$_array_data =  $hots->get_header_content();
 		
-//		$result=$_array_data;
-//		echo $result;
+	//	$result=$_array_data;
+	//	echo $result;
                 
 		//$data = Msc::factory();
 	

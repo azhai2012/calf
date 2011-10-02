@@ -1,0 +1,19 @@
+/*
+* @description 
+*
+* Created by zhai bob on 2011-10-02.
+* Copyright (c) 2011 . All rights reserved.
+*/
+html,body,div,h1,h2,h3,h4,h5,h6,p,img,dl,dt,dd,ol,ul,li,table,caption,tbody,tfoot,thead,tr,th,td,form,fieldset,embed,object,applet{margin:0;padding:0;border:0;}
+body{font-family:arial,sans-serif;color:black;font-size:13px;color:#333;background-image:url(/media/images/bg_fade.jpg);background-repeat:repeat-x;}
+li{display:list-item;text-align:-webkit-match-parent;}
+#header{height:84px;position:relative;z-index:100;min-width:675px;padding:0 10px;border-bottom:3px solid #94B922;}
+#headerLeft{padding:25px 0 0;}
+#headerLeft img{height:50px;width:150px;float:left;}
+#header ul{float:left;list-style:none;margin:30px 40px 0;padding:0;height:29px;}
+#header li{float:left;margin:0px 2px 0px 0px;padding:0;}
+#header li a{color:#666;font-size:13px;font-weight:bold;text-align:center;}
+#header li a{text-decoration:none;display:block;background-image:url(/media/images/bg_images_sprite.png);background-position:0 -58px;background-repeat:no-repeat;color:#666;font-size:13px;font-weight:bold;width:94px;height:29px;text-align:center;margin:0px;}
+.index #home-link a,.product #product-link a,.tuan #tuan-link a,.hots #hots-link a,.discounts #discounts-link a,.community #community-link a{background-image:url(/media/images/bg_images_sprite.png);background-position:0 0;background-repeat:no-repeat;color:white;font-weight:bold;cursor:default;}
+#header li a span{position:relative;top:7px;}
+#headerRight{position:absolute;right:0;top:5px;text-align:right;}

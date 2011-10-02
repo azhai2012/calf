@@ -15,3 +15,23 @@
 --
 #0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
 #1 {main}
+2011-10-01 10:40:55 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/admin.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-10-01 10:40:55 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/admin.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-10-01 10:40:57 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/admin.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-10-01 10:40:57 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/admin.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-10-01 10:43:30 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/admin.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-10-01 10:43:30 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/admin.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-10-01 10:43:31 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/admin.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-10-01 10:43:31 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: media/css/admin.css ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
