@@ -9,8 +9,8 @@
  */
 ?>
 <div class="section" id="body-content">
-  <div class="ui-resizable" id="side-nav" style="position: absolute; left: 0px; width: 200px; height: 545px; ">
-  	<div id="devdoc-nav" ><ul>
+  <div class="g-unit g-frist" id="side-nav" style="position: absolute; left: 0px; width: 200px; height: 545px; ">
+  	<div id="devdoc-nav" style="height:10px;" ><ul>
 	 	<ul>
 		  <li>
 		    <h2><span class="en" style="display: inline; ">Technical Resources</span>
@@ -19,9 +19,9 @@
 		      <li class="toggle-list closed">
 		        <div><a href="/resources/browser.html?tag=sample">
 		            <span class="en" style="display: inline; ">Sample Code</span>
-		       
 		          </a>
-		        <ul id="devdoc-nav-sample-list">
+		        </div> 
+		        <ul id="devdoc-nav-sample-list" style="display:none">
 		          <li><a href="/resources/samples/get.html">
 		                <span class="en" style="display: inline; ">Getting the Samples</span>
 		              </a></li>
@@ -53,10 +53,64 @@
 		  </li>
 		</ul>
         </div> <!-- devdoc-nav --> 
-        <div class="ui-resizable-handle ui-resizable-e" unselectable="on"></div>
+       
     </div> <!-- side-nav -->	  
    
-   <div class="g-unit" id="doc-content" style="margin-left: 206px; height: 245px; "><a name="top"></a>
-	<p>this- doc</p>
-   </div>
+   <div class="g-unit" id="doc-content" style="margin-left: 220px; height: 99px; "><a name="top"></a>
+
+<div id="jd-header" class="guide-header">
+  <span class="crumb">
+    &nbsp;
+
+  </span>
+<h1>Technical Resources</h1>
+</div>
+
+  <div id="jd-content">
+
+    <div class="jd-descr">
+
+
+
+<div>
+  <p style="display: none; float: right">Filter: <input id="resource-browser-keyword-filter"></p>
+  <p id="resource-browser-search-params">Showing technical resources tagged with <strong>Sample</strong>:</p>
+</div>
+
+
+
+<div id="resource-browser-results"><div class="result tagged-sample tagged-new">   <h3>          <a href="samples/AccelerometerPlay/index.html">Accelerometer Play</a>     <span class="new">new!</span>    </h3>   <p class="resource-meta">   Sample </p>   <p>An example of using the accelerometer to integrate the device's acceleration to a position using the Verlet method. This is illustrated with a very simple particle system comprised of a few iron balls freely moving on an inclined wooden table. The inclination of the virtual table is controlled by the device's accelerometer.</p> </div><div class="result tagged-sample tagged-new tagged-accessibility">   <h3>          <a href="samples/AccessibilityService/index.html">Accessibility Service</a>     <span class="new">new!</span>    </h3>   <p class="resource-meta">   Sample for <strong>Accessibility</strong></p>   <p>Illustrates an accessibility service that provides custom feedback for the Clock application which comes by default with Android devices</p> </div><div class="result tagged-sample tagged-layout tagged-ui">   <h3>          <a href="samples/ApiDemos/index.html">API Demos</a>        </h3>   <p class="resource-meta">   Sample for <strong>Layouts/Views</strong> and <strong>User Interface</strong></p>   <p>A variety of small applications that demonstrate an extensive collection of framework topics.</p> </div><div class="result tagged-sample tagged-layout tagged-ui tagged-fragment tagged-loader tagged-new">   <h3>          <a href="samples/Support4Demos/index.html">API 4+ Support Demos</a>     <span class="new">new!</span>    </h3>   <p class="resource-meta">   Sample for <strong>Layouts/Views</strong> and <strong>User Interface</strong></p>   <p>A variety of small applications that demonstrate the use of the helper classes in the Android API 4+ Support Library (classes which work down to API level 4 or version 1.6 of the platform).</p> </div><div class="result tagged-sample tagged-layout tagged-ui tagged-new">   <h3>          <a href="samples/Support13Demos/index.html">API 13+ Support Demos</a>     <span class="new">new!</span>    </h3>   <p class="resource-meta">   Sample for <strong>Layouts/Views</strong> and <strong>User Interface</strong></p>   <p>A variety of small applications that demonstrate the use of the helper classes in the Android API 13+ Support Library (classes which work down to API level 13 or version 3.2 of the platform).</p> </div><div class="result tagged-sample tagged-data tagged-newfeature tagged-accountsync">   <h3>          <a href="samples/BackupRestore/index.html">Backup and Restore</a>        </h3>   <p class="resource-meta">   Sample for <strong>Data Access</strong>, <strong>New Features</strong> and <strong>Accounts &amp; Sync</strong></p>   <p>Illustrates a few different approaches that an application developer can take when integrating with the Android Backup Manager using the BackupAgent API introduced in Android 2.2.</p> </div><div class="result tagged-sample tagged-communication">   <h3>          <a href="samples/BluetoothChat/index.html">Bluetooth Chat</a>        </h3>   <p class="resource-meta">   Sample for <strong>Communication</strong></p>   <p>An application for two-way text messaging over Bluetooth.</p> </div><div class="result tagged-sample tagged-accountsync">   <h3>          <a href="samples/BusinessCard/index.html">BusinessCard</a>        </h3>   <p class="resource-meta">   Sample for <strong>Accounts &amp; Sync</strong></p>   <p>An application that demonstrates how to launch the built-in contact picker from within an activity. This sample also uses reflection to ensure that the correct version of the contacts API is used, depending on which API level the application is running under.</p> </div><div class="result tagged-sample tagged-accountsync">   <h3>          <a href="samples/ContactManager/index.html">Contact Manager</a>        </h3>   <p class="resource-meta">   Sample for <strong>Accounts &amp; Sync</strong></p>   <p>An application that demonstrates how to query the system contacts provider  using the <code>ContactsContract</code> API, as well as insert contacts into a specific account.</p> </div><div class="result tagged-sample tagged-ui">   <h3>          <a href="samples/CubeLiveWallpaper/index.html">Cube Live Wallpaper</a>        </h3>   <p class="resource-meta">   Sample for <strong>User Interface</strong></p>   <p>An application that demonstrates how to create a live wallpaper and  bundle it in an application that users can install on their devices.</p> </div><div class="result tagged-sample">   <h3>          <a href="samples/Home/index.html">Home</a>        </h3>   <p class="resource-meta">   Sample </p>   <p>A home screen replacement application.</p> </div><div class="result tagged-sample tagged-new tagged-newfeature tagged-ui">   <h3>          <a href="samples/HoneycombGallery/index.html">Honeycomb Gallery</a>     <span class="new">new!</span>    </h3>   <p class="resource-meta">   Sample for <strong>New Features</strong> and <strong>User Interface</strong></p>   <p>An image gallery application using APIs that are new in Android 3.0 (a.k.a. Honeycomb).</p> </div><div class="result tagged-sample tagged-gamedev tagged-media">   <h3>          <a href="samples/JetBoy/index.html">JetBoy</a>        </h3>   <p class="resource-meta">   Sample for <strong>Game Development</strong> and <strong>Multimedia</strong></p>   <p>A game that demonstrates the SONiVOX JET interactive music technology, with <code><a href="/reference/android/media/JetPlayer.html">JetPlayer</a></code>.</p> </div><div class="result tagged-sample tagged-gamedev tagged-media">   <h3>          <a href="samples/LunarLander/index.html">Lunar Lander</a>        </h3>   <p class="resource-meta">   Sample for <strong>Game Development</strong> and <strong>Multimedia</strong></p>   <p>A classic Lunar Lander game.</p> </div><div class="result tagged-sample tagged-ui tagged-bestpractice tagged-layout">   <h3>          <a href="samples/MultiResolution/index.html">Multiple Resolutions</a>        </h3>   <p class="resource-meta">   Sample for <strong>User Interface</strong>, <strong>Best Practices</strong> and <strong>Layouts/Views</strong></p>   <p>A sample application that shows how to use resource directory qualifiers to provide different resources for different screen configurations.</p> </div><div class="result tagged-sample tagged-data">   <h3>          <a href="samples/NFCDemo/index.html">NFC Demo</a>        </h3>   <p class="resource-meta">   Sample for <strong>Data Access</strong></p>   <p>An application for reading NFC Forum Type 2 Tags using the NFC APIs</p> </div><div class="result tagged-sample tagged-data">   <h3>          <a href="samples/NotePad/index.html">Note Pad</a>        </h3>   <p class="resource-meta">   Sample for <strong>Data Access</strong></p>   <p>An application for saving notes. Similar (but not identical) to the <a href="/resources/tutorials/notepad/index.html">Notepad tutorial</a>.</p> </div><div class="result tagged-sample tagged-new tagged-media">   <h3>          <a href="samples/RandomMusicPlayer/index.html">Random Music Player</a>     <span class="new">new!</span>    </h3>   <p class="resource-meta">   Sample for <strong>Multimedia</strong></p>   <p>Demonstrates how to write a multimedia application that plays music from the device and from URLs. It manages media playback from a service and can play music in the background, respecting audio focus changes.</p> </div><div class="result tagged-sample tagged-new tagged-newfeature tagged-performance tagged-gamedev tagged-gl">   <h3>          <a href="samples/RenderScript/index.html">RenderScript</a>     <span class="new">new!</span>    </h3>   <p class="resource-meta">   Sample for <strong>New Features</strong>, <strong>Performance</strong>, <strong>Game Development</strong> and <strong>OpenGL ES</strong></p>   <p>A set of samples that demonstrate how to use various features of the RenderScript APIs.</p> </div><div class="result tagged-sample tagged-accountsync">   <h3>          <a href="samples/SampleSyncAdapter/index.html">SampleSyncAdapter</a>        </h3>   <p class="resource-meta">   Sample for <strong>Accounts &amp; Sync</strong></p>   <p>Demonstrates how an application can communicate with a cloud-based service and synchronize its data with data stored locally in a content provider. The sample uses two related parts of the Android framework — the account manager and the synchronization manager (through a sync adapter).</p> </div><div class="result tagged-sample tagged-ui tagged-search">   <h3>          <a href="samples/SearchableDictionary/index.html">Searchable Dictionary v2</a>        </h3>   <p class="resource-meta">   Sample for <strong>User Interface</strong> and <strong>Search</strong></p>   <p>A sample application that demonstrates Android's search framework, including how to provide search suggestions for Quick Search Box.</p> </div><div class="result tagged-sample">   <h3>          <a href="samples/SipDemo/index.html">SIP Demo</a>        </h3>   <p class="resource-meta">   Sample </p>   <p>A demo application highlighting how to make internet-based calls with the SIP API.</p> </div><div class="result tagged-sample tagged-layout tagged-ui">   <h3>          <a href="samples/Snake/index.html">Snake</a>        </h3>   <p class="resource-meta">   Sample for <strong>Layouts/Views</strong> and <strong>User Interface</strong></p>   <p>An implementation of the classic game "Snake."</p> </div><div class="result tagged-sample tagged-input">   <h3>          <a href="samples/SoftKeyboard/index.html">Soft Keyboard</a>        </h3>   <p class="resource-meta">   Sample for <strong>Input Methods</strong></p>   <p>An example of writing an input method for a software keyboard.</p> </div><div class="result tagged-sample tagged-testing">   <h3>          <a href="samples/Spinner/index.html">Spinner</a>        </h3>   <p class="resource-meta">   Sample for <strong>Testing</strong></p>   <p>A simple application that serves as an application under test for the SpinnerTest example.</p> </div><div class="result tagged-sample tagged-testing">   <h3>          <a href="samples/SpinnerTest/index.html">SpinnerTest</a>        </h3>   <p class="resource-meta">   Sample for <strong>Testing</strong></p>   <p>The test application for the Activity Testing tutorial. It tests the Spinner example application.</p> </div><div class="result tagged-sample tagged-new tagged-newfeature tagged-widgets">   <h3>          <a href="samples/StackWidget/index.html">StackView Widget</a>     <span class="new">new!</span>    </h3>   <p class="resource-meta">   Sample for <strong>New Features</strong> and <strong>App Widgets</strong></p>   <p>Demonstrates how to create a simple collection widget containing a StackView.</p> </div><div class="result tagged-sample tagged-newfeature">   <h3>          <a href="samples/TicTacToeLib/index.html">TicTacToeLib</a>        </h3>   <p class="resource-meta">   Sample for <strong>New Features</strong></p>   <p>An example of an Android library project, a type of project that lets you store and manage shared code and resources in one place, then make them available to your other Android applications.</p> </div><div class="result tagged-sample tagged-newfeature">   <h3>          <a href="samples/TicTacToeMain/index.html">TicTacToeMain</a>        </h3>   <p class="resource-meta">   Sample for <strong>New Features</strong></p>   <p>Demonstrates how an application can make use of shared code and resources stored in an Android library project.</p> </div><div class="result tagged-sample tagged-new tagged-newfeature">   <h3>          <a href="samples/USB/index.html">USB</a>     <span class="new">new!</span>    </h3>   <p class="resource-meta">   Sample for <strong>New Features</strong></p>   <p>A set of samples that demonstrate how to use various features of the USB APIs.</p> </div><div class="result tagged-sample tagged-ui tagged-widgets">   <h3>          <a href="samples/Wiktionary/index.html">Wiktionary</a>        </h3>   <p class="resource-meta">   Sample for <strong>User Interface</strong> and <strong>App Widgets</strong></p>   <p>An example of creating interactive widgets for display on the Android home screen.</p> </div><div class="result tagged-sample tagged-ui tagged-widgets">   <h3>          <a href="samples/WiktionarySimple/index.html">Wiktionary (Simplified)</a>        </h3>   <p class="resource-meta">   Sample for <strong>User Interface</strong> and <strong>App Widgets</strong></p>   <p>A simple Android home screen widgets example.</p> </div><div class="result tagged-sample tagged-widgets tagged-newfeature tagged-new">   <h3>          <a href="samples/WeatherListWidget/index.html">Weather List Widget</a>     <span class="new">new!</span>    </h3>   <p class="resource-meta">   Sample for <strong>App Widgets</strong> and <strong>New Features</strong></p>   <p>A more complex collection-widget example which uses a ContentProvider as its data source.</p> </div><div class="result tagged-sample tagged-layout">   <h3>          <a href="samples/XmlAdapters/index.html">XML Adapters</a>        </h3>   <p class="resource-meta">   Sample for <strong>Layouts/Views</strong></p>   <p>Binding data to views using XML Adapters examples.</p> </div></div>
+
+
+    </div>
+
+  <a href="#top" style="float: right; display: inline; ">↑ Go to top</a>
+
+  </div>
+
+<div id="footer">
+
+
+  <div id="copyright">
+
+  Except as noted, this content is 
+  licensed under <a href="http://creativecommons.org/licenses/by/2.5/">
+  Creative Commons Attribution 2.5</a>. For details and 
+  restrictions, see the <a href="/license.html">Content 
+  License</a>.
+  </div>
+
+  <div id="footerlinks">
+
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+</div>
+   <div class="clearfix"></div>
 </div> <!-- body-content -->

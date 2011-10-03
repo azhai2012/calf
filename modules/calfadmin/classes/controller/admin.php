@@ -96,7 +96,7 @@ class Controller_Admin extends Controller {
                         default:'';
                     }
                 }break;
-            case "mainpagefoot": $mods = 'this is foot';
+            case "mainpagefoot": $mods = '';
                 break;
             default:'';
           }

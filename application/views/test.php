@@ -8,34 +8,21 @@
   <script type="text/javascript" src="/media/js/comm.js"></script>
  <script type="text/javascript" src="/media/js/apps.js"></script>
  <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
+ <script type="text/javascript" src="/media/js/jquery-resizable.min.js"></script>
+
   <script type="text/javascript">
-
-
-     function mytest(){
-
-    	 var a=["a","b","c"];
-    	 for (var i=0;i<a.length;i++){
-    	   alert(a[i]);
-    	 }
-        /* alert(Azhai.newGuid());
-    	 Azhai.callMethod("/testajax", "{'pageIndex':6,'pageSize':100}",    	 
-    	 function (data) {
-           alert(data.d);
-         },
-         function (error) {           
-             alert(error.Message);
-         });*/
-     }
-   
+      $(function(){
+	    $('#content').resizable(); 
+	});
+ 
   </script>
 </head>
 <body>
  
-  <div id="content"  > <!-- begin content -->
-    
-  <a href="javascript:mytest()">click me</a>
- 
+  <div id="content" style="width:100px;height:200px;border:1px #ccc solid;" > <!-- begin content -->
+     <a href="javascript:mytest()">click me</a>
   </div> <!-- end content  -->   
+ 
 
 </body>
 

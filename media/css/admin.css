@@ -24,13 +24,33 @@ margin: 0;
 position: relative;
 width: 100%;
 }
+#doc-content {
+overflow: auto;
+padding-left:20px;
+}
+
+.g-tpl-200 .g-unit, .g-unit .g-tpl-200 .g-unit, .g-unit .g-unit .g-tpl-200 .g-unit {
+display: block;
+margin: 0 0 0 200px;
+width: auto;
+float: none;
+}
+.closed ul {display:none}
+
+.vsplitbar {
+width: 6px;
+background: #ACA url(/media/images/resizable.gif) no-repeat center;
+}
+
 #devdoc-nav {
 overflow: auto;
 position: relative;
 }
+
 .ui-resizable .ui-resizable-handle {
 display: block;
 }
+
 .ui-resizable-e {
 cursor: e-resize;
 width: 6px;
@@ -46,5 +66,3 @@ display: none;
 font-size: 0.1px;
 z-index: 1;
 }
-
-#devdoc-nav {float:left;}
