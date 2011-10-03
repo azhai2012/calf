@@ -22,29 +22,47 @@ class Controller_Admin extends Controller {
 	{	
 		parent::before();
 		$this->template->callmethod='
-		 
-		   <script>Azhai.callMethod1("/admin/callmethod?controller=index","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		   <script>Azhai.onPages({"type":"js","js":["/media/js/admin.js"]});</script> 
-		  '; 
+                   <script>Azhai.callMethod1("/admin/callmethod?controller=index","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		'; 
         }
 
 	public function action_product()
 	{	
 		parent::before();
 		$this->template->callmethod='
-	
-		   <script>Azhai.callMethod1("/admin/callmethod?controller=product","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		   <script>Azhai.onPages({"type":"js","js":["/media/js/admin.js"]});</script> 
-		  '; 
+	         <script>Azhai.callMethod1("/admin/callmethod?controller=product","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		'; 
         }
 
 	public function action_tuan()
 	{	
 		parent::before();
 		$this->template->callmethod='
-		 
 		   <script>Azhai.callMethod1("/admin/callmethod?controller=tuan","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		   <script>Azhai.onPages({"type":"js","js":["/media/js/admin.js"]});</script> 
+		  '; 
+        }
+
+	public function action_hots()
+	{	
+		parent::before();
+		$this->template->callmethod='
+		   <script>Azhai.callMethod1("/admin/callmethod?controller=hots","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		  '; 
+        }
+
+	public function action_discounts()
+	{	
+		parent::before();
+		$this->template->callmethod='
+		   <script>Azhai.callMethod1("/admin/callmethod?controller=discounts","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		  '; 
+        }
+
+	public function action_community()
+	{	
+		parent::before();
+		$this->template->callmethod='
+		   <script>Azhai.callMethod1("/admin/callmethod?controller=community","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		  '; 
         }
 
@@ -69,11 +87,11 @@ class Controller_Admin extends Controller {
                 break;
             case "headcontent": $mods = Admin::factory($controller)->get_header_content();
                 break;
-            case "menus": $mods = 'this is menus';
+            case "menus": $mods = '';
                 break;
             case "maincontentcol": {
                     switch ($controller) {
-                        case 'main': $mods = 'this is main';
+                        case 'index': $mods = Admin::factory($controller)->get_body_content();
                             break;
                         default:'';
                     }

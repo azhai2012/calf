@@ -355,3 +355,71 @@
 #5 /Users/zhaibob/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
 #6 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
 #7 {main}
+2011-10-02 20:01:16 --- ERROR: HTTP_Exception_404 [ 404 ]: The requested URL admin/hots was not found on this server. ~ SYSPATH/classes/kohana/request/client/internal.php [ 113 ]
+2011-10-02 20:01:16 --- STRACE: HTTP_Exception_404 [ 404 ]: The requested URL admin/hots was not found on this server. ~ SYSPATH/classes/kohana/request/client/internal.php [ 113 ]
+--
+#0 /Users/zhaibob/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#1 /Users/zhaibob/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#2 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#3 {main}
+2011-10-02 20:01:16 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-10-02 20:01:16 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-10-02 20:21:08 --- ERROR: HTTP_Exception_404 [ 404 ]: The requested URL admin/product was not found on this server. ~ SYSPATH/classes/kohana/request/client/internal.php [ 113 ]
+2011-10-02 20:21:08 --- STRACE: HTTP_Exception_404 [ 404 ]: The requested URL admin/product was not found on this server. ~ SYSPATH/classes/kohana/request/client/internal.php [ 113 ]
+--
+#0 /Users/zhaibob/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#1 /Users/zhaibob/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#2 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#3 {main}
+2011-10-02 20:21:08 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-10-02 20:21:08 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-10-02 20:21:09 --- ERROR: HTTP_Exception_404 [ 404 ]: The requested URL admin/product was not found on this server. ~ SYSPATH/classes/kohana/request/client/internal.php [ 113 ]
+2011-10-02 20:21:09 --- STRACE: HTTP_Exception_404 [ 404 ]: The requested URL admin/product was not found on this server. ~ SYSPATH/classes/kohana/request/client/internal.php [ 113 ]
+--
+#0 /Users/zhaibob/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#1 /Users/zhaibob/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#2 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#3 {main}
+2011-10-02 20:22:31 --- ERROR: ErrorException [ 1 ]: Call to undefined method Response::action() ~ APPPATH/classes/controller/test.php [ 31 ]
+2011-10-02 20:22:31 --- STRACE: ErrorException [ 1 ]: Call to undefined method Response::action() ~ APPPATH/classes/controller/test.php [ 31 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-10-02 20:22:33 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-10-02 20:22:33 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-10-02 20:22:50 --- ERROR: ErrorException [ 8 ]: Undefined property: Response::$action ~ APPPATH/classes/controller/test.php [ 31 ]
+2011-10-02 20:22:50 --- STRACE: ErrorException [ 8 ]: Undefined property: Response::$action ~ APPPATH/classes/controller/test.php [ 31 ]
+--
+#0 /Users/zhaibob/git/calf/application/classes/controller/test.php(31): Kohana_Core::error_handler(8, 'Undefined prope...', '/Users/zhaibob/...', 31, Array)
+#1 [internal function]: Controller_Test->action_index()
+#2 /Users/zhaibob/git/calf/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Test))
+#3 /Users/zhaibob/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 /Users/zhaibob/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#5 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#6 {main}
+2011-10-02 20:22:50 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-10-02 20:22:50 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-10-02 20:25:40 --- ERROR: HTTP_Exception_404 [ 404 ]: The requested URL admin/product was not found on this server. ~ SYSPATH/classes/kohana/request/client/internal.php [ 113 ]
+2011-10-02 20:25:40 --- STRACE: HTTP_Exception_404 [ 404 ]: The requested URL admin/product was not found on this server. ~ SYSPATH/classes/kohana/request/client/internal.php [ 113 ]
+--
+#0 /Users/zhaibob/git/calf/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#1 /Users/zhaibob/git/calf/system/classes/kohana/request.php(1144): Kohana_Request_Client->execute(Object(Request))
+#2 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#3 {main}
+2011-10-02 20:25:40 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-10-02 20:25:40 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}

@@ -28,24 +28,8 @@ class Controller_Test extends Controller {
 	{	
 		parent::before();
 	        
-		  $array_data = array(
-		          'login'=>array('name'='azhai'),
-		          'mod' =>array('name'=>'home'),
-		          'lists'=>array(
-			    array('id' =>'home-link','name'=>'主页','url'=>'admin/home','action'=>'home'), 
-		            array('id' =>'product-link','name'=>'商品区','url'=>'admin/product','action'=>'product'), 
-			    array('id' =>'tuan-link','name'=>'团购','url'=>'admin/tuan','action'=>'tuan'), 
-			    array('id' =>'hots-link','name'=>'展会','url'=>'admin/hots','action'=>'hots'), 
-		 	    array('id' =>'discounts-link','name'=>'促销区','url'=>'admin/discounts','action'=>'discounts'), 
-		 	    array('id' =>'community-link','name'=>'社区','url'=>'admin/community','action'=>'community'), 
-		          ),
-		         );
-
-                  print_r($array_data);
-	           // $template = View::factory('admin/header');
-	           // $template->array_data = $array_data;
-		  //echo $template;
-                  
+		$action = $this->request->action();
+		echo $action; 
 	
 		$id='2222';
 		$data=array('mod'=>'order');
