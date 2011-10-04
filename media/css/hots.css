@@ -7,7 +7,7 @@ Description:Purpose of the stylesheet follows.
 /* 
 TODO customize this sample style
 Syntax recommendation http://www.w3.org/TR/REC-CSS2/
-*/
+*/
 /* Left style */
 #hots_context .left{float:left;width:690px;margin-right:5px;border:10px #000 solid;}
 .abc-a h3,.hots-extra h3{background-image:url(/media/images/hotsbd.gif)}

@@ -1,7 +1,6 @@
 $(function(){ 
    Admins.Init();
-   Admins.getHeight();	
-	
+   Admins.getHeight();	  
 });
 
 var cookie_namespace = 'Calf_Admin';
@@ -29,15 +28,8 @@ var Admins = {
 		
 
 			 var cookiePath = "";
-			  if (location.href.indexOf("/index") != -1) {
-			    cookiePath = "index_";
-			  } else if (location.href.indexOf("/guide/") != -1) {
-			    cookiePath = "guide_";
-			  } else if (location.href.indexOf("/sdk/") != -1) {
-			    cookiePath = "sdk_";
-			  } else if ((location.href.indexOf("/resources/") != -1) || 
-			             (location.href.indexOf("/training/") != -1)) {
-			    cookiePath = "resources_";
+			  if (location.href.indexOf("/admin") != -1) {
+			    cookiePath = "admin_";
 			  }
 		
 			 var cookieWidth = this.readCookie(cookiePath+'width');
@@ -53,15 +45,30 @@ var Admins = {
 				      this.resizeHeight();
 		     }
 			
+		},	
+		toggle:function(obj, slide) {
+		  var ul = $("ul:first", obj);
+		  var li = ul.parent();
+		  if (li.hasClass("closed")) {
+		    if (slide) {
+		      ul.slideDown("fast");
+		    } else {
+		      ul.show();
+		    }
+		    li.removeClass("closed");
+		    li.addClass("open");
+		    $(".toggle-img", li).attr("title", "hide pages");
+		  } else {
+		    ul.slideUp("fast");
+		    li.removeClass("open");
+		    li.addClass("closed");
+		    $(".toggle-img", li).attr("title", "show pages");
+		  }
 		},
-	
-		restoreWidth:function(navWidth) {
-		 	
-		  var windowWidth = $(window).width() + "px";
-		  content.css({marginLeft:parseInt(navWidth) + 6 + "px"}); //account for 6px-wide handle-bar
-
+		restoreWidth:function(navWidth) {		 	
+		  content.css({marginLeft:parseInt(navWidth) + 6 + "px"}); 
 		  if (isIE6) {
-		    content.css({width:parseInt(windowWidth) - parseInt(navWidth) - 6 + "px"}); // necessary in order for scrollbars to be visible
+		    content.css({width:parseInt(windowWidth) - parseInt(navWidth) - 6 + "px"}); 
 		  }
 		  $('#side-nav').css({width:navWidth});
 		},
@@ -71,21 +78,19 @@ var Admins = {
 		  content.css({height:windowHeight + "px"});
 		  devdocNav.css({height:sidenav.css("height")});
 		},	
-		resizeWidth:function(){
-			
+		resizeWidth:function(){			
 			  if (sidenav.length) {
 			    var sidenavWidth = sidenav.css("width");
 			  } else {
 			    var sidenavWidth = 0;
 			  }
-              
-			  content.css({marginLeft:parseInt(sidenavWidth) + 6 + "px"}); //account for 6px-wide handle-bar
+              content.css({marginLeft:parseInt(sidenavWidth) + 6 + "px"});
               
 			  if (isIE6) {
-			    content.css({width:parseInt(windowWidth) - parseInt(sidenavWidth) - 6 + "px"}); // necessary in order to for scrollbars to be visible
+			    content.css({width:parseInt(windowWidth) - parseInt(sidenavWidth) - 6 + "px"});
 			  }
 			
-		 	if (sidenav.length) { // Must check if the nav exists because IE6 calls resizeWidth() from resizeAll() for all pages
+		 	if (sidenav.length) { 
 			    var basePath = this.getBaseUri(location.pathname);
 			    var section = basePath.substring(1,basePath.indexOf("/",1));
 			    this.writeCookie("width", sidenavWidth, section, null);
@@ -93,15 +98,13 @@ var Admins = {
 		},	
 		resizeHeight:function() {
 		  var docContent = $("#doc-content");
-          // Get the window height and always resize the doc-content and side-nav divs
-		  var windowHeight = ($(window).height() - 100);
+    	  var windowHeight = ($(window).height() - 100);
 		 
 		  docContent.css({height:windowHeight + "px"});
 		  $("#side-nav").css({height:windowHeight + "px"});
 
 		  var href = location.href;
 		
-		  // If in the reference docs, also resize the "swapper", "classes-nav", and "nav-tree"  divs
 		  if ($("#devdoc-nav").length) {
 		    $("#devdoc-nav").css({height:sidenav.css("height")});
 		  }
@@ -144,44 +147,42 @@ var Admins = {
 		  section = section == null ? "_" : "_"+section+"_";
 		  if (expiration == null) {
 		    var date = new Date();
-		    date.setTime(date.getTime()+(10*365*24*60*60*1000)); // default expiration is one week
+		    date.setTime(date.getTime()+(10*365*24*60*60*1000)); // one week
 		    expiration = date.toGMTString();
 		  }
 		  document.cookie = cookie_namespace + section + cookie + "=" + val + "; expires=" + expiration+"; path=/";
 		},
-		getBaseUri:function(uri) {
-		  var intlUrl = (uri.substring(0,6) == "/intl/");
+		getBaseUri:function(uri) {		
+		  var intlUrl = (uri.substring(0,6) == "/admin");
 		  if (intlUrl) {
-		    base = uri.substring(uri.indexOf('intl/')+5,uri.length);
-		    base = base.substring(base.indexOf('/')+1, base.length);
-		      //alert("intl, returning base url: /" + base);
-		    return ("/" + base);
+		    base = uri+'/index'
+		    return base;
 		  } else {
-		      //alert("not intl, returning uri as found.");
 		    return uri;
 		  }
 		},
-		EditCms:function(){
-			var titlename=  $('#title').val();
-			
+		ajaxMod:function(uri,callback,datatype,params,method){
+			var dt = (!arguments[2]) ? "html": datatype;
+			var d = (!arguments[3]) ? "{}": params;
+			var m = (!arguments[4]) ? method: 'post';
 			$.ajax({
-				type : "get",
-				url : "/ajax?sk=adcedit&fl="+titlename,
+				type : method,
+				dataType: dt,
+				url : uri,
+				data : d,
 				beforeSend : function(XMLHttpRequest) {
 				},
 				success : function(data, textStatus) {
-	                 alert(data);   
+	               callback(data); 
 				},
 				complete : function(XMLHttpRequest, textStatus) {
-					
+				  
 				},
 				error : function() {
 					// 请求出错处理
 				}
 			});
-			
 		},
-		
 };
 
 

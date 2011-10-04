@@ -28,16 +28,19 @@ class Controller_Test extends Controller {
 	{	
 		parent::before();
 	        
-		$action = $this->request->action();
-		echo $action; 
+	//	$action = $this->request->action();
+	//	echo $action; 
 	
-		$id='2222';
-		$data=array('mod'=>'order');
-	//	$hots  = Admin::factory($id,$data);
-	//	$_array_data =  $hots->get_header_content();
 		
-	//	$result=$_array_data;
-	//	echo $result;
+	
+		
+		$id=1;
+		$data=array('mod'=>'order');
+		$hots  = Admin_Notice::factory($id,$data);
+		$_array_data =  $hots->get_body_content();
+		
+		$result=$_array_data;
+		echo $result;
                 
 		//$data = Msc::factory();
 	

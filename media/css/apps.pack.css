@@ -47,7 +47,7 @@ tfoot td {background:#eee}
 #allContainer { margin:0px auto;width:981px;}
 #content {margin:0px;padding:0;}
 #content {width:auto;}
-#allContainer,#content {min-height: inherit};
+#allContainer,#content {min-height: inherit}
 #mainContainer {width:100%;display:block;margin-left:-1px;}
 #leftcol {float:left;padding:20px 0px 0px 2px;width:179px;word-wrap:break-word;dispkay:block;}
 #leftcol .navside li {position:relative;zoom:1;}
@@ -172,7 +172,7 @@ padding-top: 6px;
 .box fieldset {border: 2px groove threedface;display: block;margin-bottom:20px;margin-left: 2px;margin-right: 2px;padding: 0.35em 0.75em 0.625em;}
 .box a {padding:0px 5px;}
 .btn {padding:10px 0px;position:relative;}
-.showloading {top:15px};
+.showloading {top:15px}
 .rolename {margin-bottom:10px;}
 
 .loginbg {background:url(/media/images/loginbg1.jpg) transparent repeat-x bottom left;margin:0px;padding-top: 36px;}

@@ -3370,3 +3370,13 @@
 --
 #0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
 #1 {main}
+2011-10-03 23:03:15 --- ERROR: ErrorException [ 1 ]: Call to undefined function json_enable() ~ APPPATH/views/test.php [ 1 ]
+2011-10-03 23:03:15 --- STRACE: ErrorException [ 1 ]: Call to undefined function json_enable() ~ APPPATH/views/test.php [ 1 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-10-03 23:03:17 --- ERROR: ErrorException [ 1 ]: Call to undefined function json_enable() ~ APPPATH/views/test.php [ 1 ]
+2011-10-03 23:03:17 --- STRACE: ErrorException [ 1 ]: Call to undefined function json_enable() ~ APPPATH/views/test.php [ 1 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}

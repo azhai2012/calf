@@ -11,7 +11,7 @@ abstract class Kohana_Calfdb {
 	
 	public static $version = '1.0';
 
-	public static function split_to_array($pattern,$input)<?php defined('SYSPATH') or die('No direct script access.');
+	public static function split_to_array($pattern,$input)
 	{
 		return split($pattern,$input);
 	}

@@ -50,16 +50,7 @@ class Kohana_Admin {
             return  $template;
         }
 
-        /**
-        * 
-        */
-        public function get_body_content() {
-            // TODO :
-            $template = View::factory('admin/body');
-            return $template;
-        }
-
-
+       
 	function  __get($name){
 	   if(isset($this->$name)){ 
           return $this->$name;

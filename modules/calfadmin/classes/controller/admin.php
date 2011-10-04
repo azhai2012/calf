@@ -11,10 +11,11 @@ class Controller_Admin extends Controller {
 
 
     private  $template='';
+    private $_id;
 
     public function before(){
 		$this->template= View::factory('admin/content');
-
+                $this->_id = $this->request->param('id');
 	}
 
 
@@ -22,8 +23,9 @@ class Controller_Admin extends Controller {
 	{	
 		parent::before();
 		$this->template->callmethod='
-                   <script>Azhai.callMethod1("/admin/callmethod?controller=index","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+                   <script>Azhai.callMethod1("/admin/callmethod?controller=index&id='.$this->_id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
 		'; 
+		
         }
 
 	public function action_product()
@@ -74,8 +76,7 @@ class Controller_Admin extends Controller {
             parent::before();
             $sk = array_key_exists('sk', $_POST) ? $_POST['sk'] : '';
             $id = array_key_exists('id', $_GET) ? $_GET['id'] : '';
-
-
+           
            $mod = array_key_exists('mod', $_GET) ? $_GET['mod'] : '';
            $controller = array_key_exists('controller', $_GET) ? $_GET['controller'] : '';
   
@@ -91,9 +92,19 @@ class Controller_Admin extends Controller {
                 break;
             case "maincontentcol": {
                     switch ($controller) {
-                        case 'index': $mods = Admin::factory($controller)->get_body_content();
-                            break;
-                        default:'';
+                        case 'index': $mods = Admin_Home::factory($id)->get_body_content();
+                          break;
+			case 'product': $mods = Admin_Product::factory($id)->get_body_content();
+	                  break;
+		        case 'tuan': $mods = Admin_Tuan::factory($id)->get_body_content();
+			  break;
+			case 'hots': $mods = Admin_Hots::factory($id)->get_body_content();
+		          break;
+			case 'discounts': $mods = Admin_Discounts::factory($id)->get_body_content();
+		          break;
+		        case 'community': $mods = Admin_Community::factory($id)->get_body_content();
+			  break;
+                       default:'';
                     }
                 }break;
             case "mainpagefoot": $mods = '';

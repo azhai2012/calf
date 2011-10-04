@@ -64,7 +64,7 @@
 		  </div>
 	
 		  <div class="submit">
-			<div style="padding:12px 0 0 50px;clear:both;height:26px!important;height:;">
+			<div style="padding:12px 0 0 50px;clear:both;height:26px!important;">
 			   <input type="submit" class="submitbtn" style="font:bold 16px Verdana;height:26px;" value="登 录" id="btlogin" name="btlogin" tabindex="4">
 			</div>
 		    <div style="padding:10px 50px;margin-top:20px;border-top:1px #fff solid;width:165px;height:10px;">

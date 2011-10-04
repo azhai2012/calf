@@ -62,7 +62,7 @@ a{color:#385998;cursor:pointer;text-decoration:none;}
 #menu li a:hover{display:block;background:#fff;color:#a10000;}
 #menu ul .current{display:inline;margin-top:1px;_height:18px;overflow:hidden;height:33px;background:#fff;}
 #menu ul .current a:link,#menu ul .current a:visited{color:#a10000}
-;/* carts */
+/* carts */
 .carts{margin-left:272px;font-size:12px;text-align:left;}
 .carts span.c_txt{display:inline-block;height:16px;margin-left:5px;}
 .carts span.c_icon{float:left;width:20px;height:16px;background:url(/media/images/cart.gif) no-repeat -16px -2px;}

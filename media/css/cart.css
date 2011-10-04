@@ -1,17 +1,17 @@
 #cart_context {margin-top:20px;}
 
 .cart_nav_setp_one {background-position:-348px -439px;background-repeat:no-repeat; color: #FFBF27;height: 32px;_height:20px;overflow: hidden;width: 943px;}
-.cart_nav_setp_one span {display:block;float:left;height:32px;_height:20px;padding:5px 90px 0 20px;color:#000;};
+.cart_nav_setp_one span {display:block;float:left;height:32px;_height:20px;padding:5px 90px 0 20px;color:#000;}
  #step_one {background-position:-348px -439px;}
 .location {color:#FFFFFF;font-weight:bold;}
  
  
 .cart_nav_setp_two {background-position:-348px -472px;background-repeat:no-repeat;color: #FFBF27;height: 32px;overflow: hidden;width: 943px;}
-.cart_nav_setp_two span {display:block;float:left;height:32px;padding:5px 90px 0 20px;color:#000;};
+.cart_nav_setp_two span {display:block;float:left;height:32px;padding:5px 90px 0 20px;color:#000;}
  #step_two {background-position:-348px -472px;}
  
 .cart_nav_setp_three {background-position:-348px -503px;background-repeat:no-repeat;color: #FFBF27;height: 32px;overflow: hidden;width: 943px;}
-.cart_nav_setp_three span {display:block;float:left;height:32px;padding:5px 90px 0 20px;color:#000;};
+.cart_nav_setp_three span {display:block;float:left;height:32px;padding:5px 90px 0 20px;color:#000;}
  #step_three {background-position:-348px -503px;}
 
 .cart_subject {display: block;height: 29px;width: 980px;margin-top:10px;}
@@ -97,7 +97,7 @@
 
 .clearing_expand_info .title a.open {background: url(/media/images/icon_cart.gif) no-repeat 0px -190px;font-size: 0px;height: 14px;line-height: 0;margin: 0px 5px 0px 0px;overflow: hidden;text-indent: -9999px;width: 14px;}
 
-.price_charge_border {background: url(/media/images/bg_cart.gif) repeat-x 0px -40px;border-top: ;display: block;height: 9px;line-height: 9px;margin-top: 0px;position: relative;}
+.price_charge_border {background: url(/media/images/bg_cart.gif) repeat-x 0px -40px;display: block;height: 9px;line-height: 9px;margin-top: 0px;position: relative;}
 
 .gift_btn a,.gift_btn a:hover,.remark_btn a,.remark_btn .btn a:hover {background: url(/media/images/desktop.gif) no-repeat -251px -108px;color: white;display: inline-block;font-size: 12px;font-weight: bold;height: 35px;line-height: 25px;padding: 1px 12px 0px;text-decoration: none;}
 
