@@ -33,7 +33,7 @@ class Controller_Test extends Controller {
 	
 		
 	
-		
+		/*
 		$id=1;
 		$data=array('mod'=>'order');
 		$hots  = Admin_Notice::factory($id,$data);

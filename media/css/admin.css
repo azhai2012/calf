@@ -30,15 +30,15 @@ a,a code{color:#069;}
 .ui-resizable-e{cursor:e-resize;width:6px;right:0px;top:0px;height:100%;background:transparent url(/media/images/resizable.gif) repeat scroll right center;}
 .ui-resizable-handle{position:absolute;display:none;font-size:0.1px;z-index:1;}
 #side-nav li h2{font-size:14px;font-weight:bold;margin:.5em 0 0 0;padding:3px 0 1px 9px;}
-#side-nav ul ul{margin:.5em 0 0 0;padding:0;}
+
 #side-nav ul{list-style:none;margin:0;padding:5px 0;}
 #side-nav .toggle-list{position:relative;}
-#side-nav li{padding:0;line-height:16px;white-space:nowrap;zoom:1;}
+#side-nav li{padding:0;line-height:18px;white-space:nowrap;zoom:1;}
 #side-nav li a{text-decoration:none;padding:0 0 0 18px;zoom:1;}
-#side-nav .selected{background-color:#435A6E;color:white;font-weight:bold;}
+#side-nav .toggle-list .selected {background-color:#435A6E;color:white;font-weight:bold;}
 #side-nav .closed .toggle-img,#side-nav .open .closed .toggle-img{background:url('/media/images/triangle-closed-small.png') 7px 4px no-repeat;}
 #side-nav .toggle-list .toggle-img{margin:0;padding:0;position:absolute;top:0;left:0;height:16px;width:15px;outline-style:none;}
 #side-nav li a:hover{text-decoration:underline;}
 #side-nav li li li a{padding:0 0 0 28px;}
 #side-nav .open .toggle-img{background:url('/media/images/triangle-opened-small.png') 7px 4px no-repeat;}
-#side-nav .selected a{color:white;text-decoration:none;}
+#side-nav .toggle-list .selected a{color:white;text-decoration:none;}

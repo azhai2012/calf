@@ -3,9 +3,9 @@
  * @description : 
  *
  * @author Azhai
- * @date 2011-10-03 
+ * @date 2011-10-05 
  * @copyright 2011 
  *
  */
 ?>
-<div> This is ajax </div>
+<div>this is news list</div>

@@ -35,8 +35,8 @@ class Kohana_Admin_Home {
 			      ) , 
 			 array('id'=>3,'mod_name'=>'advertising','name' =>'广告管理','url'=>'/admin/index/3',
 			                  'lists'=>array(
-				           array('name'=>'添加广告栏目','url'=>'#'),
-				      	   array('name'=>'广告列表','url'=>'#'),
+				           array('id'=>'31','name'=>'添加广告栏目','url'=>'/admin/index/31'),
+				      	   array('id'=>'32','name'=>'广告列表','url'=>'/admin/index/32'),
 				           ),
 			      ), 
 			 array('id'=>4,'mod_name'=>'shows','name' =>'展示管理','url'=>'/admin/index/4','lists'=>array(
@@ -65,6 +65,9 @@ class Kohana_Admin_Home {
                 case 2:
 	       	     $template = View::factory('admin/home/news');
                 break;  
+		case 31:
+	       	     $template = View::factory('admin/home/news/list');
+                break;
 	     	default:
 	         	$template = '';
 	     		break;

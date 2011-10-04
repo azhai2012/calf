@@ -17,17 +17,29 @@
 		    </h2>
 		    <ul>
 			<?php foreach ($array_data as $key => $value):  ?>
-		         <li class="toggle-list closed <?php echo ($value['id']==$selected)?'selected':''; ?>">
-		             <div><a href="<?php echo $value['url']; ?>">
-		                <span><?php echo $value['name']; ?></span>
-		                </a><a class="toggle-img" href="#" title="show pages" onclick="Admins.toggle(this.parentNode.parentNode, true); return false;"></a>
+		         <li class="toggle-list closed"> 
+			     <?php $is_selected = ((int)$value['id']===(int)$selected)?'selected':'';  ?> 
+		             <div class="<?php echo $is_selected; ?>">
+			       <?php if (!isset($value['lists'])): ?>
+			        <a href="<?php echo $value['url']; ?>" >
+		                   <span><?php echo $value['name']; ?></span>
+		                </a>
+		                <?php else: ?> 
+			           <a href="#" onclick="Admins.toggle(this.parentNode.parentNode, true); return false;">
+				    <span><?php echo $value['name']; ?></span>
+				    </a>
+		                 <a class="toggle-img" href="#" title="show pages" onclick="Admins.toggle(this.parentNode.parentNode, true); return false;"></a>
+		                <?php endif; ?>
 		             </div> 
 		             <?php if (isset($value['lists'])): ?> 
 		             <ul id="devdoc-nav-sample-list" style="display:none">
 			        <?php foreach ($value['lists'] as $sub_key => $sub_value): ?>
-		                <li><a href="<?php echo $sub_value['url']; ?>">
+		                <li>
+			          <div class="<?php echo $is_selected; ?>"> 
+			         <a href="javascript:void(0);" onclick="Admins.Select(this);return false;">
 		                 <span><?php echo $sub_value['name']; ?></span>
 		                 </a>
+		                 </div>
 		                </li>
 		                <?php endforeach; ?>
 		             </ul>

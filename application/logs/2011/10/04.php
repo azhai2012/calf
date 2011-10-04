@@ -312,3 +312,18 @@
 --
 #0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
 #1 {main}
+2011-10-04 11:17:35 --- ERROR: ErrorException [ 1 ]: Class 'Admin_Notice' not found ~ APPPATH/classes/controller/test.php [ 39 ]
+2011-10-04 11:17:35 --- STRACE: ErrorException [ 1 ]: Class 'Admin_Notice' not found ~ APPPATH/classes/controller/test.php [ 39 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2011-10-04 11:17:36 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-10-04 11:17:36 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}
+2011-10-04 11:18:56 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+2011-10-04 11:18:56 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1132 ]
+--
+#0 /Users/zhaibob/git/calf/index.php(111): Kohana_Request->execute()
+#1 {main}

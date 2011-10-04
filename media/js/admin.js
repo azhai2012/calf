@@ -1,6 +1,7 @@
 $(function(){ 
    Admins.Init();
    Admins.getHeight();	  
+
 });
 
 var cookie_namespace = 'Calf_Admin';
@@ -161,10 +162,18 @@ var Admins = {
 		    return uri;
 		  }
 		},
+		Select:function(obj){
+		    $('.toggle-list div, #devdoc-nav-sample-list li div').each(function(){
+			    $(this).removeClass();
+		    });	
+		    $(obj).parent().addClass('selected');
+		    this.ajaxMod('/test',function(d){$('#doc-content').html(d);});
+		}, 
 		ajaxMod:function(uri,callback,datatype,params,method){
 			var dt = (!arguments[2]) ? "html": datatype;
 			var d = (!arguments[3]) ? "{}": params;
 			var m = (!arguments[4]) ? method: 'post';
+	
 			$.ajax({
 				type : method,
 				dataType: dt,
