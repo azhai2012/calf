@@ -29,20 +29,20 @@ class Kohana_Admin_Home {
             // TODO :
 
 		$array_data = array(
-			 array('id'=>1,'mod_name'=>'notices','name' =>'公告管理','url'=>'/admin/index/1',
+			 array('id'=>1,'mod_name'=>'notice','name' =>'公告管理','url'=>'/admin/index/1',
 			      ) , 
 			 array('id'=>2,'mod_name'=>'news','name' =>'新闻管理','url'=>'/admin/index/2',
 			      ) , 
 			 array('id'=>3,'mod_name'=>'advertising','name' =>'广告管理','url'=>'/admin/index/3',
 			                  'lists'=>array(
-				           array('id'=>'31','name'=>'添加广告栏目','url'=>'/admin/index/31'),
-				      	   array('id'=>'32','name'=>'广告列表','url'=>'/admin/index/32'),
+				           array('id'=>'31','mod_name'=>'advadd','name'=>'添加广告栏目','url'=>'/admin/index/31'),
+				      	   array('id'=>'32','mod_name'=>'advlist','name'=>'广告列表','url'=>'/admin/index/32'),
 				           ),
 			      ), 
-			 array('id'=>4,'mod_name'=>'shows','name' =>'展示管理','url'=>'/admin/index/4','lists'=>array(
-			           array('name'=>'添加展示栏目','url'=>'#'),
-			      	   array('name'=>'展示列表','url'=>'#'),
-			                   ),
+			 array('id'=>4,'mod_name'=>'shows','name' =>'商品展示管理','url'=>'/admin/index/4','lists'=>array(
+			           array('mod_name'=>'showadd','name'=>'展示模块','url'=>'#'),
+			      	   array('mod_name'=>'showlist','name'=>'展示列表','url'=>'#'),
+			           ),
 			       ) , 
 			 );
 
@@ -50,6 +50,7 @@ class Kohana_Admin_Home {
             $template->array_data = $array_data;
             $template->selected = $this->_id;
             $template->mod_content = $this->get_mod_content();
+            $template->action = 'index';
             return $template;
         }
 	

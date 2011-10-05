@@ -29,18 +29,18 @@ class Kohana_Admin_Hots {
             // TODO :
 
 		$array_data = array(
-			 array('id'=>1,'mod_name'=>'notices','name' =>'展会管理','url'=>'/admin/hots/1',
+			 array('id'=>1,'mod_name'=>'meet','name' =>'展会管理','url'=>'/admin/hots/1',
 				  'lists'=>array(
-			           array('name'=>'展商管理','url'=>'#'),
-			      	   array('name'=>'展会模板','url'=>'#'),
+			           array('mod_name'=>'manager','name'=>'展商管理','url'=>'#'),
+			      	   array('mod_name'=>'template','name'=>'展会模板','url'=>'#'),
 			           ),
 			      ) , 
-			 array('id'=>2,'mod_name'=>'news','name' =>'展会列表','url'=>'/admin/hots/2',
+			 array('id'=>2,'mod_name'=>'meetlist','name' =>'展会列表','url'=>'/admin/hots/2',
 			      ) , 
-			 array('id'=>3,'mod_name'=>'advertising','name' =>'展会分析','url'=>'/admin/hots/3',
+			 array('id'=>3,'mod_name'=>'analysis','name' =>'展会分析','url'=>'/admin/hots/3',
 			                  'lists'=>array(
-				           array('name'=>'商品销售分析','url'=>'#'),
-				      	   array('name'=>'销售区域分析','url'=>'#'),
+				           array('mod_name'=>'product','name'=>'商品销售分析','url'=>'#'),
+				      	   array('mod_name'=>'market','name'=>'销售区域分析','url'=>'#'),
 				           ),
 			      ), 
 			 );
@@ -49,6 +49,7 @@ class Kohana_Admin_Hots {
             $template->array_data = $array_data;
             $template->selected = $this->_id;
             $template->mod_content ='';
+            $template->action = 'hots';
             return $template;
         }
 	

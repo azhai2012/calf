@@ -116,6 +116,7 @@ class Controller_Admin extends Controller {
         }
 
 
+
 	public function after(){
 		$this->response->body($this->template);
 	}

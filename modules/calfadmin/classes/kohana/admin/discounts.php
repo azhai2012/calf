@@ -29,14 +29,14 @@ class Kohana_Admin_Discounts {
             // TODO :
 
 		$array_data = array(
-			 array('id'=>1,'mod_name'=>'notices','name' =>'促销管理','url'=>'/admin/discounts/1',
+			 array('id'=>1,'mod_name'=>'manager','name' =>'促销管理','url'=>'/admin/discounts/1',
 			      ) , 
-			 array('id'=>2,'mod_name'=>'news','name' =>'促销列表','url'=>'/admin/discounts/2',
+			 array('id'=>2,'mod_name'=>'lists','name' =>'促销列表','url'=>'/admin/discounts/2',
 			      ) , 
-			 array('id'=>3,'mod_name'=>'advertising','name' =>'促销分析','url'=>'/admin/discounts/3',
+			 array('id'=>3,'mod_name'=>'analysis','name' =>'促销分析','url'=>'/admin/discounts/3',
 			                  'lists'=>array(
-				           array('name'=>'商品销售分析','url'=>'#'),
-				      	   array('name'=>'销售区域分析','url'=>'#'),
+				           array('mod_name'=>'product','name'=>'商品销售分析','url'=>'#'),
+				      	   array('mod_name'=>'market','name'=>'销售区域分析','url'=>'#'),
 				           ),
 			      ), 
 			 );
@@ -44,6 +44,7 @@ class Kohana_Admin_Discounts {
             $template = View::factory('admin/body');
             $template->array_data = $array_data;
             $template->selected = $this->_id;
+            $template->action = 'discounts';
             $template->mod_content ='';
             return $template;
         }

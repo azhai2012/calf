@@ -9,6 +9,7 @@
  */
 ?>
 <div class="section" id="body-content">
+  <input type="hidden" name="action" value="<?php echo $action; ?>" id="action">	 
   <div class="g-unit g-frist" id="side-nav" style="position: absolute; left: 0px; width: 200px; height: 545px; ">
   	<div id="devdoc-nav" style="height:10px;" ><ul>
 	 	<ul>
@@ -21,12 +22,14 @@
 			     <?php $is_selected = ((int)$value['id']===(int)$selected)?'selected':'';  ?> 
 		             <div class="<?php echo $is_selected; ?>">
 			       <?php if (!isset($value['lists'])): ?>
-			        <a href="<?php echo $value['url']; ?>" >
+			        <a href="javascript:void(0);" id="<?php echo $value['mod_name'] ?>" onclick="Admins.Select(this);return false;">
 		                   <span><?php echo $value['name']; ?></span>
+		                   
 		                </a>
 		                <?php else: ?> 
-			           <a href="#" onclick="Admins.toggle(this.parentNode.parentNode, true); return false;">
+			           <a href="javascript:void(0);" onclick="Admins.toggle(this.parentNode.parentNode, true); return false;">
 				    <span><?php echo $value['name']; ?></span>
+				   
 				    </a>
 		                 <a class="toggle-img" href="#" title="show pages" onclick="Admins.toggle(this.parentNode.parentNode, true); return false;"></a>
 		                <?php endif; ?>
@@ -36,9 +39,10 @@
 			        <?php foreach ($value['lists'] as $sub_key => $sub_value): ?>
 		                <li>
 			          <div class="<?php echo $is_selected; ?>"> 
-			         <a href="javascript:void(0);" onclick="Admins.Select(this);return false;">
+			         <a href="javascript:void(0);" id="<?php echo $sub_value['mod_name'] ?>"  onclick="Admins.Select(this);return false;">
 		                 <span><?php echo $sub_value['name']; ?></span>
 		                 </a>
+		                  
 		                 </div>
 		                </li>
 		                <?php endforeach; ?>

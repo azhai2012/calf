@@ -42,3 +42,5 @@ a,a code{color:#069;}
 #side-nav li li li a{padding:0 0 0 28px;}
 #side-nav .open .toggle-img{background:url('/media/images/triangle-opened-small.png') 7px 4px no-repeat;}
 #side-nav .toggle-list .selected a{color:white;text-decoration:none;}
+.loading {display: inline-block;width:20px;height:16px;float:right;margin-right:5px;background:url('/media/images/load.gif') 0 3px no-repeat;}
+

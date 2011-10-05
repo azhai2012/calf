@@ -166,8 +166,12 @@ var Admins = {
 		    $('.toggle-list div, #devdoc-nav-sample-list li div').each(function(){
 			    $(this).removeClass();
 		    });	
+		    var action = $('#action').val(); 
+		    var id=$(obj).attr("id");
 		    $(obj).parent().addClass('selected');
-		    this.ajaxMod('/test',function(d){$('#doc-content').html(d);});
+		    $(obj).parent().append('<span class="loading"></span>'); 
+		    var u= '/home/'+action+'?sk='+id; 
+		    this.ajaxMod(u,function(d){$('#doc-content').html(d);});
 		}, 
 		ajaxMod:function(uri,callback,datatype,params,method){
 			var dt = (!arguments[2]) ? "html": datatype;
@@ -180,12 +184,13 @@ var Admins = {
 				url : uri,
 				data : d,
 				beforeSend : function(XMLHttpRequest) {
+					$('.loading').show(); 
 				},
 				success : function(data, textStatus) {
 	               callback(data); 
 				},
 				complete : function(XMLHttpRequest, textStatus) {
-				  
+				  	$('.loading').remove(); 
 				},
 				error : function() {
 					// 请求出错处理

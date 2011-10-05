@@ -29,20 +29,20 @@ class Kohana_Admin_Product{
             // TODO :
 
 		$array_data = array(
-			 array('id'=>1,'mod_name'=>'notices','name' =>'商品管理','url'=>'/admin/product/1',
+			 array('id'=>1,'mod_name'=>'managerproduct','name' =>'商品管理','url'=>'/admin/product/1',
 			      ), 
-			 array('id'=>2,'mod_name'=>'news','name' =>'促销管理','url'=>'/admin/product/2',
+			 array('id'=>2,'mod_name'=>'managerdiscount','name' =>'促销管理','url'=>'/admin/product/2',
 			      ), 
-			 array('id'=>3,'mod_name'=>'advertising','name' =>'订单管理','url'=>'/admin/product/3',
+			 array('id'=>3,'mod_name'=>'order','name' =>'订单管理','url'=>'/admin/product/3',
 			                  'lists'=>array(
-				           array('name'=>'查询订单列表','url'=>'#'),
-				      	   array('name'=>'促销商品列表','url'=>'#'),
+				           array('mod_name'=>'orderlist','name'=>'查询订单列表','url'=>'#'),
+				      	   array('mod_name'=>'discountlist','name'=>'促销商品列表','url'=>'#'),
 				     	 ),
 			      ), 
 			 array('id'=>4,'mod_name'=>'shows','name' =>'数据决策','url'=>'/admin/product/4','lists'=>array(
-			                   array('name'=>'商品销售分析','url'=>'#'),
-					   array('name'=>'商品汇总分析','url'=>'#'),
-					   array('name'=>'销售市场分析','url'=>'#'),
+			                   array('mod_name'=>'product','name'=>'商品销售分析','url'=>'#'),
+					   array('mod_name'=>'summary','name'=>'商品汇总分析','url'=>'#'),
+					   array('mod_name'=>'market','name'=>'销售市场分析','url'=>'#'),
 				           ),
 			       ) , 
 			 );
@@ -51,6 +51,7 @@ class Kohana_Admin_Product{
             $template->array_data = $array_data;
             $template->selected = $this->_id;
             $template->mod_content ='';
+            $template->action = 'product';
             return $template;
         }
 	

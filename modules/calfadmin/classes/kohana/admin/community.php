@@ -29,15 +29,16 @@ class Kohana_Admin_Community {
             // TODO :
 
 		$array_data = array(
-			 array('id'=>1,'mod_name'=>'notices','name' =>'社区管理','url'=>'/admin/community/1',
+			 array('id'=>1,'mod_name'=>'manager','name' =>'社区管理','url'=>'/admin/community/1',
 			      ) , 
-			 array('id'=>2,'mod_name'=>'news','name' =>'社区内容列表','url'=>'/admin/community/2',
+			 array('id'=>2,'mod_name'=>'lists','name' =>'社区内容列表','url'=>'/admin/community/2',
 			      ) , 
 			 );
 
             $template = View::factory('admin/body');
             $template->array_data = $array_data;
             $template->selected = $this->_id;
+            $template->action = 'community';
             $template->mod_content ='';
             return $template;
         }
