@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
- this is hots list	
+<div id="Hots-content">
+   <div id="admin-header">
+       查询
+       <h1>Lists - 列表</h1>
+   </div>	
 </div>

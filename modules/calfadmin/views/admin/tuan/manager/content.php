@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
- this is tuan manager 	
+<div id="tuan-content">
+   <div id="admin-header">
+       管理 
+       <h1>Manager - 商品管理</h1>
+   </div>	
 </div>

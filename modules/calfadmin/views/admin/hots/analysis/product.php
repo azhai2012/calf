@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
-  this is hots analysis product	
+<div id="Hots-content">
+   <div id="admin-header">
+       分析
+       <h1>Product - 商品分析</h1>
+   </div>	
 </div>

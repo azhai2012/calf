@@ -57,7 +57,7 @@
        
     </div> <!-- side-nav -->	  
    
-   <div class="g-unit" id="doc-content" style="margin-left: 220px; height: 99px; "><a name="top"></a>
+   <div class="g-unit" id="doc-content" style="margin-left: 200px; height: 99px; "><a name="top"></a>
        <?php echo $mod_content; ?>
    </div> <!-- doc-content -->
    <div class="clearfix"></div>

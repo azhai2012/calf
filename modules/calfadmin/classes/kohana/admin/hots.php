@@ -12,6 +12,7 @@ class Kohana_Admin_Hots {
 	
 	private $_id;
 	private $_data;
+	private $_calfDb;
 	
       	public static function factory($id,array $data= NULL){
 		return new Kohana_Admin_Hots($id,$data);
@@ -20,6 +21,7 @@ class Kohana_Admin_Hots {
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
+		$this->_calfDb = Calfdb_Admin::factory($this->_id,$this->_data); 
 	}
 	
 	/**
@@ -28,23 +30,7 @@ class Kohana_Admin_Hots {
         public function get_body_content() {
             // TODO :
 
-		$array_data = array(
-			 array('id'=>1,'mod_name'=>'meet','name' =>'展会管理','url'=>'/admin/hots/1',
-				  'lists'=>array(
-			           array('mod_name'=>'manager','name'=>'展商管理','url'=>'#'),
-			      	   array('mod_name'=>'template','name'=>'展会模板','url'=>'#'),
-			           ),
-			      ) , 
-			 array('id'=>2,'mod_name'=>'meetlist','name' =>'展会列表','url'=>'/admin/hots/2',
-			      ) , 
-			 array('id'=>3,'mod_name'=>'analysis','name' =>'展会分析','url'=>'/admin/hots/3',
-			                  'lists'=>array(
-				           array('mod_name'=>'product','name'=>'商品销售分析','url'=>'#'),
-				      	   array('mod_name'=>'market','name'=>'销售区域分析','url'=>'#'),
-				           ),
-			      ), 
-			 );
-
+		$array_data = $this->_calfDb->get_admin_hots_array_data();
             $template = View::factory('admin/body');
             $template->array_data = $array_data;
             $template->selected = $this->_id;

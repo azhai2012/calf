@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
- this is analysis summary data	
+<div id="product-content">
+   <div id="admin-header">
+       分析
+       <h1>Summary - 数据分析</h1>
+   </div>	
 </div>

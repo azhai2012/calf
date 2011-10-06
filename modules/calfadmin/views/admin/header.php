@@ -18,6 +18,6 @@
        </ul>
       </div> <!-- headerLeft -->
       <div id="headerRight">
-           登录名：<?php echo $array_data['login']['name']; ?>| <a href="/admin/repsw">更改口令</a>
+           登录名：<?php echo $array_data['login']['name']; ?>  <a href="/admin/repsw">更改口令</a>
       </div><!-- headerRight -->
  </div><!-- header -->

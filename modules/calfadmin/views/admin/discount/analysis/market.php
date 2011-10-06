@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
- this is discount analysis market 	
+<div id="discount-content">
+   <div id="admin-header">
+       分析
+       <h1>Market - 市场分析</h1>
+   </div>	
 </div>

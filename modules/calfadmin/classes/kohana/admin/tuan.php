@@ -12,6 +12,7 @@ class Kohana_Admin_Tuan {
 	
 	private $_id;
 	private $_data;
+	private $_calfDb;
 	
       	public static function factory($id,array $data= NULL){
 		return new Kohana_Admin_Tuan($id,$data);
@@ -20,6 +21,7 @@ class Kohana_Admin_Tuan {
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
+		$this->_calfDb = Calfdb_Admin::factory($this->_id,$this->_data);
 	}
 	
 	/**
@@ -28,19 +30,7 @@ class Kohana_Admin_Tuan {
         public function get_body_content() {
             // TODO :
 
-		$array_data = array(
-			 array('id'=>1,'mod_name'=>'managerteam','name' =>'团购管理','url'=>'/admin/tuan/1',
-			      ) , 
-			 array('id'=>2,'mod_name'=>'teamlist','name' =>'团购列表','url'=>'/admin/tuan/2',
-			      ) , 
-			 array('id'=>3,'mod_name'=>'analysis','name' =>'团购分析','url'=>'/admin/tuan/3',
-			                  'lists'=>array(
-				           array('mod_name'=>'product','name'=>'商品销售分析','url'=>'#'),
-				      	   array('mod_name'=>'market','name'=>'销售区域分析','url'=>'#'),
-				           ),
-			      ), 
-			 );
-
+	    $array_data = $this->_calfDb->get_admin_tuan_array_data(); 
             $template = View::factory('admin/body');
             $template->array_data = $array_data;
             $template->selected = $this->_id;

@@ -8,4 +8,9 @@
  *
  */
 ?>
-<div>this is news list</div>
+<div id="news-content">
+   <div id="admin-header">
+       管理
+       <h1>News - 新闻管理 - 列表</h1>
+   </div>	
+</div>

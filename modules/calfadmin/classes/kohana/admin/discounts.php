@@ -12,6 +12,7 @@ class Kohana_Admin_Discounts {
 	
 	private $_id;
 	private $_data;
+	private $_calfDb;
 	
       	public static function factory($id,array $data= NULL){
 		return new Kohana_Admin_Discounts($id,$data);
@@ -20,6 +21,7 @@ class Kohana_Admin_Discounts {
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
+		$this->_calfDb = Calfdb_Admin::factory($this->_id,$this->_data); 
 	}
 	
 	/**
@@ -28,19 +30,7 @@ class Kohana_Admin_Discounts {
         public function get_body_content() {
             // TODO :
 
-		$array_data = array(
-			 array('id'=>1,'mod_name'=>'manager','name' =>'促销管理','url'=>'/admin/discounts/1',
-			      ) , 
-			 array('id'=>2,'mod_name'=>'lists','name' =>'促销列表','url'=>'/admin/discounts/2',
-			      ) , 
-			 array('id'=>3,'mod_name'=>'analysis','name' =>'促销分析','url'=>'/admin/discounts/3',
-			                  'lists'=>array(
-				           array('mod_name'=>'product','name'=>'商品销售分析','url'=>'#'),
-				      	   array('mod_name'=>'market','name'=>'销售区域分析','url'=>'#'),
-				           ),
-			      ), 
-			 );
-
+	    $array_data = $this->_calfDb->get_admin_discount_array_data();
             $template = View::factory('admin/body');
             $template->array_data = $array_data;
             $template->selected = $this->_id;

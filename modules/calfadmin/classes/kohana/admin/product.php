@@ -12,14 +12,16 @@ class Kohana_Admin_Product{
 	
 	private $_id;
 	private $_data;
-	
-      	public static function factory($id,array $data= NULL){
+	private $_calfDb;
+      	
+        public static function factory($id,array $data= NULL){
 		return new Kohana_Admin_Product($id,$data);
 	}
 	
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
+		$this->_calfDb = Calfdb_Admin::factory($this->_id,$this->_data); 
 	}
 	
 	/**
@@ -28,25 +30,7 @@ class Kohana_Admin_Product{
         public function get_body_content() {
             // TODO :
 
-		$array_data = array(
-			 array('id'=>1,'mod_name'=>'managerproduct','name' =>'商品管理','url'=>'/admin/product/1',
-			      ), 
-			 array('id'=>2,'mod_name'=>'managerdiscount','name' =>'促销管理','url'=>'/admin/product/2',
-			      ), 
-			 array('id'=>3,'mod_name'=>'order','name' =>'订单管理','url'=>'/admin/product/3',
-			                  'lists'=>array(
-				           array('mod_name'=>'orderlist','name'=>'查询订单列表','url'=>'#'),
-				      	   array('mod_name'=>'discountlist','name'=>'促销商品列表','url'=>'#'),
-				     	 ),
-			      ), 
-			 array('id'=>4,'mod_name'=>'shows','name' =>'数据决策','url'=>'/admin/product/4','lists'=>array(
-			                   array('mod_name'=>'product','name'=>'商品销售分析','url'=>'#'),
-					   array('mod_name'=>'summary','name'=>'商品汇总分析','url'=>'#'),
-					   array('mod_name'=>'market','name'=>'销售市场分析','url'=>'#'),
-				           ),
-			       ) , 
-			 );
-
+	    $array_data = $this->_calfDb->get_admin_product_array_data();
             $template = View::factory('admin/body');
             $template->array_data = $array_data;
             $template->selected = $this->_id;

@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
- this is discount manager content	
+<div id="discount-content">
+   <div id="admin-header">
+       管理
+       <h1>Discount - 促销管理</h1>
+   </div>	
 </div>

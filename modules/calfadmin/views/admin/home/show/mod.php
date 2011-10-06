@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
-  this is show mod 	
+<div id="show-content">
+   <div id="admin-header">
+       管理
+       <h1>Shows - 页面展示管理 - 模块管理</h1>
+   </div>	
 </div>

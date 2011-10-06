@@ -8,4 +8,9 @@
  *
  */
 ?>
-<div> adv list </div>
+<div id="adv-content">
+   <div id="admin-header">
+       管理
+       <h1>Advertising - 广告管理 - 列表 </h1>
+   </div>	
+</div>

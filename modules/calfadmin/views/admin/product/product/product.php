@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
-  this is product manager	
+<div id="product-content">
+   <div id="admin-header">
+       管理 
+       <h1>Products - 商品管理 </h1>
+   </div>	
 </div>

@@ -19,9 +19,9 @@ a,a code{color:#069;}
 #header li a{text-decoration:none;display:block;background-image:url(/media/images/bg_images_sprite.png);background-position:0 -58px;background-repeat:no-repeat;color:#666;font-size:13px;font-weight:bold;width:94px;height:29px;text-align:center;margin:0px;}
 .index #home-link a,.product #product-link a,.tuan #tuan-link a,.hots #hots-link a,.discounts #discounts-link a,.community #community-link a{background-image:url(/media/images/bg_images_sprite.png);background-position:0 0;background-repeat:no-repeat;color:white;font-weight:bold;cursor:default;}
 #header li a span{position:relative;top:7px;}
-#headerRight{position:absolute;right:0;top:5px;text-align:right;}
+#headerRight{position:absolute;right:10px;top:5px;text-align:right;}
 #body-content{margin:0;position:relative;width:100%;}
-#doc-content{overflow:auto;padding-left:20px;}
+#doc-content{overflow:auto;}
 .g-tpl-200 .g-unit,.g-unit .g-tpl-200 .g-unit,.g-unit .g-unit .g-tpl-200 .g-unit{display:block;margin:0 0 0 200px;width:auto;float:none;}
 .closed ul{display:none}
 .vsplitbar{width:6px;background:#ACA url(/media/images/resizable.gif) no-repeat center;}
@@ -43,4 +43,13 @@ a,a code{color:#069;}
 #side-nav .open .toggle-img{background:url('/media/images/triangle-opened-small.png') 7px 4px no-repeat;}
 #side-nav .toggle-list .selected a{color:white;text-decoration:none;}
 .loading {display: inline-block;width:20px;height:16px;float:right;margin-right:5px;background:url('/media/images/load.gif') 0 3px no-repeat;}
+
+#admin-header {background-color: #E2E2E2;padding: 7px 13px;}
+#admin-header h1 {
+margin: 0 0 10px;
+font-size: 16px;
+}
+
+
+
 

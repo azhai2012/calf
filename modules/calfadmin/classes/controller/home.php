@@ -12,14 +12,15 @@ class Controller_Home extends Controller {
 
     private  $template='';
     private $_id;
+    private $_sk;
 
     public function before() {
-            $this->_id = $this->request->param('id');
+         $this->_sk= array_key_exists('sk', $_GET) ? $_GET['sk'] : '';
     }
 
     public function action_index() {
-           parent: :before();
-           $sk = array_key_exists('sk', $_GET) ? $_GET['sk'] : '';
+           parent::before();
+           $sk = $this->_sk;
            switch ($sk) {
            	case 'news':
            		$this->template= View::factory('admin/home/news/content'); 
@@ -47,8 +48,8 @@ class Controller_Home extends Controller {
        }
 
          public function action_product() {
-           parent: :before();
-           $sk = array_key_exists('sk', $_GET) ? $_GET['sk'] : '';
+           parent::before();
+           $sk = $this->_sk;
            switch ($sk) {
            	case 'managerproduct':
            		$this->template= View::factory('admin/product/product/product'); 
@@ -79,8 +80,8 @@ class Controller_Home extends Controller {
           }
 
 	public function action_hots() {
-          parent: :before();
-          $sk = array_key_exists('sk', $_GET) ? $_GET['sk'] : '';
+          parent::before();
+          $sk =$this->_sk;
           switch ($sk) {
           	case 'manager':
           		$this->template= View::factory('admin/hots/manager/content'); 
@@ -106,8 +107,8 @@ class Controller_Home extends Controller {
 
 
 	public function action_tuan() {
-            parent: :before();
-            $sk = array_key_exists('sk', $_GET) ? $_GET['sk'] : '';
+            parent::before();
+            $sk = $this->_sk;
             switch ($sk) {
         	case 'managerteam':
         		$this->template= View::factory('admin/tuan/manager/content'); 
@@ -130,8 +131,8 @@ class Controller_Home extends Controller {
 
 
 	public function action_discounts() {
-            parent: :before();
-            $sk = array_key_exists('sk', $_GET) ? $_GET['sk'] : '';
+            parent::before();
+            $sk = $this->_sk;
             switch ($sk) {
         	case 'manager':
         		$this->template= View::factory('admin/discount/manager/content'); 
@@ -154,8 +155,8 @@ class Controller_Home extends Controller {
 
 
 	public function action_community() {
-             parent: :before();
-            $sk = array_key_exists('sk', $_GET) ? $_GET['sk'] : '';
+             parent::before();
+            $sk = $this->_sk;
             switch ($sk) {
          	case 'manager':
     		$this->template= View::factory('admin/community/manager/content'); 

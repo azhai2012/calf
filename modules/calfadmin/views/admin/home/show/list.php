@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
-  this is show list	
+<div id="show-content">
+   <div id="admin-header">
+       管理
+       <h1>Shows - 页面展示管理 - 列表</h1>
+   </div>	
 </div>

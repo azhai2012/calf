@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
-  this is product analysis market	
+<div id="product-content">
+   <div id="admin-header">
+       分析
+       <h1>Market - 市场分析</h1>
+   </div>	
 </div>

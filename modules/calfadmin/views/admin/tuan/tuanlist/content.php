@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
-  this is tuan list	
+<div id="tuan-content">
+   <div id="admin-header">
+       列表
+       <h1>Lists - 团购列表</h1>
+   </div>	
 </div>

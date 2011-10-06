@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
- this is product discount list	
+<div id="product-content">
+   <div id="admin-header">
+       列表
+       <h1>Orders - 促销商品列表 </h1>
+   </div>	
 </div>

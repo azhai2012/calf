@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
-  this is hots template	
+<div id="Hots-content">
+   <div id="admin-header">
+       模板
+       <h1>Templates - 展会模板</h1>
+   </div>	
 </div>

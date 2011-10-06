@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
-  this is tuan analysis product	
+<div id="tuan-content">
+   <div id="admin-header">
+       分析
+       <h1>Products - 商品分析</h1>
+   </div>	
 </div>

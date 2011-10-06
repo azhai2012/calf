@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
-  this is community manager content	
+<div id="community-content">
+   <div id="admin-header">
+       管理
+       <h1>Community - 社区管理</h1>
+   </div>	
 </div>

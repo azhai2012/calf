@@ -67,9 +67,9 @@ var Admins = {
 		  }
 		},
 		restoreWidth:function(navWidth) {		 	
-		  content.css({marginLeft:parseInt(navWidth) + 6 + "px"}); 
+		  content.css({marginLeft:parseInt(navWidth)  + "px"}); 
 		  if (isIE6) {
-		    content.css({width:parseInt(windowWidth) - parseInt(navWidth) - 6 + "px"}); 
+		    content.css({width:parseInt(windowWidth) - parseInt(navWidth) + "px"}); 
 		  }
 		  $('#side-nav').css({width:navWidth});
 		},
@@ -85,10 +85,10 @@ var Admins = {
 			  } else {
 			    var sidenavWidth = 0;
 			  }
-              content.css({marginLeft:parseInt(sidenavWidth) + 6 + "px"});
+              content.css({marginLeft:parseInt(sidenavWidth) + "px"});
               
 			  if (isIE6) {
-			    content.css({width:parseInt(windowWidth) - parseInt(sidenavWidth) - 6 + "px"});
+			    content.css({width:parseInt(windowWidth) - parseInt(sidenavWidth) + "px"});
 			  }
 			
 		 	if (sidenav.length) { 

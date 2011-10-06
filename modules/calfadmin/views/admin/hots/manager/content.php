@@ -8,6 +8,9 @@
  *
  */
 ?>
-<div id="name">
-  this is hots manager	
+<div id="Hots-content">
+   <div id="admin-header">
+       管理
+       <h1>Hots - 展会管理</h1>
+   </div>	
 </div>
