@@ -30,7 +30,7 @@
  * @return jQuery
  * @author Dave Methvin (dave.methvin@gmail.com)
  */
- ;(function($){
+ (function($){
  
  $.fn.splitter = function(args){
     args = args || {};

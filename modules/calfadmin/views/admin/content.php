@@ -19,10 +19,11 @@
 <link href="/media/css/admin.css" rel="stylesheet" type="text/css" media="all" />
  <script type="text/javascript" src="/media/js/comm.js"></script>
  <script type="text/javascript" src="/media/js/apps.js"></script>
- <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
+ <script type="text/javascript" src="/media/js/jquery-1.6.4.min.js"></script>
  <script type="text/javascript" src="/media/js/jquery-resizable.min.js"></script>
  <script type="text/javascript" src="/media/js/admin.js"></script>
-  
+ <script src="/media/js//jquery.wysiwyg.js" type="text/javascript" charset="utf-8"></script>
+ <link rel="stylesheet" href="/media/js/jquery.wysiwyg.css" type="text/css" media="screen" charset="utf-8" /> 
 </head>
 <body class="home">
  <!-- begin main header -->

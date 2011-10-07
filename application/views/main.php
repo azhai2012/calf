@@ -9,7 +9,7 @@
 <link href="/media/css/style.css" rel="stylesheet" type="text/css" media="all" />
   <script type="text/javascript" src="/media/js/comm.js"></script>
  <script type="text/javascript" src="/media/js/apps.js"></script>
- <script type="text/javascript" src="/media/js/jquery-1.4.4.min.js"></script>
+ <script type="text/javascript" src="/media/js/jquery-1.6.4.min.js"></script>
  <script type="text/javascript" src="/media/js/jquery.bxSlider.min.js"></script>
  <script type="text/javascript" src="/media/js/jquery.idTabs.min.js"></script>
   
