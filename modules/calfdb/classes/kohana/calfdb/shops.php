@@ -85,7 +85,7 @@ class Kohana_Calfdb_Shops {
 	   if(isset($this->$name)){ 
           return $this->$name;
 	   }else { 
-          return NULL; 
+          return NULL;
        } 
 	}
 

@@ -63,7 +63,7 @@ class Kohana_Calfdb_Discount {
 	   if(isset($this->$name)){ 
           return $this->$name;
 	   }else { 
-          return NULL; 
+          return NULL;
        } 
 	}
 

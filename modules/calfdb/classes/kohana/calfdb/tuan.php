@@ -84,7 +84,7 @@ class Kohana_Calfdb_Tuan {
 	   if(isset($this->$name)){ 
           return $this->$name;
 	   }else { 
-          return NULL; 
+          return NULL;
        } 
 	}
 

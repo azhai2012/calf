@@ -46,7 +46,7 @@ class Kohana_Admin_Home {
 	   if(isset($this->$name)){ 
           return $this->$name;
 	   }else { 
-          return NULL; 
+          return NULL;
            } 
 	}
 

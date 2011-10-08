@@ -44,7 +44,7 @@ class Kohana_Admin_Product{
 	   if(isset($this->$name)){ 
           return $this->$name;
 	   }else { 
-          return NULL; 
+          return NULL;
            } 
 	}
 

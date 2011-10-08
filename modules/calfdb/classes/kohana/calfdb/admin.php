@@ -157,7 +157,7 @@ class Kohana_Calfdb_Admin {
 	   if(isset($this->$name)){ 
           return $this->$name;
 	   }else { 
-          return NULL; 
+          return NULL; 
        } 
 	}
 

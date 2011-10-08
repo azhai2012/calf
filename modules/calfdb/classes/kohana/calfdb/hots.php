@@ -68,7 +68,7 @@ class Kohana_Calfdb_Hots {
 	   if(isset($this->$name)){ 
           return $this->$name;
 	   }else { 
-          return NULL; 
+          return NULL;
           } 
 	}
 
