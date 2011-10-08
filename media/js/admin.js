@@ -195,15 +195,15 @@ var Admins = {
 					// 请求出错处理
 				}
 			});
-		},
+		}
 };
 
 var Notice = {
-	    showAdd:function(){$('#notice-insert').click(function(){$('.notice-add').show();}) },
-	 	addArea:function(a){
-		  $('#newscontent').wysiwyg({autoGrow:true, controls:"bold,italic,|,undo,redo"});
+	showAdd:function(){$('#notice-insert').click(function(){$('.notice-add').show();}) },
+	addArea:function(a){
+          $('#newscontent').wysiwyg({autoGrow:true, controls:"bold,italic,|,undo,redo"});
 		  //area2 = new nicEditor({buttonList : ['fontSize','bold','italic','underline','left','center','right','justify','ol','ul','strikeThrough','subscript','superscript','xhtml','upload','link','unlink','forecolor','bgcolor','fontSize','fontFamily']}).panelInstance('newscontent');
-		}, 
+              }
 }
 
 

@@ -70,6 +70,8 @@ tr.alt-color{background-color:#F6F6F6;}
 .loading{display:inline-block;width:20px;height:16px;float:right;margin-right:5px;background:url('/media/images/load.gif') 0 3px no-repeat;}
 #admin-header{background-color:#E2E2E2;padding:7px 13px;}
 #admin-header h1{margin:0 0 10px;font-size:16px;}
-.notice-sumtable{margin:.5em 1em 1em 0;width:95%;font-size:.9em;}
+.notice-sumtable{margin:15px 1em 1em 0;width:95%;font-size:12px;}
 #notice-content table{margin:0 0 1em 1em;}
-.notice-add {margin:.5em 1em 1em 0;width:95%;font-size:.9em;}
+.notice-add {margin:15px 1em 1em 0;width:95%;font-size:12px;}
+#news-list a,#adv-list a {width:200px;}
+#adv-list,#news-list,#mod-list {margin:15px 1em 1em 10px;width:95%;font-size:12px;}

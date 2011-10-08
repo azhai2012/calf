@@ -31,8 +31,10 @@
 		
 		); ?>
 	 <?php foreach ($array_data as $key => $value): ?>
-	  <tr class="alt-color api apilevel-1">
-              <td class="notice-linkcol" width="500px"><a href="<?php echo $value['url']; ?>"><?php echo $value['title']; ?></a></td>
+	     <?php $altcolor= (($key % 2)==0) ? "":"alt-color";   ?>    
+            <tr class="<?php echo $altcolor; ?> api apilevel-1">
+          
+              <td class="notice-linkcol " width="500px"><a href="<?php echo $value['url']; ?>"><?php echo $value['title']; ?></a></td>
               <td class="notice-descrcol" width="80px"> <?php echo $value['create_date']; ?></td>
               <td class="notice-active" width="80px"> <a href="#"><?php echo ($value['is_active']=='Y')?'激活':'-'; ?></a></td>
               <td class="notice-edit" width="80px"> <a href="#">编辑</a>  | <a href="#">删除</a></td>
