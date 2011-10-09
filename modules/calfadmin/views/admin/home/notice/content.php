@@ -40,7 +40,7 @@
               <td class="notice-edit" width="80px"> <a href="#">编辑</a>  | <a href="#">删除</a></td>
           </tr>
           <?php endforeach; ?>
-          <tr><td colspan=4><a href="javascript:vold();" id="notice-insert">添加</a></td></tr> 
+          <tr><td colspan=4><a href="javascript:void();" id="notice-insert" onclick="Notice.showAdd();">添加</a></td></tr> 
        </tbody>
      </table>
     </div>
@@ -51,7 +51,7 @@
 	  <tr><td style="width:80px;">公告标题：</td><td><input style="width:250px;" name="newstitle" id="newstitle" value="" /></td></tr>
   	  <tr><td>公告副标题：</td><td><input style="width:250px;" name="newssubtitle" id="newsubstitle" value="" /></td></tr>
 	  <tr><td style="vertical-align:top" >公告内容：</td><td>
-	  <script type="text/javascript"> Notice.addArea();Notice.showAdd();</script>
+	  <script type="text/javascript"> Notice.addArea();</script>
 	  <textarea style="width:588px;" rows="20" cols="69"  name="newscontent" id="newscontent" value="" /></td>
            </tr> 
            <tr><td></td><td><div class="dialog_buttons ">

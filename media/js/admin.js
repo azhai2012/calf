@@ -1,4 +1,5 @@
-$(function(){ 
+
+$(document).ready(function(){ 
    Admins.Init();
    Admins.getHeight();	  
 });
@@ -10,11 +11,7 @@ var resizePackagesNav;
 var classesNav;
 var devdocNav;
 var sidenav;
-var Admins = {
-	   
-		onMsg:function(msg) {
-			alert(msg);
-		},
+var Admins = {	   
 		Init:function(){
 			 $("#side-nav").css({position:"absolute",left:0});
 		     content = $("#doc-content");
@@ -199,12 +196,13 @@ var Admins = {
 };
 
 var Notice = {
-	showAdd:function(){$('#notice-insert').click(function(){$('.notice-add').show();}) },
-	addArea:function(a){
-          $('#newscontent').wysiwyg({autoGrow:true, controls:"bold,italic,|,undo,redo"});
-		  //area2 = new nicEditor({buttonList : ['fontSize','bold','italic','underline','left','center','right','justify','ol','ul','strikeThrough','subscript','superscript','xhtml','upload','link','unlink','forecolor','bgcolor','fontSize','fontFamily']}).panelInstance('newscontent');
-              }
-}
+	showAdd:function(){$('.notice-add').show();},
+	addArea:function(a){ $('#newscontent').wysiwyg({autoGrow:true, controls:"bold,italic,|,undo,redo"});};
+
+var News = {
+	showAdd:function(){$('.news-add').show();},
+	addArea:function(a){$('#newscontent').wysiwyg({autoGrow:true, controls:"bold,italic,|,undo,redo"});};
+};
 
 
 

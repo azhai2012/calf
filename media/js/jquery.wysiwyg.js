@@ -1183,7 +1183,7 @@
 			self.editor.attr("scrolling", height < self.options.maxHeight ? "no" : "auto"); // hide scrollbar firefox
 			innerBody.css("overflow", height < self.options.maxHeight ? "hidden" : ""); // hide scrollbar chrome
 
-			self.editor.get(0).height = height;
+			//self.editor.get(0).height = height;
 
 			return self;
 		};
