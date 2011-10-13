@@ -197,11 +197,13 @@ var Admins = {
 
 var Notice = {
 	showAdd:function(){$('.notice-add').show();},
-	addArea:function(a){ $('#newscontent').wysiwyg({autoGrow:true, controls:"bold,italic,|,undo,redo"});};
+	addArea:function(a){ $('#newscontent').wysiwyg({autoGrow:true, controls:"bold,italic,|,undo,redo"});
+	},
+};
 
 var News = {
 	showAdd:function(){$('.news-add').show();},
-	addArea:function(a){$('#newscontent').wysiwyg({autoGrow:true, controls:"bold,italic,|,undo,redo"});};
+	addArea:function(a){$('#newscontent').wysiwyg({autoGrow:true, controls:"bold,italic,|,undo,redo"});}
 };
 
 
