@@ -23,14 +23,7 @@
       <th>状态</th>
       <th>操作</th>
   </tr>
-    <?php  $array_data = array(
-         array('id'=>1,'name'=>'十一放假通知','url'=>'#','isactive'=>'1','date'=>'2011-01-10'),
-         array('id'=>2,'name'=>'十一放假通知','url'=>'#','isactive'=>'1','date'=>'2011-01-10'),
-         array('id'=>3,'name'=>'十一放假通知','url'=>'#','isactive'=>'1','date'=>'2011-01-10'),
-         array('id'=>4,'name'=>'十一放假通知','url'=>'#','isactive'=>'1','date'=>'2011-01-10'),
-         array('id'=>5,'name'=>'十一放假通知','url'=>'#','isactive'=>'1','date'=>'2011-01-10'),
-      )
-    ?>
+   
    <?php foreach ($array_data as $key => $value): ?>    	
   <tr>
     <td><?php echo $value['id']; ?></td>

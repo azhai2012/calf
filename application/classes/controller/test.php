@@ -27,6 +27,11 @@ class Controller_Test extends Controller {
 	public function action_index()
 	{	
 		parent::before();
+			$id=1;
+			$data=array('mod'=>'order');
+		$test= Calfdb_Admin::execute('Home',$id,$data);
+		print_r($test->get_admin_home_array_data());
+		
 	        
 	//	$action = $this->request->action();
 	//	echo $action; 

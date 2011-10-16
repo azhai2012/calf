@@ -22,16 +22,7 @@
       <th>状态</th>
       <th>操作</th>
   </tr>
-  <?php 
-      $array_data= array(
-          array('id'=>1,'name'=>'页面广告','content'=>'图片内容','isactive'=>'1',),
-          array('id'=>2,'name'=>'页面广告','content'=>'图片内容','isactive'=>'1',),
-          array('id'=>3,'name'=>'页面广告','content'=>'图片内容','isactive'=>'1',),
-          array('id'=>4,'name'=>'页面广告','content'=>'图片内容','isactive'=>'1',),
-          array('id'=>5,'name'=>'页面广告','content'=>'图片内容','isactive'=>'1',),
-          array('id'=>6,'name'=>'页面广告','content'=>'图片内容','isactive'=>'1',)
-	  ); 
-  ?>
+
   
   
   

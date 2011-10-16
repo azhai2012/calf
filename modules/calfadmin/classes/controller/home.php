@@ -12,18 +12,25 @@ class Controller_Home extends Controller {
 
     private  $template='';
     private $_id;
+    private $_data;
     private $_sk;
+    private $_calfDb;
 
     public function before() {
          $this->_sk= array_key_exists('sk', $_GET) ? $_GET['sk'] : '';
+         $this->_id='';
+         $this->_data=array();
+         $this->_calfDb = Calfdb_Admin::factory($this->_id,$this->_data); 
     }
 
     public function action_index() {
            parent::before();
            $sk = $this->_sk;
+            $this->_calfDb = Calfdb_Admin::execute('Home',$this->_id,$this->_data);
            switch ($sk) {
            	case 'news':
            		$this->template= View::factory('admin/home/news/content'); 
+                         $this->template->array_data = $this->_calfDb->get_admin_home_news_add_list_array_data();
            		break;
            	case 'showadd':
            		$this->template= View::factory('admin/home/show/mod'); 
@@ -33,9 +40,11 @@ class Controller_Home extends Controller {
 	           	break;
 	        case 'advadd':
 		       $this->template= View::factory('admin/home/adv/add'); 
+	               $this->template->array_data = $this->_calfDb->get_admin_home_adv_add_list_array_data();
 		      	break;
 	        case 'advlist':
 		       $this->template= View::factory('admin/home/adv/list'); 
+		       $this->template->array_data = $this->_calfDb->get_admin_home_adv_list_array_data();
 		       break;
 		case 'notice':
 		       $this->template= View::factory('admin/home/notice/content'); 
@@ -50,18 +59,26 @@ class Controller_Home extends Controller {
          public function action_product() {
            parent::before();
            $sk = $this->_sk;
+           $product = Calfdb_Admin::execute('Product',$this->_id,$this->_data);
+           $product_order = Calfdb_Admin::execute('Order',$this->_id,$this->_data);
+
            switch ($sk) {
            	case 'managerproduct':
-           		$this->template= View::factory('admin/product/product/product'); 
-           		break;
+           	       $array_data = $product->get_admin_product_manager_array_data();
+  	               $this->template= View::factory('admin/product/product/product');
+                       $this->template->array_data = $array_data;
+                       break;
            	case 'managerdiscount':
-           		$this->template= View::factory('admin/product/discount/discount'); 
-           		break;
+	          	$this->template= View::factory('admin/product/discount/discount'); 
+                        $this->template->array_data=$product->get_admin_product_discount_manager_array_data();
+                        break;
                 case 'orderlist':
 	                $this->template= View::factory('admin/product/order/list'); 
+	                $this->template->array_data=$product_order->get_admin_order_list_array_data();
 	           	break;
 	        case 'discountlist':
 		       $this->template= View::factory('admin/product/order/dislist'); 
+		       $this->template->array_data=$product_order->get_admin_order_discount_list_array_data();
 		      	break;
 	        case 'product':
 		       $this->template= View::factory('admin/product/analysis/product'); 

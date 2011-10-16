@@ -18,31 +18,21 @@ class Kohana_Calfdb_Admin {
 		return new Kohana_Calfdb_Admin($id,$data);
 
 	}
-
-       /**
-       * 
-       */
-       public function get_admin_home_array_data() {
-           // TODO :
-          $array_data = array(
-			 array('id'=>1,'mod_name'=>'notice','name' =>'公告管理','url'=>'/admin/index/1',
-			      ) , 
-			 array('id'=>2,'mod_name'=>'news','name' =>'新闻管理','url'=>'/admin/index/2',
-			      ) , 
-			 array('id'=>3,'mod_name'=>'advertising','name' =>'广告管理','url'=>'/admin/index/3',
-			                  'lists'=>array(
-				           array('id'=>'31','mod_name'=>'advadd','name'=>'添加广告栏目','url'=>'/admin/index/31'),
-				      	   array('id'=>'32','mod_name'=>'advlist','name'=>'广告列表','url'=>'/admin/index/32'),
-				           ),
-			      ), 
-			 array('id'=>4,'mod_name'=>'shows','name' =>'商品展示管理','url'=>'/admin/index/4','lists'=>array(
-			           array('mod_name'=>'showadd','name'=>'展示模块','url'=>'#'),
-			      	   array('mod_name'=>'showlist','name'=>'展示列表','url'=>'#'),
-			           ),
-			       ) , 
-	    );
-           return $array_data;
-       }
+	
+	/**
+	* 
+	*/
+	public static function execute($name,$id,$data) {
+	    // TODO :
+	    $class ='Kohana_Calfdb_Admin_'.$name;
+	    return new $class($id,$data);
+	}    
+	
+	
+	function __construct($id,array $data=NULL){
+		$this->_id = $id;
+		$this->_data= $data;
+	}  
 
        /**
        * 
@@ -106,31 +96,9 @@ class Kohana_Calfdb_Admin {
         }
 
 
-        /**
-        * 
-        */
-        public function get_admin_product_array_data() {
-            // TODO :
-         	$array_data = array(
-			 array('id'=>1,'mod_name'=>'managerproduct','name' =>'商品管理','url'=>'/admin/product/1',
-			      ), 
-			 array('id'=>2,'mod_name'=>'managerdiscount','name' =>'促销管理','url'=>'/admin/product/2',
-			      ), 
-			 array('id'=>3,'mod_name'=>'order','name' =>'订单管理','url'=>'/admin/product/3',
-			                  'lists'=>array(
-				           array('mod_name'=>'orderlist','name'=>'查询订单列表','url'=>'#'),
-				      	   array('mod_name'=>'discountlist','name'=>'促销商品列表','url'=>'#'),
-				     	 ),
-			      ), 
-			 array('id'=>4,'mod_name'=>'shows','name' =>'数据决策','url'=>'/admin/product/4','lists'=>array(
-			                   array('mod_name'=>'product','name'=>'商品销售分析','url'=>'#'),
-					   array('mod_name'=>'summary','name'=>'商品汇总分析','url'=>'#'),
-					   array('mod_name'=>'market','name'=>'销售市场分析','url'=>'#'),
-				           ),
-			       ) , 
-			 );
-            return $array_data;
-        }
+        
+
+      
 
         /**
         * 
@@ -164,12 +132,6 @@ class Kohana_Calfdb_Admin {
 	function __set($name,$value){
 
 		$this->$name = $value;
-	}
-
-
-	function __construct($id,array $data=NULL){
-		$this->_id = $id;
-		$this->_data= $data;
 	}
 
 

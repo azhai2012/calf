@@ -21,7 +21,7 @@ class Kohana_Admin_Product{
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
-		$this->_calfDb = Calfdb_Admin::factory($this->_id,$this->_data); 
+		$this->_calfDb = Calfdb_Admin::execute('Product',$this->_id,$this->_data); 
 	}
 	
 	/**
@@ -39,6 +39,7 @@ class Kohana_Admin_Product{
             return $template;
         }
 	
+
 	
 	function  __get($name){
 	   if(isset($this->$name)){ 

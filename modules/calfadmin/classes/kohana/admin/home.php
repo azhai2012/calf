@@ -21,7 +21,7 @@ class Kohana_Admin_Home {
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
-		$this->_calfDb = Calfdb_Admin::factory($this->_id,$this->_data);
+		$this->_calfDb = Calfdb_Admin::execute('Home',$this->_id,$this->_data);
 		 
 	}
 	
@@ -30,7 +30,6 @@ class Kohana_Admin_Home {
         */
         public function get_body_content() {
             // TODO :
-
 	    $array_data = $this->_calfDb->get_admin_home_array_data();  
             $template = View::factory('admin/body');
             $template->array_data = $array_data;
