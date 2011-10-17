@@ -21,7 +21,7 @@ class Kohana_Admin_Tuan {
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
-		$this->_calfDb = Calfdb_Admin::factory($this->_id,$this->_data);
+		$this->_calfDb = Calfdb_Admin::execute('Tuan',$this->_id,$this->_data);
 	}
 	
 	/**

@@ -20,16 +20,7 @@
 	    <tr><th>公告标题</th><th>发布日期</th><th>状态</th><th>操作</th></tr>	
 	</thead> 
         <tbody>
-	 <?php $array_data = array(
-		  array('id'=>1,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'N'), 
-	          array('id'=>2,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'Y'), 
-		  array('id'=>3,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'Y'), 
-		  array('id'=>4,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'Y'), 
-		  array('id'=>5,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'Y'), 
-		  array('id'=>6,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'Y'), 
-		  array('id'=>7,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'Y'), 
-		
-		); ?>
+
 	 <?php foreach ($array_data as $key => $value): ?>
 	     <?php $altcolor= (($key % 2)==0) ? "":"alt-color";   ?>    
             <tr class="<?php echo $altcolor; ?> api apilevel-1">

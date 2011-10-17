@@ -53,6 +53,25 @@ class Kohana_Calfdb_Admin_Home extends Kohana_Calfdb_Admin {
        /**
        * 
        */
+       public function get_admin_home_notice_list_array_data() {
+           // TODO :
+        $array_data = array(
+		  array('id'=>1,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'N'), 
+	          array('id'=>2,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'Y'), 
+		  array('id'=>3,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'Y'), 
+		  array('id'=>4,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'Y'), 
+		  array('id'=>5,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'Y'), 
+		  array('id'=>6,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'Y'), 
+		  array('id'=>7,'title' =>'网上试运行，期间所有商品大优惠！','url'=>'#','create_date'=>'2012-01-01','is_active'=>'Y'), 
+
+		);
+           return $array_data;
+       }
+
+
+       /**
+       * 
+       */
        public function get_admin_home_news_add_list_array_data() {
            // TODO :
         $array_data = array(
