@@ -31,11 +31,12 @@ class Kohana_Admin_Tuan {
             // TODO :
 
 	    $array_data = $this->_calfDb->get_admin_tuan_array_data(); 
-            $template = View::factory('admin/body');
-            $template->array_data = $array_data;
-            $template->selected = $this->_id;
-            $template->mod_content ='';
-            $template->action = 'tuan';
+  	    $default = View::factory('admin/tuan/default');  
+            $template = View::factory('admin/body')
+                        ->set('array_data',$array_data) 
+                        ->set('selected',$this->_id) 
+                        ->set('action','tuan')
+                        ->set('mod_content',$default);
             return $template;
         }
 	

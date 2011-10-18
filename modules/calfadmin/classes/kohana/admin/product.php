@@ -29,13 +29,13 @@ class Kohana_Admin_Product{
         */
         public function get_body_content() {
             // TODO :
-
 	    $array_data = $this->_calfDb->get_admin_product_array_data();
-            $template = View::factory('admin/body');
-            $template->array_data = $array_data;
-            $template->selected = $this->_id;
-            $template->mod_content ='';
-            $template->action = 'product';
+            $default = View::factory('admin/product/default');
+	    $template = View::factory('admin/body')
+                        ->set('array_data',$array_data)
+                        ->set('selected',$this->_id)
+                        ->set('mod_content',$default)
+                        ->set('action','product');
             return $template;
         }
 	

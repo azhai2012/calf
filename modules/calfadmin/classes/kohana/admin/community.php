@@ -31,12 +31,12 @@ class Kohana_Admin_Community {
             // TODO :
 
 	    $array_data = $this->_calfDb->get_admin_community_array_data();
-
-            $template = View::factory('admin/body');
-            $template->array_data = $array_data;
-            $template->selected = $this->_id;
-            $template->action = 'community';
-            $template->mod_content ='';
+            $default = View::factory('admin/community/default');  
+            $template = View::factory('admin/body')
+                        ->set('array_data',$array_data) 
+                        ->set('selected',$this->_id) 
+                        ->set('action','community')
+                        ->set('mod_content',$default);
             return $template;
         }
 

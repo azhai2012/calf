@@ -8,7 +8,7 @@ class Controller_Test extends Controller {
     public function before(){
 		$this->template= View::factory('test');
 
-	}
+    }
 	
     function getUtf8($_str){
 		$modcomm=new Model_Comm();
@@ -21,17 +21,17 @@ class Controller_Test extends Controller {
         return "user_" . sprintf( "%04d", ($uid >> 20) );
     }
 	
-	
+ public function error($message){
+	$this->response->status(404);
+}
 
 
 	public function action_index()
 	{	
 		parent::before();
-			$id=1;
-			$data=array('mod'=>'order');
-		$test= Calfdb_Admin::execute('Home',$id,$data);
-		print_r($test->get_admin_home_array_data());
 		
+		
+		return $this->error('');
 	        
 	//	$action = $this->request->action();
 	//	echo $action; 
