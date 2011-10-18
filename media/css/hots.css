@@ -9,7 +9,7 @@ TODO customize this sample style
 Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
 /* Left style */
-#hots_context .left{float:left;width:690px;margin-right:5px;border:10px #000 solid;}
+#hots_context .left{float:left;width:690px;margin-right:5px;}
 .abc-a h3,.hots-extra h3{background-image:url(/media/images/hotsbd.gif)}
 .active,.notactive{background-image:url(/media/images/hots.gif);}
 .abc-a{float:left;position:relative;height:auto;margin-top:20px;border:5px #FC9 solid;}
