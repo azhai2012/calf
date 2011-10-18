@@ -14,7 +14,7 @@
        <h1>Shows - 页面展示管理 - 模块管理</h1>
    </div>
     <div id="mod-list">
-             <table class="download">
+   <table>
     <tbody><tr>
       <th>模块编号</th>
       <th>模块标题</th>
@@ -22,27 +22,20 @@
       <th>状态</th>
       <th>操作</th>
   </tr>
+   <?php $array_data = array(
+        array('id' =>1123,'title'=>'新品区','sql_txt'=>'select * from tablename','active'=>1 ),
+        array('id' =>1124,'title'=>'保健品区','sql_txt'=>'select * from tablename','active'=>1 ),
+        array('id' =>1125,'title'=>'器械区','sql_txt'=>'select * from tablename','active'=>1 ),
+   );?>
+   <?php foreach ($array_data as $key => $value): ?>
    <tr>
-    <td>112</td>
-    <td>新品区</td>
-    <td><code>select * from tablename</code></td>
-    <td>激活</td>
+    <td><?php echo $value['id'] ?></td>
+    <td><?php echo $value['title'] ?></td>
+    <td><code><?php echo $value['sql_txt'] ?></code></td>
+    <td><?php ($value['active']===1) ? '激活' : '未激活' ; ?></td>
     <td>编辑 | 删除</td>
-  </tr>
-  <tr>
-    <td>112</td>
-    <td>保健品区</td>
-    <td><code>select * from tablename</code></td>
-    <td>激活</td>
-    <td>编辑 | 删除</td>
-  </tr>
-  <tr>
-  <td>112</td>
-    <td>器械区</td>
-    <td><code>select * from tablename</code></td>
-    <td>激活</td>
-    <td>编辑 | 删除</td>
-  </tr>
+   </tr>
+   <?php endforeach ?>
   </tbody>
     </table>
         
