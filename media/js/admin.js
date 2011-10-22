@@ -2,6 +2,7 @@
 $(document).ready(function(){ 
    Admins.Init();
    Admins.getHeight();	  
+	
 });
 
 var cookie_namespace = 'Calf_Admin';
@@ -11,6 +12,7 @@ var resizePackagesNav;
 var classesNav;
 var devdocNav;
 var sidenav;
+var resizeheight=56;
 var Admins = {	   
 		Init:function(){
 			 $("#side-nav").css({position:"absolute",left:0});
@@ -70,7 +72,7 @@ var Admins = {
 		  $('#side-nav').css({width:navWidth});
 		},
 		restoreHeight:function(packageHeight) {
-		  var windowHeight = ($(window).height() - 100);
+		  var windowHeight = ($(window).height() - resizeheight);
 		  sidenav.css({height:windowHeight + "px"});
 		  content.css({height:windowHeight + "px"});
 		  devdocNav.css({height:sidenav.css("height")});
@@ -95,7 +97,7 @@ var Admins = {
 		},	
 		resizeHeight:function() {
 		  var docContent = $("#doc-content");
-    	  var windowHeight = ($(window).height() - 100);
+    	  var windowHeight = ($(window).height() - resizeheight);
 		 
 		  docContent.css({height:windowHeight + "px"});
 		  $("#side-nav").css({height:windowHeight + "px"});
@@ -108,14 +110,14 @@ var Admins = {
       	 
 		},
 		defHeight:function(){
-				var h = $(window).height()-100;
+				var h = $(window).height()-resizeheight;
 				  $('#doc-content').css({"height":h+"px"}); 
 				  $('#devdoc-nav').css({"height":h+"px"});
 				  $('#side-nav').css({"height":h+"px"});	
 		},
 		getHeight:function(){
 		   $(window).resize(function(){
-			  var h = $(this).height()-100;
+			  var h = $(this).height()-resizeheight;
 			  $('#doc-content').css({"height":h+"px"}); 
 			  $('#devdoc-nav').css({"height":h+"px"});
 			  $('#side-nav').css({"height":h+"px"});
@@ -206,6 +208,8 @@ var News = {
 	addArea:function(a){$('#newscontent').wysiwyg({autoGrow:true, controls:"bold,italic,|,undo,redo"});}
 };
 
+
+var Products={}
 
 
 

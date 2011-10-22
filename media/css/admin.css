@@ -29,17 +29,14 @@ dd{margin:0 0 1em;padding:0 0 0 2em;}
 li p{margin:.5em 0 0;}
 dd p{margin:1em 0 0;}
 li pre,li table,li img{margin:.5em 0 0 1em;}
-table{font-size:1em;margin:0 0 1em;padding:0;border-collapse:collapse;border-width:0;empty-cells:show;}
-td,th{border:1px solid #ccc;padding:6px 12px;text-align:left;vertical-align:top;background-color:inherit;}
-th{background-color:#dee8f1;}
-td > p:last-child{margin:0;}
-tr.alt-color{background-color:#F6F6F6;}
+
 .clearfix{display:block;zoom:1;}
 .clearfix:after{content:".";clear:both;display:block;font-size:0px;height:0px;line-height:0;visibility:hidden;}
-#header{height:84px;position:relative;z-index:100;min-width:675px;padding:0 10px;border-bottom:3px solid #94B922;}
-#headerLeft{padding:25px 0 0;}
-#headerLeft img{height:50px;width:150px;float:left;}
-#header ul{float:left;list-style:none;margin:30px 40px 0;padding:0;height:29px;}
+#header{height:60px;position:relative;z-index:100;min-width:675px;padding:0 10px;border-bottom:3px solid #94B922;}
+#headcontent {height:60px;}
+#headerLeft{padding:8px 0 0 0;}
+#headerLeft img{height:50px;width:150px;float:left;margin-bottom:6px}
+#header ul{float:left;list-style:none;margin:23px 40px 0;padding:0;height:29px;}
 #header li{float:left;margin:0px 2px 0px 0px;padding:0;}
 #header li a{color:#666;font-size:13px;font-weight:bold;text-align:center;}
 #header li a{text-decoration:none;display:block;background-image:url(/media/images/bg_images_sprite.png);background-position:0 -58px;background-repeat:no-repeat;color:#666;font-size:13px;font-weight:bold;width:94px;height:29px;text-align:center;margin:0px;}
@@ -68,8 +65,8 @@ tr.alt-color{background-color:#F6F6F6;}
 #side-nav .open .toggle-img{background:url('/media/images/triangle-opened-small.png') 7px 4px no-repeat;}
 #side-nav .toggle-list .selected a{color:white;text-decoration:none;}
 .loading{display:inline-block;width:20px;height:16px;float:right;margin-right:5px;background:url('/media/images/load.gif') 0 3px no-repeat;}
-#admin-header{background-color:#E2E2E2;padding:7px 13px;}
-#admin-header h1{margin:0 0 10px;font-size:16px;}
+#admin-header{background-color:#E2E2E2;padding:5px 0 2px 5px}
+#admin-header h1{margin:0 0 5px;font-size:16px;}
 .notice-sumtable{margin:15px 1em 1em 0;width:95%;font-size:12px;}
 #notice-content table{margin:0 0 1em 1em;}
 .notice-add {margin:15px 1em 1em 0;width:95%;font-size:12px;}

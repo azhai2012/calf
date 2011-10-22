@@ -175,9 +175,39 @@ a{color:#385998;cursor:pointer;text-decoration:none;font-family:"宋体"}
 /* cart */
 /* footer */
 #mainpagefoot{width:100%;margin-top:40px;padding-top:20px;border-top:1px #CCC solid;}
-#footer{width:980px;margin:0 auto;}
-.nowrap{white-space:nowrap;}
-#footer ul{height:20px;margin:0 auto;}
-#footer ul li{float:left;line-height:20px;padding-left:20px;}
-#footer ul.ftnav{border-bottom:1px solid #DDD;padding:10px 170px;margin:0 auto;}
-#footer ul.copyright{padding:10px 90px;}
+.footer {
+margin: 0px auto;
+width: 978px;
+background: #f5f5f5;
+height: 146px;
+color: #888;
+border-top: #dfdfdf 1px solid;
+border-left: #dfdfdf 1px solid;
+border-bottom: 1px solid #DFDFDF;
+border-left: 1px solid #DFDFDF;
+background: whiteSmoke;
+border-top: 1px solid #DFDFDF;
+border-right: 1px solid #DFDFDF;
+}
+.footer h2 {font-size:14px;}
+.col_1 {width:50px;}
+.col_1,.col_2,.col_3,.col_4,.col_5{
+display: inline;
+float: left;
+}
+.col_2,.col_3,.col_4,.col_5 {width:200px;}
+.footer div {
+padding: 0px;
+margin: 0px auto;
+}
+
+.footerNav {
+margin:15px 0;
+text-align: center;
+color: #333;
+}
+
+.footerNav a {
+margin: 0px 5px;
+}
+

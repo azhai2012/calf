@@ -16,13 +16,16 @@
  <!-- begin main header -->
  
  <div id="mainheader" >
-    <div id="headertop"> </div>
-    <div id="headcontent" class="clearfix"></div>
+    <div id="headertop">  <?php echo Model_Main_Header::factory()->get_headtop(''); ?></div>
+    <div id="headcontent" class="clearfix"><?php echo Model_Main_Header::factory()->get_hcontent(''); ?></div>
   </div> 
  <!-- end main header -->
  
  <!-- begin menus -->
- <div id="menus" class="clearfix" ></div>
+ <div id="menus" class="clearfix" >
+     <?php echo Model_Main_Header::factory()->get_menu(''); ?>
+     		
+ </div>
  <!-- end menus -->
  
  <!-- begin main content -->

@@ -2,6 +2,20 @@
 
 class Model_Main_Header {
 	
+	private $_data = array();
+	/**
+	* 
+	*/
+	public static function factory($data = array()) {
+	    // TODO :	    
+	    return new Model_Main_Header($data);
+	}
+	
+	function __construct($data = null) {
+		$this->_data = $data;
+	}
+	
+	
 	function getmods($modname){
 		$mods="";
 		switch ($modname){

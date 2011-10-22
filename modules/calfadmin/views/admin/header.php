@@ -9,7 +9,7 @@
  */
 ?>
 <div id="header">
-      <div id="headerLeft">
+      <div id="headerLeft"  class="clearfix">
 	<img src="/media/images/logo.jpg" width="100" height="50"  /> 
         <ul id="header-tabs" class="<?php echo $array_data['mod']['name']; ?>">
 	  <?php foreach ($array_data['lists'] as $key => $value): ?>
