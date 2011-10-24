@@ -554,7 +554,13 @@ div.pGroup {
 .flexigrid div.pDiv input {
 	vertical-align: text-top;
 	position: relative;
-	top: -5px;
+	top: -2px;
+}
+
+.flexigrid div.pDiv select {
+	vertical-align: text-top;
+	position: relative;
+	top: 2px;
 }
 
 .flexigrid div.pDiv  div.pButton {
@@ -562,6 +568,7 @@ div.pGroup {
 	width: 22px;
 	height: 22px;
 	border: 0px;
+	padding-top:-2px;
 	cursor: pointer;
 	overflow: hidden;
 }

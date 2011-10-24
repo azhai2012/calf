@@ -31,7 +31,7 @@ class Controller_Test extends Controller {
 		parent::before();
 		
 		
-		return $this->error('');
+	        echo  Text::random('hexdec',5);
 	        
 	//	$action = $this->request->action();
 	//	echo $action; 

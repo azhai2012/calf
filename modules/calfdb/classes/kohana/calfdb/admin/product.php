@@ -42,9 +42,9 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin {
          	$array_data= array(
 			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
 			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>0), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>0), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
+			  array('id' =>12137,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
+			  array('id' =>12138,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>0), 
+			  array('id' =>12139,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
 			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
 			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>0), 
 			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
