@@ -29,10 +29,8 @@ class Controller_Test extends Controller {
 	public function action_index()
 	{	
 		parent::before();
-		
-		
-	        echo  Text::random('hexdec',5);
-	        
+	
+               
 	//	$action = $this->request->action();
 	//	echo $action; 
 	

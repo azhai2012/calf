@@ -17,7 +17,13 @@
   <table id="flex1" style="display:none"></table>
         <script src="/media/js/jquery.flexigrid.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript" src="/media/js/jquery.placeholder.js"></script>
+	<script src="/media/js/jquery.upload.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
+                 $('#uploadform').ajaxUpload({
+		       target:'/testajax',
+		       beforeSubmit: function(form,iframe){$('#hh').html('loading...');},
+		       afterSubmit: function(form,iframe){$('#status').append('成功上传：'+$('#file').val()+'<br>');$('#file').val('');}
+		  });
 	        $.Placeholder.init();
 		$('#flex1').flexigrid({
 				url: '/post/product/list',
@@ -113,6 +119,7 @@
 		      array('display_name' =>'国批价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'group','value'=>''),
 		      array('display_name' =>'功能主治','type'=>'textarea','attr'=>'cols=57 rows=6','placeholder'=>'请输入该商品的功能','name'=>'uses','value'=>''),
 		); ?>
+		<?php $count= count($array_data); ?>
 		<?php foreach ($array_data as $key => $value): ?>
 		   <tr class="dataRow">
 		    <th class="label"><label for="<?php echo $ids.'_'.$key ?>"><?php echo $value['display_name'] ?>：</label></th>
@@ -123,6 +130,15 @@
 	            <?php endif ?>
 	            </tr>
 	        <?php endforeach ?>
+	        <tr class="dataRow">
+	          <th for="file">上传图片</th>
+	          <td><div id="uploadform">
+	              <input id="file" name="image" type="file"/>		
+		      <input type="button" name="some_name" value="上传" id="upload">
+	              </div>
+	                <div id="status"></div>
+	            </td> 	
+	        </tr>
 	      
 	</tbody>
        </table>	 

@@ -7,7 +7,7 @@
 html,body,div,h1,h2,h3,h4,h5,h6,p,img,dl,dt,dd,ol,ul,li,table,caption,tbody,tfoot,thead,tr,th,td,form,fieldset,embed,object,applet{margin:0;padding:0;border:0;}
 html,body{overflow:hidden;/* keeps scrollbar off IE */
 background-color:#fff;}
-body{font-family:'宋体','黑体',arial,sans-serif;color:black;font-size:12px;color:#333;background-image:url(/media/images/bg_fade.jpg);background-repeat:repeat-x;}
+body{font-family:'Microsoft YaHei',微软雅黑,宋体,黑体,'宋体','黑体',arial,sans-serif;color:black;font-size:12px;color:#333;background-image:url(/media/images/bg_fade.jpg);background-repeat:repeat-x;}
 li{display:list-item;text-align:-webkit-match-parent;}
 a{text-decoration:none;}
 a,a code{color:#069;}
@@ -87,3 +87,4 @@ textarea,.inputtext,.inputpassword{border:1px solid #BDC7D8;font-family:"lucida 
 .uiButtonConfirm{background-color:#5B74A8;border-color:#29447E #29447E #1A356E;}
 .uiButton .uiButtonText,.uiButton input{background:none;border:0;color:#333;cursor:pointer;display:inline-block;font-weight:bold;margin:0;outline:none;padding:1px 0 2px;white-space:nowrap;}
 .uiButton{background-color:#EEE;border:1px solid #999;border-bottom-color:#888;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.1);cursor:pointer;display:inline-block;font-size:12px;font-weight:bold;line-height:13px;padding:2px 6px;text-align:center;text-decoration:none;vertical-align:top;white-space:nowrap;}
+#uploadform {padding-top:10px;}

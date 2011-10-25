@@ -1407,13 +1407,16 @@
   };// end flexModify
  
   $.fn.flexDeleteRows = function(p){ //function to delete selected rows to grid 
+	       var b=0; 
            $('tr',this.grid).each(function(){
 		      var self = $(this);
 		      if (self.hasClass('trSelected'))
 		      {
-			     p(self);			    
-		       }
+			     p(self);
+			     b++;
+			  }
 	        });	
+	       if (b==0) p(null);
   };//end flexDeleteRows
 
 

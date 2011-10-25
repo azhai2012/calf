@@ -245,7 +245,7 @@ var Azhai = {
 			async:c,
 			data:"sk="+m,
 			beforeSend: function(XMLHttpRequest) {
-				 $('#'+m).html('Loading 。。。 。。。');
+				 $('#'+m).html('Loading......');
 		    },
 			success:function(data){
 				
@@ -275,7 +275,7 @@ var Azhai = {
 			async:c,
 			data:"sk="+m,
 			beforeSend: function(XMLHttpRequest) {
-                   $('#'+m).html('Loading 。。。 。。。');
+                   $('#'+m).html('Loading......');
 		    },
 			success:function(data){
 				$('#'+m).html(data);
