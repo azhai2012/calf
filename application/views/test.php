@@ -27,10 +27,13 @@
 	<script type="text/javascript" charset="utf-8">
 	   $(function() {
 	   
-		  $('#myform').ajaxUpload({
+		  $('#uploadform').ajaxUpload({
 		       target:'/testajax',
-		       beforeSubmit: function(form,iframe){$('#hh').html('loading...');},
-		       afterSubmit: function(form,iframe){$('#status').append('成功上传：'+$('#file').val()+'<br>');$('#file').val('');}
+		       handleJsonResponse:function(json){
+			    $('#status').append('<div><input type="checkbox" value="'+json.filename+'" id="files" name="attach" checked >'+json.file.name+'(<i>'+json.file.type+'</i>)'+Math.round(json.file.size/1024)+'KB </div>');
+			},
+		       beforeSubmit: function(form,iframe){$('#loading').html('loading...');},
+		       afterSubmit: function(form,iframe){$('#loading').html('');}
 		  });
 	 
  	   });
@@ -39,8 +42,12 @@
 </head>
 <body>
     
-      <div id="uploadform"></div>
+ 
+    	<div id="uploadform">
+	    
+        </div>
+        <div id="status"></div> 
 
-      <div id="status"></div>
+   
 </body>
 </html>

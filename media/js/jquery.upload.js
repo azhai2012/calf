@@ -30,7 +30,9 @@ $.fn.ajaxUpload = function(options) {
 	
         $(this).wrap(form);
         form = $('#' + formId);
-   
+   		var a01=' <input id="tmp" name="tmp" type="hidden"/>';		
+		var a02=' <input id="file" name="image" type="file"/>';		
+		var a03=' <input type="button" name="img_upt_btn" value="上传" id="upload"><span id="loading"></spam>';
         form.attr({
             method: 'post',
             target: iframeName,
@@ -38,7 +40,10 @@ $.fn.ajaxUpload = function(options) {
             encoding: 'multipart/form-data',
             action: action
         });
- 
+        form.append(a01);
+        form.append(a02);
+        form.append(a03);
+
 
         var iframe = $('#' + iframeName);
         var frameIndex = (window.frames.length -1);
@@ -70,6 +75,7 @@ $.fn.ajaxUpload = function(options) {
         //$(this).change(function(){
          $('#upload').click(function(){
             var form = $(this).parent('form');
+           
             settings.beforeValidate(form,iframe);
             if (settings.isValid($(this),form)) {
                 settings.beforeSubmit(form,iframe);

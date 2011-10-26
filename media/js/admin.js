@@ -209,7 +209,9 @@ var News = {
 };
 
 
-var Products={}
+var Products={
+	addArea:function(a){ $('#description').wysiwyg({autoGrow:true, controls:"bold,italic,|,undo,redo"});},
+};
 
 
 
