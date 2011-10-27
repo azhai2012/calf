@@ -117,6 +117,7 @@ Kohana::modules(array(
      //'calfcustomer'   => MODPATH.'calfcustomer', //add to ajax.php if ($mods === '')  $mods  = CalfSupplier::factory($_get,$Prams)->get_menus();
      //'calfsupplier'  => MODPATH.'calfsupplier', //add to ajax.php if ($mods === '')  $mods  = CalfCustomer::factory($_get,$Prams)->get_menus(); 
      //'calfbasis'     => MODPATH.'calfbasis', 
+     'mango'         => MODPATH.'mango',
      'calfmain'      => MODPATH.'calfmain', //主页
      'calfcart'      => MODPATH.'calfcart',     //购物车
      'calfproduct'   => MODPATH.'calfproduct', //商品中心

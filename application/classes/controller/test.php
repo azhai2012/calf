@@ -29,7 +29,19 @@ class Controller_Test extends Controller {
 	public function action_index()
 	{	
 		parent::before();
-	
+	        $db = MangoDB::instance('default');
+	        $db->remove('user',array('roleid'=>3));
+	        
+                $array_data = $db->find('user',array('roleid'=>6));
+                foreach ($array_data as $key => $value) {
+                	# code...
+                       $jpg = $value['pic']->bin;  
+                       echo  $jpg ;
+                       
+                }
+                 
+                //echo $db;
+                // echo $db->count('user');
                
 	//	$action = $this->request->action();
 	//	echo $action; 
