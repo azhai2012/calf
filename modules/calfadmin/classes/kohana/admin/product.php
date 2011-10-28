@@ -11,7 +11,7 @@
 class Kohana_Admin_Product{
 	
 	private $_id;
-	private $_data;
+	private $_data= array();
 	private $_calfDb;
       	
         public static function factory($id,array $data= NULL){

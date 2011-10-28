@@ -24,7 +24,7 @@ return array(
 			'hostnames' => 'localhost',
 
 			/** database to connect to **/
-			'database'  => 'user',
+			'database'  => 'calfs',
 
 			/** authentication **/
 			//'username'  => 'username',

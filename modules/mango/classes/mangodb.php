@@ -253,6 +253,16 @@ class MangoDB {
 		));
 	}
 
+	public function find_limit($collection_name, array $query = array(), array $fields = array(),array $limit= array())
+	{
+		return $this->_call('find_limit', array(
+			'collection_name' => $collection_name,
+			'query'           => $query,
+			'fields'          => $fields,
+			'limit'           => $limit
+		));
+	}
+
 	public function group( $collection_name, $keys , array $initial , $reduce, array $condition= array() )
 	{
 		return $this->_call('group', array(
@@ -297,6 +307,9 @@ class MangoDB {
 			'options'         => $options
 		), $a);
 	}
+	
+
+	
 
 	/* File management */
 
@@ -419,6 +432,11 @@ class MangoDB {
 			case 'find':
 				$r = $c->find($query,$fields);
 			break;
+			case 'find_limit':
+			      
+				$r = $c->find($query,$fields)->sort(array($limit['sortname']=>$limit['sortorder']))->skip($limit['skip'])->limit($limit['limit']);
+			break;
+			
 			case 'group':
 				$r = $c->group($keys,$initial,$reduce,$condition);
 			break;
@@ -434,6 +452,7 @@ class MangoDB {
 			case 'save':
 				$r = $c->save($values, $options);
 			break;
+		
 			case 'get_file':
 				$r = $this->gridFS()->findOne($criteria);
 			break;

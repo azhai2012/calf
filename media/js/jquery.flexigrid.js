@@ -565,6 +565,7 @@
 						param[param.length] = p.params[pi];
 					}
 				}
+			
 				$.ajax({
 					type: p.method,
 					url: p.url,
@@ -572,6 +573,7 @@
 					dataType: p.dataType,
 					success: function (data) {
 						g.addData(data);
+						
 					},
 					error: function (XMLHttpRequest, textStatus, errorThrown) {
 						try {

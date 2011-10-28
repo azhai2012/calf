@@ -7,8 +7,21 @@
  * @copyright 2011 
  *
  */
-class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin {
-  	/**
+class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
+  	
+        private $_id ;
+        private $_data = array();
+        private $_db;
+
+   	function __construct($id,array $data=NULL){
+	       
+		$this->_id = $id;
+		$this->_data= $data;
+	        $this->_db = parent::_calgdb();
+	      
+	}  
+
+       /**
         * 
         */
         public function get_admin_product_array_data() {
@@ -39,37 +52,22 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin {
         */
         public function get_admin_product_manager_array_data() {
             // TODO :
-         	$array_data= array(
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>0), 
-			  array('id' =>12137,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>12138,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>0), 
-			  array('id' =>12139,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>0), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'A阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'B阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'C阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
-			  array('id' =>1213,'display_name'=>'阿莫西林胶囊 10＊10 上海先锋药厂','unit'=>'合','create_date'=>'2011-01-01','active_date'=>'2011-01-01','is_active'=>1), 
+	    $params= $this->_data;
+	    $qtype = $params['qtype'];
+	    $query =$params['query'];
+	  
+	   
+	    switch ($qtype){
+	       case 'is_active': $query = array($qtype => (float)$query); break;
+	       case 'id': $query = array($qtype => (int)$query); break;
+	       default: $query = array($qtype => new MongoRegex("/^$query/i"));
+            }
 
-			);
+	    $limit = array('sortorder'=>$params['sortorder'],'sortname'=>$params['sortname'],'limit'=>$params['prepage'],'skip'=>$params['page']);
+   	    $array_data =array(
+	                       'total'=>$this->_db->count('products',$query),
+                               'rows'=>$this->_db->find_limit('products',$query,array(),$limit)
+                               );
             return $array_data;
         }
 

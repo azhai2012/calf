@@ -59,11 +59,13 @@ class Controller_Home extends Controller {
          public function action_product() {
            parent::before();
            $sk = $this->_sk;
-           $product_db = Calfdb_Admin::execute('Product',$this->_id,$this->_data);
+           $p = array('page'=>1,'prepage'=>10,'sortname'=>'display_name','sortorder'=>'desc','query'=>'','qtype' =>'display_name' );
+           $product_db = Calfdb_Admin::execute('Product',$this->_id,$p);
            $product_order_db = Calfdb_Admin::execute('Order',$this->_id,$this->_data);
 
            switch ($sk) {
            	case 'managerproduct':
+                       
            	       $array_data = $product_db->get_admin_product_manager_array_data();
   	               $this->template= View::factory('admin/product/product/product')->set('array_data',$array_data);
                        break;

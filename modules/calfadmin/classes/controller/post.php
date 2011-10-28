@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 /**
- * @description : 
+ * @description : 
  *
  * @author Azhai
  * @date 2011-10-22 
@@ -23,42 +23,27 @@ class Controller_Post extends Controller {
 	
      public function action_product() {	
 	
-	$product_db = Calfdb_Admin::execute('Product',$this->_id,$this->_data);
-        $rows = $product_db->get_admin_product_manager_array_data();
-	
-	
-	$page = isset($_POST['page']) ? $_POST['page'] : 1;
-	$rp = isset($_POST['rp']) ? $_POST['rp'] : 10;
-	$sortname = isset($_POST['sortname']) ? $_POST['sortname'] : 'display_name';
-	$sortorder = isset($_POST['sortorder']) ? $_POST['sortorder'] : 'desc';
-	$query = isset($_POST['query']) ? $_POST['query'] : false;
-	$qtype = isset($_POST['qtype']) ? $_POST['qtype'] : false;
+	$page      =  Arr::get($_POST,'page',1);
+	$rp        =  Arr::get($_POST,'rp',15);
+	$sortname  =  Arr::get($_POST,'sortname','display_name');
+	$sortorder =  Arr::get($_POST,'sortorder','desc');
+	$query     =  Arr::get($_POST,'query',false);
+	$qtype     =  Arr::get($_POST,'qtype',false);
+       
+        $pg= ($page-1)*$rp;
 
+        $sortorder= ($sortorder=='desc')? -1 : 1;
+
+        $p = array('page'=>$pg,'prepage'=>$rp,'sortname'=>$sortname,'sortorder'=>$sortorder,'query'=>$query,'qtype'=>$qtype);
+
+	$product_db = Calfdb_Admin::execute('Product','',$p);
+	$array_data = $product_db->get_admin_product_manager_array_data();
+
+	$rows=$array_data['rows'];
 	//***
-	if($qtype && $query){
-			$query = strtolower(trim($query));
-			foreach($rows AS $key => $row){
-				if(strpos(strtolower($row[$qtype]),$query) === false){
-					unset($rows[$key]);
-				}
-			}
-		}
-		//Make PHP handle the sorting
-		$sortArray = array();
-		foreach($rows AS $key => $row){
-			$sortArray[$key] = $row[$sortname];
-		}
-		$sortMethod = SORT_ASC;
-		if($sortorder == 'desc'){
-			$sortMethod = SORT_DESC;
-		}
-		array_multisort($sortArray, $sortMethod, $rows);
-
-	$total = count($rows);
+	$total =$array_data['total'];
 	//*****
-   	$rows = array_slice($rows,($page-1)*$rp,$rp);
-
-	$jsonData = array('page'=>$page,'total'=>$total,'rows'=>array());
+ 	$jsonData = array('page'=>$page,'total'=>$total,'rows'=>array());
 	
 	foreach($rows AS $row){
 		//If cell's elements have named keys, they must match column names
@@ -73,8 +58,7 @@ class Controller_Post extends Controller {
 		$jsonData['rows'][] = $entry;
 	}
 
- 	 
-           $this->template = json_encode($jsonData);
+        $this->template = json_encode($jsonData);
      }
 
      public function after() {

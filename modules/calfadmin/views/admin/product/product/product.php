@@ -44,7 +44,8 @@
 					],
 				searchitems : [
 					{display: '编号', name : 'id'},
-					{display: '名称', name : 'display_name', isdefault: true}
+					{display: '名称', name : 'display_name', isdefault: true},
+					{display: '状态', name : 'is_active'},					
 					],
 				sortname: "id",
 				sortorder: "asc",
@@ -55,6 +56,9 @@
 				showTableToggleBtn: true,
 				hideOnSubmit:false,
 				//hideBody:true,
+				pagestat: '共 {total} 页',
+				outof:'/',
+				nomsg:'没有查找到相关内容', 
 				width: 'auto',
 				height: 375,  
 				<?php if (true): ?>

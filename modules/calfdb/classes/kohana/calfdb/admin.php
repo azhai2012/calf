@@ -9,15 +9,19 @@
  */
 class Kohana_Calfdb_Admin {
 
-	protected $calfdb;
+	public $_calfdb;
 	private $_id;
-	private $_data = array();
+	private  $_data = array();
 
 	public static function factory($id,array $data= NULL){
-
+  
 		return new Kohana_Calfdb_Admin($id,$data);
-
 	}
+        
+        public static function _calgdb(){
+	
+	   return MangoDB::instance('default');
+        }
 	
 	/**
 	* 
@@ -28,19 +32,18 @@ class Kohana_Calfdb_Admin {
 	    return new $class($id,$data);
 	}    
 	
-	
-	function __construct($id,array $data=NULL){
+        function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
+		$this->_calfdb= self::_calgdb();
 	}  
 
-  
-       function  __get($name){
+        function  __get($name){
 	   if(isset($this->$name)){ 
-          return $this->$name;
+              return $this->$name;
 	   }else { 
-          return NULL; 
-       } 
+              return NULL; 
+           } 
 	}
 
 	function __set($name,$value){
