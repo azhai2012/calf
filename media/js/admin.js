@@ -194,7 +194,8 @@ var Admins = {
 					// 请求出错处理
 				}
 			});
-		}
+		},
+	
 };
 
 var Notice = {
@@ -209,9 +210,6 @@ var News = {
 };
 
 
-var Products={
-	addArea:function(a){ $('#description').wysiwyg({autoGrow:true, controls:"bold,italic,|,undo,redo"});},
-};
 
 
 

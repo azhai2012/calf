@@ -24,7 +24,7 @@ class Kohana_Admin_Product{
 		$this->_calfDb = Calfdb_Admin::execute('Product',$this->_id,$this->_data); 
 	}
 	
-	/**
+  	    /**
         * 
         */
         public function get_body_content() {

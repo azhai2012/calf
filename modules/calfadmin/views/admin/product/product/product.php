@@ -13,9 +13,10 @@
        管理 
        <h1>Products - 商品管理 </h1>
    </div>
- <div id="product-list">
-  <table id="flex1" style="display:none"></table>
+   <div id="product-list"> <!-- begin list -->
+    <table id="flexgrid" style="display:none"></table>
         <script src="/media/js/jquery.flexigrid.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/media/js/admin.products.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript" src="/media/js/jquery.placeholder.js"></script>
 	<script src="/media/js/jquery.upload.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
@@ -31,92 +32,11 @@
 		       afterSubmit: function(form,iframe){$('#loading').html('');$('#file',form).val('');}
 		 });
 	        $.Placeholder.init();
-		$('#flex1').flexigrid({
-				url: '/post/product/list',
-				dataType: 'json',
-				colModel : [
-					{display: '编号', name : 'id', width : 40, sortable : true, align: 'center'},
-					{display: '名称', name : 'display_name', width : 180, sortable : true, align: 'left'},
-					{display: '单位', name : 'unit', width : 80, sortable : true, align: 'left'},
-					{display: '创建日期', name : 'create_date', width : 130, sortable : true, align: 'left', hide: true},
-					{display: '生效日期', name : 'active_date', width : 80, sortable : true, align: 'right'},
-		  		        {display: '状态', name : 'is_active', width : 80, sortable : true, align: 'right'}
-					],
-				searchitems : [
-					{display: '编号', name : 'id'},
-					{display: '名称', name : 'display_name', isdefault: true},
-					{display: '状态', name : 'is_active'},					
-					],
-				sortname: "id",
-				sortorder: "asc",
-				usepager: true,
-				title:'商品列表',
-				useRp: true,
-				rp: 15,
-				showTableToggleBtn: true,
-				hideOnSubmit:false,
-				//hideBody:true,
-				pagestat: '共 {total} 页',
-				outof:'/',
-				nomsg:'没有查找到相关内容', 
-				width: 'auto',
-				height: 375,  
-				<?php if (true): ?>
-			        buttons:[
-			             {name:'添加',bimage:'/media/images/new.gif',onpress:function(){RowAdd()}},
-			             {name:'修改',bimage:'/media/images/modify.gif',onpress:function(){Modify()}},
-				     {name:'删除',bimage:'/media/images/delete.gif',onpress:function(){RowDelete()}},
-				     {name:'导出',bimage:'/media/images/export.gif',onpress:function(){exports()}},
-			             {name:'导入',bimage:'/media/images/import.gif',onpress:function(){exports()}},
-				     {name:'打印',bimage:'/media/images/print.gif',onpress:function(){exports()}},
-				   		
-			            ],
-			        <?php endif ?> 				
-			});
-	   
-	       function exports(){
-	          	
-	       }   
-	
-	       function RowAdd(){
-		  $('.flexigrid').addClass('hideBody');
-		  $('#grid_add').show();
-		
-	       }
+           	Products.getGrid();
 	       
-	       function Modify(){
-		 var gd = $('#flex1').flexModify(function(a){
-		      if (a != null){	
-	                var id = a.attr('id').substring(3);
-	                $('#grid_add input[name=id]').val(id);
-		        $('#grid_add input[name=product_name]').val('商品名称');
-		        $('.flexigrid').addClass('hideBody');
-		        $('#grid_add').show();
-	                $('#flex1').flexReload();
-	               }
-	               else
-	                  alert('清先选择商品。');
-		   });	
-	       }
-	
-        	function RowDelete(){
-		   var gd = $('#flex1').flexDeleteRows(function(a){ 
-		     if (a != null)
-		     {
-		       if (confirm('Delete Are you sure!'))
-		        {	
-		          var id = a.attr('id').substring(3);
-	 	           alert(id);
-	                   $('#flex1').flexReload(); 
-	                }  
-		      }
-	              else 
-	                alert('清先选择商品。');
-	          });  
-	        }
           	
         </script>
-    </div>
+    </div> <!-- end list -->
     <div id="grid_add">
 	 <div class="mtm" style="margin-top:10px;padding-top:0;margin-bottom:10px;padding-bottom:10px;border-top:0;border-bottom:1px #ccc solid">
 		   <label class="submit uiButton " id="uvh5i2_7" for="uvh5i2_9">

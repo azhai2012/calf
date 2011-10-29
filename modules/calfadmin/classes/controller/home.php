@@ -9,7 +9,6 @@
  */
 class Controller_Home extends Controller {
 
-
     private  $template='';
     private $_id;
     private $_data;
@@ -61,7 +60,9 @@ class Controller_Home extends Controller {
            $sk = $this->_sk;
            $p = array('page'=>1,'prepage'=>10,'sortname'=>'display_name','sortorder'=>'desc','query'=>'','qtype' =>'display_name' );
            $product_db = Calfdb_Admin::execute('Product',$this->_id,$p);
-           $product_order_db = Calfdb_Admin::execute('Order',$this->_id,$this->_data);
+           $p = array('page'=>1,'prepage'=>10,'sortname'=>'id','sortorder'=>'desc','query'=>'','qtype' =>'id' );
+		
+           $product_order_db = Calfdb_Admin::execute('Order',$this->_id,$p);
 
            switch ($sk) {
            	case 'managerproduct':

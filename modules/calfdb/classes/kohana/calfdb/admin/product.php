@@ -56,12 +56,13 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 	    $qtype = $params['qtype'];
 	    $query =$params['query'];
 	  
-	   
+	    if ($query) 
 	    switch ($qtype){
 	       case 'is_active': $query = array($qtype => (float)$query); break;
 	       case 'id': $query = array($qtype => (int)$query); break;
 	       default: $query = array($qtype => new MongoRegex("/^$query/i"));
             }
+            else $query=array();
 
 	    $limit = array('sortorder'=>$params['sortorder'],'sortname'=>$params['sortname'],'limit'=>$params['prepage'],'skip'=>$params['page']);
    	    $array_data =array(

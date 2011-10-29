@@ -10,11 +10,12 @@
 
 class Kohana_Admin_Community {
 
-	private $_id;
+	private $_id;
 	private $_data;
 	private $_calfD;
 	
-      	public static function factory($id,array $data= NULL){
+	
+    public static function factory($id,array $data= NULL){
 		return new Kohana_Admin_Community($id,$data);
 	}
 
@@ -41,13 +42,7 @@ class Kohana_Admin_Community {
         }
 
 
-	function  __get($name){
-	   if(isset($this->$name)){ 
-          return $this->$name;
-	   }else { 
-          return NULL;
-           } 
-	}
+	function __get($name){ if(isset($this->$name)){ return $this->$name; }else { return NULL; } }
 
 	function __set($name,$value){
 
