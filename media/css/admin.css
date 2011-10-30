@@ -77,7 +77,7 @@ textarea,.inputtext,.inputpassword{border:1px solid #BDC7D8;font-family:"lucida 
 #news-list a,#adv-list a{width:200px;}
 #adv-list,#news-list,#mod-list{width:95%;font-size:12px;}
 #grid_add{margin-top:3px;display:none;}
-.mtm{width:600px;margin-top:20px;margin-left:30px;padding-top:10px;border-top: 1px solid #CCC;}
+.mtm{width:600px;margin-top:10px;margin-left:30px;}
 .uiInfoTable{border-collapse:collapse;border-spacing:0;}
 .uiInfoTable .label{color:#666;font-weight:bold;padding-right:10px;text-align:right;width:130px;}
 .uiInfoTable .label,.uiInfoTable .data,.uiInfoTable .rightCol{padding:3px 0 1px 0;text-align:left;vertical-align:top;}

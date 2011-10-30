@@ -40,22 +40,22 @@ var Orders={
 		      
 			   var gd = $('#flexigrid').flexModify(function(a){
 			   if (a != null){	
-			       var id = a.attr('id').substring(3);
-			       alert(id);
-				   $('.flexigrid').addClass('hideBody');
 				   $('#order-list').hide();
 				   $('#grid_details').show();
-			       $('#details_grid').flexigrid({
-				  	url: '/post/orders/'+id,
+				   $('#grid_details').html('<table id="details_grid" style="display:none"></table>');
+			       var id = a.attr('id').substring(3);
+				   $('#details_grid').flexigrid({
+					GridName:'detailgrid', 
+					url: '/post/orders/'+id,
 					dataType: 'json',
 					colModel : [
 						{display: '订单号', name : 'id', width : 40, sortable : true, align: 'center'},
 						{display: '商品编号', name : 'product_id', width : 40, sortable : true, align: 'center'},
 						{display: '商品名称', name : 'display_name', width : 180, sortable : true, align: 'left'},
 				  	    {display: '单位', name : 'unit', width : 180, sortable : true, align: 'left'},
-						{display: '数量', name : 'quantity', width : 180, sortable : true, align: 'left'},
-						{display: '单价', name : 'price', width : 180, sortable : true, align: 'left'},
-						{display: '金额', name : 'amount', width : 180, sortable : true, align: 'left'},
+						{display: '数量', name : 'quantity', width : 180, sortable : true, align: 'right'},
+						{display: '单价', name : 'price', width : 180, sortable : true, align: 'right'},
+						{display: '金额', name : 'amount', width : 180, sortable : true, align: 'right'},
 						{display: '批号', name : 'batch', width : 180, sortable : true, align: 'left'},
 						{display: '效期至', name : 'validity', width : 80, sortable : true, align: 'right'},
 						],
@@ -79,10 +79,11 @@ var Orders={
 					height: 375,  
 					buttons:[
 					 	  {name:'返回',bimage:'/media/images/back.gif',onpress:function(){
-						   	 $('.flexigrid').removeClass('hideBody');
-						      $('#order-list').show();
+						
+						   	   $('#order-list').show();
 							   $('#grid_details').hide();
-							$('#flexigrid').flexReload();
+						     	$('#flexgrid').flexReload();
+						       $('#grid_details').html('');
 						  }},
 					],
 				});

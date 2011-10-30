@@ -22,6 +22,6 @@
        </script>
    </div> <!-- end list -->
     <div id="grid_details">
-       <table id="details_grid" style="display:none"></table>	
+       
     </div>
 </div>

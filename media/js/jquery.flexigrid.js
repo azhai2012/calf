@@ -10,6 +10,7 @@
 	$.addFlex = function (t, p) {
 		if (t.grid) return false; //return if already exist
 		p = $.extend({ //apply default properties
+			GridName:'flexigrid', 
 			height: 200, //default height
 			width: 'auto', //auto width
 			striped: true, //apply odd even stripes
@@ -368,6 +369,9 @@
 							function () {
 								var td = document.createElement('td');
 								var idx = $(this).attr('axis').substr(3);
+								if (($(this).attr('tdalign')=='right'))
+								td.align = 'right';
+								else
 								td.align = this.align;
 								// If each row is the object itself (no 'cell' key)
 								if (typeof row.cell == 'undefined') {
@@ -511,6 +515,7 @@
 				$('.pPageStat', this.pDiv).html(stat);
 			},
 			populate: function () { //get latest data
+			
 				if (this.loading) {
 					return true;
 				}
@@ -565,7 +570,7 @@
 						param[param.length] = p.params[pi];
 					}
 				}
-			
+
 				$.ajax({
 					type: p.method,
 					url: p.url,
@@ -641,8 +646,9 @@
 						if (p.sortname == $(pth).attr('abbr') && p.sortname) {
 							this.className = 'sorted';
 						}
+		
 						$(tdDiv).css({
-							textAlign: pth.align,
+							textAlign: $(pth).attr('tdalign'),
 							width: $('div:first', pth)[0].style.width
 						});
 						if (pth.hidden) {
@@ -781,6 +787,11 @@
 						$(th).attr('abbr', cm.name);
 					}
 					if (cm.align) {
+						if (cm.align==='right'){
+						  th.align = 'center';
+						  $(th).attr('tdalign','right');
+					    }
+						else
 						th.align = cm.align;
 					}
 					if (cm.width) {
@@ -820,7 +831,7 @@
 			g.pDiv.style.display = 'none';
 		}
 		g.hTable = document.createElement('table');
-		g.gDiv.className = 'flexigrid';
+		g.gDiv.className = p.GridName;//'flexigrid';
 		
 		if (p.hideBody){
 		   $(g.gDiv).addClass('hideBody');	
@@ -959,6 +970,8 @@
 			if (!p.colmodel) {
 				$(this).attr('axis', 'col' + ci++);
 			}
+			
+
 			$(thdiv).css({
 				textAlign: this.align,
 				width: this.width + 'px'

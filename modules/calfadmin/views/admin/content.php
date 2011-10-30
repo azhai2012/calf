@@ -18,6 +18,8 @@
 <link rel="shortcut icon" href="/media/images/favicon.ico" />
 <link href="/media/css/admin.css" rel="stylesheet" type="text/css" media="all" />
 <link href="/media/css/flexigrid.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="/media/css/detailgrid.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="/media/css/jquery.ui.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
  <script type="text/javascript" src="/media/js/comm.js"></script>
  <script type="text/javascript" src="/media/js/apps.js"></script>
