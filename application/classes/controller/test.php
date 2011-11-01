@@ -133,8 +133,21 @@ class Controller_Test extends Controller {
 	     //   $array_data = array(array('a'=>1),array('a'=>2),array('a'=>3),);
 	   //     $db->save('products',$array_data);   */
 	 //"amount" : "10.00", "batch" : "20100101", "create_date" : "2011-01-01 03:00", "discount_id" : "", "flows" : 1, "id" : 121312, "product_id" : "1044380", "quantity" : 30, "rowid" : 3, "validity" : "201201" 
-	  	$order_db = Calfdb_Admin::execute('Order','',array('order_id'=>121312));
-		$array_data = $order_db->get_admin_order_details_array_data();
+	       $p = array('page'=>1,'prepage'=>10,'sortname'=>'id','sortorder'=>'desc','query'=>'','qtype'=>'id');
+
+		$product_db = Calfdb_Admin::execute('Product','',$p);
+		$array_data = $product_db->get_admin_product_manager_array_data();
+		foreach ($array_data['rows'] AS $key => $value) {
+		  echo $value['id'];
+		}
+	//	print_r($array_data ); 
+	
+	/*	$product_db = Calfdb_Admin::execute('Product','',array('id'=>"1044372"));
+		$array_data = $product_db->get_admin_product_info_array_data();
+		foreach ($array_data['rows'] AS $key => $value) {
+			# code...
+			print_r($value['id']);
+		}
 		print_r($array_data);
 		
 	  /*  $details = $db->find('orders_details',array('id'=>121312));  

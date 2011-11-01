@@ -70,7 +70,10 @@
 		      array('display_name' =>'中包装','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'middle_group','value'=>''),
 		      array('display_name' =>'国批价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'general_price','value'=>''),
 		      array('display_name' =>'功能主治','type'=>'textarea','attr'=>'cols=57 rows=6','placeholder'=>'请输入该商品的功能','name'=>'uses','value'=>''),
-		); ?>
+		); 
+		
+		
+		?>
 		<?php $count= count($array_data); ?>
 		<?php foreach ($array_data AS $key => $value): ?>
 		   <tr class="dataRow">

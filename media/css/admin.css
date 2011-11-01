@@ -69,7 +69,7 @@ textarea,.inputtext,.inputpassword{border:1px solid #BDC7D8;font-family:"lucida 
 #side-nav .open .toggle-img{background:url('/media/images/triangle-opened-small.png') 7px 4px no-repeat;}
 #side-nav .toggle-list .selected a{color:white;text-decoration:none;}
 .loading{display:inline-block;width:20px;height:16px;float:right;margin-right:5px;background:url('/media/images/load.gif') 0 3px no-repeat;}
-#admin-header{background-color:#E2E2E2;padding:5px 0 2px 5px}
+#admin-header{background-color:#E2E2E2;padding:7px 0 2px 15px}
 #admin-header h1{margin:0 0 5px;font-size:16px;}
 .notice-sumtable{margin:15px 1em 1em 0;width:95%;font-size:12px;}
 #notice-content table{margin:0 0 1em 1em;}

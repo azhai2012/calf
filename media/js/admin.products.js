@@ -47,17 +47,35 @@ var Products={
 	      $('.flexigrid').hide();
           $('#grid_add').show();
         },
-	    Modify:function(){var gd = $('#flex1').flexModify(function(a){ if (a != null){	
-		       var id = a.attr('id').substring(3);
-			                $('#grid_add input[name=id]').val(id);
-				        $('#grid_add input[name=product_name]').val('商品名称');
-				        $('.flexigrid').addClass('hideBody');
+	    Modify:function(){
+		      var gd = $('#flexgrid').flexModify(function(a){ 
+		      if (a != null){	
+		                var id = a.attr('id').substring(3);
+			            $('.flexigrid').addClass('hideBody');
 				        $('#grid_add').show();
-			                $('#flexgrid').flexReload();
-			               }
-			               else
-			                  alert('清先选择商品。');
-				   });	
+			            $('#flexgrid').flexReload();
+						$.ajax({
+								type : 'post',
+								url : '/post/getproductinfo',
+								data : '&id='+id,
+								beforeSend : function(XMLHttpRequest) {
+									$('.loading').show(); 
+								},
+								success : function(data, textStatus) {
+					              $('#grid_add').html(data); 
+								},
+								complete : function(XMLHttpRequest, textStatus) {
+								  	$('.loading').remove(); 
+								},
+								error : function() {
+									// 请求出错处理
+								}
+							});
+			
+			         }
+			   else
+			      alert('清先选择商品。');
+		       });	
 		     },
 		RowDelete:function(){
 				   var gd = $('#flexgrid').flexDeleteRows(function(a){ 

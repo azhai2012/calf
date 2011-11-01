@@ -95,7 +95,7 @@ class Controller_Post extends Controller {
 	$sortorder =  Arr::get($_POST,'sortorder','desc');
 	$query     =  Arr::get($_POST,'query',false);
 	$qtype     =  Arr::get($_POST,'qtype',false);
-       
+        
         $pg= ($page-1)*$rp;
 
         $sortorder= ($sortorder=='desc')? -1 : 1;
@@ -104,7 +104,7 @@ class Controller_Post extends Controller {
 
 	$product_db = Calfdb_Admin::execute('Product','',$p);
 	$array_data = $product_db->get_admin_product_manager_array_data();
-
+      
 	$rows=$array_data['rows'];
 	//***
 	$total =$array_data['total'];
@@ -125,6 +125,38 @@ class Controller_Post extends Controller {
 	}
 
         $this->template = json_encode($jsonData);
+     }
+
+     public function action_getproductinfo(){
+	
+ 	$id= Arr::get($_POST,'id','');
+
+        $p=array('id'=> $id );
+        $product_db = Calfdb_Admin::execute('Product','',$p);
+	$array_data = $product_db->get_admin_product_info_array_data();	
+	$row= $array_data['rows'];
+	$data = array(
+	      array('display_name' =>'编号','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'id','value'=>$row['id']),
+              array('display_name' =>'商品分类','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'category','value'=>$row['category'],
+                    'subvalue'=>array('化学药制剂','中成药','生物制品','保健食品','器械')),
+	      array('display_name' =>'剂型','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'product_type','value'=>$row['product_type'],
+	            'subvalue'=>array('针剂','片剂','口服外用','一类医疗器械','二类医疗器械','三类医疗器械','其他')),
+	      array('display_name' =>'商品名称','type'=>'text','attr'=>'','width'=>300,'placeholder'=>'必填','name'=>'name','value'=>$row['name']),
+	      array('display_name' =>'商品通用名称','type'=>'text','attr'=>'','width'=>300,'placeholder'=>'必填','name'=>'general_name','value'=>$row['general_name']),
+	      array('display_name' =>'规格','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'norm','value'=>$row['norm']),
+	      array('display_name' =>'单位','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'unit','value'=>$row['unit']),
+	      array('display_name' =>'生产企业','type'=>'text','attr'=>'','width'=>300,'placeholder'=>'必填','name'=>'factory','value'=>$row['factory']),
+	      array('display_name' =>'批准文号','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'certificateNo','value'=>$row['certificateNo']),
+	      array('display_name' =>'包装','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'group','value'=>$row['group']),
+	      array('display_name' =>'中包装','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'middle_group','value'=>$row['middle_group']),
+	      array('display_name' =>'国批价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'general_price','value'=>$row['general_price']),
+	      array('display_name' =>'功能主治','type'=>'textarea','attr'=>'cols=57 rows=6','placeholder'=>'请输入该商品的功能','name'=>'uses','value'=>$row['uses']),
+	);
+	
+	$this->template = View::factory('admin/product/product/modify'); 
+ 	$this->template->array_data= $data;	 
+        
+      
      }
 
      public function after() {

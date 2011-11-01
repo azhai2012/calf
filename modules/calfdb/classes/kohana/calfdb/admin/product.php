@@ -21,6 +21,17 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 	      
 	}  
 
+        public function get_admin_product_info_array_data(){
+	   
+	    $params = $this->_data;
+	    $query  = array("id"=>(string)$params['id']);  
+	    $array_data =array(
+	                       'rows'=>$this->_db->find_one('products',$query),
+                               );
+	    return $array_data;
+	
+        }
+
        /**
         * 
         */
@@ -60,7 +71,7 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 	    switch ($qtype){
 	       case 'is_active': $query = array($qtype => (float)$query); break;
 	       case 'id': $query = array($qtype => (int)$query); break;
-	       default: $query = array($qtype => new MongoRegex("/^$query/i"));
+	       default: $query = array('$or'=>array(array($qtype => new MongoRegex("/^$query/i")),array('name_code' => new MongoRegex("/^$query/i"))));
             }
             else $query=array();
 
