@@ -25,7 +25,7 @@ class Controller_Home extends Controller {
     public function action_index() {
            parent::before();
            $sk = $this->_sk;
-            $home_db = Calfdb_Admin::execute('Home',$this->_id,$this->_data);
+            $home_db = Calfdb_Admin::instance('Home',$this->_id,$this->_data);
            switch ($sk) {
            	case 'news':
            		$this->template= View::factory('admin/home/news/content')
@@ -59,10 +59,10 @@ class Controller_Home extends Controller {
            parent::before();
            $sk = $this->_sk;
            $p = array('page'=>1,'prepage'=>10,'sortname'=>'display_name','sortorder'=>'desc','query'=>'','qtype' =>'display_name' );
-           $product_db = Calfdb_Admin::execute('Product',$this->_id,$p);
+           $product_db = Calfdb_Admin::instance('Product',$this->_id,$p);
            $p = array('page'=>1,'prepage'=>10,'sortname'=>'id','sortorder'=>'desc','query'=>'','qtype' =>'id' );
 		
-           $product_order_db = Calfdb_Admin::execute('Order',$this->_id,$p);
+           $product_order_db = Calfdb_Admin::instance('Order',$this->_id,$p);
 
            switch ($sk) {
            	case 'managerproduct':
@@ -101,7 +101,7 @@ class Controller_Home extends Controller {
 	public function action_hots() {
           parent::before();
           $sk =$this->_sk;
-          $hots_db = Calfdb_Admin::execute('Hots',$this->_id,$this->_data);
+          $hots_db = Calfdb_Admin::instance('Hots',$this->_id,$this->_data);
 
           switch ($sk) {
           	case 'manager':
@@ -132,7 +132,7 @@ class Controller_Home extends Controller {
 	public function action_tuan() {
             parent::before();
             $sk = $this->_sk;
-            $tuan_db = Calfdb_Admin::execute('Tuan',$this->_id,$this->_data);
+            $tuan_db = Calfdb_Admin::instance('Tuan',$this->_id,$this->_data);
             switch ($sk) {
         	case 'managerteam':
         		$this->template= View::factory('admin/tuan/manager/content') 
@@ -159,7 +159,7 @@ class Controller_Home extends Controller {
 	public function action_discounts() {
             parent::before();
             $sk = $this->_sk;
-            $discount_db = Calfdb_Admin::execute('Discount',$this->_id,$this->_data);
+            $discount_db = Calfdb_Admin::instance('Discount',$this->_id,$this->_data);
             switch ($sk) {
         	case 'manager':
         		$this->template= View::factory('admin/discount/manager/content')
@@ -186,7 +186,7 @@ class Controller_Home extends Controller {
 	public function action_community() {
              parent::before();
             $sk = $this->_sk;
-            $community_db = Calfdb_Admin::execute('Community',$this->_id,$this->_data);
+            $community_db = Calfdb_Admin::instance('Community',$this->_id,$this->_data);
             switch ($sk) {
          	case 'manager':
     		$this->template= View::factory('admin/community/manager/content'); 

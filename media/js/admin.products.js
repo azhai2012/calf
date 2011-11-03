@@ -51,10 +51,9 @@ var Products={
 		      var gd = $('#flexgrid').flexModify(function(a){ 
 		      if (a != null){	
 		                var id = a.attr('id').substring(3);
-			            $('.flexigrid').addClass('hideBody');
+			            $('.flexigrid').hide();
 				        $('#grid_add').show();
-			            $('#flexgrid').flexReload();
-						$.ajax({
+			            $.ajax({
 								type : 'post',
 								url : '/post/getproductinfo',
 								data : '&id='+id,
@@ -65,7 +64,9 @@ var Products={
 					              $('#grid_add').html(data); 
 								},
 								complete : function(XMLHttpRequest, textStatus) {
-								  	$('.loading').remove(); 
+								  	$('.loading').remove();
+								    $('#flexgrid').flexReload();
+									
 								},
 								error : function() {
 									// 请求出错处理
@@ -77,6 +78,83 @@ var Products={
 			      alert('清先选择商品。');
 		       });	
 		     },
+		Serialize:function(obj){
+		    switch (obj.constructor){
+			   case Object:
+				 var str="{";
+				 for (var o in obj){
+					str += "\""+o+"\"" +":"+Products.Serialize(obj[o])+",";
+				 }
+				 
+				 if (str.substr(str.length-1)==","){
+				    str= str.substr(0,str.length-1);	
+				 }
+				
+				 return str+"}";
+				 break;
+				
+			   case Array:
+			     var str="[";
+			     for (var o in obj){
+				   str+= Products.Serialize(obj[o])+",";
+		     	 }	
+		         if (str.substr(str.length-1)==","){
+				    str= str.substr(0,str.length-1);	
+				 }
+                 return str+"]";
+				 break;
+			
+			   case Boolean:
+			      return "\""+ obj.toString() +"\"";	 
+			      break;
+			
+			   case Date:
+			      return "\""+ obj.toString() +"\"";	 
+			      break;
+			   
+			   case Number:
+				      return "\""+ obj.toString() +"\"";	 
+				      break;
+   			   case String:
+					      return "\""+ obj.toString() +"\"";	 
+					      break;
+		    }
+		},
+	    UpdateToDb:function(obj){
+             alert(obj);
+		     $.ajax({
+						type : 'post',
+						url : '/post/productinfoupdate',
+						data :'&data='+obj,
+						beforeSend : function(XMLHttpRequest) {
+							//$('.loading').show(); 
+						},
+						success : function(data, textStatus) {
+			                alert(data);
+			                //$('#grid_add').html(data); 
+						},
+						complete : function(XMLHttpRequest, textStatus) {
+						  	//$('.loading').remove();
+						},
+						error : function() {
+							// 请求出错处理
+						}
+					});
+	    },
+		ModityContent:function(){
+            var ary = {};
+            var serialize = '{}';
+			$(".uiInfoTable:first td input").each(function(a,b){
+			     var self = $(b);
+			     if (self.attr('class').indexOf("ismodity")>0 || a<1){
+			       var _name=self.attr("name");
+			       var _value= self.val();
+			       ary[_name]=_value;
+			     }
+			});
+			serialize = Products.Serialize(ary);
+		    Products.UpdateToDb(serialize);  
+		},
 		RowDelete:function(){
 				   var gd = $('#flexgrid').flexDeleteRows(function(a){ 
 				     if (a != null)

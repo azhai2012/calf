@@ -39,7 +39,7 @@ class Controller_Post extends Controller {
 
         $p = array('page'=>$pg,'prepage'=>$rp,'sortname'=>$sortname,'sortorder'=>$sortorder,'query'=>$query,'qtype'=>$qtype);
 
-	$order_db = Calfdb_Admin::execute('Order','',$p);
+	$order_db = Calfdb_Admin::instance('Order','',$p);
 	$array_data = $order_db->get_admin_order_list_array_data();
 
 	$rows=$array_data['rows'];
@@ -61,7 +61,7 @@ class Controller_Post extends Controller {
         }
         else
         {
-		$order_db = Calfdb_Admin::execute('Order','',array('order_id'=>(int)$flag));
+		$order_db = Calfdb_Admin::instance('Order','',array('order_id'=>(int)$flag));
 		$array_data = $order_db->get_admin_order_details_array_data();
 		$rows=$array_data['rows']; 
 		$total =$array_data['total']; 
@@ -102,7 +102,7 @@ class Controller_Post extends Controller {
 
         $p = array('page'=>$pg,'prepage'=>$rp,'sortname'=>$sortname,'sortorder'=>$sortorder,'query'=>$query,'qtype'=>$qtype);
 
-	$product_db = Calfdb_Admin::execute('Product','',$p);
+	$product_db = Calfdb_Admin::instance('Product','',$p);
 	$array_data = $product_db->get_admin_product_manager_array_data();
       
 	$rows=$array_data['rows'];
@@ -127,12 +127,20 @@ class Controller_Post extends Controller {
         $this->template = json_encode($jsonData);
      }
 
+     public function action_productinfoupdate(){
+	  $attr = Arr::get($_POST,"data","");////json_decode($_POST['data']);
+	  $ary = json_decode($attr,true);
+	  //$product_db = Calfdb_Admin::instance('Product','',$ary);
+          //$result = $product_db->set_admin_modity_product_info_array_data();
+	  $this->template = $ary;
+     }
+
      public function action_getproductinfo(){
 	
  	$id= Arr::get($_POST,'id','');
 
         $p=array('id'=> $id );
-        $product_db = Calfdb_Admin::execute('Product','',$p);
+        $product_db = Calfdb_Admin::instance('Product','',$p);
 	$array_data = $product_db->get_admin_product_info_array_data();	
 	$row= $array_data['rows'];
 	$data = array(

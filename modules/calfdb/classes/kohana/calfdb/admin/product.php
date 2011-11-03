@@ -20,6 +20,19 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 	        $this->_db = parent::_calgdb();
 	      
 	}  
+	
+	public function set_admin_modity_product_info_array_data(){
+
+	    $params = $this->_data;
+	    $query  = array("id"=>(string)$params['id']);  
+	    unset($params['id']); 
+	    foreach ($params as $key => $value) {
+	       $newobj=array("$set"=>array("$key"=>"$value")); 
+	       $this->_db->update('products',$query,$newobj);
+	    }
+	    return  $array_data;
+
+        }
 
         public function get_admin_product_info_array_data(){
 	   

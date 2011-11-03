@@ -26,7 +26,7 @@ class Kohana_Calfdb_Admin {
 	/**
 	* 
 	*/
-	public static function execute($name,$id,$data) {
+	public static function instance($name,$id,$data) {
 	    // TODO :
 	    $class ='Kohana_Calfdb_Admin_'.$name;
 	    return new $class($id,$data);

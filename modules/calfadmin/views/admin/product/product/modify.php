@@ -26,9 +26,23 @@
 		       beforeSubmit: function(form,iframe){$('#loading').html('loading...');},
 		       afterSubmit: function(form,iframe){$('#loading').html('');$('#file',form).val('');}
 		 });
-	        $.Placeholder.init();
+	       $.Placeholder.init();
           
                $( "#tabs" ).tabs();
+	       $("#btn_save").click(function(){
+		   Products.ModityContent(); 
+	       });
+	       
+	        $(".cancel").click(function(){
+		  	$('.flexigrid').show();
+		        $('#grid_add').hide();  
+	        });
+	      
+	       	$(".uiInfoTable:first td input").each(function(){
+		    $(this).keyup(function(){
+		        $(this).addClass("ismodity");	
+		    });
+	        }); 
 	       
           }); 	
        </script>
@@ -51,17 +65,22 @@
 	        <td> 
 		 <select>
 	    	   <?php foreach ($select AS $skey => $svalue): ?>
-		      <option><?php echo $svalue ?></option>  
+		      <?php $selected = ($svalue===$value['value'])? 'selected':'' ; ?>
+		      <option <?php echo $selected; ?>><?php echo $svalue ?></option>  
 		   <?php endforeach ?> 
 	         </select>
 	        </td> 
 	      <?php else: ?> 
+	      <?php if ($key=="id"): ?>
+	         <td class="data" ><input readonly style="width:<?php echo $value['width'] ?>px;color:#000" type="<?php echo $value['type'] ?>" <?php echo 'width='.$value['width'].'px' ?> class="inputtext" title="<?php echo $value['display_name'] ?>" placeholder="<?php echo $value['placeholder'] ?>" name="<?php echo $value['name'] ?>" value="<?php echo $value['value'] ?>" id="<?php echo $ids.'_'.$key ?>"></td>
+	      <?php else: ?> 		
 	      <?php if($value['type']=='textarea'): ?>
-	       <td class="data"><textarea id="<?php echo $ids.'_'.$key ?>" placeholder="<?php echo $value['placeholder'] ?>" <?php echo $value['attr'] ?>></textarea></td> 	
+	         <td class="data"><textarea id="<?php echo $ids.'_'.$key ?>" placeholder="<?php echo $value['placeholder'] ?>" <?php echo $value['attr'] ?>></textarea></td> 	
 	      <?php else: ?>	
   	         <td class="data" ><input style="width:<?php echo $value['width'] ?>px;color:#000" type="<?php echo $value['type'] ?>" <?php echo 'width='.$value['width'].'px' ?> class="inputtext" title="<?php echo $value['display_name'] ?>" placeholder="<?php echo $value['placeholder'] ?>" name="<?php echo $value['name'] ?>" value="<?php echo $value['value'] ?>" id="<?php echo $ids.'_'.$key ?>"></td>
                <?php endif ?>
               <?php endif ?>
+             <?php endif ?>
            </tr>
         <?php endforeach ?>
          </tbody>	  
@@ -93,8 +112,8 @@
        </div> <!-- end tabs-3 -->
  </div> <!-- end tabs -->
 <div class="mtm" style="margin-bottom:20px;" >
-   <label class="submit uiButton" id="uvh5i2_7" for="uvh5i2_9">
-   <input value="保存更改" type="submit" id="uvh5i2_9"></label>
+   <label class="submit uiButton" id="uvh5i2_7" for="btn_save">
+   <input value="保存更改" type="submit" id="btn_save"></label>
    <label class="cancel uiButton" for="uvh5i2_10">
    <input value="取消" type="button" id="uvh5i2_10"></label>
 </div>

@@ -133,7 +133,24 @@ class Controller_Test extends Controller {
 	     //   $array_data = array(array('a'=>1),array('a'=>2),array('a'=>3),);
 	   //     $db->save('products',$array_data);   */
 	 //"amount" : "10.00", "batch" : "20100101", "create_date" : "2011-01-01 03:00", "discount_id" : "", "flows" : 1, "id" : 121312, "product_id" : "1044380", "quantity" : 30, "rowid" : 3, "validity" : "201201" 
-	       $p = array('page'=>1,'prepage'=>10,'sortname'=>'id','sortorder'=>'desc','query'=>'','qtype'=>'id');
+	    $params=array("id"=>'1044365',"name"=>'脑蛋白水解物片123','unit'=>'盒11');  
+	    $query = array("id"=>$params['id']); 
+	    unset($params['id']);
+	    $ary ='array("$set")=>[';
+	    
+	    foreach ($params as $key => $value) {
+	      $ary.='array("'.$key.'"=>"'.$value.'"),';
+	    } 
+	    $ary .= ']))';  
+          
+	    print_r($ary);
+           //$db = MangoDB::instance('default');
+	    //$array_data =$db->update('products',$query,array("$set":[array($params))),
+           // echo $array_data;
+ 	    
+	    
+	
+	 /*$p = array('page'=>1,'prepage'=>10,'sortname'=>'id','sortorder'=>'desc','query'=>'','qtype'=>'id');
 
 		$product_db = Calfdb_Admin::execute('Product','',$p);
 		$array_data = $product_db->get_admin_product_manager_array_data();
