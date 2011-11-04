@@ -20,18 +20,79 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 	        $this->_db = parent::_calgdb();
 	      
 	}  
-	
-	public function set_admin_modity_product_info_array_data(){
+ 
+        private function add_product(){
+	      $params = $this->_data;
+	      $ary = array();
+	      $displayname='';
+	 
+	      foreach ($params AS $key => $value) {
+		      $ary["$key"]="$value";
+		      if ($key=="name") {
+		          $displayname= $value;
+		          $ary['name_code']= Pinyin::instance()->getInitials($value);  
+		      } 
+		      if ($key=="norm") $displayname.= " ".$value;
+		      if ($key=="factory") {
+			$displayname.=" ".$value;
+		 	$ary['factory_code']= Pinyin::instance()->getInitials($value);  
+		     } 
+	       }
+	       $ary['display_name']= $displayname;
+	       $ary['create_date']= date('Y-m-d');
+               $ary['active_date']= date('Y-m-d');
+               $ary['is_active']= "1";
+               $ary['uses']= '';
 
+	 
+               
+               
+               $return =$this->_db->insert('products',$ary);
+               
+	       return  $return;
+	
+        } 	
+
+        private function modity_product(){
 	    $params = $this->_data;
 	    $query  = array("id"=>(string)$params['id']);  
-	    unset($params['id']); 
-	    foreach ($params as $key => $value) {
-	       $newobj=array("$set"=>array("$key"=>"$value")); 
-	       $this->_db->update('products',$query,$newobj);
-	    }
-	    return  $array_data;
+	    unset($params['id']);
 
+	    foreach ($params as $key => $value) {
+	       $newobj=array('$set'=>array("$key"=>"$value")); 
+	       $return =$this->_db->update('products',$query,$newobj);	  
+
+	       $displayname='';
+	       if (($key=="name") OR ($key=="norm") OR ($key=="factory"))
+	       {
+
+	 	  $find = $this->_db->find_One('products',$query); 
+	          switch ($key){
+		    case "name": 
+		      $displayname = $value.' '.$find['norm'].' '.$find['factory']; 
+		    break;
+		    case "norm":  
+		      $displayname = $find['name'].' '.$value.' '.$find['factory']; 
+		    break;
+		    case "factory": 
+		      $displayname = $find['name'].' '.$find['norm'].' '.$value; 
+		    break;
+	           }
+
+	           $newobj=array('$set'=>array("display_name"=>"$displayname")); 
+	           $this->_db->update('products',$query,$newobj);
+	       }     
+	     }
+	    return  $return;
+	   
+        } 	
+
+
+	public function set_admin_product_info(){
+            switch ($this->_id){
+	        case "add": return $this->add_product(); break;
+	        case "modity": return $this->modity_product(); break; 
+            }
         }
 
         public function get_admin_product_info_array_data(){

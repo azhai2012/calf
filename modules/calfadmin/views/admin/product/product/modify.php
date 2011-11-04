@@ -30,7 +30,10 @@
           
                $( "#tabs" ).tabs();
 	       $("#btn_save").click(function(){
-		   Products.ModityContent(); 
+		  if ($('#check_change').html()=="1")
+		     Products.ModityContent(); 
+		  else
+		   alert('没有内容改变，无须保存');
 	       });
 	       
 	        $(".cancel").click(function(){
@@ -41,8 +44,17 @@
 	       	$(".uiInfoTable:first td input").each(function(){
 		    $(this).keyup(function(){
 		        $(this).addClass("ismodity");	
+		        $('#check_change').html("1");
 		    });
 	        }); 
+		
+		$(".uiInfoTable:first td select").each(function(){
+		    $(this).change(function(){
+			  $(this).addClass("ismodity");	
+			  $('#check_change').html("1");
+		    });
+		});	
+	
 	       
           }); 	
        </script>
@@ -52,7 +64,8 @@
    <li><a href="#tabs-2"><?php echo __('图片设置'); ?></a></li>
    <li><a href="#tabs-3"><?php echo __('商品描述'); ?></a></li>
 </ul>
-<div id="tabs-1"> 	 
+<div id="tabs-1"> 
+<div style="display:none" id="check_change"></div>		 
 <table class="uiInfoTable">
 <tbody>
 	<?php $ids = Text::random('hexdec',5); ?>

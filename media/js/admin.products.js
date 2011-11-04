@@ -42,13 +42,20 @@ var Products={
 				     			
 				});
 	    },
-		exports:function(){},   
+		exports:function(){},
+		ClearInfo:function(){
+		   $('#grid_add table:first td input').each(function(){
+					   $(this).val('');
+			});
+		},    
         RowAdd:function(){
 	      $('.flexigrid').hide();
+          Products.ClearInfo();
           $('#grid_add').show();
         },
 	    Modify:function(){
-		      var gd = $('#flexgrid').flexModify(function(a){ 
+		      Products.ClearInfo();
+              var gd = $('#flexgrid').flexModify(function(a){ 
 		      if (a != null){	
 		                var id = a.attr('id').substring(3);
 			            $('.flexigrid').hide();
@@ -120,17 +127,52 @@ var Products={
 					      break;
 		    }
 		},
+		AddToDb:function(obj){
+		 	    $.ajax({
+							type : 'post',
+							url : '/post/productdb/add',
+							data :'&data='+obj,
+							beforeSend : function(XMLHttpRequest) {
+								//$('.loading').show(); 
+							},
+							success : function(data, textStatus) {
+				                if (data==="1")
+				                {
+					               alert("成功保存！");
+					               $('#grid_add').hide(); 
+					               $('#flexgrid').flexReload();
+					               $('.flexigrid').show();
+			 	                }
+			                    else 
+			                    alert('保存失败!'.data);   
+				                //$('#grid_add').html(data); 
+							},
+							complete : function(XMLHttpRequest, textStatus) {
+							  	//$('.loading').remove();
+							},
+							error : function() {
+								// 请求出错处理
+							}
+						});
+		},
 	    UpdateToDb:function(obj){
-             alert(obj);
 		     $.ajax({
 						type : 'post',
-						url : '/post/productinfoupdate',
+						url : '/post/productdb/modity',
 						data :'&data='+obj,
 						beforeSend : function(XMLHttpRequest) {
 							//$('.loading').show(); 
 						},
 						success : function(data, textStatus) {
-			                alert(data);
+			                if (data==="1")
+			                {
+				               alert("成功保存！");
+				               $('#grid_add').hide(); 
+				               $('#flexgrid').flexReload();
+				               $('.flexigrid').show();
+		 	                }
+		                    else 
+		                    alert('保存失败!'.data);   
 			                //$('#grid_add').html(data); 
 						},
 						complete : function(XMLHttpRequest, textStatus) {
@@ -141,17 +183,49 @@ var Products={
 						}
 					});
 	    },
+	    AddContent:function(){
+            var ary = {};
+            var serialize = '{}';
+            $(".uiInfoTable:first td input").each(function(a,b){
+			     var self = $(b);
+			       var _name=self.attr("name");
+			       var _value= self.val();
+			       ary[_name]=_value;
+			});			 
+			$(".uiInfoTable:first td select").each(function(a,b){
+				var self= $(b);  
+				  var select = self.find("option:selected").text(); 
+				  switch (a){
+				    case 0: ary['category']= select; break;
+				    case 1: ary['product_type']= select; break;
+				  }
+		    }); 
+			serialize = Products.Serialize(ary);
+		    Products.AddToDb(serialize);  
+		},
 		ModityContent:function(){
             var ary = {};
             var serialize = '{}';
+            $("#grid_add").html();
 			$(".uiInfoTable:first td input").each(function(a,b){
 			     var self = $(b);
-			     if (self.attr('class').indexOf("ismodity")>0 || a<1){
+			     if (self.attr('class').indexOf("ismodity")>-1 || a<1){
 			       var _name=self.attr("name");
 			       var _value= self.val();
 			       ary[_name]=_value;
 			     }
-			});
+			});			 
+			$(".uiInfoTable:first td select").each(function(a,b){
+				var self= $(b);  
+				if (self.attr('class').indexOf("ismodity")>-1){
+				  var select = self.find("option:selected").text(); 
+				  switch (a){
+				    case 0: ary['category']= select; break;
+				    case 1:  ary['product_type']= select; break;
+				  }
+				} 
+			})
+			
 			serialize = Products.Serialize(ary);
 		    Products.UpdateToDb(serialize);  
 		},

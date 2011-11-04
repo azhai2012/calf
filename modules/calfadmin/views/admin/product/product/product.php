@@ -38,6 +38,15 @@
            	Products.getGrid();
            
                 $( "#tabs" ).tabs();
+               
+               	 $("#btn_save").click(function(){
+		       Products.AddContent(); 
+		  });
+
+                $("#btn_cancel").click(function(){
+	     	  $('.flexigrid').show();
+		  $('#grid_add').hide();  
+	        });
 	       
            }); 	
         </script>
@@ -125,10 +134,10 @@
 	       </div> <!-- end tabs-3 -->
          </div> <!-- end tabs -->
         <div class="mtm" style="margin-bottom:20px;" >
-	   <label class="submit uiButton" id="uvh5i2_7" for="uvh5i2_9">
-	   <input value="保存更改" type="submit" id="uvh5i2_9"></label>
-	   <label class="cancel uiButton" for="uvh5i2_10">
-	   <input value="取消" type="button" id="uvh5i2_10"></label>
+	   <label class="submit uiButton" id="uvh5i2_7" for="btn_save">
+	   <input value="保存更改" type="submit" id="btn_save"></label>
+	   <label class="cancel uiButton" for="btn_cancel">
+	   <input value="取消" type="button" id="btn_cancel"></label>
 	</div>	
     </div>	
 </div>

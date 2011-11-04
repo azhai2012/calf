@@ -127,12 +127,13 @@ class Controller_Post extends Controller {
         $this->template = json_encode($jsonData);
      }
 
-     public function action_productinfoupdate(){
+     public function action_productdb(){
 	  $attr = Arr::get($_POST,"data","");////json_decode($_POST['data']);
+	  $action = $this->request->param('id');
 	  $ary = json_decode($attr,true);
-	  //$product_db = Calfdb_Admin::instance('Product','',$ary);
-          //$result = $product_db->set_admin_modity_product_info_array_data();
-	  $this->template = $ary;
+	  $product_db = Calfdb_Admin::instance('Product',$action,$ary);
+          $result = $product_db->set_admin_product_info();
+	  $this->template = $result;
      }
 
      public function action_getproductinfo(){
