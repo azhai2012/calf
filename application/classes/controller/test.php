@@ -238,11 +238,13 @@ return $_Res;
 	 //"amount" : "10.00", "batch" : "20100101", "create_date" : "2011-01-01 03:00", "discount_id" : "", "flows" : 1, "id" : 121312, "product_id" : "1044380", "quantity" : 30, "rowid" : 3, "validity" : "201201" 
 	  
 	
-	    echo Pinyin::instance()->getInitials('复方磷酸可待因口服溶液');
+	    //echo Pinyin::instance()->getInitials('复方磷酸可待因口服溶液');
           
-           //$db = MangoDB::instance('default');
-	    //$array_data =$db->update('products',$query,array("$set":[array($params))),
-           // echo $array_data;
+            $db = MangoDB::instance('default');
+            $query  = array("id"=>"12222"); 
+	    $array_data =$db->find_one('products',$query);
+	    echo count($array_data); 
+            print_r($array_data);
  	    
 	    
 	

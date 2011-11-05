@@ -21,8 +21,33 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 	      
 	}  
  
+        /**
+        * 
+        */
+        private function delete_product() {
+            // TODO :
+            $params = $this->_data;
+            $ary=array("id"=>(string)$params['id']);
+            $return =$this->_db->remove('products',$ary);
+            return  $return;
+        } 
+      
+        /**
+        * 
+        */
+        public function check_product_id($id) {
+            // TODO :
+            $array_data = $this->_db->find_One('products',$id);
+            return $array_data;
+        }
+
         private function add_product(){
 	      $params = $this->_data;
+	      $id= array("id"=>(string)$params['id']);   
+	
+	      if ($this->check_product_id($id)) 
+	         return "-1";     
+	
 	      $ary = array();
 	      $displayname='';
 	 
@@ -41,15 +66,9 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 	       $ary['display_name']= $displayname;
 	       $ary['create_date']= date('Y-m-d');
                $ary['active_date']= date('Y-m-d');
-               $ary['is_active']= "1";
-               $ary['uses']= '';
-
-	 
-               
-               
+                
                $return =$this->_db->insert('products',$ary);
-               
-	       return  $return;
+               return  $return;
 	
         } 	
 
@@ -90,8 +109,9 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 
 	public function set_admin_product_info(){
             switch ($this->_id){
-	        case "add": return $this->add_product(); break;
+	        case "add":    return $this->add_product(); break;
 	        case "modity": return $this->modity_product(); break; 
+	        case "delete": return $this->delete_product(); break; 		
             }
         }
 
@@ -143,7 +163,7 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 	  
 	    if ($query) 
 	    switch ($qtype){
-	       case 'is_active': $query = array($qtype => (float)$query); break;
+	       case 'is_active': $query = array($qtype =>$query); break;
 	       case 'id': $query = array($qtype => (int)$query); break;
 	       default: $query = array('$or'=>array(array($qtype => new MongoRegex("/^$query/i")),array('name_code' => new MongoRegex("/^$query/i"))));
             }

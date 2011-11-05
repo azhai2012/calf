@@ -44,12 +44,16 @@ var Products={
 	    },
 		exports:function(){},
 		ClearInfo:function(){
-		   $('#grid_add table:first td input').each(function(){
-					   $(this).val('');
-			});
+		   $('#grid_add table:first td').each(function(){
+			   $(this).find('input').val('');
+			   $(this).find('textarea').val('');
+			   $(this).find('select:first').attr('selected','true');
+			   $(this).find('input[name=is_active]').attr('checked',false);			
+		   });
 		},    
         RowAdd:function(){
 	      $('.flexigrid').hide();
+	      $('input[name=id]').removeAttr("readonly");
           Products.ClearInfo();
           $('#grid_add').show();
         },
@@ -135,7 +139,12 @@ var Products={
 							beforeSend : function(XMLHttpRequest) {
 								//$('.loading').show(); 
 							},
-							success : function(data, textStatus) {
+							success : function(data, textStatus) { 
+								if (data==="-1")
+								{
+								   alert("编号重复！无法保存");	
+								}
+								else
 				                if (data==="1")
 				                {
 					               alert("成功保存！");
@@ -144,7 +153,7 @@ var Products={
 					               $('.flexigrid').show();
 			 	                }
 			                    else 
-			                    alert('保存失败!'.data);   
+			                      alert('保存失败!'.data);   
 				                //$('#grid_add').html(data); 
 							},
 							complete : function(XMLHttpRequest, textStatus) {
@@ -183,6 +192,35 @@ var Products={
 						}
 					});
 	    },
+	    DeleteToDb:function(obj){
+		     $.ajax({
+						type : 'post',
+						url : '/post/productdb/delete',
+						data :'&data='+obj,
+						beforeSend : function(XMLHttpRequest) {
+							//$('.loading').show(); 
+						},
+						success : function(data, textStatus) {
+					      
+			                if (data==="1")
+			                {
+				               //alert("成功保存！");
+				               $('#grid_add').hide(); 
+				               $('#flexgrid').flexReload();
+				               $('.flexigrid').show();
+		 	                }
+		                    else 
+		                    alert('保存失败!'.data);   
+			                //$('#grid_add').html(data); 
+						},
+						complete : function(XMLHttpRequest, textStatus) {
+						  	//$('.loading').remove();
+						},
+						error : function() {
+							// 请求出错处理
+						}
+					});
+	    },
 	    AddContent:function(){
             var ary = {};
             var serialize = '{}';
@@ -200,7 +238,12 @@ var Products={
 				    case 1: ary['product_type']= select; break;
 				  }
 		    }); 
-			serialize = Products.Serialize(ary);
+		    var description = $('textarea[name=uses]').val().replace(/[\r\n]/g,"<br>");
+		    ary['uses']=description;
+		    var active_check = $('input[name=is_active]').attr("checked");
+			ary['is_active'] = (active_check==true)? "启用" : "禁用" ;				
+		
+	     	serialize = Products.Serialize(ary);
 		    Products.AddToDb(serialize);  
 		},
 		ModityContent:function(){
@@ -225,24 +268,36 @@ var Products={
 				  }
 				} 
 			})
-			
+		    var description = $('textarea[name=uses]').val().replace(/[\r\n]/g,"<br>");
+		 	ary['uses']=description;
+		    var active_check = $('input[name=is_active]').attr("checked");
+		    ary['is_active'] = (active_check==true)? "启用" : "禁用" ;
+
 			serialize = Products.Serialize(ary);
 		    Products.UpdateToDb(serialize);  
 		},
+		DeleteContent:function(obj){
+		   var ary = {};
+		   ary['id']= obj;
+		   var serialize = '{}';
+		   serialize = Products.Serialize(ary);	 			
+		   Products.DeleteToDb(serialize);	
+		  
+		},
 		RowDelete:function(){
-				   var gd = $('#flexgrid').flexDeleteRows(function(a){ 
-				     if (a != null)
+			if (confirm('Delete Are you sure!'))
+			{	
+			   	     var gd = $('#flexgrid').flexDeleteRows(function(a){ 
+			 	     if (a != null)
 				     {
-				       if (confirm('Delete Are you sure!'))
-				        {	
 				          var id = a.attr('id').substring(3);
-			 	           alert(id);
-			                   $('#flexgrid').flexReload(); 
-			                }  
-				      }
+			 	             Products.DeleteContent(id);
+			                 $('#flexgrid').flexReload(); 
+			          }
 			              else 
 			                alert('清先选择商品。');
-			          });  
+			         });  
+			}
 		},
 	 
 };

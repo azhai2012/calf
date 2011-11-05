@@ -40,21 +40,31 @@
 		  	$('.flexigrid').show();
 		        $('#grid_add').hide();  
 	        });
-	      
-	       	$(".uiInfoTable:first td input").each(function(){
-		    $(this).keyup(function(){
+	
+	      	$(".uiInfoTable:first td").each(function(){
+		    $(this).find('input').keyup(function(){
 		        $(this).addClass("ismodity");	
 		        $('#check_change').html("1");
 		    });
-	        }); 
-		
-		$(".uiInfoTable:first td select").each(function(){
-		    $(this).change(function(){
-			  $(this).addClass("ismodity");	
-			  $('#check_change').html("1");
+		 
+		   $(this).find('select').change(function(){
+		        $(this).addClass("ismodity");	
+		        $('#check_change').html("1");
 		    });
-		});	
-	
+		   
+		   $(this).find('textarea').change(function(){
+		        $(this).addClass("ismodity");	
+		        $('#check_change').html("1");
+		    });
+		
+		  $(this).find('input[name=is_active]').change(function(){
+		        $(this).addClass("ismodity");	
+		        $('#check_change').html("1");
+		    });
+		    
+	        });
+	        
+	    
 	       
           }); 	
        </script>
@@ -68,6 +78,7 @@
 <div style="display:none" id="check_change"></div>		 
 <table class="uiInfoTable">
 <tbody>
+
 	<?php $ids = Text::random('hexdec',5); ?>
         <?php $count= count($array_data); ?>
 	<?php foreach ($array_data AS $key => $value): ?>
@@ -84,18 +95,20 @@
 	         </select>
 	        </td> 
 	      <?php else: ?> 
-	      <?php if ($key=="id"): ?>
-	         <td class="data" ><input readonly style="width:<?php echo $value['width'] ?>px;color:#000" type="<?php echo $value['type'] ?>" <?php echo 'width='.$value['width'].'px' ?> class="inputtext" title="<?php echo $value['display_name'] ?>" placeholder="<?php echo $value['placeholder'] ?>" name="<?php echo $value['name'] ?>" value="<?php echo $value['value'] ?>" id="<?php echo $ids.'_'.$key ?>"></td>
-	      <?php else: ?> 		
+              <?php if($value['type']=='checkbox'): ?>
+	         <td class="data"><input type="checkbox" <?php echo $value['attr'] ?>  name="<?php echo $value['name'] ?>"  id="<?php echo $ids.'_'.$key ?>"  /></td> 	
+	      <?php else: ?>
 	      <?php if($value['type']=='textarea'): ?>
-	         <td class="data"><textarea id="<?php echo $ids.'_'.$key ?>" placeholder="<?php echo $value['placeholder'] ?>" <?php echo $value['attr'] ?>></textarea></td> 	
+	         <td class="data"><textarea name="<?php echo $value['name'] ?>" id="<?php echo $ids.'_'.$key ?>" placeholder="<?php echo $value['placeholder'] ?>" <?php echo $value['attr'] ?>><?php echo str_replace('<br>',chr(13),$value['value']) ?></textarea></td> 	
 	      <?php else: ?>	
-  	         <td class="data" ><input style="width:<?php echo $value['width'] ?>px;color:#000" type="<?php echo $value['type'] ?>" <?php echo 'width='.$value['width'].'px' ?> class="inputtext" title="<?php echo $value['display_name'] ?>" placeholder="<?php echo $value['placeholder'] ?>" name="<?php echo $value['name'] ?>" value="<?php echo $value['value'] ?>" id="<?php echo $ids.'_'.$key ?>"></td>
+  	   	   <?php $readonly = (($key=="id") and ($action=='modity')) ? 'readonly': '';  ?>  
+	           <td class="data" ><input <?php echo $readonly; ?> style="width:<?php echo $value['width'] ?>px;color:#000" type="<?php echo $value['type'] ?>" <?php echo 'width='.$value['width'].'px' ?> class="inputtext" title="<?php echo $value['display_name'] ?>" placeholder="<?php echo $value['placeholder'] ?>" name="<?php echo $value['name'] ?>" value="<?php echo $value['value'] ?>" id="<?php echo $ids.'_'.$key ?>"></td>
+                <?php endif ?>
                <?php endif ?>
               <?php endif ?>
-             <?php endif ?>
-           </tr>
+            </tr>
         <?php endforeach ?>
+
          </tbody>	  
        </table>
         </div> <!-- end tabs-1 -->

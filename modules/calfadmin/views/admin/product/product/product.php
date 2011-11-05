@@ -74,11 +74,13 @@
 		      array('display_name' =>'规格','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'norm','value'=>''),
 		      array('display_name' =>'单位','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'unit','value'=>''),
 		      array('display_name' =>'生产企业','type'=>'text','attr'=>'','width'=>300,'placeholder'=>'必填','name'=>'factory','value'=>''),
-		      array('display_name' =>'批准文号','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'certificateNo','value'=>''),
+		      array('display_name' =>'批准文号','type'=>'text','attr'=>'','width'=>150,'placeholder'=>'必填','name'=>'certificateNo','value'=>''),
 		      array('display_name' =>'包装','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'group','value'=>''),
 		      array('display_name' =>'中包装','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'middle_group','value'=>''),
 		      array('display_name' =>'国批价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'general_price','value'=>''),
 		      array('display_name' =>'功能主治','type'=>'textarea','attr'=>'cols=57 rows=6','placeholder'=>'请输入该商品的功能','name'=>'uses','value'=>''),
+		      array('display_name' =>'启用','type'=>'checkbox','attr'=>'style="margin-top:7px"','name'=>'is_active'),
+
 		); 
 		
 		
@@ -96,14 +98,18 @@
 			   <?php endforeach ?> 
 		         </select>
 		        </td> 
-		      <?php else: ?> 
+		      <?php else: ?>
+		      <?php if($value['type']=='checkbox'): ?>
+		         <td class="data"><input type="checkbox" name="<?php echo $value['name'] ?>"  id="<?php echo $ids.'_'.$key ?>" <?php echo $value['attr'] ?> /></td> 	
+		      <?php else: ?> 		 
 		      <?php if($value['type']=='textarea'): ?>
-		       <td class="data"><textarea id="<?php echo $ids.'_'.$key ?>" placeholder="<?php echo $value['placeholder'] ?>" <?php echo $value['attr'] ?>></textarea></td> 	
+		       <td class="data"><textarea name="<?php echo $value['name'] ?>"  id="<?php echo $ids.'_'.$key ?>" placeholder="<?php echo $value['placeholder'] ?>" <?php echo $value['attr'] ?>></textarea></td> 	
 		      <?php else: ?>	
 	  	         <td class="data" ><input style="width:<?php echo $value['width'] ?>px;color:#000" type="<?php echo $value['type'] ?>" <?php echo 'width='.$value['width'].'px' ?> class="inputtext" title="<?php echo $value['display_name'] ?>" placeholder="<?php echo $value['placeholder'] ?>" name="<?php echo $value['name'] ?>" value="<?php echo $value['value'] ?>" id="<?php echo $ids.'_'.$key ?>"></td>
 	               <?php endif ?>
 	              <?php endif ?>
-	           </tr>
+	            <?php endif ?>
+		  </tr>
 	        <?php endforeach ?>
 	         </tbody>	  
 	       </table>
