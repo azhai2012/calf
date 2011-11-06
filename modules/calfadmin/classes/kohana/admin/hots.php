@@ -21,7 +21,7 @@ class Kohana_Admin_Hots {
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
-		$this->_calfDb = Calfdb_Admin::execute('Hots',$this->_id,$this->_data); 
+		$this->_calfDb = Calfdb_Admin::instance('Hots',$this->_id,$this->_data); 
 	}
 	
 	/**

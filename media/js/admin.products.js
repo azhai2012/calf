@@ -44,11 +44,13 @@ var Products={
 	    },
 		exports:function(){},
 		ClearInfo:function(){
+		   $('#message').hide();	 
 		   $('#grid_add table:first td').each(function(){
 			   $(this).find('input').val('');
 			   $(this).find('textarea').val('');
 			   $(this).find('select:first').attr('selected','true');
-			   $(this).find('input[name=is_active]').attr('checked',false);			
+			   $(this).find('input[name=is_active]').attr('checked',false);	
+			   		
 		   });
 		},    
         RowAdd:function(){
@@ -130,6 +132,27 @@ var Products={
 					      return "\""+ obj.toString() +"\"";	 
 					      break;
 		    }
+		},
+		Validate:function(){
+			var result= true;
+		    $(".uiInfoTable:first td input").each(function(a,b){
+			       var self = $(b);
+			       var _name = self.attr("placeholder");
+			       var _value = self.val().replace(/(^\s*)|(\s*$)/g, "");  
+			       if (_name==="必填"){
+				      if ((_value === '') || (_value === "必填")){
+					    $(self).addClass("validate");
+					    $(self).parent().append('<span id="validate_msg" style="padding-left:3px;color:red;">'+$(self).attr('msg')+'</b>'); 
+				 	    result= false; 
+					    return result;
+				      }
+				      else  {
+					   $(self).removeClass('validate');
+				       $('#validate_msg').remove();
+				      }
+			       }
+			});	
+			return result; 
 		},
 		AddToDb:function(obj){
 		 	    $.ajax({
@@ -222,6 +245,9 @@ var Products={
 					});
 	    },
 	    AddContent:function(){
+		
+		    if (!Products.Validate()) { return; };
+		    $('#message').hide();
             var ary = {};
             var serialize = '{}';
             $(".uiInfoTable:first td input").each(function(a,b){

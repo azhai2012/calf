@@ -8,21 +8,22 @@
  *
  */
 
-class Kohana_Admin_Community {
+class Kohana_Admin_Community{	
 
-	private $_id;
-	private $_data;
-	private $_calfD;
 	
+     private $_id;
+     private $_data;
+     private $_calfDb;
 	
-    public static function factory($id,array $data= NULL){
-		return new Kohana_Admin_Community($id,$data);
-	}
-
-	function __construct($id,array $data=NULL){
+      public static function factory($id,array $data= NULL){
+	
+	   return new Kohana_Admin_Community($id,$data);
+      }
+      
+      function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
-		$this->_calfDb = Calfdb_Admin::execute('Community',$this->_id,$this->_data); 
+		$this->_calfDb = Calfdb_Admin::instance('Community',$this->_id,$this->_data); 
 	}
 
 	/**
@@ -41,8 +42,14 @@ class Kohana_Admin_Community {
             return $template;
         }
 
-
-	function __get($name){ if(isset($this->$name)){ return $this->$name; }else { return NULL; } }
+	
+	function  __get($name){
+	   if(isset($this->$name)){ 
+          return $this->$name;
+	   }else { 
+          return NULL;
+           } 
+	}
 
 	function __set($name,$value){
 
@@ -62,6 +69,7 @@ class Kohana_Admin_Community {
 		return $data;
 
 	}
+
 
 
 }

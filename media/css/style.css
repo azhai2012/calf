@@ -17,6 +17,10 @@ a{color:#385998;cursor:pointer;text-decoration:none;font-family:"宋体"}
 .clearfix{display:block;zoom:1;}
 .clearfix:after{content:".";clear:both;display:block;font-size:0px;height:0px;line-height:0;visibility:hidden;}
 * html .clearfix{height:1%;}
+.error,.success,.warning {margin:10px 0px 12px 0px;padding: 14px 14px 14px 35px;margin-bottom: 12px;font-size: 1.1em; border: 2px solid;}
+.error {background: url(/media/images/warning.gif) no-repeat 12px 13px; background-color: #ffe3e3;border-color: #dd0000; color: #880000;}
+.success {background:url(/media/images/success.gif) no-repeat 12px 13px; background-color: #dfffdf;border-color: #9fcf9f; color: #005f00;}
+.warning {background: url(/media/images/warning.gif) no-repeat 12px 13px;background-color: #FFEBC1;border-color: #FDBF3B;color: #A6750C;text-align: left;}
 
 .opcaity{filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;}
 
