@@ -239,8 +239,46 @@ return $_Res;
 	  
 	
 	    //echo Pinyin::instance()->getInitials('复方磷酸可待因口服溶液');
-          
-            $db = MangoDB::instance('default');
+           
+           $ws =Excel::instance(array(
+                     'author'       => 'Kohana-PHPExcel',
+                     'title'        => 'Report',
+                     'subject'      => 'Subject',
+                     'description'  => 'Description',
+                     'show_header'   => TRUE,
+           ));
+
+           $ws->set_active_sheet(0);
+           $as = $ws->get_active_sheet();
+           $as->setTitle('Report');
+
+           $as->getDefaultStyle()->getFont()->setSize(9);
+            
+           $as->getColumnDimension('A')->setWidth(7);
+           $as->getColumnDimension('B')->setWidth(50);
+           $as->getColumnDimension('C')->setWidth(12);
+           $as->getColumnDimension('D')->setWidth(10);
+           
+
+           
+           $data = array(
+                   'rows'=>array( 
+     	              array('id'=>1,'name'=>'约翰','age'=>2, 'time'=>'D'),
+	              array('id'=>1,'name'=>'John','age'=>2, 'time'=>'D'),
+		      array('id'=>2,'name'=>'John','age'=>5, 'time'=>587),
+                      array('id'=>3,'name'=>'太棒了', 'age'=>3, 'time'=>981),
+                      array('id'=>4, 'name'=>'Anny', 'age'=>1, 'time'=>214)
+                    )
+                );
+     
+           $columns = array('id'=>'编号','name'=>'姓名','age'=>'年龄','time'=>'时间'); 
+            	
+           $ws->set_data($data['rows'],$columns,TRUE);
+	   $ws->send(array('name'=>'report','format'=>'PDF'));
+         
+// $ws->save(array('name'=>'report','path'=>'/Users/zhaibob/Downloads/', 'format'=>'Excel5'));
+
+           /* $db = MangoDB::instance('default');
             $query  = array("id"=>"12222"); 
 	    $array_data =$db->find_one('products',$query);
 	    echo count($array_data); 

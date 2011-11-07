@@ -108,9 +108,10 @@ Kohana::modules(array(
 	 'pagination' => MODPATH.'pagination', // Paging of results
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
-	 'mssql'      => MODPATH.'mssql',
-     'captcha'    => MODPATH.'captcha',
-     //'calfpub'    => MODPATH.'calfpub',
+	// 'mssql'      => MODPATH.'mssql',
+        'captcha'    => MODPATH.'captcha',
+        'excel'      => MODPATH.'excel',     
+//'calfpub'    => MODPATH.'calfpub',
      //'calfcms'    => MODPATH.'calfcms', // add to ajax.php if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
 
     //'calfmeet'   => MODPATH.'calfmeet', // add to ajax.php if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
