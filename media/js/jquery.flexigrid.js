@@ -854,12 +854,79 @@
 			g.tDiv.className = 'tDiv';
 			var tDiv2 = document.createElement('div');
 			tDiv2.className = 'tDiv2';
-			for (var i = 0; i < p.buttons.length; i++) {
+		    for (var i = 0; i < p.buttons.length; i++) {
 				var btn = p.buttons[i];
 				if (!btn.separator) {
 					var btnDiv = document.createElement('div');
 					btnDiv.className = 'fbutton';
-					btnDiv.innerHTML = ("<div><span>") + (btn.hidename ? "&nbsp;" : btn.name) + ("</span></div>");
+					$(btnDiv).css({'margin-left':2}); 
+					btnDiv.innerHTML = ("<div><span>") + (btn.hidename ? "&nbsp;" : btn.name) +("</span></div>");
+				
+				     // down
+				    if (btn.down){
+						
+					  // g.dDiv.className = 'dDiv_'+i;
+					   var dDiv = document.createElement('div');
+					   var bBtn = document.createElement('b');
+					   bBtn.className = 'bBtn';
+					   dDiv.className = 'dDiv_'+i;
+						  
+					   $(bBtn).css({'right': 0,'top': 0,'border':0,'border-left':1}).show();
+					   $(bBtn).html('<div></div>');
+					   $(bBtn).attr('name','dDiv_'+i);
+					
+					  	
+					
+					   $(bBtn).click(function () {
+						          var a01 = $(this).attr('name');
+						          var abtn = $('.'+ a01);
+					 			 
+					              if (!abtn.hasClass('dDiv'))
+						          { 
+						           abtn.addClass('dDiv');								
+						           $('.dDiv').show();
+						           var nw = $(bBtn).offset();
+								   var dd = $(g.tDiv).offset();
+								   var mdh = $(g.mDiv).height();
+								   var nh = $(g.tDiv).height();
+								   var nl = nw.left - dd.left;						                  
+								   var ntop = nh + mdh;
+								   abtn.css({
+											'left': nl,
+										 	top: ntop
+										});
+								    abtn.hover(function(){
+									   $(this).show();
+								    },function(){
+								       $(this).hide();
+								       $(this).removeClass('dDiv');
+							        })						     
+							       
+							      	$(tDiv).hover(function(){},function(){$('.dDiv').hide(); abtn.removeClass('dDiv');});  
+									$(g.mDiv).hover(function(){},function(){$('.dDiv').hide(); abtn.removeClass('dDiv');});  
+								 
+						          }
+						          else
+						          {
+							          $('.dDiv').hide(); 
+							          abtn.removeClass('dDiv');
+							      }
+						        
+							     return true;
+							 }
+							);
+							
+					        $(btnDiv).append(bBtn);	
+					
+							var dUl = document.createElement('p');
+							$(dDiv).css({'border':'1px #ccc solid','padding':'5px'});
+							dUl.innerHTML = btn.down;
+							$(dDiv).append(dUl);
+							$(dDiv).hide();								
+					        $(g.gDiv).append(dDiv);
+				
+				      }
+					
 					if (btn.bclass) $('span', btnDiv).addClass(btn.bclass).css({
 						paddingLeft: 20
 					});
@@ -875,11 +942,13 @@
 					if (btn.id) {
 						btnDiv.id = btn.id;
 					}
+					
 					if (btn.onpress) {
 						$(btnDiv).click(function () {
 							this.onpress(this.id || this.name, g.gDiv);
 						});
 					}
+	
 					$(tDiv2).append(btnDiv);
 					if ($.browser.msie && $.browser.version < 7.0) {
 						$(btnDiv).hover(function () {

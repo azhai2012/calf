@@ -115,6 +115,20 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
             }
         }
 
+        /**
+        *  导出商品信息
+        */
+	public function get_export_admin_product_info_array_data(){
+	   
+	    $params = $this->_data;
+	   // $query  = array("id"=>(string)$params['id']);  
+	    $array_data =array(
+	                       'rows'=>$this->_db->find('products',array(),array('_id'=>0)),
+                         );
+	    return $array_data;
+	
+        }
+
         public function get_admin_product_info_array_data(){
 	   
 	    $params = $this->_data;

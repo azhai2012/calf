@@ -35,14 +35,45 @@ var Products={
 				      {name:'添加',bimage:'/media/images/new.gif',onpress:function(){Products.RowAdd()}},
 				      {name:'修改',bimage:'/media/images/modify.gif',onpress:function(){Products.Modify()}},
 					  {name:'删除',bimage:'/media/images/delete.gif',onpress:function(){Products.RowDelete()}},
-					  {name:'导出',bimage:'/media/images/export.gif',onpress:function(){Products.exports()}},
-				      {name:'导入',bimage:'/media/images/import.gif',onpress:function(){Products.exports()}},
-					  {name:'打印',bimage:'/media/images/print.gif',onpress:function(){Products.exports()}},
+					  {name:'导出',bimage:'/media/images/export.gif',onpress:function(){},
+				           down:"<ul><li><a href='javascript:Products.Exports(1,1);'>导出为 EXCEL 文件</a></li><li><a href='javascript:Products.Exports(1,2);'>导出为 CSV 文件</a></li><li><a href='javascript:Products.Exports(1,3);'>导出为 PDF 文件</a></li></ul>"
+					  },
+				      {name:'导入',bimage:'/media/images/import.gif',onpress:function(){},},
+					  {name:'打印',bimage:'/media/images/print.gif',onpress:function(){}},
                     ],
 				     			
 				});
 	    },
-		exports:function(){},
+		Exports:function(p,q){
+			 var action ='';var id='';
+			 switch (p){
+			   case 1: action = 'product'; break;
+			   case 2: action = 'orders'; break;
+			 }
+			 switch (q){
+			   case 1: id = 'Excel5'; break;
+			   case 2: id = 'CSV'; break;
+			   case 3: id = 'PDF'; break;
+			 }
+		   window.location.href='/export/'+action+'/'+id;
+		   $.ajax({
+						type : 'post',
+						url : '/export/'+action+'/'+id,
+						data : '',
+						beforeSend : function(XMLHttpRequest) {
+
+							$('.loading').show(); 
+						},
+						success : function(data, textStatus) {
+			              $('.loading').html('导出成功'); 
+						},
+						complete : function(XMLHttpRequest, textStatus) {
+						},
+						error : function() {
+							// 请求出错处理
+						}
+					}); 	
+		},
 		ClearInfo:function(){
 		   $('#message').hide();	 
 		   $('#grid_add table:first td').each(function(){
