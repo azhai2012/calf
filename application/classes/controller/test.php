@@ -112,15 +112,12 @@ class Controller_Test extends Controller {
 		$db->save('prices',$value);  
 	}    */
 	  
-	
-	
-	     //   $array_data = array(array('a'=>1),array('a'=>2),array('a'=>3),);
-	   //     $db->save('products',$array_data);   */
-	 //"amount" : "10.00", "batch" : "20100101", "create_date" : "2011-01-01 03:00", "discount_id" : "", "flows" : 1, "id" : 121312, "product_id" : "1044380", "quantity" : 30, "rowid" : 3, "validity" : "201201" 
-	  
-	
-	    //echo Pinyin::instance()->getInitials('复方磷酸可待因口服溶液');
+
+           
             
+   
+           /*  excel 
+
            $ws =Excel::instance(array(
                      'author'       => 'Kohana-PHPExcel',
                      'title'        => 'Report',
@@ -128,8 +125,24 @@ class Controller_Test extends Controller {
                      'description'  => 'Description',
                      'show_header'   => TRUE,
            ));
-
-           $ws->set_active_sheet(0);
+           
+           $r=  $ws->read("/Users/zhaibob/git/calf/media/upload/report.xls");
+           
+           $rowcount=  $r['rowcount'];
+           $columncount = $r['columncount'];
+           $rows= $r['rows'];
+           for ($i=0; $i <= $rowcount; $i++) { 
+           	# code...
+               for ($j=0; $j < ; $j++) { 
+               	# code...
+                  $rows->get 
+               }
+           }
+            
+           print_r($r);
+         
+          /* excel 
+          $ws->set_active_sheet(0);
            $as = $ws->get_active_sheet();
            $as->setTitle('Report');
 
@@ -153,7 +166,7 @@ class Controller_Test extends Controller {
             	 //echo $value;
            // }
            
-           /*
+           
            $data = array(
                    'rows'=>array( 
      	              array('id'=>1,'name'=>'约翰','age'=>2, 'time'=>'D'),
@@ -164,12 +177,12 @@ class Controller_Test extends Controller {
                     )
                 );
             */
-           $columns = array('id'=>'编号','name'=>'姓名','age'=>'年龄','time'=>'时间'); 
+          // $columns = array('id'=>'编号','name'=>'姓名','age'=>'年龄','time'=>'时间'); 
            	
-           $ws->set_data($data,$columns,TRUE);
-	   $ws->send(array('name'=>'report','format'=>'Excel5'));
-         
-// $ws->save(array('name'=>'report','path'=>'/Users/zhaibob/Downloads/', 'format'=>'Excel5'));
+           //$ws->set_data($data,$columns,TRUE);
+	  // $ws->send(array('name'=>'report','format'=>'Excel5'));
+          /******* excel  ************/
+           /******* excel  ************/
 
            /* $db = MangoDB::instance('default');
             $query  = array("id"=>"12222"); 

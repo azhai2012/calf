@@ -36,14 +36,21 @@ var Products={
 				      {name:'修改',bimage:'/media/images/modify.gif',onpress:function(){Products.Modify()}},
 					  {name:'删除',bimage:'/media/images/delete.gif',onpress:function(){Products.RowDelete()}},
 					  {name:'导出',bimage:'/media/images/export.gif',onpress:function(){},
-				           down:"<ul><li><a href='javascript:Products.Exports(1,1);'>导出为 EXCEL 文件</a></li><li><a href='javascript:Products.Exports(1,2);'>导出为 CSV 文件</a></li><li><a href='javascript:Products.Exports(1,3);'>导出为 PDF 文件</a></li></ul>"
+				            down:"<ul><li><a href='javascript:Products.Exports(1,1);'>导出为 EXCEL 文件</a></li><li><a href='javascript:Products.Exports(1,2);'>导出为 CSV 文件</a></li><li><a href='javascript:Products.Exports(1,3);'>导出为 PDF 文件</a></li></ul>"
 					  },
-				      {name:'导入',bimage:'/media/images/import.gif',onpress:function(){},},
+				      {name:'导入',bimage:'/media/images/import.gif',onpress:function(){Products.Imports()}},
 					  {name:'打印',bimage:'/media/images/print.gif',onpress:function(){}},
                     ],
 				     			
 				});
 	    },
+	    Showdialogs:function (ajaxpath,divwidth){
+	       Azhai.onPages({"id":"dragDiv","type":"dialog","ajax":ajaxpath,
+	            "content":{"div":"hello","top":"47","width":divwidth}});    
+	    },
+	    Imports:function(){
+		   Products.Showdialogs('/dialog/product/export',600);
+   	    },
 		Exports:function(p,q){
 			 var action ='';var id='';
 			 switch (p){
@@ -55,24 +62,7 @@ var Products={
 			   case 2: id = 'CSV'; break;
 			   case 3: id = 'PDF'; break;
 			 }
-		   window.location.href='/export/'+action+'/'+id;
-		   $.ajax({
-						type : 'post',
-						url : '/export/'+action+'/'+id,
-						data : '',
-						beforeSend : function(XMLHttpRequest) {
-
-							$('.loading').show(); 
-						},
-						success : function(data, textStatus) {
-			              $('.loading').html('导出成功'); 
-						},
-						complete : function(XMLHttpRequest, textStatus) {
-						},
-						error : function() {
-							// 请求出错处理
-						}
-					}); 	
+		   window.location.href='/export/'+action+'/'+id;		 
 		},
 		ClearInfo:function(){
 		   $('#message').hide();	 

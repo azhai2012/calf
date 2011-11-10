@@ -81,6 +81,48 @@ class Kohana_Spreadsheet
 		$this->set_options($this->options);
 	}
 
+        public function read_one($filename){
+
+	      $reader = PHPExcel_IOFactory::createReader('Excel5');
+	      $phpexcel = $reader->load($filename); 
+	      $sheet = $phpexcel->getActiveSheet();
+	      $rowcount = $sheet->getHighestRow();
+	      $highestColumn = $sheet->getHighestColumn(); 
+	      $columncount= PHPExcel_Cell::columnIndexFromString($highestColumn);  
+	      $rows=array();
+
+	      for ($i=0; $i <= 3; $i++) { 
+                 $rs = array(); 
+                 for ($j=0; $j <=$columncount; $j++) { 
+                     $rs[] = $sheet->getCellbyColumnAndRow($j,$i)->getValue(); 
+                 }
+                  $rows[]=$rs;
+               }   
+
+	      return array('rowcount'=>$rowcount,'columncount'=>$columncount,'rows'=>$rows);
+        }
+
+        public function read($filename){
+	      
+	      $reader = PHPExcel_IOFactory::createReader('Excel5');
+	      $phpexcel = $reader->load($filename); 
+	      $sheet = $phpexcel->getActiveSheet();
+	      $rowcount = $sheet->getHighestRow();
+	      $highestColumn = $sheet->getHighestColumn(); 
+	      $columncount= PHPExcel_Cell::columnIndexFromString($highestColumn);  
+	      $rows=array();
+	     
+	      for ($i=0; $i <= $rowcount; $i++) { 
+                 $rs = array(); 
+                 for ($j=0; $j <=$columncount; $j++) { 
+                     $rs[] = $sheet->getCellbyColumnAndRow($j,$i)->getValue(); 
+                 }
+                  $rows[]=$rs;
+               }   
+	 
+	      return array('rowcount'=>$rowcount,'columncount'=>$columncount,'rows'=>$rows);
+        }
+
 	/**
 	 * Set active sheet index
 	 * 

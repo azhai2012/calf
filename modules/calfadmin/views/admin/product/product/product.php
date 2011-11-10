@@ -24,9 +24,9 @@
          $(function(){
 	   
                $('#uploadform').ajaxUpload({
-		       target:'/testajax',
+		       target:'/upload/image',
 		       handleJsonResponse:function(json){
-			    if (json.file.name){
+		           if (json.uid){
 			      $('#status').append('<div><input type="checkbox" value="'+json.filename+'" id="files" name="attach" checked >'+json.file.name+'  ( <i>'+json.file.type+'</i> )  '+Math.round(json.file.size/1024)+'KB </div>');
 		              
 		            }
@@ -146,5 +146,15 @@
 	   <label class="cancel uiButton" for="btn_cancel">
 	   <input value="取消" type="button" id="btn_cancel"></label>
 	</div>	
-    </div>	
+    </div>
+
+    <div id="dialog">	
+     <div class="dragDiv">  
+       <div class="pop_content " id="pop_content" tabindex="0" role="alertdialog">
+       <div class="pop_content_load"></div> 
+      </div>
+     <div>
+   </div> <!-- end #dialog -->	
+
+	
 </div>

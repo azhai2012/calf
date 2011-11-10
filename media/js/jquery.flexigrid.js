@@ -864,8 +864,6 @@
 				
 				     // down
 				    if (btn.down){
-						
-					  // g.dDiv.className = 'dDiv_'+i;
 					   var dDiv = document.createElement('div');
 					   var bBtn = document.createElement('b');
 					   bBtn.className = 'bBtn';
@@ -875,8 +873,6 @@
 					   $(bBtn).html('<div></div>');
 					   $(bBtn).attr('name','dDiv_'+i);
 					
-					  	
-					
 					   $(bBtn).click(function () {
 						          var a01 = $(this).attr('name');
 						          var abtn = $('.'+ a01);
@@ -885,7 +881,7 @@
 						          { 
 						           abtn.addClass('dDiv');								
 						           $('.dDiv').show();
-						           var nw = $(bBtn).offset();
+						           var nw = $(this).offset();
 								   var dd = $(g.tDiv).offset();
 								   var mdh = $(g.mDiv).height();
 								   var nh = $(g.tDiv).height();
@@ -901,11 +897,8 @@
 								       $(this).hide();
 								       $(this).removeClass('dDiv');
 							        })						     
-							       
-							      	$(tDiv).hover(function(){},function(){$('.dDiv').hide(); abtn.removeClass('dDiv');});  
-									$(g.mDiv).hover(function(){},function(){$('.dDiv').hide(); abtn.removeClass('dDiv');});  
-								 
-						          }
+							      	$(g.mDiv).hover(function(){},function(){$('.dDiv').hide(); abtn.removeClass('dDiv');});  
+								 }
 						          else
 						          {
 							          $('.dDiv').hide(); 

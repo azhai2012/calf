@@ -32,7 +32,10 @@ li p{margin:.5em 0 0;}
 dd p{margin:1em 0 0;}
 li pre,li table,li img{margin:.5em 0 0 1em;}
 label{cursor:pointer;color:#666;font-weight:bold;vertical-align:middle;}
-td,th{display:table-cell;vertical-align:inherit;}
+
+
+
+
 textarea,.inputtext,.inputpassword{border:1px solid #BDC7D8;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;font-size:12px;padding:3px;-webkit-appearance:none;-webkit-border-radius:0;}
 .clearfix{display:block;zoom:1;}
 .clearfix:after{content:".";clear:both;display:block;font-size:0px;height:0px;line-height:0;visibility:hidden;}
@@ -42,6 +45,52 @@ textarea,.inputtext,.inputpassword{border:1px solid #BDC7D8;font-family:"lucida 
 .warning {background: url(/media/images/warning.gif) no-repeat 12px 13px;background-color: #FFEBC1;border-color: #FDBF3B;color: #A6750C;text-align: left;}
 .validate {border:1px #dd0000 solid;}
 
+.dragDiv {background-color: #FFFFFF;display: none;position: absolute;z-index: 200;}
+.dragDiv {background: rgba(82, 82, 82, 0.7);z-index: 200;border-bottom-left-radius: 8px 8px;border-bottom-right-radius: 8px 8px;border-top-left-radius: 8px 8px;border-top-right-radius: 8px 8px;padding: 10px;}
+* html .dragDiv {background:#828282;border:3px #828282 solid;padding: 10px;}
+* +html .dragDiv {background:#828282;border:3px #828282 solid;padding: 10px;}
+
+.dragDiv table{font-size:1em;margin:0 0 1em;padding:0;border-collapse:collapse;border-width:0;empty-cells:show;}
+.dragDiv td,.dragDiv th{border:1px solid #ccc;padding:6px 12px;text-align:left;vertical-align:top;background-color:inherit;}
+.dragDiv th{background-color:#dee8f1;}
+.dragDiv td > p:last-child{margin:0;}
+
+.pop_content {margin:0px;padding:0px;color:#000;z-index:200}
+.pop_content h2.dialog_title {background: #94B922;border-bottom: none;border: 1px solid #94B922;color: white;font-size: 15px;font-weight: bold;margin: 0px;padding:5px;}
+.dialog_Buttons {margin-top:10px;}
+.dialogu_Buttons .cancel {background-color: #ccc;color:#000;border:1px #888 solid;cursor: pointer;}
+.dialog_Buttons .cancel input {background-color: #ccc;color:#000;cursor: pointer;}
+.uiButton .uiButtonText, .uiButton input {
+background: none;
+border: 0;
+color: #333;
+cursor: pointer;
+display: inline-block;
+font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+font-size: 12px;
+font-weight: bold;
+margin: 0;
+outline: none;
+padding: 1px 0 2px;
+white-space: nowrap;
+}
+label.uiButtonConfirm,.uiButtonConfirm #send {
+background: #94B922;
+}
+.overlay {
+background-color: white;
+height: 100%;
+left: 0;
+opacity: .8;
+position: fixed;
+top: 0;
+width: 100%;
+
+}
+
+.pop_content {background:#FFFFFF;}
+.pop_content .dialog_content {background: white;border: 0px solid #555;border-top-width: 0px;z-index:100}
+.pop_content .dialog_buttons {background: #F2F2F2;padding-top: 5px;padding-bottom: 5px;padding-right:10px;position: relative;border:1px #E4E4E4 solid;text-align: right;}
 
 #header{height:60px;position:relative;z-index:100;min-width:675px;padding:0 10px;border-bottom:3px solid #94B922;}
 #headcontent{height:60px;}

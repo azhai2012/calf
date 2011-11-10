@@ -19,7 +19,7 @@ class Controller_Testajax extends Controller {
 		         // $username = Arr::get($_POST, 'username');
 		         // $log->add(Log::INFO,$username);
 			 
-			if ($_POST){
+	/*		if ($_POST){
 			  $log->add(Log::INFO,'begin');	 
 
 		          $array = Validation::factory($_FILES);
@@ -43,6 +43,9 @@ class Controller_Testajax extends Controller {
 	                  $log->write();
              $array = array('status'=>$result,'file'=> $filepath,'filename'=>$filename);
 	     $this->template= json_encode($array);
+	     */
+	   
+	  //  $this->template='';
   	    
 	}
 	

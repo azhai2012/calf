@@ -1,5 +1,6 @@
 $.fn.ajaxUpload = function(options) {
     var settings = {
+	    upbtn:'upload', 
         handleJsonResponse: function(json){},
         beforeValidate: function(form,iframe){},
         isValid: function(input,form){
@@ -31,8 +32,18 @@ $.fn.ajaxUpload = function(options) {
         $(this).wrap(form);
         form = $('#' + formId);
    		var a01=' <input id="tmp" name="tmp" type="hidden"/>';		
-		var a02=' <input id="file" name="image" type="file"/>';		
-		var a03=' <input type="button" name="img_upt_btn" value="上传" id="upload"><span id="loading"></spam>';
+		var a02=' <input id="file" name="image" type="file"/>';	
+		 	
+		
+		form.append(a01);
+	    form.append(a02);
+		
+		if (settings.upbtn)
+		{ 
+		  var a03=' <input type="button" name="img_upt_btn" value="上传" id="'+settings.upbtn+'"><span id="loading"></spam>';
+		  form.append(a03);
+        } 
+
         form.attr({
             method: 'post',
             target: iframeName,
@@ -40,9 +51,8 @@ $.fn.ajaxUpload = function(options) {
             encoding: 'multipart/form-data',
             action: action
         });
-        form.append(a01);
-        form.append(a02);
-        form.append(a03);
+      
+      
 
 
         var iframe = $('#' + iframeName);
@@ -61,7 +71,7 @@ $.fn.ajaxUpload = function(options) {
                         if (response.match(/^[{\[](.*?)[}\]]$/) !== null) {
                             alert('Please set another eval function.');
                         } else {
-                            alert('上传失败.');
+                          // alert('上传失败.');
                         }
                     }
                 }
@@ -73,9 +83,8 @@ $.fn.ajaxUpload = function(options) {
          
 
         //$(this).change(function(){
-         $('#upload').click(function(){
-            var form = $(this).parent('form');
-           
+         $('#'+settings.upbtn).click(function(){
+            var form = $(this).parent('form');           
             settings.beforeValidate(form,iframe);
             if (settings.isValid($(this),form)) {
                 settings.beforeSubmit(form,iframe);
