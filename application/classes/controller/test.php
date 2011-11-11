@@ -113,7 +113,30 @@ class Controller_Test extends Controller {
 	}    */
 	  
 
-           
+             $order_db = Calfdb_Admin::instance('Product','');
+
+               
+             // print_r($data);
+              $columns=array();
+              $array_data = $order_db->get_export_one_admin_product_info_array_data();
+              foreach ($array_data['rows'] as $key => $value) {
+                  $columns[]= $key;	
+              }
+
+              print_r($columns);
+              
+              /*
+	           $columns = array('id'=>'编号',
+		      'active_date'=>'启用日期',
+	              'category'=>'商品属性','certificateNo'=>'批准文号','create_date'=>'创建日期',
+	              'display_name'=>'显示商品','factory'=>'生产企业',
+	              'general_name'=>'通用商品名称','general_price'=>'国批价',
+	              'group'=>'包装','is_active'=>'启用','middle_group'=>'中包装',
+	              'name'=>'商品名称','norm'=>'规格',
+	              'product_type'=>'剂型','unit'=>'单位','update_date'=>'更新日期','uses'=>'功能主治'
+	           ); 
+              */
+   
             
    
            /*  excel 

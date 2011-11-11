@@ -69,7 +69,6 @@ class Controller_Upload extends Controller {
 		       $result='-1';  
 		     
                  }
-	         $log->write();    
 	        $array = array('status'=>$result,'file'=> $filepath,'filename'=>$filename,'uid'=>$uid);
 		$this->template= json_encode($array);
 

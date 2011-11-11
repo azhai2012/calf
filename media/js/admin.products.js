@@ -26,7 +26,7 @@ var Products={
 					showTableToggleBtn: true,
 					hideOnSubmit:false,
 					//hideBody:true,
-					pagestat: '共 {total} 页',
+					pagestat: '共 {total} 个记录',
 					outof:'/',
 					nomsg:'没有查找到相关内容', 
 					width: 'auto',
@@ -51,6 +51,30 @@ var Products={
 	    Imports:function(){
 		   Products.Showdialogs('/dialog/product/export',600);
    	    },
+        CloseDialog:function(){
+            $('.dragDiv').hide();
+            $('.pop_content').html('');
+            $('.overlay','#dialog').remove();
+        },
+		QuickImport:function(){
+			 var fname= $('#fname').val().split('.');
+			 $.ajax({
+				type : 'post',
+			    url : '/import/product/'+fname[0],
+				data : '&action=quick&d='+fname[1],
+				beforeSend : function(XMLHttpRequest) {
+				    $('#showtb').html('正在执行中...请稍等！');
+				},
+				success : function(data, textStatus) {			
+                     if (data==='1')
+                        Products.CloseDialog();
+				},
+				complete : function(XMLHttpRequest, textStatus) {
+				},
+				error : function() {
+			   }
+			 });	
+		 },
 		Exports:function(p,q){
 			 var action ='';var id='';
 			 switch (p){

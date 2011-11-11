@@ -84,6 +84,8 @@ class Kohana_Spreadsheet
         public function read_one($filename){
 
 	      $reader = PHPExcel_IOFactory::createReader('Excel5');
+	      $reader->setReadDataOnly(true);
+	
 	      $phpexcel = $reader->load($filename); 
 	      $sheet = $phpexcel->getActiveSheet();
 	      $rowcount = $sheet->getHighestRow();
@@ -105,6 +107,7 @@ class Kohana_Spreadsheet
         public function read($filename){
 	      
 	      $reader = PHPExcel_IOFactory::createReader('Excel5');
+	      $reader->setReadDataOnly(true);
 	      $phpexcel = $reader->load($filename); 
 	      $sheet = $phpexcel->getActiveSheet();
 	      $rowcount = $sheet->getHighestRow();
@@ -170,7 +173,7 @@ class Kohana_Spreadsheet
                         $sheet->include_names($this->options['show_header']);
                         if ($columns === NULL)
                           foreach ($data[0] as $key => $value) {
-	             		     $sheet->columns($key,$key);  
+	                     $sheet->columns($key,$value);  
 		          }
 		        else
 		          foreach ($columns as $key => $value) {
@@ -257,14 +260,31 @@ class Kohana_Spreadsheet
 		$settings = array_merge($this->options, $settings);
 
 		$writer = PHPExcel_IOFactory::createWriter($this->_spreadsheet, $settings['format']);
+		//$writer->setReadDataOnly(true);
+		//$writer->setOutputEncoding('UTF_8');
 
 		$ext = $this->exts[$settings['format']];
 		$mime = $this->mimes[$settings['format']];
-
+                $filename = $settings['name'];
+                
 		$response = Request::current()->response();
+		
+		if (preg_match('/MSIE/',$_SERVER['HTTP_USER_AGENT'])) {
+                    $filename = rawurlencode($filename);
+		
+		   $response->headers(array(
+			'Content-Type' => 'application/force-download',
+			'Content-Type' => 'application/octet-stream',
+			'Content-Type' => 'application/download',
+			'Content-Disposition' => 'attachment;filename="'.$filename.'.'.$ext.'"',
+			'Content-Transfer-Encoding' => 'binary',
+			'Cache-Control' => 'max-age=0',
+		  ));
+		} 
+		else
 		$response->headers(array(
-			'Content-Type' => $mime,
-			'Content-Disposition' => 'attachment;filename="'.$settings['name'].'.'.$ext.'"',
+			'Content-Type' => $mime.';charset=utf-8',
+			'Content-Disposition' => 'attachment;filename="'.$filename.'.'.$ext.'"',
 			'Cache-Control' => 'max-age=0',
 		));
 		$response->send_headers();

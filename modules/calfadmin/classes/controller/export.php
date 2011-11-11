@@ -31,6 +31,7 @@ class Controller_Export extends Controller {
 	                     'subject'      => 'Subject',
 	                     'description'  => 'Description',
 	                     'show_header'   => TRUE,
+	                   
 	           ));
 
 	           $ws->set_active_sheet(0);
@@ -39,33 +40,31 @@ class Controller_Export extends Controller {
 
 	           $as->getDefaultStyle()->getFont()->setSize(9);
 
-	           $as->getColumnDimension('A')->setWidth(20);
-	           $as->getColumnDimension('B')->setWidth(50);
-	           $as->getColumnDimension('C')->setWidth(12);
-	           $as->getColumnDimension('D')->setWidth(10);
+	           //$as->getColumnDimension('A')->setWidth(20);
+	           //$as->getColumnDimension('B')->setWidth(50);
+	           //$as->getColumnDimension('C')->setWidth(12);
+	           //$as->getColumnDimension('D')->setWidth(10);
 
 	           $order_db = Calfdb_Admin::instance('Product','');
 	           $array_data= $order_db->get_export_admin_product_info_array_data();
                    $data=array(); 
                    
                    foreach ($array_data['rows'] as $key => $value) {
-     
-                      $data[] =$value;
+                      
+                      $data[] = $value;
         
                    }                
-                  // print_r($data);
 
-	           $columns = array('id'=>'编号',
-		      'active_date'=>'启用日期',
-	              'category'=>'商品属性','certificateNo'=>'批准文号','create_date'=>'创建日期',
-	              'display_name'=>'显示商品','factory'=>'生产企业',
-	              'general_name'=>'通用商品名称','general_price'=>'国批价',
-	              'group'=>'包装','is_active'=>'启用','middle_group'=>'中包装',
-	              'name'=>'商品名称','norm'=>'规格',
-	              'product_type'=>'剂型','unit'=>'单位','update_date'=>'更新日期','uses'=>'功能主治'
-	           ); 
-                  
-                   //print_r($columns);
+                   $columns=array();
+                   $array_data = $order_db->get_export_one_admin_product_info_array_data();
+                   $i=0;
+                   foreach ($array_data['rows'] as $key => $value) {
+	               $c1 = PHPExcel_Cell::stringFromColumnIndex($i);
+	               $as->getColumnDimension($c1)->setAutoSize(true);
+                       $columns[$key]= $key;
+                       $i++;	
+                   }
+    
 
 	           $ws->set_data($data,$columns,true);
 		   $ws->send(array('name'=>'商品明细表','format'=>$id));

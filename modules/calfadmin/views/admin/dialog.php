@@ -15,7 +15,7 @@
           <div class="dialog_buttons_msg"><?php if (isset($dialog_buttons_msg)) echo $dialog_buttons_msg;  ?></div>
           <div>
 	   <label class="uiButton uiButtonConfirm"><input type="button" name="send" id="send" value="<?php echo __('send'); ?>"></label>
-	   <label class="uiButton"><input type="button" name="cancel" onclick="javescript: $('.dragDiv').hide();$('.pop_content').html('');$('.overlay','#dialog').remove();" value="<?php echo __('cancel'); ?>"></label>
+	   <label class="uiButton"><input type="button" name="cancel" onclick="javascript:Products.CloseDialog();" value="<?php echo __('cancel'); ?>"></label>
           </div>
       </div>
      <div class="dialog_footer"><?php if (isset($dialog_footer)) echo $dialog_footer;  ?></div>

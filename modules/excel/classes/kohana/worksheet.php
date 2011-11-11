@@ -314,11 +314,10 @@ class Kohana_Worksheet
 		{
 		        
 			$value = NULL;
-			if (is_array($data))
+		        if (is_array($data))
 			{
-				$value = $data[$key];
-				//$log->add(Log::INFO,$key.'->'.$value);
-			
+			    $value = utf8_decode(utf8_encode($data[$key]));
+				
 			}
 			elseif (is_object($data))
 			{
