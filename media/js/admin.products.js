@@ -86,7 +86,9 @@ var Products={
 			   case 2: id = 'CSV'; break;
 			   case 3: id = 'PDF'; break;
 			 }
-		   window.location.href='/export/'+action+'/'+id;		 
+		   var fn = $('select[name=qtype] option:selected').val();
+		   var fv = $('.qsbox').val(); 	 
+		   window.location.href='/export/'+action+'/'+id+'?params='+fn+','+fv;		 
 		},
 		ClearInfo:function(){
 		   $('#message').hide();	 
@@ -119,7 +121,7 @@ var Products={
 									$('.loading').show(); 
 								},
 								success : function(data, textStatus) {
-					              $('#grid_add').html(data); 
+					                 $('#grid_add').html(data); 
 								},
 								complete : function(XMLHttpRequest, textStatus) {
 								  	$('.loading').remove();
@@ -269,10 +271,10 @@ var Products={
 							//$('.loading').show(); 
 						},
 						success : function(data, textStatus) {
-					      
+						
 			                if (data==="1")
 			                {
-				               //alert("成功保存！");
+				               alert("成功保存！");
 				               $('#grid_add').hide(); 
 				               $('#flexgrid').flexReload();
 				               $('.flexigrid').show();

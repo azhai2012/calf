@@ -21,14 +21,14 @@ return array(
 		'connection' => array(
 
 			/** hostnames, separate multiple hosts by commas **/
-			'hostnames' => 'localhost',
+			'hostnames' => '127.0.0.1:10001',
 
 			/** database to connect to **/
 			'database'  => 'calfs',
 
 			/** authentication **/
-			//'username'  => 'username',
-			//'password'  => 'password',
+			'username'  => 'azhai',
+			'password'  => 'azsOFT',
 
 			/** connection options (see http://www.php.net/manual/en/mongo.construct.php) **/
 			//'options'   => array(

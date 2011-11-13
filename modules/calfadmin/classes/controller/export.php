@@ -37,15 +37,12 @@ class Controller_Export extends Controller {
 	           $ws->set_active_sheet(0);
 	           $as = $ws->get_active_sheet();
 	           $as->setTitle('商品明细表');
-
+                   
+                   $params = Arr::get($_GET,'params',array());
 	           $as->getDefaultStyle()->getFont()->setSize(9);
-
-	           //$as->getColumnDimension('A')->setWidth(20);
-	           //$as->getColumnDimension('B')->setWidth(50);
-	           //$as->getColumnDimension('C')->setWidth(12);
-	           //$as->getColumnDimension('D')->setWidth(10);
-
-	           $order_db = Calfdb_Admin::instance('Product','');
+                   $where = explode(',',$params);   
+                   $where = array('where'=>array($where[0]=>$where[1]));               
+                   $order_db = Calfdb_Admin::instance('Product','',$where);
 	           $array_data= $order_db->get_export_admin_product_info_array_data();
                    $data=array(); 
                    

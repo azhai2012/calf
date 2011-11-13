@@ -143,6 +143,7 @@ class Controller_Post extends Controller {
         $p=array('id'=> $id );
         $product_db = Calfdb_Admin::instance('Product','',$p);
 	$array_data = $product_db->get_admin_product_info_array_data();	
+
 	$row= $array_data['rows'];
 	$is_active = ($row['is_active']==="启用") ? 'checked':'';
 	$data = array(

@@ -1,0 +1,389 @@
+Sun Nov 13 15:54:52 [initandlisten] MongoDB starting : pid=430 port=10001 dbpath=/Users/zhaibob/git/calf/data/db 64-bit host=zhai-bobmatoMac.local
+Sun Nov 13 15:54:52 [initandlisten] db version v2.0.1, pdfile version 4.5
+Sun Nov 13 15:54:52 [initandlisten] git version: 3a5cf0e2134a830d38d2d1aae7e88cac31bdd684
+Sun Nov 13 15:54:52 [initandlisten] build info: Darwin erh2.10gen.cc 9.6.0 Darwin Kernel Version 9.6.0: Mon Nov 24 17:37:00 PST 2008; root:xnu-1228.9.59~1/RELEASE_I386 i386 BOOST_LIB_VERSION=1_40
+Sun Nov 13 15:54:52 [initandlisten] options: { auth: true, dbpath: "/Users/zhaibob/git/calf/data/db", logpath: "/Users/zhaibob/git/calf/data/db/log.txt", port: 10001 }
+Sun Nov 13 15:54:52 [initandlisten] journal dir=/Users/zhaibob/git/calf/data/db/journal
+Sun Nov 13 15:54:52 [initandlisten] recover : no journal files present, no recovery needed
+Sun Nov 13 15:54:52 [websvr] admin web console waiting for connections on port 11001
+Sun Nov 13 15:54:52 [initandlisten] waiting for connections on port 10001
+Sun Nov 13 15:54:59 [initandlisten] connection accepted from 127.0.0.1:50577 #1
+Sun Nov 13 15:54:59 [conn1] note: no users configured in admin.system.users, allowing localhost access
+Sun Nov 13 15:55:52 [clientcursormon] mem (MB) res:46 virt:2759 mapped:160
+Sun Nov 13 15:59:17 [FileAllocator] allocating new datafile /Users/zhaibob/git/calf/data/db/admin.ns, filling with zeroes...
+Sun Nov 13 15:59:17 [FileAllocator] creating directory /Users/zhaibob/git/calf/data/db/_tmp
+Sun Nov 13 15:59:17 [FileAllocator] done allocating datafile /Users/zhaibob/git/calf/data/db/admin.ns, size: 16MB,  took 0.181 secs
+Sun Nov 13 15:59:17 [FileAllocator] allocating new datafile /Users/zhaibob/git/calf/data/db/admin.0, filling with zeroes...
+Sun Nov 13 15:59:18 [FileAllocator] done allocating datafile /Users/zhaibob/git/calf/data/db/admin.0, size: 64MB,  took 1.207 secs
+Sun Nov 13 15:59:18 [conn1] build index admin.system.users { _id: 1 }
+Sun Nov 13 15:59:18 [conn1] build index done 0 records 0 secs
+Sun Nov 13 15:59:18 [conn1] insert admin.system.users 1535ms
+Sun Nov 13 15:59:18 [FileAllocator] allocating new datafile /Users/zhaibob/git/calf/data/db/admin.1, filling with zeroes...
+Sun Nov 13 15:59:25 [FileAllocator] done allocating datafile /Users/zhaibob/git/calf/data/db/admin.1, size: 128MB,  took 6.781 secs
+Sun Nov 13 15:59:52 [clientcursormon] mem (MB) res:47 virt:2919 mapped:240
+Sun Nov 13 16:00:08 [conn1] assertion 10057 unauthorized db:admin lock type:-1 client:127.0.0.1 ns:admin.system.namespaces query:{}
+Sun Nov 13 16:00:32 [initandlisten] connection accepted from 127.0.0.1:50584 #2
+Sun Nov 13 16:00:32 [conn2] end connection 127.0.0.1:50584
+Sun Nov 13 16:00:32 [initandlisten] connection accepted from 127.0.0.1:50585 #3
+Sun Nov 13 16:00:32 [conn3] assertion 10057 unauthorized db:calfs lock type:-1 client:127.0.0.1 ns:calfs.products query:{ $query: {}, $orderby: { id: 1 } }
+Sun Nov 13 16:00:32 [conn3]  ntoskip:0 ntoreturn:15
+Sun Nov 13 16:00:32 [conn3] end connection 127.0.0.1:50585
+Sun Nov 13 16:00:45 [initandlisten] connection accepted from 127.0.0.1:50586 #4
+Sun Nov 13 16:00:45 [conn4]  authenticate: { authenticate: 1, user: "azhai", nonce: "e6eb0c64abeffc0", key: "ef929117d7e78c8fe57c24630e7c827c" }
+Sun Nov 13 16:00:45 [conn4] end connection 127.0.0.1:50586
+Sun Nov 13 16:00:45 [initandlisten] connection accepted from 127.0.0.1:50587 #5
+Sun Nov 13 16:00:45 [conn5]  authenticate: { authenticate: 1, user: "azhai", nonce: "911ce5b514350428", key: "1ff9788afdf3f68bcb0be1cab6286898" }
+Sun Nov 13 16:00:45 [conn5] end connection 127.0.0.1:50587
+Sun Nov 13 16:04:52 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 16:09:52 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 16:14:52 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 16:17:23 [initandlisten] connection accepted from 127.0.0.1:50601 #6
+Sun Nov 13 16:17:23 [conn6]  authenticate: { authenticate: 1, user: "azhai", nonce: "dec5f0d8c600cb47", key: "3a812afa6a19bc4ccdf78beacb44e51a" }
+Sun Nov 13 16:17:23 [conn6] end connection 127.0.0.1:50601
+Sun Nov 13 16:17:24 [initandlisten] connection accepted from 127.0.0.1:50602 #7
+Sun Nov 13 16:17:24 [conn7]  authenticate: { authenticate: 1, user: "azhai", nonce: "78fa8bd6d5a08f78", key: "aadb6ce42f0bd40decf27f47a963e855" }
+Sun Nov 13 16:17:24 [conn7] end connection 127.0.0.1:50602
+Sun Nov 13 16:17:26 [initandlisten] connection accepted from 127.0.0.1:50603 #8
+Sun Nov 13 16:17:26 [conn8]  authenticate: { authenticate: 1, user: "azhai", nonce: "19d229dbfae5d0b0", key: "2f2c5d9b2ec02026ff53fb02b2a6ce4f" }
+Sun Nov 13 16:17:26 [conn8] end connection 127.0.0.1:50603
+Sun Nov 13 16:17:27 [initandlisten] connection accepted from 127.0.0.1:50604 #9
+Sun Nov 13 16:17:27 [conn9]  authenticate: { authenticate: 1, user: "azhai", nonce: "2f9775baf8496f60", key: "9f6b6e79ec8f0fd07ee1f59876d62c13" }
+Sun Nov 13 16:17:27 [conn9] end connection 127.0.0.1:50604
+Sun Nov 13 16:18:05 [conn1] assertion 10057 unauthorized db:admin lock type:-1 client:127.0.0.1 ns:admin.system.namespaces query:{}
+Sun Nov 13 16:18:32 [conn1]  authenticate: { authenticate: 1.0, user: "azhai", nonce: "32050c7744cdf8fd", key: "ff2216cf76b136f23e22e7dc3be37fa8" }
+Sun Nov 13 16:18:32 [conn1] auth: couldn't find user azhai, admin.system.users
+Sun Nov 13 16:18:44 [conn1] assertion 10057 unauthorized db:calfs lock type:-1 client:127.0.0.1 ns:calfs.system.namespaces query:{}
+Sun Nov 13 16:19:14 [conn1]  authenticate: { authenticate: 1.0, user: "azhai", nonce: "f84d95f3d857032d", key: "a540105310b87747e4e447f5fedeb65e" }
+Sun Nov 13 16:19:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 16:20:23 [initandlisten] connection accepted from 127.0.0.1:50611 #10
+Sun Nov 13 16:20:23 [conn10]  authenticate: { authenticate: 1, user: "azhai", nonce: "48d9d2ed7eda3435", key: "a033376642ed4a60891313f0842b4512" }
+Sun Nov 13 16:20:23 [conn10] end connection 127.0.0.1:50611
+Sun Nov 13 16:20:24 [initandlisten] connection accepted from 127.0.0.1:50612 #11
+Sun Nov 13 16:20:24 [conn11]  authenticate: { authenticate: 1, user: "azhai", nonce: "c92e0850a4d7533c", key: "f4e2b78759998d93767829aed7cbc1b4" }
+Sun Nov 13 16:20:24 [conn11] end connection 127.0.0.1:50612
+Sun Nov 13 16:20:25 [initandlisten] connection accepted from 127.0.0.1:50613 #12
+Sun Nov 13 16:20:25 [conn12]  authenticate: { authenticate: 1, user: "azhai", nonce: "3271ec96d9f02070", key: "b402247cae42962e12e49d5b6485f51b" }
+Sun Nov 13 16:20:25 [conn12] end connection 127.0.0.1:50613
+Sun Nov 13 16:20:26 [initandlisten] connection accepted from 127.0.0.1:50614 #13
+Sun Nov 13 16:20:26 [conn13]  authenticate: { authenticate: 1, user: "azhai", nonce: "a6627431081fe764", key: "ea5d334670831322a43cee53810e6382" }
+Sun Nov 13 16:20:26 [conn13] end connection 127.0.0.1:50614
+Sun Nov 13 16:24:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 16:29:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 16:34:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 16:39:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 16:44:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 16:49:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 16:54:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 16:59:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 17:04:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 17:09:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 17:14:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 17:19:53 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 17:24:54 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 17:29:54 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 17:34:54 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 17:39:54 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 17:44:54 [clientcursormon] mem (MB) res:48 virt:2919 mapped:240
+Sun Nov 13 17:45:57 [initandlisten] connection accepted from 127.0.0.1:50700 #14
+Sun Nov 13 17:45:57 [conn14]  authenticate: { authenticate: 1, user: "azhai", nonce: "7bea99489096c149", key: "91300ac0b336f44fa89f7940a118e5f7" }
+Sun Nov 13 17:45:57 [conn14] end connection 127.0.0.1:50700
+Sun Nov 13 17:45:57 [initandlisten] connection accepted from 127.0.0.1:50701 #15
+Sun Nov 13 17:45:57 [conn15]  authenticate: { authenticate: 1, user: "azhai", nonce: "1fb6e351969734d8", key: "cd55c86502e44bae344b6eeb7cd93754" }
+Sun Nov 13 17:45:57 [conn15] end connection 127.0.0.1:50701
+Sun Nov 13 17:45:58 [initandlisten] connection accepted from 127.0.0.1:50702 #16
+Sun Nov 13 17:45:58 [conn16]  authenticate: { authenticate: 1, user: "azhai", nonce: "de81f6250245cf8c", key: "9321910a128bb91b2de11980690e9c39" }
+Sun Nov 13 17:45:58 [conn16] end connection 127.0.0.1:50702
+Sun Nov 13 17:45:59 [initandlisten] connection accepted from 127.0.0.1:50703 #17
+Sun Nov 13 17:45:59 [conn17]  authenticate: { authenticate: 1, user: "azhai", nonce: "e973cbf517ffbbc2", key: "be1b2b1e99eaba7145677aac208f3a41" }
+Sun Nov 13 17:45:59 [conn17] end connection 127.0.0.1:50703
+Sun Nov 13 17:46:00 [initandlisten] connection accepted from 127.0.0.1:50704 #18
+Sun Nov 13 17:46:00 [conn18]  authenticate: { authenticate: 1, user: "azhai", nonce: "859577f5d1b6a85a", key: "a246990962ea14fff0c14941b964285a" }
+Sun Nov 13 17:46:00 [conn18] end connection 127.0.0.1:50704
+Sun Nov 13 17:46:03 [initandlisten] connection accepted from 127.0.0.1:50705 #19
+Sun Nov 13 17:46:03 [conn19]  authenticate: { authenticate: 1, user: "azhai", nonce: "38c6b5b904b81555", key: "cd3149d23f7c36a4247cb651f541eda5" }
+Sun Nov 13 17:46:03 [conn19] end connection 127.0.0.1:50705
+Sun Nov 13 17:46:03 [initandlisten] connection accepted from 127.0.0.1:50706 #20
+Sun Nov 13 17:46:03 [conn20]  authenticate: { authenticate: 1, user: "azhai", nonce: "da24a998bff1e680", key: "7f2fbb14516436bf7e2c6a2b39f83f25" }
+Sun Nov 13 17:46:03 [conn20] end connection 127.0.0.1:50706
+Sun Nov 13 17:46:05 [initandlisten] connection accepted from 127.0.0.1:50707 #21
+Sun Nov 13 17:46:05 [conn21]  authenticate: { authenticate: 1, user: "azhai", nonce: "acb52e972921bce9", key: "7ec5f6afff3d04e2d94181f56aa318c3" }
+Sun Nov 13 17:46:06 [conn21] end connection 127.0.0.1:50707
+Sun Nov 13 17:46:06 [initandlisten] connection accepted from 127.0.0.1:50708 #22
+Sun Nov 13 17:46:06 [conn22]  authenticate: { authenticate: 1, user: "azhai", nonce: "f729ae06130f2a3a", key: "cb070fcc53ac0f03f91a988af2a64ea8" }
+Sun Nov 13 17:46:06 [conn22] end connection 127.0.0.1:50708
+Sun Nov 13 17:46:08 [initandlisten] connection accepted from 127.0.0.1:50709 #23
+Sun Nov 13 17:46:08 [conn23]  authenticate: { authenticate: 1, user: "azhai", nonce: "4ceb1d8477ff1484", key: "43de67badec08b2dfe1c20911af6de35" }
+Sun Nov 13 17:46:08 [conn23] end connection 127.0.0.1:50709
+Sun Nov 13 17:46:08 [initandlisten] connection accepted from 127.0.0.1:50710 #24
+Sun Nov 13 17:46:08 [conn24]  authenticate: { authenticate: 1, user: "azhai", nonce: "5600dd3f62ff634c", key: "a80fd2ec196cdcea78d63f7f335b99b6" }
+Sun Nov 13 17:46:08 [conn24] end connection 127.0.0.1:50710
+Sun Nov 13 17:46:09 [initandlisten] connection accepted from 127.0.0.1:50711 #25
+Sun Nov 13 17:46:09 [conn25]  authenticate: { authenticate: 1, user: "azhai", nonce: "50e886940b65850d", key: "cc98f00e11ecb1072b35da8a872afd5b" }
+Sun Nov 13 17:46:09 [conn25] end connection 127.0.0.1:50711
+Sun Nov 13 17:46:09 [initandlisten] connection accepted from 127.0.0.1:50712 #26
+Sun Nov 13 17:46:09 [conn26]  authenticate: { authenticate: 1, user: "azhai", nonce: "44e402484b4c2e13", key: "ef91a4b36111162358bf2b03ff230e67" }
+Sun Nov 13 17:46:09 [conn26] end connection 127.0.0.1:50712
+Sun Nov 13 17:46:11 [initandlisten] connection accepted from 127.0.0.1:50713 #27
+Sun Nov 13 17:46:11 [conn27]  authenticate: { authenticate: 1, user: "azhai", nonce: "91bd3400a241877c", key: "b272d0165acaf5c1fbea5c20e8f3a7b4" }
+Sun Nov 13 17:46:11 [conn27] end connection 127.0.0.1:50713
+Sun Nov 13 17:46:11 [initandlisten] connection accepted from 127.0.0.1:50714 #28
+Sun Nov 13 17:46:11 [conn28]  authenticate: { authenticate: 1, user: "azhai", nonce: "69342173fb972db6", key: "2087587874e4290650ce7bb67a07a27e" }
+Sun Nov 13 17:46:11 [conn28] end connection 127.0.0.1:50714
+Sun Nov 13 17:46:12 [initandlisten] connection accepted from 127.0.0.1:50715 #29
+Sun Nov 13 17:46:12 [conn29]  authenticate: { authenticate: 1, user: "azhai", nonce: "9bb4981924cf1689", key: "dc60fb6fefc115c32faa559730e62713" }
+Sun Nov 13 17:46:12 [conn29] end connection 127.0.0.1:50715
+Sun Nov 13 17:46:12 [initandlisten] connection accepted from 127.0.0.1:50716 #30
+Sun Nov 13 17:46:12 [conn30]  authenticate: { authenticate: 1, user: "azhai", nonce: "6e821ab6f02bbff8", key: "58c2a3872d6d6a2e6ebd8d75f8b135cd" }
+Sun Nov 13 17:46:12 [conn30] end connection 127.0.0.1:50716
+Sun Nov 13 17:46:15 [initandlisten] connection accepted from 127.0.0.1:50717 #31
+Sun Nov 13 17:46:15 [conn31]  authenticate: { authenticate: 1, user: "azhai", nonce: "ddb1700f98e697c", key: "c32aae636e7dc8d805a2be2753cccb02" }
+Sun Nov 13 17:46:15 [conn31] end connection 127.0.0.1:50717
+Sun Nov 13 17:46:15 [initandlisten] connection accepted from 127.0.0.1:50718 #32
+Sun Nov 13 17:46:15 [conn32]  authenticate: { authenticate: 1, user: "azhai", nonce: "67766152fed269d3", key: "4b41d0e69633ae974955c64b9d6ff035" }
+Sun Nov 13 17:46:15 [conn32] end connection 127.0.0.1:50718
+Sun Nov 13 17:46:17 [initandlisten] connection accepted from 127.0.0.1:50719 #33
+Sun Nov 13 17:46:17 [conn33]  authenticate: { authenticate: 1, user: "azhai", nonce: "6bff972c806d534d", key: "1387bdfe3203d42c7a7ce55446c03c8f" }
+Sun Nov 13 17:46:17 [conn33] end connection 127.0.0.1:50719
+Sun Nov 13 17:46:18 [initandlisten] connection accepted from 127.0.0.1:50720 #34
+Sun Nov 13 17:46:18 [conn34]  authenticate: { authenticate: 1, user: "azhai", nonce: "2970fc720ecc4a35", key: "5b497fe3ff1de9fb54dc125724c08178" }
+Sun Nov 13 17:46:18 [conn34] end connection 127.0.0.1:50720
+Sun Nov 13 17:46:31 [initandlisten] connection accepted from 127.0.0.1:50721 #35
+Sun Nov 13 17:46:31 [conn35]  authenticate: { authenticate: 1, user: "azhai", nonce: "75eb415591bce87", key: "6928cb7582cbb0a0930f6d77e1a8beb5" }
+Sun Nov 13 17:46:31 [conn35] end connection 127.0.0.1:50721
+Sun Nov 13 17:46:31 [initandlisten] connection accepted from 127.0.0.1:50722 #36
+Sun Nov 13 17:46:31 [conn36]  authenticate: { authenticate: 1, user: "azhai", nonce: "de3ad444251bf01b", key: "52bad399805313bda951970e007873f2" }
+Sun Nov 13 17:46:31 [conn36] end connection 127.0.0.1:50722
+Sun Nov 13 17:46:33 [initandlisten] connection accepted from 127.0.0.1:50723 #37
+Sun Nov 13 17:46:33 [conn37]  authenticate: { authenticate: 1, user: "azhai", nonce: "8ed69ef9729ac60", key: "dacd0df4217880d1160e215ed5590d79" }
+Sun Nov 13 17:46:33 [conn37] end connection 127.0.0.1:50723
+Sun Nov 13 17:46:33 [initandlisten] connection accepted from 127.0.0.1:50724 #38
+Sun Nov 13 17:46:33 [conn38]  authenticate: { authenticate: 1, user: "azhai", nonce: "3b46aaaf04fb88bc", key: "5290ec021cbb2e5eb5bfe69c55538495" }
+Sun Nov 13 17:46:34 [conn38] end connection 127.0.0.1:50724
+Sun Nov 13 17:46:35 [initandlisten] connection accepted from 127.0.0.1:50725 #39
+Sun Nov 13 17:46:35 [conn39]  authenticate: { authenticate: 1, user: "azhai", nonce: "1683857097126876", key: "f3eb78512de8966cf6d05d61d8557f8d" }
+Sun Nov 13 17:46:35 [conn39] end connection 127.0.0.1:50725
+Sun Nov 13 17:46:35 [initandlisten] connection accepted from 127.0.0.1:50726 #40
+Sun Nov 13 17:46:35 [conn40]  authenticate: { authenticate: 1, user: "azhai", nonce: "9a3f829bc924caa9", key: "fff9ce90cc0ded98b0ac5813b9d73e79" }
+Sun Nov 13 17:46:35 [conn40] end connection 127.0.0.1:50726
+Sun Nov 13 17:48:18 [initandlisten] connection accepted from 127.0.0.1:50733 #41
+Sun Nov 13 17:48:18 [conn41]  authenticate: { authenticate: 1, user: "azhai", nonce: "fcf627db10d0f79e", key: "5ddf1ea7f0bd1f9e9163ddb122d8456f" }
+Sun Nov 13 17:48:18 [conn41] end connection 127.0.0.1:50733
+Sun Nov 13 17:48:18 [initandlisten] connection accepted from 127.0.0.1:50734 #42
+Sun Nov 13 17:48:18 [conn42]  authenticate: { authenticate: 1, user: "azhai", nonce: "9cce2c08a80465a", key: "fc52ac70d7be75a8118a34658beb0497" }
+Sun Nov 13 17:48:18 [conn42] end connection 127.0.0.1:50734
+Sun Nov 13 17:48:48 [conn1] creating profile collection: calfs.system.profile
+Sun Nov 13 17:49:26 [initandlisten] connection accepted from 127.0.0.1:50735 #43
+Sun Nov 13 17:49:26 [conn43]  authenticate: { authenticate: 1, user: "azhai", nonce: "6e16b77d42755cbf", key: "ac8aa96ef47daa591e600608745e6f7d" }
+Sun Nov 13 17:49:26 [conn43] end connection 127.0.0.1:50735
+Sun Nov 13 17:49:26 [initandlisten] connection accepted from 127.0.0.1:50736 #44
+Sun Nov 13 17:49:26 [conn44]  authenticate: { authenticate: 1, user: "azhai", nonce: "3d3f1951e1c73066", key: "2f0a48b1f42406bbc7f988dbaf919c05" }
+Sun Nov 13 17:49:26 [conn44] end connection 127.0.0.1:50736
+Sun Nov 13 17:49:29 [initandlisten] connection accepted from 127.0.0.1:50737 #45
+Sun Nov 13 17:49:29 [conn45]  authenticate: { authenticate: 1, user: "azhai", nonce: "e575277e0425ff84", key: "ad6308f24f8f3ca08babf38605c35799" }
+Sun Nov 13 17:49:29 [conn45] end connection 127.0.0.1:50737
+Sun Nov 13 17:49:29 [initandlisten] connection accepted from 127.0.0.1:50738 #46
+Sun Nov 13 17:49:29 [conn46]  authenticate: { authenticate: 1, user: "azhai", nonce: "8d8ad5df8a49ef7d", key: "d05fb020000b62862b9e396714126c9d" }
+Sun Nov 13 17:49:29 [conn46] end connection 127.0.0.1:50738
+Sun Nov 13 17:49:54 [clientcursormon] mem (MB) res:32 virt:2919 mapped:240
+Sun Nov 13 17:50:17 [initandlisten] connection accepted from 127.0.0.1:50739 #47
+Sun Nov 13 17:50:17 [conn47]  authenticate: { authenticate: 1, user: "azhai", nonce: "fe699eb941ba7a2f", key: "350d948007d64844f2112d7ae6cd3655" }
+Sun Nov 13 17:50:17 [conn47] end connection 127.0.0.1:50739
+Sun Nov 13 17:50:17 [initandlisten] connection accepted from 127.0.0.1:50740 #48
+Sun Nov 13 17:50:17 [conn48]  authenticate: { authenticate: 1, user: "azhai", nonce: "7db89cbda2922f17", key: "3b835d66f711ba6a34f57960921dc1de" }
+Sun Nov 13 17:50:17 [conn48] end connection 127.0.0.1:50740
+Sun Nov 13 17:50:20 [initandlisten] connection accepted from 127.0.0.1:50741 #49
+Sun Nov 13 17:50:20 [conn49]  authenticate: { authenticate: 1, user: "azhai", nonce: "a9055d94a587043b", key: "cdf77e03fba310d5d7780eb2448e04a3" }
+Sun Nov 13 17:50:20 [conn49] end connection 127.0.0.1:50741
+Sun Nov 13 17:50:20 [initandlisten] connection accepted from 127.0.0.1:50742 #50
+Sun Nov 13 17:50:20 [conn50]  authenticate: { authenticate: 1, user: "azhai", nonce: "fceda0c6bee9a6eb", key: "249327930feee3d9f7a01f74bba2acf6" }
+Sun Nov 13 17:50:20 [conn50] end connection 127.0.0.1:50742
+Sun Nov 13 17:51:10 [initandlisten] connection accepted from 127.0.0.1:50743 #51
+Sun Nov 13 17:51:10 [conn51]  authenticate: { authenticate: 1, user: "azhai", nonce: "cd9cc75cd2a7e4c", key: "d02c6bfa4590b9affbca654e608555f9" }
+Sun Nov 13 17:51:10 [conn51] end connection 127.0.0.1:50743
+Sun Nov 13 17:51:10 [initandlisten] connection accepted from 127.0.0.1:50744 #52
+Sun Nov 13 17:51:10 [conn52]  authenticate: { authenticate: 1, user: "azhai", nonce: "3ecb5572792334df", key: "495e43b3e4b2235b400f6256f09fb349" }
+Sun Nov 13 17:51:10 [conn52] end connection 127.0.0.1:50744
+Sun Nov 13 17:51:12 [initandlisten] connection accepted from 127.0.0.1:50745 #53
+Sun Nov 13 17:51:12 [conn53]  authenticate: { authenticate: 1, user: "azhai", nonce: "a074159f093da939", key: "ccc3e8aa28c884f8dfb89b6b54830e33" }
+Sun Nov 13 17:51:12 [conn53] end connection 127.0.0.1:50745
+Sun Nov 13 17:51:12 [initandlisten] connection accepted from 127.0.0.1:50746 #54
+Sun Nov 13 17:51:12 [conn54]  authenticate: { authenticate: 1, user: "azhai", nonce: "86a2a07c2c1c12d", key: "c1329b92f65c1804aad52e41a78f2da1" }
+Sun Nov 13 17:51:12 [conn54] end connection 127.0.0.1:50746
+Sun Nov 13 17:51:17 [initandlisten] connection accepted from 127.0.0.1:50747 #55
+Sun Nov 13 17:51:17 [conn55]  authenticate: { authenticate: 1, user: "azhai", nonce: "9dc335023bbbf802", key: "f812e8bee0ad89102277f454aa1c9a37" }
+Sun Nov 13 17:51:17 [conn55] end connection 127.0.0.1:50747
+Sun Nov 13 17:51:17 [initandlisten] connection accepted from 127.0.0.1:50748 #56
+Sun Nov 13 17:51:17 [conn56]  authenticate: { authenticate: 1, user: "azhai", nonce: "21484670907a25cf", key: "ef41f2ee310331d7f501ff4729d315d6" }
+Sun Nov 13 17:51:17 [conn56] end connection 127.0.0.1:50748
+Sun Nov 13 17:51:18 [initandlisten] connection accepted from 127.0.0.1:50749 #57
+Sun Nov 13 17:51:18 [conn57]  authenticate: { authenticate: 1, user: "azhai", nonce: "54926d488e8ee551", key: "67b5867f8c4e0c80b89df48065f4052c" }
+Sun Nov 13 17:51:18 [conn57] end connection 127.0.0.1:50749
+Sun Nov 13 17:51:19 [initandlisten] connection accepted from 127.0.0.1:50750 #58
+Sun Nov 13 17:51:19 [conn58]  authenticate: { authenticate: 1, user: "azhai", nonce: "44eedaf779119b98", key: "142c96bf6b13ed58a60e15dc7535bb0e" }
+Sun Nov 13 17:51:19 [conn58] end connection 127.0.0.1:50750
+Sun Nov 13 17:52:13 [initandlisten] connection accepted from 127.0.0.1:50752 #59
+Sun Nov 13 17:52:13 [conn59]  authenticate: { authenticate: 1, user: "azhai", nonce: "bfb6543f68525385", key: "4e4c863598ef850c084f2efc18409a21" }
+Sun Nov 13 17:52:13 [conn59] end connection 127.0.0.1:50752
+Sun Nov 13 17:52:13 [initandlisten] connection accepted from 127.0.0.1:50753 #60
+Sun Nov 13 17:52:13 [conn60]  authenticate: { authenticate: 1, user: "azhai", nonce: "7943e9dcbf2d8e98", key: "cda68da6bda99a3e47f2183c4810b370" }
+Sun Nov 13 17:52:13 [conn60] end connection 127.0.0.1:50753
+Sun Nov 13 17:52:14 [initandlisten] connection accepted from 127.0.0.1:50754 #61
+Sun Nov 13 17:52:14 [conn61]  authenticate: { authenticate: 1, user: "azhai", nonce: "905b6a35754afe0b", key: "0b464117e091f43be85395cd4fe43dc5" }
+Sun Nov 13 17:52:14 [conn61] end connection 127.0.0.1:50754
+Sun Nov 13 17:52:14 [initandlisten] connection accepted from 127.0.0.1:50755 #62
+Sun Nov 13 17:52:14 [conn62]  authenticate: { authenticate: 1, user: "azhai", nonce: "8794e834d758a7ee", key: "c5c7b254da7833925fc3e30a34f7421d" }
+Sun Nov 13 17:52:14 [conn62] end connection 127.0.0.1:50755
+Sun Nov 13 17:52:16 [initandlisten] connection accepted from 127.0.0.1:50756 #63
+Sun Nov 13 17:52:16 [conn63]  authenticate: { authenticate: 1, user: "azhai", nonce: "f8cc9fac38c55646", key: "ec4944657f6d1271973007e59c74e4c5" }
+Sun Nov 13 17:52:16 [conn63] end connection 127.0.0.1:50756
+Sun Nov 13 17:52:16 [initandlisten] connection accepted from 127.0.0.1:50757 #64
+Sun Nov 13 17:52:16 [conn64]  authenticate: { authenticate: 1, user: "azhai", nonce: "f22d08a16f1a0098", key: "cb2bd3c7700e1dee1dece80b4836af09" }
+Sun Nov 13 17:52:16 [conn64] end connection 127.0.0.1:50757
+Sun Nov 13 17:52:18 [initandlisten] connection accepted from 127.0.0.1:50758 #65
+Sun Nov 13 17:52:18 [conn65]  authenticate: { authenticate: 1, user: "azhai", nonce: "6dcc38c6d3b81fd9", key: "115ec887b388254032e7e3ccf4f6425e" }
+Sun Nov 13 17:52:18 [conn65] end connection 127.0.0.1:50758
+Sun Nov 13 17:52:18 [initandlisten] connection accepted from 127.0.0.1:50759 #66
+Sun Nov 13 17:52:18 [conn66]  authenticate: { authenticate: 1, user: "azhai", nonce: "1c8d46bc01f6cf86", key: "94cd2db6de2e976b4ec54345bde5165d" }
+Sun Nov 13 17:52:18 [conn66] end connection 127.0.0.1:50759
+Sun Nov 13 17:52:19 [initandlisten] connection accepted from 127.0.0.1:50760 #67
+Sun Nov 13 17:52:19 [conn67]  authenticate: { authenticate: 1, user: "azhai", nonce: "e6d8e1244be6adb9", key: "b404a4dc2ba348519fefe229e44a70c0" }
+Sun Nov 13 17:52:19 [conn67] end connection 127.0.0.1:50760
+Sun Nov 13 17:52:19 [initandlisten] connection accepted from 127.0.0.1:50761 #68
+Sun Nov 13 17:52:19 [conn68]  authenticate: { authenticate: 1, user: "azhai", nonce: "b8f09ce4dd7ba0e", key: "8c416534d869b45016c85bdce18cd617" }
+Sun Nov 13 17:52:19 [conn68] end connection 127.0.0.1:50761
+Sun Nov 13 17:52:20 [initandlisten] connection accepted from 127.0.0.1:50762 #69
+Sun Nov 13 17:52:20 [conn69]  authenticate: { authenticate: 1, user: "azhai", nonce: "93e4a686196a279d", key: "d46819d6bd872a3c2d3c3a2b19f6c138" }
+Sun Nov 13 17:52:20 [conn69] end connection 127.0.0.1:50762
+Sun Nov 13 17:52:21 [initandlisten] connection accepted from 127.0.0.1:50763 #70
+Sun Nov 13 17:52:21 [conn70]  authenticate: { authenticate: 1, user: "azhai", nonce: "edd0c09fd2aa54f", key: "cb560470a1caefdba0d3753238d323e2" }
+Sun Nov 13 17:52:21 [conn70] end connection 127.0.0.1:50763
+Sun Nov 13 17:52:39 [initandlisten] connection accepted from 127.0.0.1:50765 #71
+Sun Nov 13 17:52:39 [conn71]  authenticate: { authenticate: 1, user: "azhai", nonce: "a4215b49b4201d49", key: "7654538eeb9d20cb6c9c90e2b693a94a" }
+Sun Nov 13 17:52:39 [conn71] end connection 127.0.0.1:50765
+Sun Nov 13 17:52:39 [initandlisten] connection accepted from 127.0.0.1:50766 #72
+Sun Nov 13 17:52:39 [conn72]  authenticate: { authenticate: 1, user: "azhai", nonce: "679923569f8bd26b", key: "3fe9d9a55da5f8fdc7f96e1f1f95bef6" }
+Sun Nov 13 17:52:39 [conn72] end connection 127.0.0.1:50766
+Sun Nov 13 17:52:41 [initandlisten] connection accepted from 127.0.0.1:50767 #73
+Sun Nov 13 17:52:41 [conn73]  authenticate: { authenticate: 1, user: "azhai", nonce: "285433a6c14ec5fd", key: "41c88003da9de74f80e3f94f24be7ebf" }
+Sun Nov 13 17:52:41 [conn73] end connection 127.0.0.1:50767
+Sun Nov 13 17:52:41 [initandlisten] connection accepted from 127.0.0.1:50768 #74
+Sun Nov 13 17:52:41 [conn74]  authenticate: { authenticate: 1, user: "azhai", nonce: "49b631662cac79ed", key: "54d779c0407b4292908b754ab3b38031" }
+Sun Nov 13 17:52:41 [conn74] end connection 127.0.0.1:50768
+Sun Nov 13 17:53:44 [initandlisten] connection accepted from 127.0.0.1:50770 #75
+Sun Nov 13 17:53:44 [conn75]  authenticate: { authenticate: 1, user: "azhai", nonce: "71b601f0eceabcaa", key: "3f4a7bd2de7e8eef48f04b618949c9f3" }
+Sun Nov 13 17:53:44 [conn75] end connection 127.0.0.1:50770
+Sun Nov 13 17:53:44 [initandlisten] connection accepted from 127.0.0.1:50771 #76
+Sun Nov 13 17:53:44 [conn76]  authenticate: { authenticate: 1, user: "azhai", nonce: "dda96b9ce4f6f1d6", key: "b7ebf213025f30113928fd86e38ef58b" }
+Sun Nov 13 17:53:44 [conn76] end connection 127.0.0.1:50771
+Sun Nov 13 17:53:46 [initandlisten] connection accepted from 127.0.0.1:50778 #77
+Sun Nov 13 17:53:46 [conn77]  authenticate: { authenticate: 1, user: "azhai", nonce: "d5eba136087e8925", key: "88164b1cbf953e4d520602676f7ec325" }
+Sun Nov 13 17:53:46 [conn77] end connection 127.0.0.1:50778
+Sun Nov 13 17:53:46 [initandlisten] connection accepted from 127.0.0.1:50779 #78
+Sun Nov 13 17:53:46 [conn78]  authenticate: { authenticate: 1, user: "azhai", nonce: "c8694c1998b5f93f", key: "3bf4b8f74e3e3b1e4b8ac4dc07900366" }
+Sun Nov 13 17:53:46 [conn78] end connection 127.0.0.1:50779
+Sun Nov 13 17:54:02 [initandlisten] connection accepted from 127.0.0.1:50780 #79
+Sun Nov 13 17:54:02 [conn79]  authenticate: { authenticate: 1, user: "azhai", nonce: "e80b62a4c429b4ec", key: "62760b2421ebb129dc7f3d32f4c41fab" }
+Sun Nov 13 17:54:02 [conn79] end connection 127.0.0.1:50780
+Sun Nov 13 17:54:02 [initandlisten] connection accepted from 127.0.0.1:50781 #80
+Sun Nov 13 17:54:02 [conn80]  authenticate: { authenticate: 1, user: "azhai", nonce: "2d3151f3c8d22b8c", key: "24dadd9fc6e72c84097b3afb6fbecef0" }
+Sun Nov 13 17:54:02 [conn80] end connection 127.0.0.1:50781
+Sun Nov 13 17:54:04 [initandlisten] connection accepted from 127.0.0.1:50782 #81
+Sun Nov 13 17:54:04 [conn81]  authenticate: { authenticate: 1, user: "azhai", nonce: "e9d2860b7b62c663", key: "32f748f595f173ad007ed536d5576e00" }
+Sun Nov 13 17:54:04 [conn81] end connection 127.0.0.1:50782
+Sun Nov 13 17:54:04 [initandlisten] connection accepted from 127.0.0.1:50783 #82
+Sun Nov 13 17:54:04 [conn82]  authenticate: { authenticate: 1, user: "azhai", nonce: "100be8976277442a", key: "363d27fd741b74f1d4b21e0271191634" }
+Sun Nov 13 17:54:04 [conn82] end connection 127.0.0.1:50783
+Sun Nov 13 17:54:07 [initandlisten] connection accepted from 127.0.0.1:50784 #83
+Sun Nov 13 17:54:07 [conn83]  authenticate: { authenticate: 1, user: "azhai", nonce: "d170ae7d52d59f8f", key: "be87eb4fbcf1c9c126b756cc2e4b249b" }
+Sun Nov 13 17:54:07 [conn83] end connection 127.0.0.1:50784
+Sun Nov 13 17:54:07 [initandlisten] connection accepted from 127.0.0.1:50785 #84
+Sun Nov 13 17:54:07 [conn84]  authenticate: { authenticate: 1, user: "azhai", nonce: "9163a258a78658e1", key: "4aac1f498389a9b7a329a8756b235176" }
+Sun Nov 13 17:54:07 [conn84] end connection 127.0.0.1:50785
+Sun Nov 13 17:54:54 [clientcursormon] mem (MB) res:32 virt:2919 mapped:240
+Sun Nov 13 17:55:30 [initandlisten] connection accepted from 127.0.0.1:50787 #85
+Sun Nov 13 17:55:30 [conn85]  authenticate: { authenticate: 1, user: "azhai", nonce: "16ad4a083d4ccb17", key: "4bb7db4ff818d213525682b49bd9aff8" }
+Sun Nov 13 17:55:30 [conn85] end connection 127.0.0.1:50787
+Sun Nov 13 17:55:30 [initandlisten] connection accepted from 127.0.0.1:50788 #86
+Sun Nov 13 17:55:30 [conn86]  authenticate: { authenticate: 1, user: "azhai", nonce: "7459da4baa393223", key: "01ede1e02de048a5110cdbfbba455897" }
+Sun Nov 13 17:55:30 [conn86] end connection 127.0.0.1:50788
+Sun Nov 13 17:55:32 [initandlisten] connection accepted from 127.0.0.1:50789 #87
+Sun Nov 13 17:55:32 [conn87]  authenticate: { authenticate: 1, user: "azhai", nonce: "63b0f289a031a200", key: "542dbf5007f0282d4540def9e9599322" }
+Sun Nov 13 17:55:32 [conn87] end connection 127.0.0.1:50789
+Sun Nov 13 17:55:48 [initandlisten] connection accepted from 127.0.0.1:50791 #88
+Sun Nov 13 17:55:48 [conn88]  authenticate: { authenticate: 1, user: "azhai", nonce: "da233cc894a93386", key: "5773e9f61530b0be46e0c7536c222600" }
+Sun Nov 13 17:55:48 [conn88] end connection 127.0.0.1:50791
+Sun Nov 13 17:56:52 [initandlisten] connection accepted from 127.0.0.1:50792 #89
+Sun Nov 13 17:56:52 [conn89]  authenticate: { authenticate: 1, user: "azhai", nonce: "698700d667ada47b", key: "cfecdaa25775c6e28e4bd424c63269b7" }
+Sun Nov 13 17:56:52 [conn89] end connection 127.0.0.1:50792
+Sun Nov 13 17:56:53 [initandlisten] connection accepted from 127.0.0.1:50793 #90
+Sun Nov 13 17:56:53 [conn90]  authenticate: { authenticate: 1, user: "azhai", nonce: "4d1bf760fdca8983", key: "a4e255163d67272f700c78e907146dbe" }
+Sun Nov 13 17:56:53 [conn90] end connection 127.0.0.1:50793
+Sun Nov 13 17:56:54 [initandlisten] connection accepted from 127.0.0.1:50794 #91
+Sun Nov 13 17:56:54 [conn91]  authenticate: { authenticate: 1, user: "azhai", nonce: "ef67b8aeb6a72e61", key: "c854752f5d23e2565b7382791824ce09" }
+Sun Nov 13 17:56:54 [conn91] end connection 127.0.0.1:50794
+Sun Nov 13 17:56:54 [initandlisten] connection accepted from 127.0.0.1:50795 #92
+Sun Nov 13 17:56:54 [conn92]  authenticate: { authenticate: 1, user: "azhai", nonce: "9c25b10eada0b3be", key: "32d606d426cf7c8c380d57325ac7eac3" }
+Sun Nov 13 17:56:54 [conn92] end connection 127.0.0.1:50795
+Sun Nov 13 17:56:56 [initandlisten] connection accepted from 127.0.0.1:50796 #93
+Sun Nov 13 17:56:56 [conn93]  authenticate: { authenticate: 1, user: "azhai", nonce: "b5ce357e97cdf23d", key: "0247be9c182b6a74a4ddc16033df2a4f" }
+Sun Nov 13 17:56:56 [conn93] end connection 127.0.0.1:50796
+Sun Nov 13 17:56:56 [initandlisten] connection accepted from 127.0.0.1:50797 #94
+Sun Nov 13 17:56:56 [conn94]  authenticate: { authenticate: 1, user: "azhai", nonce: "d6cbab92da608570", key: "a3263ad1c08103599f39f8b1e2ab52db" }
+Sun Nov 13 17:56:56 [conn94] end connection 127.0.0.1:50797
+Sun Nov 13 17:57:27 [initandlisten] connection accepted from 127.0.0.1:50799 #95
+Sun Nov 13 17:57:27 [conn95]  authenticate: { authenticate: 1, user: "azhai", nonce: "e707b1f2da8ea87d", key: "18a73bf1beca8e2f5dde60866b060986" }
+Sun Nov 13 17:57:27 [conn95] end connection 127.0.0.1:50799
+Sun Nov 13 17:57:27 [initandlisten] connection accepted from 127.0.0.1:50800 #96
+Sun Nov 13 17:57:27 [conn96]  authenticate: { authenticate: 1, user: "azhai", nonce: "a1c157be5d02abe6", key: "0d91038b9a6e75aa590f7b4d90817190" }
+Sun Nov 13 17:57:27 [conn96] end connection 127.0.0.1:50800
+Sun Nov 13 17:57:30 [initandlisten] connection accepted from 127.0.0.1:50801 #97
+Sun Nov 13 17:57:30 [conn97]  authenticate: { authenticate: 1, user: "azhai", nonce: "416560fd2f71f1d9", key: "f085cd31dfdeea52c0dfde62e780c4d8" }
+Sun Nov 13 17:57:30 [conn97] end connection 127.0.0.1:50801
+Sun Nov 13 17:58:39 [initandlisten] connection accepted from 127.0.0.1:50803 #98
+Sun Nov 13 17:58:39 [conn98]  authenticate: { authenticate: 1, user: "azhai", nonce: "b8c11eba1ff8d065", key: "c523887946c73182918c8c71f4199440" }
+Sun Nov 13 17:58:39 [conn98] query calfs.products ntoreturn:15 nscanned:20 scanAndOrder:1 nreturned:15 reslen:8868 368ms
+Sun Nov 13 17:58:39 [conn98] end connection 127.0.0.1:50803
+Sun Nov 13 17:58:42 [initandlisten] connection accepted from 127.0.0.1:50804 #99
+Sun Nov 13 17:58:42 [conn99]  authenticate: { authenticate: 1, user: "azhai", nonce: "8f8193e580435969", key: "37c3c05b21d71798f5a50421c868d4df" }
+Sun Nov 13 17:58:42 [conn99] end connection 127.0.0.1:50804
+Sun Nov 13 17:58:42 [initandlisten] connection accepted from 127.0.0.1:50805 #100
+Sun Nov 13 17:58:42 [conn100]  authenticate: { authenticate: 1, user: "azhai", nonce: "f43b55629b1aa206", key: "438c37e0ea3f3463bf957310e4547101" }
+Sun Nov 13 17:58:42 [conn100] end connection 127.0.0.1:50805
+Sun Nov 13 17:58:44 [initandlisten] connection accepted from 127.0.0.1:50806 #101
+Sun Nov 13 17:58:44 [conn101]  authenticate: { authenticate: 1, user: "azhai", nonce: "cf2bda67a955cd28", key: "c20c3397be58585e6ce5d95a96ff5627" }
+Sun Nov 13 17:58:44 [conn101] end connection 127.0.0.1:50806
+Sun Nov 13 17:59:45 [initandlisten] connection accepted from 127.0.0.1:50808 #102
+Sun Nov 13 17:59:45 [conn102]  authenticate: { authenticate: 1, user: "azhai", nonce: "6f06363294cca09", key: "0fc579de1a2daa0564119bf32fbcd155" }
+Sun Nov 13 17:59:45 [conn102] end connection 127.0.0.1:50808
+Sun Nov 13 17:59:47 [initandlisten] connection accepted from 127.0.0.1:50815 #103
+Sun Nov 13 17:59:47 [conn103]  authenticate: { authenticate: 1, user: "azhai", nonce: "8c0fba494e53f79b", key: "815180755835941c8e84582ce073d26f" }
+Sun Nov 13 17:59:47 [conn103] end connection 127.0.0.1:50815
+Sun Nov 13 17:59:48 [initandlisten] connection accepted from 127.0.0.1:50816 #104
+Sun Nov 13 17:59:48 [conn104]  authenticate: { authenticate: 1, user: "azhai", nonce: "12ae1ed019fb96f2", key: "1b4052fce731a6f70433e1216f9161f4" }
+Sun Nov 13 17:59:48 [conn104] end connection 127.0.0.1:50816
+Sun Nov 13 17:59:49 [initandlisten] connection accepted from 127.0.0.1:50817 #105
+Sun Nov 13 17:59:49 [conn105]  authenticate: { authenticate: 1, user: "azhai", nonce: "e006245348e02508", key: "b8ce231300f82363643af91d82fe5bbf" }
+Sun Nov 13 17:59:49 [conn105] end connection 127.0.0.1:50817
+Sun Nov 13 17:59:49 [initandlisten] connection accepted from 127.0.0.1:50818 #106
+Sun Nov 13 17:59:49 [conn106]  authenticate: { authenticate: 1, user: "azhai", nonce: "3647b4d59525307c", key: "92a097efbfdb3d329ad18c7b254b09ca" }
+Sun Nov 13 17:59:49 [conn106] end connection 127.0.0.1:50818
+Sun Nov 13 17:59:53 [initandlisten] connection accepted from 127.0.0.1:50819 #107
+Sun Nov 13 17:59:53 [conn107]  authenticate: { authenticate: 1, user: "azhai", nonce: "b24e24968374629e", key: "a3fb3269bb85ef13959a4df325ce191c" }
+Sun Nov 13 17:59:53 [conn107] end connection 127.0.0.1:50819
+Sun Nov 13 17:59:53 [initandlisten] connection accepted from 127.0.0.1:50820 #108
+Sun Nov 13 17:59:53 [conn108]  authenticate: { authenticate: 1, user: "azhai", nonce: "bbbb0643fd3eb888", key: "a70a541cc2343aebd05cf9adbf018688" }
+Sun Nov 13 17:59:53 [conn108] end connection 127.0.0.1:50820
+Sun Nov 13 17:59:54 [clientcursormon] mem (MB) res:32 virt:2919 mapped:240
+Sun Nov 13 17:59:58 [initandlisten] connection accepted from 127.0.0.1:50821 #109
+Sun Nov 13 17:59:58 [conn109]  authenticate: { authenticate: 1, user: "azhai", nonce: "2cc851c5f3d6ff8f", key: "482c5cbc45a07ee45a6744f5bc099af1" }
+Sun Nov 13 17:59:58 [conn109] end connection 127.0.0.1:50821
+Sun Nov 13 17:59:58 [initandlisten] connection accepted from 127.0.0.1:50822 #110
+Sun Nov 13 17:59:58 [conn110]  authenticate: { authenticate: 1, user: "azhai", nonce: "78bc8270f5350b7c", key: "a0d1c306b2bbba5a5610614c0ef432c5" }
+Sun Nov 13 17:59:58 [conn110] end connection 127.0.0.1:50822
+Sun Nov 13 18:00:00 [initandlisten] connection accepted from 127.0.0.1:50823 #111
+Sun Nov 13 18:00:00 [conn111]  authenticate: { authenticate: 1, user: "azhai", nonce: "5a6a26b325deb38d", key: "4008f1a08e7a7498aee65bcac6094703" }
+Sun Nov 13 18:00:00 [conn111] end connection 127.0.0.1:50823
+Sun Nov 13 18:00:00 [initandlisten] connection accepted from 127.0.0.1:50824 #112
+Sun Nov 13 18:00:00 [conn112]  authenticate: { authenticate: 1, user: "azhai", nonce: "e04dd0079b8d9ce4", key: "730a5096bd953e24d9740249ad110caf" }
+Sun Nov 13 18:00:00 [conn112] end connection 127.0.0.1:50824
+Sun Nov 13 18:00:18 [conn1] end connection 127.0.0.1:50577
