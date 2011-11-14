@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 /**
- * @description : 
+ * @description :  /post/getproductinfo
  *
  * @author Azhai
  * @date 2011-10-31 
@@ -16,9 +16,11 @@
         $(function(){
 	   
               $('#uploadform').ajaxUpload({
-		       target:'/testajax',
+		       target:'/upload/image',
 		       handleJsonResponse:function(json){
 			    if (json.file.name){
+			      alert(json.filename);	 
+			      $('#imgs_0').attr('src','/media/upload/'+json.filename);	
 			      $('#status').append('<div><input type="checkbox" value="'+json.filename+'" id="files" name="attach" checked >'+json.file.name+'  ( <i>'+json.file.type+'</i> )  '+Math.round(json.file.size/1024)+'KB </div>');
 		              
 		            }
@@ -26,6 +28,7 @@
 		       beforeSubmit: function(form,iframe){$('#loading').html('loading...');},
 		       afterSubmit: function(form,iframe){$('#loading').html('');$('#file',form).val('');}
 		 });
+		
 	       $.Placeholder.init();
           
                $( "#tabs" ).tabs();
@@ -115,6 +118,15 @@
         <div id="tabs-2">
 	<table class="uiInfoTable">
  	<tbody>	  
+	  <tr class="dataRow"> 
+	    <th style="width:50px;" class="label">其他图片：</th>
+	    <td><ul class="pimgs">		 
+		 <?php foreach ($imgs_array_data as $key => $value): ?>
+		     <li><img width=100 height=100 id="imgs_<?php echo $key ?>"  onerror="this.src='/media/images/none_150.gif'" src='<?php echo $value; ?>' /><p style="text-align:center"><a href="javascript:void(0);">删除</a></p></li>
+		 <?php endforeach ?>
+		 </ul>
+	    </td>	
+          </tr>
 	  <tr class="dataRow">
             <th class="label"><label for="file">上传图片：</label></th>
             <td><div id="uploadform"> </div> <div id="status"></div> 

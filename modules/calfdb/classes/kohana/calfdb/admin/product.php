@@ -38,10 +38,10 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 	    $params = $this->_data;
 	    foreach ($params as $key => $value) {
 	      $result = $this->_db->insert('products',$value);  
-	    }  
+	    }     
 	   
 	    return $result;
-	    
+	      
 	
         }
 

@@ -63,15 +63,25 @@ var Products={
 			    url : '/import/product/'+fname[0],
 				data : '&action=quick&d='+fname[1],
 				beforeSend : function(XMLHttpRequest) {
-				    $('#showtb').html('正在执行中...请稍等！');
+				    $('#showtb').html('<p>正在执行中...请稍等！</p><p><img src="/media/images/loading.gif" /></p>');
 				},
-				success : function(data, textStatus) {			
-                     if (data==='1')
+				success : function(data, textStatus) {	
+                      if (data==='1') {
+	                     alert('数据导入成功！');
+                         Products.CloseDialog();
+                         $('#flexgrid').flexReload(); 
+                      } 
+                      else
+                      {
+                        alert('导入数据超时，（可是导入的数据量太大，请把导入的数据分隔后，重新导入！）');
                         Products.CloseDialog();
+                       }
+                    
 				},
 				complete : function(XMLHttpRequest, textStatus) {
 				},
 				error : function() {
+					$('#showtb').html('导入数据错误。'); 
 			   }
 			 });	
 		 },

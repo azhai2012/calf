@@ -114,12 +114,12 @@ class Kohana_Spreadsheet
 	      $highestColumn = $sheet->getHighestColumn(); 
 	      $columncount= PHPExcel_Cell::columnIndexFromString($highestColumn);  
 	      $rows=array();
-	     
 	      for ($i=0; $i <= $rowcount; $i++) { 
                  $rs = array(); 
                  for ($j=0; $j <=$columncount; $j++) { 
                      $rs[] = $sheet->getCellbyColumnAndRow($j,$i)->getValue(); 
                  }
+                  
                   $rows[]=$rs;
                }   
 	 

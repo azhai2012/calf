@@ -28,7 +28,7 @@ class Controller_Upload extends Controller {
 		if ($_POST){
 		  
   	            $array = Validation::factory($_FILES);
-                     $array->rule('image', 'Upload::type', array(':value', array('jpg', 'png', 'gif')));
+                    $array->rule('image', 'Upload::type', array(':value', array('jpg', 'png', 'gif')));
 		    $filename ='';
 		    $result='0';	
 		    $filepath = $array['image']; 

@@ -443,8 +443,9 @@ class MangoDB {
 			case 'update':
 				$r = $c->update($criteria, $values, $options);
 			break;
-			case 'insert':
-				$r = $c->insert($values, $options);
+			case 'insert':{
+			  	   $r = $c->insert($values, $options);
+			}
 			break;
 			case 'remove':
 				$r = $c->remove($criteria,$options);

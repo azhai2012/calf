@@ -136,6 +136,11 @@ class Controller_Post extends Controller {
 	  $this->template = $result;
      }
 
+
+ 
+     /**
+      *  修改商品信息 
+      */
      public function action_getproductinfo(){
 	
  	$id= Arr::get($_POST,'id','');
@@ -166,6 +171,7 @@ class Controller_Post extends Controller {
 	);
 	
 	$this->template = View::factory('admin/product/product/modify'); 
+	$this->template->imgs_array_data = array(array('name'=>'a.gif'),array('name'=>'b.gif'),array('name'=>'c.gif'));
         $this->template->action ='modity';
  	$this->template->array_data= $data;	 
         

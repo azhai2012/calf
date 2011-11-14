@@ -30,6 +30,8 @@ class Controller_Import extends Controller {
 		 $at = Arr::get($_POST,'action');
   	         if ($at==='quick')
 		 {
+		    set_time_limit(0);	
+			
   		    $ws =Excel::instance(array(
 	                     'author'       => 'Kohana-PHPExcel',
 	                     'title'        => 'Report',
@@ -38,7 +40,8 @@ class Controller_Import extends Controller {
 	                     'show_header'   => TRUE,
 	             ));
                     $t = Arr::get($_POST,'d','');
-	            $array_data =  $ws->read("./media/upload/".$this->_id.".".$t);
+                    $filename ="./media/upload/".$this->_id.".".$t;
+	            $array_data =  $ws->read( $filename);
 		    $array_data = $array_data['rows'];
 		    
 		    $column = $array_data[1];
@@ -57,7 +60,7 @@ class Controller_Import extends Controller {
 		  
 		    $calfdb =  Calfdb_Admin::instance('Product',$this->_id, $_ary); 
 		    $this->template= $calfdb->set_import_admin_product_info_array_data();
-		    
+		    unlink($filename); 
 		 }
 		 else
 		 {
