@@ -75,7 +75,7 @@ var Products={
                       {
                         alert('导入数据超时，（可是导入的数据量太大，请把导入的数据分隔后，重新导入！）');
                         Products.CloseDialog();
-                       }
+                      }
                     
 				},
 				complete : function(XMLHttpRequest, textStatus) {
@@ -324,12 +324,24 @@ var Products={
 		    var description = $('textarea[name=uses]').val().replace(/[\r\n]/g,"<br>");
 		    ary['uses']=description;
 		    var active_check = $('input[name=is_active]').attr("checked");
-			ary['is_active'] = (active_check==true)? "启用" : "禁用" ;				
-		
+			ary['is_active'] = (active_check==true)? "启用" : "禁用" ;	
+			
+			var sr=new Array();
+			$('#status input').each(function(){
+			
+					if ($(this).attr('checked')==true){
+						var iv= $(this).val();
+						sr.push({'name':iv});
+						 
+					}
+			});
+            ary['imgs']=sr;	
+		    
 	     	serialize = Products.Serialize(ary);
 		    Products.AddToDb(serialize);  
 		},
 		ModityContent:function(){
+
             var ary = {};
             var serialize = '{}';
             $("#grid_add").html();
@@ -352,11 +364,23 @@ var Products={
 				} 
 			})
 		    var description = $('textarea[name=uses]').val().replace(/[\r\n]/g,"<br>");
+		    if (description !='')
 		 	ary['uses']=description;
 		    var active_check = $('input[name=is_active]').attr("checked");
 		    ary['is_active'] = (active_check==true)? "启用" : "禁用" ;
-
+ 
+            var sr=new Array();
+			$('#status input').each(function(){
+			
+					if ($(this).attr('checked')==true){
+						var iv= $(this).val();
+						sr.push({'name':iv});
+						 
+					}
+			});
+            ary['imgs']=sr;
 			serialize = Products.Serialize(ary);
+		    alert(serialize);
 		    Products.UpdateToDb(serialize);  
 		},
 		DeleteContent:function(obj){

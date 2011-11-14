@@ -238,6 +238,7 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 	    unset($params['id']);
 
 	    foreach ($params as $key => $value) {
+	       if ($key!='imgs'){	
 	       $newobj=array('$set'=>array("$key"=>"$value")); 
 	       $return =$this->_db->update('products',$query,$newobj);	  
 
@@ -260,8 +261,19 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 
 	           $newobj=array('$set'=>array("display_name"=>"$displayname")); 
 	           $this->_db->update('products',$query,$newobj);
-	       }     
+	       } 
 	     }
+	     else {
+		 foreach ($value as $subkey => $subvalue) {
+		   foreach ($subvalue as $skey => $svalue) {
+		      $newobj=array('$push'=>array('imgs'=>array("$skey"=>"$svalue"))); 
+		      $return =$this->_db->update('products',$query,$newobj);  
+		      copy('./media/upload/'.$svalue,'./media/product/img/'.$svalue);
+		      unlink('./media/upload/'.$svalue);
+	            }
+		 } 
+	     }	
+	    }	
 	    return  $return;
 
         }

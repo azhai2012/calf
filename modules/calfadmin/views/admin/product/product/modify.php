@@ -19,10 +19,16 @@
 		       target:'/upload/image',
 		       handleJsonResponse:function(json){
 			    if (json.file.name){
-			      alert(json.filename);	 
-			      $('#imgs_0').attr('src','/media/upload/'+json.filename);	
+			      var _li = document.createElement('li');	
+			      var _img = document.createElement('img');
+			      var leg = $('li', 'ul.pimgs').length;
+			      _img.className= 'img_'+leg;
+			      $(_img).attr({'width':100,'height':100});	
+			      $(_img).attr('src','/media/upload/'+json.filename);
+			      $(_li).append(_img);
+			      $('ul.pimgs').append(_li);
 			      $('#status').append('<div><input type="checkbox" value="'+json.filename+'" id="files" name="attach" checked >'+json.file.name+'  ( <i>'+json.file.type+'</i> )  '+Math.round(json.file.size/1024)+'KB </div>');
-		              
+		              $('#check_change').html("1");      
 		            }
 			},
 		       beforeSubmit: function(form,iframe){$('#loading').html('loading...');},
@@ -120,11 +126,12 @@
  	<tbody>	  
 	  <tr class="dataRow"> 
 	    <th style="width:50px;" class="label">其他图片：</th>
-	    <td><ul class="pimgs">		 
-		 <?php foreach ($imgs_array_data as $key => $value): ?>
-		     <li><img width=100 height=100 id="imgs_<?php echo $key ?>"  onerror="this.src='/media/images/none_150.gif'" src='<?php echo $value; ?>' /><p style="text-align:center"><a href="javascript:void(0);">删除</a></p></li>
-		 <?php endforeach ?>
-		 </ul>
+	    <td>
+	       <ul class="pimgs">		 
+		   <?php foreach ($imgs_array_data as $key => $value): ?>
+		     <li><img width=100 height=100  class="imgs_<?php echo $key ?>"   src='/media/product/img/<?php echo $value['name']; ?>' /><p style="text-align:center"><a href="javascript:void(0);">删除</a></p></li>
+		   <?php endforeach ?>
+	       </ul>
 	    </td>	
           </tr>
 	  <tr class="dataRow">

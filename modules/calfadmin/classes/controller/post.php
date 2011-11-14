@@ -166,12 +166,12 @@ class Controller_Post extends Controller {
 	      array('display_name' =>'包装','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'group','value'=>$row['group']),
 	      array('display_name' =>'中包装','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'middle_group','value'=>$row['middle_group']),
 	      array('display_name' =>'国批价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'general_price','value'=>$row['general_price']),
-	      array('display_name' =>'功能主治','type'=>'textarea','attr'=>'cols=57 rows=6','placeholder'=>'请输入该商品的功能','name'=>'uses','value'=>$row['uses']),
+	      array('display_name' =>'功能主治','type'=>'textarea','attr'=>'cols=57 rows=6','placeholder'=>'','name'=>'uses','value'=>$row['uses']),
 	      array('display_name' =>'启用','type'=>'checkbox','attr'=>'style="margin-top:7px" '.$is_active.'','name'=>'is_active'),
 	);
 	
 	$this->template = View::factory('admin/product/product/modify'); 
-	$this->template->imgs_array_data = array(array('name'=>'a.gif'),array('name'=>'b.gif'),array('name'=>'c.gif'));
+	$this->template->imgs_array_data = (isset($row['imgs'])) ? $row['imgs'] : array();
         $this->template->action ='modity';
  	$this->template->array_data= $data;	 
         

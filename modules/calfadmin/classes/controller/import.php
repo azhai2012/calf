@@ -30,7 +30,7 @@ class Controller_Import extends Controller {
 		 $at = Arr::get($_POST,'action');
   	         if ($at==='quick')
 		 {
-		    set_time_limit(0);	
+	
 			
   		    $ws =Excel::instance(array(
 	                     'author'       => 'Kohana-PHPExcel',
