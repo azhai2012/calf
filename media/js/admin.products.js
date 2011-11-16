@@ -128,7 +128,7 @@ var Products={
 								url : '/post/getproductinfo',
 								data : '&id='+id,
 								beforeSend : function(XMLHttpRequest) {
-									$('.loading').show(); 
+							 	   	$('.loading').show(); 
 								},
 								success : function(data, textStatus) {
 					                 $('#grid_add').html(data); 
@@ -151,16 +151,16 @@ var Products={
 		Serialize:function(obj){
 		    switch (obj.constructor){
 			   case Object:
-				 var str="{";
+				 var str='{';
 				 for (var o in obj){
-					str += "\""+o+"\"" +":"+Products.Serialize(obj[o])+",";
+					str += '"'+o+'"' +":"+Products.Serialize(obj[o])+",";
 				 }
 				 
 				 if (str.substr(str.length-1)==","){
 				    str= str.substr(0,str.length-1);	
 				 }
 				
-				 return str+"}";
+				 return str+'}';
 				 break;
 				
 			   case Array:
@@ -175,18 +175,18 @@ var Products={
 				 break;
 			
 			   case Boolean:
-			      return "\""+ obj.toString() +"\"";	 
+			      return '"'+ obj.toString() +'"';	 
 			      break;
 			
 			   case Date:
-			      return "\""+ obj.toString() +"\"";	 
+			      return '"'+ obj.toString() +'"';	 
 			      break;
 			   
 			   case Number:
-				      return "\""+ obj.toString() +"\"";	 
+				      return '"'+ obj.toString() +'"';	 
 				      break;
    			   case String:
-					      return "\""+ obj.toString() +"\"";	 
+					      return '"'+ obj.toString() +'"';	 
 					      break;
 		    }
 		},
@@ -247,13 +247,13 @@ var Products={
 	    UpdateToDb:function(obj){
 		     $.ajax({
 						type : 'post',
-						url : '/post/productdb/modity',
+						url : '/post/productdb/modify',
 						data :'&data='+obj,
 						beforeSend : function(XMLHttpRequest) {
 							//$('.loading').show(); 
 						},
 						success : function(data, textStatus) {
-			                if (data==="1")
+			              if (data==="1")
 			                {
 				               alert("成功保存！");
 				               $('#grid_add').hide(); 
@@ -261,7 +261,7 @@ var Products={
 				               $('.flexigrid').show();
 		 	                }
 		                    else 
-		                    alert('保存失败!'.data);   
+		                    alert('保存失败!'+data);   
 			                //$('#grid_add').html(data); 
 						},
 						complete : function(XMLHttpRequest, textStatus) {
@@ -300,6 +300,36 @@ var Products={
 							// 请求出错处理
 						}
 					});
+	    },
+	    removeImg:function(p){
+		    var obj=p;
+		    var pid = $('.uiInfoTable input[name=id]').val();
+		    var lid= p.split('.'); 
+		    if (confirm('是否真的删除此图片吗？'))
+			$.ajax({
+						type : 'post',
+						url : '/post/productdb/removeimg',
+						data :'&data='+obj+'&pid='+pid,
+						beforeSend : function(XMLHttpRequest) {
+							//$('.loading').show(); 
+						},
+						success : function(data, textStatus) {
+						   
+			                if (data==="1")
+			                {
+				                $('#'+lid[0]).remove();
+				   		 	 }
+		                    else 
+		                        alert('保存失败!'.data);   
+			                //$('#grid_add').html(data); 
+						},
+						complete : function(XMLHttpRequest, textStatus) {
+						  	//$('.loading').remove();
+						},
+						error : function() {
+							// 请求出错处理
+						}
+					}); 
 	    },
 	    AddContent:function(){
 		
@@ -341,7 +371,7 @@ var Products={
 		    Products.AddToDb(serialize);  
 		},
 		ModityContent:function(){
-
+		
             var ary = {};
             var serialize = '{}';
             $("#grid_add").html();
@@ -367,20 +397,28 @@ var Products={
 		    if (description !='')
 		 	ary['uses']=description;
 		    var active_check = $('input[name=is_active]').attr("checked");
+		    var check_checkbox_change = $('#check_checkbox_change').html();
+		    if (check_checkbox_change==="1")
 		    ary['is_active'] = (active_check==true)? "启用" : "禁用" ;
- 
+
             var sr=new Array();
 			$('#status input').each(function(){
-			
 					if ($(this).attr('checked')==true){
 						var iv= $(this).val();
 						sr.push({'name':iv});
-						 
 					}
 			});
-            ary['imgs']=sr;
-			serialize = Products.Serialize(ary);
-		    alert(serialize);
+			if(sr.length>0) ary['imgs']=sr;
+			
+            var check_textarea_change = $('#check_textarea_change').html();
+            if (check_textarea_change==="1"){
+               var s = $('#description').html();
+			   if (s!='')
+			   ary['description']= s.replace(new RegExp("\"","g"),"'");
+            }
+
+            serialize = Products.Serialize(ary);
+            alert(serialize);
 		    Products.UpdateToDb(serialize);  
 		},
 		DeleteContent:function(obj){
@@ -408,3 +446,5 @@ var Products={
 		},
 	 
 };
+
+ 

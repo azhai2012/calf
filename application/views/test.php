@@ -36,14 +36,64 @@
 		       beforeSubmit: function(form,iframe){$('#loading').html('loading...');},
 		       afterSubmit: function(form,iframe){$('#loading').html('');$('#file',form).val('');}
 		 });
+		
+		addUploadButton();
+		 
+	        		
 	  });
+	
+	   function addUploadButton(editor){
+		    CKEDITOR.on('dialogDefinition', function( ev ){
+		        var dialogName = ev.data.name;
+		        var dialogDefinition = ev.data.definition;
+		        if ( dialogName == 'image' ){
+		            var infoTab = dialogDefinition.getContents( 'info' );
+		            infoTab.add({
+		                type : 'button',
+		                id : 'upload_image',
+		                align : 'center',
+		                label : 'upload',
+		                onClick : function( evt ){
+		                    var thisDialog = this.getDialog();
+		                    var txtUrlObj = thisDialog.getContentElement('info', 'txtUrl');
+		                    var txtUrlId = txtUrlObj.getInputElement().$.id;
+		                    addUploadImage(txtUrlId);
+		                }
+		            }, 'browse'); //place front of the browser button
+		        }
+		    });
+		}
+
+		function addUploadImage(theURLElementId){
+		    var uploadUrl = "/admin/ckeditor"; //这是我自己的处理文件/图片上传的页面URL
+		    var imgUrl = window.showModalDialog(uploadUrl,'1'); 
+		    var urlObj = document.getElementById(theURLElementId);
+		    urlObj.value = imgUrl;
+		    urlObj.fireEvent("onchange"); //触发url文本框的onchange事件，以便预览图片
+		}
+	
+	
         </script>
         
 </head>
 <body>
 
   <div id="uploadform"> </div> <div id="status"></div> 
+		<p>
+			<label for="editor1">
+				Editor 1:</label>
+		</p>
+		<p>
+		<?php
+			// Include the CKEditor class.
+			//include_once "media/ckeditor/ckeditor.php";
+			// The initial value to be displayed in the editor.
+			$initialValue = '<p>This is some <strong>sample text</strong>.</p>';
+			// Create a class instance.
+			$CKEditor = CKEditor::instance()->editor("editor1");
+		?>
+			<input type="submit" value="Submit"/>
+		</p>
 
-   
 </body>
 </html>

@@ -22,6 +22,33 @@ class Controller_Upload extends Controller {
 	}
 
 
+   	public function action_ckeditor()
+	{	
+		parent::before();
+		if ($_POST){
+		  
+  	            $array = Validation::factory($_FILES);
+                    $array->rule('image', 'Upload::type', array(':value', array('jpg', 'png', 'gif')));
+		    $filename ='';
+		    $result='0';	
+		    $filepath = $array['image']; 
+		    if ($array->check())
+		    {
+			$uid= uniqid(); 
+		        $filename = $uid.'.'.strtolower(pathinfo($filepath['name'], PATHINFO_EXTENSION));
+		        Upload::save($array['image'],$filename,'./media/upload',777); 
+		        $result='1';
+		    }
+		    else
+		       $result='-1';  
+		     
+                 }
+	        $array = array('status'=>$result,'path'=>'/media/upload/','file'=> $filepath,'filename'=>$filename,'uid'=>$uid);
+		$this->template=  json_encode($array);
+
+        }
+
+
 	public function action_image()
 	{	
 		parent::before();

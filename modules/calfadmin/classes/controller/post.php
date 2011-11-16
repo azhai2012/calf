@@ -112,8 +112,6 @@ class Controller_Post extends Controller {
  	$jsonData = array('page'=>$page,'total'=>$total,'rows'=>array());
 	
 	foreach($rows AS $row){
-		//If cell's elements have named keys, they must match column names
-		//Only cell's with named keys and matching columns are order independent.
 		$entry = array('id'=>$row['id'],
 				'display_name'=>$row['display_name'],
 				'unit'=>$row['unit'],
@@ -128,13 +126,30 @@ class Controller_Post extends Controller {
      }
 
      public function action_productdb(){
-	  $attr = Arr::get($_POST,"data","");
+	  $data = Arr::get($_POST,"data","");
+	  $pid =  Arr::get($_POST,"pid",""); 
 	  $action = $this->request->param('id');
-	  $ary = json_decode($attr,true);
-	  $product_db = Calfdb_Admin::instance('Product',$action,$ary);
-          $result = $product_db->set_admin_product_info();
-	  $this->template = $result;
-     }
+	  switch ($action){
+	      case 'modify':{	
+	            $ary = json_decode($data ,true);
+	            $des= Arr::get($ary,'description');
+	            if ($des)
+	            $ary['description']= htmlspecialchars($ary['description']);
+	
+		    $product_db = Calfdb_Admin::instance('Product','modity',$ary);
+	            $result = $product_db->set_admin_product_info();
+	            $this->template = $result;
+                    }
+	  	    break;
+               case 'removeimg':{
+                     $p = array('pid'=>$pid,'filename'=>$data); 
+	             $product_db = Calfdb_Admin::instance('Product',$action,$p);
+		     $return = $product_db->set_admin_product_image_data();	
+		     $this->template =  $return;
+	            }
+		    break; 
+	   }
+      }
 
 
  
@@ -173,6 +188,7 @@ class Controller_Post extends Controller {
 	$this->template = View::factory('admin/product/product/modify'); 
 	$this->template->imgs_array_data = (isset($row['imgs'])) ? $row['imgs'] : array();
         $this->template->action ='modity';
+        $this->template->description = Arr::get($row,'description'); 
  	$this->template->array_data= $data;	 
         
       

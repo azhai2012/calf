@@ -30,8 +30,6 @@
 
  <script type="text/javascript" src="/media/js/jquery-resizable.min.js"></script>
 
- <script src="/media/js//jquery.wysiwyg.js" type="text/javascript" charset="utf-8"></script>
- <link rel="stylesheet" href="/media/js/jquery.wysiwyg.css" type="text/css" media="screen" charset="utf-8" /> 
 </head>
 <body class="home">
  <!-- begin main header -->

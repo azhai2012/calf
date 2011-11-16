@@ -121,7 +121,7 @@
 	        <tr class="dataRow">
 		  <th class="label"><label for="description" >商品描述：</label></th>
 		  <td>
-		  	<script type="text/javascript"> Products.addArea();</script>
+		  
 			<textarea style="width:588px;" rows="20" cols="69"  name="newscontent" id="description" value="" /></td>	
 		  </td> 
 	        </tr>

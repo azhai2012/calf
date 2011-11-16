@@ -111,35 +111,14 @@ class Controller_Test extends Controller {
 		# code...
 		$db->save('prices',$value);  
 	}    */
-	  
-
-            	$ws =Excel::instance(array(
-	                     'author'       => 'Kohana-PHPExcel',
-	                     'title'        => 'Report',
-	                     'subject'      => 'Subject',
-	                     'description'  => 'Description',
-	                     'show_header'   => TRUE,
-	             ));
-               
-	            $array_data =  $ws->read("./media/upload/4ec088a5ca604.xls");
-	         
-		    $array_data = $array_data['rows'];
-		    
-		    
-		    $column = $array_data[1];
-		    
-		    $_ary = array();
-		    $i=0;
-		    foreach ($array_data as $key => $value) {
-		    	if ($key>1)
-		       {
-			  $ary = array();
-			  foreach ($value as $subkey => $subvalue) {
-		    if (!empty($column[$subkey])) 	
-			     $ary[$column[$subkey]]= $subvalue;
-			   }
-			   $_ary[] = $ary;
-		       }
+	            $data='{"id":"1010495","htmls":"<p>ddkkff</p>"}';
+       	            $ary = json_decode($data);
+                    $s=$ary->htmls;
+                    print_r($ary);
+	            $ary->htmls = htmlspecialchars($s);
+	            print_r($ary);
+		    $product_db = Calfdb_Admin::instance('Product','modity',$ary);
+	            $result = $product_db->set_admin_product_info();
 		       	//$calfdb =  Calfdb_Admin::instance('Product','', $_ary); 
 		        //$calfdb->set_import_admin_product_info_array_data();
 		     //   $i++;

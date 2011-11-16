@@ -12,6 +12,9 @@
        <script type="text/javascript" src="/media/js/jquery.placeholder.js"></script>
 	<script src="/media/js/jquery.upload.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/media/js/jquery.ui.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="/media/ckeditor/ckeditor.js" type="text/javascript" charset="utf-8"></script>
+	
 	<script type="text/javascript" charset="utf-8">
         $(function(){
 	   
@@ -35,12 +38,24 @@
 		       afterSubmit: function(form,iframe){$('#loading').html('');$('#file',form).val('');}
 		 });
 		
+			
 	       $.Placeholder.init();
+	        
+	        var editor = CKEDITOR.instances['editor1']; 
+	       
+	        if (editor){editor.destroy(true)}
+	           editor = CKEDITOR.replace( 'editor1');
+	        CKEDITOR.instances['editor1'].on('blur',function(e){$('#check_textarea_change').html('1');$('#check_change').html('1')})
+	
+	        addUploadButton();
           
                $( "#tabs" ).tabs();
 	       $("#btn_save").click(function(){
+		  var s= editor.document.getBody().getHtml(); 
+		  $('#description').html(s);
 		  if ($('#check_change').html()=="1")
-		     Products.ModityContent(); 
+		     Products.ModityContent();
+		     //CKEDITOR.remove( 'editor1'); 
 		  else
 		   alert('没有内容改变，无须保存');
 	       });
@@ -69,13 +84,47 @@
 		  $(this).find('input[name=is_active]').change(function(){
 		        $(this).addClass("ismodity");	
 		        $('#check_change').html("1");
+	        	 $('#check_checkbox_change').html("1");
 		    });
 		    
 	        });
 	        
 	    
 	       
-          }); 	
+          }); 
+
+	function addUploadButton(editor){
+	 
+		 CKEDITOR.on('dialogDefinition', function( ev ){
+		        var dialogName = ev.data.name;
+		        var dialogDefinition = ev.data.definition;
+		        if ( dialogName == 'image' ){
+		            var infoTab = dialogDefinition.getContents( 'info' );
+		            infoTab.add({
+		                type : 'button',
+		                id : 'upload_image',
+		                align : 'center',
+		                label : '<?php echo __("上传图片"); ?>',
+		                onClick : function( evt ){
+		                    var thisDialog = this.getDialog();
+		                    var txtUrlObj = thisDialog.getContentElement('info', 'txtUrl');
+		                    var txtUrlId = txtUrlObj.getInputElement().$.id;
+		                    addUploadImage(txtUrlId);
+		                }
+		            }, 'browse'); //place front of the browser button
+		        }
+		    });
+		}
+
+		function addUploadImage(theURLElementId){
+		    var uploadUrl = "/admin/ckeditor"; //这是我自己的处理文件/图片上传的页面URL
+		    var imgUrl = window.showModalDialog(uploadUrl,'1'); 
+		    var urlObj = document.getElementById(theURLElementId);
+		    urlObj.value = imgUrl;
+		    urlObj.fireEvent("onchange"); //触发url文本框的onchange事件，以便预览图片
+		}
+		
+			
        </script>
 <div id="tabs">
  <ul>
@@ -122,14 +171,22 @@
        </table>
         </div> <!-- end tabs-1 -->
         <div id="tabs-2">
+	<div style="display:none" id="description"></div> 
+	<div style="display:none" id="check_checkbox_change"></div>
+	<div style="display:none" id="check_textarea_change"></div>
 	<table class="uiInfoTable">
  	<tbody>	  
 	  <tr class="dataRow"> 
-	    <th style="width:50px;" class="label">其他图片：</th>
+	    <th style="width:50px;" class="label"><?php echo __('图片展示') ?>：</th>
 	    <td>
+	       	 
 	       <ul class="pimgs">		 
 		   <?php foreach ($imgs_array_data as $key => $value): ?>
-		     <li><img width=100 height=100  class="imgs_<?php echo $key ?>"   src='/media/product/img/<?php echo $value['name']; ?>' /><p style="text-align:center"><a href="javascript:void(0);">删除</a></p></li>
+	             <?php $imgname = explode('.',$value['name']); ?>		 
+		     <li id="<?php echo $imgname[0]; ?>">
+			<img width=100 height=100 class="imgs_<?php echo $key ?>" src='/media/product/img/<?php echo $value['name']; ?>' />
+			<p style="text-align:center"><a href="javascript:Products.removeImg('<?php echo $value['name'] ?>');"><img style="border:0" src="/media/images/delete.gif" /></a></p>
+		     </li>
 		   <?php endforeach ?>
 	       </ul>
 	    </td>	
@@ -148,8 +205,7 @@
         <tr class="dataRow">
 	  <th class="label"><label for="description" >商品描述：</label></th>
 	  <td>
-	  	<script type="text/javascript"> Products.addArea();</script>
-		<textarea style="width:588px;" rows="20" cols="69"  name="newscontent" id="description" value="" /></td>	
+	   	<textarea cols="80" id="editor1" name="editor1" rows="10"><?php echo $description ?></textarea>
 	  </td> 
         </tr>
          </tbody>

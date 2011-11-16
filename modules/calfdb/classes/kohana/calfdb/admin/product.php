@@ -226,9 +226,23 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
                $return =$this->_db->insert('products',$ary);
                return  $return;
 
-        } 	
+        } 
 
 
+        /**
+        * 
+        */
+        public function set_admin_product_image_data() {
+            $params = $this->_data;
+            $query = array('id'=>(int)$params['pid']);
+            $newobj= array('$pull'=>array('imgs'=>array('name'=>''.$params['filename'].'')));  
+            $return =$this->_db->update('products', $query,$newobj);
+            $filename ='./media/product/img/'.$params['filename'];
+            if (file_exists($filename) && is_readable($filename))
+                unlink($filename); 
+            return $return;
+        }
+       
         /**
          *  修改商品信息
          */
@@ -236,7 +250,6 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 	    $params = $this->_data;
 	    $query  = array('id'=>(int)$params['id']);  
 	    unset($params['id']);
-
 	    foreach ($params as $key => $value) {
 	       if ($key!='imgs'){	
 	       $newobj=array('$set'=>array("$key"=>"$value")); 
@@ -266,10 +279,14 @@ class Kohana_Calfdb_Admin_Product extends Kohana_Calfdb_Admin  {
 	     else {
 		 foreach ($value as $subkey => $subvalue) {
 		   foreach ($subvalue as $skey => $svalue) {
+		    
 		      $newobj=array('$push'=>array('imgs'=>array("$skey"=>"$svalue"))); 
 		      $return =$this->_db->update('products',$query,$newobj);  
-		      copy('./media/upload/'.$svalue,'./media/product/img/'.$svalue);
-		      unlink('./media/upload/'.$svalue);
+		      $filename = './media/upload/'.$svalue;
+		      if (file_exists($filename) && is_readable($filename)){
+		         copy($filename,'./media/product/img/'.$svalue);
+		         unlink($filename);
+	              } 
 	            }
 		 } 
 	     }	

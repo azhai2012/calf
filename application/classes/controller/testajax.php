@@ -15,38 +15,26 @@ class Controller_Testajax extends Controller {
 	{	
 		parent::before();
 			  $t=''; 
-		  	  $log = Log::instance();
-		         // $username = Arr::get($_POST, 'username');
-		         // $log->add(Log::INFO,$username);
-			 
-	/*		if ($_POST){
-			  $log->add(Log::INFO,'begin');	 
+		   if ($_POST){
 
-		          $array = Validation::factory($_FILES);
-		
-	          	  $array->rule('image', 'Upload::type', array(':value', array('jpg', 'png', 'gif')));
-		          $filename ='';
-		          $result='0';	
-		          $filepath = $array['image']; 
-			  if ($array->check())
-			  {
-			          $filename = uniqid().'.'.strtolower(pathinfo($array['image']['name'], PATHINFO_EXTENSION));
-			          Upload::save($array['image'],$filename,'./media/upload',777); 
-			          $result='1';
-			   }
-			   else
-			      $result='-1';  
-			  $log->add(Log::INFO,'end');  
+		  	            $array = Validation::factory($_FILES);
+		                    $array->rule('image', 'Upload::type', array(':value', array('jpg', 'png', 'gif')));
+				    $filename ='';
+				    $result='0';	
+				    $filepath = $array['image']; 
+				    if ($array->check())
+				    {
+					$uid= uniqid(); 
+				        $filename = $uid.'.'.strtolower(pathinfo($filepath['name'], PATHINFO_EXTENSION));
+				        Upload::save($array['image'],$filename,'./media/upload',777); 
+				        $result='1';
+				    }
+				    else
+				       $result='-1';  
+				        $array = array('status'=>$result,'file'=> $filepath,'filename'=>$filename,'uid'=>$uid);
+					$this->template=  json_encode($array);
 
-	                }
-
-	                  $log->write();
-             $array = array('status'=>$result,'file'=> $filepath,'filename'=>$filename);
-	     $this->template= json_encode($array);
-	     */
-	   
-	  //  $this->template='';
-  	    
+               }
 	}
 	
 	public function after(){
