@@ -108,15 +108,19 @@ Kohana::modules(array(
 	 'pagination' => MODPATH.'pagination', // Paging of results
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
-	 'mssql'      => MODPATH.'mssql',
-     'captcha'    => MODPATH.'captcha',
-     //'calfpub'    => MODPATH.'calfpub',
+	// 'mssql'      => MODPATH.'mssql',
+        'captcha'    => MODPATH.'captcha',
+        'excel'      => MODPATH.'excel',     
+//'calfpub'    => MODPATH.'calfpub',
      //'calfcms'    => MODPATH.'calfcms', // add to ajax.php if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
 
     //'calfmeet'   => MODPATH.'calfmeet', // add to ajax.php if ($mods === '')  $mods  = Calfmeet::factory($_get)->get_menus($Prams);
      //'calfcustomer'   => MODPATH.'calfcustomer', //add to ajax.php if ($mods === '')  $mods  = CalfSupplier::factory($_get,$Prams)->get_menus();
      //'calfsupplier'  => MODPATH.'calfsupplier', //add to ajax.php if ($mods === '')  $mods  = CalfCustomer::factory($_get,$Prams)->get_menus(); 
      //'calfbasis'     => MODPATH.'calfbasis', 
+     'ckeditor'      => MODPATH.'ckeditor',
+     'pinyin'        => MODPATH.'pinyin',
+     'mango'         => MODPATH.'mango',
      'calfmain'      => MODPATH.'calfmain', //主页
      'calfcart'      => MODPATH.'calfcart',     //购物车
      'calfproduct'   => MODPATH.'calfproduct', //商品中心

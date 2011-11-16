@@ -21,7 +21,7 @@ class Kohana_Admin_Hots {
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
-		$this->_calfDb = Calfdb_Admin::execute('Hots',$this->_id,$this->_data); 
+		$this->_calfDb = Calfdb_Admin::instance('Hots',$this->_id,$this->_data); 
 	}
 	
 	/**
@@ -30,12 +30,13 @@ class Kohana_Admin_Hots {
         public function get_body_content() {
             // TODO :
 
-		$array_data = $this->_calfDb->get_admin_hots_array_data();
-            $template = View::factory('admin/body');
-            $template->array_data = $array_data;
-            $template->selected = $this->_id;
-            $template->mod_content ='';
-            $template->action = 'hots';
+	    $array_data = $this->_calfDb->get_admin_hots_array_data();
+  	    $default = View::factory('admin/hots/default');  
+            $template = View::factory('admin/body')
+                        ->set('array_data',$array_data) 
+                        ->set('selected',$this->_id) 
+                        ->set('action','hots')
+                        ->set('mod_content',$default);
             return $template;
         }
 	

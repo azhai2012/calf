@@ -17,7 +17,7 @@
  *  width:   width of the effect; in the case of rounded corners this is the radius. 
  *           specify this value using the px suffix such as 10px (yes, it must be pixels).
  */
-;(function($) { 
+(function($) { 
 
 var style = document.createElement('div').style,
     moz = style['MozBorderRadius'] !== undefined,

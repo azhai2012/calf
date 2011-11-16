@@ -23,7 +23,7 @@ class Kohana_Calfdb_Admin_Hots extends Kohana_Calfdb_Admin {
 			      	   array('mod_name'=>'template','name'=>'展会模板','url'=>'#'),
 			           ),
 			      ) , 
-			 array('id'=>2,'mod_name'=>'meetlist','name' =>'展会列表','url'=>'/admin/hots/2',
+			 array('id'=>2,'mod_name'=>'hotslist','name' =>'展会列表','url'=>'/admin/hots/2',
 			      ) , 
 			 array('id'=>3,'mod_name'=>'analysis','name' =>'展会分析','url'=>'/admin/hots/3',
 			                  'lists'=>array(

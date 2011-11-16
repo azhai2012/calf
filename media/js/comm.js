@@ -15,8 +15,9 @@ var Comm = function(json) {
             return this.json;
         };
         Comm.prototype.getDOM = function() {
+     
             var data = this.json;
-
+ 
             var id = data['id'];
             var attr = data['attr'];
             var type = data['type'];
@@ -44,7 +45,6 @@ var Comm = function(json) {
             var head = getHardpoint();
 
             var ajaxobj = function() {
-
                 $.ajax({
                     type: "get",
                     url: __ajax,
@@ -52,12 +52,13 @@ var Comm = function(json) {
                         $(".pop_content_load").css("width", "200px").css("height", "40px").html('<div style="margin-top:15px;margin-left:20px;"><h2 style="border:0;">加载中....</h2></div>').show();
                     },
                     success: function(data, textStatus) {
+	                    $('#dialog').prepend('<div class="overlay"></div>');
                         $(".pop_content_load").hide();
                         $('.pop_content').html(data);
                     },
                     complete: function(XMLHttpRequest, textStatus) {
 
-},
+                    },
                     error: function() {
                         // 请求出错处理
                     }
@@ -245,6 +246,7 @@ var Azhai = {
 			async:c,
 			data:"sk="+m,
 			beforeSend: function(XMLHttpRequest) {
+				 $('#'+m).html('Loading......');
 		    },
 			success:function(data){
 				
@@ -274,7 +276,7 @@ var Azhai = {
 			async:c,
 			data:"sk="+m,
 			beforeSend: function(XMLHttpRequest) {
-  
+                   $('#'+m).html('Loading......');
 		    },
 			success:function(data){
 				$('#'+m).html(data);

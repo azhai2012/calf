@@ -115,7 +115,9 @@ class Controller_Admin extends Controller {
           
         }
 
-
+        public function action_ckeditor(){
+	   	$this->template= View::factory('admin/ckeditor');  
+        } 
 
 	public function after(){
 		$this->response->body($this->template);

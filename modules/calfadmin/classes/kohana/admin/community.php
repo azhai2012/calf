@@ -8,20 +8,22 @@
  *
  */
 
-class Kohana_Admin_Community {
+class Kohana_Admin_Community{	
 
-	private $_id;
-	private $_data;
-	private $_calfD;
 	
-      	public static function factory($id,array $data= NULL){
-		return new Kohana_Admin_Community($id,$data);
-	}
-
-	function __construct($id,array $data=NULL){
+     private $_id;
+     private $_data;
+     private $_calfDb;
+	
+      public static function factory($id,array $data= NULL){
+	
+	   return new Kohana_Admin_Community($id,$data);
+      }
+      
+      function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
-		$this->_calfDb = Calfdb_Admin::execute('Community',$this->_id,$this->_data); 
+		$this->_calfDb = Calfdb_Admin::instance('Community',$this->_id,$this->_data); 
 	}
 
 	/**
@@ -31,16 +33,16 @@ class Kohana_Admin_Community {
             // TODO :
 
 	    $array_data = $this->_calfDb->get_admin_community_array_data();
-
-            $template = View::factory('admin/body');
-            $template->array_data = $array_data;
-            $template->selected = $this->_id;
-            $template->action = 'community';
-            $template->mod_content ='';
+            $default = View::factory('admin/community/default');  
+            $template = View::factory('admin/body')
+                        ->set('array_data',$array_data) 
+                        ->set('selected',$this->_id) 
+                        ->set('action','community')
+                        ->set('mod_content',$default);
             return $template;
         }
 
-
+	
 	function  __get($name){
 	   if(isset($this->$name)){ 
           return $this->$name;
@@ -67,6 +69,7 @@ class Kohana_Admin_Community {
 		return $data;
 
 	}
+
 
 
 }

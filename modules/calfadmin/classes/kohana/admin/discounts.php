@@ -21,7 +21,7 @@ class Kohana_Admin_Discounts {
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
-		$this->_calfDb = Calfdb_Admin::execute('Discount',$this->_id,$this->_data); 
+		$this->_calfDb = Calfdb_Admin::instance('Discount',$this->_id,$this->_data); 
 	}
 	
 	/**
@@ -31,11 +31,12 @@ class Kohana_Admin_Discounts {
             // TODO :
 
 	    $array_data = $this->_calfDb->get_admin_discount_array_data();
-            $template = View::factory('admin/body');
-            $template->array_data = $array_data;
-            $template->selected = $this->_id;
-            $template->action = 'discounts';
-            $template->mod_content ='';
+  	    $default = View::factory('admin/discount/default');  
+            $template = View::factory('admin/body')
+                        ->set('array_data',$array_data) 
+                        ->set('selected',$this->_id) 
+                        ->set('action','discounts')
+                        ->set('mod_content',$default);
             return $template;
         }
 	

@@ -11,7 +11,7 @@
 class Kohana_Admin_Product{
 	
 	private $_id;
-	private $_data;
+	private $_data= array();
 	private $_calfDb;
       	
         public static function factory($id,array $data= NULL){
@@ -21,21 +21,21 @@ class Kohana_Admin_Product{
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
-		$this->_calfDb = Calfdb_Admin::execute('Product',$this->_id,$this->_data); 
+		$this->_calfDb = Calfdb_Admin::instance('Product',$this->_id,$this->_data); 
 	}
 	
-	/**
+  	    /**
         * 
         */
         public function get_body_content() {
             // TODO :
-
 	    $array_data = $this->_calfDb->get_admin_product_array_data();
-            $template = View::factory('admin/body');
-            $template->array_data = $array_data;
-            $template->selected = $this->_id;
-            $template->mod_content ='';
-            $template->action = 'product';
+            $default = View::factory('admin/product/default');
+	    $template = View::factory('admin/body')
+                        ->set('array_data',$array_data)
+                        ->set('selected',$this->_id)
+                        ->set('mod_content',$default)
+                        ->set('action','product');
             return $template;
         }
 	
