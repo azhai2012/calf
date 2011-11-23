@@ -22,7 +22,7 @@
 <!-- info -->
 <div class="sbox-content">
    <div class="tip">
-    <h2><?php echo $array_data['info']['title'].__('申请团购'); ?></h2>
+    <h2><?php echo $array_data['info']['title']; ?></h2>
     <p class="text"><?php echo $array_data['info']['content']; ?><br>
        <a href="/account/invite.php"><?php echo __('我要申请'); ?>&gt;&gt;</a><br>
     </p>

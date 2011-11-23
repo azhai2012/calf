@@ -33,9 +33,9 @@ class Model_Main_Header {
 	             <ul>
 	               <li>'.$this->get_carts().'</li>
 	               <li><a href="/account">我的订单</a></li>
-	               <li><a href="#">我的信息</a></li>
-	               <li><a href="#">会员积分</a></li>
-	               <li><a href="#">礼品卡</a></li>
+	               <li><a href="/account/profileleft">我的信息</a></li>
+	               <li><a href="/account/pointlist">我的积分</a></li>
+	               <li><a href="/account/coupons">我的礼品卡</a></li>
 	             </ul> 
 	           </div>';
 	   return $result;
@@ -46,7 +46,7 @@ class Model_Main_Header {
 	   <h1 class="logo" ><a href="#" >商城</a></h1>
 	   <div id="find">
 	     	     
-	       <form id="headersearchform" action="http://search.eachnet.com/Search" method="post" target="_blank">
+	       <form id="headersearchform" action="/search" method="post" target="_blank">
             <ol>
               <li>
                 <input type="text" class="keyword_txt" id="headerkeywords" name="keyword" value="" _defval="看看正在流行什么..." _allowempty="no" style="">
@@ -82,13 +82,13 @@ class Model_Main_Header {
 	     case "home":{
 	      $result= '<div id="menu">
 	              <ul>
-	                <li class="'.$a1.'"><a href="/">首页</a></li>
-	                <li class="'.$a2.'"><a href="/shops">店铺</a></li>
-	                <li class="'.$a3.'"><a href="/shelf">商品区</a></li>
-	                <li class="'.$a4.'"><a href="/tuan">团购</a></li>
-	                <li class="'.$a5.'"><a href="/hots">展会</a></li>
-	                <li class="'.$a6.'"><a href="/discounts">促销区</a></li>
-	                <li class="'.$a7.'"><a href="/community">社区</a></li>
+	                <li><a class="index index'.$a1.'" href="/"></a></li>
+	                <li><a  class="shops shops'.$a2.'" href="/shops"></a></li>
+	                <li><a class="shelf shelf'.$a3.'" href="/shelf"></a></li>
+	                <li><a  class="tuan tuan'.$a4.'" href="/tuan"></a></li>
+	                <li><a class="mhots mhots'.$a5.'" href="/hots"></a></li>
+	                <li><a  class="discounts discounts'.$a6.'" href="/discounts"></a></li>
+	                <li><a class="community community'.$a7.'" href="/community"></a></li>
 	                </ul>
 	             
 	               <div class="clearfix"></div>
@@ -103,11 +103,11 @@ class Model_Main_Header {
 
 	// @todo 修改购物车内容
     function get_carts(){
-	    $result= '<div class="carts">
+	    $result= '<a class="gotocart"  href="/cart">
+	                <div class="carts">
 	                <span class="c_icon"></span>
 	                <span class="c_txt">购物车里有<strong class="cart_num">10000</strong>个商品</span> 
-	                <span><a class="gotocart"  href="/cart">去结算</a></span>
-	             </div>';	
+	             </div></a>';	
 	    return $result;
 	}
 	

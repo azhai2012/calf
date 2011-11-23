@@ -52,7 +52,7 @@ class Kohana_Calfdb_Tuan {
     public function get_tuan_left_content() {
         // TODO : [calfdb/tuan] set left data
      	 $array_data = array(
-		        array('head_title' =>'0元抽奖！佳节到，运气旺，轻点鼠标，就有机会抢到万众瞩目的白色iPhone 4一部！只要参与，就能抽奖，快快分享给身边的朋友们吧！找便宜来京东，找巨便宜就来京东团购！ ','head_url'=>'#',
+		        array('head_title' =>'0元抽奖！佳节到，运气旺，轻点鼠标，就有机会抢到万众瞩目的白色iPhone 4一部！只要参与，就能抽奖，快快分享给身边的朋友们吧！ ','head_url'=>'#',
 			              'team_price'=>'999.00','url'=>'#','mark_price'=>'1999','discount_price'=>'999','save_money'=>'1000',
 			          'team_num'=>2030,'min_num'=>10,'permit_time'=>'0:20','stop_date'=>'2011-10-01 0:0',
 			          		'master_img'=>'/media/images/13149637511434.jpg',
@@ -63,7 +63,7 @@ class Kohana_Calfdb_Tuan {
 				                     <li>4、超长续航时间。</li>
 				                    </ul>	
 					                 '), 
-		    	array('head_title' =>'0元抽奖！佳节到，运气旺，轻点鼠标，就有机会抢到万众瞩目的白色iPhone 4一部！只要参与，就能抽奖，快快分享给身边的朋友们吧！找便宜来京东，找巨便宜就来京东团购！ ','head_url'=>'#',
+		    	array('head_title' =>'0元抽奖！佳节到，运气旺，轻点鼠标，就有机会抢到万众瞩目的白色iPhone 4一部！只要参与，就能抽奖，快快分享给身边的朋友们吧！ ','head_url'=>'#',
 						              'team_price'=>'999.00','url'=>'#','mark_price'=>'1999','discount_price'=>'999','save_money'=>'1000',
 						          'team_num'=>2030,'min_num'=>10,'permit_time'=>'0:20','stop_date'=>'2011-10-01 0:0',
 						          'master_img'=>'/media/images/13149637511434.jpg',

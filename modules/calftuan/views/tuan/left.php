@@ -35,7 +35,7 @@
                         <td id="team-save-6102">¥<?php echo $value['save_money']; ?></td>
                     </tr>
                 </tbody></table>
-                 <div class="deal-box deal-timeleft deal-on" id="deal-timeleft6102" curtime="1315101015251" diff="137320000">
+                 <div class="deal-box deal-timeleft deal-on clearfix" id="deal-timeleft6102" curtime="1315101015251" diff="137320000">
                     <h3><?php echo __('剩余时间'); ?></h3>
                     <div class="limitdate">
 	<ulclass="clearfix"id="counter6102"><li><span>1</span>天</li><li><span>14</span>小时</li><li><span>8</span>分钟</li></ul></div>

@@ -66,7 +66,7 @@ class Kohana_Product {
 		$right_template->get_product_info_content = $this->get_product_info_content();
 		$right_template->get_procduct_posts_content = $this->get_procduct_posts_content();
 
-		$result = $this->right_template;
+		$result = $right_template;
 		return $result;
 	}
 
@@ -107,7 +107,7 @@ class Kohana_Product {
 	
 		$discount_template->array_total_data = $array_total_data;	
 		
-		$result= $this->discount_template;
+		$result= $discount_template;
 		return $result;
 		
 	}
