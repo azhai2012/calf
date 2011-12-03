@@ -8,12 +8,8 @@
  *
  */
 ?>
-<div id="product-content">
-   <div id="admin-header">
-       管理 
-       <h1>Products - 商品管理 </h1>
-   </div>
-   <div id="product-list"> <!-- begin list -->
+<div id="product-content" style="position:relative;overflow:auto;">
+   <div id="product-list"> <!-- begin list --> 
     <table id="flexgrid" style="display:none"></table>
         <script src="/media/js/jquery.flexigrid.js" type="text/javascript" charset="utf-8"></script>
         <script src="/media/js/admin.products.js" type="text/javascript" charset="utf-8"></script>

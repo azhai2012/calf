@@ -125,13 +125,34 @@ width: 100%;
 #side-nav .open .toggle-img{background:url('/media/images/triangle-opened-small.png') 7px 4px no-repeat;}
 #side-nav .toggle-list .selected a{color:white;text-decoration:none;}
 .loading{display:inline-block;width:20px;height:16px;float:right;margin-right:5px;background:url('/media/images/load.gif') 0 3px no-repeat;}
-#admin-header{background-color:#E2E2E2;padding:7px 0 2px 10px}
-#admin-header h1{margin:0 0 5px;font-size:16px;}
+#admin-header{background-color:#E2E2E2;height:60px;padding-left:7px;overflow:hidden;margin-top:5px;}
+#admin-header h1{margin:10px 0 5px 5px;font-size:16px;}
 .notice-sumtable{margin:15px 1em 1em 0;width:95%;font-size:12px;}
 #notice-content table{margin:0 0 1em 1em;}
 .notice-add{margin:15px 1em 1em 0;width:95%;font-size:12px;}
 #news-list a,#adv-list a{width:200px;}
 #adv-list,#news-list,#mod-list{width:95%;font-size:12px;}
+
+.mod_nav {background: #fafafa url(/media/images/bg.gif) repeat-x top;
+border: 1px solid #ccc;
+overflow: hidden;
+height:24px;
+margin-left:0;
+padding-left:0;
+width:100%;
+} 
+.mod_nav div.fbutton:hover{
+	padding: 0px;
+	border: 1px solid #ccc;
+}
+.mod_nav div.fbutton:hover div{
+
+	border-left: 1px solid #fff;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+.mod_nav li {float:left;list-style-type:none;line-height:24px;}
 
 #doc-content {padding-left:6px;}
 
@@ -153,3 +174,5 @@ width: 100%;
 #file {width:300px;}
 #uploadform {padding-top:10px;}
 #btn_save,.submit{background:#94B922}
+
+#product-list {margin:10px 10px 10px 10px}

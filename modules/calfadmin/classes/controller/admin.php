@@ -92,9 +92,12 @@ class Controller_Admin extends Controller {
                 break;
             case "maincontentcol": {
                     switch ($controller) {
-                        case 'index': $mods = Admin_Home::factory($id)->get_body_content();
+                        case 'index': 
+                          $mods = Admin_Home::factory($id)->get_body_content();
                           break;
-			case 'product': $mods = Admin_Product::factory($id)->get_body_content();
+			case 'product': 
+			
+			 $mods = Admin_Product::factory($id)->get_body_content();
 	                  break;
 		        case 'tuan': $mods = Admin_Tuan::factory($id)->get_body_content();
 			  break;

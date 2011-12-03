@@ -46,8 +46,9 @@
  
  <!-- begin main content -->
   <div id="maincontent" class="clearfix" > 
-    <div id="maincontentcol" class="clearfix"></div>
-  </div>
+   	
+   <div id="maincontentcol" class="clearfix"></div>
+ </div>
  <!-- end content -->
  
  <!-- begin main pagefoot -->  

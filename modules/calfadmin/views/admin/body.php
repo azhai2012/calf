@@ -19,6 +19,7 @@
 		    <ul>
 			<?php foreach ($array_data as $key => $value):  ?>
 		         <li class="toggle-list closed"> 
+			     <?php echo $selected; ?>
 			     <?php $is_selected = ((int)$value['id']===(int)$selected)?'selected':'';  ?> 
 		             <div class="<?php echo $is_selected; ?>">
 			       <?php if (!isset($value['lists'])): ?>
@@ -56,7 +57,9 @@
         </div> <!-- devdoc-nav --> 
        
     </div> <!-- side-nav -->	  
-   
+        
+     <div id="admin-header" style="margin-left:10px;">
+	</div>
    <div class="g-unit" id="doc-content" style="margin-left: 200px; height: 99px; "><a name="top"></a>
        <?php echo $mod_content; ?>
    </div> <!-- doc-content -->

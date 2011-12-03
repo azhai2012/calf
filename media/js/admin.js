@@ -18,6 +18,7 @@ var Admins = {
 			 $("#side-nav").css({position:"absolute",left:0});
 		     content = $("#doc-content");
 		     devdocNav = $("#devdoc-nav");
+		     adminheader = $("#admin-header");
 	      	 sidenav=$('#side-nav');
 			 $("#side-nav").resizable({handles: "e", resize: function(e, ui){
 		     	 Admins.resizeWidth();
@@ -66,8 +67,10 @@ var Admins = {
 		},
 		restoreWidth:function(navWidth) {		 	
 		  content.css({marginLeft:parseInt(navWidth)  + "px"}); 
+		  adminheader.css({marginLeft:parseInt(navWidth)  + "px"}); 
 		  if (isIE6) {
 		    content.css({width:parseInt(windowWidth) - parseInt(navWidth) + "px"}); 
+		    adminheader.css({width:parseInt(windowWidth) - parseInt(navWidth) + "px"}); 
 		  }
 		  $('#side-nav').css({width:navWidth});
 		},
@@ -75,6 +78,7 @@ var Admins = {
 		  var windowHeight = ($(window).height() - resizeheight);
 		  sidenav.css({height:windowHeight + "px"});
 		  content.css({height:windowHeight + "px"});
+		  adminheader.css({height:windowHeight + "px"});
 		  devdocNav.css({height:sidenav.css("height")});
 		},	
 		resizeWidth:function(){			
@@ -84,10 +88,12 @@ var Admins = {
 			    var sidenavWidth = 0;
 			  }
               content.css({marginLeft:parseInt(sidenavWidth) + "px"});
-              
+              adminheader.css({marginLeft:parseInt(sidenavWidth) + "px"});
+			  
 			  if (isIE6) {
 			    content.css({width:parseInt(windowWidth) - parseInt(sidenavWidth) + "px"});
-			  }
+			 	adminheader.css({width:parseInt(windowWidth) - parseInt(sidenavWidth) + "px"});
+			 }
 			
 		 	if (sidenav.length) { 
 			    var basePath = this.getBaseUri(location.pathname);
@@ -111,17 +117,13 @@ var Admins = {
 		},
 		defHeight:function(){
 				var h = $(window).height()-resizeheight;
-				  $('#doc-content').css({"height":h+"px"}); 
-				  $('#devdoc-nav').css({"height":h+"px"});
-				  $('#side-nav').css({"height":h+"px"});	
+				  $('#doc-content,#devdoc-nav,#side-nav').css({"height":h+"px"}); 
 		},
 		getHeight:function(){
 		   $(window).resize(function(){
 			  var h = $(this).height()-resizeheight;
-			  $('#doc-content').css({"height":h+"px"}); 
-			  $('#devdoc-nav').css({"height":h+"px"});
-			  $('#side-nav').css({"height":h+"px"});
-
+			  $('#doc-content,#devdoc-nav,#side-nav').css({"height":h+"px"}); 
+			 
 			});
 		}, 
 		
@@ -169,7 +171,11 @@ var Admins = {
 		    $(obj).parent().addClass('selected');
 		    $(obj).parent().append('<span class="loading"></span>'); 
 		    var u= '/home/'+action+'?sk='+id; 
-		    this.ajaxMod(u,function(d){$('#doc-content').html(d);});
+		    this.ajaxMod(u,function(o){
+			  var d= eval('('+o+')');
+			  $('#admin-header').html(d.nav);
+			  $('#doc-content').html(d.content);
+			});
 		}, 
 		ajaxMod:function(uri,callback,datatype,params,method){
 			var dt = (!arguments[2]) ? "html": datatype;

@@ -78,10 +78,13 @@
 </head>
 <body>
 
+
   <div id="uploadform"> </div> <div id="status"></div> 
 		<p>
 			<label for="editor1">
 				Editor 1:</label>
+				
+				
 		</p>
 		<p>
 		<?php

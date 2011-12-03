@@ -111,15 +111,44 @@ class Controller_Test extends Controller {
 		# code...
 		$db->save('prices',$value);  
 	}    */
-	            $data='{"id":"1010495","htmls":"<p>ddkkff</p>"}';
-       	            $ary = json_decode($data);
-                    $s=$ary->htmls;
-                    print_r($ary);
-	            $ary->htmls = htmlspecialchars($s);
-	            print_r($ary);
-		    $product_db = Calfdb_Admin::instance('Product','modity',$ary);
-	            $result = $product_db->set_admin_product_info();
-		       	//$calfdb =  Calfdb_Admin::instance('Product','', $_ary); 
+	            $array_data = array(
+				 array('id'=>1,'mod_name'=>'cms','name' =>'CMS管理','url'=>'/admin/index/1',
+				              'lists'=>array(
+				                   array('id'=>'11','mod_name'=>'product','name'=>'商品管理','url'=>'/admin/product'),
+					      	   array('id'=>'12','mod_name'=>'mod','name'=>'模块管理','url'=>'/admin/modelmanager'),
+					      	   array('id'=>'12','mod_name'=>'news','name'=>'新闻管理','url'=>'/admin/news'),
+					   	   array('id'=>'12','mod_name'=>'notice','name'=>'公告管理','url'=>'/admin/notice'),
+						   array('id'=>'12','mod_name'=>'template','name'=>'模板管理','url'=>'/admin/template'),
+						   array('id'=>'12','mod_name'=>'commity','name'=>'社区管理','url'=>'/admin/commity'),
+					       ),
+				     ) , 
+				 array('id'=>2,'mod_name'=>'crm','name' =>'CRM管理','url'=>'/admin/index/2',
+				                  'lists'=>array(
+					           array('id'=>'21','mod_name'=>'customer','name'=>'客户管理','url'=>'/admin/customer'),
+					      	   array('id'=>'22','mod_name'=>'odds','name'=>'机会管理','url'=>'/admin/odds'),
+					     	   array('id'=>'23','mod_name'=>'task','name'=>'日程安排','url'=>'/admin/task'),
+					      	   array('id'=>'24','mod_name'=>'order','name'=>'订单管理','url'=>'/admin/order'),
+					      	   array('id'=>'25','mod_name'=>'funds','name'=>'款项管理','url'=>'/admin/funds'),
+					      	   array('id'=>'26','mod_name'=>'cost','name'=>'费用管理','url'=>'/admin/cost'),
+					     ),
+				      ), 
+			         array('id'=>3,'mod_name'=>'system','name' =>'系统管理','url'=>'/admin/system',
+			                  'lists'=>array(
+				           array('id'=>'31','mod_name'=>'premision','name'=>'权限模块','url'=>'#'),
+				      	   ),
+				 ) , 
+		    );
+	          //  echo 'ok';
+	  	   print_r($array_data);
+	//$default = View::factory('admin/home/default');  
+	            //$template = View::factory('admin/body')
+	            //            ->set('array_data',$array_data) 
+	             //           ->set('selected',$this->_id) 
+	             //           ->set('action','index')
+	             //           ->set('mod_content',$default);
+                     // echo $template;
+		
+		    	//$calfdb =  Calfdb_Admin::instance('Product','', $_ary); 
 		        //$calfdb->set_import_admin_product_info_array_data();
 		     //   $i++;
 //echo $i;

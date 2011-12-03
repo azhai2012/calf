@@ -265,7 +265,7 @@ var Azhai = {
 	   }
 	},
 	callMethod2:function(a,b,c){
-
+ 
     	var f= eval("("+b+")");
 		if(c==void 0||c==null)c=false;
 		for (var i=0;i<f.length;i++){

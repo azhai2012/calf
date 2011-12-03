@@ -31,12 +31,13 @@ class Kohana_Admin_Home {
         public function get_body_content() {
             // TODO :
 	    $array_data = $this->_calfDb->get_admin_home_array_data();  
-  	    $default = View::factory('admin/home/default');  
+  	    $default = View::factory('admin/home/default');
             $template = View::factory('admin/body')
                         ->set('array_data',$array_data) 
                         ->set('selected',$this->_id) 
                         ->set('action','index')
                         ->set('mod_content',$default);
+           
             return $template;
         }
 	

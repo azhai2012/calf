@@ -20,18 +20,41 @@ class Controller_Home extends Controller {
          $this->_id='';
          $this->_data=array();
          $this->_calfDb = Calfdb_Admin::factory($this->_id,$this->_data); 
+
     }
 
     public function action_index() {
            parent::before();
            $sk = $this->_sk;
-            $home_db = Calfdb_Admin::instance('Home',$this->_id,$this->_data);
+           $home_db = Calfdb_Admin::instance('Home',$sk,$this->_data);
+   	   $p = array('page'=>1,'prepage'=>10,'sortname'=>'display_name','sortorder'=>'desc','query'=>'','qtype' =>'display_name' );
+           $product_db = Calfdb_Admin::instance('Product',$sk,$p);
+           $p = array('page'=>1,'prepage'=>10,'sortname'=>'id','sortorder'=>'desc','query'=>'','qtype' =>'id' );
+
            switch ($sk) {
            	case 'news':
            		$this->template= View::factory('admin/home/news/content')
                                          ->set('array_data',$home_db->get_admin_home_news_add_list_array_data());
            		break;
-           	case 'showadd':
+                case 'product':
+            	       $array_data = $product_db->get_admin_product_manager_array_data();
+                       $navdata = array(
+		                           'modname'=>'Product - 商品管理',
+		                           'lists'=>array(
+					      array('url'=>'/admin/product/add','img'=>'/media/images/new.gif','name'=>'商品增加','click'=>'alert(1)'),
+					      array('url'=>'javascript:void(0);','img'=>'/media/images/detail.gif','name'=>'商品列表','click'=>'$(\'#product\').click();'),
+				           ),    
+	                ); 
+	               $navcontent= View::factory('admin/navcontent')
+	                            ->set('navdata',$navdata);
+	               $modcontent= View::factory('admin/product/product/product')
+		                    ->set('array_data',$array_data);
+                       $ary= array('nav'=>"$navcontent",'content'=>"$modcontent"); 
+                       
+                       $this->template=json_encode($ary);
+	               
+                       break;
+         	case 'showadd':
            		$this->template= View::factory('admin/home/show/mod'); 
            		break;
                 case 'showlist':

@@ -15,21 +15,31 @@ class Kohana_Calfdb_Admin_Home extends Kohana_Calfdb_Admin {
        public function get_admin_home_array_data() {
            // TODO :
           $array_data = array(
-			 array('id'=>1,'mod_name'=>'notice','name' =>'公告管理','url'=>'/admin/index/1',
-			      ) , 
-			 array('id'=>2,'mod_name'=>'news','name' =>'新闻管理','url'=>'/admin/index/2',
-			      ) , 
-			 array('id'=>3,'mod_name'=>'advertising','name' =>'广告管理','url'=>'/admin/index/3',
+			 array('id'=>1,'mod_name'=>'cms','name' =>'CMS管理','url'=>'/admin/index/1',
+			              'lists'=>array(
+			                   array('id'=>'11','mod_name'=>'product','name'=>'商品管理','url'=>'/admin/product'),
+				      	   array('id'=>'12','mod_name'=>'mod','name'=>'模块管理','url'=>'/admin/modelmanager'),
+				      	   array('id'=>'12','mod_name'=>'news','name'=>'新闻管理','url'=>'/admin/news'),
+				   	   array('id'=>'12','mod_name'=>'notice','name'=>'公告管理','url'=>'/admin/notice'),
+					   array('id'=>'12','mod_name'=>'template','name'=>'模板管理','url'=>'/admin/template'),
+					   array('id'=>'12','mod_name'=>'community','name'=>'社区管理','url'=>'/admin/community'),
+				       ),				     
+			     ) , 
+			 array('id'=>2,'mod_name'=>'crm','name' =>'CRM管理','url'=>'/admin/index/2',
 			                  'lists'=>array(
-				           array('id'=>'31','mod_name'=>'advadd','name'=>'添加广告栏目','url'=>'/admin/index/31'),
-				      	   array('id'=>'32','mod_name'=>'advlist','name'=>'广告列表','url'=>'/admin/index/32'),
-				           ),
+				           array('id'=>'21','mod_name'=>'customer','name'=>'客户管理','url'=>'/admin/customer'),
+				      	   array('id'=>'22','mod_name'=>'odds','name'=>'机会管理','url'=>'/admin/odds'),
+				     	   array('id'=>'23','mod_name'=>'task','name'=>'日程安排','url'=>'/admin/task'),
+				      	   array('id'=>'24','mod_name'=>'order','name'=>'订单管理','url'=>'/admin/order'),
+				      	   array('id'=>'25','mod_name'=>'funds','name'=>'款项管理','url'=>'/admin/funds'),
+				      	   array('id'=>'26','mod_name'=>'cost','name'=>'费用管理','url'=>'/admin/cost'),
+				     ),
 			      ), 
-			 array('id'=>4,'mod_name'=>'shows','name' =>'商品展示管理','url'=>'/admin/index/4','lists'=>array(
-			           array('mod_name'=>'showadd','name'=>'展示模块','url'=>'#'),
-			      	   array('mod_name'=>'showlist','name'=>'展示列表','url'=>'#'),
-			           ),
-			       ) , 
+		         array('id'=>3,'mod_name'=>'system','name' =>'系统管理','url'=>'/admin/system',
+		                  'lists'=>array(
+			           array('id'=>'31','mod_name'=>'premision','name'=>'权限模块','url'=>'#'),
+			      	   ),
+			 ) , 
 	    );
            return $array_data;
        }
