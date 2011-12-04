@@ -58,8 +58,8 @@
        
     </div> <!-- side-nav -->	  
         
-     <div id="admin-header" style="margin-left:10px;">
-	</div>
+     <div id="a-header" style="margin-left:10px;">
+     </div>
    <div class="g-unit" id="doc-content" style="margin-left: 200px; height: 99px; "><a name="top"></a>
        <?php echo $mod_content; ?>
    </div> <!-- doc-content -->

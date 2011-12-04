@@ -8,6 +8,7 @@
  *
  */
 ?>
+ <div id="admin-header">
  <h1><?php echo $navdata['modname'] ?></h1>
    <div>
        <ul class="mod_nav">
@@ -25,4 +26,5 @@
 	   </div>
 	<?php endforeach ?>
    </ul>
+</div>
 </div>

@@ -92,11 +92,12 @@ width: 100%;
 .pop_content .dialog_content {background: white;border: 0px solid #555;border-top-width: 0px;z-index:100}
 .pop_content .dialog_buttons {background: #F2F2F2;padding-top: 5px;padding-bottom: 5px;padding-right:10px;position: relative;border:1px #E4E4E4 solid;text-align: right;}
 
-#header{height:60px;position:relative;z-index:100;min-width:675px;padding:0 10px;border-bottom:3px solid #94B922;}
-#headcontent{height:60px;}
+#header{height:30px;position:relative;z-index:100;min-width:675px;padding:0 10px;border-bottom:3px solid #94B922;}
+#header .h_title {position:relative; background:url(/media/images/calf.png) 0 -1px no-repeat; text-shadow:2px 3px 4px #ccc;font-size:14px;color:#94B922; font-weight:bold;}
+#header .h_title span {margin-left:50px;}
+#headcontent{height:33px;}
 #headerLeft{padding:8px 0 0 0;}
-#headerLeft img{height:49px;width:150px;float:left;margin-bottom:6px}
-#header ul{float:left;list-style:none;margin:23px 40px 0;padding:0;height:29px;}
+#header ul{float:left;list-style:none;margin:0 40px 0;padding:0;height:29px;}
 #header li{float:left;margin:0px 2px 0px 0px;padding:0;}
 #header li a{color:#666;font-size:13px;font-weight:bold;text-align:center;}
 #header li a{text-decoration:none;display:block;background-image:url(/media/images/bg_images_sprite.png);background-position:0 -58px;background-repeat:no-repeat;color:#666;font-size:13px;font-weight:bold;width:94px;height:29px;text-align:center;margin:0px;}
@@ -125,28 +126,137 @@ width: 100%;
 #side-nav .open .toggle-img{background:url('/media/images/triangle-opened-small.png') 7px 4px no-repeat;}
 #side-nav .toggle-list .selected a{color:white;text-decoration:none;}
 .loading{display:inline-block;width:20px;height:16px;float:right;margin-right:5px;background:url('/media/images/load.gif') 0 3px no-repeat;}
-#admin-header{background-color:#E2E2E2;height:60px;padding-left:7px;overflow:hidden;margin-top:5px;}
-#admin-header h1{margin:10px 0 5px 5px;font-size:16px;}
+#admin-header{background-color:#E2E2E2;height:67px;padding-left:7px;overflow:hidden;}
+#admin-header h1{margin:10px 0 5px 5px;font-size:14px;}
 .notice-sumtable{margin:15px 1em 1em 0;width:95%;font-size:12px;}
 #notice-content table{margin:0 0 1em 1em;}
 .notice-add{margin:15px 1em 1em 0;width:95%;font-size:12px;}
 #news-list a,#adv-list a{width:200px;}
 #adv-list,#news-list,#mod-list{width:95%;font-size:12px;}
+#body-right-content {margin:10px}
+#body-right-content .body-right-bottom-content {padding:5px;border-left:1px #ccc solid;border-right:1px #ccc solid;border-bottom:1px #ccc solid;} 
+#body-right-content div.mDiv {
+    height:28px; 
+	background: url(/media/images/wbg.gif) repeat-x top;
+	border: 1px solid #ccc;
+	border-bottom: 0px;
+	border-top: 0px;
+	font-weight: bold;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+}
+
+#body-right-content  div.mDiv div {
+	padding: 6px;
+	white-space: nowrap;
+}
+
+#body-right-content div.mDiv div.ptogtitle {
+	position: absolute;
+	top: 4px;
+	right: 3px;
+	padding: 0px;
+	height: 16px;
+	width: 16px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+
+#body-right-content div.mDiv div.ptogtitle:hover {
+	background-position: left -2px;
+	border-color: #bbb;
+}
+
+#body-right-content div.mDiv div.ptogtitle span {
+	display: block;
+	border-left: 1px solid #eee;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #ddd;
+	width: 14px;
+	height: 14px;
+	background: url(/media/images/uup.png) no-repeat center;
+}
+
+#body-right-content div.mDiv div.ptogtitle.vsble span {
+
+	background: url(/media/images/ddn.png) no-repeat center;
+}
+
+#body-right-content div.tDiv /*toolbar*/ {
+	background: #fafafa url(/media/images/bg.gif) repeat-x top;
+	position: relative;
+	border: 1px solid #ccc;
+	border-bottom: 0px;
+	overflow: hidden;
+	height:28px;
+	border-bottom:1px #ccc solid;
+}
+
+#body-right-content  div.fbutton div {
+	float: left;
+	padding: 1px 3px;
+}
+
+#body-right-content  div.fbutton span {
+	float: left;
+	display: block;
+	padding: 3px;
+}
+
+#body-right-content div.tDiv2 {
+	float: left;
+	clear: both;
+	padding: 1px;
+}
+
+#body-right-content div.fbutton {
+	float: left;
+	display: block;
+	cursor: pointer;
+	padding: 1px;
+}
+
+#body-right-content  div.fbutton:hover{
+    padding:0;
+	border: 1px solid #ccc;
+}
+#body-right-content  div.fbutton:hover div{
+	padding: 0px 2px;
+	border-left: 1px solid #fff;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
 
 .mod_nav {background: #fafafa url(/media/images/bg.gif) repeat-x top;
 border: 1px solid #ccc;
 overflow: hidden;
-height:24px;
+height:30px;
 margin-left:0;
 padding-left:0;
 width:100%;
 } 
+
+
+.mod_nav div.fbutton {
+	float: left;
+	display: block;
+	cursor: pointer;
+	height:26px;
+	margin:1px; 
+	padding: 1px;
+}
+
 .mod_nav div.fbutton:hover{
-	padding: 0px;
+    padding:0;
 	border: 1px solid #ccc;
 }
 .mod_nav div.fbutton:hover div{
-
+	padding: 0px 2px;
 	border-left: 1px solid #fff;
 	border-top: 1px solid #fff;
 	border-right: 1px solid #eee;

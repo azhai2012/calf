@@ -126,6 +126,31 @@
 		
 			
        </script>
+<div id="body-right-content">
+<div class="mDiv">	
+<div class="ftitle" >修改商品</div>
+<div class="ptogtitle" title="Minimize/Maximize"><span></span></div>
+</div>
+<div class="tDiv">	
+<div class="tDiv2" >
+<div class="fbutton" style="margin-left:2px;">
+<div><span style="background-image: url(/media/images/back.gif); 
+	          background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; padding-left: 20px; background-position: 0% 50%; background-repeat: no-repeat no-repeat; ">
+	  <a href="javascript:void(0);" onclick="$('#product').click();">返回列表</a></span>
+	</div>	
+</div>
+<div class="fbutton" style="margin-left:2px;">
+<div><span style="background-image: url(/media/images/save.gif); 
+	          background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; padding-left: 20px; background-position: 0% 50%; background-repeat: no-repeat no-repeat; ">
+	  保存</span>
+	</div>	
+</div>
+<div style="clear:both"></div>
+</div>
+<div class="ptogtitle" title="Minimize/Maximize"><span></span></div>
+</div>
+
+<div class="body-right-bottom-content">
 <div id="tabs">
  <ul>
    <li><a href="#tabs-1"><?php echo __('基本设置'); ?></a></li>
@@ -217,4 +242,6 @@
    <input value="保存更改" type="submit" id="btn_save"></label>
    <label class="cancel uiButton" for="uvh5i2_10">
    <input value="取消" type="button" id="uvh5i2_10"></label>
+</div>
+</div>
 </div>

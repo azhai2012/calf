@@ -37,7 +37,12 @@
         </script>
     </div> <!-- end list -->
     <div id="grid_add">
-
+	<div id="body-right-content">
+	<div class="mDiv">	
+	<div class="ftitle" >新增商品</div>
+	<div class="ptogtitle" title="Minimize/Maximize"><span></span></div>
+	</div>
+	<div class="body-right-bottom-content">
 	<div id="tabs">
 	 <ul>
 	   <li><a href="#tabs-1"><?php echo __('基本设置'); ?></a></li>
@@ -132,6 +137,9 @@
 	   <input value="取消" type="button" id="btn_cancel"></label>
 	</div>	
     </div>
+  </div>
+  </div>
+
 
     <div id="dialog">	
      <div class="dragDiv">  

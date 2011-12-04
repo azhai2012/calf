@@ -27,21 +27,34 @@ class Controller_Home extends Controller {
            parent::before();
            $sk = $this->_sk;
            $home_db = Calfdb_Admin::instance('Home',$sk,$this->_data);
-   	   $p = array('page'=>1,'prepage'=>10,'sortname'=>'display_name','sortorder'=>'desc','query'=>'','qtype' =>'display_name' );
-           $product_db = Calfdb_Admin::instance('Product',$sk,$p);
-           $p = array('page'=>1,'prepage'=>10,'sortname'=>'id','sortorder'=>'desc','query'=>'','qtype' =>'id' );
-
-           switch ($sk) {
+   	   switch ($sk) {
            	case 'news':
-           		$this->template= View::factory('admin/home/news/content')
+                       $navdata = array(
+		                           'modname'=>'News - 新闻管理',
+		                           'lists'=>array(
+					      array('url'=>'javascript:void(0);','img'=>'/media/images/new.gif','name'=>'添加新闻','click'=>''),
+					      array('url'=>'javascript:void(0);','img'=>'/media/images/detail.gif','name'=>'新闻列表','click'=>'$(\'#news\').click();'),
+				           ),    
+	                ); 
+	               $navcontent= View::factory('admin/navcontent')
+	                            ->set('navdata',$navdata);
+
+           		$modcontent= View::factory('admin/home/news/content')
                                          ->set('array_data',$home_db->get_admin_home_news_add_list_array_data());
+		        $ary= array('nav'=>"$navcontent",'content'=>"$modcontent"); 
+
+		        $this->template=json_encode($ary);
+		
            		break;
                 case 'product':
+		       $p = array('page'=>1,'prepage'=>10,'sortname'=>'display_name','sortorder'=>'desc','query'=>'','qtype' =>'display_name' );
+	               $product_db = Calfdb_Admin::instance('Product',$sk,$p);
+	               $p = array('page'=>1,'prepage'=>10,'sortname'=>'id','sortorder'=>'desc','query'=>'','qtype' =>'id' );
             	       $array_data = $product_db->get_admin_product_manager_array_data();
                        $navdata = array(
 		                           'modname'=>'Product - 商品管理',
 		                           'lists'=>array(
-					      array('url'=>'/admin/product/add','img'=>'/media/images/new.gif','name'=>'商品增加','click'=>'alert(1)'),
+					      array('url'=>'javascript:void(0);','img'=>'/media/images/new.gif','name'=>'商品增加','click'=>'Products.RowAdd();'),
 					      array('url'=>'javascript:void(0);','img'=>'/media/images/detail.gif','name'=>'商品列表','click'=>'$(\'#product\').click();'),
 				           ),    
 	                ); 

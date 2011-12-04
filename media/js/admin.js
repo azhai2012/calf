@@ -12,13 +12,13 @@ var resizePackagesNav;
 var classesNav;
 var devdocNav;
 var sidenav;
-var resizeheight=56;
+var resizeheight=26;
 var Admins = {	   
 		Init:function(){
 			 $("#side-nav").css({position:"absolute",left:0});
 		     content = $("#doc-content");
 		     devdocNav = $("#devdoc-nav");
-		     adminheader = $("#admin-header");
+		     adminheader = $("#a-header");
 	      	 sidenav=$('#side-nav');
 			 $("#side-nav").resizable({handles: "e", resize: function(e, ui){
 		     	 Admins.resizeWidth();
@@ -173,7 +173,7 @@ var Admins = {
 		    var u= '/home/'+action+'?sk='+id; 
 		    this.ajaxMod(u,function(o){
 			  var d= eval('('+o+')');
-			  $('#admin-header').html(d.nav);
+			  $('#a-header').html(d.nav);
 			  $('#doc-content').html(d.content);
 			});
 		}, 

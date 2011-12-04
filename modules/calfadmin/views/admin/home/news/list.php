@@ -9,10 +9,7 @@
  */
 ?>
 <div id="news-content">
-   <div id="admin-header">
-       管理
-       <h1>News - 新闻管理 - 列表</h1>
-   </div>
+ <div class="ftitle">新闻列表</div> 	
  <div id="news-list">
  <table >
     <tbody><tr>
