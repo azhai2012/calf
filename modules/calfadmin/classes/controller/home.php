@@ -27,7 +27,23 @@ class Controller_Home extends Controller {
            parent::before();
            $sk = $this->_sk;
            $home_db = Calfdb_Admin::instance('Home',$sk,$this->_data);
+           $id = Arr::get($_GET,'id','');
    	   switch ($sk) {
+	        case 'customer':
+	              $navdata = array(
+		                          'modname'=>'CRM - 客户管理',
+					  'lists'=>array(
+					      array('url'=>'javascript:void(0);','img'=>'/media/images/new.gif','name'=>'客户增加','click'=>'Customers.RowAdd();'),
+					      array('url'=>'javascript:void(0);','img'=>'/media/images/detail.gif','name'=>'客户列表','click'=>'$(\'#product\').click();'),
+				           ),
+		      ); 
+		      $navcontent = View::factory('admin/navcontent')
+	                            ->set('navdata',$navdata);
+		      $modcontent= Crm_Customer::factory($id)->get_body_content();
+	              $ary= array('nav'=>"$navcontent",'content'=>"$modcontent"); 
+ 	              $this->template=json_encode($ary);
+		
+	              break;
            	case 'news':
                        $navdata = array(
 		                           'modname'=>'News - 新闻管理',
@@ -54,7 +70,7 @@ class Controller_Home extends Controller {
                        $navdata = array(
 		                           'modname'=>'Product - 商品管理',
 		                           'lists'=>array(
-					      array('url'=>'javascript:void(0);','img'=>'/media/images/new.gif','name'=>'商品增加','click'=>'Products.RowAdd();'),
+					      array('url'=>'javascript:void(0);','img'=>'/media/images/new.gif','name'=>'添加商品','click'=>'Products.RowAdd();'),
 					      array('url'=>'javascript:void(0);','img'=>'/media/images/detail.gif','name'=>'商品列表','click'=>'$(\'#product\').click();'),
 				           ),    
 	                ); 

@@ -28,6 +28,16 @@ class Controller_Admin extends Controller {
 		
         }
 
+	public function action_customer()
+	{	
+		parent::before();
+		$this->template->callmethod='
+                   <script>Azhai.callMethod1("/admin/callmethod?controller=customer&id='.$this->_id.'","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
+		'; 
+		
+        }
+
+
 	public function action_product()
 	{	
 		parent::before();

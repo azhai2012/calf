@@ -14,8 +14,8 @@
        <ul class="mod_nav">
        <?php foreach ($navdata['lists'] as $key => $value): ?>
 	<li>
-	  <div class="fbutton" style="margin-left: 2px; ">
-	    <div>
+	  <div class="fbutton">
+	    <div style="padding-left:5px;padding-top:2px;padding-right:5px;border:0;">
 	      <span style="background-image: url(<?php echo $value['img'] ?>); 
 	       background-attachment: initial; background-origin: initial; background-clip: initial; 
 	       background-color: initial; padding-left: 20px; padding-right:5px;

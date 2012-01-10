@@ -134,7 +134,7 @@ Kohana::modules(array(
      'calfmsc'       => MODPATH.'calfmsc',
      'calfdb'        => MODPATH.'calfdb',
       'calfadmin'    => MODPATH.'calfadmin',
- 
+      'calfcrm'          => MODPATH.'calfcrm',
    
 	));
 

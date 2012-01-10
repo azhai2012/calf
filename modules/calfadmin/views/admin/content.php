@@ -20,7 +20,7 @@
 <link href="/media/css/flexigrid.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="/media/css/detailgrid.css" type="text/css" media="screen" title="no title" charset="utf-8">
 <link rel="stylesheet" href="/media/css/jquery.ui.css" type="text/css" media="screen" title="no title" charset="utf-8">
-
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
  <script type="text/javascript" src="/media/js/comm.js"></script>
  <script type="text/javascript" src="/media/js/apps.js"></script>
  <script type="text/javascript" src="/media/js/jquery-1.6.4.min.js"></script>

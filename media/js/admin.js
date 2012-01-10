@@ -117,7 +117,7 @@ var Admins = {
 		},
 		defHeight:function(){
 				var h = $(window).height()-resizeheight;
-				  $('#doc-content,#devdoc-nav,#side-nav').css({"height":h+"px"}); 
+				  $('#doc-content,#devdoc-nav,#side-nav').css({"height":h+150+"px"}); 
 		},
 		getHeight:function(){
 		   $(window).resize(function(){

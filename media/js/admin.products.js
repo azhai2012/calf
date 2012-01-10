@@ -34,8 +34,8 @@ var Products={
 				  	buttons:[
 				     // {name:'添加',bimage:'/media/images/new.gif',onpress:function(){Products.RowAdd()}},
 				     // {name:'修改',bimage:'/media/images/modify.gif',onpress:function(){Products.Modify()}},
-					 // {name:'删除',bimage:'/media/images/delete.gif',onpress:function(){Products.RowDelete()}},
 					 {name:'编辑选择',bimage:'/media/images/modify.gif',onpress:function(){Products.Modify()}},
+					 {name:'删除',bimage:'/media/images/delete.gif',onpress:function(){Products.RowDelete()}},
 					 {name:'导出',bimage:'/media/images/export.gif',onpress:function(){},
 				            down:"<ul><li><a href='javascript:Products.Exports(1,1);'>导出为 EXCEL 文件</a></li><li><a href='javascript:Products.Exports(1,2);'>导出为 CSV 文件</a></li><li><a href='javascript:Products.Exports(1,3);'>导出为 PDF 文件</a></li></ul>"
 					  },
@@ -102,52 +102,89 @@ var Products={
 		   window.location.href='/export/'+action+'/'+id+'?params='+fn+','+fv;		 
 		},
 		ClearInfo:function(){
-		   $('#message').hide();	 
-		   $('#grid_add table:first td').each(function(){
+		   $('#message').hide();
+		   $('#grid_operating').html('');
+		   $('#grid_operating table:first td').each(function(){
 			   $(this).find('input').val('');
 			   $(this).find('textarea').val('');
 			   $(this).find('select:first').attr('selected','true');
 			   $(this).find('input[name=is_active]').attr('checked',false);	
 			   		
 		   });
-		},    
-        RowAdd:function(){
-	      $('.flexigrid').hide();
-	      $('input[name=id]').removeAttr("readonly");
-          Products.ClearInfo();
-          $('#grid_add').show();
-        },
-	    Modify:function(){
-		      Products.ClearInfo();
-              var gd = $('#flexgrid').flexModify(function(a){ 
-		      if (a != null){	
-		                var id = a.attr('id').substring(3);
-			            $('.flexigrid').hide();
-				        $('#grid_add').show();
-			            $.ajax({
-								type : 'post',
-								url : '/post/getproductinfo',
-								data : '&id='+id,
-								beforeSend : function(XMLHttpRequest) {
-							 	   	$('.loading').show(); 
-								},
-								success : function(data, textStatus) {
-					                 $('#grid_add').html(data); 
-								},
-								complete : function(XMLHttpRequest, textStatus) {
-								  	$('.loading').remove();
-								    $('#flexgrid').flexReload();
-									
-								},
-								error : function() {
-									// 请求出错处理
-								}
-							});
+		},
+		setBodyHeight:function(){
+		  var body_h= $('#body-right-content').height();
+		  $('#body-right-content').height(body_h+150);
+		},
+        ShowOperating:function(flag){
+	      var f=flag;
+		   Products.ClearInfo();
+		   if (f===0){
+		          var gd = $('#flexgrid').flexModify(function(a){ 
+			              if (a != null){	
+							             var id = a.attr('id').substring(3);
+						                  
+										            $('.flexigrid').hide();
+											        $('#grid_add').show();
+										            $.ajax({
+															type : 'post',
+															url : '/post/getproductinfo',
+															data : '&id='+id+'&flag='+f,
+															beforeSend : function(XMLHttpRequest) {
+														 	   	$('.loading').show(); 
+															},
+															success : function(data, textStatus) {
+																 $('#grid_operating').html(data); 
+																 Products.setBodyHeight();
+											                },
+															complete : function(XMLHttpRequest, textStatus) {
+															  	$('.loading').remove();
+															    $('#flexgrid').flexReload();
+
+															},
+															error : function() {
+																// 请求出错处理
+															}
+														});
+					       }
+						   else
+						      alert('清先选择商品。');
+					       });	
+	               }
+	           else
+	           {	
+		              $('.flexigrid').hide();
+							        $('#grid_add').show();
+						            $.ajax({
+											type : 'post',
+											url : '/post/getproductinfo',
+											data : '&flag='+f,
+											beforeSend : function(XMLHttpRequest) {
+										 	   	$('.loading').show(); 
+											},
+											success : function(data, textStatus) {
+								                 $('#grid_operating').html(data); 
+							                     Products.setBodyHeight();
+											},
+											complete : function(XMLHttpRequest, textStatus) {
+											  	$('.loading').remove();
+											    $('#flexgrid').flexReload();
+
+											},
+											error : function() {
+												// 请求出错处理
+											}
+										});
+			  }
+	
 			
-			         }
-			   else
-			      alert('清先选择商品。');
-		       });	
+   	    },
+	    RowAdd:function(){
+	        Products.ShowOperating(1);
+	    },
+	    Modify:function(){
+		       Products.ShowOperating(0);
+		
 		     },
 		Serialize:function(obj){
 		    switch (obj.constructor){
@@ -229,7 +266,7 @@ var Products={
 				                if (data==="1")
 				                {
 					               alert("成功保存！");
-					               $('#grid_add').hide(); 
+					               $('#grid_operating').hide(); 
 					               $('#flexgrid').flexReload();
 					               $('.flexigrid').show();
 			 	                }
@@ -257,9 +294,9 @@ var Products={
 			              if (data==="1")
 			                {
 				               alert("成功保存！");
-				               $('#grid_add').hide(); 
+				               $('#grid_operating').html(''); 
 				               $('#flexgrid').flexReload();
-				               $('.flexigrid').show();
+				               $('#product').click();
 		 	                }
 		                    else 
 		                    alert('保存失败!'+data);   
@@ -286,7 +323,7 @@ var Products={
 			                if (data==="1")
 			                {
 				               alert("成功保存！");
-				               $('#grid_add').hide(); 
+				               $('#grid_operating').hide(); 
 				               $('#flexgrid').flexReload();
 				               $('.flexigrid').show();
 		 	                }
@@ -333,8 +370,8 @@ var Products={
 					}); 
 	    },
 	    AddContent:function(){
-		
 		    if (!Products.Validate()) { return; };
+		   	if (confirm('是否增加该商品?')) {
 		    $('#message').hide();
             var ary = {};
             var serialize = '{}';
@@ -369,11 +406,12 @@ var Products={
             ary['imgs']=sr;	
 		    
 	     	serialize = Products.Serialize(ary);
-		    Products.AddToDb(serialize);  
+		    Products.AddToDb(serialize); 
+		   } 
 		},
 		ModityContent:function(){
-		
-            var ary = {};
+			if (confirm('是否修改该商品?')) {
+		    var ary = {};
             var serialize = '{}';
             $("#grid_add").html();
 			$(".uiInfoTable:first td input").each(function(a,b){
@@ -419,8 +457,8 @@ var Products={
             }
 
             serialize = Products.Serialize(ary);
-            alert(serialize);
-		    Products.UpdateToDb(serialize);  
+		    Products.UpdateToDb(serialize);4
+		   }  
 		},
 		DeleteContent:function(obj){
 		   var ary = {};

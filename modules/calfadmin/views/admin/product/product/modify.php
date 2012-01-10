@@ -8,8 +8,8 @@
  *
  */
 ?>
-       <script src="/media/js/admin.products.js" type="text/javascript" charset="utf-8"></script>
-       <script type="text/javascript" src="/media/js/jquery.placeholder.js"></script>
+        <script src="/media/js/admin.products.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="/media/js/jquery.placeholder.js"></script>
 	<script src="/media/js/jquery.upload.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/media/js/jquery.ui.min.js" type="text/javascript" charset="utf-8"></script>
 	
@@ -54,7 +54,11 @@
 		  var s= editor.document.getBody().getHtml(); 
 		  $('#description').html(s);
 		  if ($('#check_change').html()=="1")
+		     <?php if ($action==='Modity'): ?>
 		     Products.ModityContent();
+		     <?php else: ?>
+		     Products.AddContent();
+		     <?php endif; ?>
 		     //CKEDITOR.remove( 'editor1'); 
 		  else
 		   alert('没有内容改变，无须保存');
@@ -128,7 +132,7 @@
        </script>
 <div id="body-right-content">
 <div class="mDiv">	
-<div class="ftitle" >修改商品</div>
+<div class="ftitle" ><?php $_title= ($action==='Modity')?'修改商品':'增加商品'; echo $_title; ?></div>
 <div class="ptogtitle" title="Minimize/Maximize"><span></span></div>
 </div>
 <div class="tDiv">	
@@ -140,7 +144,7 @@
 	</div>	
 </div>
 <div class="fbutton" style="margin-left:2px;">
-<div><span style="background-image: url(/media/images/save.gif); 
+<div><span id="btn_save" style="background-image: url(/media/images/save.gif); 
 	          background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; padding-left: 20px; background-position: 0% 50%; background-repeat: no-repeat no-repeat; ">
 	  保存</span>
 	</div>	
@@ -156,6 +160,7 @@
    <li><a href="#tabs-1"><?php echo __('基本设置'); ?></a></li>
    <li><a href="#tabs-2"><?php echo __('图片设置'); ?></a></li>
    <li><a href="#tabs-3"><?php echo __('商品描述'); ?></a></li>
+
 </ul>
 <div id="tabs-1"> 
 <div style="display:none" id="check_change"></div>		 
@@ -184,7 +189,7 @@
 	      <?php if($value['type']=='textarea'): ?>
 	         <td class="data"><textarea name="<?php echo $value['name'] ?>" id="<?php echo $ids.'_'.$key ?>" placeholder="<?php echo $value['placeholder'] ?>" <?php echo $value['attr'] ?>><?php echo str_replace('<br>',chr(13),$value['value']) ?></textarea></td> 	
 	      <?php else: ?>	
-  	   	   <?php $readonly = (($key=="id") and ($action=='modity')) ? 'readonly': '';  ?>  
+  	   	   <?php $readonly = (($key=="id") and ($action=='Modity')) ? 'readonly': '';  ?>  
 	           <td class="data" ><input <?php echo $readonly; ?> style="width:<?php echo $value['width'] ?>px;color:#000" type="<?php echo $value['type'] ?>" <?php echo 'width='.$value['width'].'px' ?> class="inputtext" title="<?php echo $value['display_name'] ?>" placeholder="<?php echo $value['placeholder'] ?>" name="<?php echo $value['name'] ?>" value="<?php echo $value['value'] ?>" id="<?php echo $ids.'_'.$key ?>"></td>
                 <?php endif ?>
                <?php endif ?>
@@ -224,6 +229,7 @@
         </tbody>	  
 	</table>
         </div> <!-- end tabs-2 -->
+
         <div id="tabs-3">
 	<table class="uiInfoTable">
   	 <tbody>	  
@@ -237,11 +243,6 @@
         </table>
        </div> <!-- end tabs-3 -->
  </div> <!-- end tabs -->
-<div class="mtm" style="margin-bottom:20px;" >
-   <label class="submit uiButton" id="uvh5i2_7" for="btn_save">
-   <input value="保存更改" type="submit" id="btn_save"></label>
-   <label class="cancel uiButton" for="uvh5i2_10">
-   <input value="取消" type="button" id="uvh5i2_10"></label>
-</div>
+
 </div>
 </div>
