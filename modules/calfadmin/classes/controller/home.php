@@ -26,15 +26,31 @@ class Controller_Home extends Controller {
     public function action_index() {
            parent::before();
            $sk = $this->_sk;
-           $home_db = Calfdb_Admin::instance('Home',$sk,$this->_data);
+           $home_db = Calfdb_Admin::instance('Body',$sk,$this->_data);
            $id = Arr::get($_GET,'id','');
    	   switch ($sk) {
+	       case 'modmanager':
+		              $navdata = array(
+			                          'modname'=>'CMS - 模块管理',
+						  'lists'=>array(
+						      array('url'=>'javascript:void(0);','img'=>'/media/images/new.gif','name'=>'添加模块','click'=>'Customers.RowAdd();'),
+						      array('url'=>'javascript:void(0);','img'=>'/media/images/detail.gif','name'=>'模块列表','click'=>'$(\'#customer\').click();'),
+					           ),
+			      ); 
+			      $navcontent = View::factory('admin/navcontent')
+		                            ->set('navdata',$navdata);
+			      $modcontent= Admin_ModManager::factory($id)->get_body_content();
+		              $ary= array('nav'=>"$navcontent",'content'=>"$modcontent"); 
+	 	              $this->template=json_encode($ary);
+
+		              break;
+	
 	        case 'customer':
 	              $navdata = array(
 		                          'modname'=>'CRM - 客户管理',
 					  'lists'=>array(
-					      array('url'=>'javascript:void(0);','img'=>'/media/images/new.gif','name'=>'客户增加','click'=>'Customers.RowAdd();'),
-					      array('url'=>'javascript:void(0);','img'=>'/media/images/detail.gif','name'=>'客户列表','click'=>'$(\'#product\').click();'),
+					      array('url'=>'javascript:void(0);','img'=>'/media/images/new.gif','name'=>'添加客户','click'=>'Customers.RowAdd();'),
+					      array('url'=>'javascript:void(0);','img'=>'/media/images/detail.gif','name'=>'客户列表','click'=>'$(\'#customer\').click();'),
 				           ),
 		      ); 
 		      $navcontent = View::factory('admin/navcontent')
@@ -56,7 +72,7 @@ class Controller_Home extends Controller {
 	                            ->set('navdata',$navdata);
 
            		$modcontent= View::factory('admin/home/news/content')
-                                         ->set('array_data',$home_db->get_admin_home_news_add_list_array_data());
+                                         ->set('array_data',$home_db->get_admin_body_news_add_list_array_data());
 		        $ary= array('nav'=>"$navcontent",'content'=>"$modcontent"); 
 
 		        $this->template=json_encode($ary);
@@ -68,7 +84,7 @@ class Controller_Home extends Controller {
 	               $p = array('page'=>1,'prepage'=>10,'sortname'=>'id','sortorder'=>'desc','query'=>'','qtype' =>'id' );
             	       $array_data = $product_db->get_admin_product_manager_array_data();
                        $navdata = array(
-		                           'modname'=>'Product - 商品管理',
+		                           'modname'=>'CMS - 商品管理',
 		                           'lists'=>array(
 					      array('url'=>'javascript:void(0);','img'=>'/media/images/new.gif','name'=>'添加商品','click'=>'Products.RowAdd();'),
 					      array('url'=>'javascript:void(0);','img'=>'/media/images/detail.gif','name'=>'商品列表','click'=>'$(\'#product\').click();'),
@@ -76,30 +92,14 @@ class Controller_Home extends Controller {
 	                ); 
 	               $navcontent= View::factory('admin/navcontent')
 	                            ->set('navdata',$navdata);
-	               $modcontent= View::factory('admin/product/product/product')
+	               $modcontent= View::factory('admin/product_manager/default')
 		                    ->set('array_data',$array_data);
                        $ary= array('nav'=>"$navcontent",'content'=>"$modcontent"); 
                        
                        $this->template=json_encode($ary);
 	               
                        break;
-         	case 'showadd':
-           		$this->template= View::factory('admin/home/show/mod'); 
-           		break;
-                case 'showlist':
-	                $this->template= View::factory('admin/home/show/list'); 
-	           	break;
-	        case 'advadd':
-		       $this->template= View::factory('admin/home/adv/add',array('array_data',$home_db->get_admin_home_adv_add_list_array_data()));
-		      	break;
-	        case 'advlist':
-		       $this->template= View::factory('admin/home/adv/list')
-		                        ->set('array_data',$home_db->get_admin_home_adv_list_array_data());
-		       break;
-		case 'notice':
-		       $this->template= View::factory('admin/home/notice/content')
-		                        ->set('array_data',$home_db->get_admin_home_notice_list_array_data());  
-		     break;
+         
                 default: $this->template='';
            		# code...
            		break;
@@ -107,151 +107,7 @@ class Controller_Home extends Controller {
 
        }
 
-         public function action_product() {
-           parent::before();
-           $sk = $this->_sk;
-           $p = array('page'=>1,'prepage'=>10,'sortname'=>'display_name','sortorder'=>'desc','query'=>'','qtype' =>'display_name' );
-           $product_db = Calfdb_Admin::instance('Product',$this->_id,$p);
-           $p = array('page'=>1,'prepage'=>10,'sortname'=>'id','sortorder'=>'desc','query'=>'','qtype' =>'id' );
-		
-           $product_order_db = Calfdb_Admin::instance('Order',$this->_id,$p);
-
-           switch ($sk) {
-           	case 'managerproduct':
-                       
-           	       $array_data = $product_db->get_admin_product_manager_array_data();
-  	               $this->template= View::factory('admin/product/product/product')->set('array_data',$array_data);
-                       break;
-           	case 'managerdiscount':
-	          	$this->template= View::factory('admin/product/discount/discount')
-	                                 ->set('array_data',$product_db->get_admin_product_discount_manager_array_data());
-                        break;
-                case 'orderlist':
-	                $this->template= View::factory('admin/product/order/list')
-	                                 ->set('array_data',$product_order_db->get_admin_order_list_array_data());
-	           	break;
-	        case 'discountlist':
-		       $this->template= View::factory('admin/product/order/dislist')
-		                         ->set('array_data',$product_order_db->get_admin_order_discount_list_array_data());
-		      	break;
-	        case 'product':
-		       $this->template= View::factory('admin/product/analysis/product'); 
-		       break;
-		case 'summary':
-		       $this->template= View::factory('admin/product/analysis/summary'); 
-		       break;
-		case 'market':
-		       $this->template= View::factory('admin/product/analysis/market'); 
-		       break;
-                default: $this->template='';
-           		# code...
-           		break;
-              }
-
-          }
-
-	public function action_hots() {
-          parent::before();
-          $sk =$this->_sk;
-          $hots_db = Calfdb_Admin::instance('Hots',$this->_id,$this->_data);
-
-          switch ($sk) {
-          	case 'manager':
-          		$this->template= View::factory('admin/hots/manager/content')
-                                         ->set('array_data',$hots_db->get_admin_hots_list_array_list());
-          		break;
-          	case 'template':
-          		$this->template= View::factory('admin/hots/template/content'); 
-          		break;
-               case 'hotslist':
-	                $this->template= View::factory('admin/hots/hotslist/content')   
-	                                 ->set('array_data',$hots_db->get_admin_hots_list_array_list());
-                   	break;
-	        case 'product':
-		       $this->template= View::factory('admin/hots/analysis/product'); 
-		      	break;
-	        case 'market':
-		       $this->template= View::factory('admin/hots/analysis/market'); 
-		       break;
-                 default: $this->template='';
-          		# code...
-          		break;
-              }
-             
-            }
-
-
-	public function action_tuan() {
-            parent::before();
-            $sk = $this->_sk;
-            $tuan_db = Calfdb_Admin::instance('Tuan',$this->_id,$this->_data);
-            switch ($sk) {
-        	case 'managerteam':
-        		$this->template= View::factory('admin/tuan/manager/content') 
-                                         ->set('array_data',$tuan_db->get_admin_tuan_list_array_data());
-        		break;
-        	case 'teamlist':
-        		$this->template= View::factory('admin/tuan/tuanlist/content')
-                                         ->set('array_data',$tuan_db->get_admin_tuan_list_array_data());
-        		break;
-                case 'product':
-	                $this->template= View::factory('admin/tuan/analysis/product'); 
-	           	break;
-	        case 'market':
-		       $this->template= View::factory('admin/tuan/analysis/market'); 
-		       break;
-                 default: $this->template='';
-        		# code...
-        		break;
-              }
-
-          }
-
-
-	public function action_discounts() {
-            parent::before();
-            $sk = $this->_sk;
-            $discount_db = Calfdb_Admin::instance('Discount',$this->_id,$this->_data);
-            switch ($sk) {
-        	case 'manager':
-        		$this->template= View::factory('admin/discount/manager/content')
-                                       ->set('array_data',$discount_db->get_admin_discount_list_array_data());
-        		break;
-        	case 'lists':
-        		$this->template= View::factory('admin/discount/discountlist/content') 
-                                       ->set('array_data',$discount_db->get_admin_discount_list_array_data());
-        		break;
-                case 'product':
-	                $this->template= View::factory('admin/discount/analysis/product'); 
-	           	break;
-	        case 'market':
-		       $this->template= View::factory('admin/discount/analysis/market'); 
-		       break;
-                 default: $this->template='';
-        		# code...
-        		break;
-              }
-
-         }
-
-
-	public function action_community() {
-             parent::before();
-            $sk = $this->_sk;
-            $community_db = Calfdb_Admin::instance('Community',$this->_id,$this->_data);
-            switch ($sk) {
-         	case 'manager':
-    		$this->template= View::factory('admin/community/manager/content'); 
-    		break;
-        	case 'lists':
-    		$this->template= View::factory('admin/community/communitylist/content'); 
-    		break;
-                default: $this->template='';
-     		# code...
-    		break;
-         }
-
-        }
+       
 
 	public function after() {
 		$this->response->body($this->template);

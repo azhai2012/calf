@@ -38,46 +38,6 @@ class Controller_Admin extends Controller {
         }
 
 
-	public function action_product()
-	{	
-		parent::before();
-		$this->template->callmethod='
-	         <script>Azhai.callMethod1("/admin/callmethod?controller=product","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		'; 
-        }
-
-	public function action_tuan()
-	{	
-		parent::before();
-		$this->template->callmethod='
-		   <script>Azhai.callMethod1("/admin/callmethod?controller=tuan","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		  '; 
-        }
-
-	public function action_hots()
-	{	
-		parent::before();
-		$this->template->callmethod='
-		   <script>Azhai.callMethod1("/admin/callmethod?controller=hots","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		  '; 
-        }
-
-	public function action_discounts()
-	{	
-		parent::before();
-		$this->template->callmethod='
-		   <script>Azhai.callMethod1("/admin/callmethod?controller=discounts","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		  '; 
-        }
-
-	public function action_community()
-	{	
-		parent::before();
-		$this->template->callmethod='
-		   <script>Azhai.callMethod1("/admin/callmethod?controller=community","[\'headertop\',\'headcontent\',\'menus\',\'maincontentcol\',\'mainpagefoot\']");</script>
-		  '; 
-        }
-
         /**
         * 
         */
@@ -105,19 +65,7 @@ class Controller_Admin extends Controller {
                         case 'index': 
                           $mods = Admin_Home::factory($id)->get_body_content();
                           break;
-			case 'product': 
-			
-			 $mods = Admin_Product::factory($id)->get_body_content();
-	                  break;
-		        case 'tuan': $mods = Admin_Tuan::factory($id)->get_body_content();
-			  break;
-			case 'hots': $mods = Admin_Hots::factory($id)->get_body_content();
-		          break;
-			case 'discounts': $mods = Admin_Discounts::factory($id)->get_body_content();
-		          break;
-		        case 'community': $mods = Admin_Community::factory($id)->get_body_content();
-			  break;
-                       default:'';
+		       default:'';
                     }
                 }break;
             case "mainpagefoot": $mods = '';

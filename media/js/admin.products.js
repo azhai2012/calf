@@ -237,7 +237,7 @@ var Products={
 			       if (_name==="必填"){
 				      if ((_value === '') || (_value === "必填")){
 					    $(self).addClass("validate");
-					    $(self).parent().append('<span id="validate_msg" style="padding-left:3px;color:red;">'+$(self).attr('msg')+'</b>'); 
+					    $(self).parent().append('<span id="validate_msg" style="padding-left:3px;color:red;">'+ _name +'</b>'); 
 				 	    result= false; 
 					    return result;
 				      }

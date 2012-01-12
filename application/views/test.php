@@ -17,14 +17,19 @@
 	<link rel="shortcut icon" href="/media/images/favicon.ico" /> 
 	<meta name="description" content=""/>
 	<link rel="stylesheet" type="text/css" href="/media/css/flexigrid.css">
+	<link href="/media/css/jquery.ui.css" rel="stylesheet" type="text/css"/>
+	
 	<!--[if lte IE 8]> 
 	<![endif]-->
 	<!--[if IE 8]> 
 	<![endif]-->
 	<script src="/media/js/jquery-1.6.4.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/media/js/jquery.upload.js" type="text/javascript" charset="utf-8"></script>
-      	<script type="text/javascript" charset="utf-8">
+      	<script src="/media/js/jquery.datepicker.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/media/js/jquery.ui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
             $(function(){
+	       $('#datepicker').datepicker(); 
 	       $('#uploadform').ajaxUpload({
 		       target:'/upload',
 		       handleJsonResponse:function(json){
@@ -78,7 +83,7 @@
 </head>
 <body>
 
-
+  <p><label for="datepicker">date:</label><input type="text"  value="" id="datepicker"></p>
   <div id="uploadform"> </div> <div id="status"></div> 
 		<p>
 			<label for="editor1">

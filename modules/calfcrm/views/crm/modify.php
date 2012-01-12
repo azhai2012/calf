@@ -8,7 +8,65 @@
  *
  */
 ?>
+  <script src="/media/js/crm.customer.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="/media/js/jquery-1.6.4.min.js"></script>
+  <script type="text/javascript" src="/media/js/jquery.placeholder.js"></script>
+  <script type="text/javascript" src="/media/js/jquery.datepicker.js"></script>
+  <script type="text/javascript" src="/media/js/jquery.ui.min.js"></script>
  
+  <script type="text/javascript" charset="utf-8">
+     $(function(){
+           $.Placeholder.init();
+           $('#tabs input[class=date]').each(function(){
+	      $(this).datepicker({dateFormat:'yy-mm-dd'});
+           });    
+  	  
+	   $( "#tabs" ).tabs();
+	   $("#btn_save").click(function(){
+		  var s= editor.document.getBody().getHtml(); 
+		  $('#description').html(s);
+		  if ($('#check_change').html()=="1")
+		     <?php if ($action==='Modity'): ?>
+		     Products.ModityContent();
+		     <?php else: ?>
+		     Products.AddContent();
+		     <?php endif; ?>
+		     //CKEDITOR.remove( 'editor1'); 
+		  else
+		   alert('没有内容改变，无须保存');
+	       });
+
+	        $(".cancel").click(function(){
+		  	$('.flexigrid').show();
+		        $('#grid_add').hide();  
+	        });
+
+	      	$(".uiInfoTable:first td").each(function(){
+		    $(this).find('input').keyup(function(){
+		        $(this).addClass("ismodity");	
+		        $('#check_change').html("1");
+		    });
+
+		   $(this).find('select').change(function(){
+		        $(this).addClass("ismodity");	
+		        $('#check_change').html("1");
+		    });
+
+		   $(this).find('textarea').change(function(){
+		        $(this).addClass("ismodity");	
+		        $('#check_change').html("1");
+		    });
+
+		  $(this).find('input[name=is_active]').change(function(){
+		        $(this).addClass("ismodity");	
+		        $('#check_change').html("1");
+	        	 $('#check_checkbox_change').html("1");
+		    });
+
+	        });
+
+    }); 		
+ </script>
 	
 <div id="body-right-content"> <!-- 操作视图 -->
    <div class="mDiv"> <!-- begin mDiv -->	
@@ -20,7 +78,7 @@
      <div class="fbutton" style="margin-left:2px;">
           <div><span style="background-image: url(/media/images/back.gif); 
 	          background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; padding-left: 20px; background-position: 0% 50%; background-repeat: no-repeat no-repeat; ">
-	       <a href="javascript:void(0);" onclick="$('#product').click();">返回列表</a></span>
+	       <a href="javascript:void(0);" onclick="$('#customer').click();">返回列表</a></span>
    	  </div>	
      </div>
      <div class="fbutton" style="margin-left:2px;">
@@ -71,10 +129,12 @@
 		         <td class="data"><textarea name="<?php echo $value['name'] ?>" id="<?php echo $ids.'_'.$key ?>" placeholder="<?php echo $value['placeholder'] ?>" <?php echo $value['attr'] ?>><?php echo str_replace('<br>',chr(13),$value['value']) ?></textarea></td> 	
 		       <?php else: ?>	
 	  	        <?php if ($value['type']=='date'): ?>
-		           <td class="data"><input type="text" id='datepicker' /> </td> 	
-		       	<?php else: ?>	
+		           <td class="data"><input type="text" id='<?php echo $value['name'] ?>' class="date" value='' /> </td> 	
+		       	  
+		        <?php else: ?>	
 		       <?php $readonly = (($key=="id") and ($action=='Modity')) ? 'readonly': '';  ?>  
 		           <td class="data" ><input <?php echo $readonly; ?> style="width:<?php echo $value['width'] ?>px;color:#000" type="<?php echo $value['type'] ?>" <?php echo 'width='.$value['width'].'px' ?> class="inputtext" title="<?php echo $value['display_name'] ?>" placeholder="<?php echo $value['placeholder'] ?>" name="<?php echo $value['name'] ?>" value="<?php echo $value['value'] ?>" id="<?php echo $ids.'_'.$key ?>"></td>
+	                  
 	                  <?php endif ?>
 		         <?php endif ?>
 	               <?php endif ?>
@@ -89,63 +149,4 @@
    </div> <!-- end body-right-content -->
  </div>
 
- <script src="/media/js/crm.customer.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript" src="/media/js/jquery.placeholder.js"></script>
-  <script type="text/javascript" src="/media/js/jquery.core.js"></script>
-  <script type="text/javascript" src="/media/js/jquery.widget.js"></script>
-  <script type="text/javascript" src="/media/js/jquery.datepicker.js"></script>
-  <script src="/media/js/jquery.ui.min.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript" charset="utf-8">
-     $(function(){
-           $.Placeholder.init();
-  	   $( "#datepicker" ).datepicker({
-				showOn: "button",
-				buttonImage: "/media/images/calendar.gif",
-				buttonImageOnly: true
-			});
-	   $( "#tabs" ).tabs();
-	   $("#btn_save").click(function(){
-		  var s= editor.document.getBody().getHtml(); 
-		  $('#description').html(s);
-		  if ($('#check_change').html()=="1")
-		     <?php if ($action==='Modity'): ?>
-		     Products.ModityContent();
-		     <?php else: ?>
-		     Products.AddContent();
-		     <?php endif; ?>
-		     //CKEDITOR.remove( 'editor1'); 
-		  else
-		   alert('没有内容改变，无须保存');
-	       });
-	       
-	        $(".cancel").click(function(){
-		  	$('.flexigrid').show();
-		        $('#grid_add').hide();  
-	        });
-	
-	      	$(".uiInfoTable:first td").each(function(){
-		    $(this).find('input').keyup(function(){
-		        $(this).addClass("ismodity");	
-		        $('#check_change').html("1");
-		    });
-		 
-		   $(this).find('select').change(function(){
-		        $(this).addClass("ismodity");	
-		        $('#check_change').html("1");
-		    });
-		   
-		   $(this).find('textarea').change(function(){
-		        $(this).addClass("ismodity");	
-		        $('#check_change').html("1");
-		    });
-		
-		  $(this).find('input[name=is_active]').change(function(){
-		        $(this).addClass("ismodity");	
-		        $('#check_change').html("1");
-	        	 $('#check_checkbox_change').html("1");
-		    });
-		    
-	        });
-	       
-    }); 		
- </script>
+ 

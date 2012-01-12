@@ -348,7 +348,4 @@ width:100%;
 #uploadform {padding-top:10px;}
 #btn_save,.submit{background:#94B922}
 
-
-
-
-#body-list {margin:5px}
+#body-list,#body-right-content {margin:5px;}

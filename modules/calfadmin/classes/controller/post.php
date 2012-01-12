@@ -126,6 +126,41 @@ class Controller_Post extends Controller {
         $this->template = json_encode($jsonData);
      }
 
+        public function action_mods() {	
+
+	$page      =  Arr::get($_POST,'page',1);
+	$rp        =  Arr::get($_POST,'rp',15);
+	$sortname  =  Arr::get($_POST,'sortname','mod_name');
+	$sortorder =  Arr::get($_POST,'sortorder','desc');
+	$query     =  Arr::get($_POST,'query',false);
+	$qtype     =  Arr::get($_POST,'qtype',false);
+
+        $pg= ($page-1)*$rp;
+
+        $sortorder= ($sortorder=='desc')? -1 : 1;
+
+        $p = array('page'=>$pg,'prepage'=>$rp,'sortname'=>$sortname,'sortorder'=>$sortorder,'query'=>$query,'qtype'=>$qtype);
+
+	$Cms_db = Calfdb_Admin::instance('ModManager','',$p);
+	$array_data = $Cms_db->get_admin_mods_manager_array_data();
+
+	$rows=$array_data['rows'];
+	//***
+	$total =$array_data['total'];
+	//*****
+ 	$jsonData = array('page'=>$page,'total'=>$total,'rows'=>array());
+
+	foreach($rows AS $row){
+		$entry = array('id'=>$row['id'],
+				'mod'=>$row['mod'],
+				'mod_name'=>$row['mod_name'],
+				'is_active'=>$row['is_active'] 
+		);
+		$jsonData['rows'][] = $entry;
+	}
+        $this->template = json_encode($jsonData);
+     }
+
 
       public function action_customer() {	
 
@@ -190,9 +225,14 @@ class Controller_Post extends Controller {
 	   }
       }
 
+      /*
+       * 得到商品视图内容，自动创建 DOM
+       *  1、添加商品的试图
+          2、修改商品的视图
+       */ 
       public function action_getproductinfo(){
 	
-                $this->template = View::factory('admin/product/product/modify');  
+                $this->template = View::factory('admin/product_manager/modify');  
 	        $flag = Arr::get($_POST,'flag',1);
 	
 	        if ((int)$flag === 0){
@@ -219,6 +259,9 @@ class Controller_Post extends Controller {
 		      array('display_name' =>'包装','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'group','value'=>$row['group']),
 		      array('display_name' =>'中包装','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'middle_group','value'=>$row['middle_group']),
 		      array('display_name' =>'国批价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'general_price','value'=>$row['general_price']),
+		      array('display_name' =>'原价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'old_price','value'=>$row['old_price']),
+		      array('display_name' =>'单价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'sale_price','value'=>$row['sale_price']),
+	              array('display_name' =>'促销价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'discount_price','value'=>$row['discount_price']),
 		      array('display_name' =>'功能主治','type'=>'textarea','attr'=>'cols=57 rows=6','placeholder'=>'','name'=>'uses','value'=>$row['uses']),
 		      array('display_name' =>'启用','type'=>'checkbox','attr'=>'style="margin-top:7px" '.$is_active.'','name'=>'is_active'),
 		);
@@ -246,6 +289,9 @@ class Controller_Post extends Controller {
 			      array('display_name' =>'包装','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'group','value'=>''),
 			      array('display_name' =>'中包装','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'middle_group','value'=>''),
 			      array('display_name' =>'国批价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'general_price','value'=>''),
+			      array('display_name' =>'原价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'old_price','value'=>''),
+			      array('display_name' =>'单价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'sale_price','value'=>''),
+		              array('display_name' =>'促销价','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'discount_price','value'=>''),
 			      array('display_name' =>'功能主治','type'=>'textarea','attr'=>'cols=57 rows=6','placeholder'=>'','name'=>'uses','value'=>''),
 			      array('display_name' =>'启用','type'=>'checkbox','attr'=>'style="margin-top:7px"','name'=>'is_active'),
 			);
@@ -293,8 +339,8 @@ class Controller_Post extends Controller {
 			   array('display_name' =>'办公电话','type'=>'text','attr'=>'','width'=>300,'placeholder'=>'必填','name'=>'name','value'=>''),
 			   array('display_name' =>'传真','type'=>'text','attr'=>'','width'=>300,'placeholder'=>'','name'=>'name','value'=>''),
 			   array('display_name' =>'QQ号','type'=>'text','attr'=>'','width'=>300,'placeholder'=>'','name'=>'name','value'=>''),
-			   array('display_name' =>'创建日期','type'=>'date','attr'=>'','width'=>300,'placeholder'=>'必填','name'=>'name','value'=>''),
-			   array('display_name' =>'最近接触日期','type'=>'text','attr'=>'','width'=>300,'placeholder'=>'必填','name'=>'name','value'=>''),
+			   array('display_name' =>'创建日期','type'=>'date','attr'=>'','width'=>300,'placeholder'=>'必填','name'=>'c_create_date','value'=>''),
+			   array('display_name' =>'最近接触日期','type'=>'date','attr'=>'','width'=>300,'placeholder'=>'必填','name'=>'c_update_date','value'=>''),
 			),
 		    ),
 		   array('id'=>3,'name'=>'指标信息','lists'=>array(
@@ -305,7 +351,7 @@ class Controller_Post extends Controller {
 		            'subvalue'=>array('A类','B类','C类','D类','E类')),
 	 	          array('display_name' =>'信用等级','type'=>'text','attr'=>'','width'=>100,'placeholder'=>'必填','name'=>'product_type','value'=>'',
 		            'subvalue'=>array('高','较高','一般','较一般','较低','低')),
-			  array('display_name' =>'最近接触日期','type'=>'text','attr'=>'','width'=>300,'placeholder'=>'必填','name'=>'name','value'=>''),
+			  array('display_name' =>'最近接触日期','type'=>'date','attr'=>'','width'=>300,'placeholder'=>'必填','name'=>'a_update_date','value'=>''),
 		          array('display_name' =>'累计购买次数','type'=>'text','attr'=>'','width'=>300,'placeholder'=>'','name'=>'name','value'=>''),
 			  array('display_name' =>'累计销售机会数','type'=>'text','attr'=>'','width'=>300,'placeholder'=>'','name'=>'name','value'=>''),
 			  array('display_name' =>'累计购买金额','type'=>'text','attr'=>'','width'=>300,'placeholder'=>'','name'=>'name','value'=>''),
@@ -322,6 +368,35 @@ class Controller_Post extends Controller {
         
       }
    
+
+      public function action_getmods(){
+	   
+	     $action = Arr::get($_POST,'action','shops');
+	     $this->template = View::factory('admin/mod_manager/'.$action.'/default'); 
+	     $data = array(); 
+	     switch ($action) {
+	         case 'home': 
+	               $action = '首页管理'; 
+          	       $data=array(
+	             	  array('id'=>1,'name'=>'区域管理','lists'=>array()),
+	              	  array('id'=>2,'name'=>'广告管理','lists'=>array()),
+	              	  array('id'=>3,'name'=>'信息管理','lists'=>array()),
+	               );  
+	         break;
+		 case 'shops': 
+	               $action = '品牌管理'; 
+          	       $data = array(
+	             	  array('id'=>1,'name'=>'店铺管理','lists'=>array()),
+	              	  array('id'=>2,'name'=>'信息管理','lists'=>array()),
+	               );  
+	         break;
+	
+	         default: '';	
+	     }
+	
+	     $this->template->action = $action;
+	     $this->template->array_data = $data;
+      }
      
 
      public function after() {

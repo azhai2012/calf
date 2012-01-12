@@ -7,4 +7,4 @@
  * @copyright 2012 
  *
  */
-class Crm extends Kohana_Crm {}
+class CRM extends Kohana_Crm {}
