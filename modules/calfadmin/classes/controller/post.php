@@ -378,7 +378,7 @@ class Controller_Post extends Controller {
 	         case 'home': 
 	               $action = '首页管理'; 
           	       $data=array(
-	             	  array('id'=>1,'name'=>'区域管理','lists'=>array()),
+	             	  array('id'=>1,'name'=>'热区管理','lists'=>array()),
 	              	  array('id'=>2,'name'=>'广告管理','lists'=>array()),
 	              	  array('id'=>3,'name'=>'信息管理','lists'=>array()),
 	               );  

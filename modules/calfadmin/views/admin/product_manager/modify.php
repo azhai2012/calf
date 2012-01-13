@@ -40,7 +40,8 @@
 		
 			
 	       $.Placeholder.init();
-	        
+	         $('#action_title').html(" - <?php $_title= ($action==='Modity')?'修改商品':'增加商品'; echo $_title; ?>");
+		
 	        var editor = CKEDITOR.instances['editor1']; 
 	       
 	        if (editor){editor.destroy(true)}
@@ -131,10 +132,7 @@
 			
        </script>
 <div id="body-right-content">
-<div class="mDiv">	
-<div class="ftitle" ><?php $_title= ($action==='Modity')?'修改商品':'增加商品'; echo $_title; ?></div>
-<div class="ptogtitle" title="Minimize/Maximize"><span></span></div>
-</div>
+
 <div class="tDiv">	
 <div class="tDiv2" >
 <div class="fbutton" style="margin-left:2px;">
@@ -170,7 +168,9 @@
 	<?php $ids = Text::random('hexdec',5); ?>
         <?php $count= count($array_data); ?>
 	<?php foreach ($array_data AS $key => $value): ?>
-	   <tr class="dataRow">
+	   <?php $k= $key % 2 ?>
+	   <?php echo $k ?>	
+	   <?php echo ($k === 0)?'<tr class="dataRow">':'' ?>
 	    <th class="label"><label for="<?php echo $ids.'_'.$key ?>"><?php echo $value['display_name'] ?>：</label></th>
 	    <?php $select = array_key_exists('subvalue',$value)? $value['subvalue'] : ''  ?>
 	      <?php if (is_array($select)): ?>
@@ -194,7 +194,8 @@
                 <?php endif ?>
                <?php endif ?>
               <?php endif ?>
-            </tr>
+	  <?php echo ($k=== 0)?'</tr>':'' ?>
+	  
         <?php endforeach ?>
 
          </tbody>	  

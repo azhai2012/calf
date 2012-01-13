@@ -389,9 +389,17 @@
 								if( offs >0 ) {
 									$(td).css('background',  text.substr(offs+7,7) );
 								}
-
+	
+								$(td).attr('id', $(this).attr('abbr'));
+	
+						        if (p.dbclick){
+							       $(td).dblclick(p.dbclick.ondbclick);  
+						        }
+							
 								$(td).attr('abbr', $(this).attr('abbr'));
+							
 								$(tr).append(td);
+								
 								td = null;
 							}
 						);

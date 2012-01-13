@@ -29,6 +29,12 @@ var Mods={
 					nomsg:'没有查找到相关内容', 
 					width: 'auto',
 					height: 375,  
+					dbclick:{
+						ondbclick:function(){
+							var select = $(this).parent().find('#mod div').html();
+							 Mods.ShowOperating(select); 
+						}
+					}, 
 				  	buttons:[
 				     {name:'编辑选择',bimage:'/media/images/modify.gif',onpress:function(){Mods.OpenMods()}},
 					 {name:'删除',bimage:'/media/images/delete.gif',onpress:function(){Mods.RowDelete()}},

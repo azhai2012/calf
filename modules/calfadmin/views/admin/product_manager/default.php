@@ -21,7 +21,6 @@
             
 	        $.Placeholder.init();
            	Products.getGrid();
-           
                 $( "#tabs" ).tabs();
                
                	 $("#btn_save").click(function(){

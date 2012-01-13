@@ -33,8 +33,8 @@ class Controller_Home extends Controller {
 		              $navdata = array(
 			                          'modname'=>'CMS - 模块管理',
 						  'lists'=>array(
-						      array('url'=>'javascript:void(0);','img'=>'/media/images/new.gif','name'=>'添加模块','click'=>'Customers.RowAdd();'),
-						      array('url'=>'javascript:void(0);','img'=>'/media/images/detail.gif','name'=>'模块列表','click'=>'$(\'#customer\').click();'),
+						      array('url'=>'javascript:void(0);','img'=>'/media/images/new.gif','name'=>'添加模块','click'=>'Mods.RowAdd();'),
+						      array('url'=>'javascript:void(0);','img'=>'/media/images/detail.gif','name'=>'模块列表','click'=>'$(\'#modmanager\').click();'),
 					           ),
 			      ); 
 			      $navcontent = View::factory('admin/navcontent')

@@ -20,7 +20,7 @@
            $('#tabs input[class=date]').each(function(){
 	      $(this).datepicker({dateFormat:'yy-mm-dd'});
            });    
-  	  
+  	   $('#action_title').html(' - <?php echo $action ?>');	
 	   $( "#tabs" ).tabs();
 	   $("#btn_save").click(function(){
 		  var s= editor.document.getBody().getHtml(); 
@@ -67,16 +67,13 @@
  </script>
 	
 <div id="body-right-content"> <!-- 操作视图 -->
-   <div class="mDiv"> <!-- begin mDiv -->	
-     <div class="ftitle" ><?php $_title = $action; echo $_title; ?></div>
-     <div class="ptogtitle" title="Minimize/Maximize"><span></span></div>
-   </div> <!-- end mDiv -->
+   
 <div class="tDiv">  <!-- begin tDiv -->	
   <div class="tDiv2" >
      <div class="fbutton" style="margin-left:2px;">
           <div><span style="background-image: url(/media/images/back.gif); 
 	          background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; padding-left: 20px; background-position: 0% 50%; background-repeat: no-repeat no-repeat; ">
-	       <a href="javascript:void(0);" onclick="$('#customer').click();">返回列表</a></span>
+	       <a href="javascript:void(0);" onclick="$('#modmanager').click();">返回列表</a></span>
    	  </div>	
      </div>
      <div class="fbutton" style="margin-left:2px;">
