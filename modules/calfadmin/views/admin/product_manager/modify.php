@@ -168,9 +168,8 @@
 	<?php $ids = Text::random('hexdec',5); ?>
         <?php $count= count($array_data); ?>
 	<?php foreach ($array_data AS $key => $value): ?>
-	   <?php $k= $key % 2 ?>
-	   <?php echo $k ?>	
-	   <?php echo ($k === 0)?'<tr class="dataRow">':'' ?>
+	  
+	  <tr class="dataRow">
 	    <th class="label"><label for="<?php echo $ids.'_'.$key ?>"><?php echo $value['display_name'] ?>：</label></th>
 	    <?php $select = array_key_exists('subvalue',$value)? $value['subvalue'] : ''  ?>
 	      <?php if (is_array($select)): ?>
@@ -194,7 +193,7 @@
                 <?php endif ?>
                <?php endif ?>
               <?php endif ?>
-	  <?php echo ($k=== 0)?'</tr>':'' ?>
+	  </tr>
 	  
         <?php endforeach ?>
 

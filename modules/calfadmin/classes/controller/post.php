@@ -377,12 +377,19 @@ class Controller_Post extends Controller {
 	     switch ($action) {
 	         case 'home': 
 	               $action = '首页管理'; 
-          	       $data=array(
-	             	  array('id'=>1,'name'=>'热区管理','lists'=>array()),
-	              	  array('id'=>2,'name'=>'广告管理','lists'=>array()),
-	              	  array('id'=>3,'name'=>'信息管理','lists'=>array()),
-	               );  
-	         break;
+	               $data = array(
+		          array('id'=>1,'lists'=>array(
+			      array('name'=>'area','display_name'=>'展区管理','icon'=>'/media/images/home1.gif','description'=>'主页显示的展区设置'),
+		              array('name'=>'product','display_name'=>'展区商品管理','icon'=>'/media/images/home2.gif','description'=>'主页显示的展区的商品设置'),
+	                     ),
+	                   ),
+			 array('id'=>2,'lists'=>array(
+			      array('name'=>'ads','display_name'=>'广告管理','icon'=>'/media/images/home3.gif','description'=>'主页显示的广告设置'),
+		              array('name'=>'info','display_name'=>'信息管理','icon'=>'/media/images/home4.gif','description'=>'主页显示的其他信息设置'),
+	                     ),
+	                   ),
+		       ); 
+          	       break;
 		 case 'shops': 
 	               $action = '品牌管理'; 
           	       $data = array(

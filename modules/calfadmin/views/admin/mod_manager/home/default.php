@@ -89,58 +89,32 @@
 
 
 <div class="body-right-bottom-content">
-	<div id="tabs">
-	 <ul> 
-  	  <?php foreach ($array_data AS $key => $value): ?>	 
-	     <li><a href="#tabs-<?php echo $value['id'] ?>"><?php echo $value['name'] ?></a></li>
-	  <?php endforeach; ?>
-	</ul>
-	<?php foreach ($array_data AS $key => $value): ?>	 
-	<div id="tabs-<?php echo $value['id'] ?>">  <!-- begin sub tabs -->
-	<div style="display:none" id="check_change"></div>
-	<table class="uiInfoTable">
-	    <tbody>
-		<?php $ids = Text::random('hexdec',5); ?> 
-	        <?php $list = $value['lists']; ?>
-	        <?php $count= count($list); ?>
-		<?php foreach ($list AS $key => $value): ?>
-		   <tr class="dataRow">
-		    <th class="label"><label for="<?php echo $ids.'_'.$key ?>"><?php echo $value['display_name'] ?>：</label></th>
-		    <?php $select = array_key_exists('subvalue',$value)? $value['subvalue'] : ''  ?>
-		      <?php if (is_array($select)): ?>
-		        <td> 
-			 <select>
-		    	   <?php foreach ($select AS $skey => $svalue): ?>
-			      <?php $selected = ($svalue===$value['value'])? 'selected':'' ; ?>
-			      <option <?php echo $selected; ?>><?php echo $svalue ?></option>  
-			   <?php endforeach ?> 
-		         </select>
-		        </td> 
-		      <?php else: ?> 
-	              <?php if($value['type']=='checkbox'): ?>
-		         <td class="data"><input type="checkbox" <?php echo $value['attr'] ?>  name="<?php echo $value['name'] ?>"  id="<?php echo $ids.'_'.$key ?>"  /></td> 	
-		      <?php else: ?>
-		      <?php if($value['type']=='textarea'): ?>
-		         <td class="data"><textarea name="<?php echo $value['name'] ?>" id="<?php echo $ids.'_'.$key ?>" placeholder="<?php echo $value['placeholder'] ?>" <?php echo $value['attr'] ?>><?php echo str_replace('<br>',chr(13),$value['value']) ?></textarea></td> 	
-		       <?php else: ?>	
-	  	        <?php if ($value['type']=='date'): ?>
-		           <td class="data"><input type="text" id='<?php echo $value['name'] ?>' class="date" value='' /> </td> 	
-		       	  
-		        <?php else: ?>	
-		       <?php $readonly = ($key=="id") ? 'readonly': '';  ?>  
-		           <td class="data" ><input <?php echo $readonly; ?> style="width:<?php echo $value['width'] ?>px;color:#000" type="<?php echo $value['type'] ?>" <?php echo 'width='.$value['width'].'px' ?> class="inputtext" title="<?php echo $value['display_name'] ?>" placeholder="<?php echo $value['placeholder'] ?>" name="<?php echo $value['name'] ?>" value="<?php echo $value['value'] ?>" id="<?php echo $ids.'_'.$key ?>"></td>
-	                  
-	                  <?php endif ?>
-		         <?php endif ?>
-	               <?php endif ?>
-	              <?php endif ?>
-	            </tr>
-	        <?php endforeach ?>
-	         </tbody>	  
-	       </table>
-	     </div> <!-- end sub tabs -->
-	<?php endforeach ?>
-	</div> <!-- end tabs -->
+	<div id="body-list">
+	 <table width="100%" style="table-layout:fixed" cellspacing="0" cellpadding="0" > 
+           <tbody>		 
+  	    <?php foreach ($array_data AS $key => $value): ?>	 
+	      <tr>
+		<?php foreach ($value['lists'] AS $subkey => $subvalue): ?>
+			<td style="padding:10px 0 10px 0">
+			  <table width="100%" tabindex=<?php echo $subkey ?> style="padding:10px 0 10px 10px;cursor:pointer" cellspacing="0" cellpadding="0" >
+			  <tr>
+			    <td width="48px"><img src="<?php echo $subvalue['icon'] ?>" /></td>		   
+		 	    <td style="padding-left:15px;line-height:20px">
+			       <a style="font-size:14px;" href="javascript:void();"><?php echo $subvalue['display_name'] ?></a>
+			       <div id="descriptions">
+			       	  <?php echo $subvalue['description'] ?>
+			       </div>
+			    </td>
+		          <tr>
+			  </table> 
+			</td>
+			
+		  <?php endforeach ?>
+	       </tr>	
+		<?php endforeach ?>
+  	   </tbody>
+         </table> 
+	</div> <!-- end body-list  -->
    </div> <!-- end body-right-content -->
  </div>
 
