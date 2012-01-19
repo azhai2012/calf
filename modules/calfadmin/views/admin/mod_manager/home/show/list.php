@@ -9,40 +9,52 @@
  */
 ?>
 <div id="show-content">
-   <div id="admin-header">
-       管理
-       <h1>Shows - 页面展示管理 - 列表</h1>
-   </div>	
-    <div id="mod-list">
-             <table class="download">
-    <tbody><tr>
-      <th>模块编号</th>
-      <th>模块标题</th>
-      <th width="300px">模块语句</th>
-      <th>创建日期</th>
-      <th>生效日期</th>
-      <th>状态</th>
-  </tr>
-   <?php $array_data = array(
-	   array('id' =>1123,'title'=>'新品区','sql_txt'=>'select * from tablename','create_date'=>'2011-01-01','begin_date'=>'2011-03-01','active'=>1),
-	   array('id' =>1123,'title'=>'保健品区','sql_txt'=>'select * from tablename','create_date'=>'2011-01-01','begin_date'=>'2011-03-01','active'=>1),
-	   array('id' =>1123,'title'=>'器械区','sql_txt'=>'select * from tablename','create_date'=>'2011-01-01','begin_date'=>'2011-03-01','active'=>1),
-	   array('id' =>1123,'title'=>'新品区','sql_txt'=>'select * from tablename','create_date'=>'2011-01-01','begin_date'=>'2011-03-01','active'=>1),
-	   array('id' =>1123,'title'=>'新品区','sql_txt'=>'select * from tablename','create_date'=>'2011-01-01','begin_date'=>'2011-03-01','active'=>1),
-	   array('id' =>1123,'title'=>'新品区','sql_txt'=>'select * from tablename','create_date'=>'2011-01-01','begin_date'=>'2011-03-01','active'=>1),
-	); ?>
-   <?php foreach ($array_data as $key => $value): ?>
-   <tr>
-    <td><?php echo $value['id']; ?></td>
-    <td><?php echo $value['title'] ?></td>
-    <td><code><?php echo $value['sql_txt'] ?></code></td>   
-    <td><?php echo $value['create_date'] ?></td>
-    <td><?php echo $value['begin_date'] ?></td>
-    <td><?php echo ($value['active']===1) ? '激活' : '未激活' ; ?></td>
-  </tr>
-  <?php endforeach ?> 
- 
-  </tbody>
+	<div class="tDiv">  <!-- begin tDiv -->	
+	  <div class="tDiv2" >
+	     <div class="fbutton" style="margin-left:2px;">
+	          <div><span style="background-image: url(/media/images/back.gif); 
+		          background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; padding-left: 20px; background-position: 0% 50%; background-repeat: no-repeat no-repeat; ">
+		       <a href="javascript:void(0);" onclick="$('#modmanager').click();">返回列表</a></span>
+	   	  </div>	
+	     </div>
+
+	      <div style="clear:both"></div>
+	    </div> <!-- end tDiv2 -->
+	  </div> <!-- end tDiv -->
+  	<div class="body-right-bottom-content">
+		<div id="body-list">	
+  <table class="download">
+    <tbody>
+      <tr>
+        <td>
+	 <table>
+	     <tbody> 
+             <tr>
+	       <th><label>展区名称：</label></th>
+               <td> <select name="mod_name" id="mod_name"  onchange="Mods.SelectMods(this);" size="1">
+               	<?php foreach ($array_data AS $key => $value): ?>	          
+                  <option value="<?php echo $value['mod'].'_'.$value['id'] ?>"><?php echo $value['mod_name'] ?></option>
+	       	<?php endforeach ?>
+               </select>
+	       <input type="button" name="add_mod_name" value="..." id="add_mod_name"></td>
+	      </tr>
+	      <tr>
+	      	<th><label>展区查询语句：</label></th>
+	        <td><textarea name="sqltext" rows="8" cols="80"></textarea></td>
+	      </tr>
+            </tbody> 
+          <table> 
+        <td>
+      </tr>
+      <tr>
+        <th></th>
+        <td>
+         <div id="mod_lists"></div> 	
+        </td>
+      </tr>	
+     </tbody>
     </table>
     </div>     
+  </div>
+ </div>
 </div>

@@ -42,6 +42,11 @@ var Mods={
 				     			
 				});
 	    },
+	    Click:function(obj){
+		  Azhai.callMethod('/post/getsubmods','{"mod_name":"'+obj+'"}',function(d){
+			  $('#body-right-content').html(d);
+			});
+	    }, 
 	    Showdialogs:function (ajaxpath,divwidth){
 	       Azhai.onPages({"id":"dragDiv","type":"dialog","ajax":ajaxpath,
 	            "content":{"div":"hello","top":"47","width":divwidth}});    

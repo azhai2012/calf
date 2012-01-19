@@ -39,7 +39,7 @@ class Controller_Home extends Controller {
 			      ); 
 			      $navcontent = View::factory('admin/navcontent')
 		                            ->set('navdata',$navdata);
-			      $modcontent= Admin_ModManager::factory($id)->get_body_content();
+			      $modcontent= Admin_Home::instance('Home',$this->_data)->get_body_content();
 		              $ary= array('nav'=>"$navcontent",'content'=>"$modcontent"); 
 	 	              $this->template=json_encode($ary);
 

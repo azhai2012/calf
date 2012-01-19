@@ -18,6 +18,11 @@ class Kohana_Admin_Home {
 		return new Kohana_Admin_Home($id,$data);
 	}
 	
+	public static function instance($classname,array $data = NULL){
+	     $class= 'Kohana_Admin_Home_'.$classname;
+	     return new $class($data);
+        }
+	
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;

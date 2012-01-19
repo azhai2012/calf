@@ -202,36 +202,19 @@ var Azhai = {
 			d||(d=600);
 			return window.showModalDialog(a,
 			b,"scroll:0;status:0;help:0;resizable:1;dialogWidth:"+c+"px;dialogHeight:"+d+"px;")
-	},   
-    callMethod:function(a,b,c,d,e){
-    	var f;
-		if(e==void 0||e==null)e=!0;
-		$.ajax({
+	},  
+    callMethod:function(a,b,c){
+     
+	    $.ajax({
 			type:"POST",
 			url:a,
-			async:e,
 			data:b==null||b==void 0?"json="+"{}":"json="+b,
 			beforeSend: function(XMLHttpRequest) {
-			
 		    },
-			success:function(a){
-		        f=eval("("+a+")");
-				c(f)
+			success:function(data){
+				c(data);
 			}
 			,error:function(a){
-			
-				try{
-					if(a.status==401||a.status==302) alert("\u7b49\u5f85\u64cd\u4f5c\u8d85\u65f6\uff0c\u60a8\u9700\u8981\u91cd\u65b0\u767b\u5f55"),window.top.location=top.location.href;
-					else if(d)if(typeof a.responseText!="string"){
-						var b=eval("("+a.responseText+
-						")");
-						d(b)
-					}
-					else d(a)
-				}
-				catch(c){
-					alert('error');
-				}
 			}
 		})
 	},

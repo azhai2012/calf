@@ -368,6 +368,18 @@ class Controller_Post extends Controller {
         
       }
    
+     public function action_getsubmods(){
+          $data = Arr::get($_POST,'json','{"mod_name":"area"}');
+          $data = json_decode($data,true);
+          $mods= $data['mod_name'];
+          switch ($mods){
+	     case 'area': $mods = Admin_Home::instance('Home')->get_mod_home_list(); break;
+	     case 'info': $mods = 'this is info'; break;
+	     default: $mods = '';
+          }	
+          
+          echo $mods;
+     }
 
       public function action_getmods(){
 	   
@@ -381,7 +393,7 @@ class Controller_Post extends Controller {
 		          array('id'=>1,'lists'=>array(
 			      array('name'=>'area','display_name'=>'展区管理','icon'=>'/media/images/home1.gif','description'=>'主页显示的展区设置'),
 		              array('name'=>'product','display_name'=>'展区商品管理','icon'=>'/media/images/home2.gif','description'=>'主页显示的展区的商品设置'),
-	                     ),
+		             ),
 	                   ),
 			 array('id'=>2,'lists'=>array(
 			      array('name'=>'ads','display_name'=>'广告管理','icon'=>'/media/images/home3.gif','description'=>'主页显示的广告设置'),

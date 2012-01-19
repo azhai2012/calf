@@ -8,7 +8,7 @@
  *
  */
 ?>
-  <script src="/media/js/crm.customer.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/media/js/admin.mods.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript" src="/media/js/jquery-1.6.4.min.js"></script>
   <script type="text/javascript" src="/media/js/jquery.placeholder.js"></script>
   <script type="text/javascript" src="/media/js/jquery.datepicker.js"></script>
@@ -76,12 +76,7 @@
 	       <a href="javascript:void(0);" onclick="$('#modmanager').click();">返回列表</a></span>
    	  </div>	
      </div>
-     <div class="fbutton" style="margin-left:2px;">
-       <div><span id="btn_save" style="background-image: url(/media/images/save.gif); 
-	          background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; padding-left: 20px; background-position: 0% 50%; background-repeat: no-repeat no-repeat; ">
-	  保存</span>
-       </div>	
-      </div>
+     
       <div style="clear:both"></div>
     </div> <!-- end tDiv2 -->
   </div> <!-- end tDiv -->
@@ -100,7 +95,7 @@
 			  <tr>
 			    <td width="48px"><img src="<?php echo $subvalue['icon'] ?>" /></td>		   
 		 	    <td style="padding-left:15px;line-height:20px">
-			       <a style="font-size:14px;" href="javascript:void();"><?php echo $subvalue['display_name'] ?></a>
+			       <a style="font-size:14px;" href="javascript:void();" onclick="Mods.Click('<?php echo $subvalue['name'] ?>')"><?php echo $subvalue['display_name'] ?></a>
 			       <div id="descriptions">
 			       	  <?php echo $subvalue['description'] ?>
 			       </div>

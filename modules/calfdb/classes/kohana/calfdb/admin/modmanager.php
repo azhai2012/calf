@@ -43,6 +43,8 @@ class Kohana_Calfdb_Admin_ModManager extends Kohana_Calfdb_Admin  {
 	    switch ($qtype){
 	       case 'is_active': $query = array($qtype =>$query); break;
 	       case 'id': $query = array($qtype => (int)$query); break;
+	       case 'flag': $query = array($qtype => $query); break;
+	
 	       default: $query = array($qtype => new MongoRegex("/^$query/i"));
             }
             else $query=array();
