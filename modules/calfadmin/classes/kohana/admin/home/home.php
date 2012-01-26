@@ -17,19 +17,7 @@ class Kohana_Admin_Home_Home {
 		return new Kohana_Admin_Home_Home($id,$data);
 	}
 
-        public static function instance($classname){
-	     $class= 'Kohana_Admin_Home_Mod_'.$classname;
-	     return new $class;
-        }
-
-        public function get_mod_home_list(){
-	    $mod = self::instance('Home')
-	           ->get_body_content($this->_data);
-	 
-	    echo $mod;
-        }       
-
-
+       
 	function __construct($id,array $data=NULL){
 		$this->_id = $id;
 		$this->_data= $data;
@@ -39,7 +27,7 @@ class Kohana_Admin_Home_Home {
 	
 	function get_body_content(){
 		  $array_data = array();
-		  $default = View::factory('admin/mod_manager/default');
+		  $default = View::factory('admin/default');
 	          $template = $default;
                   return $template;
 	}

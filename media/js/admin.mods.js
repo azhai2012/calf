@@ -44,7 +44,10 @@ var Mods={
 	    },
 	    Click:function(obj){
 		  Azhai.callMethod('/post/getsubmods','{"mod_name":"'+obj+'"}',function(d){
+			  var action= $('#back').val();
 			  $('#body-right-content').html(d);
+			  $('#back').val(action);
+			  
 			});
 	    }, 
 	    Showdialogs:function (ajaxpath,divwidth){
@@ -69,7 +72,7 @@ var Mods={
 			   data : '&action='+action,
 			   beforeSend : function(XMLHttpRequest) {$('.loading').show();},
 			   success : function(data, textStatus) {$('#grid_operating').html(data);Mods.setBodyHeight();},
-			   complete : function(XMLHttpRequest, textStatus) {$('.loading').remove();},
+			   complete : function(XMLHttpRequest, textStatus) {$('.loading').remove();$('#back').val(action);},
 			   error : function() {}
 			});
 	    },

@@ -135,8 +135,8 @@ Kohana::modules(array(
      'calfdb'        => MODPATH.'calfdb',
       'calfadmin'    => MODPATH.'calfadmin',
       'calfcrm'          => MODPATH.'calfcrm',
-   
-	));
+      'calfcms'          => MODPATH.'calfcms',
+   ));
 
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of

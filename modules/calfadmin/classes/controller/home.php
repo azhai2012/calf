@@ -39,7 +39,7 @@ class Controller_Home extends Controller {
 			      ); 
 			      $navcontent = View::factory('admin/navcontent')
 		                            ->set('navdata',$navdata);
-			      $modcontent= Admin_Home::instance('Home',$this->_data)->get_body_content();
+			      $modcontent= Cms_Mod::instance('Home',$this->_data)->get_body_content();
 		              $ary= array('nav'=>"$navcontent",'content'=>"$modcontent"); 
 	 	              $this->template=json_encode($ary);
 
@@ -80,9 +80,9 @@ class Controller_Home extends Controller {
            		break;
                 case 'product':
 		       $p = array('page'=>1,'prepage'=>10,'sortname'=>'display_name','sortorder'=>'desc','query'=>'','qtype' =>'display_name' );
-	               $product_db = Calfdb_Admin::instance('Product',$sk,$p);
+	               $product_db = Calfdb_Cms::instance('Product',$sk,$p);
 	               $p = array('page'=>1,'prepage'=>10,'sortname'=>'id','sortorder'=>'desc','query'=>'','qtype' =>'id' );
-            	       $array_data = $product_db->get_admin_product_manager_array_data();
+            	       $array_data = $product_db->get_cms_product_manager_array_data();
                        $navdata = array(
 		                           'modname'=>'CMS - 商品管理',
 		                           'lists'=>array(
@@ -92,7 +92,7 @@ class Controller_Home extends Controller {
 	                ); 
 	               $navcontent= View::factory('admin/navcontent')
 	                            ->set('navdata',$navdata);
-	               $modcontent= View::factory('admin/product_manager/default')
+	               $modcontent= View::factory('cms/product/default')
 		                    ->set('array_data',$array_data);
                        $ary= array('nav'=>"$navcontent",'content'=>"$modcontent"); 
                        

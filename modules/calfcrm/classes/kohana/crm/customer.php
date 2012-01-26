@@ -29,7 +29,7 @@ class Kohana_Crm_Customer extends Kohana_Crm {
 
         function get_body_content(){
 	  
-	   $body = View::factory('crm/customer')->set('action','lists');
+	   $body = View::factory('crm/customer/default')->set('action','lists');
 	   $template = $body;
 	
 	   return $template;

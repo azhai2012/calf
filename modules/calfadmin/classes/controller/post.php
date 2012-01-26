@@ -62,8 +62,8 @@ class Controller_Post extends Controller {
         }
         else
         {
-		$order_db = Calfdb_Admin::instance('Order','',array('order_id'=>(int)$flag));
-		$array_data = $order_db->get_admin_order_details_array_data();
+		$order_db = Calfdb_Crm::instance('Order','',array('order_id'=>(int)$flag));
+		$array_data = $order_db->get_crm_order_details_array_data();
 		$rows=$array_data['rows']; 
 		$total =$array_data['total']; 
 		$jsonData = array('page'=>1,'total'=>$total,'rows'=>array());
@@ -103,8 +103,8 @@ class Controller_Post extends Controller {
 
         $p = array('page'=>$pg,'prepage'=>$rp,'sortname'=>$sortname,'sortorder'=>$sortorder,'query'=>$query,'qtype'=>$qtype);
 
-	$product_db = Calfdb_Admin::instance('Product','',$p);
-	$array_data = $product_db->get_admin_product_manager_array_data();
+	$product_db = Calfdb_Cms::instance('Product','',$p);
+	$array_data = $product_db->get_Cms_product_manager_array_data();
       
 	$rows=$array_data['rows'];
 	//***
@@ -141,8 +141,8 @@ class Controller_Post extends Controller {
 
         $p = array('page'=>$pg,'prepage'=>$rp,'sortname'=>$sortname,'sortorder'=>$sortorder,'query'=>$query,'qtype'=>$qtype);
 
-	$Cms_db = Calfdb_Admin::instance('ModManager','',$p);
-	$array_data = $Cms_db->get_admin_mods_manager_array_data();
+	$Cms_db = Calfdb_Cms::instance('ModManager','',$p);
+	$array_data = $Cms_db->get_cms_mods_manager_array_data();
 
 	$rows=$array_data['rows'];
 	//***
@@ -210,15 +210,15 @@ class Controller_Post extends Controller {
 	            if ($des)
 	            $ary['description']= htmlspecialchars($ary['description']);
 	
-		    $product_db = Calfdb_Admin::instance('Product','modity',$ary);
-	            $result = $product_db->set_admin_product_info();
+		    $product_db = Calfdb_Cms::instance('Product','modity',$ary);
+	            $result = $product_db->set_cms_product_info();
 	            $this->template = $result;
                     }
 	  	    break;
                case 'removeimg':{
                      $p = array('pid'=>$pid,'filename'=>$data); 
-	             $product_db = Calfdb_Admin::instance('Product',$action,$p);
-		     $return = $product_db->set_admin_product_image_data();	
+	             $product_db = Calfdb_Cms::instance('Product',$action,$p);
+		     $return = $product_db->set_cms_product_image_data();	
 		     $this->template =  $return;
 	            }
 		    break; 
@@ -232,15 +232,15 @@ class Controller_Post extends Controller {
        */ 
       public function action_getproductinfo(){
 	
-                $this->template = View::factory('admin/product_manager/modify');  
+                $this->template = View::factory('cms/product/modify');  
 	        $flag = Arr::get($_POST,'flag',1);
 	
 	        if ((int)$flag === 0){
          	$id= Arr::get($_POST,'id','');
 
 	        $p=array('id'=> $id );
-	        $product_db = Calfdb_Admin::instance('Product','',$p);
-		$array_data = $product_db->get_admin_product_info_array_data();	
+	        $product_db = Calfdb_Cms::instance('Product','',$p);
+		$array_data = $product_db->get_cms_product_info_array_data();	
 
 		$row= $array_data['rows'];
 		$is_active = ($row['is_active']==="启用") ? 'checked':'';
@@ -373,7 +373,7 @@ class Controller_Post extends Controller {
           $data = json_decode($data,true);
           $mods= $data['mod_name'];
           switch ($mods){
-	     case 'area': $mods = Admin_Home::instance('Home')->get_mod_home_list(); break;
+	     case 'area': $mods = Cms_Home::instance('Home')->get_mod_home_list(); break;
 	     case 'info': $mods = 'this is info'; break;
 	     default: $mods = '';
           }	
@@ -384,7 +384,7 @@ class Controller_Post extends Controller {
       public function action_getmods(){
 	   
 	     $action = Arr::get($_POST,'action','shops');
-	     $this->template = View::factory('admin/mod_manager/'.$action.'/default'); 
+	     $this->template = View::factory('admin/mod/'.$action.'/default'); 
 	     $data = array(); 
 	     switch ($action) {
 	         case 'home': 
